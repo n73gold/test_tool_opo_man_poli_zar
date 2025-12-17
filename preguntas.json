@@ -4805,28 +4805,5 @@
         "correcta": false
       }
     ]
-  },
-  {
-    "categoria": "juridico",
-    "tema": 3,
-    "descripcionTema": "Ley 39",
-    "texto": "Según el art. 95 LPAC, caducidad por paralización:",
-    "respuestas": [
-      {
-        "texto": "A los tres meses.",
-        "correcta": true
-      },
-      {
-        "texto": "Al mes.",
-        "correcta": false
-      },
-      {
-        "texto": "No cabe caducidad.",
-        "correcta": false
-      },
-      {
-        "correcta": false
-      }
-    ]
   }
 ]
