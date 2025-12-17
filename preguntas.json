@@ -2,7 +2,7 @@
   {
     "categoria": "juridico",
     "tema": 1,
-    "descripcionTema": "Constitucion, Estatuto de Autonomia, Ley 39",
+    "descripcionTema": "Constitucion",
     "texto": "A tenor del contenido del articulo 1.1. de la Constitucion española de 1978, ¿en que tipo de Estado se constituyo el Estado español?",
     "respuestas": [
       {
@@ -18,7 +18,6 @@
         "correcta": false
       },
       {
-        "texto": 0,
         "correcta": false
       }
     ]
@@ -26,7 +25,7 @@
   {
     "categoria": "juridico",
     "tema": 1,
-    "descripcionTema": "Constitucion, Estatuto de Autonomia, Ley 40",
+    "descripcionTema": "Constitucion",
     "texto": "El Estatuto de Autonomia es:",
     "respuestas": [
       {
@@ -42,7 +41,6 @@
         "correcta": false
       },
       {
-        "texto": 0,
         "correcta": false
       }
     ]
@@ -50,7 +48,7 @@
   {
     "categoria": "juridico",
     "tema": 1,
-    "descripcionTema": "Constitucion, Estatuto de Autonomia, Ley 39",
+    "descripcionTema": "Constitucion",
     "texto": "¿En qué parte de la Constitución se señalan los valores del ordenamiento jurídico?",
     "respuestas": [
       {
@@ -74,7 +72,7 @@
   {
     "categoria": "juridico",
     "tema": 1,
-    "descripcionTema": "Constitucion, Estatuto de Autonomia, Ley 39",
+    "descripcionTema": "Constitucion",
     "texto": "Los valores superiores del ordenamiento jurídico son:",
     "respuestas": [
       {
@@ -98,7 +96,7 @@
   {
     "categoria": "juridico",
     "tema": 1,
-    "descripcionTema": "Constitucion, Estatuto de Autonomia, Ley 39",
+    "descripcionTema": "Constitucion",
     "texto": "Son el fundamento del orden político y de la paz social:",
     "respuestas": [
       {
@@ -122,12 +120,12 @@
   {
     "categoria": "juridico",
     "tema": 1,
-    "descripcionTema": "Constitucion, Estatuto de Autonomia, Ley 39",
+    "descripcionTema": "Constitucion",
     "texto": "Según la Constitución, debe garantizarse siempre la audiencia de los ciudadanos en el:",
     "respuestas": [
       {
         "texto": "Procedimiento de elaboración de las disposiciones administrativas que le afecten.",
-        "correcta": false
+        "correcta": true
       },
       {
         "texto": "Procedimiento a través del cual se produzcan los actos administrativos.",
@@ -139,14 +137,14 @@
       },
       {
         "texto": "Procedimiento de elaboración de las disposiciones administrativas que le afecten y en el procedimiento a través del cual se produzcan los actos administrativos.",
-        "correcta": true
+        "correcta": false
       }
     ]
   },
   {
     "categoria": "juridico",
     "tema": 1,
-    "descripcionTema": "Constitucion, Estatuto de Autonomia, Ley 39",
+    "descripcionTema": "Constitucion",
     "texto": "Los órganos de la Administración del Estado, son creados, regidos y coordinados:",
     "respuestas": [
       {
@@ -170,7 +168,7 @@
   {
     "categoria": "juridico",
     "tema": 1,
-    "descripcionTema": "Constitucion, Estatuto de Autonomia, Ley 39",
+    "descripcionTema": "Constitucion",
     "texto": "¿Quién representa al Gobierno estatal en una Comunidad Autónoma?",
     "respuestas": [
       {
@@ -187,19 +185,19 @@
       },
       {
         "texto": "El Subdelegado del Gobierno",
-        "correcta": false
+        "correcta": true
       }
     ]
   },
   {
     "categoria": "juridico",
     "tema": 1,
-    "descripcionTema": "Constitucion, Estatuto de Autonomia, Ley 39",
+    "descripcionTema": "Constitucion",
     "texto": "No podrán acceder al autogobierno:",
     "respuestas": [
       {
         "texto": "Las provincias con entidad regional histórica.",
-        "correcta": false
+        "correcta": true
       },
       {
         "texto": "Las provincias limítrofes con características económicas comunes.",
@@ -218,12 +216,36 @@
   {
     "categoria": "juridico",
     "tema": 1,
-    "descripcionTema": "Constitucion, Estatuto de Autonomia, Ley 39",
+    "descripcionTema": "Constitucion",
     "texto": "El poder ejecutivo de una Comunidad Autónoma se ejerce por el:",
     "respuestas": [
       {
         "texto": "Consejo de Gobierno",
         "correcta": false
+      },
+      {
+        "texto": "Consejo colegiado",
+        "correcta": false
+      },
+      {
+        "texto": "Consejo",
+        "correcta": false
+      },
+      {
+        "texto": "Consejo ejecutivo.",
+        "correcta": true
+      }
+    ]
+  },
+  {
+    "categoria": "juridico",
+    "tema": 1,
+    "descripcionTema": "Constitucion",
+    "texto": "El poder ejecutivo de una Comunidad Autónoma se ejerce por el:",
+    "respuestas": [
+      {
+        "texto": "Consejo de Gobierno",
+        "correcta": true
       },
       {
         "texto": "Consejo colegiado",
@@ -242,31 +264,7 @@
   {
     "categoria": "juridico",
     "tema": 1,
-    "descripcionTema": "Constitucion, Estatuto de Autonomia, Ley 39",
-    "texto": "El poder ejecutivo de una Comunidad Autónoma se ejerce por el:",
-    "respuestas": [
-      {
-        "texto": "Consejo de Gobierno",
-        "correcta": false
-      },
-      {
-        "texto": "Consejo colegiado",
-        "correcta": false
-      },
-      {
-        "texto": "Consejo",
-        "correcta": false
-      },
-      {
-        "texto": "Consejo ejecutivo.",
-        "correcta": false
-      }
-    ]
-  },
-  {
-    "categoria": "juridico",
-    "tema": 1,
-    "descripcionTema": "Constitucion, Estatuto de Autonomia, Ley 39",
+    "descripcionTema": "Constitucion",
     "texto": "¿A qué materia está dedicado el Título IV?",
     "respuestas": [
       {
@@ -283,14 +281,14 @@
       },
       {
         "texto": "Al Gobierno y a la Administración.",
-        "correcta": false
+        "correcta": true
       }
     ]
   },
   {
     "categoria": "juridico",
     "tema": 1,
-    "descripcionTema": "Constitucion, Estatuto de Autonomia, Ley 39",
+    "descripcionTema": "Constitucion",
     "texto": "¿En qué se fundamenta la Constitución, según el art. 2 de la misma?",
     "respuestas": [
       {
@@ -299,7 +297,7 @@
       },
       {
         "texto": "En la indisoluble unidad de la nación española.",
-        "correcta": false
+        "correcta": true
       },
       {
         "texto": "En el poder soberano de las Cortes Generales.",
@@ -314,7 +312,7 @@
   {
     "categoria": "juridico",
     "tema": 1,
-    "descripcionTema": "Constitucion, Estatuto de Autonomia, Ley 39",
+    "descripcionTema": "Constitucion",
     "texto": "¿Qué artículo del Título I recoge el principio de igualdad jurídica de los españoles ante la ley?",
     "respuestas": [
       {
@@ -327,7 +325,7 @@
       },
       {
         "texto": "El artículo 14.",
-        "correcta": false
+        "correcta": true
       },
       {
         "texto": "El artículo 16",
@@ -338,12 +336,12 @@
   {
     "categoria": "juridico",
     "tema": 1,
-    "descripcionTema": "Constitucion, Estatuto de Autonomia, Ley 39",
+    "descripcionTema": "Constitucion",
     "texto": "¿Puede, la Administración civil, imponer sanciones que impliquen privación de libertad?",
     "respuestas": [
       {
         "texto": "No, ni de forma directa ni de forma indirecta o subsidiaria.",
-        "correcta": false
+        "correcta": true
       },
       {
         "texto": "No de forma directa, pero si de forma subsidiaria.",
@@ -362,7 +360,7 @@
   {
     "categoria": "juridico",
     "tema": 1,
-    "descripcionTema": "Constitucion, Estatuto de Autonomia, Ley 39",
+    "descripcionTema": "Constitucion",
     "texto": "¿Ante quién se presenta el recurso de amparo?",
     "respuestas": [
       {
@@ -371,7 +369,7 @@
       },
       {
         "texto": "Ante el Tribunal Constitucional.",
-        "correcta": false
+        "correcta": true
       },
       {
         "texto": "Ante el Consejo General del Poder Judicial.",
@@ -386,7 +384,7 @@
   {
     "categoria": "juridico",
     "tema": 1,
-    "descripcionTema": "Constitucion, Estatuto de Autonomia, Ley 39",
+    "descripcionTema": "Constitucion",
     "texto": "No pueden constituirse en Comunidad Autónoma los territorios:",
     "respuestas": [
       {
@@ -403,19 +401,19 @@
       },
       {
         "texto": "Interinsulares.",
-        "correcta": false
+        "correcta": true
       }
     ]
   },
   {
     "categoria": "juridico",
     "tema": 1,
-    "descripcionTema": "Constitucion, Estatuto de Autonomia, Ley 39",
+    "descripcionTema": "Constitucion",
     "texto": "La vía ordinaria de acceso a la autonomía por el art. 143 de la CE se sigue por los/las:",
     "respuestas": [
       {
         "texto": "Provincias con entidad regional histórica",
-        "correcta": false
+        "correcta": true
       },
       {
         "texto": "Territorios que en el pasado hubieren plebiscitado afirmativa proyecto de Estatuto de Autonomía.",
@@ -434,7 +432,7 @@
   {
     "categoria": "juridico",
     "tema": 1,
-    "descripcionTema": "Constitucion, Estatuto de Autonomia, Ley 39",
+    "descripcionTema": "Constitucion",
     "texto": "Entre las determinaciones de los Estatutos de Autonomía no es necesario incluir la:",
     "respuestas": [
       {
@@ -451,14 +449,14 @@
       },
       {
         "texto": "Denominación, organización y sede de sus instituciones administrativas.",
-        "correcta": false
+        "correcta": true
       }
     ]
   },
   {
     "categoria": "juridico",
     "tema": 1,
-    "descripcionTema": "Constitucion, Estatuto de Autonomia, Ley 39",
+    "descripcionTema": "Constitucion",
     "texto": "El principio de coordinación la Hacienda estatal se consigue por:",
     "respuestas": [
       {
@@ -475,14 +473,14 @@
       },
       {
         "texto": "Imperativo de la propia Constitución.",
-        "correcta": false
+        "correcta": true
       }
     ]
   },
   {
     "categoria": "juridico",
     "tema": 1,
-    "descripcionTema": "Constitucion, Estatuto de Autonomia, Ley 39",
+    "descripcionTema": "Constitucion",
     "texto": "Los Estatutos de Autonomía deberán contener el/la/las:",
     "respuestas": [
       {
@@ -491,7 +489,7 @@
       },
       {
         "texto": "Competencias que, en función de la CE, asume cada Comunidad Autónoma.",
-        "correcta": false
+        "correcta": true
       },
       {
         "texto": "Desarrollo de la Admón. Autonómica",
@@ -506,7 +504,7 @@
   {
     "categoria": "juridico",
     "tema": 1,
-    "descripcionTema": "Constitucion, Estatuto de Autonomia, Ley 39",
+    "descripcionTema": "Constitucion",
     "texto": "Los Estatutos de Autonomía en la vía común se aprueban por el:",
     "respuestas": [
       {
@@ -515,7 +513,7 @@
       },
       {
         "texto": "Congreso y Senado por Ley orgánica",
-        "correcta": false
+        "correcta": true
       },
       {
         "texto": "Congreso y Senado por Ley ordinaria",
@@ -530,7 +528,7 @@
   {
     "categoria": "juridico",
     "tema": 1,
-    "descripcionTema": "Constitucion, Estatuto de Autonomia, Ley 39",
+    "descripcionTema": "Constitucion",
     "texto": "La más alta representación de una Comunidad Autónoma la ostenta el:",
     "respuestas": [
       {
@@ -539,7 +537,7 @@
       },
       {
         "texto": "Presidente de la Comunidad Autónoma",
-        "correcta": false
+        "correcta": true
       },
       {
         "texto": "Rey",
@@ -554,12 +552,12 @@
   {
     "categoria": "juridico",
     "tema": 1,
-    "descripcionTema": "Constitucion, Estatuto de Autonomia, Ley 39",
+    "descripcionTema": "Constitucion",
     "texto": "En la reforma de los Estatutos intervienen las Cortes Generales",
     "respuestas": [
       {
         "texto": "Siempre",
-        "correcta": false
+        "correcta": true
       },
       {
         "texto": "Nunca",
@@ -578,7 +576,7 @@
   {
     "categoria": "juridico",
     "tema": 1,
-    "descripcionTema": "Constitucion, Estatuto de Autonomia, Ley 39",
+    "descripcionTema": "Constitucion",
     "texto": "El principio de solidaridad consagrado por el art. 138 de la CE exige una atención especial a:",
     "respuestas": [
       {
@@ -595,14 +593,14 @@
       },
       {
         "texto": "Al territorio insular.",
-        "correcta": false
+        "correcta": true
       }
     ]
   },
   {
     "categoria": "juridico",
     "tema": 1,
-    "descripcionTema": "Constitucion, Estatuto de Autonomia, Ley 39",
+    "descripcionTema": "Constitucion",
     "texto": "En materia de Defensa, las Comunidad Autónoma tienen competencia:",
     "respuestas": [
       {
@@ -619,14 +617,14 @@
       },
       {
         "texto": "De ningún tipo",
-        "correcta": false
+        "correcta": true
       }
     ]
   },
   {
     "categoria": "juridico",
     "tema": 1,
-    "descripcionTema": "Constitucion, Estatuto de Autonomia, Ley 39",
+    "descripcionTema": "Constitucion",
     "texto": "El Estado tiene competencia exclusiva sobre todas las materias siguientes, menos sobre una:",
     "respuestas": [
       {
@@ -650,7 +648,7 @@
   {
     "categoria": "juridico",
     "tema": 1,
-    "descripcionTema": "Constitucion, Estatuto de Autonomia, Ley 39",
+    "descripcionTema": "Constitucion",
     "texto": "¿Por qué tipo de sufragio se elige a los Diputados autonómicos?",
     "respuestas": [
       {
@@ -674,7 +672,7 @@
   {
     "categoria": "juridico",
     "tema": 1,
-    "descripcionTema": "Constitucion, Estatuto de Autonomia, Ley 39",
+    "descripcionTema": "Constitucion",
     "texto": "El control de la actividad de los órganos de las Comunidades Autónomas, en lo relativo a la constitucionalidad de sus disposiciones normativas con fuerza de Ley, corresponderá:",
     "respuestas": [
       {
@@ -698,7 +696,7 @@
   {
     "categoria": "juridico",
     "tema": 1,
-    "descripcionTema": "Constitucion, Estatuto de Autonomia, Ley 39",
+    "descripcionTema": "Constitucion",
     "texto": "Para ejecutar las medidas necesarias para obligar a una Comunidad Autónoma al cumplimiento forzoso de sus obligaciones:",
     "respuestas": [
       {
@@ -722,7 +720,7 @@
   {
     "categoria": "juridico",
     "tema": 1,
-    "descripcionTema": "Constitucion, Estatuto de Autonomia, Ley 39",
+    "descripcionTema": "Constitucion",
     "texto": "Será competencia exclusiva del Estado:",
     "respuestas": [
       {
@@ -746,7 +744,7 @@
   {
     "categoria": "juridico",
     "tema": 1,
-    "descripcionTema": "Constitucion, Estatuto de Autonomia, Ley 39",
+    "descripcionTema": "Constitucion",
     "texto": "Un Delegado nombrado por el Gobierno en el territorio de la Comunidad Autónoma:",
     "respuestas": [
       {
@@ -770,7 +768,7 @@
   {
     "categoria": "juridico",
     "tema": 1,
-    "descripcionTema": "Constitucion, Estatuto de Autonomia, Ley 39",
+    "descripcionTema": "Constitucion",
     "texto": "¿Qué artículo de la Constitución recoge el Fondo de Compensación Interterritorial?",
     "respuestas": [
       {
@@ -794,31 +792,7 @@
   {
     "categoria": "juridico",
     "tema": 1,
-    "descripcionTema": "Constitucion, Estatuto de Autonomia, Ley 39",
-    "texto": "¿Cuál de los siguientes principios no es predicable del Estado autonómico?",
-    "respuestas": [
-      {
-        "texto": "Principio de progresividad.",
-        "correcta": false
-      },
-      {
-        "texto": "Principio de dependencia financiera.",
-        "correcta": false
-      },
-      {
-        "texto": "Principio de igualdad.",
-        "correcta": false
-      },
-      {
-        "texto": "Principio de supremacía estatal.",
-        "correcta": true
-      }
-    ]
-  },
-  {
-    "categoria": "juridico",
-    "tema": 1,
-    "descripcionTema": "Constitucion, Estatuto de Autonomia, Ley 39",
+    "descripcionTema": "Constitucion",
     "texto": "Una de las siguientes afirmaciones, relativas a la provincia, no es correcta:",
     "respuestas": [
       {
@@ -842,7 +816,7 @@
   {
     "categoria": "juridico",
     "tema": 1,
-    "descripcionTema": "Constitucion, Estatuto de Autonomia, Ley 39",
+    "descripcionTema": "Constitucion",
     "texto": "Los recursos económicos de las Comunidades Autónomas estarán constituidos por:",
     "respuestas": [
       {
@@ -866,7 +840,7 @@
   {
     "categoria": "juridico",
     "tema": 1,
-    "descripcionTema": "Constitucion, Estatuto de Autonomia, Ley 39",
+    "descripcionTema": "Constitucion",
     "texto": "La organización judicial en el ámbito de la Comunidad Autónoma, estará culminada:",
     "respuestas": [
       {
@@ -890,7 +864,7 @@
   {
     "categoria": "juridico",
     "tema": 1,
-    "descripcionTema": "Constitucion, Estatuto de Autonomia, Ley 39",
+    "descripcionTema": "Constitucion",
     "texto": "¿Cuál de las siguientes afirmaciones es correcta?",
     "respuestas": [
       {
@@ -914,7 +888,7 @@
   {
     "categoria": "juridico",
     "tema": 1,
-    "descripcionTema": "Constitucion, Estatuto de Autonomia, Ley 39",
+    "descripcionTema": "Constitucion",
     "texto": "¿Cuál de los siguientes principios no se recoge en el artículo 2 de la Constitución española de 1978?",
     "respuestas": [
       {
@@ -938,7 +912,7 @@
   {
     "categoria": "juridico",
     "tema": 1,
-    "descripcionTema": "Constitucion, Estatuto de Autonomia, Ley 39",
+    "descripcionTema": "Constitucion",
     "texto": "Una de las siguientes afirmaciones, relativas a la Administración Local, no es cierta:",
     "respuestas": [
       {
@@ -962,16 +936,16 @@
   {
     "categoria": "juridico",
     "tema": 1,
-    "descripcionTema": "Constitucion, Estatuto de Autonomia, Ley 39",
+    "descripcionTema": "Constitucion",
     "texto": "El Estado tiene competencia exclusiva sobre todas las materias siguientes, menos sobre una:",
     "respuestas": [
       {
         "texto": "Legislación laboral, en todas sus manifestaciones, incluso las de ejecución.",
-        "correcta": true
+        "correcta": false
       },
       {
         "texto": "Bases y coordinación de la planificación general de la actividad económica.",
-        "correcta": false
+        "correcta": true
       },
       {
         "texto": "Defensa y Fuerzas Armadas.",
@@ -986,7 +960,7 @@
   {
     "categoria": "juridico",
     "tema": 1,
-    "descripcionTema": "Constitucion, Estatuto de Autonomia, Ley 39",
+    "descripcionTema": "Constitucion",
     "texto": "Las Comunidades Autónomas no podrán en ningún caso adoptar medidas tributarias:",
     "respuestas": [
       {
@@ -1010,7 +984,7 @@
   {
     "categoria": "juridico",
     "tema": 1,
-    "descripcionTema": "Constitucion, Estatuto de Autonomia, Ley 39",
+    "descripcionTema": "Constitucion",
     "texto": "El gobierno y la administración autónoma de las provincias estarán encomendados:",
     "respuestas": [
       {
@@ -1034,7 +1008,7 @@
   {
     "categoria": "juridico",
     "tema": 1,
-    "descripcionTema": "Constitucion, Estatuto de Autonomia, Ley 39",
+    "descripcionTema": "Constitucion",
     "texto": "La realización efectiva del principio de solidaridad, se garantiza por el Estado:",
     "respuestas": [
       {
@@ -1058,7 +1032,7 @@
   {
     "categoria": "juridico",
     "tema": 1,
-    "descripcionTema": "Constitucion, Estatuto de Autonomia, Ley 39",
+    "descripcionTema": "Constitucion",
     "texto": "El Estado se organiza territorialmente:",
     "respuestas": [
       {
@@ -1082,12 +1056,12 @@
   {
     "categoria": "juridico",
     "tema": 1,
-    "descripcionTema": "Constitucion, Estatuto de Autonomia, Ley 39",
+    "descripcionTema": "Constitucion",
     "texto": "¿Quién representa al Gobierno estatal en una Comunidad Autónoma?",
     "respuestas": [
       {
         "texto": "El Delegado del Gobierno",
-        "correcta": false
+        "correcta": true
       },
       {
         "texto": "El Presidente de la Comunidad Autónoma",
@@ -1106,7 +1080,7 @@
   {
     "categoria": "juridico",
     "tema": 1,
-    "descripcionTema": "Constitucion, Estatuto de Autonomia, Ley 39",
+    "descripcionTema": "Constitucion",
     "texto": "No podrán acceder al autogobierno:",
     "respuestas": [
       {
@@ -1123,19 +1097,19 @@
       },
       {
         "texto": "Las provincias limítrofes con características sociales comunes.",
-        "correcta": false
+        "correcta": true
       }
     ]
   },
   {
     "categoria": "juridico",
     "tema": 1,
-    "descripcionTema": "Constitucion, Estatuto de Autonomia, Ley 39",
+    "descripcionTema": "Constitucion",
     "texto": "EL poder ejecutivo de una Comunidad Autónoma se ejerce por el:",
     "respuestas": [
       {
         "texto": "Consejo de Gobierno",
-        "correcta": false
+        "correcta": true
       },
       {
         "texto": "Consejo colegiado",
@@ -1154,7 +1128,7 @@
   {
     "categoria": "juridico",
     "tema": 1,
-    "descripcionTema": "Constitucion, Estatuto de Autonomia, Ley 39",
+    "descripcionTema": "Constitucion",
     "texto": "La iniciativa autonómica, en caso de no prosperar:",
     "respuestas": [
       {
@@ -1178,7 +1152,7 @@
   {
     "categoria": "juridico",
     "tema": 1,
-    "descripcionTema": "Constitucion, Estatuto de Autonomia, Ley 39",
+    "descripcionTema": "Constitucion",
     "texto": "Respecto de una de las siguientes materias, por ser exclusiva del Estado, no podrán ser asumidas competencias, en principio, por las Comunidades Autónomas:",
     "respuestas": [
       {
@@ -1202,7 +1176,7 @@
   {
     "categoria": "juridico",
     "tema": 1,
-    "descripcionTema": "Constitucion, Estatuto de Autonomia, Ley 39",
+    "descripcionTema": "Constitucion",
     "texto": "No puede ser sujeto de autonomía:",
     "respuestas": [
       {
@@ -1226,12 +1200,12 @@
   {
     "categoria": "juridico",
     "tema": 1,
-    "descripcionTema": "Constitucion, Estatuto de Autonomia, Ley 39",
+    "descripcionTema": "Constitucion",
     "texto": "El Estado tiene competencia exclusiva sobre todas las materias siguientes, menos sobre una:",
     "respuestas": [
       {
         "texto": "Legislación laboral, en todas sus manifestaciones, incluso las de ejecución.",
-        "correcta": true
+        "correcta": false
       },
       {
         "texto": "Bases y coordinación de la planificación general de la actividad económica.",
@@ -1243,14 +1217,14 @@
       },
       {
         "texto": "Hacienda general y deuda del Estado.",
-        "correcta": false
+        "correcta": true
       }
     ]
   },
   {
     "categoria": "juridico",
     "tema": 1,
-    "descripcionTema": "Constitucion, Estatuto de Autonomia, Ley 39",
+    "descripcionTema": "Constitucion",
     "texto": "El órgano legislativo de la Comunidad Autónoma es:",
     "respuestas": [
       {
@@ -1274,7 +1248,7 @@
   {
     "categoria": "juridico",
     "tema": 1,
-    "descripcionTema": "Constitucion, Estatuto de Autonomia, Ley 39",
+    "descripcionTema": "Constitucion",
     "texto": "Los recursos del Fondo de Compensación serán distribuidos entre las Comunidades Autónomas y las provincias, en su caso, por:",
     "respuestas": [
       {
@@ -1298,7 +1272,7 @@
   {
     "categoria": "juridico",
     "tema": 1,
-    "descripcionTema": "Constitucion, Estatuto de Autonomia, Ley 39",
+    "descripcionTema": "Constitucion",
     "texto": "Las Haciendas locales:",
     "respuestas": [
       {
@@ -1322,7 +1296,7 @@
   {
     "categoria": "juridico",
     "tema": 1,
-    "descripcionTema": "Constitucion, Estatuto de Autonomia, Ley 39",
+    "descripcionTema": "Constitucion",
     "texto": "¿De qué año es la Ley Reguladora de las Bases del Régimen Local?",
     "respuestas": [
       {
@@ -1346,7 +1320,7 @@
   {
     "categoria": "juridico",
     "tema": 1,
-    "descripcionTema": "Constitucion, Estatuto de Autonomia, Ley 39",
+    "descripcionTema": "Constitucion",
     "texto": "¿De qué tipo de personalidad jurídica gozan las provincias?",
     "respuestas": [
       {
@@ -1370,7 +1344,7 @@
   {
     "categoria": "juridico",
     "tema": 1,
-    "descripcionTema": "Constitucion, Estatuto de Autonomia, Ley 39",
+    "descripcionTema": "Constitucion",
     "texto": "Cualquier alteración de los límites de una Comunidad Autónoma deberá ser aprobada por:",
     "respuestas": [
       {
@@ -1394,7 +1368,7 @@
   {
     "categoria": "juridico",
     "tema": 1,
-    "descripcionTema": "Constitucion, Estatuto de Autonomia, Ley 39",
+    "descripcionTema": "Constitucion",
     "texto": "El Presidente y los miembros del Consejo de Gobierno:",
     "respuestas": [
       {
@@ -1418,7 +1392,7 @@
   {
     "categoria": "juridico",
     "tema": 1,
-    "descripcionTema": "Constitucion, Estatuto de Autonomia, Ley 39",
+    "descripcionTema": "Constitucion",
     "texto": "¿Qué artículo de la Constitución establece la autonomía de los municipios?",
     "respuestas": [
       {
@@ -1442,7 +1416,7 @@
   {
     "categoria": "juridico",
     "tema": 1,
-    "descripcionTema": "Constitucion, Estatuto de Autonomia, Ley 39",
+    "descripcionTema": "Constitucion",
     "texto": "¿Pueden crearse agrupaciones de municipios distintas de la provincia?",
     "respuestas": [
       {
@@ -1466,7 +1440,7 @@
   {
     "categoria": "juridico",
     "tema": 1,
-    "descripcionTema": "Constitucion, Estatuto de Autonomia, Ley 39",
+    "descripcionTema": "Constitucion",
     "texto": "Las diferencias entre los Estatutos de las distintas Comunidades Autónomas:",
     "respuestas": [
       {
@@ -1490,7 +1464,7 @@
   {
     "categoria": "juridico",
     "tema": 1,
-    "descripcionTema": "Constitucion, Estatuto de Autonomia, Ley 39",
+    "descripcionTema": "Constitucion",
     "texto": "No es una competencia exclusiva del Estado:",
     "respuestas": [
       {
@@ -1514,7 +1488,7 @@
   {
     "categoria": "juridico",
     "tema": 1,
-    "descripcionTema": "Constitucion, Estatuto de Autonomia, Ley 39",
+    "descripcionTema": "Constitucion",
     "texto": "¿En qué año se aprobó el primer estatuto de autonomía, tras la aprobación de la Constitución de 1978?",
     "respuestas": [
       {
@@ -1538,7 +1512,7 @@
   {
     "categoria": "juridico",
     "tema": 1,
-    "descripcionTema": "Constitucion, Estatuto de Autonomia, Ley 39",
+    "descripcionTema": "Constitucion",
     "texto": "Las vías de acceso a la autonomía se recogen en la Constitución en los artículos:",
     "respuestas": [
       {
@@ -1562,7 +1536,7 @@
   {
     "categoria": "juridico",
     "tema": 1,
-    "descripcionTema": "Constitucion, Estatuto de Autonomia, Ley 39",
+    "descripcionTema": "Constitucion",
     "texto": "La Federación de Comunidades Autónomas:",
     "respuestas": [
       {
@@ -1586,7 +1560,7 @@
   {
     "categoria": "juridico",
     "tema": 1,
-    "descripcionTema": "Constitucion, Estatuto de Autonomia, Ley 39",
+    "descripcionTema": "Constitucion",
     "texto": "En los Estatutos aprobados por el procedimiento al que nos venimos refiriendo, la organización institucional se basará en una Asamblea Legislativa:",
     "respuestas": [
       {
@@ -1610,7 +1584,7 @@
   {
     "categoria": "juridico",
     "tema": 1,
-    "descripcionTema": "Constitucion, Estatuto de Autonomia, Ley 39",
+    "descripcionTema": "Constitucion",
     "texto": "¿Cuántos municipios debían formar parte de la iniciativa autonómica en el caso de las Comunidades que accedieron por la vía común, en el caso de que no tuvieran régimen provisional de autonomía?",
     "respuestas": [
       {
@@ -1634,7 +1608,7 @@
   {
     "categoria": "juridico",
     "tema": 1,
-    "descripcionTema": "Constitucion, Estatuto de Autonomia, Ley 39",
+    "descripcionTema": "Constitucion",
     "texto": "¿Quién elige al Alcalde?",
     "respuestas": [
       {
@@ -1658,7 +1632,7 @@
   {
     "categoria": "juridico",
     "tema": 1,
-    "descripcionTema": "Constitucion, Estatuto de Autonomia, Ley 39",
+    "descripcionTema": "Constitucion",
     "texto": "Las Comunidades Autónomas se constituyen como tales en base al principio:",
     "respuestas": [
       {
@@ -1682,7 +1656,7 @@
   {
     "categoria": "juridico",
     "tema": 1,
-    "descripcionTema": "Constitucion, Estatuto de Autonomia, Ley 39",
+    "descripcionTema": "Constitucion",
     "texto": "El control de la actividad de los órganos de las Comunidades Autónomas, en lo relativo al ejercicio de las funciones delegadas respecto de las materias de competencia exclusiva del Estado, corresponderá:",
     "respuestas": [
       {
@@ -1706,12 +1680,12 @@
   {
     "categoria": "juridico",
     "tema": 1,
-    "descripcionTema": "Constitucion, Estatuto de Autonomia, Ley 39",
+    "descripcionTema": "Constitucion",
     "texto": "El Estado tiene competencia exclusiva sobre todas las materias siguientes, menos sobre una:",
     "respuestas": [
       {
         "texto": "Legislación laboral, en todas sus manifestaciones, incluso las de ejecución.",
-        "correcta": true
+        "correcta": false
       },
       {
         "texto": "Bases y coordinación de la planificación general de la actividad económica.",
@@ -1723,14 +1697,14 @@
       },
       {
         "texto": "Hacienda general y deuda del Estado.",
-        "correcta": false
+        "correcta": true
       }
     ]
   },
   {
     "categoria": "juridico",
     "tema": 1,
-    "descripcionTema": "Constitucion, Estatuto de Autonomia, Ley 39",
+    "descripcionTema": "Constitucion",
     "texto": "Cualquier alteración de los límites de una provincia deberá ser aprobada por:",
     "respuestas": [
       {
@@ -1754,7 +1728,7 @@
   {
     "categoria": "juridico",
     "tema": 1,
-    "descripcionTema": "Constitucion, Estatuto de Autonomia, Ley 39",
+    "descripcionTema": "Constitucion",
     "texto": "¿A quién se reconoce autonomía en la Constitución española?",
     "respuestas": [
       {
@@ -1778,7 +1752,7 @@
   {
     "categoria": "juridico",
     "tema": 1,
-    "descripcionTema": "Constitucion, Estatuto de Autonomia, Ley 39",
+    "descripcionTema": "Constitucion",
     "texto": "El Título Octavo de la Constitución finaliza en el artículo:",
     "respuestas": [
       {
@@ -1802,7 +1776,7 @@
   {
     "categoria": "juridico",
     "tema": 1,
-    "descripcionTema": "Constitucion, Estatuto de Autonomia, Ley 39",
+    "descripcionTema": "Constitucion",
     "texto": "Las Comunidades Autónomas gozarán de autonomía financiera para el desarrollo y ejecución de sus competencias con arreglo a los principios de:",
     "respuestas": [
       {
@@ -1826,7 +1800,7 @@
   {
     "categoria": "juridico",
     "tema": 1,
-    "descripcionTema": "Constitucion, Estatuto de Autonomia, Ley 39",
+    "descripcionTema": "Constitucion",
     "texto": "Las Comunidades Autónomas, en materias de competencia estatal:",
     "respuestas": [
       {
@@ -1850,12 +1824,12 @@
   {
     "categoria": "juridico",
     "tema": 1,
-    "descripcionTema": "Constitucion, Estatuto de Autonomia, Ley 39",
+    "descripcionTema": "Constitucion",
     "texto": "El Estado tiene competencia exclusiva sobre todas las materias siguientes, menos sobre una:",
     "respuestas": [
       {
         "texto": "Legislación laboral, en todas sus manifestaciones, incluso las de ejecución.",
-        "correcta": true
+        "correcta": false
       },
       {
         "texto": "Bases y coordinación de la planificación general de la actividad económica.",
@@ -1867,14 +1841,14 @@
       },
       {
         "texto": "Hacienda general y deuda del Estado.",
-        "correcta": false
+        "correcta": true
       }
     ]
   },
   {
     "categoria": "juridico",
     "tema": 1,
-    "descripcionTema": "Constitucion, Estatuto de Autonomia, Ley 39",
+    "descripcionTema": "Constitucion",
     "texto": "Las armonización de las disposiciones normativas de las Comunidades Autónomas:",
     "respuestas": [
       {
@@ -1898,7 +1872,7 @@
   {
     "categoria": "juridico",
     "tema": 1,
-    "descripcionTema": "Constitucion, Estatuto de Autonomia, Ley 39",
+    "descripcionTema": "Constitucion",
     "texto": "¿Cuánto tiempo debieron esperar las Comunidades Autónomas de vía común para acceder a mayor número de competencias que las reconocidas inicialmente en el Estatuto de Autonomía?",
     "respuestas": [
       {
@@ -1922,7 +1896,7 @@
   {
     "categoria": "juridico",
     "tema": 1,
-    "descripcionTema": "Constitucion, Estatuto de Autonomia, Ley 39",
+    "descripcionTema": "Constitucion",
     "texto": "Los Estatuto de Autonomía fueron aprobados por:",
     "respuestas": [
       {
@@ -1945,552 +1919,2912 @@
   },
   {
     "categoria": "juridico",
-    "tema": 1,
-    "descripcionTema": "Constitucion, Estatuto de Autonomia, Ley 39",
-    "texto": "Se reconoce autonomía en la Constitución española a:",
+    "tema": 2,
+    "descripcionTema": "Estatuto de Autonomia",
+    "texto": "El Estado tiene competencia exclusiva sobre todas las materias siguientes, menos sobre una:",
     "respuestas": [
       {
-        "texto": "A las comunidades autónomas y a las regiones",
+        "texto": "Determinación de la hora oficial.",
         "correcta": false
       },
       {
-        "texto": "A las regiones y a las nacionalidades",
+        "texto": "Comercio exterior.",
+        "correcta": false
+      },
+      {
+        "texto": "Régimen aduanero y arancelario.",
+        "correcta": false
+      },
+      {
+        "texto": "Gestión en materia de protección del medio ambiente.",
+        "correcta": true
+      }
+    ]
+  },
+  {
+    "categoria": "juridico",
+    "tema": 2,
+    "descripcionTema": "Estatuto de Autonomia",
+    "texto": "Será competencia exclusiva del Estado:",
+    "respuestas": [
+      {
+        "texto": "La legislación procesal, sin perjuicio de las necesarias especialidades que en este orden se deriven de las particularidades del derecho sustantivo de las comunidades Autónomas.",
+        "correcta": false
+      },
+      {
+        "texto": "Las bases del régimen jurídico de las Administraciones públicas y del régimen estatutario de los funcionarios.",
+        "correcta": false
+      },
+      {
+        "texto": "Todas las otras respuestas son correctas.",
         "correcta": true
       },
       {
-        "texto": "A las regiones",
-        "correcta": false
-      },
-      {
-        "texto": "A las nacionalidades y comunidades autónomas",
+        "texto": "La legislación civil, sin perjuicio de la conservación, modificación y desarrollo por las Comunidades Autónomas de los derechos civiles, forales o especiales, allí donde existan.",
         "correcta": false
       }
     ]
   },
   {
     "categoria": "juridico",
-    "tema": 1,
-    "descripcionTema": "Constitucion, Estatuto de Autonomia, Ley 39",
-    "texto": "De acuerdo con el artículo 106.1 de la Constitución española, los tribunales controlan",
+    "tema": 2,
+    "descripcionTema": "Estatuto de Autonomia",
+    "texto": "El Estado tiene competencia exclusiva sobre todas las materias siguientes, menos sobre una:",
     "respuestas": [
       {
-        "texto": "La potestad legislativa.",
+        "texto": "Extranjería.",
         "correcta": false
       },
       {
-        "texto": "La potestad reglamentaria.",
+        "texto": "Fomento de la cultura, de la investigación, y, en su caso, de la enseñanza de las lenguas del Estado.",
         "correcta": true
       },
       {
-        "texto": "Las dos respuestas anteriores son correctas.",
+        "texto": "Inmigración.",
         "correcta": false
       },
       {
-        "texto": 0,
+        "texto": "Nacionalidad",
         "correcta": false
       }
     ]
   },
   {
     "categoria": "juridico",
-    "tema": 1,
-    "descripcionTema": "Constitucion, Estatuto de Autonomia, Ley 39",
-    "texto": "La Ley 39/2015, de 1 de octubre, del Procedimiento Administrativo Común de las Administraciones Públicas, regula en su artículo 82 el trámite de audiencia. De acuerdo con el apartado 2 de ese artículo, dicho trámite tiene un plazo no inferior a diez días ni superior a:",
+    "tema": 2,
+    "descripcionTema": "Estatuto de Autonomia",
+    "texto": "El control de la actividad de los órganos de las Comunidades Autónomas, en lo relativo a la constitucionalidad de sus disposiciones normativas con fuerza de Ley, corresponderá:",
     "respuestas": [
       {
-        "texto": "Quince días.",
+        "texto": "Al Tribunal Constitucional.",
         "correcta": true
       },
       {
-        "texto": "Veinte días.",
+        "texto": "El Tribunal Superior de Justicia.",
         "correcta": false
       },
       {
-        "texto": "Treinta días.",
+        "texto": "A la Asamblea Legislativa de la Comunidad Autónoma.",
         "correcta": false
       },
       {
-        "texto": 0,
+        "texto": "Al Consejo de Gobierno de la Comunidad Autónoma.",
         "correcta": false
       }
     ]
   },
   {
     "categoria": "juridico",
-    "tema": 1,
-    "descripcionTema": "Constitucion, Estatuto de Autonomia, Ley 39",
-    "texto": "De acuerdo con el artículo 76.1 de la Ley 39/2015, de 1 de octubre, del Procedimiento Administrativo Común de las Administraciones Públicas, los interesados podrán aducir alegaciones y aportar documentos u otros elementos de juicio en cualquier momento del procedimiento anterior:",
+    "tema": 2,
+    "descripcionTema": "Estatuto de Autonomia",
+    "texto": "Corresponde a la Comunidad Autónoma la competencia ejecutiva en las siguientes materias:",
     "respuestas": [
       {
-        "texto": "Al trámite de audiencia.",
+        "texto": "Gestión de la asistencia sanitaria de la Seguridad Social. Productos farmacéuticos.",
+        "correcta": false
+      },
+      {
+        "texto": "Museos, archivos, bibliotecas y otras colecciones de naturaleza análoga de titularidad estatal cuya gestión no se reserve la Administración General del Estado.",
+        "correcta": false
+      },
+      {
+        "texto": "A y B son correctas.",
         "correcta": true
       },
       {
-        "texto": "A la propuesta de resolución.",
-        "correcta": false
-      },
-      {
-        "texto": "A la resolución.",
-        "correcta": false
-      },
-      {
-        "texto": 0,
         "correcta": false
       }
     ]
   },
   {
     "categoria": "juridico",
-    "tema": 1,
-    "descripcionTema": "Constitucion, Estatuto de Autonomia, Ley 39",
-    "texto": "De acuerdo con el artículo 62.2 del Estatuto de Autonomía de Aragón, la Administración de la Comunidad Autónoma se relacionará con el resto de Administraciones Públicas españolas con arreglo al principio de:",
+    "tema": 2,
+    "descripcionTema": "Estatuto de Autonomia",
+    "texto": "La materia referida a “Denominaciones de origen y otras menciones de calidad”, es una competencia de la Comunidad Autónoma de Aragón:",
     "respuestas": [
       {
-        "texto": "Buena fe.",
+        "texto": "Compartida.",
         "correcta": false
       },
       {
-        "texto": "Confianza legítima.",
-        "correcta": false
-      },
-      {
-        "texto": "Lealtad institucional",
+        "texto": "Exclusiva.",
         "correcta": true
       },
       {
-        "texto": 0,
+        "texto": "Ejecutiva.",
+        "correcta": false
+      },
+      {
         "correcta": false
       }
     ]
   },
   {
     "categoria": "juridico",
-    "tema": 1,
-    "descripcionTema": "Constitucion, Estatuto de Autonomia, Ley 39",
-    "texto": "De acuerdo con el artículo 126.2 de la Ley 7/1985 de 2 de abril, reguladora de las bases del Régimen Local, corresponde al Alcalde nombrar y separar libremente a los miembros de la Junta de Gobierno Local, cuyo número no podrá exceder de:",
+    "tema": 2,
+    "descripcionTema": "Estatuto de Autonomia",
+    "texto": "La materia referida a “Ordenación del territorio, conforme a los principios de equilibrio territorial, demográfico, socioeconómico y ambiental”, es una competencia de la Comunidad Autónoma de Aragón:",
     "respuestas": [
       {
-        "texto": "La mitad del número legal de miembros del Pleno.",
+        "texto": "Compartida.",
         "correcta": false
       },
       {
-        "texto": "Un tercio del número legal de miembros del Pleno.",
+        "texto": "Exclusiva.",
         "correcta": true
       },
       {
-        "texto": "Dos terceras partes del número legal de miembros del Pleno",
+        "texto": "Ejecutiva.",
         "correcta": false
       },
       {
-        "texto": 0,
         "correcta": false
       }
     ]
   },
   {
     "categoria": "juridico",
-    "tema": 1,
-    "descripcionTema": "Constitucion, Estatuto de Autonomia, Ley 39",
-    "texto": "De acuerdo con el artículo 3 del Real Decreto Legislativo 2/2004, de 5 de marzo, que aprueba el texto refundido de la Ley reguladora de las Haciendas Locales, las adquisiciones a título de herencia, legado o donación:",
+    "tema": 2,
+    "descripcionTema": "Estatuto de Autonomia",
+    "texto": "La materia referida a “Régimen jurídico, procedimiento, contratación y responsabilidad de la Administración Pública de la Comunidad Autónoma”, es una competencia de la Comunidad Autónoma de Aragón:",
     "respuestas": [
       {
-        "texto": "No constituyen un recurso de las Haciendas Locales.",
-        "correcta": false
-      },
-      {
-        "texto": "Constituyen un ingreso de derecho privado de las entidades locales.",
+        "texto": "Compartida.",
         "correcta": true
       },
       {
-        "texto": "Ninguna de las respuestas anteriores es correcta.",
+        "texto": "Exclusiva.",
         "correcta": false
       },
       {
-        "texto": 0,
+        "texto": "Ejecutiva.",
+        "correcta": false
+      },
+      {
         "correcta": false
       }
     ]
   },
   {
     "categoria": "juridico",
-    "tema": 1,
-    "descripcionTema": "Constitucion, Estatuto de Autonomia, Ley 39",
-    "texto": "De acuerdo con el artículo 159.1 del Real Decreto Legislativo 2/2004, de 5 de marzo, que aprueba el texto refundido de la Ley reguladora de las Haciendas Locales, aprobado inicialmente el presupuesto general, se expondrá al público por un plazo de:",
+    "tema": 2,
+    "descripcionTema": "Estatuto de Autonomia",
+    "texto": "La materia referida a “Aeropuertos, helipuertos y otras infraestructuras de transporte aéreo, con calificación de interés general, cuya gestión directa no se reserve la Administración General del Estado”, es una competencia de la Comunidad Autónoma de Aragón:",
     "respuestas": [
       {
-        "texto": "Quince días.",
+        "texto": "Compartida.",
+        "correcta": false
+      },
+      {
+        "texto": "Exclusiva.",
+        "correcta": false
+      },
+      {
+        "texto": "Ejecutiva.",
         "correcta": true
       },
       {
-        "texto": "Veinte días.",
-        "correcta": false
-      },
-      {
-        "texto": "Un mes.",
-        "correcta": false
-      },
-      {
-        "texto": 0,
         "correcta": false
       }
     ]
   },
   {
     "categoria": "juridico",
-    "tema": 1,
-    "descripcionTema": "Constitucion, Estatuto de Autonomia, Ley 39",
-    "texto": "De acuerdo con el apartado 2 del artículo 46 del Real Decreto Legislativo 5/2015, las reuniones en el centro de trabajo:",
+    "tema": 2,
+    "descripcionTema": "Estatuto de Autonomia",
+    "texto": "En el ámbito de las competencias exclusivas, la Comunidad Autónoma de Aragón ejercerá:",
     "respuestas": [
       {
-        "texto": "Se autorizarán dentro de las horas de trabajo.",
+        "texto": "El desarrollo legislativo, el reglamentario, la función ejecutiva y el establecimiento de políticas propias.",
         "correcta": false
       },
       {
-        "texto": "Se autorizarán fuera de las horas de trabajo, salvo acuerdo.",
+        "texto": "La potestad legislativa, la potestad reglamentaria, la función ejecutiva y el establecimiento de políticas propias.",
         "correcta": true
       },
       {
-        "texto": "Se autorizarán fuera de las horas de trabajo.",
+        "texto": "Ninguna es correcta.",
         "correcta": false
       },
       {
-        "texto": 0,
         "correcta": false
       }
     ]
   },
   {
     "categoria": "juridico",
-    "tema": 1,
-    "descripcionTema": "Constitucion, Estatuto de Autonomia, Ley 39",
-    "texto": "De acuerdo con el artículo 60.1 del Real Decreto Legislativo 5/2015, la composición de los órganos de selección:",
+    "tema": 2,
+    "descripcionTema": "Estatuto de Autonomia",
+    "texto": "La materia referida a “Políticas de igualdad social…”, es una competencia de la Comunidad Autónoma de Aragón:",
     "respuestas": [
       {
-        "texto": "Se ajustará a la paridad.",
+        "texto": "Compartida.",
         "correcta": false
       },
       {
-        "texto": "Respetará en lo posible la paridad.",
-        "correcta": false
-      },
-      {
-        "texto": "Tenderá a la paridad.",
+        "texto": "Exclusiva.",
         "correcta": true
       },
       {
-        "texto": 0,
+        "texto": "Ejecutiva.",
+        "correcta": false
+      },
+      {
         "correcta": false
       }
     ]
   },
   {
     "categoria": "juridico",
-    "tema": 1,
-    "descripcionTema": "Constitucion, Estatuto de Autonomia, Ley 39",
-    "texto": "De acuerdo con el artículo 244 de la Ley 7/1999 de Aragón, ¿en cuántas subescalas se divide la escala de Administración General?",
+    "tema": 2,
+    "descripcionTema": "Estatuto de Autonomia",
+    "texto": "La materia referida a “Ordenación del crédito, banca, seguros…”, es una competencia de la Comunidad Autónoma de Aragón:",
     "respuestas": [
       {
-        "texto": "Dos.",
-        "correcta": false
-      },
-      {
-        "texto": "Cuatro.",
-        "correcta": false
-      },
-      {
-        "texto": "Cinco.",
+        "texto": "Compartida.",
         "correcta": true
       },
       {
-        "texto": 0,
+        "texto": "Exclusiva.",
+        "correcta": false
+      },
+      {
+        "texto": "Ejecutiva.",
+        "correcta": false
+      },
+      {
         "correcta": false
       }
     ]
   },
   {
     "categoria": "juridico",
-    "tema": 1,
-    "descripcionTema": "Constitucion, Estatuto de Autonomia, Ley 39",
-    "texto": "De acuerdo con el artículo 4.1 del Estatuto de Autonomía de Aragón gozan de la condición política de aragoneses:",
+    "tema": 2,
+    "descripcionTema": "Estatuto de Autonomia",
+    "texto": "La materia referida a “Mercados de valores y centros de contratación…”, es una competencia de la Comunidad Autónoma de Aragón:",
     "respuestas": [
       {
-        "texto": "Los ciudadanos con vecindad administrativa.",
-        "correcta": false
-      },
-      {
-        "texto": "Los ciudadanos españoles con vecindad administrativa.",
+        "texto": "Compartida.",
         "correcta": true
       },
       {
-        "texto": "Los españoles o extranjeros con vecindad administrativa.",
+        "texto": "Exclusiva.",
         "correcta": false
       },
       {
-        "texto": 0,
+        "texto": "Ejecutiva.",
+        "correcta": false
+      },
+      {
         "correcta": false
       }
     ]
   },
   {
     "categoria": "juridico",
-    "tema": 1,
-    "descripcionTema": "Constitucion, Estatuto de Autonomia, Ley 39",
-    "texto": "De acuerdo con el artículo 88.6 de la Ley 39/2015, la aceptación de informes o dictámenes:",
+    "tema": 2,
+    "descripcionTema": "Estatuto de Autonomia",
+    "texto": "La regulación de la protección y defensa de los consumidores y usuarios es competencia:",
     "respuestas": [
       {
-        "texto": "No servirá de motivación.",
-        "correcta": false
-      },
-      {
-        "texto": "Servirá de motivación cuando se incorporen.",
+        "texto": "Exclusiva de la CCAA de Aragón.",
         "correcta": true
       },
       {
-        "texto": "Servirá en todo caso de motivación.",
+        "texto": "Exclusiva del Estado.",
         "correcta": false
       },
       {
-        "texto": 0,
+        "texto": "Compartida.",
+        "correcta": false
+      },
+      {
         "correcta": false
       }
     ]
   },
   {
     "categoria": "juridico",
-    "tema": 1,
-    "descripcionTema": "Constitucion, Estatuto de Autonomia, Ley 39",
-    "texto": "De acuerdo con el artículo 88.2 de la Ley 39/2015, en procedimientos a solicitud del interesado:",
+    "tema": 2,
+    "descripcionTema": "Estatuto de Autonomia",
+    "texto": "La materia referida a “Colaboración con el Estado en la gestión del catastro”, es una competencia de la Comunidad Autónoma de Aragón:",
     "respuestas": [
       {
-        "texto": "La resolución puede agravar su situación.",
+        "texto": "Compartida.",
         "correcta": false
       },
       {
-        "texto": "No puede agravar su situación sin iniciar nuevo procedimiento.",
+        "texto": "Exclusiva.",
+        "correcta": false
+      },
+      {
+        "texto": "Ejecutiva.",
         "correcta": true
       },
       {
-        "texto": "No puede agravar su situación.",
-        "correcta": false
-      },
-      {
-        "texto": 0,
         "correcta": false
       }
     ]
   },
   {
     "categoria": "juridico",
-    "tema": 1,
-    "descripcionTema": "Constitucion, Estatuto de Autonomia, Ley 39",
-    "texto": "De acuerdo con el artículo 48 bis del Real Decreto Legislativo 2/2004:",
+    "tema": 2,
+    "descripcionTema": "Estatuto de Autonomia",
+    "texto": "Cuando la Comunidad Autónoma de Aragón ejerce el desarrollo legislativo y la ejecución de la legislación básica del Estado, nos referimos a competencias:",
     "respuestas": [
       {
-        "texto": "Todas las operaciones están sujetas al principio de prudencia financiera.",
-        "correcta": false
-      },
-      {
-        "texto": "Las Corporaciones Locales velarán por la prudencia financiera.",
-        "correcta": false
-      },
-      {
-        "texto": "Las respuestas a) y b) son correctas.",
+        "texto": "Compartidas.",
         "correcta": true
       },
       {
-        "texto": 0,
+        "texto": "Ejecutivas.",
+        "correcta": false
+      },
+      {
+        "texto": "Exclusivas.",
+        "correcta": false
+      },
+      {
         "correcta": false
       }
     ]
   },
   {
     "categoria": "juridico",
-    "tema": 1,
-    "descripcionTema": "Constitucion, Estatuto de Autonomia, Ley 39",
-    "texto": "De acuerdo con el artículo 107.1 del Real Decreto Legislativo 2/2004, el periodo máximo del incremento de valor es de:",
+    "tema": 2,
+    "descripcionTema": "Estatuto de Autonomia",
+    "texto": "Respecto del sistema penitenciario, corresponde a la Comunidad Autónoma de Aragón:",
     "respuestas": [
       {
-        "texto": "Quince años.",
-        "correcta": false
-      },
-      {
-        "texto": "Veinte años.",
+        "texto": "Competencia ejecutiva.",
         "correcta": true
       },
       {
-        "texto": "Veinticinco años.",
+        "texto": "Exclusiva.",
         "correcta": false
       },
       {
-        "texto": 0,
+        "texto": "Ninguna es correcta.",
+        "correcta": false
+      },
+      {
         "correcta": false
       }
     ]
   },
   {
     "categoria": "juridico",
-    "tema": 1,
-    "descripcionTema": "Constitucion, Estatuto de Autonomia, Ley 39",
-    "texto": "De acuerdo con el artículo 17.1 de la Ley 7/1985, la formación y custodia del padrón corresponde:",
+    "tema": 2,
+    "descripcionTema": "Estatuto de Autonomia",
+    "texto": "Corresponde a la Comunidad Autónoma la competencia compartida en la siguiente materia:",
     "respuestas": [
       {
-        "texto": "Al Estado.",
-        "correcta": false
-      },
-      {
-        "texto": "Al Ayuntamiento según legislación estatal.",
+        "texto": "El desarrollo de las bases del Estado previstas en el artículo 149.1.18º de la Constitución.",
         "correcta": true
       },
       {
-        "texto": "Al Ayuntamiento.",
+        "texto": "Colaboración con el Estado en la gestión del catastro.",
         "correcta": false
       },
       {
-        "texto": 0,
+        "texto": "Sistema penitenciario.",
+        "correcta": false
+      },
+      {
         "correcta": false
       }
     ]
   },
   {
     "categoria": "juridico",
-    "tema": 1,
-    "descripcionTema": "Constitucion, Estatuto de Autonomia, Ley 39",
-    "texto": "De acuerdo con el artículo 171 del Real Decreto Legislativo 2/2004, ¿Debe informar el Tribunal de Cuentas?",
+    "tema": 2,
+    "descripcionTema": "Estatuto de Autonomia",
+    "texto": "La materia referida a “Cooperación para el desarrollo…”, es una competencia de la Comunidad Autónoma de Aragón:",
     "respuestas": [
       {
-        "texto": "Sólo en casos de nivelación.",
+        "texto": "Compartida.",
+        "correcta": false
+      },
+      {
+        "texto": "Exclusiva.",
         "correcta": true
       },
       {
-        "texto": "No.",
+        "texto": "Ejecutiva.",
         "correcta": false
       },
       {
-        "texto": "Sí.",
-        "correcta": false
-      },
-      {
-        "texto": 0,
         "correcta": false
       }
     ]
   },
   {
     "categoria": "juridico",
-    "tema": 1,
-    "descripcionTema": "Constitucion, Estatuto de Autonomia, Ley 39",
-    "texto": "El Plan de Igualdad del Ayuntamiento de Zaragoza prevé diagnóstico:",
+    "tema": 2,
+    "descripcionTema": "Estatuto de Autonomia",
+    "texto": "El establecimiento y regulación del Tribunal Aragonés de Defensa de la Competencia es una competencia de la Comunidad Autónoma de Aragón:",
     "respuestas": [
       {
-        "texto": "Cada año.",
+        "texto": "Compartida.",
         "correcta": false
       },
       {
-        "texto": "El último año.",
+        "texto": "Exclusiva.",
         "correcta": true
       },
       {
-        "texto": "Cuando lo acuerde la Comisión.",
+        "texto": "Ejecutiva.",
         "correcta": false
       },
       {
-        "texto": 0,
         "correcta": false
       }
     ]
   },
   {
     "categoria": "juridico",
-    "tema": 1,
-    "descripcionTema": "Constitucion, Estatuto de Autonomia, Ley 39",
-    "texto": "De acuerdo con el artículo 3.1 de la Ley 40/2015, las Administraciones sirven con objetividad:",
+    "tema": 2,
+    "descripcionTema": "Estatuto de Autonomia",
+    "texto": "La materia referida a “Publicidad, que, en todo caso, incluye la regulación de la actividad publicitaria conforme a los principios de objetividad y veracidad”, es una competencia de la Comunidad Autónoma de Aragón:",
     "respuestas": [
       {
-        "texto": "A la Ley y al Derecho.",
+        "texto": "Compartida.",
         "correcta": false
       },
       {
-        "texto": "A la Constitución y a la Ley.",
+        "texto": "Ejecutiva.",
         "correcta": false
       },
       {
-        "texto": "A la Constitución, a la Ley y al Derecho.",
+        "texto": "Exclusiva.",
         "correcta": true
       },
       {
-        "texto": 0,
         "correcta": false
       }
     ]
   },
   {
     "categoria": "juridico",
-    "tema": 1,
-    "descripcionTema": "Constitucion, Estatuto de Autonomia, Ley 39",
-    "texto": "De acuerdo con el artículo 39.3 del EBEP, las Juntas de Personal requieren un censo mínimo de:",
+    "tema": 2,
+    "descripcionTema": "Estatuto de Autonomia",
+    "texto": "La materia referida a “Industria, salvo las competencias del Estado por razones de seguridad, sanitarias o de interés de la Defensa”, es una competencia de la Comunidad Autónoma de Aragón:",
     "respuestas": [
       {
-        "texto": "25 funcionarios.",
+        "texto": "Compartida.",
         "correcta": false
       },
       {
-        "texto": "50 funcionarios.",
+        "texto": "Ejecutiva.",
+        "correcta": false
+      },
+      {
+        "texto": "Exclusiva.",
         "correcta": true
       },
       {
-        "texto": "100 funcionarios.",
-        "correcta": false
-      },
-      {
-        "texto": 0,
         "correcta": false
       }
     ]
   },
   {
     "categoria": "juridico",
-    "tema": 1,
-    "descripcionTema": "Constitucion, Estatuto de Autonomia, Ley 39",
-    "texto": "De acuerdo con el artículo 1.3 del Estatuto de Autonomía de Aragón, identidad propia en virtud de:",
+    "tema": 2,
+    "descripcionTema": "Estatuto de Autonomia",
+    "texto": "La defensa del patrimonio cultural, artístico y monumental español contra la exportación y la expoliación se trata de:",
     "respuestas": [
       {
-        "texto": "Su patrimonio cultural.",
+        "texto": "Competencias que pueden ser asumidas por las Comunidades Autónomas.",
         "correcta": false
       },
       {
-        "texto": "Su lengua.",
+        "texto": "La Constitución no establece nada al respecto.",
         "correcta": false
       },
       {
-        "texto": "Su cultura.",
+        "texto": "Competencia exclusiva del Estado.",
         "correcta": true
       },
       {
-        "texto": 0,
         "correcta": false
       }
     ]
   },
   {
     "categoria": "juridico",
-    "tema": 1,
-    "descripcionTema": "Constitucion, Estatuto de Autonomia, Ley 39",
-    "texto": "El Título IV de la Constitución española tiene como epígrafe:",
+    "tema": 2,
+    "descripcionTema": "Estatuto de Autonomia",
+    "texto": "La materia referida a “Colegios profesionales y ejercicio de profesiones tituladas”, es una competencia de la Comunidad Autónoma de Aragón:",
     "respuestas": [
       {
-        "texto": "De la Administración.",
-        "correcta": false
-      },
-      {
-        "texto": "Del Gobierno y de la Administración.",
+        "texto": "Exclusiva.",
         "correcta": true
       },
       {
-        "texto": "De las Administraciones Públicas.",
+        "texto": "Compartida.",
         "correcta": false
       },
       {
-        "texto": 0,
+        "texto": "Ejecutiva.",
+        "correcta": false
+      },
+      {
+        "correcta": false
+      }
+    ]
+  },
+  {
+    "categoria": "juridico",
+    "tema": 2,
+    "descripcionTema": "Estatuto de Autonomia",
+    "texto": "El vigente Estatuto de Autonomía de Aragón aprobado por Ley Orgánica 5/2007 nos habla de tres tipos de competencias:",
+    "respuestas": [
+      {
+        "texto": "Competencias exclusivas, compartidas y generales.",
+        "correcta": false
+      },
+      {
+        "texto": "Competencias exclusivas, compartidas y ejecutivas.",
+        "correcta": true
+      },
+      {
+        "texto": "Competencias exclusivas, compartidas, generales y ejecutivas.",
+        "correcta": false
+      },
+      {
+        "texto": "Competencias exclusivas, ejecutivas y generales.",
+        "correcta": false
+      }
+    ]
+  },
+  {
+    "categoria": "juridico",
+    "tema": 2,
+    "descripcionTema": "Estatuto de Autonomia",
+    "texto": "Según el artículo 74 del Estatuto de Autonomía de Aragón, la competencia en medios de comunicación social y servicios de contenido audiovisual es:",
+    "respuestas": [
+      {
+        "texto": "Una competencia exclusiva.",
+        "correcta": false
+      },
+      {
+        "texto": "Una competencia compartida.",
+        "correcta": true
+      },
+      {
+        "texto": "Una competencia concurrente.",
+        "correcta": false
+      },
+      {
+        "texto": "Una competencia concurrente y además ejecutiva.",
+        "correcta": false
+      }
+    ]
+  },
+  {
+    "categoria": "juridico",
+    "tema": 2,
+    "descripcionTema": "Estatuto de Autonomia",
+    "texto": "Señala la falsa. Es competencia exclusiva de la Comunidad Autónoma de Aragón:",
+    "respuestas": [
+      {
+        "texto": "El control metrológico y el contraste de metales.",
+        "correcta": true
+      },
+      {
+        "texto": "La organización territorial propia de la Comunidad Autónoma.",
+        "correcta": false
+      },
+      {
+        "texto": "Vivienda, que incluye planificación, ordenación, gestión y control.",
+        "correcta": false
+      },
+      {
+        "correcta": false
+      }
+    ]
+  },
+  {
+    "categoria": "juridico",
+    "tema": 2,
+    "descripcionTema": "Estatuto de Autonomia",
+    "texto": "Sanidad y salud pública, en especial la organización y control de centros sanitarios, es para Aragón una competencia:",
+    "respuestas": [
+      {
+        "texto": "Exclusiva.",
+        "correcta": true
+      },
+      {
+        "texto": "Compartida.",
+        "correcta": false
+      },
+      {
+        "texto": "Ejecutiva.",
+        "correcta": false
+      },
+      {
+        "correcta": false
+      }
+    ]
+  },
+  {
+    "categoria": "juridico",
+    "tema": 2,
+    "descripcionTema": "Estatuto de Autonomia",
+    "texto": "En enseñanza en toda su extensión, niveles y grados, tiene la Comunidad Autónoma de Aragón:",
+    "respuestas": [
+      {
+        "texto": "Competencia exclusiva.",
+        "correcta": false
+      },
+      {
+        "texto": "Competencia compartida.",
+        "correcta": true
+      },
+      {
+        "texto": "Competencia ejecutiva.",
+        "correcta": false
+      },
+      {
+        "correcta": false
+      }
+    ]
+  },
+  {
+    "categoria": "juridico",
+    "tema": 2,
+    "descripcionTema": "Estatuto de Autonomia",
+    "texto": "¿Qué título del Estatuto de Autonomía de Aragón no está subdividido en cuatro capítulos?:",
+    "respuestas": [
+      {
+        "texto": "Economía y Hacienda.",
+        "correcta": false
+      },
+      {
+        "texto": "Cooperación Institucional y Acción Exterior.",
+        "correcta": false
+      },
+      {
+        "texto": "Competencias de la Comunidad Autónoma.",
+        "correcta": true
+      },
+      {
+        "correcta": false
+      }
+    ]
+  },
+  {
+    "categoria": "juridico",
+    "tema": 2,
+    "descripcionTema": "Estatuto de Autonomia",
+    "texto": "El control de la actividad de los órganos de las Comunidades Autónomas se ejercerá por (NO correcta):",
+    "respuestas": [
+      {
+        "texto": "Por el Tribunal de Cuentas.",
+        "correcta": false
+      },
+      {
+        "texto": "Por el Gobierno, previo dictamen del Consejo de Estado.",
+        "correcta": false
+      },
+      {
+        "texto": "Por el Consejo General del Poder Judicial.",
+        "correcta": true
+      },
+      {
+        "correcta": false
+      }
+    ]
+  },
+  {
+    "categoria": "juridico",
+    "tema": 2,
+    "descripcionTema": "Estatuto de Autonomia",
+    "texto": "La apreciación de la necesidad de armonizar las normas dictadas por las CCAA corresponde:",
+    "respuestas": [
+      {
+        "texto": "Al Tribunal Constitucional.",
+        "correcta": false
+      },
+      {
+        "texto": "Al Congreso de los Diputados, por mayoría absoluta.",
+        "correcta": false
+      },
+      {
+        "texto": "Al Congreso y al Senado, por mayoría absoluta.",
+        "correcta": true
+      },
+      {
+        "correcta": false
+      }
+    ]
+  },
+  {
+    "categoria": "juridico",
+    "tema": 2,
+    "descripcionTema": "Estatuto de Autonomia",
+    "texto": "La organización territorial propia de la Comunidad Autónoma de Aragón, es competencia:",
+    "respuestas": [
+      {
+        "texto": "Del Estado.",
+        "correcta": false
+      },
+      {
+        "texto": "Exclusiva de la CCAA de Aragón.",
+        "correcta": true
+      },
+      {
+        "texto": "Compartida.",
+        "correcta": false
+      },
+      {
+        "correcta": false
+      }
+    ]
+  },
+  {
+    "categoria": "juridico",
+    "tema": 2,
+    "descripcionTema": "Estatuto de Autonomia",
+    "texto": "En el Estatuto de Autonomía de Aragón se establece:",
+    "respuestas": [
+      {
+        "texto": "Competencia compartida en enseñanza.",
+        "correcta": false
+      },
+      {
+        "texto": "Regulación de medios de comunicación propios.",
+        "correcta": false
+      },
+      {
+        "texto": "A y B son correctas.",
+        "correcta": true
+      },
+      {
+        "correcta": false
+      }
+    ]
+  },
+  {
+    "categoria": "juridico",
+    "tema": 2,
+    "descripcionTema": "Estatuto de Autonomia",
+    "texto": "Cuando la CCAA ejerce el desarrollo legislativo y la ejecución de la legislación básica del Estado hablamos de competencias:",
+    "respuestas": [
+      {
+        "texto": "Compartidas.",
+        "correcta": true
+      },
+      {
+        "texto": "Ejecutivas.",
+        "correcta": false
+      },
+      {
+        "texto": "Exclusivas.",
+        "correcta": false
+      },
+      {
+        "correcta": false
+      }
+    ]
+  },
+  {
+    "categoria": "juridico",
+    "tema": 2,
+    "descripcionTema": "Estatuto de Autonomia",
+    "texto": "La promoción del turismo se trata de una competencia:",
+    "respuestas": [
+      {
+        "texto": "Que puede ser asumida por las Comunidades Autónomas.",
+        "correcta": true
+      },
+      {
+        "texto": "Exclusiva del Estado.",
+        "correcta": false
+      },
+      {
+        "texto": "La Constitución no habla del turismo.",
+        "correcta": false
+      },
+      {
+        "correcta": false
+      }
+    ]
+  },
+  {
+    "categoria": "juridico",
+    "tema": 2,
+    "descripcionTema": "Estatuto de Autonomia",
+    "texto": "Es competencia exclusiva de Aragón:",
+    "respuestas": [
+      {
+        "texto": "El desarrollo de las bases del Estado para las Administraciones Públicas aragonesas.",
+        "correcta": false
+      },
+      {
+        "texto": "Régimen estatutario de los funcionarios de la Comunidad Autónoma.",
+        "correcta": false
+      },
+      {
+        "texto": "A y B no son exclusivas de Aragón.",
+        "correcta": true
+      },
+      {
+        "correcta": false
+      }
+    ]
+  },
+  {
+    "categoria": "juridico",
+    "tema": 2,
+    "descripcionTema": "Estatuto de Autonomia",
+    "texto": "En el EAA la gestión de la asistencia sanitaria de la Seguridad Social es competencia:",
+    "respuestas": [
+      {
+        "texto": "Exclusiva.",
+        "correcta": false
+      },
+      {
+        "texto": "Compartida.",
+        "correcta": false
+      },
+      {
+        "texto": "Ejecutiva.",
+        "correcta": true
+      },
+      {
+        "correcta": false
+      }
+    ]
+  },
+  {
+    "categoria": "juridico",
+    "tema": 2,
+    "descripcionTema": "Estatuto de Autonomia",
+    "texto": "En el EAA la propiedad intelectual e industrial y el control metrológico se regula como competencia:",
+    "respuestas": [
+      {
+        "texto": "Exclusiva.",
+        "correcta": false
+      },
+      {
+        "texto": "Compartida.",
+        "correcta": false
+      },
+      {
+        "texto": "Ejecutiva.",
+        "correcta": true
+      },
+      {
+        "correcta": false
+      }
+    ]
+  },
+  {
+    "categoria": "juridico",
+    "tema": 2,
+    "descripcionTema": "Estatuto de Autonomia",
+    "texto": "Las normas dictadas por el Estado:",
+    "respuestas": [
+      {
+        "texto": "Prevalecerán sobre las de las CCAA en lo no atribuido a competencia exclusiva.",
+        "correcta": true
+      },
+      {
+        "texto": "Prevalecerán en todo caso.",
+        "correcta": false
+      },
+      {
+        "texto": "Prevalecerán cuando así se disponga en Estatutos y Leyes Orgánicas.",
+        "correcta": false
+      },
+      {
+        "correcta": false
+      }
+    ]
+  },
+  {
+    "categoria": "juridico",
+    "tema": 3,
+    "descripcionTema": "Ley 39",
+    "texto": "Los procedimientos sancionador y de reclamación de responsabilidad tras la Ley 39/2015 (art. 1.1):",
+    "respuestas": [
+      {
+        "texto": "Siguen regulándose por los Reales Decretos 1398/1993 y 429/1993.",
+        "correcta": false
+      },
+      {
+        "texto": "Han quedado incluidos dentro del Procedimiento Administrativo Común.",
+        "correcta": true
+      },
+      {
+        "texto": "Se remiten a una posterior regulación legal.",
+        "correcta": false
+      },
+      {
+        "correcta": false
+      }
+    ]
+  },
+  {
+    "categoria": "juridico",
+    "tema": 3,
+    "descripcionTema": "Ley 39",
+    "texto": "La Ley 39/2015 (art. 1.2) reserva al legislador:",
+    "respuestas": [
+      {
+        "texto": "La inclusión de trámites administrativos adicionales o distintos.",
+        "correcta": true
+      },
+      {
+        "texto": "La posibilidad de establecer especialidades del procedimiento referidas a los órganos competentes.",
+        "correcta": false
+      },
+      {
+        "texto": "La posibilidad de determinar los plazos propios del procedimiento por razón de la materia.",
+        "correcta": false
+      },
+      {
+        "correcta": false
+      }
+    ]
+  },
+  {
+    "categoria": "juridico",
+    "tema": 3,
+    "descripcionTema": "Ley 39",
+    "texto": "Según el artículo 3.c) de la Ley 39/2015 tienen capacidad de obrar ante las Administraciones Públicas:",
+    "respuestas": [
+      {
+        "texto": "Los grupos de afectados y entidades sin personalidad jurídica, en todo caso.",
+        "correcta": false
+      },
+      {
+        "texto": "Los grupos de afectados cuando un reglamento lo declare expresamente.",
+        "correcta": false
+      },
+      {
+        "texto": "Los grupos de afectados cuando la Ley así lo declare expresamente.",
+        "correcta": true
+      },
+      {
+        "correcta": false
+      }
+    ]
+  },
+  {
+    "categoria": "juridico",
+    "tema": 3,
+    "descripcionTema": "Ley 39",
+    "texto": "Según el artículo 5.2 de la Ley 39/2015 podrán actuar en representación de otras personas:",
+    "respuestas": [
+      {
+        "texto": "No, solo las personas físicas con capacidad de obrar.",
+        "correcta": false
+      },
+      {
+        "texto": "No, ya que han de pertenecer a un colegio profesional.",
+        "correcta": false
+      },
+      {
+        "texto": "La afirmación es correcta.",
+        "correcta": true
+      },
+      {
+        "correcta": false
+      }
+    ]
+  },
+  {
+    "categoria": "juridico",
+    "tema": 3,
+    "descripcionTema": "Ley 39",
+    "texto": "Según el artículo 5.3 de la Ley 39/2015 deberá acreditarse la representación:",
+    "respuestas": [
+      {
+        "texto": "Para solicitudes, recursos y actos de mero trámite.",
+        "correcta": false
+      },
+      {
+        "texto": "Solo para solicitudes, recursos y renuncias a derechos.",
+        "correcta": false
+      },
+      {
+        "texto": "Para solicitudes, declaraciones, recursos, desistir de acciones y renunciar a derechos.",
+        "correcta": true
+      },
+      {
+        "correcta": false
+      }
+    ]
+  },
+  {
+    "categoria": "juridico",
+    "tema": 3,
+    "descripcionTema": "Ley 39",
+    "texto": "Según el artículo 6.1 de la Ley 39/2015, en el registro electrónico general de apoderamientos deberán inscribirse:",
+    "respuestas": [
+      {
+        "texto": "Los poderes generales otorgados electrónicamente.",
+        "correcta": false
+      },
+      {
+        "texto": "Los poderes generales otorgados apud acta presencial o electrónicamente.",
+        "correcta": true
+      },
+      {
+        "texto": "Los poderes generales otorgados solo presencialmente.",
+        "correcta": false
+      },
+      {
+        "correcta": false
+      }
+    ]
+  },
+  {
+    "categoria": "juridico",
+    "tema": 3,
+    "descripcionTema": "Ley 39",
+    "texto": "La Ley 39/2015 del procedimiento administrativo común tiene por objeto:",
+    "respuestas": [
+      {
+        "texto": "Regular los requisitos de validez y eficacia de los actos administrativos.",
+        "correcta": false
+      },
+      {
+        "texto": "Regular los principios de la iniciativa legislativa y la potestad reglamentaria.",
+        "correcta": false
+      },
+      {
+        "texto": "A y B son objeto de la ley.",
+        "correcta": true
+      },
+      {
+        "texto": "Ninguna es correcta.",
+        "correcta": false
+      }
+    ]
+  },
+  {
+    "categoria": "juridico",
+    "tema": 3,
+    "descripcionTema": "Ley 39",
+    "texto": "La Ley 39/2015 de 1 de octubre es aplicable:",
+    "respuestas": [
+      {
+        "texto": "A la Administración del Estado, CCAA y Entes Locales, pero no a sus entidades instrumentales.",
+        "correcta": false
+      },
+      {
+        "texto": "A la Administración del Estado, CCAA, Entes Locales y sector público institucional.",
+        "correcta": true
+      },
+      {
+        "texto": "Únicamente a la Administración del Estado.",
+        "correcta": false
+      },
+      {
+        "texto": "A la Administración del Estado y supletoriamente a CCAA y Entes Locales.",
+        "correcta": false
+      }
+    ]
+  },
+  {
+    "categoria": "juridico",
+    "tema": 3,
+    "descripcionTema": "Ley 39",
+    "texto": "Están incluidos en el sector público institucional conforme a la Ley 39/2015:",
+    "respuestas": [
+      {
+        "texto": "Organismos públicos y entidades de derecho público.",
+        "correcta": false
+      },
+      {
+        "texto": "Entidades de derecho privado dependientes.",
+        "correcta": false
+      },
+      {
+        "texto": "Universidades Públicas.",
+        "correcta": false
+      },
+      {
+        "texto": "Todas las anteriores.",
+        "correcta": true
+      }
+    ]
+  },
+  {
+    "categoria": "juridico",
+    "tema": 3,
+    "descripcionTema": "Ley 39",
+    "texto": "El poder organizativo de la Administración Pública:",
+    "respuestas": [
+      {
+        "texto": "Existe en el marco de los registros administrativos.",
+        "correcta": false
+      },
+      {
+        "texto": "Es la facultad de autoorganización conforme a la Constitución y las leyes.",
+        "correcta": true
+      },
+      {
+        "texto": "Se aplica solo en recursos administrativos.",
+        "correcta": false
+      },
+      {
+        "texto": "Se aplica en la contratación del sector público.",
+        "correcta": false
+      }
+    ]
+  },
+  {
+    "categoria": "juridico",
+    "tema": 3,
+    "descripcionTema": "Ley 39",
+    "texto": "La Ley 39/2015 tiene un total de:",
+    "respuestas": [
+      {
+        "texto": "133 capítulos.",
+        "correcta": false
+      },
+      {
+        "texto": "Siete títulos.",
+        "correcta": true
+      },
+      {
+        "texto": "A y B son correctas.",
+        "correcta": false
+      },
+      {
+        "texto": "Ninguna es correcta.",
+        "correcta": false
+      }
+    ]
+  },
+  {
+    "categoria": "juridico",
+    "tema": 3,
+    "descripcionTema": "Ley 39",
+    "texto": "El silencio administrativo:",
+    "respuestas": [
+      {
+        "texto": "Es indistintamente positivo y negativo.",
+        "correcta": false
+      },
+      {
+        "texto": "Solo es positivo en los casos no previstos.",
+        "correcta": false
+      },
+      {
+        "texto": "Solo es negativo en los casos no previstos.",
+        "correcta": false
+      },
+      {
+        "texto": "Es una garantía de los administrados.",
+        "correcta": true
+      }
+    ]
+  },
+  {
+    "categoria": "juridico",
+    "tema": 3,
+    "descripcionTema": "Ley 39",
+    "texto": "El silencio administrativo positivo significa:",
+    "respuestas": [
+      {
+        "texto": "Que el administrado puede acudir a los Tribunales.",
+        "correcta": false
+      },
+      {
+        "texto": "Que la solicitud se entiende aceptada.",
+        "correcta": true
+      },
+      {
+        "texto": "Que se sigue el criterio de una resolución anterior.",
+        "correcta": false
+      },
+      {
+        "texto": "Que cabe interponer recurso administrativo.",
+        "correcta": false
+      }
+    ]
+  },
+  {
+    "categoria": "juridico",
+    "tema": 3,
+    "descripcionTema": "Ley 39",
+    "texto": "La Ley 39/2015 de 1 de octubre tiene por objeto:",
+    "respuestas": [
+      {
+        "texto": "Regular los requisitos de validez y eficacia de los actos administrativos y el procedimiento administrativo común.",
+        "correcta": true
+      },
+      {
+        "texto": "Regular los principios de la iniciativa reglamentaria.",
+        "correcta": false
+      },
+      {
+        "texto": "A y B son objeto de la ley.",
+        "correcta": false
+      },
+      {
+        "correcta": false
+      }
+    ]
+  },
+  {
+    "categoria": "juridico",
+    "tema": 3,
+    "descripcionTema": "Ley 39",
+    "texto": "Están incluidos en el sector público institucional conforme a la Ley 39/2015:",
+    "respuestas": [
+      {
+        "texto": "Organismos públicos y entidades de derecho público vinculados o dependientes.",
+        "correcta": true
+      },
+      {
+        "texto": "Entidades de derecho privado no vinculadas o independientes.",
+        "correcta": false
+      },
+      {
+        "texto": "Todas las anteriores.",
+        "correcta": false
+      },
+      {
+        "correcta": false
+      }
+    ]
+  },
+  {
+    "categoria": "juridico",
+    "tema": 3,
+    "descripcionTema": "Ley 39",
+    "texto": "La Ley 39/2015 hace referencia a la actividad de las Administraciones Públicas:",
+    "respuestas": [
+      {
+        "texto": "En el Título I, capítulo I.",
+        "correcta": false
+      },
+      {
+        "texto": "En el Título preliminar.",
+        "correcta": false
+      },
+      {
+        "texto": "En el Título II.",
+        "correcta": true
+      },
+      {
+        "correcta": false
+      }
+    ]
+  },
+  {
+    "categoria": "juridico",
+    "tema": 3,
+    "descripcionTema": "Ley 39",
+    "texto": "La Ley 39/2015 hace referencia a los interesados en el procedimiento:",
+    "respuestas": [
+      {
+        "texto": "Título III.",
+        "correcta": false
+      },
+      {
+        "texto": "Título I.",
+        "correcta": true
+      },
+      {
+        "texto": "Título preliminar.",
+        "correcta": false
+      },
+      {
+        "correcta": false
+      }
+    ]
+  },
+  {
+    "categoria": "juridico",
+    "tema": 3,
+    "descripcionTema": "Ley 39",
+    "texto": "Según el artículo 16.6 LPAC podrán hacerse efectivos mediante transferencia:",
+    "respuestas": [
+      {
+        "texto": "Cualesquiera cantidades a satisfacer al presentar documentos.",
+        "correcta": true
+      },
+      {
+        "texto": "Cantidades tributarias a satisfacer al presentar documentos.",
+        "correcta": false
+      },
+      {
+        "texto": "Cantidades tributarias a satisfacer con posterioridad.",
+        "correcta": false
+      },
+      {
+        "correcta": false
+      }
+    ]
+  },
+  {
+    "categoria": "juridico",
+    "tema": 3,
+    "descripcionTema": "Ley 39",
+    "texto": "Conforme a la Ley 39/2015 los procedimientos sancionadores:",
+    "respuestas": [
+      {
+        "texto": "Se iniciarán siempre de oficio.",
+        "correcta": true
+      },
+      {
+        "texto": "Pueden iniciarse de oficio o a solicitud del interesado.",
+        "correcta": false
+      },
+      {
+        "texto": "Se inician por denuncia.",
+        "correcta": false
+      },
+      {
+        "texto": "Se iniciarán conforme al procedimiento sancionador establecido.",
+        "correcta": false
+      }
+    ]
+  },
+  {
+    "categoria": "juridico",
+    "tema": 3,
+    "descripcionTema": "Ley 39",
+    "texto": "Según el artículo 6.6 LPAC los poderes inscritos tendrán validez:",
+    "respuestas": [
+      {
+        "texto": "Mínima de cinco años.",
+        "correcta": false
+      },
+      {
+        "texto": "Máxima de cinco años.",
+        "correcta": true
+      },
+      {
+        "texto": "Máxima de cinco años desde su utilización.",
+        "correcta": false
+      },
+      {
+        "correcta": false
+      }
+    ]
+  },
+  {
+    "categoria": "juridico",
+    "tema": 3,
+    "descripcionTema": "Ley 39",
+    "texto": "Según el artículo 9.2 LPAC los interesados podrán identificarse electrónicamente:",
+    "respuestas": [
+      {
+        "texto": "Exclusivamente mediante DNI electrónico.",
+        "correcta": false
+      },
+      {
+        "texto": "Mediante DNI electrónico o documento equivalente.",
+        "correcta": false
+      },
+      {
+        "texto": "Mediante cualquier sistema con registro previo que garantice su identidad.",
+        "correcta": true
+      },
+      {
+        "correcta": false
+      }
+    ]
+  },
+  {
+    "categoria": "juridico",
+    "tema": 3,
+    "descripcionTema": "Ley 39",
+    "texto": "Según el artículo 11.2 LPAC se requerirá firma para:",
+    "respuestas": [
+      {
+        "texto": "Formular solicitudes y renunciar a derechos.",
+        "correcta": false
+      },
+      {
+        "texto": "Formular solicitudes, declaraciones, recursos, desistir y renunciar.",
+        "correcta": true
+      },
+      {
+        "texto": "Formular solicitudes, declaraciones y desistir.",
+        "correcta": false
+      },
+      {
+        "correcta": false
+      }
+    ]
+  },
+  {
+    "categoria": "juridico",
+    "tema": 3,
+    "descripcionTema": "Ley 39",
+    "texto": "Según el artículo 14.1 LPAC las personas físicas pueden elegir medios electrónicos:",
+    "respuestas": [
+      {
+        "texto": "Sí, salvo que estén obligadas a relacionarse electrónicamente.",
+        "correcta": true
+      },
+      {
+        "texto": "No, siempre será lo que determine la Administración.",
+        "correcta": false
+      },
+      {
+        "texto": "Ninguna es correcta.",
+        "correcta": false
+      },
+      {
+        "correcta": false
+      }
+    ]
+  },
+  {
+    "categoria": "juridico",
+    "tema": 3,
+    "descripcionTema": "Ley 39",
+    "texto": "Según el artículo 16.2 LPAC los documentos serán cursados:",
+    "respuestas": [
+      {
+        "texto": "Sin dilación a destinatarios y unidades correspondientes.",
+        "correcta": true
+      },
+      {
+        "texto": "En el plazo de 10 días.",
+        "correcta": false
+      },
+      {
+        "texto": "Sin dilación solo a unidades administrativas.",
+        "correcta": false
+      },
+      {
+        "correcta": false
+      }
+    ]
+  },
+  {
+    "categoria": "juridico",
+    "tema": 3,
+    "descripcionTema": "Ley 39",
+    "texto": "Según el artículo 16.2 LPAC la anotación en el registro se realizará respetando el orden temporal de:",
+    "respuestas": [
+      {
+        "texto": "Recepción o salida indicando la fecha del día.",
+        "correcta": true
+      },
+      {
+        "texto": "Recepción o salida indicando la fecha del día siguiente.",
+        "correcta": false
+      },
+      {
+        "texto": "Recepción indicando la fecha de efectos.",
+        "correcta": false
+      },
+      {
+        "correcta": false
+      }
+    ]
+  },
+  {
+    "categoria": "juridico",
+    "tema": 3,
+    "descripcionTema": "Ley 39",
+    "texto": "Según el artículo 16.4 LPAC no es correcto decir que los documentos pueden presentarse:",
+    "respuestas": [
+      {
+        "texto": "En oficinas de Correos.",
+        "correcta": true
+      },
+      {
+        "texto": "En representaciones diplomáticas u oficinas consulares.",
+        "correcta": false
+      },
+      {
+        "texto": "En oficinas de asistencia en materia de registros.",
+        "correcta": false
+      },
+      {
+        "correcta": false
+      }
+    ]
+  },
+  {
+    "categoria": "juridico",
+    "tema": 3,
+    "descripcionTema": "Ley 39",
+    "texto": "Según el artículo 16.4 LPAC los registros electrónicos deberán:",
+    "respuestas": [
+      {
+        "texto": "Ser interoperables salvo excepciones.",
+        "correcta": false
+      },
+      {
+        "texto": "Ser plenamente interoperables garantizando compatibilidad e interconexión.",
+        "correcta": true
+      },
+      {
+        "texto": "Ser interoperables sin transmisión telemática.",
+        "correcta": false
+      },
+      {
+        "correcta": false
+      }
+    ]
+  },
+  {
+    "categoria": "juridico",
+    "tema": 3,
+    "descripcionTema": "Ley 39",
+    "texto": "Según el artículo 16.5 LPAC cuando los ciudadanos presenten documentos presencialmente:",
+    "respuestas": [
+      {
+        "texto": "Solo se permitirán documentos originales.",
+        "correcta": false
+      },
+      {
+        "texto": "Deberán digitalizarse y devolverse siempre los originales.",
+        "correcta": false
+      },
+      {
+        "texto": "Deberán digitalizarse devolviendo originales salvo excepciones.",
+        "correcta": true
+      },
+      {
+        "correcta": false
+      }
+    ]
+  },
+  {
+    "categoria": "juridico",
+    "tema": 3,
+    "descripcionTema": "Ley 39",
+    "texto": "Según el artículo 16.6 LPAC podrán hacerse efectivos mediante transferencia dirigida a la oficina pública correspondiente:",
+    "respuestas": [
+      {
+        "texto": "Cualesquiera cantidades a satisfacer al presentar documentos.",
+        "correcta": true
+      },
+      {
+        "texto": "Cantidades tributarias a satisfacer al presentar documentos.",
+        "correcta": false
+      },
+      {
+        "texto": "Cantidades tributarias a satisfacer con posterioridad.",
+        "correcta": false
+      },
+      {
+        "correcta": false
+      }
+    ]
+  },
+  {
+    "categoria": "juridico",
+    "tema": 3,
+    "descripcionTema": "Ley 39",
+    "texto": "Según el artículo 18.2 LPAC los interesados que conozcan datos de otros interesados:",
+    "respuestas": [
+      {
+        "texto": "Tienen el derecho de proporcionarlos.",
+        "correcta": false
+      },
+      {
+        "texto": "Tienen el deber de proporcionarlos.",
+        "correcta": true
+      },
+      {
+        "texto": "No tienen derecho ni deber.",
+        "correcta": false
+      },
+      {
+        "correcta": false
+      }
+    ]
+  },
+  {
+    "categoria": "juridico",
+    "tema": 3,
+    "descripcionTema": "Ley 39",
+    "texto": "El artículo 19.1 LPAC dispone sobre la comparecencia ante oficinas públicas que:",
+    "respuestas": [
+      {
+        "texto": "Nunca será obligatoria.",
+        "correcta": false
+      },
+      {
+        "texto": "Será obligatoria por norma reglamentaria.",
+        "correcta": false
+      },
+      {
+        "texto": "Será obligatoria por norma con rango de ley.",
+        "correcta": true
+      },
+      {
+        "correcta": false
+      }
+    ]
+  },
+  {
+    "categoria": "juridico",
+    "tema": 3,
+    "descripcionTema": "Ley 39",
+    "texto": "Según el artículo 21.3 LPAC cuando no se fije plazo máximo para resolver será de:",
+    "respuestas": [
+      {
+        "texto": "Seis meses.",
+        "correcta": false
+      },
+      {
+        "texto": "Tres meses.",
+        "correcta": true
+      },
+      {
+        "texto": "Cuatro meses.",
+        "correcta": false
+      },
+      {
+        "correcta": false
+      }
+    ]
+  },
+  {
+    "categoria": "juridico",
+    "tema": 3,
+    "descripcionTema": "Ley 39",
+    "texto": "Según el artículo 26.1 LPAC los documentos administrativos se emitirán:",
+    "respuestas": [
+      {
+        "texto": "Por escrito en papel o medios electrónicos.",
+        "correcta": false
+      },
+      {
+        "texto": "Por escrito.",
+        "correcta": false
+      },
+      {
+        "texto": "Por escrito por medios electrónicos.",
+        "correcta": true
+      },
+      {
+        "correcta": false
+      }
+    ]
+  },
+  {
+    "categoria": "juridico",
+    "tema": 3,
+    "descripcionTema": "Ley 39",
+    "texto": "Según el artículo 26.3 LPAC los documentos electrónicos meramente informativos:",
+    "respuestas": [
+      {
+        "texto": "Requerirán firma electrónica.",
+        "correcta": false
+      },
+      {
+        "texto": "No requerirán firma electrónica.",
+        "correcta": true
+      },
+      {
+        "texto": "No formarán parte del expediente.",
+        "correcta": false
+      },
+      {
+        "correcta": false
+      }
+    ]
+  },
+  {
+    "categoria": "juridico",
+    "tema": 3,
+    "descripcionTema": "Ley 39",
+    "texto": "Según el artículo 27.4 LPAC las Administraciones estarán obligadas a expedir copias auténticas electrónicas:",
+    "respuestas": [
+      {
+        "texto": "Verdadero.",
+        "correcta": true
+      },
+      {
+        "texto": "Falso.",
+        "correcta": false
+      },
+      {
+        "texto": "Solo si el documento es electrónico.",
+        "correcta": false
+      },
+      {
+        "correcta": false
+      }
+    ]
+  },
+  {
+    "categoria": "juridico",
+    "tema": 3,
+    "descripcionTema": "Ley 39",
+    "texto": "Según el artículo 28.6 LPAC las copias aportadas por los interesados tendrán eficacia:",
+    "respuestas": [
+      {
+        "texto": "Ante terceros.",
+        "correcta": false
+      },
+      {
+        "texto": "Solo ante interesados.",
+        "correcta": false
+      },
+      {
+        "texto": "Exclusivamente ante las Administraciones Públicas.",
+        "correcta": true
+      },
+      {
+        "correcta": false
+      }
+    ]
+  },
+  {
+    "categoria": "juridico",
+    "tema": 3,
+    "descripcionTema": "Ley 39",
+    "texto": "Según el artículo 30.1 LPAC los plazos expresados por horas se computarán:",
+    "respuestas": [
+      {
+        "texto": "De hora en hora desde la notificación.",
+        "correcta": true
+      },
+      {
+        "texto": "Por horas siendo hábiles todas las horas.",
+        "correcta": false
+      },
+      {
+        "texto": "Por horas siendo hábiles solo horas de días hábiles.",
+        "correcta": false
+      },
+      {
+        "correcta": false
+      }
+    ]
+  },
+  {
+    "categoria": "juridico",
+    "tema": 3,
+    "descripcionTema": "Ley 39",
+    "texto": "Según el artículo 30.2 LPAC para el cómputo de plazos:",
+    "respuestas": [
+      {
+        "texto": "Los días son hábiles excluyendo sábados, domingos y festivos.",
+        "correcta": true
+      },
+      {
+        "texto": "Los días son hábiles excluyendo domingos y festivos.",
+        "correcta": false
+      },
+      {
+        "texto": "Se excluyen sábados, domingos, festivos y agosto.",
+        "correcta": false
+      },
+      {
+        "correcta": false
+      }
+    ]
+  },
+  {
+    "categoria": "juridico",
+    "tema": 3,
+    "descripcionTema": "Ley 39",
+    "texto": "Según el artículo 33.2 LPAC contra el acuerdo de tramitación de urgencia:",
+    "respuestas": [
+      {
+        "texto": "Cabrá recurso de reposición.",
+        "correcta": false
+      },
+      {
+        "texto": "Cabrá recurso de revisión.",
+        "correcta": false
+      },
+      {
+        "texto": "No cabrá recurso alguno.",
+        "correcta": true
+      },
+      {
+        "correcta": false
+      }
+    ]
+  },
+  {
+    "categoria": "juridico",
+    "tema": 3,
+    "descripcionTema": "Ley 39",
+    "texto": "Según el artículo 35 LPAC deben motivarse:",
+    "respuestas": [
+      {
+        "texto": "Resoluciones de revisión de oficio.",
+        "correcta": true
+      },
+      {
+        "texto": "Las que sigan criterios precedentes.",
+        "correcta": false
+      },
+      {
+        "texto": "Las que acepten pruebas.",
+        "correcta": false
+      },
+      {
+        "correcta": false
+      }
+    ]
+  },
+  {
+    "categoria": "juridico",
+    "tema": 3,
+    "descripcionTema": "Ley 39",
+    "texto": "Según el artículo 36.1 LPAC los actos administrativos se producen:",
+    "respuestas": [
+      {
+        "texto": "Por escrito.",
+        "correcta": false
+      },
+      {
+        "texto": "Por escrito salvo medios electrónicos.",
+        "correcta": false
+      },
+      {
+        "texto": "Por escrito a través de medios electrónicos.",
+        "correcta": true
+      },
+      {
+        "correcta": false
+      }
+    ]
+  },
+  {
+    "categoria": "juridico",
+    "tema": 3,
+    "descripcionTema": "Ley 39",
+    "texto": "Según el artículo 36.2 LPAC cuando una resolución sea verbal:",
+    "respuestas": [
+      {
+        "texto": "El titular autorizará relación de resoluciones.",
+        "correcta": true
+      },
+      {
+        "texto": "La constancia escrita la hará el órgano inferior.",
+        "correcta": false
+      },
+      {
+        "texto": "La constancia electrónica la hará el órgano superior.",
+        "correcta": false
+      },
+      {
+        "correcta": false
+      }
+    ]
+  },
+  {
+    "categoria": "juridico",
+    "tema": 3,
+    "descripcionTema": "Ley 39",
+    "texto": "Según el artículo 37 LPAC una resolución que vulnere un reglamento es:",
+    "respuestas": [
+      {
+        "texto": "Nula.",
+        "correcta": true
+      },
+      {
+        "texto": "Inderogable.",
+        "correcta": false
+      },
+      {
+        "texto": "Anulable.",
+        "correcta": false
+      },
+      {
+        "correcta": false
+      }
+    ]
+  },
+  {
+    "categoria": "juridico",
+    "tema": 3,
+    "descripcionTema": "Ley 39",
+    "texto": "Según el art. 38 de LPAC, los actos de las Administraciones Públicas son:",
+    "respuestas": [
+      {
+        "texto": "Ejecutivos con arreglo a la LPAC.",
+        "correcta": true
+      },
+      {
+        "texto": "Ejecutivos con arreglo a sus normas reguladoras.",
+        "correcta": false
+      },
+      {
+        "texto": "Ejecutivos con arreglo a la Constitución Española.",
+        "correcta": false
+      },
+      {
+        "correcta": false
+      }
+    ]
+  },
+  {
+    "categoria": "juridico",
+    "tema": 3,
+    "descripcionTema": "Ley 39",
+    "texto": "Según el art. 39 de LPAC, los actos administrativos producen efectos:",
+    "respuestas": [
+      {
+        "texto": "Inmediatamente o desde la fecha en que se dicten.",
+        "correcta": false
+      },
+      {
+        "texto": "Inmediatamente conforme a sus normas reguladoras.",
+        "correcta": false
+      },
+      {
+        "texto": "Desde la fecha en que se dicten salvo disposición en contrario.",
+        "correcta": true
+      },
+      {
+        "correcta": false
+      }
+    ]
+  },
+  {
+    "categoria": "juridico",
+    "tema": 3,
+    "descripcionTema": "Ley 39",
+    "texto": "Según el art. 39.4 de LPAC, las normas y actos dictados por los órganos administrativos deberán ser observados:",
+    "respuestas": [
+      {
+        "texto": "Por órganos aunque dependan jerárquicamente o pertenezcan a otra Administración.",
+        "correcta": false
+      },
+      {
+        "texto": "Por órganos aunque no dependan jerárquicamente o pertenezcan a otra Administración.",
+        "correcta": true
+      },
+      {
+        "texto": "Por órganos aunque dependan jerárquicamente.",
+        "correcta": false
+      },
+      {
+        "correcta": false
+      }
+    ]
+  },
+  {
+    "categoria": "juridico",
+    "tema": 3,
+    "descripcionTema": "Ley 39",
+    "texto": "Según el art. 40.2 de LPAC, una notificación debe contener:",
+    "respuestas": [
+      {
+        "texto": "Texto íntegro de la resolución.",
+        "correcta": false
+      },
+      {
+        "texto": "Expresión de los recursos procedentes.",
+        "correcta": false
+      },
+      {
+        "texto": "Las respuestas a y b son correctas.",
+        "correcta": true
+      },
+      {
+        "correcta": false
+      }
+    ]
+  },
+  {
+    "categoria": "juridico",
+    "tema": 3,
+    "descripcionTema": "Ley 39",
+    "texto": "Conforme al art. 41.1 de LPAC, las notificaciones se practicarán preferentemente:",
+    "respuestas": [
+      {
+        "texto": "Personalmente.",
+        "correcta": false
+      },
+      {
+        "texto": "Por escrito.",
+        "correcta": false
+      },
+      {
+        "texto": "Por medios electrónicos.",
+        "correcta": true
+      },
+      {
+        "correcta": false
+      }
+    ]
+  },
+  {
+    "categoria": "juridico",
+    "tema": 3,
+    "descripcionTema": "Ley 39",
+    "texto": "Según el art. 41.7 de LPAC, cuando el interesado sea notificado por distintos cauces:",
+    "respuestas": [
+      {
+        "texto": "Se tomará la fecha de la primera notificación.",
+        "correcta": true
+      },
+      {
+        "texto": "Se tomará la fecha de la última notificación.",
+        "correcta": false
+      },
+      {
+        "texto": "Ambas respuestas son incorrectas.",
+        "correcta": false
+      },
+      {
+        "correcta": false
+      }
+    ]
+  },
+  {
+    "categoria": "juridico",
+    "tema": 3,
+    "descripcionTema": "Ley 39",
+    "texto": "Conforme al art. 42 de LPAC, si nadie se hiciera cargo de la notificación:",
+    "respuestas": [
+      {
+        "texto": "Se intentará una segunda vez en tres días.",
+        "correcta": true
+      },
+      {
+        "texto": "Se dará por efectuado el trámite.",
+        "correcta": false
+      },
+      {
+        "texto": "Se dará por finalizado el procedimiento.",
+        "correcta": false
+      },
+      {
+        "correcta": false
+      }
+    ]
+  },
+  {
+    "categoria": "juridico",
+    "tema": 3,
+    "descripcionTema": "Ley 39",
+    "texto": "Según el art. 43.2 de LPAC, las notificaciones electrónicas se entenderán practicadas:",
+    "respuestas": [
+      {
+        "texto": "En el momento del acceso a su contenido.",
+        "correcta": true
+      },
+      {
+        "texto": "Al día siguiente del acceso.",
+        "correcta": false
+      },
+      {
+        "texto": "Ambas respuestas son incorrectas.",
+        "correcta": false
+      },
+      {
+        "correcta": false
+      }
+    ]
+  },
+  {
+    "categoria": "juridico",
+    "tema": 3,
+    "descripcionTema": "Ley 39",
+    "texto": "Según el art. 44 de LPAC, cuando los interesados sean desconocidos:",
+    "respuestas": [
+      {
+        "texto": "La notificación se hará en el BOE.",
+        "correcta": true
+      },
+      {
+        "texto": "La notificación se hará en el diario oficial correspondiente.",
+        "correcta": false
+      },
+      {
+        "texto": "La notificación se hará en el BOE electrónico.",
+        "correcta": false
+      },
+      {
+        "correcta": false
+      }
+    ]
+  },
+  {
+    "categoria": "juridico",
+    "tema": 3,
+    "descripcionTema": "Ley 39",
+    "texto": "Según el art. 45 de LPAC, los actos se publicarán cuando (respuesta incorrecta):",
+    "respuestas": [
+      {
+        "texto": "Destinatarios indeterminados.",
+        "correcta": false
+      },
+      {
+        "texto": "Notificación a un solo interesado es insuficiente.",
+        "correcta": true
+      },
+      {
+        "texto": "Procedimientos selectivos o concurrencia competitiva.",
+        "correcta": false
+      },
+      {
+        "correcta": false
+      }
+    ]
+  },
+  {
+    "categoria": "juridico",
+    "tema": 3,
+    "descripcionTema": "Ley 39",
+    "texto": "Según el art. 46 de LPAC, si la publicación lesiona derechos:",
+    "respuestas": [
+      {
+        "texto": "Publicación somera en el BOE.",
+        "correcta": false
+      },
+      {
+        "texto": "Publicación somera en el diario oficial correspondiente.",
+        "correcta": true
+      },
+      {
+        "texto": "Las respuestas a y b son incorrectas.",
+        "correcta": false
+      },
+      {
+        "correcta": false
+      }
+    ]
+  },
+  {
+    "categoria": "juridico",
+    "tema": 3,
+    "descripcionTema": "Ley 39",
+    "texto": "Según el art. 47.1 de LPAC, son nulos de pleno derecho:",
+    "respuestas": [
+      {
+        "texto": "Actos dictados prescindiendo del procedimiento.",
+        "correcta": false
+      },
+      {
+        "texto": "Actos contrarios al ordenamiento jurídico.",
+        "correcta": false
+      },
+      {
+        "texto": "Las respuestas a y b son correctas.",
+        "correcta": true
+      },
+      {
+        "correcta": false
+      }
+    ]
+  },
+  {
+    "categoria": "juridico",
+    "tema": 3,
+    "descripcionTema": "Ley 39",
+    "texto": "Según el art. 47.2 de LPAC, son nulas las disposiciones administrativas:",
+    "respuestas": [
+      {
+        "texto": "Con retroactividad sancionadora no favorable.",
+        "correcta": false
+      },
+      {
+        "texto": "Que vulneren la Constitución o leyes.",
+        "correcta": false
+      },
+      {
+        "texto": "Las respuestas a y b son correctas.",
+        "correcta": true
+      },
+      {
+        "correcta": false
+      }
+    ]
+  },
+  {
+    "categoria": "juridico",
+    "tema": 3,
+    "descripcionTema": "Ley 39",
+    "texto": "Según el art. 48.3 de LPAC, la realización fuera de plazo implicará anulabilidad:",
+    "respuestas": [
+      {
+        "texto": "Cuando lo imponga la naturaleza del término y plazo.",
+        "correcta": false
+      },
+      {
+        "texto": "Cuando lo imponga la naturaleza del término.",
+        "correcta": false
+      },
+      {
+        "texto": "Cuando lo imponga la naturaleza del término o plazo.",
+        "correcta": true
+      },
+      {
+        "correcta": false
+      }
+    ]
+  },
+  {
+    "categoria": "juridico",
+    "tema": 3,
+    "descripcionTema": "Ley 39",
+    "texto": "Según el art. 49 de LPAC, la nulidad no implicará la de actos independientes, refiriéndose a:",
+    "respuestas": [
+      {
+        "texto": "Conservación de actos y trámites.",
+        "correcta": false
+      },
+      {
+        "texto": "Conversión de actos viciados.",
+        "correcta": false
+      },
+      {
+        "texto": "Límites a la extensión de la nulidad o anulabilidad.",
+        "correcta": true
+      },
+      {
+        "correcta": false
+      }
+    ]
+  },
+  {
+    "categoria": "juridico",
+    "tema": 3,
+    "descripcionTema": "Ley 39",
+    "texto": "Según el art. 52 de LPAC, respecto a la convalidación de los actos no es correcta:",
+    "respuestas": [
+      {
+        "texto": "La Administración podrá convalidar los actos anulables.",
+        "correcta": false
+      },
+      {
+        "texto": "El acto de convalidación producirá efecto desde su fecha.",
+        "correcta": false
+      },
+      {
+        "texto": "La convalidación por incompetencia podrá hacerla un órgano no superior jerárquico.",
+        "correcta": true
+      },
+      {
+        "correcta": false
+      }
+    ]
+  },
+  {
+    "categoria": "juridico",
+    "tema": 3,
+    "descripcionTema": "Ley 39",
+    "texto": "Según el art. 56.2 de LPAC, ¿a quién corresponde adoptar medidas provisionales antes de iniciar el procedimiento?:",
+    "respuestas": [
+      {
+        "texto": "Al órgano que inicia o instruye.",
+        "correcta": false
+      },
+      {
+        "texto": "Al órgano competente para resolver.",
+        "correcta": true
+      },
+      {
+        "texto": "Al superior jerárquico.",
+        "correcta": false
+      },
+      {
+        "correcta": false
+      }
+    ]
+  },
+  {
+    "categoria": "juridico",
+    "tema": 3,
+    "descripcionTema": "Ley 39",
+    "texto": "En procedimientos sancionadores (art. 60 LPAC) la orden expresará:",
+    "respuestas": [
+      {
+        "texto": "Conductas que pudieran constituir infracción.",
+        "correcta": true
+      },
+      {
+        "texto": "Relación de causalidad con el servicio público.",
+        "correcta": false
+      },
+      {
+        "texto": "Las dos respuestas son correctas.",
+        "correcta": false
+      },
+      {
+        "correcta": false
+      }
+    ]
+  },
+  {
+    "categoria": "juridico",
+    "tema": 3,
+    "descripcionTema": "Ley 39",
+    "texto": "Según el art. 62.2 LPAC, la denuncia deberá expresar:",
+    "respuestas": [
+      {
+        "texto": "La identidad de quien la presenta.",
+        "correcta": true
+      },
+      {
+        "texto": "Hechos constitutivos de infracción penal.",
+        "correcta": false
+      },
+      {
+        "texto": "Todas son falsas.",
+        "correcta": false
+      },
+      {
+        "correcta": false
+      }
+    ]
+  },
+  {
+    "categoria": "juridico",
+    "tema": 3,
+    "descripcionTema": "Ley 39",
+    "texto": "Según el art. 63 LPAC, ¿pueden iniciarse nuevos procedimientos sancionadores por persistencia?:",
+    "respuestas": [
+      {
+        "texto": "No hasta resolución ejecutiva.",
+        "correcta": true
+      },
+      {
+        "texto": "No mientras exista resolución.",
+        "correcta": false
+      },
+      {
+        "texto": "Sí, en todo caso.",
+        "correcta": false
+      },
+      {
+        "correcta": false
+      }
+    ]
+  },
+  {
+    "categoria": "juridico",
+    "tema": 3,
+    "descripcionTema": "Ley 39",
+    "texto": "Según el art. 64 LPAC, cuando no haya elementos suficientes para calificar hechos:",
+    "respuestas": [
+      {
+        "texto": "Se calificará posteriormente con pliego de cargos.",
+        "correcta": true
+      },
+      {
+        "texto": "Se calificará antes del trámite de audiencia.",
+        "correcta": false
+      },
+      {
+        "texto": "No podrá calificarse.",
+        "correcta": false
+      },
+      {
+        "correcta": false
+      }
+    ]
+  },
+  {
+    "categoria": "juridico",
+    "tema": 3,
+    "descripcionTema": "Ley 39",
+    "texto": "Según el art. 65 LPAC, en responsabilidad patrimonial iniciada de oficio:",
+    "respuestas": [
+      {
+        "texto": "No se instruirá si no comparecen los lesionados.",
+        "correcta": false
+      },
+      {
+        "texto": "Se instruirá aunque no comparezcan.",
+        "correcta": true
+      },
+      {
+        "texto": "Puede iniciarse aunque haya prescrito.",
+        "correcta": false
+      },
+      {
+        "correcta": false
+      }
+    ]
+  },
+  {
+    "categoria": "juridico",
+    "tema": 3,
+    "descripcionTema": "Ley 39",
+    "texto": "Según el art. 68.1 LPAC, si la solicitud no reúne requisitos:",
+    "respuestas": [
+      {
+        "texto": "Se requerirá subsanación en 10 días.",
+        "correcta": true
+      },
+      {
+        "texto": "Se requerirá subsanación en 15 días.",
+        "correcta": false
+      },
+      {
+        "texto": "Se archivará el expediente.",
+        "correcta": false
+      },
+      {
+        "correcta": false
+      }
+    ]
+  },
+  {
+    "categoria": "juridico",
+    "tema": 3,
+    "descripcionTema": "Ley 39",
+    "texto": "Según el art. 69.2 LPAC, el documento por el que se comunican datos para iniciar actividad es:",
+    "respuestas": [
+      {
+        "texto": "Declaración responsable.",
+        "correcta": false
+      },
+      {
+        "texto": "Comunicación.",
+        "correcta": true
+      },
+      {
+        "texto": "Ninguna es correcta.",
+        "correcta": false
+      },
+      {
+        "correcta": false
+      }
+    ]
+  },
+  {
+    "categoria": "juridico",
+    "tema": 3,
+    "descripcionTema": "Ley 39",
+    "texto": "Según el art. 69.1 LPAC, el documento en el que se manifiesta cumplimiento de requisitos es:",
+    "respuestas": [
+      {
+        "texto": "Declaración responsable.",
+        "correcta": true
+      },
+      {
+        "texto": "Comunicación.",
+        "correcta": false
+      },
+      {
+        "texto": "Ninguna es correcta.",
+        "correcta": false
+      },
+      {
+        "correcta": false
+      }
+    ]
+  },
+  {
+    "categoria": "juridico",
+    "tema": 3,
+    "descripcionTema": "Ley 39",
+    "texto": "Según el art. 70 LPAC, el expediente administrativo es:",
+    "respuestas": [
+      {
+        "texto": "Conjunto ordenado de documentos.",
+        "correcta": true
+      },
+      {
+        "texto": "Información auxiliar.",
+        "correcta": false
+      },
+      {
+        "texto": "Conjunto con dos copias obligatorias.",
+        "correcta": false
+      },
+      {
+        "correcta": false
+      }
+    ]
+  },
+  {
+    "categoria": "juridico",
+    "tema": 3,
+    "descripcionTema": "Ley 39",
+    "texto": "Según el art. 71.1 LPAC, el procedimiento se impulsará respetando:",
+    "respuestas": [
+      {
+        "texto": "Transparencia y publicidad.",
+        "correcta": true
+      },
+      {
+        "texto": "Transparencia, participación y audiencia.",
+        "correcta": false
+      },
+      {
+        "texto": "Ninguna es correcta.",
+        "correcta": false
+      },
+      {
+        "correcta": false
+      }
+    ]
+  },
+  {
+    "categoria": "juridico",
+    "tema": 3,
+    "descripcionTema": "Ley 39",
+    "texto": "Según el art. 72.1 LPAC, se refiere al principio de:",
+    "respuestas": [
+      {
+        "texto": "Impulso.",
+        "correcta": false
+      },
+      {
+        "texto": "Concentración de trámites.",
+        "correcta": true
+      },
+      {
+        "texto": "Cumplimiento de trámites.",
+        "correcta": false
+      },
+      {
+        "correcta": false
+      }
+    ]
+  },
+  {
+    "categoria": "juridico",
+    "tema": 3,
+    "descripcionTema": "Ley 39",
+    "texto": "Según el art. 73.1 LPAC, el plazo para cumplir trámites es:",
+    "respuestas": [
+      {
+        "texto": "10 días naturales.",
+        "correcta": false
+      },
+      {
+        "texto": "15 días.",
+        "correcta": false
+      },
+      {
+        "texto": "10 días desde la notificación.",
+        "correcta": true
+      },
+      {
+        "correcta": false
+      }
+    ]
+  },
+  {
+    "categoria": "juridico",
+    "tema": 3,
+    "descripcionTema": "Ley 39",
+    "texto": "Según el art. 74 LPAC, las cuestiones incidentales:",
+    "respuestas": [
+      {
+        "texto": "Suspenden siempre el procedimiento.",
+        "correcta": false
+      },
+      {
+        "texto": "No suspenden salvo recusación.",
+        "correcta": true
+      },
+      {
+        "texto": "No suspenden en ningún caso.",
+        "correcta": false
+      },
+      {
+        "correcta": false
+      }
+    ]
+  },
+  {
+    "categoria": "juridico",
+    "tema": 3,
+    "descripcionTema": "Ley 39",
+    "texto": "Según el art. 78 LPAC sobre la prueba:",
+    "respuestas": [
+      {
+        "texto": "Se comunicará el inicio de actuaciones.",
+        "correcta": false
+      },
+      {
+        "texto": "Se consignará lugar, fecha y hora.",
+        "correcta": false
+      },
+      {
+        "texto": "Las dos respuestas son correctas.",
+        "correcta": true
+      },
+      {
+        "correcta": false
+      }
+    ]
+  },
+  {
+    "categoria": "juridico",
+    "tema": 3,
+    "descripcionTema": "Ley 39",
+    "texto": "Según el art. 81.1 LPAC en responsabilidad patrimonial:",
+    "respuestas": [
+      {
+        "texto": "Informe facultativo (10 días).",
+        "correcta": false
+      },
+      {
+        "texto": "Informe facultativo o preceptivo (15 días).",
+        "correcta": false
+      },
+      {
+        "texto": "Informe preceptivo (10 días).",
+        "correcta": true
+      },
+      {
+        "correcta": false
+      }
+    ]
+  },
+  {
+    "categoria": "juridico",
+    "tema": 3,
+    "descripcionTema": "Ley 39",
+    "texto": "Según el art. 81.2 LPAC, cuando indemnización ≥50.000€:",
+    "respuestas": [
+      {
+        "texto": "Dictamen facultativo.",
+        "correcta": false
+      },
+      {
+        "texto": "Dictamen preceptivo.",
+        "correcta": true
+      },
+      {
+        "texto": "Dictamen del Consejo de Ministros.",
+        "correcta": false
+      },
+      {
+        "correcta": false
+      }
+    ]
+  },
+  {
+    "categoria": "juridico",
+    "tema": 3,
+    "descripcionTema": "Ley 39",
+    "texto": "Según el art. 82.2 LPAC, en el trámite de audiencia:",
+    "respuestas": [
+      {
+        "texto": "Plazo inferior a 10 y superior a 15 días.",
+        "correcta": false
+      },
+      {
+        "texto": "No pueden alegar.",
+        "correcta": false
+      },
+      {
+        "texto": "Ninguna es correcta.",
+        "correcta": true
+      },
+      {
+        "correcta": false
+      }
+    ]
+  },
+  {
+    "categoria": "juridico",
+    "tema": 3,
+    "descripcionTema": "Ley 39",
+    "texto": "Según el art. 83.3 LPAC, en información pública:",
+    "respuestas": [
+      {
+        "texto": "La incomparecencia no impide recursos.",
+        "correcta": false
+      },
+      {
+        "texto": "Comparecer no otorga condición de interesado.",
+        "correcta": false
+      },
+      {
+        "texto": "Las dos respuestas son correctas.",
+        "correcta": true
+      },
+      {
+        "correcta": false
+      }
+    ]
+  },
+  {
+    "categoria": "juridico",
+    "tema": 3,
+    "descripcionTema": "Ley 39",
+    "texto": "Según el art. 86 LPAC sobre terminación convencional:",
+    "respuestas": [
+      {
+        "texto": "Los acuerdos alteran competencias.",
+        "correcta": false
+      },
+      {
+        "texto": "Los acuerdos alteran competencias y responsabilidades.",
+        "correcta": false
+      },
+      {
+        "texto": "Ninguna es correcta.",
+        "correcta": true
+      },
+      {
+        "correcta": false
+      }
+    ]
+  },
+  {
+    "categoria": "juridico",
+    "tema": 3,
+    "descripcionTema": "Ley 39",
+    "texto": "Según el art. 87 LPAC, actuaciones complementarias en plazo:",
+    "respuestas": [
+      {
+        "texto": "No superior a 15 días.",
+        "correcta": true
+      },
+      {
+        "texto": "Superior a 15 días.",
+        "correcta": false
+      },
+      {
+        "texto": "Sin plazo.",
+        "correcta": false
+      },
+      {
+        "correcta": false
+      }
+    ]
+  },
+  {
+    "categoria": "juridico",
+    "tema": 3,
+    "descripcionTema": "Ley 39",
+    "texto": "Según el art. 89.1 LPAC, se archivará sin propuesta cuando:",
+    "respuestas": [
+      {
+        "texto": "Hechos no constituyen infracción.",
+        "correcta": false
+      },
+      {
+        "texto": "Ha prescrito la infracción.",
+        "correcta": false
+      },
+      {
+        "texto": "Las dos respuestas son correctas.",
+        "correcta": true
+      },
+      {
+        "correcta": false
+      }
+    ]
+  },
+  {
+    "categoria": "juridico",
+    "tema": 3,
+    "descripcionTema": "Ley 39",
+    "texto": "Según el art. 90.4 LPAC, indemnización no determinada:",
+    "respuestas": [
+      {
+        "texto": "Procedimiento complementario ejecutiva.",
+        "correcta": true
+      },
+      {
+        "texto": "Procedimiento ordinario no ejecutiva.",
+        "correcta": false
+      },
+      {
+        "texto": "Procedimiento subsidiario.",
+        "correcta": false
+      },
+      {
+        "correcta": false
+      }
+    ]
+  },
+  {
+    "categoria": "juridico",
+    "tema": 3,
+    "descripcionTema": "Ley 39",
+    "texto": "Según el art. 93 LPAC, en el procedimiento administrativo:",
+    "respuestas": [
+      {
+        "texto": "La Administración puede desistir.",
+        "correcta": false
+      },
+      {
+        "texto": "No puede desistir.",
+        "correcta": false
+      },
+      {
+        "texto": "Ninguna es correcta.",
+        "correcta": true
+      },
+      {
+        "correcta": false
+      }
+    ]
+  },
+  {
+    "categoria": "juridico",
+    "tema": 3,
+    "descripcionTema": "Ley 39",
+    "texto": "Según el art. 94.3 LPAC, desistimiento o renuncia:",
+    "respuestas": [
+      {
+        "texto": "Por cualquier medio con constancia.",
+        "correcta": true
+      },
+      {
+        "texto": "Por escrito.",
+        "correcta": false
+      },
+      {
+        "texto": "Ninguna es correcta.",
+        "correcta": false
+      },
+      {
+        "correcta": false
+      }
+    ]
+  },
+  {
+    "categoria": "juridico",
+    "tema": 3,
+    "descripcionTema": "Ley 39",
+    "texto": "Según el art. 94.4 LPAC, la Administración:",
+    "respuestas": [
+      {
+        "texto": "Archivará el expediente.",
+        "correcta": false
+      },
+      {
+        "texto": "Declarará concluso salvo terceros (15 días).",
+        "correcta": false
+      },
+      {
+        "texto": "Declarará concluso salvo terceros (10 días).",
+        "correcta": true
+      },
+      {
+        "correcta": false
+      }
+    ]
+  },
+  {
+    "categoria": "juridico",
+    "tema": 3,
+    "descripcionTema": "Ley 39",
+    "texto": "Según el art. 95 LPAC, caducidad por paralización:",
+    "respuestas": [
+      {
+        "texto": "A los tres meses.",
+        "correcta": true
+      },
+      {
+        "texto": "Al mes.",
+        "correcta": false
+      },
+      {
+        "texto": "No cabe caducidad.",
+        "correcta": false
+      },
+      {
         "correcta": false
       }
     ]
