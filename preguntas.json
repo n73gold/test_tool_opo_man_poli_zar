@@ -19065,7 +19065,29 @@
         "correcta": false
       },
       {
-        "texto": " 34.- ¿Qué acción debemos de realizar en un grifo monomando de lavabo o bidé para que comience a salir agua fría?",
+        "correcta": false
+      }
+    ]
+  },
+  {
+    "categoria": "específico",
+    "tema": 9,
+    "descripcionTema": "Fontaneria",
+    "texto": "- ¿Qué acción debemos de realizar en un grifo monomando de lavabo o bidé para que comience a salir agua fría?",
+    "respuestas": [
+      {
+        "texto": "Subir mando accionador y girar a la derecha",
+        "correcta": true
+      },
+      {
+        "texto": "Subir mando accionador y girar a a izquierda",
+        "correcta": false
+      },
+      {
+        "texto": "Ambas respuestas son correctas",
+        "correcta": false
+      },
+      {
         "correcta": false
       }
     ]
