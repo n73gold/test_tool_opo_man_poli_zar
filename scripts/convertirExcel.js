@@ -1,5 +1,5 @@
-//Para volver a version 1 (gh-pages):
-//git checkout gh-pages
+//Para volver a version 1 (stable):
+//git checkout stable
 //     *opcional* git branch (comprueba que estamos en gh-pages)
 //node scripts/convertirExcel.js
 //git add .

@@ -36219,30 +36219,6 @@
     "categoria": "específico",
     "tema": 17,
     "descripcionTema": "Ofimatica",
-    "texto": "La función y formato en LibreOffice Calc específica para realizar un condicional es:",
-    "respuestas": [
-      {
-        "texto": "SI(prueba;respuesta si la prueba es verdadero;respuesta si la prueba es falso)",
-        "correcta": false
-      },
-      {
-        "texto": "COMPRUEBA(prueba;respuesta si la prueba es verdadero;respuesta si la prueba es falso)",
-        "correcta": false
-      },
-      {
-        "texto": "SI.PRUEBA(prueba;respuesta si la prueba es verdadero;respuesta si la prueba es falso)",
-        "correcta": false
-      },
-      {
-        "texto": "SI.CONJUNTO(prueba;respuesta si la prueba es verdadero;respuesta si la prueba es falso)",
-        "correcta": false
-      }
-    ]
-  },
-  {
-    "categoria": "específico",
-    "tema": 17,
-    "descripcionTema": "Ofimatica",
     "texto": "¿Qué siglas corresponden a un proveedor de servicios de Internet, una empresa que proporciona acceso a la red?",
     "respuestas": [
       {
