@@ -1,10 +1,9 @@
 {
   "name": "mi-app",
   "private": true,
-  "version": "0.0.0",
+  "version": "0.0.24",
   "type": "module",
-  "homepage": "https://github.com/n73gold/test_tool_opo_man_poli_zar",
-
+  "homepage": "https://n73gold.github.io/test_tool_opo_man_poli_zar/",
   "scripts": {
     "dev": "vite",
     "build": "vite build",

@@ -45,20 +45,29 @@ function App() {
     const guardadas = localStorage.getItem("preguntas");
 
     if (guardadas) {
-      const data = JSON.parse(guardadas);
+      const data = JSON.parse(guardadas).map((p, index) => ({
+        ...p,
+        _id: index
+      }));
+
       setPreguntas(data);
       setTotalPreguntas(data.length);
-      setMensaje(`Base de datos cargada (${data.length} preguntas)`);
     }
 
-    fetch("/preguntas.json")
+
+    fetch(import.meta.env.BASE_URL + "preguntas.json")
       .then(res => res.json())
       .then(data => {
-        localStorage.setItem("preguntas", JSON.stringify(data));
-        setPreguntas(data);
-        setTotalPreguntas(data.length);
-        setMensaje(`Base de datos cargada (${data.length} preguntas)`);
+        const conId = data.map((p, index) => ({
+          ...p,
+          _id: index
+        }));
+
+        localStorage.setItem("preguntas", JSON.stringify(conId));
+        setPreguntas(conId);
+        setTotalPreguntas(conId.length);
       })
+
       .catch(() => {
         // si no hay red, no pasa nada
       });
@@ -69,12 +78,37 @@ function App() {
     return [...array].sort(() => Math.random() - 0.5);
   }
 
+  const MAX_TESTS_RECIENTES = 5;
+
+  function getTestsRecientes() {
+    return JSON.parse(localStorage.getItem("testsRecientes") || "[]");
+  }
+
+  function getIdsRecientes() {
+    return getTestsRecientes().flat();
+  }
+
+  function guardarTestReciente(preguntasTest) {
+    const tests = getTestsRecientes();
+
+    const ids = preguntasTest.map(p => p._id);
+
+    tests.push(ids);
+
+    if (tests.length > MAX_TESTS_RECIENTES) {
+      tests.shift(); // elimina el más antiguo
+    }
+
+    localStorage.setItem("testsRecientes", JSON.stringify(tests));
+  }
+
+
   function empezarTest(tipo) {
     setTipoTest(tipo);
 
     if (tipo === "mixto") {
-      const juridico = preguntas.filter(p => p.categoria === "juridico");
-      const especifico = preguntas.filter(p => p.categoria === "especifico");
+      const juridico = preguntas.filter(p => p.categoria === "jurídico");
+      const especifico = preguntas.filter(p => p.categoria === "específico");
 
       const mitad = 10;
 
@@ -83,7 +117,21 @@ function App() {
         ...barajar(especifico).slice(0, mitad)
       ];
 
-      const mezcladas = barajar(seleccionadas);
+      const idsRecientes = getIdsRecientes();
+
+      let disponibles = seleccionadas.filter(
+        p => !idsRecientes.includes(p._id)
+      );
+
+      // fallback
+      if (disponibles.length < 20) {
+        disponibles = seleccionadas;
+      }
+
+      const mezcladas = barajar(disponibles);
+
+      guardarTestReciente(mezcladas);
+
 
       setPreguntasTest(mezcladas);
       setIndicePregunta(0);
@@ -145,7 +193,50 @@ function App() {
       temasSeleccionados.includes(p.tema)
     );
 
-    const seleccionadas = barajar(filtradas).slice(0, 20);
+    const idsRecientes = getIdsRecientes();
+
+    let disponibles = filtradas.filter(
+      p => !idsRecientes.includes(p._id)
+    );
+
+    // fallback si no hay suficientes
+    if (disponibles.length < 20) {
+      disponibles = filtradas;
+    }
+
+    const seleccionadas = barajar(disponibles).slice(0, 20);
+
+    guardarTestReciente(seleccionadas);
+
+    setPreguntasTest(seleccionadas);
+    setIndicePregunta(0);
+    setPreguntaActual(seleccionadas[0]);
+    setRespondida(false);
+    setRespuestaSeleccionada(null);
+    setAciertos(0);
+    setPantalla("pregunta");
+  }
+
+  function iniciarTestAleatorio() {
+    let filtradas = preguntas;
+
+    if (tipoTest !== "mixto") {
+      filtradas = preguntas.filter(p => p.categoria === tipoTest);
+    }
+
+    const idsRecientes = getIdsRecientes();
+
+    let disponibles = filtradas.filter(
+      p => !idsRecientes.includes(p._id)
+    );
+
+    if (disponibles.length < 20) {
+      disponibles = filtradas;
+    }
+
+    const seleccionadas = barajar(disponibles).slice(0, 20);
+
+    guardarTestReciente(seleccionadas);
 
     setPreguntasTest(seleccionadas);
     setIndicePregunta(0);
@@ -158,15 +249,15 @@ function App() {
 
   return (
   <div style={{ padding: 20 }}>
-    <h1>Test Oposiciones</h1>
-
-    {totalPreguntas > 0 && (
-      <p>📊 Preguntas disponibles: {totalPreguntas}</p>
-    )}
 
     {/* HOME */}
     {pantalla === "home" && (
       <>
+        <h1>Test Oposiciones</h1>
+
+        {totalPreguntas > 0 && (
+          <p>📊 Preguntas disponibles: {totalPreguntas}</p>
+        )}
 
         <br />
 
@@ -185,12 +276,12 @@ function App() {
       <>
         <h2>Selecciona tipo de test</h2>
 
-        <button onClick={() => empezarTest("juridico")}>
+        <button onClick={() => empezarTest("jurídico")}>
           Jurídico
         </button>
         <br /><br />
 
-        <button onClick={() => empezarTest("especifico")}>
+        <button onClick={() => empezarTest("específico")}>
           Específico
         </button>
         <br /><br />
@@ -233,12 +324,21 @@ function App() {
 
         <br />
 
-        <button
-          disabled={temasSeleccionados.length === 0}
-          onClick={() => iniciarTestConTemas()}
-        >
-          Empezar test
-        </button>
+        <div style={{ display: "flex", gap: 10 }}>
+          <button
+            disabled={temasSeleccionados.length === 0}
+            onClick={() => iniciarTestConTemas()}
+          >
+            Empezar test
+          </button>
+
+          <button
+            onClick={() => iniciarTestAleatorio()}
+          >
+            🎲 Test aleatorio
+          </button>
+        </div>
+
 
         <br /><br />
 
@@ -251,6 +351,18 @@ function App() {
     {/* PREGUNTA */}
     {pantalla === "pregunta" && preguntaActual && (
       <>
+        <h2 style={{ marginBottom: 4 }}>
+          {tipoTest === "jurídico"
+            ? "Jurídico"
+            : tipoTest === "específico"
+            ? "Específico"
+            : "Mixto"}
+        </h2>
+
+        <p style={{ fontSize: 14, opacity: 0.8, marginTop: 0 }}>
+          {preguntaActual.descripcionTema}
+        </p>
+
         <p>
           Pregunta {indicePregunta + 1} / {preguntasTest.length}
         </p>
@@ -348,7 +460,12 @@ function App() {
       </>
     )}
 
-    <p>{mensaje}</p>
+    <hr style={{ marginTop: 30, opacity: 0.3 }} />
+
+    <p style={{ fontSize: 12, opacity: 0.6 }}>
+      Versión {__APP_VERSION__}
+    </p>
+
   </div>
 );
 
