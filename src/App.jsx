@@ -1,5 +1,17 @@
 import { useState, useEffect } from "react";
 
+import {
+  LineChart,
+  Line,
+  XAxis,
+  YAxis,
+  CartesianGrid,
+  Tooltip,
+  Legend,
+  ResponsiveContainer
+} from "recharts";
+
+
 function parseExcel(rows) {
   return rows.slice(1).map(row => {
     const correcta = String(row[11]).toLowerCase().trim();
@@ -27,19 +39,62 @@ function App() {
   const [pantalla, setPantalla] = useState("home");
   const [preguntas, setPreguntas] = useState([]);
   const [preguntaActual, setPreguntaActual] = useState(null);
-  const [respondida, setRespondida] = useState(false);
-
+  
   const [tipoTest, setTipoTest] = useState(null);
   const [preguntasTest, setPreguntasTest] = useState([]);
   const [indicePregunta, setIndicePregunta] = useState(0);
 
   const [aciertos, setAciertos] = useState(0);
-
-  const [respuestaSeleccionada, setRespuestaSeleccionada] = useState(null);
-
+  
   const [temasDisponibles, setTemasDisponibles] = useState([]);
   const [temasSeleccionados, setTemasSeleccionados] = useState([]);
 
+  const [testActual, setTestActual] = useState(null);
+
+  const [modoTest, setModoTest] = useState("practica");
+
+  const [preguntasRevision, setPreguntasRevision] = useState(null);
+
+  const [modoFavoritas, setModoFavoritas] = useState(false);
+
+  const [configOposicion, setConfigOposicion] = useState(50);
+
+  const [historico, setHistorico] = useState([]);
+
+  const [semanaAbierta, setSemanaAbierta] = useState(null);
+
+  const MAX_TESTS_RECIENTES = 5;
+
+  const preguntasActivas = preguntasRevision ?? preguntasTest;
+
+  const version = __APP_VERSION__;
+
+  const cardStyle = {
+    background: "linear-gradient(135deg, #4f46e5, #3b82f6)",
+    borderRadius: 20,
+    padding: 18,
+    textAlign: "center",
+    color: "white",
+    cursor: "pointer",
+    boxShadow: "0 8px 20px rgba(0,0,0,0.25)",
+    display: "flex",
+    flexDirection: "column",
+    justifyContent: "center",
+    alignItems: "center",
+    minHeight: 100,
+    transition: "transform 0.15s ease"
+  };
+
+  const cardNumberStyle = {
+    fontSize: 48,
+    margin: 0
+  };
+
+  const cardTextStyle = {
+    marginTop: 10,
+    fontSize: 16,
+    opacity: 0.95
+  };
 
   useEffect(() => {
     const guardadas = localStorage.getItem("preguntas");
@@ -71,20 +126,61 @@ function App() {
       .catch(() => {
         // si no hay red, no pasa nada
       });
-  }, []);
 
+      setHistorico(getHistorico());
+
+  }, []);
+  
+  function getHistorico() {
+    return JSON.parse(localStorage.getItem("historicoTests") || "[]");
+  }
+
+  function getNextHistoricoId() {
+    const current = Number(localStorage.getItem("historicoIdCounter") || 0);
+    const next = current + 1;
+    localStorage.setItem("historicoIdCounter", next);
+    return next;
+  }
+
+  function guardarHistorico(lista) {
+    localStorage.setItem("historicoTests", JSON.stringify(lista));
+    setHistorico(lista);
+  }
+
+  function getFavoritas() {
+    return JSON.parse(localStorage.getItem("preguntasFavoritas") || "[]");
+  }
+
+  function guardarFavoritas(lista) {
+    localStorage.setItem("preguntasFavoritas", JSON.stringify(lista));
+  }
+
+  function esFavorita(id) {
+    return getFavoritas().includes(id);
+  }
+
+  function toggleFavorita(id) {
+    const actuales = getFavoritas();
+
+    if (actuales.includes(id)) {
+      guardarFavoritas(actuales.filter(x => x !== id));
+    } else {
+      guardarFavoritas([...actuales, id]);
+    }
+
+    // Forzar re-render
+    setTestActual(prev => ({ ...prev }));
+  }
 
   function barajar(array) {
     return [...array].sort(() => Math.random() - 0.5);
   }
-
-  const MAX_TESTS_RECIENTES = 5;
-
+  
   function getTestsRecientes() {
     return JSON.parse(localStorage.getItem("testsRecientes") || "[]");
   }
 
-  function getIdsRecientes() {
+    function getIdsRecientes() {
     return getTestsRecientes().flat();
   }
 
@@ -101,7 +197,189 @@ function App() {
 
     localStorage.setItem("testsRecientes", JSON.stringify(tests));
   }
+  
+  function guardarHistoricoTest(test) {
 
+    const juridico = test.preguntas.filter(p => p.categoria === "jurídico");
+    const especifico = test.preguntas.filter(p => p.categoria === "específico");
+
+    const aciertosJuridico = juridico.filter(p =>
+      p.respuestaSeleccionada !== null &&
+      p.respuestas[p.respuestaSeleccionada]?.correcta
+    ).length;
+
+    const aciertosEspecifico = especifico.filter(p =>
+      p.respuestaSeleccionada !== null &&
+      p.respuestas[p.respuestaSeleccionada]?.correcta
+    ).length;
+
+    const porcentajeJuridico = juridico.length > 0
+      ? Math.round((aciertosJuridico / juridico.length) * 100)
+      : null;
+
+    const porcentajeEspecifico = especifico.length > 0
+      ? Math.round((aciertosEspecifico / especifico.length) * 100)
+      : null;
+
+    const nuevoRegistro = {
+      id: getNextHistoricoId(),
+      fecha: Date.now(),
+      modo: test.modo,
+      porcentajeJuridico,
+      porcentajeEspecifico
+    };
+
+    const historicoActual = getHistorico();
+
+    const nuevoHistorico = [...historicoActual, nuevoRegistro];
+
+    guardarHistorico(nuevoHistorico); // 👈 ESTA ES LA CLAVE
+  }
+
+  function borrarTest(id) {
+    const nuevoHistorico = historico.filter(h => h.id !== id);
+    guardarHistorico(nuevoHistorico);
+  }
+
+  function getYearWeek(date) {
+    const d = new Date(date);
+    d.setHours(0, 0, 0, 0);
+
+    // jueves de esta semana
+    d.setDate(d.getDate() + 3 - ((d.getDay() + 6) % 7));
+
+    const week1 = new Date(d.getFullYear(), 0, 4);
+    const weekNumber =
+      1 +
+      Math.round(
+        ((d - week1) / 86400000 - 3 + ((week1.getDay() + 6) % 7)) / 7
+      );
+
+    return {
+      year: d.getFullYear(),
+      week: String(weekNumber).padStart(2, "0")
+    };
+  }
+
+  function getTestsSemanaActual() {
+    const ahora = getYearWeek(Date.now());
+
+    return historico.filter(h => {
+      const hw = getYearWeek(h.fecha);
+      return hw.year === ahora.year && hw.week === ahora.week;
+    }).length;
+  }
+
+  function getHistoricoAgrupadoPorSemana() {
+    const agrupado = {};
+
+    historico.forEach(h => {
+      const { year, week } = getYearWeek(h.fecha);
+      const clave = `${String(year).slice(-2)}w${week}`;
+
+      if (!agrupado[clave]) {
+        agrupado[clave] = 0;
+      }
+
+      agrupado[clave]++;
+    });
+
+    return agrupado;
+  }
+
+  function getSemanasOrdenadas() {
+    const agrupado = getHistoricoAgrupadoPorSemana();
+
+    return Object.entries(agrupado)
+      .sort(([a], [b]) => a.localeCompare(b))
+      .map(([semana, total]) => ({
+        semana,
+        total
+      }));
+  }
+
+  function getEstadisticasMediaSemanal() {
+    const agrupado = {};
+
+    historico.forEach(h => {
+      const { year, week } = getYearWeek(h.fecha);
+      const clave = `${String(year).slice(-2)}w${week}`;
+
+      if (!agrupado[clave]) {
+        agrupado[clave] = {
+          juridico: [],
+          especifico: []
+        };
+      }
+
+      if (h.porcentajeJuridico !== null) {
+        agrupado[clave].juridico.push(h.porcentajeJuridico);
+      }
+
+      if (h.porcentajeEspecifico !== null) {
+        agrupado[clave].especifico.push(h.porcentajeEspecifico);
+      }
+    });
+
+    return Object.entries(agrupado)
+      .sort(([a], [b]) => a.localeCompare(b))
+      .map(([semana, valores]) => ({
+        semana,
+        juridico:
+          valores.juridico.length > 0
+            ? Math.round(
+                valores.juridico.reduce((a, b) => a + b, 0) /
+                valores.juridico.length
+              )
+            : null,
+        especifico:
+          valores.especifico.length > 0
+            ? Math.round(
+                valores.especifico.reduce((a, b) => a + b, 0) /
+                valores.especifico.length
+              )
+            : null
+      }));
+  }
+
+  function getDatosEstadisticas() {
+    const agrupado = {};
+
+    historico.forEach(h => {
+      const { year, week } = getYearWeek(h.fecha);
+      const clave = `${String(year).slice(-2)}w${week}`;
+
+      if (!agrupado[clave]) {
+        agrupado[clave] = {
+          juridico: [],
+          especifico: []
+        };
+      }
+
+      if (h.porcentajeJuridico !== null) {
+        agrupado[clave].juridico.push(h.porcentajeJuridico);
+      }
+
+      if (h.porcentajeEspecifico !== null) {
+        agrupado[clave].especifico.push(h.porcentajeEspecifico);
+      }
+    });
+
+    return Object.entries(agrupado)
+      .sort(([a], [b]) => a.localeCompare(b))
+      .map(([semana, valores]) => {
+        const media = arr =>
+          arr.length === 0
+            ? null
+            : Math.round(arr.reduce((a, b) => a + b, 0) / arr.length);
+
+        return {
+          semana,
+          juridico: media(valores.juridico),
+          especifico: media(valores.especifico)
+        };
+      });
+  }
 
   function empezarTest(tipo) {
     setTipoTest(tipo);
@@ -132,15 +410,28 @@ function App() {
 
       guardarTestReciente(mezcladas);
 
+      const nuevoTest = {
+        modo: modoTest,
+        fechaInicio: Date.now(),
+        preguntas: mezcladas.map(p => ({
+          ...p,
+          respuestaSeleccionada: null,
+          marcadaFavorita: false
+        })),
+        finalizado: false,
+        fechaFin: null
+      };
 
-      setPreguntasTest(mezcladas);
+      setTestActual(nuevoTest);
+
+      setPreguntasTest(nuevoTest.preguntas);
       setIndicePregunta(0);
-      setPreguntaActual(mezcladas[0]);
-      setRespondida(false);
-      setRespuestaSeleccionada(null);
+      setPreguntaActual(nuevoTest.preguntas[0]);
       setAciertos(0);
+      setPreguntasRevision(null);
       setPantalla("pregunta");
       return;
+
     }
 
     let filtradas = preguntas.filter(p => p.categoria === tipo);
@@ -160,10 +451,29 @@ function App() {
   }
 
   function responder(indice) {
-    setRespuestaSeleccionada(indice);
-    setRespondida(true);
+    if (!testActual) return;
 
-    if (preguntaActual.respuestas[indice].correcta) {
+    const copiaTest = { ...testActual };
+    const copiaPreguntas = [...copiaTest.preguntas];
+
+    const pregunta = copiaPreguntas[indicePregunta];
+
+    // En modo práctica no permitimos cambiar respuesta
+    if (
+      testActual.modo === "practica" &&
+      pregunta.respuestaSeleccionada !== null
+    ) return;
+
+
+    copiaPreguntas[indicePregunta] = {
+      ...pregunta,
+      respuestaSeleccionada: indice
+    };
+
+    copiaTest.preguntas = copiaPreguntas;
+    setTestActual(copiaTest);
+
+    if (pregunta.respuestas[indice].correcta) {
       setAciertos(prev => prev + 1);
     }
   }
@@ -171,15 +481,45 @@ function App() {
   function siguientePregunta() {
     const siguiente = indicePregunta + 1;
 
+    // 🔎 Si estamos en revisión
+    if (preguntasRevision) {
+      if (siguiente < preguntasRevision.length) {
+        setIndicePregunta(siguiente);
+        setPreguntaActual(preguntasRevision[siguiente]);
+      }
+      return;
+    }
+
+    // 🧪 Si estamos haciendo el test normal
     if (siguiente < preguntasTest.length) {
       setIndicePregunta(siguiente);
       setPreguntaActual(preguntasTest[siguiente]);
-      setRespondida(false);
-      setRespuestaSeleccionada(null);
+
     } else {
-      // Test terminado
-      setPantalla("resumen");
-    }
+        const testFinal = {
+          ...testActual,
+          finalizado: true,
+          revisando: false,
+          fechaFin: Date.now()
+        };
+
+        const todasRespondidas = testFinal.preguntas.every(
+          p => p.respuestaSeleccionada !== null
+        );
+
+        if (todasRespondidas) {
+          const todasRespondidas = testFinal.preguntas.every(
+            p => p.respuestaSeleccionada !== null
+          );
+
+          if (todasRespondidas) {
+            guardarHistoricoTest(testFinal);
+          }
+        }
+
+        setTestActual(testFinal);
+        setPantalla("resumen");
+      }
   }
 
   function iniciarTestConTemas() {
@@ -208,13 +548,27 @@ function App() {
 
     guardarTestReciente(seleccionadas);
 
-    setPreguntasTest(seleccionadas);
+    const nuevoTest = {
+      modo: modoTest,
+      fechaInicio: Date.now(),
+      preguntas: seleccionadas.map(p => ({
+        ...p,
+        respuestaSeleccionada: null,
+        marcadaFavorita: false
+      })),
+      finalizado: false,
+      fechaFin: null
+    };
+
+    setTestActual(nuevoTest);
+
+    setPreguntasTest(nuevoTest.preguntas);
     setIndicePregunta(0);
-    setPreguntaActual(seleccionadas[0]);
-    setRespondida(false);
-    setRespuestaSeleccionada(null);
+    setPreguntaActual(nuevoTest.preguntas[0]);
     setAciertos(0);
+    setPreguntasRevision(null);
     setPantalla("pregunta");
+
   }
 
   function iniciarTestAleatorio() {
@@ -238,237 +592,829 @@ function App() {
 
     guardarTestReciente(seleccionadas);
 
-    setPreguntasTest(seleccionadas);
+    const nuevoTest = {
+      modo: modoTest,
+      fechaInicio: Date.now(),
+      preguntas: seleccionadas.map(p => ({
+        ...p,
+        respuestaSeleccionada: null,
+        marcadaFavorita: false
+      })),
+      finalizado: false,
+      fechaFin: null
+    };
+
+    setTestActual(nuevoTest);
+
+    setPreguntasTest(nuevoTest.preguntas);
     setIndicePregunta(0);
-    setPreguntaActual(seleccionadas[0]);
-    setRespondida(false);
-    setRespuestaSeleccionada(null);
+    setPreguntaActual(nuevoTest.preguntas[0]);
     setAciertos(0);
+    setPreguntasRevision(null);
+    setPantalla("pregunta");
+
+  }
+
+  function empezarOposicion() {
+
+    const total = 50;
+
+    const numJuridico = Math.round((configOposicion / 100) * total);
+    const numEspecifico = total - numJuridico;
+
+    const juridico = preguntas.filter(p => p.categoria === "jurídico");
+    const especifico = preguntas.filter(p => p.categoria === "específico");
+
+    const seleccionadas = [
+      ...barajar(juridico).slice(0, numJuridico),
+      ...barajar(especifico).slice(0, numEspecifico)
+    ];
+
+    const idsRecientes = getIdsRecientes();
+
+    let disponibles = seleccionadas.filter(
+      p => !idsRecientes.includes(p._id)
+    );
+
+    if (disponibles.length < 50) {
+      disponibles = seleccionadas;
+    }
+
+    const final = barajar(disponibles);
+
+    guardarTestReciente(final);
+
+    const nuevoTest = {
+      modo: "oposicion",
+      fechaInicio: Date.now(),
+      preguntas: final.map(p => ({
+        ...p,
+        respuestaSeleccionada: null
+      })),
+      finalizado: false,
+      fechaFin: null
+    };
+
+    setTestActual(nuevoTest);
+    setPreguntasTest(nuevoTest.preguntas);
+    setIndicePregunta(0);
+    setPreguntaActual(nuevoTest.preguntas[0]);
+    setPreguntasRevision(null);
     setPantalla("pregunta");
   }
 
   return (
-  <div style={{ padding: 20 }}>
 
-    {/* HOME */}
-    {pantalla === "home" && (
-      <>
-        <h1>Test Oposiciones</h1>
+    <div style={{ padding: 20 }}>
 
-        {totalPreguntas > 0 && (
-          <p>📊 Preguntas disponibles: {totalPreguntas}</p>
-        )}
+      {/* HOME */}
+      {pantalla === "home" && (
+        <>
+          <h1>Test Opos pruebas</h1>
 
-        <br />
+          {totalPreguntas > 0 && (
+            <p>📊 Preguntas disponibles: {totalPreguntas}</p>
+          )}
 
-        <button
-          style={{ padding: 10, fontSize: 16 }}
-          disabled={totalPreguntas === 0}
-          onClick={() => setPantalla("tipo")}
-        >
-          Hacer test
-        </button>
-      </>
-    )}
+          <br />
 
-    {/* SELECCIÓN DE TIPO */}
-    {pantalla === "tipo" && (
-      <>
-        <h2>Selecciona tipo de test</h2>
-
-        <button onClick={() => empezarTest("jurídico")}>
-          Jurídico
-        </button>
-        <br /><br />
-
-        <button onClick={() => empezarTest("específico")}>
-          Específico
-        </button>
-        <br /><br />
-
-        <button onClick={() => empezarTest("mixto")}>
-          Mixto
-        </button>
-        <br /><br />
-
-        <button onClick={() => setPantalla("home")}>
-          Volver
-        </button>
-      </>
-    )}
-
-    {/* SELECCIÓN DE TEMAS */}
-    {pantalla === "temas" && (
-      <>
-        <h2>Selecciona los temas</h2>
-
-        {temasDisponibles.map((t, i) => (
-          <label key={i} style={{ display: "block", marginBottom: 6 }}>
-            <input
-              type="checkbox"
-              checked={temasSeleccionados.includes(t.tema)}
-              onChange={(e) => {
-                if (e.target.checked) {
-                  setTemasSeleccionados(prev => [...prev, t.tema]);
-                } else {
-                  setTemasSeleccionados(prev =>
-                    prev.filter(x => x !== t.tema)
-                  );
-                }
-              }}
-            />
-            {" "}
-            {t.tema} - {t.descripcion}
-          </label>
-        ))}
-
-        <br />
-
-        <div style={{ display: "flex", gap: 10 }}>
-          <button
-            disabled={temasSeleccionados.length === 0}
-            onClick={() => iniciarTestConTemas()}
-          >
-            Empezar test
-          </button>
-
-          <button
-            onClick={() => iniciarTestAleatorio()}
-          >
-            🎲 Test aleatorio
-          </button>
-        </div>
-
-
-        <br /><br />
-
-        <button onClick={() => setPantalla("tipo")}>
-          Volver
-        </button>
-      </>
-    )}
-
-    {/* PREGUNTA */}
-    {pantalla === "pregunta" && preguntaActual && (
-      <>
-        <h2 style={{ marginBottom: 4 }}>
-          {tipoTest === "jurídico"
-            ? "Jurídico"
-            : tipoTest === "específico"
-            ? "Específico"
-            : "Mixto"}
-        </h2>
-
-        <p style={{ fontSize: 14, opacity: 0.8, marginTop: 0 }}>
-          {preguntaActual.descripcionTema}
-        </p>
-
-        <p>
-          Pregunta {indicePregunta + 1} / {preguntasTest.length}
-        </p>
-
-        <h3>{preguntaActual.texto}</h3>
-
-        {preguntaActual.respuestas.map((r, i) => (
-          <button
-            key={i}
-            disabled={respondida}
-            onClick={() => responder(i)}
+          <div
             style={{
-              display: "block",
-              width: "100%",
-              marginBottom: 8,
-              padding: 10,
-              backgroundColor: respondida
-                ? i === respuestaSeleccionada
-                  ? r.correcta
-                    ? "lightgreen"
-                    : "salmon"
-                  : r.correcta
-                    ? "lightgreen"
-                    : "white"
-                : "white",
-              color: "black",
-              opacity: 1
+              display: "grid",
+              gridTemplateColumns: "1fr 1fr",
+              gap: 20,
+              marginTop: 40
             }}
           >
-            {r.texto}
-          </button>
-        ))}
 
+            {/* HISTÓRICO */}
+            <div
+              onClick={() => setPantalla("historico")}
+              style={cardStyle}
+            >
+              <h2 style={cardNumberStyle}>
+                {getTestsSemanaActual()}
+              </h2>
+              <p style={cardTextStyle}>
+                Histórico
+              </p>
+            </div>
+
+            {/* ESTADÍSTICAS */}
+            <div
+              onClick={() => setPantalla("estadisticas")}
+              style={cardStyle}
+            >
+              <div style={{ fontSize: 40 }}>📊</div>
+              <p style={cardTextStyle}>Estadísticas</p>
+            </div>
+
+            {/* HACER TEST */}
+            <div
+              onClick={() => setPantalla("modo")}
+              style={cardStyle}
+            >
+              <div style={{ fontSize: 40 }}>📝</div>
+              <p style={cardTextStyle}>Hacer test</p>
+            </div>
+
+            {/* FAVORITAS */}
+            <div
+              onClick={() => {
+                const favoritasIds = getFavoritas();
+                const favoritas = preguntas.filter(p =>
+                  favoritasIds.includes(p._id)
+                );
+
+                if (favoritas.length === 0) {
+                  alert("No tienes preguntas favoritas aún.");
+                  return;
+                }
+
+                setPreguntasRevision(favoritas);
+                setModoFavoritas(true);
+                setIndicePregunta(0);
+                setPreguntaActual(favoritas[0]);
+                setPantalla("pregunta");
+              }}
+              style={cardStyle}
+            >
+              <div style={{ fontSize: 40 }}>⭐</div>
+              <p style={cardTextStyle}>Favoritas</p>
+            </div>
+
+          </div>
+
+          <div style={{ marginTop: 60 }}>
+            <hr
+              style={{
+                border: "none",
+                height: 1,
+                background: "rgba(255,255,255,0.2)",
+                marginBottom: 20
+              }}
+            />
+            <p style={{ opacity: 0.6, fontSize: 14, margin: 0 }}>
+              Versión {version}
+            </p>
+          </div>
+
+        </>
+      )}
+
+      {/* HISTORICO */}
+      {pantalla === "historico" && (
+        <>
+          <h2>Histórico de tests</h2>
+
+          {getSemanasOrdenadas().length === 0 ? (
+            <p>No hay tests guardados aún.</p>
+          ) : (
+            <div style={{ marginTop: 30 }}>
+              {getSemanasOrdenadas().map((item, index) => (
+                <div
+                  key={index}
+                  style={{ marginBottom: 24 }}
+                >
+
+                  {/* FILA SEMANA */}
+                  <div
+                    onClick={() =>
+                      setSemanaAbierta(
+                        semanaAbierta === item.semana ? null : item.semana
+                      )
+                    }
+                    style={{
+                      display: "flex",
+                      alignItems: "center",
+                      cursor: "pointer"
+                    }}
+                  >
+                    {/* Semana */}
+                    <div style={{ width: 70, fontWeight: 600 }}>
+                      {item.semana}
+                    </div>
+
+                    {/* Número */}
+                    <div style={{ width: 30 }}>
+                      {item.total}
+                    </div>
+
+                    {/* Barra */}
+                    <div
+                      style={{
+                        height: 24,
+                        width: `${item.total * 20}px`,
+                        background: "linear-gradient(90deg, #4f46e5, #3b82f6)",
+                        borderRadius: 12,
+                        marginLeft: 10
+                      }}
+                    />
+                  </div>
+
+                  {/* DESPLEGABLE */}
+                  {semanaAbierta === item.semana && (
+                    <div style={{ marginLeft: 70, marginTop: 12 }}>
+                      {historico
+                        .filter(h => {
+                          const { year, week } = getYearWeek(h.fecha);
+                          const clave = `${String(year).slice(-2)}w${week}`;
+                          return clave === item.semana;
+                        })
+                        .map(h => (
+                           <div
+                            key={h.id}
+                            style={{
+                              display: "flex",
+                              justifyContent: "space-between",
+                              alignItems: "center",
+                              marginBottom: 10,
+                              padding: "6px 0",
+                              borderBottom: "1px solid rgba(255,255,255,0.08)"
+                            }}
+                          >
+                            {/* Texto */}
+                            <span style={{ color: "#d1d5db", fontSize: 14 }}>
+                              {new Date(h.fecha).toLocaleDateString()} · {h.modo}
+                              {h.porcentajeJuridico !== null && ` · J ${h.porcentajeJuridico}%`}
+                              {h.porcentajeEspecifico !== null && ` · E ${h.porcentajeEspecifico}%`}
+                            </span>
+
+                            {/* Papelera */}
+                            <span
+                              onClick={(e) => {
+                                e.stopPropagation();
+                                borrarTest(h.id);
+                              }}
+                              style={{
+                                cursor: "pointer",
+                                opacity: 0.6,
+                                fontSize: 16
+                              }}
+                            >
+                              🗑
+                            </span>
+                          </div>
+                        ))}
+                    </div>
+                  )}
+
+                </div>
+              ))}
+
+            </div>
+          )}
+
+          <br />
+
+          <button onClick={() => setPantalla("home")}>
+            Volver
+          </button>
+        </>
+
+      )}
+
+      {/* ESTADISTICAS */}
+      {pantalla === "estadisticas" && (
+        <>
+          <h2>Estadísticas</h2>
+
+          {getDatosEstadisticas().length === 0 ? (
+            <p>No hay datos suficientes aún.</p>
+          ) : (
+            <div style={{ marginTop: 30, width: "100%", height: 300 }}>
+              <ResponsiveContainer>
+                <LineChart data={getDatosEstadisticas()}>
+                  <CartesianGrid strokeDasharray="3 3" />
+                  <XAxis dataKey="semana" />
+                  <YAxis domain={[0, 100]} />
+                  <Tooltip />
+                  <Legend />
+                  <Line
+                    type="monotone"
+                    dataKey="juridico"
+                    stroke="#3b82f6"
+                    strokeWidth={3}
+                    name="Jurídico"
+                  />
+                  <Line
+                    type="monotone"
+                    dataKey="especifico"
+                    stroke="#10b981"
+                    strokeWidth={3}
+                    name="Específico"
+                  />
+                </LineChart>
+              </ResponsiveContainer>
+            </div>
+          )}
+
+
+          <br />
+
+          <button onClick={() => setPantalla("home")}>
+            Volver
+          </button>
+        </>
+      )}
+
+      {/* SELECCIÓN DE MODO */}
+      {pantalla === "modo" && (
+        <>
+          <h2>Selecciona modo</h2>
+
+          <button onClick={() => {
+            setModoTest("practica");
+            setPantalla("tipo");
+          }}>
+            🟢 Modo práctica
+          </button>
+
+          <br /><br />
+
+          <button onClick={() => {
+            setModoTest("examen");
+            setPantalla("tipo");
+          }}>
+            🟡 Modo examen
+          </button>
+
+          <br /><br />
+
+          <button onClick={() => {
+            setModoTest("oposicion");
+            setPantalla("config-oposicion");
+          }}>
+            🔵 Modo oposición
+          </button>
+
+
+          <br /><br />
+
+          <button onClick={() => setPantalla("home")}>
+            Volver
+          </button>
+        </>
+      )}
+
+      {/* CONFIGURACIÓN OPOSICIÓN */}
+      {pantalla === "config-oposicion" && (
+        <>
+          <h2>Configurar reparto oposición</h2>
+
+          <div style={{ marginTop: 30 }}>
+
+            <div style={{ display: "flex", justifyContent: "space-between" }}>
+              <span>Jurídico: {configOposicion}%</span>
+              <span>Específico: {100 - configOposicion}%</span>
+            </div>
+
+            <input
+              type="range"
+              min="0"
+              max="100"
+              step="5"
+              value={configOposicion}
+              onChange={(e) => setConfigOposicion(Number(e.target.value))}
+              style={{ width: "100%", marginTop: 20 }}
+            />
+
+          </div>
+
+          <br /><br />
+
+          <button onClick={() => empezarOposicion()}>
+            Empezar oposición (50 preguntas)
+          </button>
+
+          <br /><br />
+
+          <button onClick={() => setPantalla("modo")}>
+            Volver
+          </button>
+        </>
+      )}
+
+      {/* SELECCIÓN DE TIPO */}
+      {pantalla === "tipo" && (
+        <>
+          <h2>Selecciona tipo de test</h2>
+
+          <button onClick={() => empezarTest("jurídico")}>
+            Jurídico
+          </button>
+          <br /><br />
+
+          <button onClick={() => empezarTest("específico")}>
+            Específico
+          </button>
+          <br /><br />
+
+          <button onClick={() => empezarTest("mixto")}>
+            Mixto
+          </button>
+          <br /><br />
+
+          <button onClick={() => setPantalla("modo")}>
+            Volver
+          </button>
+        </>
+      )}
+
+      {/* SELECCIÓN DE TEMAS */}
+      {pantalla === "temas" && (
+        <>
+          <h2>Selecciona los temas</h2>
+
+          {temasDisponibles.map((t, i) => (
+            <label key={i} style={{ display: "block", marginBottom: 6 }}>
+              <input
+                type="checkbox"
+                checked={temasSeleccionados.includes(t.tema)}
+                onChange={(e) => {
+                  if (e.target.checked) {
+                    setTemasSeleccionados(prev => [...prev, t.tema]);
+                  } else {
+                    setTemasSeleccionados(prev =>
+                      prev.filter(x => x !== t.tema)
+                    );
+                  }
+                }}
+              />
+              {" "}
+              {t.tema} - {t.descripcion}
+            </label>
+          ))}
+
+          <br />
+
+          <div style={{ display: "flex", gap: 10 }}>
+            <button
+              disabled={temasSeleccionados.length === 0}
+              onClick={() => iniciarTestConTemas()}
+            >
+              Empezar test
+            </button>
+
+            <button
+              onClick={() => iniciarTestAleatorio()}
+            >
+              🎲 Test aleatorio
+            </button>
+          </div>
+
+
+          <br /><br />
+
+          <button onClick={() => setPantalla("tipo")}>
+            Volver
+          </button>
+        </>
+      )}
+
+      {/* PREGUNTA */}
+      {pantalla === "pregunta" && preguntasActivas[indicePregunta] && (
         <div
           style={{
             display: "flex",
-            justifyContent: "space-between",
-            marginTop: 30
+            flexDirection: "column",
+            height: "100vh"
           }}
         >
-          {/* Finalizar test - izquierda */}
-          <button
-            onClick={() => {
-              setPantalla("resumen");
+          <div
+            style={{
+              display: "flex",
+              justifyContent: "space-between",
+              alignItems: "center"
             }}
           >
-            Finalizar test
-          </button>
+            <h2 style={{ marginBottom: 4 }}>
+              {tipoTest === "jurídico"
+                ? "Jurídico"
+                : tipoTest === "específico"
+                ? "Específico"
+                : "Mixto"}
+            </h2>
 
-          {/* Siguiente pregunta - derecha */}
-          {respondida && (
-            <button onClick={siguientePregunta}>
-              Siguiente pregunta
+            <button
+              onClick={() => {
+
+                const esUltima = indicePregunta === preguntasActivas.length - 1;
+
+                // ⭐ Si estamos en modo favoritas → salir a HOME
+                if (modoFavoritas) {
+                  setModoFavoritas(false);
+                  setPreguntasRevision(null);
+                  setPreguntasTest([]);
+                  setTestActual(null);
+                  setIndicePregunta(0);
+                  setPreguntaActual(null);
+                  setPantalla("home");
+                  return;
+                }
+
+                // 🔎 Si estamos revisando un test ya finalizado
+                if (testActual?.revisando) {
+                  setPreguntasRevision(null);
+                  setIndicePregunta(0);
+                  setPreguntaActual(null);
+                  setPantalla("resumen");
+                  return;
+                }
+
+                // 🛑 Si NO es la última → Salir sin guardar
+                if (!esUltima) {
+                  setPreguntasTest([]);
+                  setTestActual(null);
+                  setIndicePregunta(0);
+                  setPreguntaActual(null);
+                  setPantalla("tipo");
+                  return;
+                }
+
+                // ✅ Si es la última → Finalizar y guardar
+                const testFinal = {
+                  ...testActual,
+                  finalizado: true,
+                  revisando: false,
+                  fechaFin: Date.now()
+                };
+
+                guardarHistoricoTest(testFinal);
+
+                setTestActual(testFinal);
+                setPantalla("resumen");
+              }}
+            >
+              {modoFavoritas
+                ? "Salir"
+                : testActual?.revisando
+                  ? "Salir"
+                  : indicePregunta === preguntasActivas.length - 1
+                    ? "Finalizar test"
+                    : "Salir"}
             </button>
+
+
+            <button
+              onClick={() => toggleFavorita(preguntaActual._id)}
+              style={{
+                marginRight: 10,
+                backgroundColor: esFavorita(preguntaActual._id)
+                  ? "#ffd700"
+                  : "white"
+              }}
+            >
+              ⭐
+            </button>
+
+          </div>
+
+          <p style={{ fontSize: 14, opacity: 0.8, marginTop: 0 }}>
+            {preguntasActivas[indicePregunta].descripcionTema}
+          </p>
+
+          <p>
+            Pregunta {indicePregunta + 1} / {preguntasActivas.length}
+          </p>
+
+          <h3>{preguntasActivas[indicePregunta].texto}</h3>
+          
+          <div
+            style={{
+              flex: 1,
+              overflowY: "auto",
+              marginTop: 20,
+              paddingRight: 5
+            }}
+          >
+
+          {modoFavoritas ? (
+            preguntasActivas[indicePregunta].respuestas.map((r, i) => (
+              <div
+                key={i}
+                style={{
+                  padding: 12,
+                  marginBottom: 8,
+                  backgroundColor: r.correcta ? "lightgreen" : "white",
+                  borderRadius: 6,
+                  color: "black"
+                }}
+              >
+                {r.texto}
+              </div>
+            ))
+          ) : (
+            preguntasActivas[indicePregunta].respuestas.map((r, i) => (
+              <button
+                key={i}
+                onClick={() => responder(i)}
+                style={{
+                  display: "block",
+                  width: "100%",
+                  marginBottom: 8,
+                  padding: 10,
+                  backgroundColor: (() => {
+                    const seleccionada =
+                      testActual?.preguntas[indicePregunta]?.respuestaSeleccionada;
+
+                    if (testActual.modo === "practica") {
+                      if (seleccionada === null) return "white";
+                      if (i === seleccionada) {
+                        return r.correcta ? "lightgreen" : "salmon";
+                      }
+                      return r.correcta ? "lightgreen" : "white";
+                    }
+
+                    if (!testActual.revisando) {
+                      if (seleccionada === null) return "white";
+                      return i === seleccionada ? "#cce5ff" : "white";
+                    }
+
+                    if (testActual.modo === "examen") {
+                      if (seleccionada === null) return "white";
+                      if (i === seleccionada) {
+                        return r.correcta ? "lightgreen" : "salmon";
+                      }
+                      return r.correcta ? "lightgreen" : "white";
+                    }
+
+                    if (testActual.modo === "oposicion") {
+                      if (seleccionada === null) {
+                        return r.correcta ? "lightgreen" : "white";
+                      }
+                      if (i === seleccionada) {
+                        return r.correcta ? "lightgreen" : "salmon";
+                      }
+                      return r.correcta ? "lightgreen" : "white";
+                    }
+
+                    return "white";
+                  })(),
+                  color: "black"
+                }}
+              >
+                {r.texto}
+              </button>
+            ))
           )}
+
+          </div>
+
+          <div
+            style={{
+              display: "flex",
+              alignItems: "center",
+              marginTop: 30
+            }}
+          >
+            {/* IZQUIERDA */}
+            <div>
+              {indicePregunta > 0 && (
+                <button
+                  onClick={() => {
+                    const anterior = indicePregunta - 1;
+                    setIndicePregunta(anterior);
+                    if (preguntasRevision) {
+                      setPreguntaActual(preguntasRevision[anterior]);
+                    } else {
+                      setPreguntaActual(preguntasTest[anterior]);
+                    }
+                  }}
+                >
+                  Anterior
+                </button>
+              )}
+            </div>
+
+            {/* DERECHA */}
+            <div style={{ marginLeft: "auto" }}>
+              {indicePregunta < preguntasActivas.length - 1 && (
+                <button onClick={siguientePregunta}>
+                  Siguiente pregunta
+                </button>
+              )}
+            </div>
+          </div>
+
+
         </div>
+        
+      )}
 
-      </>
-    )}
+      {/* RESUMEN */}
+      {pantalla === "resumen" && (
+        <>
+          <h2>Resumen del test</h2>
 
-    {/* RESUMEN */}
-    {pantalla === "resumen" && (
-      <>
-        <h2>Resumen del test</h2>
+          {(() => {
+            let total = testActual?.preguntas.length || 0;
+            let aciertosFinal = 0;
 
-          <p>
-            Acertadas {aciertos} de {indicePregunta + 1} preguntas
-          </p>
+            if (testActual?.modo === "practica") {
+              aciertosFinal = aciertos;
+            } else {
+              aciertosFinal = testActual?.preguntas.filter(
+                p =>
+                  p.respuestaSeleccionada !== null &&
+                  p.respuestas[p.respuestaSeleccionada]?.correcta
+              ).length;
+            }
 
-          <p>
-            Porcentaje de aciertos:{" "}
-            {Math.round((aciertos / (indicePregunta + 1)) * 100)} %
-          </p>
-          <p>
-            {Math.round((aciertos / (indicePregunta + 1)) * 100) >= 80
-              ? "Excelente resultado 💪"
-              : Math.round((aciertos / (indicePregunta + 1)) * 100) >= 60
-              ? "Buen resultado 👍"
-              : "Conviene repasar 📘"}
-          </p>
+            return (
+              <>
+                <p>
+                  Acertadas {aciertosFinal} de {total} preguntas
+                </p>
 
-        <button
-          onClick={() => {
-            setPantalla("tipo");
-            setPreguntasTest([]);
-            setIndicePregunta(0);
-            setPreguntaActual(null);
-            setRespondida(false);
-            setRespuestaSeleccionada(null);
-            setAciertos(0);
-          }}
-        >
-          Volver
-        </button>
-      </>
-    )}
+                <p>
+                  Porcentaje de aciertos{" "}
+                  {total > 0
+                    ? Math.round((aciertosFinal / total) * 100)
+                    : 0}
+                  %
+                </p>
 
-    <hr style={{ marginTop: 30, opacity: 0.3 }} />
+                <p>
+                  {total > 0 &&
+                  Math.round((aciertosFinal / total) * 100) >= 80
+                    ? "Excelente resultado 💪"
+                    : total > 0 &&
+                      Math.round((aciertosFinal / total) * 100) >= 60
+                    ? "Buen resultado 👍"
+                    : "Conviene repasar 📘"}
+                </p>
+              </>
+            );
+          })()}
 
-    <p style={{ fontSize: 12, opacity: 0.6 }}>
-      Versión {__APP_VERSION__}
-    </p>
+          <br />
 
-  </div>
-);
+          <div
+            style={{
+              display: "flex",
+              justifyContent: "space-between",
+              alignItems: "center",
+              marginTop: 30,
+              width: "100%"
+            }}
+          >
 
+            {/* IZQUIERDA - Salir */}
+            <div>
+              <button
+                onClick={() => {
+                  setPantalla("tipo");
+                  setPreguntasTest([]);
+                  setIndicePregunta(0);
+                  setPreguntaActual(null);
+                  setAciertos(0);
+                  setPreguntasRevision(null);
+                  setModoFavoritas(false);
+                }}
+              >
+                Salir
+              </button>
+            </div>
+
+            {/* DERECHA - Revisar */}
+            {testActual?.modo !== "practica" && (
+              <div>
+                <button
+                  onClick={() => {
+                    const todas = testActual.preguntas;
+
+                    let revision;
+
+                    if (testActual.modo === "examen") {
+                      revision = todas.filter(
+                        p => p.respuestaSeleccionada !== null
+                      );
+                    } else {
+                      revision = todas;
+                    }
+
+                    setPreguntasRevision(revision);
+
+                    setTestActual(prev => ({
+                      ...prev,
+                      revisando: true
+                    }));
+
+                    setIndicePregunta(0);
+                    setPreguntaActual(revision[0]);
+                    setPantalla("pregunta");
+                  }}
+                >
+                  Revisar test
+                </button>
+              </div>
+            )}
+          </div>
+        </>
+      )}
+    </div>
+  )
 }
 
 export default App;

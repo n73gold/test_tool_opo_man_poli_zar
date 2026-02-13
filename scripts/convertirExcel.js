@@ -12,7 +12,7 @@
 
 //Para chequear la version 2 en el movil
 //git checkout v2-evolucion
-//npm run dev -- --host
+//npm run dev -- --host (Ctrl - C para cerrar el host)
 //abrir la IP en el navegador del movil (mismo Wifi)
 
 
