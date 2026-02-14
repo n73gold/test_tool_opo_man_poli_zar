@@ -1,20 +1,6 @@
-//Para volver a version 1 (stable):
-//git checkout stable
-//     *opcional* git branch (comprueba que estamos en gh-pages)
 //node scripts/convertirExcel.js
-//git add .
-//git commit -m "Actualizar preguntas"
 //npm run build
 //npm run deploy
-
-//Para volver a version 2 (desarrollo) y modificar codigo:
-//git checkout v2-evolucion
-
-//Para chequear la version 2 en el movil
-//git checkout v2-evolucion
-//npm run dev -- --host (Ctrl - C para cerrar el host)
-//abrir la IP en el navegador del movil (mismo Wifi)
-
 
 import XLSX from "xlsx";
 import fs from "fs";
@@ -43,6 +29,8 @@ const preguntas = rows.slice(1).map(row => {
     categoria: String(row[0] ?? "").toLowerCase(),
     tema: row[1],
     descripcionTema: row[2],
+    nombreExamen: row[4],                          
+    numeroPreguntaExamen: row[5],                  
     texto: row[6],
     respuestas: [
       { texto: row[7], correcta: correcta === "a" },

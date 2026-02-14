@@ -20,6 +20,8 @@ function parseExcel(rows) {
       categoria: String(row[0]).toLowerCase(), // Temario
       tema: row[1],                            // Tema
       descripcionTema: row[2],   // Descripcion_Tema (C)
+      nombreExamen: row[4],                   // Descripcion_Test
+      numeroPreguntaExamen: row[5],             //Nr pregunta en test
       texto: row[6],                           // Enunciado
       respuestas: [
         { texto: row[7], correcta: correcta === "a" },
@@ -65,14 +67,27 @@ function App() {
 
   const MAX_TESTS_RECIENTES = 5;
 
+  const version = __APP_VERSION__;
+
   const preguntasActivas = preguntasRevision ?? preguntasTest;
 
-  const version = __APP_VERSION__;
+  const [pomodoroMode, setPomodoroMode] = useState("work"); // work | break
+  const [pomodoroRunning, setPomodoroRunning] = useState(false);
+  const [pomodoroPaused, setPomodoroPaused] = useState(false);
+  const [pomodoroStart, setPomodoroStart] = useState(null);
+  const [workDuration, setWorkDuration] = useState("25");   // minutos
+  const [breakDuration, setBreakDuration] = useState("5");  // minutos
+  const [pomodoroElapsed, setPomodoroElapsed] = useState(0); // segundos
+  const [pomodoroStats, setPomodoroStats] = useState({
+    totalMinutes: 0,
+    byDay: {},
+    byWeek: {}
+  });
 
   const cardStyle = {
     background: "linear-gradient(135deg, #4f46e5, #3b82f6)",
     borderRadius: 20,
-    padding: 18,
+    padding: 14,
     textAlign: "center",
     color: "white",
     cursor: "pointer",
@@ -81,18 +96,18 @@ function App() {
     flexDirection: "column",
     justifyContent: "center",
     alignItems: "center",
-    minHeight: 100,
+    minHeight: 80,
     transition: "transform 0.15s ease"
   };
 
   const cardNumberStyle = {
-    fontSize: 48,
+    fontSize: 36,
     margin: 0
   };
 
   const cardTextStyle = {
     marginTop: 10,
-    fontSize: 16,
+    fontSize: 14,
     opacity: 0.95
   };
 
@@ -129,8 +144,219 @@ function App() {
 
       setHistorico(getHistorico());
 
+      const savedPomodoro = JSON.parse(localStorage.getItem("pomodoroStats") || "null");
+      if (savedPomodoro) {
+        setPomodoroStats(savedPomodoro);
+      }
+
+      const savedConfig = JSON.parse(localStorage.getItem("pomodoroConfig") || "null");
+
+      if (savedConfig) {
+        setWorkDuration(savedConfig.work);
+        setBreakDuration(savedConfig.break);
+      }
+
+
+      const saved = JSON.parse(localStorage.getItem("pomodoroActive") || "null");
+
+      if (saved) {
+        const now = Date.now();
+
+        if (saved.end > now) {
+          setPomodoroMode(saved.mode);
+          setPomodoroStart(saved.start);
+          setPomodoroEnd(saved.end);
+          setPomodoroRunning(true);
+        } else {
+          localStorage.removeItem("pomodoroActive");
+        }
+      }
+
   }, []);
   
+  useEffect(() => {
+    localStorage.setItem("pomodoroConfig", JSON.stringify({
+      work: workDuration,
+      break: breakDuration
+    }));
+  }, [workDuration, breakDuration]);
+
+  // ⏱️ Motor del Pomodoro (contador hacia delante)
+  useEffect(() => {
+
+    if (!pomodoroRunning || pomodoroStart === null) return;
+
+    const interval = setInterval(() => {
+
+      const elapsed = Math.floor((Date.now() - pomodoroStart) / 1000);
+      setPomodoroElapsed(elapsed);
+
+      const duration =
+        pomodoroMode === "work"
+          ? Number(workDuration) * 60
+          : Number(breakDuration) * 60;
+
+
+      if (elapsed >= duration) {
+
+        clearInterval(interval);
+
+        // 🔵 FIN DE ESTUDIO
+        if (pomodoroMode === "work") {
+
+          const confirmar = window.confirm(
+            "Tiempo de estudio finalizado. ¿Iniciar descanso?"
+          );
+
+          if (confirmar) {
+
+            // Guardamos minutos estudiados
+            actualizarEstadisticasPomodoro(Number(workDuration));
+
+            // Pasamos a descanso
+            setPomodoroMode("break");
+            setPomodoroStart(Date.now());
+            setPomodoroElapsed(0);
+            setPomodoroRunning(true);
+            setPomodoroPaused(false);
+
+          } else {
+            // Si no quiere descanso, paramos todo
+            setPomodoroRunning(false);
+            setPomodoroPaused(false);
+            setPomodoroStart(null);
+            setPomodoroElapsed(0);
+          }
+
+        }
+
+        // 🟡 FIN DE DESCANSO
+        else {
+
+          const confirmar = window.confirm(
+            "Descanso finalizado. ¿Iniciar nuevo ciclo de estudio?"
+          );
+
+          if (confirmar) {
+
+            setPomodoroMode("work");
+            setPomodoroStart(Date.now());
+            setPomodoroElapsed(0);
+            setPomodoroRunning(true);
+            setPomodoroPaused(false);
+
+          } else {
+            // Si no quiere iniciar nuevo ciclo, se detiene
+            setPomodoroRunning(false);
+            setPomodoroPaused(false);
+            setPomodoroStart(null);
+          }
+        }
+
+      }
+
+    }, 1000);
+
+    return () => clearInterval(interval);
+
+  }, [
+    pomodoroRunning,
+    pomodoroStart,
+    pomodoroMode,
+    workDuration,
+    breakDuration
+  ]);
+
+  function actualizarEstadisticasPomodoro(minutos) {
+
+    const hoy = new Date();
+    const fechaKey = hoy.toISOString().slice(0, 10);
+
+    const { year, week } = getYearWeek(Date.now());
+    const weekKey = `${String(year).slice(-2)}w${week}`;
+
+    const nuevasStats = { ...pomodoroStats };
+
+    nuevasStats.totalMinutes += minutos;
+
+    if (!nuevasStats.byDay[fechaKey]) {
+      nuevasStats.byDay[fechaKey] = 0;
+    }
+    nuevasStats.byDay[fechaKey] += minutos;
+
+    if (!nuevasStats.byWeek[weekKey]) {
+      nuevasStats.byWeek[weekKey] = 0;
+    }
+    nuevasStats.byWeek[weekKey] += minutos;
+
+    setPomodoroStats(nuevasStats);
+    localStorage.setItem("pomodoroStats", JSON.stringify(nuevasStats));
+  }
+
+  function sumarManualPomodoro() {
+
+    const input = window.prompt("¿Cuántos minutos quieres añadir?");
+
+    if (!input) return;
+
+    const minutos = Number(input);
+
+    if (isNaN(minutos) || minutos <= 0) {
+      alert("Introduce un número válido de minutos.");
+      return;
+    }
+
+    actualizarEstadisticasPomodoro(Math.floor(minutos));
+  }
+
+  function iniciarPomodoro() {
+
+    // 🔁 Reanudar desde pausa
+    if (pomodoroPaused) {
+      const nuevoStart = Date.now() - pomodoroElapsed * 1000;
+      setPomodoroStart(nuevoStart);
+      setPomodoroRunning(true);
+      setPomodoroPaused(false);
+      return;
+    }
+
+    // ▶ Inicio normal
+    setPomodoroMode("work");
+    setPomodoroStart(Date.now());
+    setPomodoroElapsed(0);
+    setPomodoroRunning(true);
+    setPomodoroPaused(false);
+  }
+
+  function pausarPomodoro() {
+    if (!pomodoroRunning) return;
+
+    setPomodoroRunning(false);
+    setPomodoroPaused(true);
+  }
+
+  function terminarPomodoro() {
+
+    const minutos = Math.floor(pomodoroElapsed / 60);
+
+    if (minutos > 0 && pomodoroMode === "work") {
+
+      const confirmar = window.confirm(
+        `Has estudiado ${minutos} minutos. ¿Quieres guardarlos?`
+      );
+
+      if (confirmar) {
+        actualizarEstadisticasPomodoro(minutos);
+      }
+    }
+
+    setPomodoroRunning(false);
+    setPomodoroPaused(false);
+    setPomodoroElapsed(0);
+    setPomodoroStart(null);
+    setPomodoroMode("work");
+  }
+
   function getHistorico() {
     return JSON.parse(localStorage.getItem("historicoTests") || "[]");
   }
@@ -481,6 +707,14 @@ function App() {
   function siguientePregunta() {
     const siguiente = indicePregunta + 1;
 
+    // 🚫 En modo práctica obligamos a responder antes de avanzar
+    if (
+      testActual?.modo === "practica" &&
+      testActual.preguntas[indicePregunta].respuestaSeleccionada === null
+    ) {
+      return;
+    }
+
     // 🔎 Si estamos en revisión
     if (preguntasRevision) {
       if (siguiente < preguntasRevision.length) {
@@ -663,756 +897,983 @@ function App() {
     setPantalla("pregunta");
   }
 
+  function empezarExamenDirecto() {
+
+    const total = 20;
+    const mitad = total / 2;
+
+    const juridico = preguntas.filter(p => p.categoria === "jurídico");
+    const especifico = preguntas.filter(p => p.categoria === "específico");
+
+    const seleccionadas = [
+      ...barajar(juridico).slice(0, mitad),
+      ...barajar(especifico).slice(0, mitad)
+    ];
+
+    const idsRecientes = getIdsRecientes();
+
+    let disponibles = seleccionadas.filter(
+      p => !idsRecientes.includes(p._id)
+    );
+
+    if (disponibles.length < total) {
+      disponibles = seleccionadas;
+    }
+
+    const final = barajar(disponibles);
+
+    guardarTestReciente(final);
+
+    const nuevoTest = {
+      modo: "examen",
+      fechaInicio: Date.now(),
+      preguntas: final.map(p => ({
+        ...p,
+        respuestaSeleccionada: null
+      })),
+      finalizado: false,
+      fechaFin: null
+    };
+
+    setTestActual(nuevoTest);
+    setPreguntasTest(nuevoTest.preguntas);
+    setIndicePregunta(0);
+    setPreguntaActual(nuevoTest.preguntas[0]);
+    setPreguntasRevision(null);
+    setPantalla("pregunta");
+  }
+
   return (
 
-    <div style={{ padding: 20 }}>
+    <div
+      style={{
+        padding: pantalla === "pregunta" ? 0 : 20,
+        minHeight: "100dvh",
+        boxSizing: "border-box",
+        display: "flex",
+        flexDirection: "column"
+      }}
+    >
 
-      {/* HOME */}
-      {pantalla === "home" && (
-        <>
-          <h1>Test Opos pruebas</h1>
+    {/* HOME */}
+    {pantalla === "home" && (
+      <>
+        <h1>Mi app</h1>
 
-          {totalPreguntas > 0 && (
-            <p>📊 Preguntas disponibles: {totalPreguntas}</p>
-          )}
+        {totalPreguntas > 0 && (
+          <p>📊 Preguntas disponibles: {totalPreguntas}</p>
+        )}
 
-          <br />
+        <div
+          style={{
+            display: "grid",
+            gridTemplateColumns: "1fr 1fr",
+            gridAutoRows: "1fr",
+            gap: 20,
+            marginTop: 15
+          }}
+        >
 
+          {/* HISTÓRICO */}
           <div
-            style={{
-              display: "grid",
-              gridTemplateColumns: "1fr 1fr",
-              gap: 20,
-              marginTop: 40
-            }}
+            onClick={() => setPantalla("historico")}
+            style={cardStyle}
           >
-
-            {/* HISTÓRICO */}
-            <div
-              onClick={() => setPantalla("historico")}
-              style={cardStyle}
-            >
-              <h2 style={cardNumberStyle}>
-                {getTestsSemanaActual()}
-              </h2>
-              <p style={cardTextStyle}>
-                Histórico
-              </p>
-            </div>
-
-            {/* ESTADÍSTICAS */}
-            <div
-              onClick={() => setPantalla("estadisticas")}
-              style={cardStyle}
-            >
-              <div style={{ fontSize: 40 }}>📊</div>
-              <p style={cardTextStyle}>Estadísticas</p>
-            </div>
-
-            {/* HACER TEST */}
-            <div
-              onClick={() => setPantalla("modo")}
-              style={cardStyle}
-            >
-              <div style={{ fontSize: 40 }}>📝</div>
-              <p style={cardTextStyle}>Hacer test</p>
-            </div>
-
-            {/* FAVORITAS */}
-            <div
-              onClick={() => {
-                const favoritasIds = getFavoritas();
-                const favoritas = preguntas.filter(p =>
-                  favoritasIds.includes(p._id)
-                );
-
-                if (favoritas.length === 0) {
-                  alert("No tienes preguntas favoritas aún.");
-                  return;
-                }
-
-                setPreguntasRevision(favoritas);
-                setModoFavoritas(true);
-                setIndicePregunta(0);
-                setPreguntaActual(favoritas[0]);
-                setPantalla("pregunta");
-              }}
-              style={cardStyle}
-            >
-              <div style={{ fontSize: 40 }}>⭐</div>
-              <p style={cardTextStyle}>Favoritas</p>
-            </div>
-
-          </div>
-
-          <div style={{ marginTop: 60 }}>
-            <hr
-              style={{
-                border: "none",
-                height: 1,
-                background: "rgba(255,255,255,0.2)",
-                marginBottom: 20
-              }}
-            />
-            <p style={{ opacity: 0.6, fontSize: 14, margin: 0 }}>
-              Versión {version}
+            <h2 style={cardNumberStyle}>
+              {getTestsSemanaActual()}
+            </h2>
+            <p style={cardTextStyle}>
+              Histórico
             </p>
           </div>
 
-        </>
-      )}
+          {/* ESTADÍSTICAS */}
+          <div
+            onClick={() => setPantalla("estadisticas")}
+            style={cardStyle}
+          >
+            <div style={{ fontSize: 40 }}>📊</div>
+            <p style={cardTextStyle}>Estadísticas</p>
+          </div>
 
-      {/* HISTORICO */}
-      {pantalla === "historico" && (
-        <>
-          <h2>Histórico de tests</h2>
+          {/* HACER TEST */}
+          <div
+            onClick={() => setPantalla("modo")}
+            style={cardStyle}
+          >
+            <div style={{ fontSize: 40 }}>📝</div>
+            <p style={cardTextStyle}>Hacer test</p>
+          </div>
 
-          {getSemanasOrdenadas().length === 0 ? (
-            <p>No hay tests guardados aún.</p>
-          ) : (
-            <div style={{ marginTop: 30 }}>
-              {getSemanasOrdenadas().map((item, index) => (
+          {/* FAVORITAS */}
+          <div
+            onClick={() => {
+              const favoritasIds = getFavoritas();
+              const favoritas = preguntas.filter(p =>
+                favoritasIds.includes(p._id)
+              );
+
+              if (favoritas.length === 0) {
+                alert("No tienes preguntas favoritas aún.");
+                return;
+              }
+
+              setPreguntasRevision(favoritas);
+              setModoFavoritas(true);
+              setIndicePregunta(0);
+              setPreguntaActual(favoritas[0]);
+              setPantalla("pregunta");
+            }}
+            style={cardStyle}
+          >
+            <div style={{ fontSize: 40 }}>⭐</div>
+            <p style={cardTextStyle}>Favoritas</p>
+          </div>
+          
+          {/* POMODORO */}
+          <div
+            onClick={() => setPantalla("pomodoro")}
+            style={cardStyle}
+          >
+            <div style={{ fontSize: 40 }}>🍅</div>
+            <p style={cardTextStyle}>Estudiar</p>
+          </div>
+
+        </div>
+
+        <div style={{ marginTop: 60 }}>
+          <hr
+            style={{
+              border: "none",
+              height: 1,
+              background: "rgba(255,255,255,0.2)",
+              marginBottom: 20
+            }}
+          />
+          <p style={{ opacity: 0.6, fontSize: 14, margin: 0 }}>
+            Versión {version}
+          </p>
+        </div>
+
+      </>
+    )}
+
+    {/* HISTORICO */}
+    {pantalla === "historico" && (
+      <>
+        <h2>Histórico de tests</h2>
+
+        {getSemanasOrdenadas().length === 0 ? (
+          <p>No hay tests guardados aún.</p>
+        ) : (
+          <div style={{ marginTop: 30 }}>
+            {getSemanasOrdenadas().map((item, index) => (
+              <div
+                key={index}
+                style={{ marginBottom: 24 }}
+              >
+
+                {/* FILA SEMANA */}
                 <div
-                  key={index}
-                  style={{ marginBottom: 24 }}
+                  onClick={() =>
+                    setSemanaAbierta(
+                      semanaAbierta === item.semana ? null : item.semana
+                    )
+                  }
+                  style={{
+                    display: "flex",
+                    alignItems: "center",
+                    cursor: "pointer"
+                  }}
                 >
-
-                  {/* FILA SEMANA */}
-                  <div
-                    onClick={() =>
-                      setSemanaAbierta(
-                        semanaAbierta === item.semana ? null : item.semana
-                      )
-                    }
-                    style={{
-                      display: "flex",
-                      alignItems: "center",
-                      cursor: "pointer"
-                    }}
-                  >
-                    {/* Semana */}
-                    <div style={{ width: 70, fontWeight: 600 }}>
-                      {item.semana}
-                    </div>
-
-                    {/* Número */}
-                    <div style={{ width: 30 }}>
-                      {item.total}
-                    </div>
-
-                    {/* Barra */}
-                    <div
-                      style={{
-                        height: 24,
-                        width: `${item.total * 20}px`,
-                        background: "linear-gradient(90deg, #4f46e5, #3b82f6)",
-                        borderRadius: 12,
-                        marginLeft: 10
-                      }}
-                    />
+                  {/* Semana */}
+                  <div style={{ width: 70, fontWeight: 600 }}>
+                    {item.semana}
                   </div>
 
-                  {/* DESPLEGABLE */}
-                  {semanaAbierta === item.semana && (
-                    <div style={{ marginLeft: 70, marginTop: 12 }}>
-                      {historico
-                        .filter(h => {
-                          const { year, week } = getYearWeek(h.fecha);
-                          const clave = `${String(year).slice(-2)}w${week}`;
-                          return clave === item.semana;
-                        })
-                        .map(h => (
-                           <div
-                            key={h.id}
+                  {/* Número */}
+                  <div style={{ width: 30 }}>
+                    {item.total}
+                  </div>
+
+                  {/* Barra */}
+                  <div
+                    style={{
+                      height: 24,
+                      width: `${item.total * 20}px`,
+                      background: "linear-gradient(90deg, #4f46e5, #3b82f6)",
+                      borderRadius: 12,
+                      marginLeft: 10
+                    }}
+                  />
+                </div>
+
+                {/* DESPLEGABLE */}
+                {semanaAbierta === item.semana && (
+                  <div style={{ marginLeft: 70, marginTop: 12 }}>
+                    {historico
+                      .filter(h => {
+                        const { year, week } = getYearWeek(h.fecha);
+                        const clave = `${String(year).slice(-2)}w${week}`;
+                        return clave === item.semana;
+                      })
+                      .map(h => (
+                          <div
+                          key={h.id}
+                          style={{
+                            display: "flex",
+                            justifyContent: "space-between",
+                            alignItems: "center",
+                            marginBottom: 10,
+                            padding: "6px 0",
+                            borderBottom: "1px solid rgba(255,255,255,0.08)"
+                          }}
+                        >
+                          {/* Texto */}
+                          <span style={{ color: "#d1d5db", fontSize: 14 }}>
+                            {new Date(h.fecha).toLocaleDateString()} · {h.modo}
+                            {h.porcentajeJuridico !== null && ` · J ${h.porcentajeJuridico}%`}
+                            {h.porcentajeEspecifico !== null && ` · E ${h.porcentajeEspecifico}%`}
+                          </span>
+
+                          {/* Papelera */}
+                          <span
+                            onClick={(e) => {
+                              e.stopPropagation();
+                              borrarTest(h.id);
+                            }}
                             style={{
-                              display: "flex",
-                              justifyContent: "space-between",
-                              alignItems: "center",
-                              marginBottom: 10,
-                              padding: "6px 0",
-                              borderBottom: "1px solid rgba(255,255,255,0.08)"
+                              cursor: "pointer",
+                              opacity: 0.6,
+                              fontSize: 16
                             }}
                           >
-                            {/* Texto */}
-                            <span style={{ color: "#d1d5db", fontSize: 14 }}>
-                              {new Date(h.fecha).toLocaleDateString()} · {h.modo}
-                              {h.porcentajeJuridico !== null && ` · J ${h.porcentajeJuridico}%`}
-                              {h.porcentajeEspecifico !== null && ` · E ${h.porcentajeEspecifico}%`}
-                            </span>
+                            🗑
+                          </span>
+                        </div>
+                      ))}
+                  </div>
+                )}
 
-                            {/* Papelera */}
-                            <span
-                              onClick={(e) => {
-                                e.stopPropagation();
-                                borrarTest(h.id);
-                              }}
-                              style={{
-                                cursor: "pointer",
-                                opacity: 0.6,
-                                fontSize: 16
-                              }}
-                            >
-                              🗑
-                            </span>
-                          </div>
-                        ))}
-                    </div>
-                  )}
+              </div>
+            ))}
 
-                </div>
-              ))}
+          </div>
+        )}
 
-            </div>
-          )}
+        <br />
 
-          <br />
+        <button onClick={() => setPantalla("home")}>
+          Volver
+        </button>
+      </>
 
-          <button onClick={() => setPantalla("home")}>
-            Volver
-          </button>
-        </>
+    )}
 
-      )}
+    {/* ESTADISTICAS */}
+    {pantalla === "estadisticas" && (
+      <>
+        <h2>Estadísticas</h2>
 
-      {/* ESTADISTICAS */}
-      {pantalla === "estadisticas" && (
-        <>
-          <h2>Estadísticas</h2>
-
-          {getDatosEstadisticas().length === 0 ? (
-            <p>No hay datos suficientes aún.</p>
-          ) : (
-            <div style={{ marginTop: 30, width: "100%", height: 300 }}>
-              <ResponsiveContainer>
-                <LineChart data={getDatosEstadisticas()}>
-                  <CartesianGrid strokeDasharray="3 3" />
-                  <XAxis dataKey="semana" />
-                  <YAxis domain={[0, 100]} />
-                  <Tooltip />
-                  <Legend />
-                  <Line
-                    type="monotone"
-                    dataKey="juridico"
-                    stroke="#3b82f6"
-                    strokeWidth={3}
-                    name="Jurídico"
-                  />
-                  <Line
-                    type="monotone"
-                    dataKey="especifico"
-                    stroke="#10b981"
-                    strokeWidth={3}
-                    name="Específico"
-                  />
-                </LineChart>
-              </ResponsiveContainer>
-            </div>
-          )}
+        {getDatosEstadisticas().length === 0 ? (
+          <p>No hay datos suficientes aún.</p>
+        ) : (
+          <div style={{ marginTop: 30, width: "100%", height: 300 }}>
+            <ResponsiveContainer>
+              <LineChart data={getDatosEstadisticas()}>
+                <CartesianGrid strokeDasharray="3 3" />
+                <XAxis dataKey="semana" />
+                <YAxis domain={[0, 100]} />
+                <Tooltip />
+                <Legend />
+                <Line
+                  type="monotone"
+                  dataKey="juridico"
+                  stroke="#3b82f6"
+                  strokeWidth={3}
+                  name="Jurídico"
+                />
+                <Line
+                  type="monotone"
+                  dataKey="especifico"
+                  stroke="#10b981"
+                  strokeWidth={3}
+                  name="Específico"
+                />
+              </LineChart>
+            </ResponsiveContainer>
+          </div>
+        )}
 
 
-          <br />
+        <br />
 
-          <button onClick={() => setPantalla("home")}>
-            Volver
-          </button>
-        </>
-      )}
+        <button onClick={() => setPantalla("home")}>
+          Volver
+        </button>
+      </>
+    )}
 
-      {/* SELECCIÓN DE MODO */}
-      {pantalla === "modo" && (
-        <>
-          <h2>Selecciona modo</h2>
+    {/* SELECCIÓN DE MODO */}
+    {pantalla === "modo" && (
+      <>
+        <h2>Selecciona modo</h2>
 
-          <button onClick={() => {
-            setModoTest("practica");
-            setPantalla("tipo");
-          }}>
-            🟢 Modo práctica
-          </button>
+        <button onClick={() => {
+          setModoTest("practica");
+          setPantalla("tipo");
+        }}>
+          🟢 Modo práctica
+        </button>
 
-          <br /><br />
+        <br /><br />
 
-          <button onClick={() => {
-            setModoTest("examen");
-            setPantalla("tipo");
-          }}>
-            🟡 Modo examen
-          </button>
+        <button onClick={() => {
+          setModoTest("examen");
+          empezarExamenDirecto();
+        }}>
+          🟡 Modo examen
+        </button>
 
-          <br /><br />
+        <br /><br />
 
-          <button onClick={() => {
-            setModoTest("oposicion");
-            setPantalla("config-oposicion");
-          }}>
-            🔵 Modo oposición
-          </button>
+        <button onClick={() => {
+          setModoTest("oposicion");
+          setPantalla("config-oposicion");
+        }}>
+          🔵 Modo oposición
+        </button>
 
 
-          <br /><br />
+        <br /><br />
 
-          <button onClick={() => setPantalla("home")}>
-            Volver
-          </button>
-        </>
-      )}
+        <button onClick={() => setPantalla("home")}>
+          Volver
+        </button>
+      </>
+    )}
 
-      {/* CONFIGURACIÓN OPOSICIÓN */}
-      {pantalla === "config-oposicion" && (
-        <>
-          <h2>Configurar reparto oposición</h2>
+    {/* CONFIGURACIÓN OPOSICIÓN */}
+    {pantalla === "config-oposicion" && (
+      <>
+        <h2>Configurar reparto oposición</h2>
 
-          <div style={{ marginTop: 30 }}>
+        <div style={{ marginTop: 30 }}>
 
-            <div style={{ display: "flex", justifyContent: "space-between" }}>
-              <span>Jurídico: {configOposicion}%</span>
-              <span>Específico: {100 - configOposicion}%</span>
-            </div>
+          <div style={{ display: "flex", justifyContent: "space-between" }}>
+            <span>Jurídico: {configOposicion}%</span>
+            <span>Específico: {100 - configOposicion}%</span>
+          </div>
 
+          <input
+            type="range"
+            min="0"
+            max="100"
+            step="5"
+            value={configOposicion}
+            onChange={(e) => setConfigOposicion(Number(e.target.value))}
+            style={{ width: "100%", marginTop: 20 }}
+          />
+
+        </div>
+
+        <br /><br />
+
+        <button onClick={() => empezarOposicion()}>
+          Empezar oposición (50 preguntas)
+        </button>
+
+        <br /><br />
+
+        <button onClick={() => setPantalla("modo")}>
+          Volver
+        </button>
+      </>
+    )}
+
+    {/* SELECCIÓN DE TIPO */}
+    {pantalla === "tipo" && (
+      <>
+        <h2>Selecciona tipo de test</h2>
+
+        <button onClick={() => empezarTest("jurídico")}>
+          Jurídico
+        </button>
+        <br /><br />
+
+        <button onClick={() => empezarTest("específico")}>
+          Específico
+        </button>
+        <br /><br />
+
+        <button onClick={() => empezarTest("mixto")}>
+          Mixto
+        </button>
+        <br /><br />
+
+        <button onClick={() => setPantalla("modo")}>
+          Volver
+        </button>
+      </>
+    )}
+
+    {/* SELECCIÓN DE TEMAS */}
+    {pantalla === "temas" && (
+      <>
+        <h2>Selecciona los temas</h2>
+
+        {temasDisponibles.map((t, i) => (
+          <label key={i} style={{ display: "block", marginBottom: 6 }}>
             <input
-              type="range"
-              min="0"
-              max="100"
-              step="5"
-              value={configOposicion}
-              onChange={(e) => setConfigOposicion(Number(e.target.value))}
-              style={{ width: "100%", marginTop: 20 }}
+              type="checkbox"
+              checked={temasSeleccionados.includes(t.tema)}
+              onChange={(e) => {
+                if (e.target.checked) {
+                  setTemasSeleccionados(prev => [...prev, t.tema]);
+                } else {
+                  setTemasSeleccionados(prev =>
+                    prev.filter(x => x !== t.tema)
+                  );
+                }
+              }}
             />
+            {" "}
+            {t.tema} - {t.descripcion}
+          </label>
+        ))}
 
-          </div>
+        <br />
 
-          <br /><br />
-
-          <button onClick={() => empezarOposicion()}>
-            Empezar oposición (50 preguntas)
+        <div style={{ display: "flex", gap: 10 }}>
+          <button
+            disabled={temasSeleccionados.length === 0}
+            onClick={() => iniciarTestConTemas()}
+          >
+            Empezar test
           </button>
 
-          <br /><br />
-
-          <button onClick={() => setPantalla("modo")}>
-            Volver
+          <button
+            onClick={() => iniciarTestAleatorio()}
+          >
+            🎲 Test aleatorio
           </button>
-        </>
-      )}
-
-      {/* SELECCIÓN DE TIPO */}
-      {pantalla === "tipo" && (
-        <>
-          <h2>Selecciona tipo de test</h2>
-
-          <button onClick={() => empezarTest("jurídico")}>
-            Jurídico
-          </button>
-          <br /><br />
-
-          <button onClick={() => empezarTest("específico")}>
-            Específico
-          </button>
-          <br /><br />
-
-          <button onClick={() => empezarTest("mixto")}>
-            Mixto
-          </button>
-          <br /><br />
-
-          <button onClick={() => setPantalla("modo")}>
-            Volver
-          </button>
-        </>
-      )}
-
-      {/* SELECCIÓN DE TEMAS */}
-      {pantalla === "temas" && (
-        <>
-          <h2>Selecciona los temas</h2>
-
-          {temasDisponibles.map((t, i) => (
-            <label key={i} style={{ display: "block", marginBottom: 6 }}>
-              <input
-                type="checkbox"
-                checked={temasSeleccionados.includes(t.tema)}
-                onChange={(e) => {
-                  if (e.target.checked) {
-                    setTemasSeleccionados(prev => [...prev, t.tema]);
-                  } else {
-                    setTemasSeleccionados(prev =>
-                      prev.filter(x => x !== t.tema)
-                    );
-                  }
-                }}
-              />
-              {" "}
-              {t.tema} - {t.descripcion}
-            </label>
-          ))}
-
-          <br />
-
-          <div style={{ display: "flex", gap: 10 }}>
-            <button
-              disabled={temasSeleccionados.length === 0}
-              onClick={() => iniciarTestConTemas()}
-            >
-              Empezar test
-            </button>
-
-            <button
-              onClick={() => iniciarTestAleatorio()}
-            >
-              🎲 Test aleatorio
-            </button>
-          </div>
+        </div>
 
 
-          <br /><br />
+        <br /><br />
 
-          <button onClick={() => setPantalla("tipo")}>
-            Volver
-          </button>
-        </>
-      )}
+        <button onClick={() => setPantalla("tipo")}>
+          Volver
+        </button>
+      </>
+    )}
 
-      {/* PREGUNTA */}
-      {pantalla === "pregunta" && preguntasActivas[indicePregunta] && (
+    {/* PREGUNTA */}
+    {pantalla === "pregunta" && preguntasActivas[indicePregunta] && (
+      <div
+        style={{
+          display: "flex",
+          flexDirection: "column",
+          height: "100dvh",
+          padding: 20,
+          boxSizing: "border-box"
+        }}
+      >
         <div
           style={{
             display: "flex",
-            flexDirection: "column",
-            height: "100vh"
+            justifyContent: "space-between",
+            alignItems: "center"
           }}
         >
-          <div
-            style={{
-              display: "flex",
-              justifyContent: "space-between",
-              alignItems: "center"
-            }}
-          >
-            <h2 style={{ marginBottom: 4 }}>
-              {tipoTest === "jurídico"
-                ? "Jurídico"
-                : tipoTest === "específico"
-                ? "Específico"
-                : "Mixto"}
-            </h2>
+          <h2 style={{ marginBottom: 4 }}>
+            {tipoTest === "jurídico"
+              ? "Jurídico"
+              : tipoTest === "específico"
+              ? "Específico"
+              : "Mixto"}
+          </h2>
 
-            <button
-              onClick={() => {
+          <button
+            onClick={() => {
 
-                const esUltima = indicePregunta === preguntasActivas.length - 1;
+              const esUltima = indicePregunta === preguntasActivas.length - 1;
 
-                // ⭐ Si estamos en modo favoritas → salir a HOME
-                if (modoFavoritas) {
-                  setModoFavoritas(false);
-                  setPreguntasRevision(null);
-                  setPreguntasTest([]);
-                  setTestActual(null);
-                  setIndicePregunta(0);
-                  setPreguntaActual(null);
-                  setPantalla("home");
-                  return;
-                }
+              // ⭐ Si estamos en modo favoritas → salir a HOME
+              if (modoFavoritas) {
+                setModoFavoritas(false);
+                setPreguntasRevision(null);
+                setPreguntasTest([]);
+                setTestActual(null);
+                setIndicePregunta(0);
+                setPreguntaActual(null);
+                setPantalla("home");
+                return;
+              }
 
-                // 🔎 Si estamos revisando un test ya finalizado
-                if (testActual?.revisando) {
-                  setPreguntasRevision(null);
-                  setIndicePregunta(0);
-                  setPreguntaActual(null);
-                  setPantalla("resumen");
-                  return;
-                }
-
-                // 🛑 Si NO es la última → Salir sin guardar
-                if (!esUltima) {
-                  setPreguntasTest([]);
-                  setTestActual(null);
-                  setIndicePregunta(0);
-                  setPreguntaActual(null);
-                  setPantalla("tipo");
-                  return;
-                }
-
-                // ✅ Si es la última → Finalizar y guardar
-                const testFinal = {
-                  ...testActual,
-                  finalizado: true,
-                  revisando: false,
-                  fechaFin: Date.now()
-                };
-
-                guardarHistoricoTest(testFinal);
-
-                setTestActual(testFinal);
+              // 🔎 Si estamos revisando un test ya finalizado
+              if (testActual?.revisando) {
+                setPreguntasRevision(null);
+                setIndicePregunta(0);
+                setPreguntaActual(null);
                 setPantalla("resumen");
-              }}
-            >
-              {modoFavoritas
+                return;
+              }
+
+              // 🛑 Si NO es la última → Salir sin guardar
+              if (!esUltima) {
+                setPreguntasTest([]);
+                setTestActual(null);
+                setIndicePregunta(0);
+                setPreguntaActual(null);
+                setPantalla("modo");
+                return;
+              }
+
+              // ✅ Si es la última → Finalizar y guardar
+              const testFinal = {
+                ...testActual,
+                finalizado: true,
+                revisando: false,
+                fechaFin: Date.now()
+              };
+
+              guardarHistoricoTest(testFinal);
+
+              setTestActual(testFinal);
+              setPantalla("resumen");
+            }}
+          >
+            {modoFavoritas
+              ? "Salir"
+              : testActual?.revisando
                 ? "Salir"
-                : testActual?.revisando
-                  ? "Salir"
-                  : indicePregunta === preguntasActivas.length - 1
-                    ? "Finalizar test"
-                    : "Salir"}
-            </button>
+                : indicePregunta === preguntasActivas.length - 1
+                  ? "Finalizar test"
+                  : "Salir"}
+          </button>
 
 
-            <button
-              onClick={() => toggleFavorita(preguntaActual._id)}
-              style={{
-                marginRight: 10,
-                backgroundColor: esFavorita(preguntaActual._id)
-                  ? "#ffd700"
-                  : "white"
-              }}
-            >
-              ⭐
-            </button>
-
-          </div>
-
-          <p style={{ fontSize: 14, opacity: 0.8, marginTop: 0 }}>
-            {preguntasActivas[indicePregunta].descripcionTema}
-          </p>
-
-          <p>
-            Pregunta {indicePregunta + 1} / {preguntasActivas.length}
-          </p>
-
-          <h3>{preguntasActivas[indicePregunta].texto}</h3>
-          
-          <div
+          <button
+            onClick={() => toggleFavorita(preguntaActual._id)}
             style={{
-              flex: 1,
-              overflowY: "auto",
-              marginTop: 20,
-              paddingRight: 5
+              marginRight: 10,
+              backgroundColor: esFavorita(preguntaActual._id)
+                ? "#ffd700"
+                : "white"
             }}
           >
-
-          {modoFavoritas ? (
-            preguntasActivas[indicePregunta].respuestas.map((r, i) => (
-              <div
-                key={i}
-                style={{
-                  padding: 12,
-                  marginBottom: 8,
-                  backgroundColor: r.correcta ? "lightgreen" : "white",
-                  borderRadius: 6,
-                  color: "black"
-                }}
-              >
-                {r.texto}
-              </div>
-            ))
-          ) : (
-            preguntasActivas[indicePregunta].respuestas.map((r, i) => (
-              <button
-                key={i}
-                onClick={() => responder(i)}
-                style={{
-                  display: "block",
-                  width: "100%",
-                  marginBottom: 8,
-                  padding: 10,
-                  backgroundColor: (() => {
-                    const seleccionada =
-                      testActual?.preguntas[indicePregunta]?.respuestaSeleccionada;
-
-                    if (testActual.modo === "practica") {
-                      if (seleccionada === null) return "white";
-                      if (i === seleccionada) {
-                        return r.correcta ? "lightgreen" : "salmon";
-                      }
-                      return r.correcta ? "lightgreen" : "white";
-                    }
-
-                    if (!testActual.revisando) {
-                      if (seleccionada === null) return "white";
-                      return i === seleccionada ? "#cce5ff" : "white";
-                    }
-
-                    if (testActual.modo === "examen") {
-                      if (seleccionada === null) return "white";
-                      if (i === seleccionada) {
-                        return r.correcta ? "lightgreen" : "salmon";
-                      }
-                      return r.correcta ? "lightgreen" : "white";
-                    }
-
-                    if (testActual.modo === "oposicion") {
-                      if (seleccionada === null) {
-                        return r.correcta ? "lightgreen" : "white";
-                      }
-                      if (i === seleccionada) {
-                        return r.correcta ? "lightgreen" : "salmon";
-                      }
-                      return r.correcta ? "lightgreen" : "white";
-                    }
-
-                    return "white";
-                  })(),
-                  color: "black"
-                }}
-              >
-                {r.texto}
-              </button>
-            ))
-          )}
-
-          </div>
-
-          <div
-            style={{
-              display: "flex",
-              alignItems: "center",
-              marginTop: 30
-            }}
-          >
-            {/* IZQUIERDA */}
-            <div>
-              {indicePregunta > 0 && (
-                <button
-                  onClick={() => {
-                    const anterior = indicePregunta - 1;
-                    setIndicePregunta(anterior);
-                    if (preguntasRevision) {
-                      setPreguntaActual(preguntasRevision[anterior]);
-                    } else {
-                      setPreguntaActual(preguntasTest[anterior]);
-                    }
-                  }}
-                >
-                  Anterior
-                </button>
-              )}
-            </div>
-
-            {/* DERECHA */}
-            <div style={{ marginLeft: "auto" }}>
-              {indicePregunta < preguntasActivas.length - 1 && (
-                <button onClick={siguientePregunta}>
-                  Siguiente pregunta
-                </button>
-              )}
-            </div>
-          </div>
-
+            ⭐
+          </button>
 
         </div>
-        
-      )}
 
-      {/* RESUMEN */}
-      {pantalla === "resumen" && (
-        <>
-          <h2>Resumen del test</h2>
+        <p style={{ fontSize: 14, opacity: 0.8, marginTop: 0 }}>
+          {preguntasActivas[indicePregunta].descripcionTema}
+        </p>
 
-          {(() => {
-            let total = testActual?.preguntas.length || 0;
-            let aciertosFinal = 0;
+        <p style={{ fontSize: 13, opacity: 0.7, marginTop: 4 }}>
+          {preguntasActivas[indicePregunta].nombreExamen} - Nº {preguntasActivas[indicePregunta].numeroPreguntaExamen}
+        </p>
 
-            if (testActual?.modo === "practica") {
-              aciertosFinal = aciertos;
-            } else {
-              aciertosFinal = testActual?.preguntas.filter(
-                p =>
-                  p.respuestaSeleccionada !== null &&
-                  p.respuestas[p.respuestaSeleccionada]?.correcta
-              ).length;
-            }
+        <p>
+          Pregunta {indicePregunta + 1} / {preguntasActivas.length}
+        </p>
 
-            return (
-              <>
-                <p>
-                  Acertadas {aciertosFinal} de {total} preguntas
-                </p>
+        <div
+          style={{
+            flex: 1,
+            overflowY: "auto",
+            marginTop: 20,
+            paddingRight: 5
+          }}
+        >
 
-                <p>
-                  Porcentaje de aciertos{" "}
-                  {total > 0
-                    ? Math.round((aciertosFinal / total) * 100)
-                    : 0}
-                  %
-                </p>
+        <h3>{preguntasActivas[indicePregunta].texto}</h3>
+      
+        {modoFavoritas ? (
+          preguntasActivas[indicePregunta].respuestas.map((r, i) => (
+            <div
+              key={i}
+              style={{
+                padding: 12,
+                marginBottom: 8,
+                backgroundColor: r.correcta ? "lightgreen" : "white",
+                borderRadius: 6,
+                color: "black"
+              }}
+            >
+              {r.texto}
+            </div>
+          ))
+        ) : (
+          preguntasActivas[indicePregunta].respuestas.map((r, i) => (
+            <button
+              key={i}
+              onClick={() => responder(i)}
+              style={{
+                display: "block",
+                width: "100%",
+                marginBottom: 8,
+                padding: 10,
+                backgroundColor: (() => {
+                  const seleccionada =
+                    testActual?.preguntas[indicePregunta]?.respuestaSeleccionada;
 
-                <p>
-                  {total > 0 &&
-                  Math.round((aciertosFinal / total) * 100) >= 80
-                    ? "Excelente resultado 💪"
-                    : total > 0 &&
-                      Math.round((aciertosFinal / total) * 100) >= 60
-                    ? "Buen resultado 👍"
-                    : "Conviene repasar 📘"}
-                </p>
-              </>
-            );
-          })()}
+                  if (testActual.modo === "practica") {
+                    if (seleccionada === null) return "white";
+                    if (i === seleccionada) {
+                      return r.correcta ? "lightgreen" : "salmon";
+                    }
+                    return r.correcta ? "lightgreen" : "white";
+                  }
 
-          <br />
+                  if (!testActual.revisando) {
+                    if (seleccionada === null) return "white";
+                    return i === seleccionada ? "#cce5ff" : "white";
+                  }
 
-          <div
-            style={{
-              display: "flex",
-              justifyContent: "space-between",
-              alignItems: "center",
-              marginTop: 30,
-              width: "100%"
-            }}
-          >
+                  if (testActual.modo === "examen") {
+                    if (seleccionada === null) return "white";
+                    if (i === seleccionada) {
+                      return r.correcta ? "lightgreen" : "salmon";
+                    }
+                    return r.correcta ? "lightgreen" : "white";
+                  }
 
-            {/* IZQUIERDA - Salir */}
+                  if (testActual.modo === "oposicion") {
+                    if (seleccionada === null) {
+                      return r.correcta ? "lightgreen" : "white";
+                    }
+                    if (i === seleccionada) {
+                      return r.correcta ? "lightgreen" : "salmon";
+                    }
+                    return r.correcta ? "lightgreen" : "white";
+                  }
+
+                  return "white";
+                })(),
+                color: "black"
+              }}
+            >
+              {r.texto}
+            </button>
+          ))
+        )}
+
+        </div>
+
+        <div
+          style={{
+            display: "flex",
+            alignItems: "center",
+            marginTop: 30
+          }}
+        >
+          {/* IZQUIERDA */}
+          <div>
+            {indicePregunta > 0 && (
+              <button
+                onClick={() => {
+                  const anterior = indicePregunta - 1;
+                  setIndicePregunta(anterior);
+                  if (preguntasRevision) {
+                    setPreguntaActual(preguntasRevision[anterior]);
+                  } else {
+                    setPreguntaActual(preguntasTest[anterior]);
+                  }
+                }}
+              >
+                Anterior
+              </button>
+            )}
+          </div>
+
+          {/* DERECHA */}
+          <div style={{ marginLeft: "auto" }}>
+            {indicePregunta < preguntasActivas.length - 1 && (
+              <button onClick={siguientePregunta}>
+                Siguiente pregunta
+              </button>
+            )}
+          </div>
+        </div>
+
+
+      </div>
+      
+    )}
+
+    {/* RESUMEN */}
+    {pantalla === "resumen" && (
+      <>
+        <h2>Resumen del test</h2>
+
+        {(() => {
+          let total = testActual?.preguntas.length || 0;
+          let aciertosFinal = 0;
+
+          if (testActual?.modo === "practica") {
+            aciertosFinal = aciertos;
+          } else {
+            aciertosFinal = testActual?.preguntas.filter(
+              p =>
+                p.respuestaSeleccionada !== null &&
+                p.respuestas[p.respuestaSeleccionada]?.correcta
+            ).length;
+          }
+
+          return (
+            <>
+              <p>
+                Acertadas {aciertosFinal} de {total} preguntas
+              </p>
+
+              <p>
+                Porcentaje de aciertos{" "}
+                {total > 0
+                  ? Math.round((aciertosFinal / total) * 100)
+                  : 0}
+                %
+              </p>
+
+              <p>
+                {total > 0 &&
+                Math.round((aciertosFinal / total) * 100) >= 80
+                  ? "Excelente resultado 💪"
+                  : total > 0 &&
+                    Math.round((aciertosFinal / total) * 100) >= 60
+                  ? "Buen resultado 👍"
+                  : "Conviene repasar 📘"}
+              </p>
+            </>
+          );
+        })()}
+
+        <br />
+
+        <div
+          style={{
+            display: "flex",
+            justifyContent: "space-between",
+            alignItems: "center",
+            marginTop: 30,
+            width: "100%"
+          }}
+        >
+
+          {/* IZQUIERDA - Salir */}
+          <div>
+            <button
+              onClick={() => {
+                setPantalla("tipo");
+                setPreguntasTest([]);
+                setIndicePregunta(0);
+                setPreguntaActual(null);
+                setAciertos(0);
+                setPreguntasRevision(null);
+                setModoFavoritas(false);
+              }}
+            >
+              Salir
+            </button>
+          </div>
+
+          {/* DERECHA - Revisar */}
+          {testActual?.modo !== "practica" && (
             <div>
               <button
                 onClick={() => {
-                  setPantalla("tipo");
-                  setPreguntasTest([]);
+                  const todas = testActual.preguntas;
+
+                  let revision;
+
+                  if (testActual.modo === "examen") {
+                    revision = todas.filter(
+                      p => p.respuestaSeleccionada !== null
+                    );
+                  } else {
+                    revision = todas;
+                  }
+
+                  setPreguntasRevision(revision);
+
+                  setTestActual(prev => ({
+                    ...prev,
+                    revisando: true
+                  }));
+
                   setIndicePregunta(0);
-                  setPreguntaActual(null);
-                  setAciertos(0);
-                  setPreguntasRevision(null);
-                  setModoFavoritas(false);
+                  setPreguntaActual(revision[0]);
+                  setPantalla("pregunta");
                 }}
               >
-                Salir
+                Revisar test
               </button>
             </div>
+          )}
+        </div>
+      </>
+    )}
 
-            {/* DERECHA - Revisar */}
-            {testActual?.modo !== "practica" && (
-              <div>
-                <button
-                  onClick={() => {
-                    const todas = testActual.preguntas;
+    {/* POMODORO */}
+    {pantalla === "pomodoro" && (
+      <>
+        <h2>Modo Estudio 🍅</h2>
 
-                    let revision;
+        <div style={{ marginTop: 10, marginBottom: 10 }}>
 
-                    if (testActual.modo === "examen") {
-                      revision = todas.filter(
-                        p => p.respuestaSeleccionada !== null
-                      );
-                    } else {
-                      revision = todas;
-                    }
+        <div style={{ marginBottom: 10 }}>
+          Estudio:
+          <input
+            type="number"
+            min="1"
+            value={workDuration}
+            onChange={(e) => {
+              const value = parseInt(e.target.value, 10);
+              if (!isNaN(value) && value > 0) {
+                setWorkDuration(e.target.value);
+              }
+            }}
 
-                    setPreguntasRevision(revision);
+            style={{
+              width: 70,
+              marginLeft: 10,
+              padding: "6px 8px",
+              fontSize: 16,      // 🔥 clave anti-zoom iOS
+              borderRadius: 8
+            }}
+          />
+          <span style={{ marginLeft: 4 }}>min</span>
+        </div>
 
-                    setTestActual(prev => ({
-                      ...prev,
-                      revisando: true
-                    }));
+        <div>
+          Descanso:
+          <input
+            type="number"
+            min="1"
+            value={breakDuration}
+            onChange={(e) => {
+              const value = parseInt(e.target.value, 10);
+              if (!isNaN(value) && value > 0) {
+                setBreakDuration(e.target.value);
+              }
+            }}
 
-                    setIndicePregunta(0);
-                    setPreguntaActual(revision[0]);
-                    setPantalla("pregunta");
-                  }}
-                >
-                  Revisar test
-                </button>
-              </div>
-            )}
+            style={{
+              width: 70,
+              marginLeft: 10,
+              padding: "6px 8px",
+              fontSize: 16,      // 🔥 clave anti-zoom iOS
+              borderRadius: 8
+            }}
+          />
+          <span style={{ marginLeft: 4 }}>min</span>
+        </div>
+
+      </div>
+
+        <div style={{ marginTop: 15, textAlign: "center" }}>
+
+          <h3 style={{ fontSize: 24 }}>
+            {pomodoroMode === "work" ? "Estudio" : "Descanso"}
+          </h3>
+
+          <div
+            style={{
+              fontSize: 64,
+              fontWeight: "bold",
+              margin: "20px 0"
+            }}
+          >
+            {String(Math.floor(pomodoroElapsed / 60)).padStart(2, "0")}:
+            {String(pomodoroElapsed % 60).padStart(2, "0")}
           </div>
-        </>
-      )}
+
+
+          <div style={{ display: "flex", gap: 10, justifyContent: "center" }}>
+
+            {!pomodoroRunning ? (
+              <button
+                onClick={iniciarPomodoro}
+                style={{ padding: 12, fontSize: 18 }}
+              >
+                {pomodoroPaused ? "Reanudar" : "Iniciar"}
+              </button>
+            ) : (
+              <>
+                <button
+                  onClick={pausarPomodoro}
+                  style={{ padding: 12, fontSize: 18 }}
+                >
+                  Pausar
+                </button>
+
+                <button
+                  onClick={terminarPomodoro}
+                  style={{ padding: 12, fontSize: 18 }}
+                >
+                  Terminar
+                </button>
+              </>
+            )}
+
+          </div>
+
+        </div>
+
+        <div style={{ marginTop: 40 }}>
+          <h3>Estadísticas</h3>
+
+        <div
+          style={{
+            display: "flex",
+            justifyContent: "space-between",
+            alignItems: "center",
+            maxWidth: 300
+          }}
+        >
+          <p style={{ margin: 0 }}>
+            Hoy:{" "}
+            {pomodoroStats.byDay[new Date().toISOString().slice(0, 10)] || 0} min
+          </p>
+
+          <span
+            onClick={sumarManualPomodoro}
+            style={{
+              cursor: "pointer",
+              fontSize: 18,
+              color: "#646cff",
+              fontWeight: "bold"
+            }}
+          >
+            ➕
+          </span>
+
+        </div>
+
+
+          <p>
+            Semana:{" "}
+            {pomodoroStats.byWeek[
+              `${String(getYearWeek(Date.now()).year).slice(-2)}w${getYearWeek(Date.now()).week}`
+            ] || 0} min
+          </p>
+
+          <p>
+            Total acumulado: {pomodoroStats.totalMinutes} min
+          </p>
+        </div>
+
+        <br />
+
+        <button onClick={() => setPantalla("home")}>
+          Volver
+        </button>
+      </>
+    )}
+
+
     </div>
   )
 }
