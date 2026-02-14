@@ -26307,10 +26307,10 @@
       },
       {
         "texto": "Ambas respuestas son correctas",
-        "correcta": false
+        "correcta": true
       },
       {
-        "correcta": true
+        "correcta": false
       }
     ]
   },
