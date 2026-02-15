@@ -1,16 +1,26 @@
+
+//Para ir a version 2 (desarrollo) y modificar codigo:
+    //git checkout v2-evolucion
+    //git merge stable
+    //git push
+
+    //Para chequear la version 2 en el movil
+    //npm run dev -- --host (Ctrl - C para cerrar el host)
+    //abrir la IP en el navegador del movil (mismo Wifi)
+
+        //Cuando acabemos los cambios
+        //git checkout stable
+        //git merge v2-evolucion
+        //git push
+        //npm run build
+        //npm run deploy
+
 //Para volver a version 1 (stable):
     //git checkout stable
     //     *opcional* git branch (comprueba que estamos en gh-pages)
     //node scripts/convertirExcel.js
     //git add .
-    //git commit -m "Actualizar preguntas"
+    //git commit -m "Ultimos cambios"
+    //git push
     //npm run build
     //npm run deploy
-
-//Para volver a version 2 (desarrollo) y modificar codigo:
-    //git checkout v2-evolucion
-
-    //Para chequear la version 2 en el movil
-    //git checkout v2-evolucion
-    //npm run dev -- --host (Ctrl - C para cerrar el host)
-    //abrir la IP en el navegador del movil (mismo Wifi)
