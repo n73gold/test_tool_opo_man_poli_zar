@@ -25,12 +25,22 @@ const rows = XLSX.utils.sheet_to_json(sheet, { header: 1 });
 const preguntas = rows.slice(1).map(row => {
   const correcta = String(row[11] ?? "").toLowerCase().trim();
 
+  const tema = String(row[1] ?? "").trim();
+  const nombreExamen = String(row[4] ?? "").trim();
+  const numeroPreguntaExamen = String(row[5] ?? "").trim();
+
+  // ID estable único
+  const id = `${tema}_${nombreExamen}_${numeroPreguntaExamen}`
+    .toLowerCase()
+    .replace(/\s+/g, "_");
+
   return {
+    id,
     categoria: String(row[0] ?? "").toLowerCase(),
-    tema: row[1],
+    tema,
     descripcionTema: row[2],
-    nombreExamen: row[4],                          
-    numeroPreguntaExamen: row[5],                  
+    nombreExamen,
+    numeroPreguntaExamen,
     texto: row[6],
     respuestas: [
       { texto: row[7], correcta: correcta === "a" },
@@ -40,6 +50,7 @@ const preguntas = rows.slice(1).map(row => {
     ]
   };
 });
+
 
 fs.writeFileSync(outputPath, JSON.stringify(preguntas, null, 2), "utf-8");
 

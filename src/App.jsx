@@ -59,11 +59,13 @@ function App() {
 
   const [modoFavoritas, setModoFavoritas] = useState(false);
 
-  const [configOposicion, setConfigOposicion] = useState(50);
+  const [configOposicion, setConfigOposicion] = useState(20);
 
   const [historico, setHistorico] = useState([]);
 
   const [semanaAbierta, setSemanaAbierta] = useState(null);
+
+  const [desdeRepaso, setDesdeRepaso] = useState(false);
 
   const MAX_TESTS_RECIENTES = 5;
 
@@ -115,28 +117,22 @@ function App() {
     const guardadas = localStorage.getItem("preguntas");
 
     if (guardadas) {
-      const data = JSON.parse(guardadas).map((p, index) => ({
-        ...p,
-        _id: index
-      }));
+      const data = JSON.parse(guardadas);
 
       setPreguntas(data);
       setTotalPreguntas(data.length);
     }
 
 
+
     fetch(import.meta.env.BASE_URL + "preguntas.json")
       .then(res => res.json())
       .then(data => {
-        const conId = data.map((p, index) => ({
-          ...p,
-          _id: index
-        }));
-
-        localStorage.setItem("preguntas", JSON.stringify(conId));
-        setPreguntas(conId);
-        setTotalPreguntas(conId.length);
+        localStorage.setItem("preguntas", JSON.stringify(data));
+        setPreguntas(data);
+        setTotalPreguntas(data.length);
       })
+
 
       .catch(() => {
         // si no hay red, no pasa nada
@@ -406,14 +402,37 @@ function App() {
     return JSON.parse(localStorage.getItem("testsRecientes") || "[]");
   }
 
-    function getIdsRecientes() {
+  function getIdsRecientes() {
     return getTestsRecientes().flat();
+  }
+
+  function getPreguntasUsadasSemana() {
+    const ahora = Date.now();
+    const usadas = JSON.parse(localStorage.getItem("preguntasUsadas") || "[]");
+
+    const vigentes = usadas.filter(
+      p => ahora - p.fecha < 7 * 24 * 60 * 60 * 1000
+    );
+
+    localStorage.setItem("preguntasUsadas", JSON.stringify(vigentes));
+
+    return vigentes.map(p => p.id);
+  }
+
+  function registrarPreguntaUsada(id) {
+    if (!id) return;
+    const ahora = Date.now();
+    const usadas = JSON.parse(localStorage.getItem("preguntasUsadas") || "[]");
+
+    usadas.push({ id, fecha: ahora });
+
+    localStorage.setItem("preguntasUsadas", JSON.stringify(usadas));
   }
 
   function guardarTestReciente(preguntasTest) {
     const tests = getTestsRecientes();
 
-    const ids = preguntasTest.map(p => p._id);
+    const ids = preguntasTest.map(p => p.id);
 
     tests.push(ids);
 
@@ -621,10 +640,13 @@ function App() {
         ...barajar(especifico).slice(0, mitad)
       ];
 
-      const idsRecientes = getIdsRecientes();
+      const idsRecientes = [
+        ...getIdsRecientes(),
+        ...getPreguntasUsadasSemana()
+      ];
 
       let disponibles = seleccionadas.filter(
-        p => !idsRecientes.includes(p._id)
+        p => !idsRecientes.includes(p.id)
       );
 
       // fallback
@@ -635,6 +657,7 @@ function App() {
       const mezcladas = barajar(disponibles);
 
       guardarTestReciente(mezcladas);
+      mezcladas.forEach(p => registrarPreguntaUsada(p.id));
 
       const nuevoTest = {
         modo: modoTest,
@@ -690,6 +713,21 @@ function App() {
       pregunta.respuestaSeleccionada !== null
     ) return;
 
+    // 🔵 En modo oposición permitimos des-seleccionar
+    if (testActual.modo === "oposicion") {
+
+      if (pregunta.respuestaSeleccionada === indice) {
+
+        copiaPreguntas[indicePregunta] = {
+          ...pregunta,
+          respuestaSeleccionada: null
+        };
+
+        copiaTest.preguntas = copiaPreguntas;
+        setTestActual(copiaTest);
+        return;
+      }
+    }
 
     copiaPreguntas[indicePregunta] = {
       ...pregunta,
@@ -730,30 +768,32 @@ function App() {
       setPreguntaActual(preguntasTest[siguiente]);
 
     } else {
-        const testFinal = {
-          ...testActual,
-          finalizado: true,
-          revisando: false,
-          fechaFin: Date.now()
-        };
 
-        const todasRespondidas = testFinal.preguntas.every(
-          p => p.respuestaSeleccionada !== null
-        );
-
-        if (todasRespondidas) {
-          const todasRespondidas = testFinal.preguntas.every(
-            p => p.respuestaSeleccionada !== null
-          );
-
-          if (todasRespondidas) {
-            guardarHistoricoTest(testFinal);
-          }
-        }
-
-        setTestActual(testFinal);
-        setPantalla("resumen");
+      // 🔵 En modo oposición NO finalizamos automáticamente
+      if (testActual?.modo === "oposicion") {
+        return;
       }
+
+      // 🟡 En los demás modos sí finalizamos
+      const testFinal = {
+        ...testActual,
+        finalizado: true,
+        revisando: false,
+        fechaFin: Date.now()
+      };
+
+      const todasRespondidas = testFinal.preguntas.every(
+        p => p.respuestaSeleccionada !== null
+      );
+
+      if (todasRespondidas) {
+        guardarHistoricoTest(testFinal);
+      }
+
+      setTestActual(testFinal);
+      setPantalla("resumen");
+    }
+
   }
 
   function iniciarTestConTemas() {
@@ -767,10 +807,14 @@ function App() {
       temasSeleccionados.includes(p.tema)
     );
 
-    const idsRecientes = getIdsRecientes();
+    const idsRecientes = [
+      ...getIdsRecientes(),
+      ...getPreguntasUsadasSemana()
+    ];
+
 
     let disponibles = filtradas.filter(
-      p => !idsRecientes.includes(p._id)
+      p => !idsRecientes.includes(p.id)
     );
 
     // fallback si no hay suficientes
@@ -781,6 +825,7 @@ function App() {
     const seleccionadas = barajar(disponibles).slice(0, 20);
 
     guardarTestReciente(seleccionadas);
+    seleccionadas.forEach(p => registrarPreguntaUsada(p.id));
 
     const nuevoTest = {
       modo: modoTest,
@@ -812,10 +857,14 @@ function App() {
       filtradas = preguntas.filter(p => p.categoria === tipoTest);
     }
 
-    const idsRecientes = getIdsRecientes();
+    const idsRecientes = [
+      ...getIdsRecientes(),
+      ...getPreguntasUsadasSemana()
+    ];
+
 
     let disponibles = filtradas.filter(
-      p => !idsRecientes.includes(p._id)
+      p => !idsRecientes.includes(p.id)
     );
 
     if (disponibles.length < 20) {
@@ -825,6 +874,7 @@ function App() {
     const seleccionadas = barajar(disponibles).slice(0, 20);
 
     guardarTestReciente(seleccionadas);
+    seleccionadas.forEach(p => registrarPreguntaUsada(p.id));
 
     const nuevoTest = {
       modo: modoTest,
@@ -864,10 +914,14 @@ function App() {
       ...barajar(especifico).slice(0, numEspecifico)
     ];
 
-    const idsRecientes = getIdsRecientes();
+    const idsRecientes = [
+      ...getIdsRecientes(),
+      ...getPreguntasUsadasSemana()
+    ];
+
 
     let disponibles = seleccionadas.filter(
-      p => !idsRecientes.includes(p._id)
+      p => !idsRecientes.includes(p.id)
     );
 
     if (disponibles.length < 50) {
@@ -877,6 +931,7 @@ function App() {
     const final = barajar(disponibles);
 
     guardarTestReciente(final);
+    final.forEach(p => registrarPreguntaUsada(p.id));
 
     const nuevoTest = {
       modo: "oposicion",
@@ -910,10 +965,14 @@ function App() {
       ...barajar(especifico).slice(0, mitad)
     ];
 
-    const idsRecientes = getIdsRecientes();
+    const idsRecientes = [
+      ...getIdsRecientes(),
+      ...getPreguntasUsadasSemana()
+    ];
+
 
     let disponibles = seleccionadas.filter(
-      p => !idsRecientes.includes(p._id)
+      p => !idsRecientes.includes(p.id)
     );
 
     if (disponibles.length < total) {
@@ -923,6 +982,7 @@ function App() {
     const final = barajar(disponibles);
 
     guardarTestReciente(final);
+    final.forEach(p => registrarPreguntaUsada(p.id));
 
     const nuevoTest = {
       modo: "examen",
@@ -1010,7 +1070,7 @@ function App() {
             onClick={() => {
               const favoritasIds = getFavoritas();
               const favoritas = preguntas.filter(p =>
-                favoritasIds.includes(p._id)
+                favoritasIds.includes(p.id)
               );
 
               if (favoritas.length === 0) {
@@ -1455,10 +1515,10 @@ function App() {
 
 
           <button
-            onClick={() => toggleFavorita(preguntaActual._id)}
+            onClick={() => toggleFavorita(preguntaActual.id)}
             style={{
               marginRight: 10,
-              backgroundColor: esFavorita(preguntaActual._id)
+              backgroundColor: esFavorita(preguntaActual.id)
                 ? "#ffd700"
                 : "white"
             }}
@@ -1570,38 +1630,143 @@ function App() {
             marginTop: 30
           }}
         >
-          {/* IZQUIERDA */}
-          <div>
-            {indicePregunta > 0 && (
-              <button
-                onClick={() => {
-                  const anterior = indicePregunta - 1;
-                  setIndicePregunta(anterior);
-                  if (preguntasRevision) {
-                    setPreguntaActual(preguntasRevision[anterior]);
-                  } else {
-                    setPreguntaActual(preguntasTest[anterior]);
-                  }
-                }}
-              >
-                Anterior
-              </button>
-            )}
-          </div>
+          {desdeRepaso ? (
 
-          {/* DERECHA */}
-          <div style={{ marginLeft: "auto" }}>
-            {indicePregunta < preguntasActivas.length - 1 && (
-              <button onClick={siguientePregunta}>
-                Siguiente pregunta
-              </button>
-            )}
-          </div>
+            <button
+              onClick={() => {
+                setDesdeRepaso(false);
+                setPantalla("repaso-oposicion");
+              }}
+            >
+              Volver a pantalla de repaso
+            </button>
+
+          ) : (
+
+            <>
+              {/* IZQUIERDA */}
+              {indicePregunta > 0 && (
+                <button
+                  onClick={() => {
+                    const anterior = indicePregunta - 1;
+                    setIndicePregunta(anterior);
+                    if (preguntasRevision) {
+                      setPreguntaActual(preguntasRevision[anterior]);
+                    } else {
+                      setPreguntaActual(preguntasTest[anterior]);
+                    }
+                  }}
+                >
+                  Anterior
+                </button>
+              )}
+
+              {/* DERECHA */}
+              <div style={{ marginLeft: "auto" }}>
+                {testActual?.modo === "oposicion" ? (
+
+                  indicePregunta < preguntasActivas.length - 1 ? (
+                    <button onClick={siguientePregunta}>
+                      Siguiente pregunta
+                    </button>
+                  ) : (
+                    <button onClick={() => setPantalla("repaso-oposicion")}>
+                      Repasar preguntas
+                    </button>
+                  )
+
+                ) : (
+
+                  indicePregunta < preguntasActivas.length - 1 && (
+                    <button onClick={siguientePregunta}>
+                      Siguiente pregunta
+                    </button>
+                  )
+
+                )}
+              </div>
+            </>
+
+          )}
         </div>
 
 
-      </div>
+        </div>
       
+    )}
+
+    {/* REPASO OPOSICIÓN */}
+    {pantalla === "repaso-oposicion" && (
+      <>
+        <h2>Repasar preguntas</h2>
+
+        <div
+          style={{
+            display: "grid",
+            gridTemplateColumns: "repeat(5, 1fr)",
+            gap: 10,
+            marginTop: 30
+          }}
+        >
+          {testActual.preguntas.map((p, i) => {
+
+            const respondida = p.respuestaSeleccionada !== null;
+
+            return (
+              <button
+                key={i}
+                onClick={() => {
+                  setIndicePregunta(i);
+                  setPreguntaActual(testActual.preguntas[i]);
+                  setDesdeRepaso(true);
+                  setPantalla("pregunta");
+                }}
+
+                style={{
+                  padding: 12,
+                  fontWeight: "bold",
+                  backgroundColor: respondida ? "#3b82f6" : "white",
+                  color: respondida ? "white" : "black",
+                  borderRadius: 6
+                }}
+              >
+                {i + 1}
+              </button>
+            );
+          })}
+        </div>
+
+        <div
+          style={{
+            marginTop: 40,
+            display: "flex",
+            justifyContent: "space-between"
+          }}
+        >
+          <button onClick={() => setPantalla("pregunta")}>
+            Volver al examen
+          </button>
+
+          <button
+            onClick={() => {
+
+              const testFinal = {
+                ...testActual,
+                finalizado: true,
+                revisando: false,
+                fechaFin: Date.now()
+              };
+
+              guardarHistoricoTest(testFinal);
+
+              setTestActual(testFinal);
+              setPantalla("resumen");
+            }}
+          >
+            Finalizar test
+          </button>
+        </div>
+      </>
     )}
 
     {/* RESUMEN */}
@@ -1612,6 +1777,36 @@ function App() {
         {(() => {
           let total = testActual?.preguntas.length || 0;
           let aciertosFinal = 0;
+          let correctas = 0;
+          let incorrectas = 0;
+
+          if (testActual?.modo === "oposicion") {
+
+            testActual.preguntas.forEach(p => {
+              if (p.respuestaSeleccionada !== null) {
+                if (p.respuestas[p.respuestaSeleccionada]?.correcta) {
+                  correctas++;
+                } else {
+                  incorrectas++;
+                }
+              }
+            });
+
+            const neta = Math.max(0, correctas - incorrectas / 3);
+            const nota = total > 0 ? neta / 5 : 0;
+
+            return (
+              <>
+                <p>Correctas: {correctas}</p>
+                <p>Incorrectas: {incorrectas}</p>
+                <p>En blanco: {total - correctas - incorrectas}</p>
+
+                <h3>
+                  Nota final: {nota.toFixed(2)} / 10
+                </h3>
+              </>
+            );
+          }
 
           if (testActual?.modo === "practica") {
             aciertosFinal = aciertos;
