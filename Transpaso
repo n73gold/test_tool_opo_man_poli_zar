@@ -1,0 +1,510 @@
+Te dejo el resumen de la aplicacion que estamos haciendo en otra conversacion y que transpaso a esta para que sea mas fluida la interaccion. En el siguiente mensaje te pasare el codigo App.jsx para que estes actualizado.
+
+---
+
+# 📚 Proyecto: App de Test de Oposición
+
+## 1. Tecnologías
+
+Frontend:
+
+* **React + Vite**
+* JavaScript
+* Recharts (estadísticas)
+* LocalStorage (persistencia)
+
+Datos:
+
+* Preguntas en **Excel**
+* Convertidas automáticamente a **JSON**
+
+La app es:
+
+```text
+100% frontend
+sin backend
+funciona offline
+```
+
+Optimizada para **uso móvil (iPhone principalmente)**.
+
+---
+
+# 2. Estructura del proyecto
+
+Estructura simplificada:
+
+```text
+project-root
+│
+├─ src
+│  ├─ App.jsx
+│  ├─ main.jsx
+│
+├─ public
+│  └─ preguntas.json
+│
+├─ scripts
+│  └─ convertirExcel.js
+│
+├─ data
+│  └─ preguntas.xlsx
+│
+├─ package.json
+├─ vite.config.js
+└─ version.txt
+```
+
+---
+
+# 3. Flujo de datos
+
+Pipeline de generación de preguntas:
+
+```text
+Excel
+   ↓
+convertirExcel.js
+   ↓
+preguntas.json
+   ↓
+App React
+```
+
+El script:
+
+* convierte Excel → JSON
+* incrementa versión automáticamente.
+
+---
+
+# 4. Sistema de versión automática
+
+Cada vez que se ejecuta:
+
+```bash
+node scripts/convertirExcel.js
+```
+
+ocurre:
+
+1️⃣ Se genera `preguntas.json`
+2️⃣ Se incrementa la versión automáticamente
+3️⃣ Se actualiza la versión visible en la app
+
+Ejemplo:
+
+```text
+v1.0.12 → v1.0.13
+```
+
+La versión se muestra en la **pantalla HOME**.
+
+---
+
+# 5. Sistema de actualización de preguntas
+
+Al iniciar la app:
+
+1️⃣ intenta cargar preguntas desde **localStorage**
+2️⃣ intenta descargar `preguntas.json`
+3️⃣ si hay versión nueva → actualiza
+4️⃣ si no hay internet → usa las guardadas
+
+Esto permite:
+
+```text
+uso offline
+autoactualización cuando hay red
+```
+
+---
+
+# 6. Persistencia (LocalStorage)
+
+Claves usadas:
+
+```text
+preguntas
+preguntasFavoritas
+historicoTests
+historicoIdCounter
+testsRecientes
+preguntasUsadas
+pomodoroStats
+pomodoroConfig
+pomodoroActive
+```
+
+Se guarda:
+
+* histórico de tests
+* estadísticas
+* favoritas
+* preguntas usadas recientemente
+* tiempo de estudio
+
+---
+
+# 7. Modos de test
+
+La app tiene **3 modos principales**.
+
+---
+
+## 🟢 Modo práctica
+
+Características:
+
+* feedback inmediato
+* colorea respuestas
+* no permite cambiar respuesta
+* obliga a responder antes de avanzar
+* permite explicación con IA
+
+Botón disponible:
+
+```text
+🤖 Explicar pregunta con IA
+```
+
+---
+
+## 🟡 Modo examen
+
+Características:
+
+* test de **20 preguntas**
+* no muestra respuesta correcta hasta el final
+* permite revisión posterior
+
+---
+
+## 🔵 Modo oposición
+
+Simula examen real.
+
+Características:
+
+* **50 preguntas**
+* permite dejar preguntas en blanco
+* sistema de penalización
+
+Cálculo:
+
+```text
+nota = (correctas - incorrectas/3) / 5
+```
+
+Incluye:
+
+* pantalla de repaso
+* navegación directa por pregunta
+
+---
+
+# 8. Pantallas de la app
+
+Pantallas disponibles:
+
+```text
+home
+modo
+tipo
+temas
+pregunta
+repaso-oposicion
+resumen
+historico
+estadisticas
+pomodoro
+config-oposicion
+```
+
+---
+
+# 9. Funcionalidades principales
+
+## Selección de test
+
+Permite:
+
+```text
+jurídico
+específico
+mixto
+```
+
+También:
+
+* selección por tema
+* test aleatorio.
+
+---
+
+# 10. Sistema anti-repetición
+
+Evita repetir preguntas recientes.
+
+Controlado mediante:
+
+```text
+testsRecientes
+preguntasUsadas
+```
+
+Evita repetir preguntas durante:
+
+```text
+7 días
+```
+
+---
+
+# 11. Favoritas
+
+Se pueden marcar preguntas:
+
+```text
+⭐ favoritas
+```
+
+Guardadas en:
+
+```text
+preguntasFavoritas
+```
+
+Permite modo:
+
+```text
+estudio de favoritas
+```
+
+---
+
+# 12. Histórico de tests
+
+Se guarda:
+
+```text
+fecha
+modo
+porcentaje jurídico
+porcentaje específico
+```
+
+Se agrupa por **semana**.
+
+---
+
+# 13. Estadísticas
+
+Gráfico semanal con:
+
+* media jurídico
+* media específico
+
+Implementado con:
+
+```text
+Recharts
+```
+
+---
+
+# 14. Pomodoro integrado
+
+Modo estudio con:
+
+* temporizador estudio
+* temporizador descanso
+* guardado automático
+
+Estadísticas:
+
+```text
+minutos por día
+minutos por semana
+total acumulado
+```
+
+---
+
+# 15. Pantalla de repaso (modo oposición)
+
+Al terminar la pregunta 50 aparece:
+
+```text
+Repasar preguntas
+```
+
+Pantalla con **50 botones**.
+
+Colores:
+
+```text
+azul → respondida
+blanco → no respondida
+```
+
+Permite saltar a cualquier pregunta.
+
+---
+
+# 16. Revisión de test
+
+Después del resumen se puede:
+
+```text
+Revisar test
+```
+
+En revisión:
+
+* se ven respuestas correctas
+* navegación libre entre preguntas.
+
+---
+
+# 17. Explicación con IA
+
+Botón:
+
+```text
+🤖 Explicar pregunta con IA
+```
+
+Aparece cuando:
+
+| situación           | visible |
+| ------------------- | ------- |
+| práctica respondida | ✔       |
+| revisión examen     | ✔       |
+| revisión oposición  | ✔       |
+| examen en curso     | ✖       |
+| oposición en curso  | ✖       |
+
+---
+
+## Funcionamiento
+
+Abre ChatGPT con prompt automático que incluye:
+
+```text
+pregunta
+respuestas
+respuesta correcta
+tema
+examen
+nº pregunta
+```
+
+La IA explica:
+
+1️⃣ concepto
+2️⃣ por qué es correcta
+3️⃣ por qué las otras no
+4️⃣ truco para examen
+
+No usa API → **coste 0€**.
+
+---
+
+# 18. Branches del proyecto (estructura real)
+
+Actualmente el proyecto usa **dos ramas principales**:
+
+```text
+stable
+v2-evolution
+```
+
+---
+
+## 🌿 stable
+
+Branch de **producción**.
+
+Características:
+
+* versión estable de la app
+* usada para el **deploy principal**
+* solo recibe cambios probados.
+
+---
+
+## 🌿 v2-evolution
+
+Branch de **desarrollo activo**.
+
+Características:
+
+* nuevas funcionalidades
+* pruebas de mejoras
+* evolución de la app.
+
+---
+
+## Deploy
+
+El hosting está configurado para usar:
+
+```text
+v2-evolution
+```
+
+como rama de desarrollo visible en host.
+
+Cuando una versión es estable:
+
+```text
+v2-evolution → merge → stable
+```
+
+---
+
+# 19. Escala actual del proyecto
+
+Datos aproximados:
+
+```text
+≈ 2000 preguntas
+React SPA
+sin backend
+uso intensivo en móvil
+```
+
+---
+
+# 20. Objetivo del proyecto
+
+Crear una **app de preparación de oposiciones optimizada**, con:
+
+* simulación real de examen
+* práctica intensiva
+* seguimiento de progreso
+* herramientas de estudio.
+
+---
+
+# 21. Estado actual del proyecto
+
+El sistema ya incluye:
+
+```text
+✔ motor de test
+✔ selección por tema
+✔ modo examen
+✔ modo oposición
+✔ repaso de preguntas
+✔ histórico
+✔ estadísticas
+✔ favoritas
+✔ anti-repetición
+✔ pomodoro
+✔ explicación con IA
+✔ autoactualización de preguntas
+✔ versión automática
+```
+

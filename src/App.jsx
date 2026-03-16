@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-
+import { LabelList } from "recharts";
 import {
   LineChart,
   Line,
@@ -466,12 +466,41 @@ function App() {
       ? Math.round((aciertosEspecifico / especifico.length) * 100)
       : null;
 
+    let nota = null;
+    let aciertos = null;
+    let fallos = null;
+
+    if (test.modo === "oposicion") {
+
+      let correctas = 0;
+      let incorrectas = 0;
+
+      test.preguntas.forEach(p => {
+        if (p.respuestaSeleccionada !== null) {
+          if (p.respuestas[p.respuestaSeleccionada]?.correcta) {
+            correctas++;
+          } else {
+            incorrectas++;
+          }
+        }
+      });
+
+      const neta = Math.max(0, correctas - incorrectas / 3);
+      nota = neta / 5;
+
+      aciertos = correctas;
+      fallos = incorrectas;
+    }
+
     const nuevoRegistro = {
       id: getNextHistoricoId(),
       fecha: Date.now(),
       modo: test.modo,
       porcentajeJuridico,
-      porcentajeEspecifico
+      porcentajeEspecifico,
+      nota,
+      aciertos,
+      fallos
     };
 
     const historicoActual = getHistorico();
@@ -1003,6 +1032,140 @@ function App() {
     setPantalla("pregunta");
   }
 
+  function explicarConIA() {
+
+    const pregunta = preguntaActual.texto;
+
+    const respuestas = preguntaActual.respuestas
+      .map((r, i) => `${String.fromCharCode(65 + i)}. ${r.texto}`)
+      .join("\n");
+
+    const correcta = preguntaActual.respuestas.find(r => r.correcta)?.texto;
+
+    const prompt = `
+  Explica esta pregunta tipo test de una oposición.
+
+  Tema: ${preguntaActual.descripcionTema}
+  Examen: ${preguntaActual.nombreExamen}
+  Número de pregunta: ${preguntaActual.numeroPreguntaExamen}
+
+  Pregunta:
+  ${pregunta}
+
+  Opciones:
+  ${respuestas}
+
+  Respuesta correcta:
+  ${correcta}
+
+  Explica:
+  1. El concepto clave.
+  2. Por qué la respuesta correcta es correcta.
+  3. Por qué las otras respuestas son incorrectas.
+  4. Un truco para recordarlo en examen.
+  `;
+
+    const url = `https://chatgpt.com//?q=${encodeURIComponent(prompt)}`;
+
+    window.open(url, "_blank");
+  }
+
+  function exportarDatos() {
+
+    const claves = [
+      "preguntasFavoritas",
+      "historicoTests",
+      "historicoIdCounter",
+      "testsRecientes",
+      "preguntasUsadas",
+      "pomodoroStats",
+      "pomodoroConfig",
+      "pomodoroActive"
+    ];
+
+    const backup = {};
+
+    claves.forEach(k => {
+      const valor = localStorage.getItem(k);
+      if (valor !== null) {
+        backup[k] = JSON.parse(valor);
+      }
+    });
+
+    const blob = new Blob(
+      [JSON.stringify(backup, null, 2)],
+      { type: "application/json" }
+    );
+
+    const url = URL.createObjectURL(blob);
+
+    const a = document.createElement("a");
+    a.href = url;
+    const fecha = new Date().toISOString().slice(0,10);
+    a.download = `backup-oposicion-${fecha}.json`;
+    a.click();
+
+    URL.revokeObjectURL(url);
+  }
+
+  function importarDatos(event) {
+
+    const file = event.target.files[0];
+
+    if (!file) return;
+
+    const reader = new FileReader();
+
+    reader.onload = function(e) {
+
+      try {
+
+        const datos = JSON.parse(e.target.result);
+
+        Object.entries(datos).forEach(([clave, valor]) => {
+          localStorage.setItem(clave, JSON.stringify(valor));
+        });
+
+        alert("Datos importados correctamente. La app se recargará.");
+
+        window.location.reload();
+
+      } catch {
+        alert("El archivo no es válido.");
+      }
+
+    };
+
+    reader.readAsText(file);
+  }
+
+  function borrarFavoritas() {
+
+    const confirmar = window.confirm(
+      "¿Seguro que quieres borrar todas las preguntas favoritas?"
+    );
+
+    if (!confirmar) return;
+
+    localStorage.removeItem("preguntasFavoritas");
+
+    alert("Favoritas eliminadas.");
+  }
+
+  function reiniciarRepeticion() {
+
+    const confirmar = window.confirm(
+      "Esto permitirá que vuelvan a aparecer preguntas recientes. ¿Continuar?"
+    );
+
+    if (!confirmar) return;
+
+    localStorage.removeItem("testsRecientes");
+    localStorage.removeItem("preguntasUsadas");
+
+    alert("Control de repetición reiniciado.");
+  }
+
   return (
 
     <div
@@ -1043,7 +1206,7 @@ function App() {
               {getTestsSemanaActual()}
             </h2>
             <p style={cardTextStyle}>
-              Histórico
+              Test esta semana
             </p>
           </div>
 
@@ -1099,6 +1262,15 @@ function App() {
             <p style={cardTextStyle}>Estudiar</p>
           </div>
 
+          {/* SETTINGS */}
+          <div
+            onClick={() => setPantalla("settings")}
+            style={cardStyle}
+          >
+            <div style={{ fontSize: 40 }}>⚙️</div>
+            <p style={cardTextStyle}>Ajustes</p>
+          </div>
+
         </div>
 
         <div style={{ marginTop: 60 }}>
@@ -1141,7 +1313,8 @@ function App() {
                     )
                   }
                   style={{
-                    display: "flex",
+                    display: "grid",
+                    gridTemplateColumns: "70px 40px 1fr",
                     alignItems: "center",
                     cursor: "pointer"
                   }}
@@ -1163,7 +1336,6 @@ function App() {
                       width: `${item.total * 20}px`,
                       background: "linear-gradient(90deg, #4f46e5, #3b82f6)",
                       borderRadius: 12,
-                      marginLeft: 10
                     }}
                   />
                 </div>
@@ -1192,8 +1364,15 @@ function App() {
                           {/* Texto */}
                           <span style={{ color: "#d1d5db", fontSize: 14 }}>
                             {new Date(h.fecha).toLocaleDateString()} · {h.modo}
-                            {h.porcentajeJuridico !== null && ` · J ${h.porcentajeJuridico}%`}
-                            {h.porcentajeEspecifico !== null && ` · E ${h.porcentajeEspecifico}%`}
+
+                            {h.modo === "oposicion" ? (
+                              ` · Nota ${h.nota?.toFixed(2)} · ✔ ${h.aciertos} · ✖ ${h.fallos}`
+                            ) : (
+                              <>
+                                {h.porcentajeJuridico !== null && ` · J ${h.porcentajeJuridico}%`}
+                                {h.porcentajeEspecifico !== null && ` · E ${h.porcentajeEspecifico}%`}
+                              </>
+                            )}
                           </span>
 
                           {/* Papelera */}
@@ -1238,33 +1417,97 @@ function App() {
         {getDatosEstadisticas().length === 0 ? (
           <p>No hay datos suficientes aún.</p>
         ) : (
-          <div style={{ marginTop: 30, width: "100%", height: 300 }}>
+          <div style={{ marginTop: 30, width: "100%", height: 320 }}>
+
             <ResponsiveContainer>
-              <LineChart data={getDatosEstadisticas()}>
+              <LineChart
+                data={getDatosEstadisticas()}
+                margin={{ top: 20, right: 10, left: 0, bottom: 20 }}
+              >
+
                 <CartesianGrid strokeDasharray="3 3" />
-                <XAxis dataKey="semana" />
+
+                <XAxis
+                  dataKey="semana"
+                  height={50}
+                  tick={(props) => {
+                    const { x, y, payload } = props;
+
+                    const datos = getDatosEstadisticas().find(
+                      d => d.semana === payload.value
+                    );
+
+                    return (
+                      <g transform={`translate(${x},${y})`}>
+
+                        {/* valores */}
+                        <text
+                          x={0}
+                          y={30}
+                          textAnchor="middle"
+                          fill="#10b981"
+                          fontSize={12}
+                        >
+                          E: {datos?.especifico ?? "-"}
+                        </text>
+
+                        <text
+                          x={0}
+                          y={44}
+                          textAnchor="middle"
+                          fill="#3b82f6"
+                          fontSize={12}
+                        >
+                          J: {datos?.juridico ?? "-"}
+                        </text>
+
+                        {/* semana */}
+                        <text
+                          x={0}
+                          y={14}
+                          textAnchor="middle"
+                          fill="#9ca3af"
+                          fontSize={12}
+                        >
+                          {payload.value}
+                        </text>
+
+                      </g>
+                    );
+                  }}
+                />
+
                 <YAxis domain={[0, 100]} />
-                <Tooltip />
-                <Legend />
+
+                <Legend
+                  verticalAlign="top"
+                  align="center"
+                  wrapperStyle={{ paddingBottom: 10 }}
+                />
+
                 <Line
                   type="monotone"
                   dataKey="juridico"
                   stroke="#3b82f6"
                   strokeWidth={3}
                   name="Jurídico"
+                  dot={{ r: 4 }}
                 />
+
                 <Line
                   type="monotone"
                   dataKey="especifico"
                   stroke="#10b981"
                   strokeWidth={3}
                   name="Específico"
+                  dot={{ r: 4 }}
                 />
+
               </LineChart>
             </ResponsiveContainer>
+
           </div>
         )}
-
 
         <br />
 
@@ -1622,6 +1865,29 @@ function App() {
         )}
 
         </div>
+
+        {(
+          (testActual?.modo === "practica" &&
+          testActual?.preguntas[indicePregunta]?.respuestaSeleccionada !== null)
+          ||
+          testActual?.revisando
+        ) && (
+
+          <button
+            onClick={explicarConIA}
+            style={{
+              marginTop: 12,
+              padding: 12,
+              width: "100%",
+              backgroundColor: "#6366f1",
+              color: "white",
+              borderRadius: 6
+            }}
+          >
+            🤖 Explicar pregunta con IA
+          </button>
+
+        )}
 
         <div
           style={{
@@ -2055,9 +2321,17 @@ function App() {
             ] || 0} min
           </p>
 
-          <p>
-            Total acumulado: {pomodoroStats.totalMinutes} min
-          </p>
+          {(() => {
+            const total = pomodoroStats.totalMinutes;
+            const horas = Math.floor(total / 60);
+            const minutos = total % 60;
+
+            return (
+              <p>
+                Total acumulado: {horas}h {minutos}m
+              </p>
+            );
+          })()}
         </div>
 
         <br />
@@ -2068,6 +2342,65 @@ function App() {
       </>
     )}
 
+    {/* SETTINGS */}
+    {pantalla === "settings" && (
+      <>
+        <h2>Ajustes</h2>
+
+        <div style={{ marginTop: 30 }}>
+
+          <button
+            onClick={exportarDatos}
+            style={{ padding: 12, marginBottom: 20, width: "100%" }}
+          >
+            💾 Exportar datos
+          </button>
+
+          <label
+            style={{
+              display: "block",
+              padding: 12,
+              background: "#6366f1",
+              color: "white",
+              textAlign: "center",
+              borderRadius: 6,
+              cursor: "pointer"
+            }}
+          >
+            📂 Importar datos
+            <input
+              type="file"
+              accept="application/json"
+              onChange={importarDatos}
+              style={{ display: "none" }}
+            />
+          </label>
+
+        </div>
+
+        <hr style={{ margin: "30px 0" }} />
+
+          <button
+            onClick={borrarFavoritas}
+            style={{ padding: 12, marginBottom: 20, width: "100%" }}
+          >
+            🧹 Borrar favoritas
+          </button>
+
+          <button
+            onClick={reiniciarRepeticion}
+            style={{ padding: 12, width: "100%" }}
+          >
+            🔁 Reiniciar control de repetición
+          </button>
+
+        <br /><br />
+
+        <button onClick={() => setPantalla("home")}>
+          Volver
+        </button>
+      </>
+    )}
 
     </div>
   )
