@@ -19383,14 +19383,15 @@
     "texto": "¿A qué se le denomina \"muro aparejado\"?",
     "respuestas": [
       {
-        "texto": "Al muro de ladrillo en el que se van trabando entre sí hiladas de dos tipos de ladrillo. b) Al muro de ladrillo realizado mediante dos hojas adosadas con elementos intermedios que las enlazan.",
+        "texto": "Al muro de ladrillo en el que se van trabando entre sí hiladas de dos tipos de ladrillo.",
+        "correcta": false
+      },
+      {
+        "texto": "Al muro de ladrillo realizado mediante dos hojas adosadas con elementos intermedios que las enlazan.",
         "correcta": false
       },
       {
         "texto": "Al muro de ladrillo trabado en todo su espesor, ejecutado con una sola clase de ladrillo.",
-        "correcta": false
-      },
-      {
         "correcta": true
       },
       {
