@@ -500,7 +500,9 @@ function App() {
       porcentajeEspecifico,
       nota,
       aciertos,
-      fallos
+      fallos,
+      tipoGuardado: test.tipoGuardado || null,
+      nombreExamen: test.nombreExamen || null,
     };
 
     const historicoActual = getHistorico();
@@ -1046,8 +1048,6 @@ function App() {
   Explica esta pregunta tipo test de una oposición.
 
   Tema: ${preguntaActual.descripcionTema}
-  Examen: ${preguntaActual.nombreExamen}
-  Número de pregunta: ${preguntaActual.numeroPreguntaExamen}
 
   Pregunta:
   ${pregunta}
@@ -1058,7 +1058,7 @@ function App() {
   Respuesta correcta:
   ${correcta}
 
-  Explica:
+  Evalua si la respuesta correcta es esa y en caso afirmativo explica:
   1. El concepto clave.
   2. Por qué la respuesta correcta es correcta.
   3. Por qué las otras respuestas son incorrectas.
@@ -1166,12 +1166,45 @@ function App() {
     alert("Control de repetición reiniciado.");
   }
 
+  function iniciarTestDesdeLista(nombreExamen) {
+
+    let seleccionadas = preguntas
+      .filter(p => p.nombreExamen === nombreExamen)
+      .sort(
+        (a, b) =>
+          Number(a.numeroPreguntaExamen) -
+          Number(b.numeroPreguntaExamen)
+      );
+
+    const nuevoTest = {
+      modo: modoTest, // 👈 clave: usa el modo actual
+      fechaInicio: Date.now(),
+      preguntas: seleccionadas.map(p => ({
+        ...p,
+        respuestaSeleccionada: null
+      })),
+      finalizado: false,
+      fechaFin: null
+    };
+
+    setTestActual(nuevoTest);
+
+    setPreguntasTest(nuevoTest.preguntas);
+    setIndicePregunta(0);
+    setPreguntaActual(nuevoTest.preguntas[0]);
+    setAciertos(0);
+    setPreguntasRevision(null);
+
+    setPantalla("pregunta");
+  }
+
   return (
 
     <div
       style={{
         padding: pantalla === "pregunta" ? 0 : 20,
         minHeight: "100dvh",
+        overflow: "hidden",
         boxSizing: "border-box",
         display: "flex",
         flexDirection: "column"
@@ -1197,9 +1230,9 @@ function App() {
           }}
         >
 
-          {/* HISTÓRICO */}
+          {/* ESTADISTICAS */}
           <div
-            onClick={() => setPantalla("historico")}
+            onClick={() => setPantalla("estadisticas")}
             style={cardStyle}
           >
             <h2 style={cardNumberStyle}>
@@ -1209,16 +1242,7 @@ function App() {
               Test esta semana
             </p>
           </div>
-
-          {/* ESTADÍSTICAS */}
-          <div
-            onClick={() => setPantalla("estadisticas")}
-            style={cardStyle}
-          >
-            <div style={{ fontSize: 40 }}>📊</div>
-            <p style={cardTextStyle}>Estadísticas</p>
-          </div>
-
+          
           {/* HACER TEST */}
           <div
             onClick={() => setPantalla("modo")}
@@ -1289,231 +1313,253 @@ function App() {
 
       </>
     )}
-
-    {/* HISTORICO */}
-    {pantalla === "historico" && (
-      <>
-        <h2>Histórico de tests</h2>
-
-        {getSemanasOrdenadas().length === 0 ? (
-          <p>No hay tests guardados aún.</p>
-        ) : (
-          <div style={{ marginTop: 30 }}>
-            {getSemanasOrdenadas().map((item, index) => (
-              <div
-                key={index}
-                style={{ marginBottom: 24 }}
-              >
-
-                {/* FILA SEMANA */}
-                <div
-                  onClick={() =>
-                    setSemanaAbierta(
-                      semanaAbierta === item.semana ? null : item.semana
-                    )
-                  }
-                  style={{
-                    display: "grid",
-                    gridTemplateColumns: "70px 40px 1fr",
-                    alignItems: "center",
-                    cursor: "pointer"
-                  }}
-                >
-                  {/* Semana */}
-                  <div style={{ width: 70, fontWeight: 600 }}>
-                    {item.semana}
-                  </div>
-
-                  {/* Número */}
-                  <div style={{ width: 30 }}>
-                    {item.total}
-                  </div>
-
-                  {/* Barra */}
-                  <div
-                    style={{
-                      height: 24,
-                      width: `${item.total * 20}px`,
-                      background: "linear-gradient(90deg, #4f46e5, #3b82f6)",
-                      borderRadius: 12,
-                    }}
-                  />
-                </div>
-
-                {/* DESPLEGABLE */}
-                {semanaAbierta === item.semana && (
-                  <div style={{ marginLeft: 70, marginTop: 12 }}>
-                    {historico
-                      .filter(h => {
-                        const { year, week } = getYearWeek(h.fecha);
-                        const clave = `${String(year).slice(-2)}w${week}`;
-                        return clave === item.semana;
-                      })
-                      .map(h => (
-                          <div
-                          key={h.id}
-                          style={{
-                            display: "flex",
-                            justifyContent: "space-between",
-                            alignItems: "center",
-                            marginBottom: 10,
-                            padding: "6px 0",
-                            borderBottom: "1px solid rgba(255,255,255,0.08)"
-                          }}
-                        >
-                          {/* Texto */}
-                          <span style={{ color: "#d1d5db", fontSize: 14 }}>
-                            {new Date(h.fecha).toLocaleDateString()} · {h.modo}
-
-                            {h.modo === "oposicion" ? (
-                              ` · Nota ${h.nota?.toFixed(2)} · ✔ ${h.aciertos} · ✖ ${h.fallos}`
-                            ) : (
-                              <>
-                                {h.porcentajeJuridico !== null && ` · J ${h.porcentajeJuridico}%`}
-                                {h.porcentajeEspecifico !== null && ` · E ${h.porcentajeEspecifico}%`}
-                              </>
-                            )}
-                          </span>
-
-                          {/* Papelera */}
-                          <span
-                            onClick={(e) => {
-                              e.stopPropagation();
-                              borrarTest(h.id);
-                            }}
-                            style={{
-                              cursor: "pointer",
-                              opacity: 0.6,
-                              fontSize: 16
-                            }}
-                          >
-                            🗑
-                          </span>
-                        </div>
-                      ))}
-                  </div>
-                )}
-
-              </div>
-            ))}
-
-          </div>
-        )}
-
-        <br />
-
-        <button onClick={() => setPantalla("home")}>
-          Volver
-        </button>
-      </>
-
-    )}
-
+    
     {/* ESTADISTICAS */}
     {pantalla === "estadisticas" && (
       <>
-        <h2>Estadísticas</h2>
+        <div
+          style={{
+            display: "flex",
+            flexDirection: "column",
+            flex: 1,
+            minHeight: 0,
+            padding: 20,
+            boxSizing: "border-box"
+          }}
+        >
 
-        {getDatosEstadisticas().length === 0 ? (
-          <p>No hay datos suficientes aún.</p>
-        ) : (
-          <div style={{ marginTop: 30, width: "100%", height: 320 }}>
+          <h2>Estadísticas</h2>
 
-            <ResponsiveContainer>
-              <LineChart
-                data={getDatosEstadisticas()}
-                margin={{ top: 20, right: 10, left: 0, bottom: 20 }}
-              >
+          <div
+            style={{
+              flex: 1,
+              overflowY: "auto",
+            }}
+          >
 
-                <CartesianGrid strokeDasharray="3 3" />
+            {getDatosEstadisticas().length === 0 ? (
+              <p>No hay datos suficientes aún.</p>
+            ) : (
+              <div style={{ marginTop: 20, width: "100%", height: 260 }}>
 
-                <XAxis
-                  dataKey="semana"
-                  height={50}
-                  tick={(props) => {
-                    const { x, y, payload } = props;
-
-                    const datos = getDatosEstadisticas().find(
-                      d => d.semana === payload.value
-                    );
-
-                    return (
-                      <g transform={`translate(${x},${y})`}>
-
-                        {/* valores */}
-                        <text
-                          x={0}
-                          y={30}
-                          textAnchor="middle"
-                          fill="#10b981"
-                          fontSize={12}
-                        >
-                          E: {datos?.especifico ?? "-"}
-                        </text>
-
-                        <text
-                          x={0}
-                          y={44}
-                          textAnchor="middle"
-                          fill="#3b82f6"
-                          fontSize={12}
-                        >
-                          J: {datos?.juridico ?? "-"}
-                        </text>
-
-                        {/* semana */}
-                        <text
-                          x={0}
-                          y={14}
-                          textAnchor="middle"
-                          fill="#9ca3af"
-                          fontSize={12}
-                        >
-                          {payload.value}
-                        </text>
-
-                      </g>
-                    );
+                <div
+                  style={{
+                    overflowX: "auto",
+                    paddingBottom: 10
                   }}
-                />
+                >
 
-                <YAxis domain={[0, 100]} />
+                  <ResponsiveContainer
+                    width={getDatosEstadisticas().length * 70}
+                    height={230}
+                  >
+                    <LineChart
+                      data={getDatosEstadisticas()}
+                      margin={{ top: 5, right: 10, left: 0, bottom: 5 }}
+                    >
 
-                <Legend
-                  verticalAlign="top"
-                  align="center"
-                  wrapperStyle={{ paddingBottom: 10 }}
-                />
+                      <CartesianGrid strokeDasharray="3 3" />
 
-                <Line
-                  type="monotone"
-                  dataKey="juridico"
-                  stroke="#3b82f6"
-                  strokeWidth={3}
-                  name="Jurídico"
-                  dot={{ r: 4 }}
-                />
+                      <XAxis
+                        dataKey="semana"
+                        interval={0}
+                        padding={{ left: 15, right: 25 }}
+                        height={50}
+                        tick={(props) => {
+                          const { x, y, payload } = props;
 
-                <Line
-                  type="monotone"
-                  dataKey="especifico"
-                  stroke="#10b981"
-                  strokeWidth={3}
-                  name="Específico"
-                  dot={{ r: 4 }}
-                />
+                          const datos = getDatosEstadisticas().find(
+                            d => d.semana === payload.value
+                          );
 
-              </LineChart>
-            </ResponsiveContainer>
+                          return (
+                            <g transform={`translate(${x},${y})`}>
+
+                              {/* valores */}
+                              <text
+                                x={0}
+                                y={30}
+                                textAnchor="middle"
+                                fill="#10b981"
+                                fontSize={12}
+                              >
+                                E: {datos?.especifico ?? "-"}
+                              </text>
+
+                              <text
+                                x={0}
+                                y={44}
+                                textAnchor="middle"
+                                fill="#3b82f6"
+                                fontSize={12}
+                              >
+                                J: {datos?.juridico ?? "-"}
+                              </text>
+
+                              {/* semana */}
+                              <text
+                                x={0}
+                                y={14}
+                                textAnchor="middle"
+                                fill="#9ca3af"
+                                fontSize={12}
+                              >
+                                {payload.value}
+                              </text>
+
+                            </g>
+                          );
+                        }}
+                      />
+
+                      <YAxis domain={[0, 100]} width={35} />
+
+                      <Legend
+                        verticalAlign="top"
+                        align="center"
+                        wrapperStyle={{ paddingBottom: 0 }}
+                      />
+
+                      <Line
+                        type="monotone"
+                        dataKey="juridico"
+                        stroke="#3b82f6"
+                        strokeWidth={3}
+                        name="Jurídico"
+                        dot={{ r: 4 }}
+                      />
+
+                      <Line
+                        type="monotone"
+                        dataKey="especifico"
+                        stroke="#10b981"
+                        strokeWidth={3}
+                        name="Específico"
+                        dot={{ r: 4 }}
+                      />
+
+                    </LineChart>
+                  </ResponsiveContainer>
+                </div>
+              </div>
+            )}
+
+            <br />
+
+            <div style={{ marginTop: 20 }}>
+              <h3 style={{ marginBottom: 20 }}>Histórico semanal</h3>
+
+              {(() => {
+                const semanas = getSemanasOrdenadas();
+                const maxTests = Math.max(...semanas.map(s => s.total), 1);
+
+                return semanas.map((item, index) => (
+                  <div key={index} style={{ marginBottom: 24 }}>
+
+                    <div
+                      onClick={() =>
+                        setSemanaAbierta(
+                          semanaAbierta === item.semana ? null : item.semana
+                        )
+                      }
+                      style={{
+                        display: "grid",
+                        gridTemplateColumns: "70px 40px 1fr",
+                        alignItems: "center",
+                        cursor: "pointer"
+                      }}
+                    >
+                      <div style={{ fontWeight: 600 }}>
+                        {item.semana}
+                      </div>
+
+                      <div>
+                        {item.total}
+                      </div>
+
+                      <div style={{ paddingLeft: 10, paddingRight: 10 }}>
+                        <div
+                          style={{
+                            height: 24,
+                            width: `${(item.total / maxTests) * 100}%`,
+                            minWidth: 8,
+                            background: "linear-gradient(90deg, #4f46e5, #3b82f6)",
+                            borderRadius: 12
+                          }}
+                        />
+                      </div>
+                    </div>
+
+                    {semanaAbierta === item.semana && (
+                      <div style={{ marginLeft: 70, marginTop: 12 }}>
+                        {historico
+                          .filter(h => {
+                            const { year, week } = getYearWeek(h.fecha);
+                            const clave = `${String(year).slice(-2)}w${week}`;
+                            return clave === item.semana;
+                          })
+                          .map(h => (
+                            <div
+                              key={h.id}
+                              style={{
+                                display: "flex",
+                                justifyContent: "space-between",
+                                alignItems: "center",
+                                marginBottom: 10,
+                                padding: "6px 0",
+                                borderBottom: "1px solid rgba(255,255,255,0.08)"
+                              }}
+                            >
+                              <span style={{ color: "#d1d5db", fontSize: 14 }}>
+                                {new Date(h.fecha).toLocaleDateString()} · {h.modo}
+                                {h.nombreExamen ? ` · ${h.nombreExamen}` : ""}
+
+                                {(h.modo === "oposicion") ? (
+                                  <>
+                                     {h.nota !== null ? h.nota.toFixed(2) : "-"} · ✔ {h.aciertos ?? 0} · ✖ {h.fallos ?? 0}
+                                  </>
+                                ) : (
+                                  <>
+                                     J: {h.porcentajeJuridico ?? "-"}% · E: {h.porcentajeEspecifico ?? "-"}%
+                                  </>
+                                )}
+                              </span>
+
+                              <span
+                                onClick={(e) => {
+                                  e.stopPropagation();
+                                  borrarTest(h.id);
+                                }}
+                                style={{
+                                  cursor: "pointer",
+                                  opacity: 0.6,
+                                  fontSize: 16
+                                }}
+                              >
+                                🗑
+                              </span>
+                            </div>
+                          ))}
+                      </div>
+                    )}
+
+                  </div>
+                ));
+              })()}
+            </div>
 
           </div>
-        )}
 
-        <br />
-
-        <button onClick={() => setPantalla("home")}>
-          Volver
-        </button>
+          <button
+            onClick={() => setPantalla("home")}
+            style={{
+              marginTop: 10,
+              padding: 12
+            }}
+          >
+            Volver
+          </button>
+        </div>
       </>
     )}
 
@@ -1546,7 +1592,6 @@ function App() {
         }}>
           🔵 Modo oposición
         </button>
-
 
         <br /><br />
 
@@ -1588,6 +1633,12 @@ function App() {
 
         <br /><br />
 
+        <button onClick={() => setPantalla("elegir-test")}>
+          📋 Elegir test
+        </button>
+
+        <br /><br />
+
         <button onClick={() => setPantalla("modo")}>
           Volver
         </button>
@@ -1614,7 +1665,59 @@ function App() {
         </button>
         <br /><br />
 
+        <button onClick={() => setPantalla("elegir-test")}>
+          📋 Elegir test
+        </button>
+        <br /><br />
+
         <button onClick={() => setPantalla("modo")}>
+          Volver
+        </button>
+      </>
+    )}
+
+    {/* ELEGIR TEST */}
+    {pantalla === "elegir-test" && (
+      <>
+        <h2>Selecciona un test</h2>
+
+        {(() => {
+
+          // Obtener tests únicos
+          const testsUnicos = Array.from(
+            new Set(preguntas.map(p => p.nombreExamen))
+          ).sort();
+
+          return testsUnicos.map((nombre, i) => {
+
+            const total = preguntas.filter(p => p.nombreExamen === nombre).length;
+
+            return (
+              <div
+                key={i}
+                onClick={() => iniciarTestDesdeLista(nombre)}
+                style={{
+                  padding: 12,
+                  marginBottom: 10,
+                  borderRadius: 8,
+                  background: "#1f2937",
+                  color: "white",
+                  cursor: "pointer"
+                }}
+              >
+                <div style={{ fontWeight: "bold" }}>{nombre}</div>
+                <div style={{ fontSize: 12, opacity: 0.7 }}>
+                  {total} preguntas
+                </div>
+              </div>
+            );
+          });
+
+        })()}
+
+        <br />
+
+        <button onClick={() => setPantalla(modoTest === "oposicion" ? "config-oposicion" : "tipo")}>
           Volver
         </button>
       </>

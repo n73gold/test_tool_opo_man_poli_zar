@@ -1,10 +1,13 @@
-Te dejo el resumen de la aplicacion que estamos haciendo en otra conversacion y que transpaso a esta para que sea mas fluida la interaccion. En el siguiente mensaje te pasare el codigo App.jsx para que estes actualizado.
+Te dejo el resumen de la aplicacion que estamos haciendo en otra conversacion y que transpaso a esta para que sea mas fluida la interaccion.
+
 
 ---
 
 # 📚 Proyecto: App de Test de Oposición
 
-## 1. Tecnologías
+---
+
+# 1. Tecnologías
 
 Frontend:
 
@@ -74,7 +77,7 @@ App React
 El script:
 
 * convierte Excel → JSON
-* incrementa versión automáticamente.
+* incrementa versión automáticamente
 
 ---
 
@@ -146,6 +149,34 @@ Se guarda:
 
 ---
 
+## Backup y gestión de datos
+
+Desde la app se puede:
+
+```text
+Exportar datos → archivo JSON
+Importar datos → restauración completa
+```
+
+Incluye:
+
+* histórico
+* favoritas
+* estadísticas
+* pomodoro
+* control de repetición
+
+Además:
+
+```text
+Borrar favoritas
+Reiniciar control de repetición
+```
+
+Todo accesible desde **Settings (⚙️)**.
+
+---
+
 # 7. Modos de test
 
 La app tiene **3 modos principales**.
@@ -161,12 +192,6 @@ Características:
 * no permite cambiar respuesta
 * obliga a responder antes de avanzar
 * permite explicación con IA
-
-Botón disponible:
-
-```text
-🤖 Explicar pregunta con IA
-```
 
 ---
 
@@ -215,10 +240,10 @@ temas
 pregunta
 repaso-oposicion
 resumen
-historico
 estadisticas
 pomodoro
 config-oposicion
+settings
 ```
 
 ---
@@ -238,7 +263,7 @@ mixto
 También:
 
 * selección por tema
-* test aleatorio.
+* test aleatorio
 
 ---
 
@@ -275,10 +300,16 @@ Guardadas en:
 preguntasFavoritas
 ```
 
-Permite modo:
+Permite:
 
 ```text
-estudio de favoritas
+modo estudio de favoritas
+```
+
+Y ahora también:
+
+```text
+borrado completo desde settings
 ```
 
 ---
@@ -292,13 +323,43 @@ fecha
 modo
 porcentaje jurídico
 porcentaje específico
+nota
+aciertos
+fallos
 ```
 
-Se agrupa por **semana**.
+Agrupación:
+
+```text
+por semanas (formato YYwWW)
+```
+
+---
+
+## Visualización
+
+El histórico:
+
+* se agrupa por semana
+* muestra número de tests
+* incluye barras proporcionales
+* permite desplegar detalle
+
+En modo oposición se muestra:
+
+```text
+Nota · ✔ aciertos · ✖ fallos
+```
 
 ---
 
 # 13. Estadísticas
+
+Pantalla unificada con el histórico.
+
+---
+
+## Gráfico
 
 Gráfico semanal con:
 
@@ -313,20 +374,63 @@ Recharts
 
 ---
 
+## Características del gráfico
+
+* scroll horizontal dinámico
+* adaptado a móvil
+* leyenda en la parte superior
+* puntos visibles por semana
+
+---
+
+## Etiquetas por semana
+
+Cada semana muestra:
+
+```text
+E: valor específico
+J: valor jurídico
+código de semana (ej: 26w01)
+```
+
+Integradas en el eje X, fuera del área del gráfico para mejorar legibilidad.
+
+---
+
+## Histórico integrado
+
+Debajo del gráfico:
+
+* listado de semanas
+* número de tests
+* barras proporcionales al volumen
+* detalle desplegable por test
+
+---
+
 # 14. Pomodoro integrado
 
 Modo estudio con:
 
 * temporizador estudio
 * temporizador descanso
+* pausa / reanudación
 * guardado automático
 
-Estadísticas:
+---
+
+## Estadísticas
 
 ```text
 minutos por día
 minutos por semana
 total acumulado
+```
+
+El total acumulado se muestra como:
+
+```text
+horas y minutos (Xh Ym)
 ```
 
 ---
@@ -363,7 +467,7 @@ Revisar test
 En revisión:
 
 * se ven respuestas correctas
-* navegación libre entre preguntas.
+* navegación libre
 
 ---
 
@@ -411,9 +515,7 @@ No usa API → **coste 0€**.
 
 ---
 
-# 18. Branches del proyecto (estructura real)
-
-Actualmente el proyecto usa **dos ramas principales**:
+# 18. Branches del proyecto
 
 ```text
 stable
@@ -424,49 +526,27 @@ v2-evolution
 
 ## 🌿 stable
 
-Branch de **producción**.
-
-Características:
-
-* versión estable de la app
-* usada para el **deploy principal**
-* solo recibe cambios probados.
+* versión de producción
+* cambios validados
 
 ---
 
 ## 🌿 v2-evolution
 
-Branch de **desarrollo activo**.
-
-Características:
-
+* desarrollo activo
 * nuevas funcionalidades
-* pruebas de mejoras
-* evolución de la app.
 
 ---
 
 ## Deploy
 
-El hosting está configurado para usar:
-
 ```text
-v2-evolution
-```
-
-como rama de desarrollo visible en host.
-
-Cuando una versión es estable:
-
-```text
-v2-evolution → merge → stable
+v2-evolution → entorno visible
 ```
 
 ---
 
 # 19. Escala actual del proyecto
-
-Datos aproximados:
 
 ```text
 ≈ 2000 preguntas
@@ -484,27 +564,38 @@ Crear una **app de preparación de oposiciones optimizada**, con:
 * simulación real de examen
 * práctica intensiva
 * seguimiento de progreso
-* herramientas de estudio.
+* herramientas de estudio
 
 ---
 
 # 21. Estado actual del proyecto
 
-El sistema ya incluye:
+El sistema incluye:
 
 ```text
 ✔ motor de test
 ✔ selección por tema
+✔ modo práctica
 ✔ modo examen
 ✔ modo oposición
 ✔ repaso de preguntas
-✔ histórico
-✔ estadísticas
+✔ revisión de test
+✔ histórico semanal
+✔ estadísticas unificadas
 ✔ favoritas
 ✔ anti-repetición
 ✔ pomodoro
 ✔ explicación con IA
 ✔ autoactualización de preguntas
 ✔ versión automática
+✔ exportación/importación de datos
+✔ gestión de limpieza de datos
+✔ interfaz optimizada para móvil
+
 ```
 
+Es muy importante que no plantees proximos pasos hasta que yo no te confirme que los cambios realizados funcionan correctamente.
+
+Ademas, cada vez que me vayas a realizar una indicacion, tendras que decirme las lineas exactas donde la tengo que implementar.
+
+En esta conversacion seguiremos con el desarrollo de la aplicacion, te he dejado el codigo App en las fuentes del proyecto

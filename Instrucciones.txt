@@ -2,7 +2,6 @@
 Para ir a version 2 (desarrollo) y modificar codigo:
     git checkout v2-evolucion
     git merge stable
-    git push
 
     Para chequear la version 2 en el movil
         npm run dev -- --host (Ctrl - C para cerrar el host)
@@ -11,13 +10,15 @@ Para ir a version 2 (desarrollo) y modificar codigo:
     Cuando acabemos los cambios
         git checkout stable
         git merge v2-evolucion
-        git push
+
+        node scripts/convertirExcel.js
         npm run build
         npm run deploy
 
-Para volver a version 1 (stable):
-    git checkout stable
-         *opcional* git branch (comprueba que estamos en gh-pages)    
+        git add .
+        git commit -m "Ultimos cambios"
+        git push
+ 
 
 Si quiero actualizar la base de datos o ver los ultimos cambios en la app
     node scripts/convertirExcel.js
