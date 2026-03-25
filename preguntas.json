@@ -55402,11 +55402,11 @@
     "respuestas": [
       {
         "texto": "105 x 148 mm",
-        "correcta": true
+        "correcta": false
       },
       {
         "texto": "148 x 210 mm",
-        "correcta": false
+        "correcta": true
       },
       {
         "texto": "105 x 297 mm",
