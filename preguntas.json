@@ -45444,32 +45444,6 @@
     ]
   },
   {
-    "id": "27_0._co_of._mantenimiento_2024_20",
-    "categoria": "específico",
-    "tema": "27",
-    "descripcionTema": "Prevencion",
-    "nombreExamen": "0. CO Of. Mantenimiento 2024",
-    "numeroPreguntaExamen": "20",
-    "texto": "La Ley 3/2001, de 4 de abril, de prevención, asistencia y reinserción social en materia de drogodependencias (BOA nº 43 de 11/4/2001) de la Comunidad Autónoma de Aragón prohíbe:",
-    "respuestas": [
-      {
-        "texto": "Trabajar sin el EPI adecuado.",
-        "correcta": false
-      },
-      {
-        "texto": "Dejar los equipos informáticos enchufados fuera del horario de trabajo.",
-        "correcta": false
-      },
-      {
-        "texto": "Fumar, entre otros, en las oficinas y dependencias laborales de la administración pública, y todas las destinadas a la atención directa al público, salvo en aquellas zonas expresamente habilitadas al efecto.",
-        "correcta": true
-      },
-      {
-        "correcta": false
-      }
-    ]
-  },
-  {
     "id": "27_0._co_of._mantenimiento_2024_21",
     "categoria": "específico",
     "tema": "27",
