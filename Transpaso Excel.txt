@@ -1,0 +1,18 @@
+En esta conversacion te pasare archivos pdf, word o imagen para que traslades la informacion a formato excel que me entregaras en formato .xlsx 
+El Excel que enviaras debe tener SIEMPRE estas columnas, exactamente con estos nombres y en este orden: 
+Columna A: Numero de pregunta; 
+Col. B: Enunciado; 
+Col. C: Opcion A; 
+Col. D: Opcion B; 
+Col. E: Opcion C; 
+Col. F: Opcion D; 
+Col. G: Solucion (solo la letra de la respuesta correcta en minusculo si aparece en algun lugar del documento si no en blanco). 
+Cuando alguna pregunta no tenga opcion D la celda se quedara en blanco. 
+Tienes que respetar la literalidad de la pregunta y las respuestas, NO puedes resumirlas (si ves que en una has escrito 512015 y estamos refiriendonos a una ley, lo modificaras por 5/2015). 
+Tanto el enunciado como las respuestas pueden aparecer en varias lineas/paginas, es importante que la integridad de los mismos se respete puesto que son test de oposiciones. 
+Si un archivo tiene preguntas con imagenes, no se copiaran, pero al enviar el archivo deberas decir que preguntas has eliminado. 
+Si un archivo tiene mas de 30 preguntas, dividiras las entregas en archivos excel de un maximo de 30 preguntas, denominando los archivos al final con: "_parte_x" 
+No responderas nunca con un mensaje que sea "En el siguiente mensaje te envio el archivo." 
+Tu mensaje tiene que ser siempre un archivo de muestra o el definitivo, a no ser que se de una situacion excepcional para la que yo tenga que tomar una decision.
+
+Me enviaras un archivo con las 5 primeras preguntas para que yo compruebe que esta bien antes de trabajar todo el archivo 

@@ -73,6 +73,8 @@ function App() {
 
   const preguntasActivas = preguntasRevision ?? preguntasTest;
 
+  const [temasActivos, setTemasActivos] = useState([]);
+
   const [pomodoroMode, setPomodoroMode] = useState("work"); // work | break
   const [pomodoroRunning, setPomodoroRunning] = useState(false);
   const [pomodoroPaused, setPomodoroPaused] = useState(false);
@@ -115,6 +117,12 @@ function App() {
 
   useEffect(() => {
     const guardadas = localStorage.getItem("preguntas");
+    setHistorico(getHistorico());
+    const temasGuardados = JSON.parse(localStorage.getItem("temasActivos") || "null");
+
+    if (temasGuardados) {
+      setTemasActivos(temasGuardados);
+    }
 
     if (guardadas) {
       const data = JSON.parse(guardadas);
@@ -123,14 +131,19 @@ function App() {
       setTotalPreguntas(data.length);
     }
 
-
-
     fetch(import.meta.env.BASE_URL + "preguntas.json")
       .then(res => res.json())
       .then(data => {
         localStorage.setItem("preguntas", JSON.stringify(data));
         setPreguntas(data);
         setTotalPreguntas(data.length);
+        // Inicializar temas activos si no existen
+        const temasUnicos = Array.from(new Set(data.map(p => p.tema)));
+
+        if (!localStorage.getItem("temasActivos")) {
+          setTemasActivos(temasUnicos);
+          localStorage.setItem("temasActivos", JSON.stringify(temasUnicos));
+        }
       })
 
 
@@ -392,6 +405,33 @@ function App() {
 
     // Forzar re-render
     setTestActual(prev => ({ ...prev }));
+
+    // 🔧 FIX: actualizar lista en modo favoritas
+    if (modoFavoritas) {
+      const nuevasFavoritasIds = getFavoritas();
+      const nuevasFavoritas = preguntas.filter(p =>
+        nuevasFavoritasIds.includes(p.id)
+      );
+
+      if (nuevasFavoritas.length === 0) {
+        // salir si no quedan favoritas
+        setModoFavoritas(false);
+        setPreguntasRevision(null);
+        setPantalla("home");
+        return;
+      }
+
+      setPreguntasRevision(nuevasFavoritas);
+
+      // ajustar índice si se sale de rango
+      if (indicePregunta >= nuevasFavoritas.length) {
+        const nuevoIndice = nuevasFavoritas.length - 1;
+        setIndicePregunta(nuevoIndice);
+        setPreguntaActual(nuevasFavoritas[nuevoIndice]);
+      } else {
+        setPreguntaActual(nuevasFavoritas[indicePregunta]);
+      }
+    }
   }
 
   function barajar(array) {
@@ -486,7 +526,9 @@ function App() {
       });
 
       const neta = Math.max(0, correctas - incorrectas / 3);
-      nota = neta / 5;
+      nota = test.preguntas.length > 0
+        ? (neta / test.preguntas.length) * 10
+        : 0;
 
       aciertos = correctas;
       fallos = incorrectas;
@@ -661,8 +703,12 @@ function App() {
     setTipoTest(tipo);
 
     if (tipo === "mixto") {
-      const juridico = preguntas.filter(p => p.categoria === "jurídico");
-      const especifico = preguntas.filter(p => p.categoria === "específico");
+      const juridico = preguntas.filter(
+        p => p.categoria === "jurídico" && temasActivos.includes(p.tema)
+      );
+      const especifico = preguntas.filter(
+        p => p.categoria === "específico" && temasActivos.includes(p.tema)
+      );
 
       const mitad = 10;
 
@@ -714,7 +760,9 @@ function App() {
 
     }
 
-    let filtradas = preguntas.filter(p => p.categoria === tipo);
+    let filtradas = preguntas.filter(
+      p => p.categoria === tipo && temasActivos.includes(p.tema)
+    );
 
     const temasUnicos = Array.from(
       new Map(
@@ -937,8 +985,12 @@ function App() {
     const numJuridico = Math.round((configOposicion / 100) * total);
     const numEspecifico = total - numJuridico;
 
-    const juridico = preguntas.filter(p => p.categoria === "jurídico");
-    const especifico = preguntas.filter(p => p.categoria === "específico");
+    const juridico = preguntas.filter(
+      p => p.categoria === "jurídico" && temasActivos.includes(p.tema)
+    );
+    const especifico = preguntas.filter(
+      p => p.categoria === "específico" && temasActivos.includes(p.tema)
+    );
 
     const seleccionadas = [
       ...barajar(juridico).slice(0, numJuridico),
@@ -988,8 +1040,12 @@ function App() {
     const total = 20;
     const mitad = total / 2;
 
-    const juridico = preguntas.filter(p => p.categoria === "jurídico");
-    const especifico = preguntas.filter(p => p.categoria === "específico");
+    const juridico = preguntas.filter(
+      p => p.categoria === "jurídico" && temasActivos.includes(p.tema)
+    );
+    const especifico = preguntas.filter(
+      p => p.categoria === "específico" && temasActivos.includes(p.tema)
+    );
 
     const seleccionadas = [
       ...barajar(juridico).slice(0, mitad),
@@ -1178,6 +1234,7 @@ function App() {
 
     const nuevoTest = {
       modo: modoTest, // 👈 clave: usa el modo actual
+      nombreExamen,
       fechaInicio: Date.now(),
       preguntas: seleccionadas.map(p => ({
         ...p,
@@ -1197,6 +1254,13 @@ function App() {
 
     setPantalla("pregunta");
   }
+
+  const preguntaSegura =
+    preguntasActivas && preguntasActivas.length > 0
+      ? preguntasActivas[
+          Math.min(indicePregunta, preguntasActivas.length - 1)
+        ]
+      : null;
 
   return (
 
@@ -1775,7 +1839,7 @@ function App() {
     )}
 
     {/* PREGUNTA */}
-    {pantalla === "pregunta" && preguntasActivas[indicePregunta] && (
+    {pantalla === "pregunta" && preguntaSegura && (
       <div
         style={{
           display: "flex",
@@ -1793,11 +1857,22 @@ function App() {
           }}
         >
           <h2 style={{ marginBottom: 4 }}>
-            {tipoTest === "jurídico"
-              ? "Jurídico"
-              : tipoTest === "específico"
-              ? "Específico"
-              : "Mixto"}
+            {(() => {
+              const total = testActual?.preguntas.length || 0;
+
+              const juridico = testActual?.preguntas.filter(
+                p => p.categoria === "jurídico"
+              ).length || 0;
+
+              const especifico = testActual?.preguntas.filter(
+                p => p.categoria === "específico"
+              ).length || 0;
+
+              if (juridico === total && total > 0) return "Jurídico";
+              if (especifico === total && total > 0) return "Específico";
+
+              return "Mixto";
+            })()}
           </h2>
 
           <button
@@ -1875,11 +1950,11 @@ function App() {
         </div>
 
         <p style={{ fontSize: 14, opacity: 0.8, marginTop: 0 }}>
-          {preguntasActivas[indicePregunta].descripcionTema}
+          {preguntaSegura.descripcionTema}
         </p>
 
         <p style={{ fontSize: 13, opacity: 0.7, marginTop: 4 }}>
-          {preguntasActivas[indicePregunta].nombreExamen} - Nº {preguntasActivas[indicePregunta].numeroPreguntaExamen}
+          {preguntaSegura.nombreExamen} - Nº {preguntaSegura.numeroPreguntaExamen}
         </p>
 
         <p>
@@ -1895,10 +1970,10 @@ function App() {
           }}
         >
 
-        <h3>{preguntasActivas[indicePregunta].texto}</h3>
+        <h3>{preguntaSegura.texto}</h3>
       
         {modoFavoritas ? (
-          preguntasActivas[indicePregunta].respuestas.map((r, i) => (
+          preguntaSegura.respuestas.map((r, i) => (
             <div
               key={i}
               style={{
@@ -1913,7 +1988,7 @@ function App() {
             </div>
           ))
         ) : (
-          preguntasActivas[indicePregunta].respuestas.map((r, i) => (
+          preguntaSegura.respuestas.map((r, i) => (
             <button
               key={i}
               onClick={() => responder(i)}
@@ -2162,7 +2237,7 @@ function App() {
             });
 
             const neta = Math.max(0, correctas - incorrectas / 3);
-            const nota = total > 0 ? neta / 5 : 0;
+            const nota = total > 0 ? (neta / total) * 10 : 0;
 
             return (
               <>
@@ -2483,23 +2558,103 @@ function App() {
 
         <hr style={{ margin: "30px 0" }} />
 
-          <button
-            onClick={borrarFavoritas}
-            style={{ padding: 12, marginBottom: 20, width: "100%" }}
-          >
-            🧹 Borrar favoritas
-          </button>
+        <button
+          onClick={borrarFavoritas}
+          style={{ padding: 12, marginBottom: 20, width: "100%" }}
+        >
+          🧹 Borrar favoritas
+        </button>
 
-          <button
-            onClick={reiniciarRepeticion}
-            style={{ padding: 12, width: "100%" }}
-          >
-            🔁 Reiniciar control de repetición
-          </button>
+        <button
+          onClick={reiniciarRepeticion}
+          style={{ padding: 12, marginBottom: 20, width: "100%" }}
+        >
+          🔁 Reiniciar control de repetición
+        </button>
+
+        <button
+          onClick={() => setPantalla("temario")}
+          style={{ padding: 12, marginBottom: 20, width: "100%" }}
+        >
+          📚 Selección de temario
+        </button>
 
         <br /><br />
 
         <button onClick={() => setPantalla("home")}>
+          Volver
+        </button>
+      </>
+    )}
+
+    {/* SELECCIÓN DE TEMARIO */}
+    {pantalla === "temario" && (
+      <>
+        <h2>Selección de temario</h2>
+
+        {(() => {
+
+          const temasOrdenados = Array.from(
+            new Map(
+              preguntas.map(p => {
+
+                // 🔥 EXTRAER NÚMERO DEL TEXTO
+                const match = p.tema?.match(/^(\d+)/);
+                const numero = match ? Number(match[1]) : null;
+
+                return [
+                  p.tema,
+                  {
+                    tema: p.tema,
+                    descripcion: p.descripcionTema,
+                    numero
+                  }
+                ];
+              })
+            ).values()
+          ).sort((a, b) => {
+
+            // SIN DEFINIR arriba
+            if (a.numero === null && b.numero === null) return 0;
+            if (a.numero === null) return -1;
+            if (b.numero === null) return 1;
+
+            return a.numero - b.numero;
+          });
+
+          return temasOrdenados.map((t, i) => (
+            <label key={i} style={{ display: "block", marginBottom: 6 }}>
+              <input
+                type="checkbox"
+                checked={temasActivos.includes(t.tema)}
+                onChange={(e) => {
+
+                  let nuevos;
+
+                  if (e.target.checked) {
+                    nuevos = [...temasActivos, t.tema];
+                  } else {
+                    if (temasActivos.length === 1) {
+                      alert("Debe haber al menos un tema seleccionado.");
+                      return;
+                    }
+                    nuevos = temasActivos.filter(x => x !== t.tema);
+                  }
+
+                  setTemasActivos(nuevos);
+                  localStorage.setItem("temasActivos", JSON.stringify(nuevos));
+                }}
+              />
+              {" "}
+              {t.tema} - {t.descripcion}
+            </label>
+          ));
+
+        })()}
+
+        <br />
+
+        <button onClick={() => setPantalla("settings")}>
           Volver
         </button>
       </>
