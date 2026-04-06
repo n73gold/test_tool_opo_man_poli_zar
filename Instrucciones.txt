@@ -9,15 +9,14 @@ Para ir a version 2 (desarrollo) y modificar codigo:
 
     Cuando acabemos los cambios
         git checkout stable
+                            opcional git pull (para traer la ultima version del repo)
         git merge v2-evolucion
+
+        git push
 
         node scripts/convertirExcel.js
         npm run build
         npm run deploy
-
-        git add .
-        git commit -m "Ultimos cambios"
-        git push
  
 
 Si quiero actualizar la base de datos o ver los ultimos cambios en la app
@@ -25,7 +24,7 @@ Si quiero actualizar la base de datos o ver los ultimos cambios en la app
     npm run build
     npm run deploy
 
-Si he hecho cambios en la app y quiero cargarlos a github
+**Si he hecho cambios en la app y quiero cargarlos a github
     git add .
     git commit -m "Ultimos cambios"
     git push

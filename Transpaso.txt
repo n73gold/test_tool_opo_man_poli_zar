@@ -1,9 +1,8 @@
-Te dejo el resumen de la aplicacion que estamos haciendo en otra conversacion y que transpaso a esta para que sea mas fluida la interaccion.
-
+Te dejo el resumen de la aplicación que estamos desarrollando para continuar en otra conversación de forma fluida.
 
 ---
 
-# 📚 Proyecto: App de Test de Oposición
+# 📚 Proyecto: App de Test de Oposición (ACTUALIZADO)
 
 ---
 
@@ -35,8 +34,6 @@ Optimizada para **uso móvil (iPhone principalmente)**.
 
 # 2. Estructura del proyecto
 
-Estructura simplificada:
-
 ```text
 project-root
 │
@@ -62,8 +59,6 @@ project-root
 
 # 3. Flujo de datos
 
-Pipeline de generación de preguntas:
-
 ```text
 Excel
    ↓
@@ -77,55 +72,46 @@ App React
 El script:
 
 * convierte Excel → JSON
+* genera IDs únicos por pregunta
 * incrementa versión automáticamente
 
 ---
 
 # 4. Sistema de versión automática
 
-Cada vez que se ejecuta:
+Cada ejecución:
 
 ```bash
 node scripts/convertirExcel.js
 ```
 
-ocurre:
+realiza:
 
-1️⃣ Se genera `preguntas.json`
-2️⃣ Se incrementa la versión automáticamente
-3️⃣ Se actualiza la versión visible en la app
-
-Ejemplo:
-
-```text
-v1.0.12 → v1.0.13
-```
-
-La versión se muestra en la **pantalla HOME**.
+1️⃣ Generación de `preguntas.json`
+2️⃣ Incremento automático de versión
+3️⃣ Persistencia en `package.json`
 
 ---
 
-# 5. Sistema de actualización de preguntas
+# 5. Sistema de carga y actualización
 
 Al iniciar la app:
 
-1️⃣ intenta cargar preguntas desde **localStorage**
+1️⃣ carga desde `localStorage`
 2️⃣ intenta descargar `preguntas.json`
-3️⃣ si hay versión nueva → actualiza
-4️⃣ si no hay internet → usa las guardadas
-
-Esto permite:
+3️⃣ si hay nueva versión → actualiza
+4️⃣ si no hay red → usa cache
 
 ```text
-uso offline
-autoactualización cuando hay red
+✔ uso offline
+✔ autoactualización
 ```
 
 ---
 
 # 6. Persistencia (LocalStorage)
 
-Claves usadas:
+Claves utilizadas:
 
 ```text
 preguntas
@@ -134,144 +120,172 @@ historicoTests
 historicoIdCounter
 testsRecientes
 preguntasUsadas
+temasActivos
 pomodoroStats
 pomodoroConfig
 pomodoroActive
+
+preguntasPorTema        ← NUEVO
+repasoPendientes        ← NUEVO
+repasoAciertos          ← NUEVO
 ```
-
-Se guarda:
-
-* histórico de tests
-* estadísticas
-* favoritas
-* preguntas usadas recientemente
-* tiempo de estudio
 
 ---
 
 ## Backup y gestión de datos
 
-Desde la app se puede:
+Desde Settings:
 
 ```text
-Exportar datos → archivo JSON
-Importar datos → restauración completa
+Exportar datos → JSON
+Importar datos → restauración
 ```
 
-Incluye:
+Incluye ahora:
 
 * histórico
 * favoritas
 * estadísticas
 * pomodoro
 * control de repetición
-
-Además:
-
-```text
-Borrar favoritas
-Reiniciar control de repetición
-```
-
-Todo accesible desde **Settings (⚙️)**.
+* progreso por tema
+* sistema de repaso
 
 ---
 
 # 7. Modos de test
 
-La app tiene **3 modos principales**.
-
----
-
 ## 🟢 Modo práctica
 
-Características:
-
-* feedback inmediato
-* colorea respuestas
+* corrección inmediata
 * no permite cambiar respuesta
-* obliga a responder antes de avanzar
-* permite explicación con IA
+* obliga a responder
+* explicación con IA
+* botón **Repaso** al finalizar
+* cálculo porcentajes jurídico/específico
 
 ---
 
-## 🟡 Modo examen
+## 🟡 Modo rápido (NUEVO)
+
+Sustituye al modo examen.
 
 Características:
 
-* test de **20 preguntas**
-* no muestra respuesta correcta hasta el final
-* permite revisión posterior
+* preguntas alternadas:
+
+  ```text
+  jurídico → específico → jurídico → específico
+  ```
+* duración abierta (hasta finalizar manualmente)
+* corrección inmediata (como práctica)
+* botón superior **Finalizar test**
+* NO tiene revisión
+* NO guarda histórico como examen clásico
+* resumen basado en preguntas respondidas reales
 
 ---
 
 ## 🔵 Modo oposición
 
-Simula examen real.
-
-Características:
-
-* **50 preguntas**
-* permite dejar preguntas en blanco
-* sistema de penalización
-
-Cálculo:
+* 50 preguntas
+* permite dejar en blanco
+* penalización configurable:
 
 ```text
-nota = (correctas - incorrectas/3) / 5
+nota = correctas - incorrectas / N
 ```
+
+(donde N es configurable por usuario)
 
 Incluye:
 
 * pantalla de repaso
-* navegación directa por pregunta
+* navegación libre
+* diferenciación visual de preguntas en blanco (verde oscuro en revisión)
 
 ---
 
-# 8. Pantallas de la app
-
-Pantallas disponibles:
-
-```text
-home
-modo
-tipo
-temas
-pregunta
-repaso-oposicion
-resumen
-estadisticas
-pomodoro
-config-oposicion
-settings
-```
-
----
-
-# 9. Funcionalidades principales
-
-## Selección de test
-
-Permite:
-
-```text
-jurídico
-específico
-mixto
-```
-
-También:
+## 🧩 Selección avanzada
 
 * selección por tema
-* test aleatorio
+* selección de test concreto
+* ejecución completa sin alteración
 
 ---
 
-# 10. Sistema anti-repetición
+# 8. Sistema de repaso (NUEVO)
 
-Evita repetir preguntas recientes.
+## Generación
 
-Controlado mediante:
+Desde modo práctica:
+
+```text
+Repaso → preguntas falladas
+```
+
+---
+
+## Funcionamiento
+
+Cada pregunta tiene contador:
+
+```text
+repasoAciertos[id]
+```
+
+Reglas:
+
+* entra con 0
+* cada acierto suma +1
+* se elimina al llegar a 2 aciertos
+* los fallos no eliminan progreso
+
+---
+
+## Ejemplo
+
+```text
+fallo → entra en repaso (0)
+acierto → (1)
+acierto → (2) → se elimina
+```
+
+---
+
+## Comportamiento
+
+* test de repaso = modo práctica
+* NO tiene resumen
+* NO aparece en histórico
+* NO afecta estadísticas
+* al terminar → vuelve a HOME
+
+---
+
+## Acceso
+
+Widget en Home:
+
+```text
+🧠 Repaso
+```
+
+---
+
+## Gestión
+
+En Settings:
+
+```text
+🧽 Borrar preguntas de repaso
+```
+
+---
+
+# 9. Sistema anti-repetición
+
+Basado en:
 
 ```text
 testsRecientes
@@ -286,316 +300,173 @@ Evita repetir preguntas durante:
 
 ---
 
-# 11. Favoritas
+# 10. Selección inteligente de preguntas (NUEVO)
 
-Se pueden marcar preguntas:
-
-```text
-⭐ favoritas
-```
-
-Guardadas en:
+Sistema basado en:
 
 ```text
-preguntasFavoritas
+preguntasPorTema
 ```
 
-Permite:
+Funciona así:
 
-```text
-modo estudio de favoritas
-```
-
-Y ahora también:
-
-```text
-borrado completo desde settings
-```
+* prioriza temas menos preguntados
+* mantiene aleatoriedad secundaria
+* equilibrio progresivo del temario
 
 ---
 
-# 12. Histórico de tests
+# 11. Selección de temario
+
+* activación/desactivación global
+* persistente
+* ordenado por número de tema
+
+---
+
+# 12. Favoritas
+
+* ⭐ marcar/desmarcar
+* modo estudio
+* eliminación dinámica segura
+
+---
+
+# 13. Histórico
 
 Se guarda:
 
 ```text
 fecha
 modo
-porcentaje jurídico
-porcentaje específico
+tipo
+nombre
+porcentaje J/E
 nota
 aciertos
 fallos
-```
-
-Agrupación:
-
-```text
-por semanas (formato YYwWW)
 ```
 
 ---
 
 ## Visualización
 
-El histórico:
-
-* se agrupa por semana
-* muestra número de tests
-* incluye barras proporcionales
-* permite desplegar detalle
-
-En modo oposición se muestra:
+* agrupado por semanas
+* ahora con formato en dos líneas:
 
 ```text
-Nota · ✔ aciertos · ✖ fallos
+Fecha · Modo
+Datos del test
 ```
 
 ---
 
-# 13. Estadísticas
+## Cambios recientes
 
-Pantalla unificada con el histórico.
+* modo rápido muestra:
 
----
-
-## Gráfico
-
-Gráfico semanal con:
-
-* media jurídico
-* media específico
-
-Implementado con:
-
-```text
-Recharts
-```
+  ```text
+  fecha · rápido
+  J% · E%
+  ```
 
 ---
 
-## Características del gráfico
+# 14. Estadísticas
 
-* scroll horizontal dinámico
-* adaptado a móvil
-* leyenda en la parte superior
-* puntos visibles por semana
-
----
-
-## Etiquetas por semana
-
-Cada semana muestra:
-
-```text
-E: valor específico
-J: valor jurídico
-código de semana (ej: 26w01)
-```
-
-Integradas en el eje X, fuera del área del gráfico para mejorar legibilidad.
+* medias semanales
+* gráfico scroll horizontal
+* integrado con histórico
 
 ---
 
-## Histórico integrado
+# 15. Pomodoro
 
-Debajo del gráfico:
-
-* listado de semanas
-* número de tests
-* barras proporcionales al volumen
-* detalle desplegable por test
+* persistente
+* pausa/reanudación
+* estadísticas acumuladas
 
 ---
 
-# 14. Pomodoro integrado
+# 16. Pantalla de repaso (oposición)
 
-Modo estudio con:
-
-* temporizador estudio
-* temporizador descanso
-* pausa / reanudación
-* guardado automático
-
----
-
-## Estadísticas
-
-```text
-minutos por día
-minutos por semana
-total acumulado
-```
-
-El total acumulado se muestra como:
-
-```text
-horas y minutos (Xh Ym)
-```
-
----
-
-# 15. Pantalla de repaso (modo oposición)
-
-Al terminar la pregunta 50 aparece:
-
-```text
-Repasar preguntas
-```
-
-Pantalla con **50 botones**.
-
-Colores:
-
-```text
-azul → respondida
-blanco → no respondida
-```
-
-Permite saltar a cualquier pregunta.
-
----
-
-# 16. Revisión de test
-
-Después del resumen se puede:
-
-```text
-Revisar test
-```
-
-En revisión:
-
-* se ven respuestas correctas
+* 50 botones
 * navegación libre
+* colores:
+
+  ```text
+  azul → respondida
+  blanco → no respondida
+  ```
 
 ---
 
 # 17. Explicación con IA
 
-Botón:
+Disponible en:
 
-```text
-🤖 Explicar pregunta con IA
-```
-
-Aparece cuando:
-
-| situación           | visible |
-| ------------------- | ------- |
-| práctica respondida | ✔       |
-| revisión examen     | ✔       |
-| revisión oposición  | ✔       |
-| examen en curso     | ✖       |
-| oposición en curso  | ✖       |
+* práctica
+* rápido
+* revisión
 
 ---
 
-## Funcionamiento
-
-Abre ChatGPT con prompt automático que incluye:
-
-```text
-pregunta
-respuestas
-respuesta correcta
-tema
-examen
-nº pregunta
-```
-
-La IA explica:
-
-1️⃣ concepto
-2️⃣ por qué es correcta
-3️⃣ por qué las otras no
-4️⃣ truco para examen
-
-No usa API → **coste 0€**.
-
----
-
-# 18. Branches del proyecto
+# 18. Branches
 
 ```text
 stable
-v2-evolution
+v2-evolution (mergeado)
 ```
 
 ---
 
-## 🌿 stable
-
-* versión de producción
-* cambios validados
-
----
-
-## 🌿 v2-evolution
-
-* desarrollo activo
-* nuevas funcionalidades
-
----
-
-## Deploy
-
-```text
-v2-evolution → entorno visible
-```
-
----
-
-# 19. Escala actual del proyecto
+# 19. Escala
 
 ```text
 ≈ 2000 preguntas
-React SPA
-sin backend
-uso intensivo en móvil
+SPA React
+uso intensivo móvil
 ```
 
 ---
 
-# 20. Objetivo del proyecto
-
-Crear una **app de preparación de oposiciones optimizada**, con:
-
-* simulación real de examen
-* práctica intensiva
-* seguimiento de progreso
-* herramientas de estudio
-
----
-
-# 21. Estado actual del proyecto
-
-El sistema incluye:
+# 20. Estado actual
 
 ```text
-✔ motor de test
-✔ selección por tema
-✔ modo práctica
-✔ modo examen
-✔ modo oposición
-✔ repaso de preguntas
-✔ revisión de test
-✔ histórico semanal
-✔ estadísticas unificadas
-✔ favoritas
-✔ anti-repetición
-✔ pomodoro
-✔ explicación con IA
-✔ autoactualización de preguntas
-✔ versión automática
-✔ exportación/importación de datos
-✔ gestión de limpieza de datos
-✔ interfaz optimizada para móvil
-
+✔ motor completo
+✔ modo rápido
+✔ oposición configurable
+✔ sistema repaso inteligente
+✔ selección equilibrada por tema
+✔ estadísticas
+✔ histórico mejorado
+✔ UX optimizada móvil
 ```
 
-Es muy importante que no plantees proximos pasos hasta que yo no te confirme que los cambios realizados funcionan correctamente.
+---
 
-Ademas, cada vez que me vayas a realizar una indicacion, tendras que decirme las lineas exactas donde la tengo que implementar.
+# 21. Objetivo
 
-En esta conversacion seguiremos con el desarrollo de la aplicacion, te he dejado el codigo App en las fuentes del proyecto
+App de oposiciones con:
+
+* simulación real
+* práctica adaptativa
+* seguimiento detallado
+* herramientas integradas
+
+---
+
+## ⚠️ Reglas de trabajo
+
+* no proponer cambios sin validación
+* indicar líneas exactas
+* trabajar sobre código real
+* no asumir cambios
+
+
+---
+
+En esta conversación continuaremos el desarrollo de la app.
+
+te he dejado en las fuentes de este proyecto el codigo actual (App.jsx y la herramienta de convertir excel en json + cambio de version) 
+Revisalo para que tengas toda la info actualizada

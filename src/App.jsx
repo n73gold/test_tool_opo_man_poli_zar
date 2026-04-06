@@ -61,6 +61,8 @@ function App() {
 
   const [configOposicion, setConfigOposicion] = useState(20);
 
+  const [penalizacionOposicion, setPenalizacionOposicion] = useState(3);
+
   const [historico, setHistorico] = useState([]);
 
   const [semanaAbierta, setSemanaAbierta] = useState(null);
@@ -74,6 +76,12 @@ function App() {
   const preguntasActivas = preguntasRevision ?? preguntasTest;
 
   const [temasActivos, setTemasActivos] = useState([]);
+
+  const [preguntasPorTema, setPreguntasPorTema] = useState({});
+
+  const [repasoPendientes, setRepasoPendientes] = useState([]);
+
+  const [repasoAciertos, setRepasoAciertos] = useState({});
 
   const [pomodoroMode, setPomodoroMode] = useState("work"); // work | break
   const [pomodoroRunning, setPomodoroRunning] = useState(false);
@@ -157,6 +165,23 @@ function App() {
       if (savedPomodoro) {
         setPomodoroStats(savedPomodoro);
       }
+
+      const savedPreguntasPorTema = JSON.parse(
+        localStorage.getItem("preguntasPorTema") || "{}"
+      );
+      setPreguntasPorTema(savedPreguntasPorTema);
+
+
+      const savedRepasoPendientes = JSON.parse(
+        localStorage.getItem("repasoPendientes") || "[]"
+      );
+      setRepasoPendientes(savedRepasoPendientes);
+
+
+      const savedRepasoAciertos = JSON.parse(
+        localStorage.getItem("repasoAciertos") || "{}"
+      );
+      setRepasoAciertos(savedRepasoAciertos);
 
       const savedConfig = JSON.parse(localStorage.getItem("pomodoroConfig") || "null");
 
@@ -483,6 +508,163 @@ function App() {
     localStorage.setItem("testsRecientes", JSON.stringify(tests));
   }
   
+  function getPreguntasPorTema() {
+    return JSON.parse(localStorage.getItem("preguntasPorTema") || "{}");
+  }
+
+  function guardarPreguntasPorTema(stats) {
+    localStorage.setItem("preguntasPorTema", JSON.stringify(stats));
+    setPreguntasPorTema(stats);
+  }
+
+  function getRepasoPendientes() {
+    return JSON.parse(localStorage.getItem("repasoPendientes") || "[]");
+  }
+
+  function guardarRepasoPendientes(ids) {
+    const unicos = [...new Set(ids)];
+    localStorage.setItem("repasoPendientes", JSON.stringify(unicos));
+    setRepasoPendientes(unicos);
+  }
+
+  function getRepasoAciertos() {
+    return JSON.parse(localStorage.getItem("repasoAciertos") || "{}");
+  }
+
+  function guardarRepasoAciertos(stats) {
+    localStorage.setItem("repasoAciertos", JSON.stringify(stats));
+    setRepasoAciertos(stats);
+  }
+
+  function agregarPreguntasARepaso(listaPreguntas) {
+    const actuales = getRepasoPendientes();
+    const aciertosActuales = getRepasoAciertos();
+
+    const nuevosIds = listaPreguntas
+      .map(p => p.id)
+      .filter(Boolean);
+
+    const idsFinales = [...new Set([...actuales, ...nuevosIds])];
+
+    nuevosIds.forEach(id => {
+      if (aciertosActuales[id] === undefined) {
+        aciertosActuales[id] = 0;
+      }
+    });
+
+    guardarRepasoPendientes(idsFinales);
+    guardarRepasoAciertos(aciertosActuales);
+  }
+
+  function actualizarProgresoRepaso(test) {
+    if (!test?.tipoGuardado || test.tipoGuardado !== "repaso") return;
+
+    const pendientesActuales = getRepasoPendientes();
+    const aciertosActuales = getRepasoAciertos();
+
+    const pendientesSet = new Set(pendientesActuales);
+
+    test.preguntas.forEach(p => {
+      if (!p.id || !pendientesSet.has(p.id)) return;
+
+      const acertada =
+        p.respuestaSeleccionada !== null &&
+        p.respuestas[p.respuestaSeleccionada]?.correcta;
+
+      if (acertada) {
+        aciertosActuales[p.id] = (aciertosActuales[p.id] || 0) + 1;
+      }
+    });
+
+    const pendientesFinales = pendientesActuales.filter(
+      id => (aciertosActuales[id] || 0) < 2
+    );
+
+    Object.keys(aciertosActuales).forEach(id => {
+      if (!pendientesFinales.includes(id)) {
+        delete aciertosActuales[id];
+      }
+    });
+
+    guardarRepasoPendientes(pendientesFinales);
+    guardarRepasoAciertos(aciertosActuales);
+  }
+
+  function iniciarTestRepaso(ids = null) {
+    const idsFuente = Array.isArray(ids) ? ids : repasoPendientes;
+
+    const idsUnicos = [...new Set(idsFuente)];
+
+    const seleccionadas = idsUnicos
+      .map(id => preguntas.find(p => p.id === id))
+      .filter(Boolean);
+
+    if (seleccionadas.length === 0) {
+      alert("No hay preguntas pendientes de repaso.");
+      return;
+    }
+
+    const nuevoTest = {
+      modo: "practica",
+      tipoGuardado: "repaso",
+      nombreExamen: "Repaso",
+      fechaInicio: Date.now(),
+      preguntas: seleccionadas.map(p => ({
+        ...p,
+        respuestaSeleccionada: null,
+        marcadaFavorita: false
+      })),
+      finalizado: false,
+      fechaFin: null
+    };
+
+    setTestActual(nuevoTest);
+    setPreguntasTest(nuevoTest.preguntas);
+    setIndicePregunta(0);
+    setPreguntaActual(nuevoTest.preguntas[0]);
+    setAciertos(0);
+    setPreguntasRevision(null);
+    setModoFavoritas(false);
+    setPantalla("pregunta");
+  }
+
+  function registrarPreguntasPorTema(listaPreguntas) {
+    if (!Array.isArray(listaPreguntas) || listaPreguntas.length === 0) return;
+
+    const stats = getPreguntasPorTema();
+
+    listaPreguntas.forEach(p => {
+      const tema = p.tema || "Sin tema";
+      stats[tema] = (stats[tema] || 0) + 1;
+    });
+
+    guardarPreguntasPorTema(stats);
+  }
+
+  function barajarConEquilibrioPorTema(lista) {
+    const stats = getPreguntasPorTema();
+
+    return [...lista]
+      .map(p => ({
+        ...p,
+        __scoreTema: stats[p.tema] || 0,
+        __random: Math.random()
+      }))
+      .sort((a, b) => {
+        if (a.__scoreTema !== b.__scoreTema) {
+          return a.__scoreTema - b.__scoreTema;
+        }
+        return a.__random - b.__random;
+      })
+      .map(({ __scoreTema, __random, ...p }) => p);
+  }
+
+  function seleccionarPreguntasEquilibradas(lista, cantidad) {
+    if (!Array.isArray(lista) || lista.length === 0) return [];
+
+    return barajarConEquilibrioPorTema(lista).slice(0, cantidad);
+  }
+
   function guardarHistoricoTest(test) {
 
     const juridico = test.preguntas.filter(p => p.categoria === "jurídico");
@@ -498,12 +680,30 @@ function App() {
       p.respuestas[p.respuestaSeleccionada]?.correcta
     ).length;
 
-    const porcentajeJuridico = juridico.length > 0
-      ? Math.round((aciertosJuridico / juridico.length) * 100)
+    const respondidasJuridico = juridico.filter(
+      p => p.respuestaSeleccionada !== null
+    ).length;
+
+    const respondidasEspecifico = especifico.filter(
+      p => p.respuestaSeleccionada !== null
+    ).length;
+
+    const porcentajeJuridico = (test.modo === "rapido"
+      ? respondidasJuridico > 0
+      : juridico.length > 0)
+      ? Math.round(
+          (aciertosJuridico /
+            (test.modo === "rapido" ? respondidasJuridico : juridico.length)) * 100
+        )
       : null;
 
-    const porcentajeEspecifico = especifico.length > 0
-      ? Math.round((aciertosEspecifico / especifico.length) * 100)
+    const porcentajeEspecifico = (test.modo === "rapido"
+      ? respondidasEspecifico > 0
+      : especifico.length > 0)
+      ? Math.round(
+          (aciertosEspecifico /
+            (test.modo === "rapido" ? respondidasEspecifico : especifico.length)) * 100
+        )
       : null;
 
     let nota = null;
@@ -525,13 +725,30 @@ function App() {
         }
       });
 
-      const neta = Math.max(0, correctas - incorrectas / 3);
+      const divisor = test.penalizacion || 3;
+      const neta = Math.max(0, correctas - incorrectas / divisor);
       nota = test.preguntas.length > 0
         ? (neta / test.preguntas.length) * 10
         : 0;
 
       aciertos = correctas;
       fallos = incorrectas;
+    }
+
+    let nombreExamenGuardado = test.nombreExamen || null;
+
+    if (test.modo === "rapido") {
+      const partes = [];
+
+      if (porcentajeJuridico !== null) {
+        partes.push(`J${porcentajeJuridico}%`);
+      }
+
+      if (porcentajeEspecifico !== null) {
+        partes.push(`E${porcentajeEspecifico}%`);
+      }
+
+      nombreExamenGuardado = `${getNombreFlash()} ${partes.join(" ")}`.trim();
     }
 
     const nuevoRegistro = {
@@ -544,7 +761,7 @@ function App() {
       aciertos,
       fallos,
       tipoGuardado: test.tipoGuardado || null,
-      nombreExamen: test.nombreExamen || null,
+      nombreExamen: nombreExamenGuardado,
     };
 
     const historicoActual = getHistorico();
@@ -557,6 +774,15 @@ function App() {
   function borrarTest(id) {
     const nuevoHistorico = historico.filter(h => h.id !== id);
     guardarHistorico(nuevoHistorico);
+  }
+
+  function getNombreFlash() {
+    const ahora = new Date();
+    const dia = String(ahora.getDate()).padStart(2, "0");
+    const mes = String(ahora.getMonth() + 1).padStart(2, "0");
+    const anio = ahora.getFullYear();
+
+    return `${dia}/${mes}/${anio} flash`;
   }
 
   function getYearWeek(date) {
@@ -699,6 +925,16 @@ function App() {
       });
   }
 
+  function getNumeroPreguntaRapidaActual() {
+    if (!testActual?.preguntas) return 1;
+
+    const respondidasAntes = testActual.preguntas
+      .slice(0, indicePregunta)
+      .filter(p => p.respuestaSeleccionada !== null).length;
+
+    return respondidasAntes + 1;
+  }
+
   function empezarTest(tipo) {
     setTipoTest(tipo);
 
@@ -712,9 +948,9 @@ function App() {
 
       const mitad = 10;
 
-      const seleccionadas = [
-        ...barajar(juridico).slice(0, mitad),
-        ...barajar(especifico).slice(0, mitad)
+      const seleccionBase = [
+        ...seleccionarPreguntasEquilibradas(juridico, mitad),
+        ...seleccionarPreguntasEquilibradas(especifico, mitad)
       ];
 
       const idsRecientes = [
@@ -722,19 +958,20 @@ function App() {
         ...getPreguntasUsadasSemana()
       ];
 
-      let disponibles = seleccionadas.filter(
+      let disponibles = seleccionBase.filter(
         p => !idsRecientes.includes(p.id)
       );
 
-      // fallback
+
       if (disponibles.length < 20) {
-        disponibles = seleccionadas;
+        disponibles = seleccionBase;
       }
 
-      const mezcladas = barajar(disponibles);
+      const mezcladas = barajarConEquilibrioPorTema(disponibles);
 
       guardarTestReciente(mezcladas);
       mezcladas.forEach(p => registrarPreguntaUsada(p.id));
+      registrarPreguntasPorTema(mezcladas);
 
       const nuevoTest = {
         modo: modoTest,
@@ -788,7 +1025,7 @@ function App() {
 
     // En modo práctica no permitimos cambiar respuesta
     if (
-      testActual.modo === "practica" &&
+      (testActual.modo === "practica" || testActual.modo === "rapido") &&
       pregunta.respuestaSeleccionada !== null
     ) return;
 
@@ -826,7 +1063,7 @@ function App() {
 
     // 🚫 En modo práctica obligamos a responder antes de avanzar
     if (
-      testActual?.modo === "practica" &&
+      (testActual?.modo === "practica" || testActual?.modo === "rapido") &&
       testActual.preguntas[indicePregunta].respuestaSeleccionada === null
     ) {
       return;
@@ -849,7 +1086,7 @@ function App() {
     } else {
 
       // 🔵 En modo oposición NO finalizamos automáticamente
-      if (testActual?.modo === "oposicion") {
+      if (testActual?.modo === "oposicion" || testActual?.modo === "rapido") {
         return;
       }
 
@@ -866,6 +1103,20 @@ function App() {
       );
 
       if (todasRespondidas) {
+        if (testFinal.tipoGuardado === "repaso") {
+          actualizarProgresoRepaso(testFinal);
+
+          setPreguntasTest([]);
+          setTestActual(null);
+          setIndicePregunta(0);
+          setPreguntaActual(null);
+          setAciertos(0);
+          setPreguntasRevision(null);
+          setModoFavoritas(false);
+          setPantalla("home");
+          return;
+        }
+
         guardarHistoricoTest(testFinal);
       }
 
@@ -896,15 +1147,16 @@ function App() {
       p => !idsRecientes.includes(p.id)
     );
 
-    // fallback si no hay suficientes
+
     if (disponibles.length < 20) {
       disponibles = filtradas;
     }
 
-    const seleccionadas = barajar(disponibles).slice(0, 20);
+    const seleccionadas = seleccionarPreguntasEquilibradas(disponibles, 20);
 
     guardarTestReciente(seleccionadas);
     seleccionadas.forEach(p => registrarPreguntaUsada(p.id));
+    registrarPreguntasPorTema(seleccionadas);
 
     const nuevoTest = {
       modo: modoTest,
@@ -933,14 +1185,17 @@ function App() {
     let filtradas = preguntas;
 
     if (tipoTest !== "mixto") {
-      filtradas = preguntas.filter(p => p.categoria === tipoTest);
+      filtradas = preguntas.filter(
+        p => p.categoria === tipoTest && temasActivos.includes(p.tema)
+      );
+    } else {
+      filtradas = preguntas.filter(p => temasActivos.includes(p.tema));
     }
 
     const idsRecientes = [
       ...getIdsRecientes(),
       ...getPreguntasUsadasSemana()
     ];
-
 
     let disponibles = filtradas.filter(
       p => !idsRecientes.includes(p.id)
@@ -950,10 +1205,11 @@ function App() {
       disponibles = filtradas;
     }
 
-    const seleccionadas = barajar(disponibles).slice(0, 20);
+    const seleccionadas = seleccionarPreguntasEquilibradas(disponibles, 20);
 
     guardarTestReciente(seleccionadas);
     seleccionadas.forEach(p => registrarPreguntaUsada(p.id));
+    registrarPreguntasPorTema(seleccionadas);
 
     const nuevoTest = {
       modo: modoTest,
@@ -975,7 +1231,6 @@ function App() {
     setAciertos(0);
     setPreguntasRevision(null);
     setPantalla("pregunta");
-
   }
 
   function empezarOposicion() {
@@ -992,9 +1247,9 @@ function App() {
       p => p.categoria === "específico" && temasActivos.includes(p.tema)
     );
 
-    const seleccionadas = [
-      ...barajar(juridico).slice(0, numJuridico),
-      ...barajar(especifico).slice(0, numEspecifico)
+    const seleccionBase = [
+      ...seleccionarPreguntasEquilibradas(juridico, numJuridico),
+      ...seleccionarPreguntasEquilibradas(especifico, numEspecifico)
     ];
 
     const idsRecientes = [
@@ -1002,22 +1257,23 @@ function App() {
       ...getPreguntasUsadasSemana()
     ];
 
-
-    let disponibles = seleccionadas.filter(
+    let disponibles = seleccionBase.filter(
       p => !idsRecientes.includes(p.id)
     );
 
     if (disponibles.length < 50) {
-      disponibles = seleccionadas;
+      disponibles = seleccionBase;
     }
 
-    const final = barajar(disponibles);
+    const final = barajarConEquilibrioPorTema(disponibles);
 
     guardarTestReciente(final);
     final.forEach(p => registrarPreguntaUsada(p.id));
+    registrarPreguntasPorTema(final);
 
     const nuevoTest = {
       modo: "oposicion",
+      penalizacion: penalizacionOposicion,
       fechaInicio: Date.now(),
       preguntas: final.map(p => ({
         ...p,
@@ -1035,49 +1291,57 @@ function App() {
     setPantalla("pregunta");
   }
 
-  function empezarExamenDirecto() {
-
-    const total = 20;
-    const mitad = total / 2;
-
-    const juridico = preguntas.filter(
+  function empezarModoRapido() {
+    const juridicoBase = preguntas.filter(
       p => p.categoria === "jurídico" && temasActivos.includes(p.tema)
     );
-    const especifico = preguntas.filter(
+    const especificoBase = preguntas.filter(
       p => p.categoria === "específico" && temasActivos.includes(p.tema)
     );
-
-    const seleccionadas = [
-      ...barajar(juridico).slice(0, mitad),
-      ...barajar(especifico).slice(0, mitad)
-    ];
 
     const idsRecientes = [
       ...getIdsRecientes(),
       ...getPreguntasUsadasSemana()
     ];
 
+    let juridico = juridicoBase.filter(p => !idsRecientes.includes(p.id));
+    let especifico = especificoBase.filter(p => !idsRecientes.includes(p.id));
 
-    let disponibles = seleccionadas.filter(
-      p => !idsRecientes.includes(p.id)
-    );
-
-    if (disponibles.length < total) {
-      disponibles = seleccionadas;
+    if (juridico.length === 0) {
+      juridico = juridicoBase;
     }
 
-    const final = barajar(disponibles);
+    if (especifico.length === 0) {
+      especifico = especificoBase;
+    }
 
-    guardarTestReciente(final);
-    final.forEach(p => registrarPreguntaUsada(p.id));
+    juridico = barajarConEquilibrioPorTema(juridico);
+    especifico = barajarConEquilibrioPorTema(especifico);
+
+    const totalPares = Math.min(juridico.length, especifico.length);
+    const alternadas = [];
+
+    for (let i = 0; i < totalPares; i++) {
+      alternadas.push({
+        ...juridico[i],
+        respuestaSeleccionada: null
+      });
+      alternadas.push({
+        ...especifico[i],
+        respuestaSeleccionada: null
+      });
+    }
+
+    if (alternadas.length === 0) {
+      alert("No hay suficientes preguntas activas para iniciar el modo rápido.");
+      return;
+    }
 
     const nuevoTest = {
-      modo: "examen",
+      modo: "rapido",
+      nombreExamen: getNombreFlash(),
       fechaInicio: Date.now(),
-      preguntas: final.map(p => ({
-        ...p,
-        respuestaSeleccionada: null
-      })),
+      preguntas: alternadas,
       finalizado: false,
       fechaFin: null
     };
@@ -1087,6 +1351,7 @@ function App() {
     setIndicePregunta(0);
     setPreguntaActual(nuevoTest.preguntas[0]);
     setPreguntasRevision(null);
+    setAciertos(0);
     setPantalla("pregunta");
   }
 
@@ -1134,6 +1399,9 @@ function App() {
       "historicoIdCounter",
       "testsRecientes",
       "preguntasUsadas",
+      "preguntasPorTema",
+      "repasoPendientes",
+      "repasoAciertos",
       "pomodoroStats",
       "pomodoroConfig",
       "pomodoroActive"
@@ -1222,6 +1490,22 @@ function App() {
     alert("Control de repetición reiniciado.");
   }
 
+  function borrarRepaso() {
+    const confirmar = window.confirm(
+      "¿Seguro que quieres borrar todas las preguntas de repaso?"
+    );
+
+    if (!confirmar) return;
+
+    localStorage.removeItem("repasoPendientes");
+    localStorage.removeItem("repasoAciertos");
+
+    setRepasoPendientes([]);
+    setRepasoAciertos({});
+
+    alert("Preguntas de repaso eliminadas.");
+  }
+
   function iniciarTestDesdeLista(nombreExamen) {
 
     let seleccionadas = preguntas
@@ -1254,6 +1538,10 @@ function App() {
 
     setPantalla("pregunta");
   }
+
+  const totalRepasoDisponible = repasoPendientes.filter(id =>
+    preguntas.some(p => p.id === id)
+  ).length;
 
   const preguntaSegura =
     preguntasActivas && preguntasActivas.length > 0
@@ -1341,6 +1629,15 @@ function App() {
             <p style={cardTextStyle}>Favoritas</p>
           </div>
           
+          {/* REPASO */}
+          <div
+            onClick={() => iniciarTestRepaso()}
+            style={cardStyle}
+          >
+            <div style={{ fontSize: 40 }}>🧠</div>
+            <p style={cardTextStyle}>Repaso</p>
+          </div>
+
           {/* POMODORO */}
           <div
             onClick={() => setPantalla("pomodoro")}
@@ -1574,20 +1871,39 @@ function App() {
                                 borderBottom: "1px solid rgba(255,255,255,0.08)"
                               }}
                             >
-                              <span style={{ color: "#d1d5db", fontSize: 14 }}>
-                                {new Date(h.fecha).toLocaleDateString()} · {h.modo}
-                                {h.nombreExamen ? ` · ${h.nombreExamen}` : ""}
-
-                                {(h.modo === "oposicion") ? (
+                              <div style={{ color: "#d1d5db", fontSize: 14 }}>
+                                {h.modo === "rapido" ? (
                                   <>
-                                     {h.nota !== null ? h.nota.toFixed(2) : "-"} · ✔ {h.aciertos ?? 0} · ✖ {h.fallos ?? 0}
+                                    <div>
+                                      {new Date(h.fecha).toLocaleDateString()} · rápido
+                                    </div>
+                                    <div>
+                                      {h.porcentajeJuridico !== null ? `J${h.porcentajeJuridico}%` : ""}
+                                      {h.porcentajeJuridico !== null && h.porcentajeEspecifico !== null ? " · " : ""}
+                                      {h.porcentajeEspecifico !== null ? `E${h.porcentajeEspecifico}%` : ""}
+                                    </div>
                                   </>
                                 ) : (
                                   <>
-                                     J: {h.porcentajeJuridico ?? "-"}% · E: {h.porcentajeEspecifico ?? "-"}%
+                                    <div>
+                                      {new Date(h.fecha).toLocaleDateString()} · {h.modo}
+                                      {h.nombreExamen ? ` · ${h.nombreExamen}` : ""}
+                                    </div>
+
+                                    <div>
+                                      {(h.modo === "oposicion") ? (
+                                        <>
+                                          {h.nota !== null ? h.nota.toFixed(2) : "-"} · ✔ {h.aciertos ?? 0} · ✖ {h.fallos ?? 0}
+                                        </>
+                                      ) : (
+                                        <>
+                                          J: {h.porcentajeJuridico ?? "-"}% · E: {h.porcentajeEspecifico ?? "-"}%
+                                        </>
+                                      )}
+                                    </div>
                                   </>
                                 )}
-                              </span>
+                              </div>
 
                               <span
                                 onClick={(e) => {
@@ -1642,10 +1958,10 @@ function App() {
         <br /><br />
 
         <button onClick={() => {
-          setModoTest("examen");
-          empezarExamenDirecto();
+          setModoTest("rapido");
+          empezarModoRapido();
         }}>
-          🟡 Modo examen
+          🟡 Modo rapido
         </button>
 
         <br /><br />
@@ -1687,6 +2003,32 @@ function App() {
             style={{ width: "100%", marginTop: 20 }}
           />
 
+        </div>
+
+        <div style={{ marginTop: 30 }}>
+          <label>
+            Cada fallo resta 1/
+            <input
+              type="number"
+              min="1"
+              value={penalizacionOposicion}
+              onChange={(e) => {
+                const val = Number(e.target.value);
+                if (!isNaN(val) && val > 0) {
+                  setPenalizacionOposicion(val);
+                }
+              }}
+              style={{
+                width: 60,
+                marginLeft: 8,
+                marginRight: 8,
+                padding: "6px 8px",
+                fontSize: 16,
+                borderRadius: 6
+              }}
+            />
+            de una acertada
+          </label>
         </div>
 
         <br /><br />
@@ -1876,11 +2218,8 @@ function App() {
           </h2>
 
           <button
+
             onClick={() => {
-
-              const esUltima = indicePregunta === preguntasActivas.length - 1;
-
-              // ⭐ Si estamos en modo favoritas → salir a HOME
               if (modoFavoritas) {
                 setModoFavoritas(false);
                 setPreguntasRevision(null);
@@ -1892,7 +2231,7 @@ function App() {
                 return;
               }
 
-              // 🔎 Si estamos revisando un test ya finalizado
+
               if (testActual?.revisando) {
                 setPreguntasRevision(null);
                 setIndicePregunta(0);
@@ -1901,23 +2240,55 @@ function App() {
                 return;
               }
 
-              // 🛑 Si NO es la última → Salir sin guardar
+              if (testActual?.modo === "rapido") {
+                const testFinal = {
+                  ...testActual,
+                  finalizado: true,
+                  revisando: false,
+                  fechaFin: Date.now()
+                };
+
+                guardarHistoricoTest(testFinal);
+                setTestActual(testFinal);
+                setPantalla("resumen");
+                return;
+              }
+
+              const esUltima = indicePregunta === preguntasActivas.length - 1;
+
+              // 🛑 Si NO es la última → salir sin guardar
               if (!esUltima) {
                 setPreguntasTest([]);
                 setTestActual(null);
                 setIndicePregunta(0);
                 setPreguntaActual(null);
-                setPantalla("modo");
+                setPantalla(
+                  testActual?.tipoGuardado === "repaso" ? "home" : "modo"
+                );
                 return;
               }
 
-              // ✅ Si es la última → Finalizar y guardar
+
               const testFinal = {
                 ...testActual,
                 finalizado: true,
                 revisando: false,
                 fechaFin: Date.now()
               };
+
+              if (testFinal.tipoGuardado === "repaso") {
+                actualizarProgresoRepaso(testFinal);
+
+                setPreguntasTest([]);
+                setTestActual(null);
+                setIndicePregunta(0);
+                setPreguntaActual(null);
+                setAciertos(0);
+                setPreguntasRevision(null);
+                setModoFavoritas(false);
+                setPantalla("home");
+                return;
+              }
 
               guardarHistoricoTest(testFinal);
 
@@ -1929,9 +2300,11 @@ function App() {
               ? "Salir"
               : testActual?.revisando
                 ? "Salir"
-                : indicePregunta === preguntasActivas.length - 1
+                : testActual?.modo === "rapido"
                   ? "Finalizar test"
-                  : "Salir"}
+                  : indicePregunta === preguntasActivas.length - 1
+                    ? "Finalizar test"
+                    : "Salir"}
           </button>
 
 
@@ -1958,7 +2331,9 @@ function App() {
         </p>
 
         <p>
-          Pregunta {indicePregunta + 1} / {preguntasActivas.length}
+          {testActual?.modo === "rapido"
+            ? `Pregunta ${getNumeroPreguntaRapidaActual()}`
+            : `Pregunta ${indicePregunta + 1} / ${preguntasActivas.length}`}
         </p>
 
         <div
@@ -2001,7 +2376,7 @@ function App() {
                   const seleccionada =
                     testActual?.preguntas[indicePregunta]?.respuestaSeleccionada;
 
-                  if (testActual.modo === "practica") {
+                  if (testActual.modo === "practica" || testActual.modo === "rapido") {
                     if (seleccionada === null) return "white";
                     if (i === seleccionada) {
                       return r.correcta ? "lightgreen" : "salmon";
@@ -2014,21 +2389,20 @@ function App() {
                     return i === seleccionada ? "#cce5ff" : "white";
                   }
 
-                  if (testActual.modo === "examen") {
-                    if (seleccionada === null) return "white";
-                    if (i === seleccionada) {
-                      return r.correcta ? "lightgreen" : "salmon";
-                    }
-                    return r.correcta ? "lightgreen" : "white";
-                  }
-
                   if (testActual.modo === "oposicion") {
-                    if (seleccionada === null) {
-                      return r.correcta ? "lightgreen" : "white";
+                    if (!testActual.revisando) {
+                      if (seleccionada === null) return "white";
+                      return i === seleccionada ? "#cce5ff" : "white";
                     }
+
+                    if (seleccionada === null) {
+                      return r.correcta ? "#166534" : "white";
+                    }
+
                     if (i === seleccionada) {
                       return r.correcta ? "lightgreen" : "salmon";
                     }
+
                     return r.correcta ? "lightgreen" : "white";
                   }
 
@@ -2045,8 +2419,10 @@ function App() {
         </div>
 
         {(
-          (testActual?.modo === "practica" &&
-          testActual?.preguntas[indicePregunta]?.respuestaSeleccionada !== null)
+          (
+            (testActual?.modo === "practica" || testActual?.modo === "rapido") &&
+            testActual?.preguntas[indicePregunta]?.respuestaSeleccionada !== null
+          )
           ||
           testActual?.revisando
         ) && (
@@ -2116,6 +2492,14 @@ function App() {
                   ) : (
                     <button onClick={() => setPantalla("repaso-oposicion")}>
                       Repasar preguntas
+                    </button>
+                  )
+
+                ) : testActual?.modo === "rapido" ? (
+
+                  indicePregunta < preguntasActivas.length - 1 && (
+                    <button onClick={siguientePregunta}>
+                      Siguiente pregunta
                     </button>
                   )
 
@@ -2223,6 +2607,9 @@ function App() {
           let aciertosFinal = 0;
           let correctas = 0;
           let incorrectas = 0;
+          const respondidas = testActual?.preguntas.filter(
+            p => p.respuestaSeleccionada !== null
+          ).length || 0;
 
           if (testActual?.modo === "oposicion") {
 
@@ -2236,7 +2623,8 @@ function App() {
               }
             });
 
-            const neta = Math.max(0, correctas - incorrectas / 3);
+            const divisor = testActual.penalizacion || 3;
+            const neta = Math.max(0, correctas - incorrectas / divisor);
             const nota = total > 0 ? (neta / total) * 10 : 0;
 
             return (
@@ -2260,6 +2648,34 @@ function App() {
                 p.respuestaSeleccionada !== null &&
                 p.respuestas[p.respuestaSeleccionada]?.correcta
             ).length;
+          }
+
+          const fallosFinal = respondidas - aciertosFinal;
+
+          if (testActual?.modo === "rapido") {
+            const porcentajeAciertos = respondidas > 0
+              ? Math.round((aciertosFinal / respondidas) * 100)
+              : 0;
+
+            return (
+              <>
+                <p>
+                  Acertadas {aciertosFinal} de {respondidas} preguntas
+                </p>
+
+                <p>
+                  Porcentaje de aciertos {porcentajeAciertos}%
+                </p>
+
+                <p>
+                  {porcentajeAciertos >= 80
+                    ? "Excelente resultado 💪"
+                    : porcentajeAciertos >= 60
+                    ? "Buen resultado 👍"
+                    : "Conviene repasar 📘"}
+                </p>
+              </>
+            );
           }
 
           return (
@@ -2305,8 +2721,16 @@ function App() {
           <div>
             <button
               onClick={() => {
-                setPantalla("tipo");
+                if (testActual?.tipoGuardado === "repaso") {
+                  setPantalla("home");
+                } else if (testActual?.modo === "rapido") {
+                  setPantalla("modo");
+                } else {
+                  setPantalla("tipo");
+                }
+
                 setPreguntasTest([]);
+                setTestActual(null);
                 setIndicePregunta(0);
                 setPreguntaActual(null);
                 setAciertos(0);
@@ -2318,8 +2742,29 @@ function App() {
             </button>
           </div>
 
-          {/* DERECHA - Revisar */}
-          {testActual?.modo !== "practica" && (
+          {/* DERECHA - Acción */}
+          {testActual?.modo === "practica" && testActual?.tipoGuardado !== "repaso" ? (
+            <div>
+              <button
+                onClick={() => {
+                  const pendientes = testActual.preguntas.filter(p =>
+                    p.respuestaSeleccionada === null ||
+                    !p.respuestas[p.respuestaSeleccionada]?.correcta
+                  );
+
+                  if (pendientes.length === 0) {
+                    alert("No hay preguntas falladas para repasar.");
+                    return;
+                  }
+
+                  agregarPreguntasARepaso(pendientes);
+                  iniciarTestRepaso(pendientes.map(p => p.id));
+                }}
+              >
+                Repaso
+              </button>
+            </div>
+          ) : testActual?.modo !== "rapido" ? (
             <div>
               <button
                 onClick={() => {
@@ -2327,13 +2772,7 @@ function App() {
 
                   let revision;
 
-                  if (testActual.modo === "examen") {
-                    revision = todas.filter(
-                      p => p.respuestaSeleccionada !== null
-                    );
-                  } else {
-                    revision = todas;
-                  }
+                  revision = todas;
 
                   setPreguntasRevision(revision);
 
@@ -2350,7 +2789,7 @@ function App() {
                 Revisar test
               </button>
             </div>
-          )}
+          ) : null}
         </div>
       </>
     )}
@@ -2566,6 +3005,15 @@ function App() {
         </button>
 
         <button
+          onClick={borrarRepaso}
+          style={{ padding: 12, width: "100%" }}
+        >
+          🧽 Borrar preguntas de repaso
+        </button>
+
+        <hr style={{ margin: "30px 0" }} />
+
+        <button
           onClick={reiniciarRepeticion}
           style={{ padding: 12, marginBottom: 20, width: "100%" }}
         >
@@ -2577,6 +3025,13 @@ function App() {
           style={{ padding: 12, marginBottom: 20, width: "100%" }}
         >
           📚 Selección de temario
+        </button>
+
+        <button
+          onClick={() => setPantalla("preguntas-por-tema")}
+          style={{ padding: 12, marginBottom: 20, width: "100%" }}
+        >
+          📊 Preguntas por tema
         </button>
 
         <br /><br />
@@ -2650,6 +3105,90 @@ function App() {
             </label>
           ));
 
+        })()}
+
+        <br />
+
+        <button onClick={() => setPantalla("settings")}>
+          Volver
+        </button>
+      </>
+    )}
+
+    {/* PREGUNTAS POR TEMA */}
+    {pantalla === "preguntas-por-tema" && (
+      <>
+        <h2>Preguntas preguntadas por tema</h2>
+
+        {(() => {
+          const temasOrdenados = Array.from(
+            new Map(
+              preguntas.map(p => {
+                const match = p.tema?.match(/^(\d+)/);
+                const numero = match ? Number(match[1]) : null;
+
+                return [
+                  p.tema,
+                  {
+                    tema: p.tema,
+                    descripcion: p.descripcionTema,
+                    numero
+                  }
+                ];
+              })
+            ).values()
+          )
+            .map(t => ({
+              ...t,
+              total: preguntasPorTema[t.tema] || 0
+            }))
+            .sort((a, b) => {
+              if (b.total !== a.total) return b.total - a.total;
+
+              if (a.numero === null && b.numero === null) {
+                return String(a.tema).localeCompare(String(b.tema));
+              }
+              if (a.numero === null) return 1;
+              if (b.numero === null) return -1;
+
+              return a.numero - b.numero;
+            });
+
+          return (
+            <div style={{ marginTop: 20, overflowX: "auto" }}>
+              <div
+                style={{
+                  display: "grid",
+                  gridTemplateColumns: "90px 1fr",
+                  gap: 12,
+                  padding: "10px 0",
+                  borderBottom: "2px solid rgba(255,255,255,0.2)",
+                  fontWeight: "bold"
+                }}
+              >
+                <div>Preguntas</div>
+                <div>Tema</div>
+              </div>
+
+              {temasOrdenados.map((t, i) => (
+                <div
+                  key={i}
+                  style={{
+                    display: "grid",
+                    gridTemplateColumns: "90px 1fr",
+                    gap: 12,
+                    padding: "10px 0",
+                    borderBottom: "1px solid rgba(255,255,255,0.08)"
+                  }}
+                >
+                  <div>{t.total}</div>
+                  <div>
+                    {t.tema} - {t.descripcion}
+                  </div>
+                </div>
+              ))}
+            </div>
+          );
         })()}
 
         <br />
