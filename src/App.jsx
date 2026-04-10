@@ -590,6 +590,32 @@ function App() {
     guardarRepasoAciertos(aciertosActuales);
   }
 
+  function agregarFalladasDeTestARepaso(test) {
+    if (!test?.preguntas?.length) return;
+
+    let pendientes = [];
+
+    if (test.modo === "rapido") {
+      pendientes = test.preguntas.filter(
+        p =>
+          p.respuestaSeleccionada !== null &&
+          !p.respuestas[p.respuestaSeleccionada]?.correcta
+      );
+    }
+
+    if (test.modo === "oposicion") {
+      pendientes = test.preguntas.filter(
+        p =>
+          p.respuestaSeleccionada === null ||
+          !p.respuestas[p.respuestaSeleccionada]?.correcta
+      );
+    }
+
+    if (pendientes.length > 0) {
+      agregarPreguntasARepaso(pendientes);
+    }
+  }
+
   function iniciarTestRepaso(ids = null) {
     const idsFuente = Array.isArray(ids) ? ids : repasoPendientes;
 
@@ -628,7 +654,8 @@ function App() {
     setPantalla("pregunta");
   }
 
-  function registrarPreguntasPorTema(listaPreguntas) {
+  function registrarPreguntasPorTema(listaPreguntas, omitirConteo = false) {
+    if (omitirConteo) return;
     if (!Array.isArray(listaPreguntas) || listaPreguntas.length === 0) return;
 
     const stats = getPreguntasPorTema();
@@ -659,10 +686,44 @@ function App() {
       .map(({ __scoreTema, __random, ...p }) => p);
   }
 
-  function seleccionarPreguntasEquilibradas(lista, cantidad) {
+  function seleccionarPreguntasEquilibradasConLimitePorTema(
+    lista,
+    cantidad,
+    maxPorTema = 3
+  ) {
     if (!Array.isArray(lista) || lista.length === 0) return [];
 
-    return barajarConEquilibrioPorTema(lista).slice(0, cantidad);
+    const ordenadas = barajarConEquilibrioPorTema(lista);
+    const seleccionadas = [];
+    const contadorPorTema = {};
+
+    // Primera pasada: respetar máximo por tema
+    for (const p of ordenadas) {
+      const tema = p.tema || "Sin tema";
+      const usadas = contadorPorTema[tema] || 0;
+
+      if (usadas < maxPorTema) {
+        seleccionadas.push(p);
+        contadorPorTema[tema] = usadas + 1;
+      }
+
+      if (seleccionadas.length === cantidad) {
+        return seleccionadas;
+      }
+    }
+
+    // Segunda pasada: si no llega, rellenar equilibradamente sin límite estricto
+    for (const p of ordenadas) {
+      if (seleccionadas.some(sel => sel.id === p.id)) continue;
+
+      seleccionadas.push(p);
+
+      if (seleccionadas.length === cantidad) {
+        return seleccionadas;
+      }
+    }
+
+    return seleccionadas;
   }
 
   function guardarHistoricoTest(test) {
@@ -949,8 +1010,8 @@ function App() {
       const mitad = 10;
 
       const seleccionBase = [
-        ...seleccionarPreguntasEquilibradas(juridico, mitad),
-        ...seleccionarPreguntasEquilibradas(especifico, mitad)
+        ...seleccionarPreguntasEquilibradasConLimitePorTema(juridico, mitad, 3),
+        ...seleccionarPreguntasEquilibradasConLimitePorTema(especifico, mitad, 3)
       ];
 
       const idsRecientes = [
@@ -1152,7 +1213,11 @@ function App() {
       disponibles = filtradas;
     }
 
-    const seleccionadas = seleccionarPreguntasEquilibradas(disponibles, 20);
+    const seleccionadas = seleccionarPreguntasEquilibradasConLimitePorTema(
+      disponibles,
+      20,
+      3
+    );
 
     guardarTestReciente(seleccionadas);
     seleccionadas.forEach(p => registrarPreguntaUsada(p.id));
@@ -1205,7 +1270,11 @@ function App() {
       disponibles = filtradas;
     }
 
-    const seleccionadas = seleccionarPreguntasEquilibradas(disponibles, 20);
+    const seleccionadas = seleccionarPreguntasEquilibradasConLimitePorTema(
+      disponibles,
+      20,
+      3
+    );
 
     guardarTestReciente(seleccionadas);
     seleccionadas.forEach(p => registrarPreguntaUsada(p.id));
@@ -1248,8 +1317,8 @@ function App() {
     );
 
     const seleccionBase = [
-      ...seleccionarPreguntasEquilibradas(juridico, numJuridico),
-      ...seleccionarPreguntasEquilibradas(especifico, numEspecifico)
+      ...seleccionarPreguntasEquilibradasConLimitePorTema(juridico, numJuridico, 3),
+      ...seleccionarPreguntasEquilibradasConLimitePorTema(especifico, numEspecifico, 3)
     ];
 
     const idsRecientes = [
@@ -1315,8 +1384,16 @@ function App() {
       especifico = especificoBase;
     }
 
-    juridico = barajarConEquilibrioPorTema(juridico);
-    especifico = barajarConEquilibrioPorTema(especifico);
+    juridico = seleccionarPreguntasEquilibradasConLimitePorTema(
+      juridico,
+      juridico.length,
+      3
+    );
+    especifico = seleccionarPreguntasEquilibradasConLimitePorTema(
+      especifico,
+      especifico.length,
+      3
+    );
 
     const totalPares = Math.min(juridico.length, especifico.length);
     const alternadas = [];
@@ -1506,6 +1583,19 @@ function App() {
     alert("Preguntas de repaso eliminadas.");
   }
 
+  function borrarPreguntasPorTema() {
+    const confirmar = window.confirm(
+      "¿Seguro que quieres borrar el registro de preguntas preguntadas por tema?"
+    );
+
+    if (!confirmar) return;
+
+    localStorage.removeItem("preguntasPorTema");
+    setPreguntasPorTema({});
+
+    alert("Registro de preguntas por tema eliminado.");
+  }
+
   function iniciarTestDesdeLista(nombreExamen) {
 
     let seleccionadas = preguntas
@@ -1519,6 +1609,7 @@ function App() {
     const nuevoTest = {
       modo: modoTest, // 👈 clave: usa el modo actual
       nombreExamen,
+      desdeElegirTest: true,
       fechaInicio: Date.now(),
       preguntas: seleccionadas.map(p => ({
         ...p,
@@ -1538,10 +1629,6 @@ function App() {
 
     setPantalla("pregunta");
   }
-
-  const totalRepasoDisponible = repasoPendientes.filter(id =>
-    preguntas.some(p => p.id === id)
-  ).length;
 
   const preguntaSegura =
     preguntasActivas && preguntasActivas.length > 0
@@ -2191,56 +2278,98 @@ function App() {
           boxSizing: "border-box"
         }}
       >
-        <div
-          style={{
-            display: "flex",
-            justifyContent: "space-between",
-            alignItems: "center"
-          }}
-        >
-          <h2 style={{ marginBottom: 4 }}>
-            {(() => {
-              const total = testActual?.preguntas.length || 0;
+        {!desdeRepaso && (
+          <div
+            style={{
+              display: "flex",
+              justifyContent: "space-between",
+              alignItems: "center"
+            }}
+          >
+            <h2 style={{ marginBottom: 4 }}>
+              {(() => {
+                const total = testActual?.preguntas.length || 0;
 
-              const juridico = testActual?.preguntas.filter(
-                p => p.categoria === "jurídico"
-              ).length || 0;
+                const juridico = testActual?.preguntas.filter(
+                  p => p.categoria === "jurídico"
+                ).length || 0;
 
-              const especifico = testActual?.preguntas.filter(
-                p => p.categoria === "específico"
-              ).length || 0;
+                const especifico = testActual?.preguntas.filter(
+                  p => p.categoria === "específico"
+                ).length || 0;
 
-              if (juridico === total && total > 0) return "Jurídico";
-              if (especifico === total && total > 0) return "Específico";
+                if (juridico === total && total > 0) return "Jurídico";
+                if (especifico === total && total > 0) return "Específico";
 
-              return "Mixto";
-            })()}
-          </h2>
+                return "Mixto";
+              })()}
+            </h2>
 
-          <button
+            <button
 
-            onClick={() => {
-              if (modoFavoritas) {
-                setModoFavoritas(false);
-                setPreguntasRevision(null);
-                setPreguntasTest([]);
-                setTestActual(null);
-                setIndicePregunta(0);
-                setPreguntaActual(null);
-                setPantalla("home");
-                return;
-              }
+              onClick={() => {
+                if (modoFavoritas) {
+                  setModoFavoritas(false);
+                  setPreguntasRevision(null);
+                  setPreguntasTest([]);
+                  setTestActual(null);
+                  setIndicePregunta(0);
+                  setPreguntaActual(null);
+                  setPantalla("home");
+                  return;
+                }
 
 
-              if (testActual?.revisando) {
-                setPreguntasRevision(null);
-                setIndicePregunta(0);
-                setPreguntaActual(null);
-                setPantalla("resumen");
-                return;
-              }
+                if (testActual?.revisando) {
+                  setPreguntasRevision(null);
+                  setIndicePregunta(0);
+                  setPreguntaActual(null);
 
-              if (testActual?.modo === "rapido") {
+                  if (testActual?.modo === "oposicion") {
+                    setPantalla("modo");
+                  } else if (testActual?.modo === "rapido") {
+                    setPantalla("modo");
+                  } else {
+                    setPantalla("tipo");
+                  }
+
+                  setPreguntasTest([]);
+                  setTestActual(null);
+                  setAciertos(0);
+                  setModoFavoritas(false);
+                  return;
+                }
+
+                if (testActual?.modo === "rapido") {
+                  const testFinal = {
+                    ...testActual,
+                    finalizado: true,
+                    revisando: false,
+                    fechaFin: Date.now()
+                  };
+
+                  agregarFalladasDeTestARepaso(testFinal);
+                  guardarHistoricoTest(testFinal);
+                  setTestActual(testFinal);
+                  setPantalla("resumen");
+                  return;
+                }
+
+                const esUltima = indicePregunta === preguntasActivas.length - 1;
+
+                // 🛑 Si NO es la última → salir sin guardar
+                if (!esUltima) {
+                  setPreguntasTest([]);
+                  setTestActual(null);
+                  setIndicePregunta(0);
+                  setPreguntaActual(null);
+                  setPantalla(
+                    testActual?.tipoGuardado === "repaso" ? "home" : "modo"
+                  );
+                  return;
+                }
+
+
                 const testFinal = {
                   ...testActual,
                   finalizado: true,
@@ -2248,79 +2377,56 @@ function App() {
                   fechaFin: Date.now()
                 };
 
+                if (testFinal.tipoGuardado === "repaso") {
+                  actualizarProgresoRepaso(testFinal);
+
+                  setPreguntasTest([]);
+                  setTestActual(null);
+                  setIndicePregunta(0);
+                  setPreguntaActual(null);
+                  setAciertos(0);
+                  setPreguntasRevision(null);
+                  setModoFavoritas(false);
+                  setPantalla("home");
+                  return;
+                }
+
+                if (testFinal.modo === "oposicion" || testFinal.modo === "rapido") {
+                  agregarFalladasDeTestARepaso(testFinal);
+                }
+
                 guardarHistoricoTest(testFinal);
+
                 setTestActual(testFinal);
                 setPantalla("resumen");
-                return;
-              }
-
-              const esUltima = indicePregunta === preguntasActivas.length - 1;
-
-              // 🛑 Si NO es la última → salir sin guardar
-              if (!esUltima) {
-                setPreguntasTest([]);
-                setTestActual(null);
-                setIndicePregunta(0);
-                setPreguntaActual(null);
-                setPantalla(
-                  testActual?.tipoGuardado === "repaso" ? "home" : "modo"
-                );
-                return;
-              }
-
-
-              const testFinal = {
-                ...testActual,
-                finalizado: true,
-                revisando: false,
-                fechaFin: Date.now()
-              };
-
-              if (testFinal.tipoGuardado === "repaso") {
-                actualizarProgresoRepaso(testFinal);
-
-                setPreguntasTest([]);
-                setTestActual(null);
-                setIndicePregunta(0);
-                setPreguntaActual(null);
-                setAciertos(0);
-                setPreguntasRevision(null);
-                setModoFavoritas(false);
-                setPantalla("home");
-                return;
-              }
-
-              guardarHistoricoTest(testFinal);
-
-              setTestActual(testFinal);
-              setPantalla("resumen");
-            }}
-          >
-            {modoFavoritas
-              ? "Salir"
-              : testActual?.revisando
+              }}
+            >
+              {modoFavoritas
                 ? "Salir"
-                : testActual?.modo === "rapido"
-                  ? "Finalizar test"
-                  : indicePregunta === preguntasActivas.length - 1
-                    ? "Finalizar test"
-                    : "Salir"}
-          </button>
+                : testActual?.revisando
+                  ? "Finalizar"
+                  : testActual?.modo === "rapido"
+                    ? "Finalizar"
+                    : indicePregunta === preguntasActivas.length - 1
+                      ? "Finalizar"
+                      : "Salir"}
+            </button>
 
 
-          <button
-            onClick={() => toggleFavorita(preguntaActual.id)}
-            style={{
-              marginRight: 10,
-              backgroundColor: esFavorita(preguntaActual.id)
-                ? "#ffd700"
-                : "white"
-            }}
-          >
-            ⭐
-          </button>
+            <button
+              onClick={() => toggleFavorita(preguntaActual.id)}
+              style={{
+                marginRight: 10,
+                backgroundColor: esFavorita(preguntaActual.id)
+                  ? "#ffd700"
+                  : "white"
+              }}
+            >
+              ⭐
+            </button>
 
-        </div>
+          </div>
+        )}
 
         <p style={{ fontSize: 14, opacity: 0.8, marginTop: 0 }}>
           {preguntaSegura.descripcionTema}
@@ -2485,14 +2591,22 @@ function App() {
               <div style={{ marginLeft: "auto" }}>
                 {testActual?.modo === "oposicion" ? (
 
-                  indicePregunta < preguntasActivas.length - 1 ? (
-                    <button onClick={siguientePregunta}>
-                      Siguiente pregunta
-                    </button>
+                  testActual?.revisando ? (
+                    indicePregunta < preguntasActivas.length - 1 && (
+                      <button onClick={siguientePregunta}>
+                        Siguiente pregunta
+                      </button>
+                    )
                   ) : (
-                    <button onClick={() => setPantalla("repaso-oposicion")}>
-                      Repasar preguntas
-                    </button>
+                    indicePregunta < preguntasActivas.length - 1 ? (
+                      <button onClick={siguientePregunta}>
+                        Siguiente pregunta
+                      </button>
+                    ) : (
+                      <button onClick={() => setPantalla("repaso-oposicion")}>
+                        Repasar preguntas
+                      </button>
+                    )
                   )
 
                 ) : testActual?.modo === "rapido" ? (
@@ -2585,6 +2699,7 @@ function App() {
                 fechaFin: Date.now()
               };
 
+              agregarFalladasDeTestARepaso(testFinal);
               guardarHistoricoTest(testFinal);
 
               setTestActual(testFinal);
@@ -2738,7 +2853,7 @@ function App() {
                 setModoFavoritas(false);
               }}
             >
-              Salir
+              Finalizar
             </button>
           </div>
 
@@ -3005,10 +3120,17 @@ function App() {
         </button>
 
         <button
+          onClick={borrarPreguntasPorTema}
+          style={{ padding: 12, marginBottom: 20, width: "100%" }}
+        >
+          🧹 Borrar registro de preguntas por tema
+        </button>
+
+        <button
           onClick={borrarRepaso}
           style={{ padding: 12, width: "100%" }}
         >
-          🧽 Borrar preguntas de repaso
+          🧹 Borrar preguntas de repaso
         </button>
 
         <hr style={{ margin: "30px 0" }} />

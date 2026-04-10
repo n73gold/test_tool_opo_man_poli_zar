@@ -12,11 +12,11 @@ Para ir a version 2 (desarrollo) y modificar codigo:
                             opcional git pull (para traer la ultima version del repo)
         git merge v2-evolucion
 
-        git push
-
         node scripts/convertirExcel.js
         npm run build
         npm run deploy
+
+        git push
  
 
 Si quiero actualizar la base de datos o ver los ultimos cambios en la app
