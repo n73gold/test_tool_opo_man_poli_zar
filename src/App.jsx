@@ -79,6 +79,10 @@ function App() {
 
   const [preguntasPorTema, setPreguntasPorTema] = useState({});
 
+  const [rendimientoPorTema, setRendimientoPorTema] = useState({});
+
+  const [ordenPreguntasPorTema, setOrdenPreguntasPorTema] = useState("preguntas");
+
   const [repasoPendientes, setRepasoPendientes] = useState([]);
 
   const [repasoAciertos, setRepasoAciertos] = useState({});
@@ -171,6 +175,10 @@ function App() {
       );
       setPreguntasPorTema(savedPreguntasPorTema);
 
+      const savedRendimientoPorTema = JSON.parse(
+        localStorage.getItem("rendimientoPorTema") || "{}"
+      );
+      setRendimientoPorTema(savedRendimientoPorTema);
 
       const savedRepasoPendientes = JSON.parse(
         localStorage.getItem("repasoPendientes") || "[]"
@@ -515,6 +523,44 @@ function App() {
   function guardarPreguntasPorTema(stats) {
     localStorage.setItem("preguntasPorTema", JSON.stringify(stats));
     setPreguntasPorTema(stats);
+  }
+
+  function getRendimientoPorTema() {
+    return JSON.parse(localStorage.getItem("rendimientoPorTema") || "{}");
+  }
+
+  function guardarRendimientoPorTema(stats) {
+    localStorage.setItem("rendimientoPorTema", JSON.stringify(stats));
+    setRendimientoPorTema(stats);
+  }
+
+  function registrarRendimientoPorTema(test, omitir = false) {
+    if (omitir) return;
+    if (!test?.preguntas?.length) return;
+
+    const stats = getRendimientoPorTema();
+
+    test.preguntas.forEach(p => {
+      if (p.respuestaSeleccionada === null) return;
+
+      const tema = p.tema || "Sin tema";
+      const acertada = !!p.respuestas[p.respuestaSeleccionada]?.correcta;
+
+      if (!stats[tema]) {
+        stats[tema] = {
+          respondidas: 0,
+          aciertos: 0
+        };
+      }
+
+      stats[tema].respondidas += 1;
+
+      if (acertada) {
+        stats[tema].aciertos += 1;
+      }
+    });
+
+    guardarRendimientoPorTema(stats);
   }
 
   function getRepasoPendientes() {
@@ -1178,6 +1224,11 @@ function App() {
           return;
         }
 
+        registrarRendimientoPorTema(
+          testFinal,
+          !!testFinal.desdeElegirTest
+        );
+
         guardarHistoricoTest(testFinal);
       }
 
@@ -1477,6 +1528,7 @@ function App() {
       "testsRecientes",
       "preguntasUsadas",
       "preguntasPorTema",
+      "rendimientoPorTema",
       "repasoPendientes",
       "repasoAciertos",
       "pomodoroStats",
@@ -1591,7 +1643,10 @@ function App() {
     if (!confirmar) return;
 
     localStorage.removeItem("preguntasPorTema");
+    localStorage.removeItem("rendimientoPorTema");
+
     setPreguntasPorTema({});
+    setRendimientoPorTema({});
 
     alert("Registro de preguntas por tema eliminado.");
   }
@@ -2357,6 +2412,27 @@ function App() {
 
                 const esUltima = indicePregunta === preguntasActivas.length - 1;
 
+                if (testActual?.tipoGuardado === "repaso") {
+                  const testFinal = {
+                    ...testActual,
+                    finalizado: true,
+                    revisando: false,
+                    fechaFin: Date.now()
+                  };
+
+                  actualizarProgresoRepaso(testFinal);
+
+                  setPreguntasTest([]);
+                  setTestActual(null);
+                  setIndicePregunta(0);
+                  setPreguntaActual(null);
+                  setAciertos(0);
+                  setPreguntasRevision(null);
+                  setModoFavoritas(false);
+                  setPantalla("home");
+                  return;
+                }
+
                 // 🛑 Si NO es la última → salir sin guardar
                 if (!esUltima) {
                   setPreguntasTest([]);
@@ -2391,25 +2467,32 @@ function App() {
                   return;
                 }
 
-                if (testFinal.modo === "oposicion" || testFinal.modo === "rapido") {
-                  agregarFalladasDeTestARepaso(testFinal);
-                }
+              if (testFinal.modo === "oposicion" || testFinal.modo === "rapido") {
+                agregarFalladasDeTestARepaso(testFinal);
+              }
 
-                guardarHistoricoTest(testFinal);
+              registrarRendimientoPorTema(
+                testFinal,
+                !!testFinal.desdeElegirTest || testFinal.tipoGuardado === "repaso"
+              );
 
-                setTestActual(testFinal);
-                setPantalla("resumen");
+              guardarHistoricoTest(testFinal);
+
+              setTestActual(testFinal);
+              setPantalla("resumen");
               }}
             >
               {modoFavoritas
                 ? "Salir"
-                : testActual?.revisando
+                : testActual?.tipoGuardado === "repaso"
                   ? "Finalizar"
-                  : testActual?.modo === "rapido"
+                  : testActual?.revisando
                     ? "Finalizar"
-                    : indicePregunta === preguntasActivas.length - 1
+                    : testActual?.modo === "rapido"
                       ? "Finalizar"
-                      : "Salir"}
+                      : indicePregunta === preguntasActivas.length - 1
+                        ? "Finalizar"
+                        : "Salir"}
             </button>
 
 
@@ -2700,6 +2783,12 @@ function App() {
               };
 
               agregarFalladasDeTestARepaso(testFinal);
+
+              registrarRendimientoPorTema(
+                testFinal,
+                !!testFinal.desdeElegirTest || testFinal.tipoGuardado === "repaso"
+              );
+
               guardarHistoricoTest(testFinal);
 
               setTestActual(testFinal);
@@ -3120,13 +3209,6 @@ function App() {
         </button>
 
         <button
-          onClick={borrarPreguntasPorTema}
-          style={{ padding: 12, marginBottom: 20, width: "100%" }}
-        >
-          🧹 Borrar registro de preguntas por tema
-        </button>
-
-        <button
           onClick={borrarRepaso}
           style={{ padding: 12, width: "100%" }}
         >
@@ -3242,6 +3324,13 @@ function App() {
       <>
         <h2>Preguntas preguntadas por tema</h2>
 
+        <button
+          onClick={borrarPreguntasPorTema}
+          style={{ padding: 12, marginTop: 10, marginBottom: 20, width: "100%" }}
+        >
+          🧹 Borrar registro de preguntas por tema
+        </button>
+
         {(() => {
           const temasOrdenados = Array.from(
             new Map(
@@ -3260,12 +3349,33 @@ function App() {
               })
             ).values()
           )
-            .map(t => ({
-              ...t,
-              total: preguntasPorTema[t.tema] || 0
-            }))
+            .map(t => {
+              const total = preguntasPorTema[t.tema] || 0;
+              const rendimiento = rendimientoPorTema[t.tema] || {
+                respondidas: 0,
+                aciertos: 0
+              };
+
+              const porcentajeAcierto =
+                rendimiento.respondidas > 0
+                  ? Math.round((rendimiento.aciertos / rendimiento.respondidas) * 100)
+                  : null;
+
+              return {
+                ...t,
+                total,
+                porcentajeAcierto
+              };
+            })
             .sort((a, b) => {
-              if (b.total !== a.total) return b.total - a.total;
+              if (ordenPreguntasPorTema === "aciertos") {
+                const aPct = a.porcentajeAcierto ?? -1;
+                const bPct = b.porcentajeAcierto ?? -1;
+
+                if (bPct !== aPct) return bPct - aPct;
+              } else {
+                if (b.total !== a.total) return b.total - a.total;
+              }
 
               if (a.numero === null && b.numero === null) {
                 return String(a.tema).localeCompare(String(b.tema));
@@ -3281,14 +3391,27 @@ function App() {
               <div
                 style={{
                   display: "grid",
-                  gridTemplateColumns: "90px 1fr",
+                  gridTemplateColumns: "90px 90px 1fr",
                   gap: 12,
                   padding: "10px 0",
                   borderBottom: "2px solid rgba(255,255,255,0.2)",
                   fontWeight: "bold"
                 }}
               >
-                <div>Preguntas</div>
+                <div
+                  onClick={() => setOrdenPreguntasPorTema("preguntas")}
+                  style={{ cursor: "pointer" }}
+                >
+                  Preguntas {ordenPreguntasPorTema === "preguntas" ? "↓" : ""}
+                </div>
+
+                <div
+                  onClick={() => setOrdenPreguntasPorTema("aciertos")}
+                  style={{ cursor: "pointer" }}
+                >
+                  % aciertos {ordenPreguntasPorTema === "aciertos" ? "↓" : ""}
+                </div>
+
                 <div>Tema</div>
               </div>
 
@@ -3297,13 +3420,14 @@ function App() {
                   key={i}
                   style={{
                     display: "grid",
-                    gridTemplateColumns: "90px 1fr",
+                    gridTemplateColumns: "90px 90px 1fr",
                     gap: 12,
                     padding: "10px 0",
                     borderBottom: "1px solid rgba(255,255,255,0.08)"
                   }}
                 >
                   <div>{t.total}</div>
+                  <div>{t.porcentajeAcierto !== null ? `${t.porcentajeAcierto}%` : "-"}</div>
                   <div>
                     {t.tema} - {t.descripcion}
                   </div>
