@@ -1,0 +1,659 @@
+Te dejo el resumen de la aplicación que estamos desarrollando para continuar en otra conversación de forma fluida.
+
+---
+
+# 📚 Proyecto: App de Test de Oposición (ACTUALIZADO FINAL)
+
+---
+
+# 1. Tecnologías
+
+Frontend:
+
+* **React + Vite**
+* JavaScript
+* Recharts (estadísticas)
+* LocalStorage (persistencia)
+
+Datos:
+
+* Preguntas en **Excel**
+* Convertidas automáticamente a **JSON**
+
+La app es:
+
+```text
+100% frontend
+sin backend
+funciona offline
+```
+
+Optimizada para **uso móvil (iPhone principalmente)**.
+
+---
+
+# 2. Estructura del proyecto
+
+```text
+project-root
+│
+├─ src
+│  ├─ App.jsx
+│  ├─ main.jsx
+│
+├─ public
+│  └─ preguntas.json
+│
+├─ scripts
+│  └─ convertirExcel.js
+│
+├─ data
+│  └─ preguntas.xlsx
+│
+├─ package.json
+├─ vite.config.js
+└─ version.txt
+```
+
+---
+
+# 3. Flujo de datos
+
+```text
+Excel
+   ↓
+convertirExcel.js
+   ↓
+preguntas.json
+   ↓
+App React
+```
+
+El script:
+
+* convierte Excel → JSON
+* genera IDs únicos por pregunta
+* incrementa versión automáticamente
+
+---
+
+# 4. Sistema de versión automática
+
+Cada ejecución:
+
+```bash
+node scripts/convertirExcel.js
+```
+
+realiza:
+
+1️⃣ Generación de `preguntas.json`
+2️⃣ Incremento automático de versión
+3️⃣ Persistencia en `package.json`
+
+---
+
+# 5. Sistema de carga y actualización
+
+Al iniciar la app:
+
+1️⃣ carga desde `localStorage`
+2️⃣ intenta descargar `preguntas.json`
+3️⃣ si hay nueva versión → actualiza
+4️⃣ si no hay red → usa cache
+
+```text
+✔ uso offline
+✔ autoactualización
+```
+
+---
+
+# 6. Persistencia (LocalStorage)
+
+Claves utilizadas:
+
+```text
+preguntas
+preguntasFavoritas
+historicoTests
+historicoIdCounter
+testsRecientes
+preguntasUsadas
+temasActivos
+pomodoroStats
+pomodoroConfig
+pomodoroActive
+
+preguntasPorTema
+repasoPendientes
+repasoAciertos
+```
+
+---
+
+## Backup y gestión de datos
+
+Desde Settings:
+
+```text
+Exportar datos → JSON
+Importar datos → restauración
+```
+
+Incluye:
+
+* histórico
+* favoritas
+* estadísticas
+* pomodoro
+* control de repetición
+* progreso por tema
+* sistema de repaso
+
+---
+
+# 7. Modos de test
+
+---
+
+## 🟢 Modo práctica
+
+* corrección inmediata
+* no permite cambiar respuesta
+* obliga a responder
+* explicación con IA
+* botón **Repaso** al finalizar
+* cálculo porcentajes jurídico/específico
+
+---
+
+## 🟡 Modo rápido
+
+* preguntas alternadas:
+
+```text
+jurídico → específico → jurídico → específico
+```
+
+* duración abierta
+* corrección inmediata
+* botón superior: **Finalizar**
+* NO revisión
+* SÍ guarda histórico
+* SÍ envía falladas a repaso automáticamente
+* resumen basado en preguntas reales
+
+---
+
+## 🔵 Modo oposición
+
+* 50 preguntas
+* permite dejar en blanco
+* penalización configurable
+
+```text
+nota = correctas - incorrectas / N
+```
+
+---
+
+## 🔁 Flujo completo oposición
+
+### Durante test
+
+* arriba: **Salir (sin guardar)**
+* abajo:
+
+  * izquierda: **Anterior**
+  * derecha: **Siguiente**
+
+### Última pregunta
+
+* arriba: **Finalizar**
+* derecha: **Repasar**
+
+---
+
+### Pantalla repaso-oposición
+
+* navegación libre (50 botones)
+* colores:
+
+```text
+azul → respondida
+blanco → no respondida
+```
+
+---
+
+### Entrada desde repaso a pregunta
+
+* SOLO aparece:
+
+```text
+Volver a pantalla de repaso
+```
+
+* NO hay:
+
+  * salir
+  * finalizar
+
+---
+
+### Finalización
+
+* guarda test
+* envía a repaso:
+
+  * ❌ falladas
+  * ⬜ no respondidas
+
+---
+
+### Resumen
+
+* izquierda: **Finalizar**
+* derecha: **Revisar test**
+
+---
+
+### Revisión
+
+* arriba: **Finalizar**
+
+* abajo:
+
+  * izquierda: **Anterior**
+  * derecha: **Siguiente**
+
+* última pregunta:
+
+  * derecha: ❌ vacío
+
+---
+
+# 8. Sistema de repaso
+
+---
+
+## Generación
+
+| Modo      | Cómo se genera |
+| --------- | -------------- |
+| Práctica  | Manual         |
+| Rápido    | Automático     |
+| Oposición | Automático     |
+
+---
+
+## Qué entra en repaso
+
+| Modo      | Preguntas              |
+| --------- | ---------------------- |
+| Práctica  | ❌ falladas             |
+| Rápido    | ❌ falladas             |
+| Oposición | ❌ falladas + ⬜ blancas |
+
+---
+
+## Funcionamiento
+
+```text
+repasoAciertos[id]
+```
+
+* entra con 0
+* acierto → +1
+* al llegar a 2 → se elimina
+* no necesita ser consecutivo
+
+---
+
+## Comportamiento
+
+* sin resumen
+* no guarda histórico
+* no afecta estadísticas
+* vuelve directamente a HOME
+
+---
+
+## Acceso
+
+```text
+🧠 Repaso (Home)
+```
+
+---
+
+## Gestión
+
+```text
+🧽 Borrar repaso
+```
+
+---
+
+# 9. Sistema anti-repetición
+
+```text
+testsRecientes
+preguntasUsadas
+```
+
+Evita repetir durante:
+
+```text
+7 días
+```
+
+---
+
+# 10. Selección inteligente de preguntas
+
+---
+
+## Sistema híbrido
+
+1. equilibrio por tema
+2. aleatoriedad
+3. prioridad por uso
+
+---
+
+## Regla clave
+
+```text
+Máximo 3 preguntas por tema
+```
+
+### PERO:
+
+👉 si no hay suficientes → se rellena equilibradamente
+
+---
+
+## Aplicación
+
+| Modo        | Límite |
+| ----------- | ------ |
+| Práctica    | ✅      |
+| Rápido      | ✅      |
+| Oposición   | ✅      |
+| Elegir test | ❌      |
+
+---
+
+# 11. Selección de temario
+
+* activación/desactivación global
+* persistente
+* ordenado por número de tema
+
+---
+
+# 12. Favoritas
+
+* ⭐ marcar/desmarcar
+* modo estudio
+* eliminación dinámica
+
+---
+
+# 13. Histórico
+
+Se guarda:
+
+```text
+fecha
+modo
+tipo
+nombre
+porcentaje J/E
+nota
+aciertos
+fallos
+```
+
+---
+
+## Formato
+
+```text
+Fecha · Modo
+Datos del test
+```
+
+---
+
+## Particularidades
+
+* rápido → J% / E%
+* oposición → nota
+* práctica → porcentajes
+
+---
+
+## NO incluye
+
+```text
+repaso
+```
+
+---
+
+# 14. Estadísticas
+
+* medias semanales
+* gráfico horizontal
+* integrado con histórico
+
+---
+
+# 15. Pomodoro
+
+* persistente
+* pausa/reanudación
+* estadísticas acumuladas
+
+---
+
+# 16. Preguntas por tema
+
+---
+
+## Funcionamiento
+
+* SOLO cuenta en:
+
+  * práctica
+  * rápido
+  * oposición
+
+* NO cuenta en:
+
+  * elegir test
+
+---
+
+## Gestión
+
+```text
+📊 Ver preguntas por tema
+🧹 Borrar registro
+```
+
+---
+
+# 17. Explicación con IA
+
+Disponible en:
+
+* práctica
+* rápido
+* revisión
+
+---
+
+# 18. Branches
+
+```text
+stable
+v2-evolution (mergeado)
+```
+
+---
+
+# 19. Escala
+
+```text
+≈ 2000 preguntas
+SPA React
+uso intensivo móvil
+```
+
+---
+
+# 20. Estado actual
+
+```text
+✔ motor completo
+✔ modo rápido funcional
+✔ oposición realista
+✔ repaso inteligente
+✔ límite por tema
+✔ selección equilibrada
+✔ navegación coherente
+✔ UX consistente (Salir vs Finalizar)
+✔ sin contaminación de datos
+✔ optimizado para móvil
+```
+
+---
+
+# 21. Objetivo
+
+App de oposiciones con:
+
+* simulación real
+* práctica adaptativa
+* seguimiento detallado
+* herramientas integradas
+
+---
+
+# 🔁 FLUJOGRAMA
+
+---
+
+## HOME
+
+```text
+HOME
+ ├─ Práctica
+ ├─ Rápido
+ ├─ Oposición
+ └─ Repaso
+```
+
+---
+
+## PRÁCTICA
+
+```text
+Pregunta → Responder → Pregunta → ...
+ ↓
+Resumen
+ ├─ Finalizar
+ └─ Repaso
+        ↓
+    Test repaso
+        ↓
+      HOME
+```
+
+---
+
+## RÁPIDO
+
+```text
+Pregunta → Responder → ...
+ ├─ Finalizar (arriba)
+ ↓
+Resumen
+ ├─ Finalizar
+ ↓
+HOME
+```
+
+---
+
+## OPOSICIÓN
+
+```text
+Pregunta
+ ├─ Salir
+ ├─ Anterior / Siguiente
+ ↓
+Última
+ ├─ Finalizar
+ └─ Repasar
+        ↓
+   Repaso-oposición
+        ↓
+   Pregunta (desde repaso)
+        └─ Volver
+        ↓
+   Finalizar
+        ↓
+   Resumen
+        ├─ Finalizar
+        └─ Revisar
+              ↓
+           Revisión
+              ├─ Finalizar
+              ├─ Anterior / Siguiente
+              └─ (sin botón final derecha)
+```
+
+---
+
+## REPASO
+
+```text
+HOME → Repaso
+       ↓
+Pregunta
+       ↓
+(aciertos acumulados)
+       ↓
+HOME
+```
+
+---
+
+# 🧠 REGLA CLAVE UX
+
+```text
+Salir = NO guardar
+Finalizar = Guardar
+```
+
+---
+
+# ⚠️ Reglas de trabajo
+
+* no proponer cambios sin validación
+* indicar líneas exactas
+* trabajar sobre código real
+* no asumir cambios
+
+---
+
+En esta conversación continuaremos el desarrollo de la app.
+
+Te he dejado en las fuentes de este proyecto el codigo actual (App.jsx y la herramienta de convertir excel en json + cambio de version) 
+
+Revisalo para que tengas toda la info actualizada

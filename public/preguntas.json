@@ -7471,33 +7471,6 @@
     ]
   },
   {
-    "id": "5_test_administracion_3_1",
-    "categoria": "jurídico",
-    "tema": "5",
-    "descripcionTema": "Ley 7/1985 Reguladora de las Bases del Regimen Local",
-    "nombreExamen": "Test Administracion 3",
-    "numeroPreguntaExamen": "1",
-    "texto": "La Ley reguladora de los Concejos Abiertos en Aragón es:",
-    "respuestas": [
-      {
-        "texto": "Ley orgánica 9 de 22 de diciembre de 2009,",
-        "correcta": false
-      },
-      {
-        "texto": "Ley 6/2009 de 22 de diciembre.",
-        "correcta": false
-      },
-      {
-        "texto": "Ley 9/2006 de 22 de noviembre.",
-        "correcta": false
-      },
-      {
-        "texto": "Ninguna es cierta.",
-        "correcta": true
-      }
-    ]
-  },
-  {
     "id": "5_test_administracion_3_2",
     "categoria": "jurídico",
     "tema": "5",
@@ -7525,33 +7498,6 @@
     ]
   },
   {
-    "id": "5_test_administracion_3_3",
-    "categoria": "jurídico",
-    "tema": "5",
-    "descripcionTema": "Ley 7/1985 Reguladora de las Bases del Regimen Local",
-    "nombreExamen": "Test Administracion 3",
-    "numeroPreguntaExamen": "3",
-    "texto": "La Ley 9/2009 de 22 de Diciembre reguladora de los Concejos Abiertos en Aragón tiene por objeto.",
-    "respuestas": [
-      {
-        "texto": "Establecer los requisitos para la aplicación del régimen de Concejo abierto a los municipios y entidades locales de Aragón, en base a las ordenanzas municipales propias de cada uno de ellos.",
-        "correcta": false
-      },
-      {
-        "texto": "Establecer los requisitos para la aplicación del régimen de Concejo abierto a los municipios y entidades locales menores de Aragón, en el ámbito de las competencias atribuidas a la Comunidad Autónoma por su Estatuto de Autonomía.",
-        "correcta": false
-      },
-      {
-        "texto": "Establecer los requisitos para la aplicación del régimen de Concejo abierto a los municipios y entidades locales menores de Aragón, así como la regulación de dicho régimen, en el ámbito de las competencias atribuidas a la Comunidad Autónoma por su Estatuto de Autonomía.",
-        "correcta": true
-      },
-      {
-        "texto": "Ninguna es cierta.",
-        "correcta": false
-      }
-    ]
-  },
-  {
     "id": "5_test_administracion_3_4",
     "categoria": "jurídico",
     "tema": "5",
@@ -7575,33 +7521,6 @@
       {
         "texto": "A, B y C son ciertas.",
         "correcta": true
-      }
-    ]
-  },
-  {
-    "id": "5_test_administracion_3_5",
-    "categoria": "jurídico",
-    "tema": "5",
-    "descripcionTema": "Ley 7/1985 Reguladora de las Bases del Regimen Local",
-    "nombreExamen": "Test Administracion 3",
-    "numeroPreguntaExamen": "5",
-    "texto": "A efectos de la Ley 9/2009 reguladora de los Concejos Abiertos,  se entiende que existe “tradición” en los municipios,   en la utilización de este régimen de concejo abierto, en el  gobierno y administración de los mismos:",
-    "respuestas": [
-      {
-        "texto": "Cuando el municipio se viniera rigiendo por este régimen en los 5 años anteriores.",
-        "correcta": false
-      },
-      {
-        "texto": "Cuando el municipio se viniera rigiendo por este régimen con antelación a 1985.",
-        "correcta": true
-      },
-      {
-        "texto": "Cuando figuren referencias históricas al respecto.",
-        "correcta": false
-      },
-      {
-        "texto": "Cuando así lo consideren los órganos municipales.",
-        "correcta": false
       }
     ]
   },
@@ -24545,15 +24464,15 @@
     "respuestas": [
       {
         "texto": "120",
-        "correcta": false
+        "correcta": true
       },
       {
         "texto": "40",
         "correcta": false
       },
       {
-        "texto": "000",
-        "correcta": true
+        "texto": 1000,
+        "correcta": false
       },
       {
         "correcta": false
@@ -32493,19 +32412,19 @@
     "texto": "Como referencia general, el horario de limpieza de las habitaciones será desde la hora del desayuno hasta las",
     "respuestas": [
       {
-        "texto": 0.4583333333333333,
+        "texto": "11:00",
         "correcta": false
       },
       {
-        "texto": 0.4791666666666667,
+        "texto": "11:30",
         "correcta": true
       },
       {
-        "texto": 0.5,
+        "texto": "12:00",
         "correcta": false
       },
       {
-        "texto": 0.5208333333333334,
+        "texto": "12:30",
         "correcta": false
       }
     ]
@@ -34449,11 +34368,11 @@
         "correcta": false
       },
       {
-        "texto": true,
+        "texto": "Es verdad",
         "correcta": true
       },
       {
-        "texto": false,
+        "texto": "No es verdad",
         "correcta": false
       },
       {
@@ -40992,7 +40911,7 @@
     "respuestas": [
       {
         "texto": 85,
-        "correcta": false
+        "correcta": true
       },
       {
         "texto": 100,
@@ -41000,7 +40919,7 @@
       },
       {
         "texto": 150,
-        "correcta": true
+        "correcta": false
       },
       {
         "texto": 160,
@@ -41099,19 +41018,19 @@
     "texto": "¿Hasta que hora abren las Escuelas Infantiles?",
     "respuestas": [
       {
-        "texto": 0.6458333333333334,
+        "texto": "15:30",
         "correcta": false
       },
       {
-        "texto": 0.6875,
+        "texto": "16:30",
         "correcta": true
       },
       {
-        "texto": 0.7083333333333334,
+        "texto": "17:00",
         "correcta": false
       },
       {
-        "texto": 0.7291666666666666,
+        "texto": "17:30",
         "correcta": false
       }
     ]
@@ -48705,15 +48624,14 @@
         "correcta": true
       },
       {
-        "texto": "2 metros por 1 metro",
-        "correcta": false
-      },
-      {
         "texto": "1 metro por medio metro",
         "correcta": false
       },
       {
-        "texto": "medio metro por 1 metro",
+        "texto": "1 metro por 1 metro",
+        "correcta": false
+      },
+      {
         "correcta": false
       }
     ]
@@ -58967,11 +58885,11 @@
         "correcta": false
       },
       {
-        "texto": "No influirán en la agilización o resolución de trámite o procedimiento administrativo sin causa.",
+        "texto": "No influirán en la agilización o resolución de trámite o procedimiento administrativo sin causa justa.",
         "correcta": true
       },
       {
-        "texto": "No influirán en la agilización o resolución de trámite o procedimiento administrativo justa",
+        "texto": "No influirán en la agilización o resolución de trámite o procedimiento administrativo.",
         "correcta": false
       },
       {
