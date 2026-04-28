@@ -63395,58 +63395,6 @@
     ]
   },
   {
-    "id": "8_0._test_2024_co_operario_esp._r4",
-    "categoria": "jurídico",
-    "tema": "8",
-    "descripcionTema": "Ley 3/2007 Igualdad",
-    "nombreExamen": "0. Test 2024 CO Operario Esp.",
-    "numeroPreguntaExamen": "R4",
-    "texto": "El Plan de igualdad de empleadas y empleados del Ayuntamiento de Zaragoza actualmente vigente es el:",
-    "respuestas": [
-      {
-        "texto": "I Plan.",
-        "correcta": false
-      },
-      {
-        "texto": "II Plan.",
-        "correcta": true
-      },
-      {
-        "texto": "III Plan.",
-        "correcta": false
-      },
-      {
-        "correcta": false
-      }
-    ]
-  },
-  {
-    "id": "8_0._test_2024_co_operario_esp._r5",
-    "categoria": "jurídico",
-    "tema": "8",
-    "descripcionTema": "Ley 3/2007 Igualdad",
-    "nombreExamen": "0. Test 2024 CO Operario Esp.",
-    "numeroPreguntaExamen": "R5",
-    "texto": "El Plan de igualdad de empleadas y empleados del Ayuntamiento de Zaragoza actualmente vigente se aprobó el año:",
-    "respuestas": [
-      {
-        "texto": 2022,
-        "correcta": false
-      },
-      {
-        "texto": 2023,
-        "correcta": true
-      },
-      {
-        "texto": 2024,
-        "correcta": false
-      },
-      {
-        "correcta": false
-      }
-    ]
-  },
-  {
     "id": "0_0._pract._2024_co_operario_esp._1",
     "categoria": "específico",
     "tema": "0",
@@ -64198,33 +64146,6 @@
       },
       {
         "texto": "C4.",
-        "correcta": false
-      }
-    ]
-  },
-  {
-    "id": "0_0._pract._2024_co_operario_esp._32",
-    "categoria": "específico",
-    "tema": "0",
-    "descripcionTema": "Supuestos Practicos",
-    "nombreExamen": "0. Pract. 2024 CO Operario Esp.",
-    "numeroPreguntaExamen": "32",
-    "texto": "En relación a la imagen de la pregunta nº 31; de las dos llaves que hay en el armario del contador ¿que válvula cortaremos primero?",
-    "respuestas": [
-      {
-        "texto": "La primera.",
-        "correcta": false
-      },
-      {
-        "texto": "La segunda.",
-        "correcta": true
-      },
-      {
-        "texto": "Da igual cual cortemos primero.",
-        "correcta": false
-      },
-      {
-        "texto": "Ninguna de las anteriores.",
         "correcta": false
       }
     ]
@@ -74220,6 +74141,4946 @@
       {
         "texto": "Ambas Respuestas son correctas",
         "correcta": true
+      },
+      {
+        "correcta": false
+      }
+    ]
+  },
+  {
+    "id": "1_0._test_2017_tl_operario_1",
+    "categoria": "jurídico",
+    "tema": "1",
+    "descripcionTema": "Constitución",
+    "nombreExamen": "0. Test 2017 TL Operario",
+    "numeroPreguntaExamen": "1",
+    "texto": "Según el artículo 26 de la Constitución, une vez que un aspirante ha superado un proceso selectivo y ha tomado posesión en plaza de funcionario de la Administración civil se procede a constituir el Tribunal de Honor que velará por el cumplimiento de sus obligaciones con la Administración en que se integra.",
+    "respuestas": [
+      {
+        "texto": "Solo en la Administración General del Estado",
+        "correcta": false
+      },
+      {
+        "texto": "Solo en la Administración Local",
+        "correcta": true
+      },
+      {
+        "texto": "Los Tribunales de Honor están prohibidos en el ámbito de la Administración civil.",
+        "correcta": false
+      },
+      {
+        "correcta": false
+      }
+    ]
+  },
+  {
+    "id": "1_0._test_2017_tl_operario_2",
+    "categoria": "jurídico",
+    "tema": "1",
+    "descripcionTema": "Constitución",
+    "nombreExamen": "0. Test 2017 TL Operario",
+    "numeroPreguntaExamen": "2",
+    "texto": "Según el artículo 25.3 de la Constitución la Administración civil, respecto de las sanciones que impliquen privación de libertad:",
+    "respuestas": [
+      {
+        "texto": "Puede imponerlas si el sancionado no abona la multa que se le haya impuesto",
+        "correcta": false
+      },
+      {
+        "texto": "No puede imponerlas",
+        "correcta": false
+      },
+      {
+        "texto": "Puede imponerlas si ha seguido para ello el procedimiento administrativo vigente en ese momento",
+        "correcta": true
+      },
+      {
+        "correcta": false
+      }
+    ]
+  },
+  {
+    "id": "1_0._test_2017_tl_operario_3",
+    "categoria": "jurídico",
+    "tema": "1",
+    "descripcionTema": "Constitución",
+    "nombreExamen": "0. Test 2017 TL Operario",
+    "numeroPreguntaExamen": "3",
+    "texto": "De entre los principios que rigen la actuación de la Administración Pública que enumera el artículo 103.1 de la Constitución no aparece el de:",
+    "respuestas": [
+      {
+        "texto": "Desconcentración",
+        "correcta": true
+      },
+      {
+        "texto": "Coordinación",
+        "correcta": false
+      },
+      {
+        "texto": "Centralización",
+        "correcta": false
+      },
+      {
+        "correcta": false
+      }
+    ]
+  },
+  {
+    "id": "1_0._test_2017_tl_operario_4",
+    "categoria": "jurídico",
+    "tema": "1",
+    "descripcionTema": "Constitución",
+    "nombreExamen": "0. Test 2017 TL Operario",
+    "numeroPreguntaExamen": "4",
+    "texto": "Según el artículo 135.1 de la Constitución todas las Administraciones Públicas adecuarán sus actuaciones:",
+    "respuestas": [
+      {
+        "texto": "Al principio de estabilidad presupuestaria",
+        "correcta": false
+      },
+      {
+        "texto": "Al principio del devengo",
+        "correcta": false
+      },
+      {
+        "texto": "Al principio de prudencia",
+        "correcta": true
+      },
+      {
+        "correcta": false
+      }
+    ]
+  },
+  {
+    "id": "1_0._test_2017_tl_operario_5",
+    "categoria": "jurídico",
+    "tema": "1",
+    "descripcionTema": "Constitución",
+    "nombreExamen": "0. Test 2017 TL Operario",
+    "numeroPreguntaExamen": "5",
+    "texto": "Los principios que, según el artículo 103.1 de la Constitución, rigen el acceso a la función pública son:",
+    "respuestas": [
+      {
+        "texto": "Mérito e imparcialidad",
+        "correcta": false
+      },
+      {
+        "texto": "Mérito y perseverancia",
+        "correcta": false
+      },
+      {
+        "texto": "Nada de lo anterior es correcto",
+        "correcta": true
+      },
+      {
+        "correcta": false
+      }
+    ]
+  },
+  {
+    "id": "1_0._test_2017_tl_operario_6",
+    "categoria": "jurídico",
+    "tema": "1",
+    "descripcionTema": "Constitución",
+    "nombreExamen": "0. Test 2017 TL Operario",
+    "numeroPreguntaExamen": "6",
+    "texto": "Según el artículo 140 de la Constitución el gobierno de los municipios corresponde a sus respectivos Ayuntamientos, integrados por:",
+    "respuestas": [
+      {
+        "texto": "Los Alcaldes, los Concejales y los Grupos Municipales",
+        "correcta": false
+      },
+      {
+        "texto": "Los Alcaldes, los Concejales y las Juntas Municipales y Vecinales",
+        "correcta": false
+      },
+      {
+        "texto": "Los Alcaldes y los Concejales",
+        "correcta": true
+      },
+      {
+        "correcta": false
+      }
+    ]
+  },
+  {
+    "id": "3_0._test_2017_tl_operario_8",
+    "categoria": "jurídico",
+    "tema": "3",
+    "descripcionTema": "Ley 39/2015 Procedimiento Adm. Común.",
+    "nombreExamen": "0. Test 2017 TL Operario",
+    "numeroPreguntaExamen": "8",
+    "texto": "Según lo dispuesto en el artículo 2.2 de la Ley 39/2015 y en el artículo 2.2 de la Ley 40/2015 no están comprendidos dentro del sector público institucional:",
+    "respuestas": [
+      {
+        "texto": "Las Universidades Públicas",
+        "correcta": false
+      },
+      {
+        "texto": "Los organismos públicos y entidades de derecho público vinculados o dependientes de las Administraciones Públicas",
+        "correcta": false
+      },
+      {
+        "texto": "Las Provincias",
+        "correcta": true
+      },
+      {
+        "correcta": false
+      }
+    ]
+  },
+  {
+    "id": "3_0._test_2017_tl_operario_9",
+    "categoria": "jurídico",
+    "tema": "3",
+    "descripcionTema": "Ley 39/2015 Procedimiento Adm. Común.",
+    "nombreExamen": "0. Test 2017 TL Operario",
+    "numeroPreguntaExamen": "9",
+    "texto": "Según el artículo 54 de la Ley 39/2015 los procedimientos podrán iniciarse:",
+    "respuestas": [
+      {
+        "texto": "Sólo de oficio",
+        "correcta": false
+      },
+      {
+        "texto": "Sólo a solicitud del interesado",
+        "correcta": false
+      },
+      {
+        "texto": "Nada de lo anterior es correcto",
+        "correcta": true
+      },
+      {
+        "correcta": false
+      }
+    ]
+  },
+  {
+    "id": "3_0._test_2017_tl_operario_10",
+    "categoria": "jurídico",
+    "tema": "3",
+    "descripcionTema": "Ley 39/2015 Procedimiento Adm. Común.",
+    "nombreExamen": "0. Test 2017 TL Operario",
+    "numeroPreguntaExamen": "10",
+    "texto": "Según el artículo 70.4 de la Ley 39/2015 la información que tenga carácter auxiliar o de apoyo:",
+    "respuestas": [
+      {
+        "texto": "Formará parte del expediente administrativo",
+        "correcta": false
+      },
+      {
+        "texto": "No formará parte del expediente administrativo",
+        "correcta": true
+      },
+      {
+        "texto": "Formará parte del expediente administrativo solo si sirve de antecedente y fundamento a la resolución administrativa",
+        "correcta": false
+      },
+      {
+        "correcta": false
+      }
+    ]
+  },
+  {
+    "id": "5_0._test_2017_tl_operario_11",
+    "categoria": "jurídico",
+    "tema": "5",
+    "descripcionTema": "Ley 7/1985 Reguladora de las Bases del Regimen Local",
+    "nombreExamen": "0. Test 2017 TL Operario",
+    "numeroPreguntaExamen": "11",
+    "texto": "Según el artículo 92.2 de la Ley 7/1985, de 2 de abril, Reguladora de las Bases del Régimen Local con carácter general, los puestos de trabajo en la Administración local y sus Organismos Autónomos serán desempeñados:",
+    "respuestas": [
+      {
+        "texto": "Por personal funcionario.",
+        "correcta": true
+      },
+      {
+        "texto": "Por personal funcionario de administración local con habilitación de carácter nacional",
+        "correcta": false
+      },
+      {
+        "texto": "Por personal eventual contratado en régimen de derecho laboral",
+        "correcta": false
+      },
+      {
+        "correcta": false
+      }
+    ]
+  },
+  {
+    "id": "2_0._test_2017_tl_operario_12",
+    "categoria": "jurídico",
+    "tema": "2",
+    "descripcionTema": "Ley Org. 5/2007 Estatuto de Autonomia",
+    "nombreExamen": "0. Test 2017 TL Operario",
+    "numeroPreguntaExamen": "12",
+    "texto": "Según el artículo 5 del Estatuto de Autonomía, Aragón estructura su organización territorial en:",
+    "respuestas": [
+      {
+        "texto": "Municipios, comarcas, concejos y pedanías",
+        "correcta": false
+      },
+      {
+        "texto": "Provincias, municipios, islas y comarcas",
+        "correcta": false
+      },
+      {
+        "texto": "Provincias, comarcas y municipios",
+        "correcta": true
+      },
+      {
+        "correcta": false
+      }
+    ]
+  },
+  {
+    "id": "2_0._test_2017_tl_operario_13",
+    "categoria": "jurídico",
+    "tema": "2",
+    "descripcionTema": "Ley Org. 5/2007 Estatuto de Autonomia",
+    "nombreExamen": "0. Test 2017 TL Operario",
+    "numeroPreguntaExamen": "13",
+    "texto": "Según el artículo 1.2 del Estatuto de Autonomía los poderes de la Comunidad Autónoma de Aragón emanan:",
+    "respuestas": [
+      {
+        "texto": "Del pueblo aragonés y del Estatuto de Autonomía de Aragón",
+        "correcta": false
+      },
+      {
+        "texto": "Del Estatuto de Autonomía de Aragón y de la Constitución",
+        "correcta": false
+      },
+      {
+        "texto": "Del pueblo aragonés y de la Constitución",
+        "correcta": true
+      },
+      {
+        "correcta": false
+      }
+    ]
+  },
+  {
+    "id": "5_0._test_2017_tl_operario_14",
+    "categoria": "jurídico",
+    "tema": "5",
+    "descripcionTema": "Ley 7/1985 Reguladora de las Bases del Regimen Local",
+    "nombreExamen": "0. Test 2017 TL Operario",
+    "numeroPreguntaExamen": "14",
+    "texto": "Según el artículo 123.1.h de la Ley 7/1985, de 2 de abril, Reguladora de las Bases del Régimen Local, en los municipios de gran población, la aprobación de la plantilla de personal es una atribución que corresponde:",
+    "respuestas": [
+      {
+        "texto": "A la Junta de Gobierno",
+        "correcta": false
+      },
+      {
+        "texto": "A las Juntas Municipales y Vecinales",
+        "correcta": false
+      },
+      {
+        "texto": "Al Pleno municipal",
+        "correcta": true
+      },
+      {
+        "correcta": false
+      }
+    ]
+  },
+  {
+    "id": "5_0._test_2017_tl_operario_15",
+    "categoria": "jurídico",
+    "tema": "5",
+    "descripcionTema": "Ley 7/1985 Reguladora de las Bases del Regimen Local",
+    "nombreExamen": "0. Test 2017 TL Operario",
+    "numeroPreguntaExamen": "15",
+    "texto": "Según el artículo 92.3 de la Ley 7/1985, de 2 de abril, Reguladora de las Bases del Régimen Local el cumplimiento de las funciones públicas que impliquen ejercicio de autoridad:",
+    "respuestas": [
+      {
+        "texto": "Quedan reservadas a los funcionarios de carrera",
+        "correcta": true
+      },
+      {
+        "texto": "Pueden desempeñarse por personal laboral y por funcionarios de carrera",
+        "correcta": false
+      },
+      {
+        "texto": "Quedan reservadas al personal eventual y a los funcionarios de carrera",
+        "correcta": false
+      },
+      {
+        "correcta": false
+      }
+    ]
+  },
+  {
+    "id": "8_0._test_2017_tl_operario_19",
+    "categoria": "jurídico",
+    "tema": "8",
+    "descripcionTema": "Ley 3/2007 Igualdad",
+    "nombreExamen": "0. Test 2017 TL Operario",
+    "numeroPreguntaExamen": "19",
+    "texto": "El Plan de igualdad para las empleadas y empleados del Ayuntamiento de Zaragoza, en su punto 5.1V. DEFINICIONES, denomina a aquella conducta que crea un entorno laboral intimidatorio, hostil o humillante para la persona que es objeto de la misma como:",
+    "respuestas": [
+      {
+        "texto": "Acoso Ambiental",
+        "correcta": true
+      },
+      {
+        "texto": "Acoso Intimidatorio",
+        "correcta": false
+      },
+      {
+        "texto": "Acoso de Género",
+        "correcta": false
+      },
+      {
+        "correcta": false
+      }
+    ]
+  },
+  {
+    "id": "12_0._test_2017_tl_operario_21",
+    "categoria": "específico",
+    "tema": "12",
+    "descripcionTema": "Carpinteria",
+    "nombreExamen": "0. Test 2017 TL Operario",
+    "numeroPreguntaExamen": "21",
+    "texto": "Las grietas aparecen en la madera en distintas magnitudes y direcciones. Merman la resistencia de la madera. ¿Cuál es la causa de su formación?",
+    "respuestas": [
+      {
+        "texto": "El incorrecto almacenamiento",
+        "correcta": false
+      },
+      {
+        "texto": "El corte inapropiado del tronco",
+        "correcta": false
+      },
+      {
+        "texto": "Las tensiones de la madera",
+        "correcta": true
+      },
+      {
+        "correcta": false
+      }
+    ]
+  },
+  {
+    "id": "12_0._test_2017_tl_operario_22",
+    "categoria": "específico",
+    "tema": "12",
+    "descripcionTema": "Carpinteria",
+    "nombreExamen": "0. Test 2017 TL Operario",
+    "numeroPreguntaExamen": "22",
+    "texto": "Las agallas de resina son secciones de canales llenos de resina. ¿Porqué hay que quitar esa resina antes de trabajar la madera?",
+    "respuestas": [
+      {
+        "texto": "Dificultan el correcto barnizado, encolado y tratamiento e imprimación de las superficies",
+        "correcta": false
+      },
+      {
+        "texto": "Dificultan los trabajos de cepillado, encolado y tratamiento e imprimación de las superficies",
+        "correcta": true
+      },
+      {
+        "texto": "Dificultan el correcto secado de la albura",
+        "correcta": false
+      },
+      {
+        "correcta": false
+      }
+    ]
+  },
+  {
+    "id": "12_0._test_2017_tl_operario_23",
+    "categoria": "específico",
+    "tema": "12",
+    "descripcionTema": "Carpinteria",
+    "nombreExamen": "0. Test 2017 TL Operario",
+    "numeroPreguntaExamen": "23",
+    "texto": "¿Cuál de las siguientes partes del tronco es más propensa a los ataques de xilófagos?",
+    "respuestas": [
+      {
+        "texto": "Médula",
+        "correcta": false
+      },
+      {
+        "texto": "Albura",
+        "correcta": true
+      },
+      {
+        "texto": "Corteza",
+        "correcta": false
+      },
+      {
+        "correcta": false
+      }
+    ]
+  },
+  {
+    "id": "12_0._test_2017_tl_operario_24",
+    "categoria": "específico",
+    "tema": "12",
+    "descripcionTema": "Carpinteria",
+    "nombreExamen": "0. Test 2017 TL Operario",
+    "numeroPreguntaExamen": "24",
+    "texto": "El secado natural de la madera o secado al aire libre consiste en:",
+    "respuestas": [
+      {
+        "texto": "Dejar secar la madera al aire libre sin elementos, y luego bajo techado",
+        "correcta": true
+      },
+      {
+        "texto": "Secar la madera mediante turbinas de aire caliente, controlando la humedad",
+        "correcta": false
+      },
+      {
+        "texto": "Dejar secar la madera en el mismo lugar de tala del tronco",
+        "correcta": false
+      },
+      {
+        "correcta": false
+      }
+    ]
+  },
+  {
+    "id": "12_0._test_2017_tl_operario_25",
+    "categoria": "específico",
+    "tema": "12",
+    "descripcionTema": "Carpinteria",
+    "nombreExamen": "0. Test 2017 TL Operario",
+    "numeroPreguntaExamen": "25",
+    "texto": "¿Qué es una mortaja?",
+    "respuestas": [
+      {
+        "texto": "Conjunto de chapas de madera para la confección de muebles",
+        "correcta": false
+      },
+      {
+        "texto": "Corte longitudinal en el banco de trabajo",
+        "correcta": false
+      },
+      {
+        "texto": "Corte o concavidad hecha en una pieza para encajar otra",
+        "correcta": true
+      },
+      {
+        "correcta": false
+      }
+    ]
+  },
+  {
+    "id": "12_0._test_2017_tl_operario_26",
+    "categoria": "específico",
+    "tema": "12",
+    "descripcionTema": "Carpinteria",
+    "nombreExamen": "0. Test 2017 TL Operario",
+    "numeroPreguntaExamen": "26",
+    "texto": "Tenemos que hacer una mortaja y decidimos hacerlo con broca. ¿Cuál de las siguientes usaremos?",
+    "respuestas": [
+      {
+        "texto": "Con brocas de Forstner o de Kunst",
+        "correcta": false
+      },
+      {
+        "texto": "Con brocas de fresa",
+        "correcta": true
+      },
+      {
+        "texto": "Con avellanador",
+        "correcta": false
+      },
+      {
+        "correcta": false
+      }
+    ]
+  },
+  {
+    "id": "12_0._test_2017_tl_operario_27",
+    "categoria": "específico",
+    "tema": "12",
+    "descripcionTema": "Carpinteria",
+    "nombreExamen": "0. Test 2017 TL Operario",
+    "numeroPreguntaExamen": "27",
+    "texto": "¿Porqué tiene que ser regulable en altura la mesa de lijado?",
+    "respuestas": [
+      {
+        "texto": "Porque reduce el riesgo de lesión por manipulación manual de cargas",
+        "correcta": true
+      },
+      {
+        "texto": "Porque previene la aparición de grietas en la madera",
+        "correcta": false
+      },
+      {
+        "texto": "Porque evita que las piezas se manchen con los distintos productos químicos del taller",
+        "correcta": false
+      },
+      {
+        "correcta": false
+      }
+    ]
+  },
+  {
+    "id": "12_0._test_2017_tl_operario_29",
+    "categoria": "específico",
+    "tema": "12",
+    "descripcionTema": "Carpinteria",
+    "nombreExamen": "0. Test 2017 TL Operario",
+    "numeroPreguntaExamen": "29",
+    "texto": "De las siguientes respuestas, ¿cuál se refiere al tamaño de los elementos anatómicos de la madera (grano de la madera)?",
+    "respuestas": [
+      {
+        "texto": "La textura",
+        "correcta": true
+      },
+      {
+        "texto": "El veteado",
+        "correcta": false
+      },
+      {
+        "texto": "La coloración",
+        "correcta": false
+      },
+      {
+        "correcta": false
+      }
+    ]
+  },
+  {
+    "id": "12_0._test_2017_tl_operario_30",
+    "categoria": "específico",
+    "tema": "12",
+    "descripcionTema": "Carpinteria",
+    "nombreExamen": "0. Test 2017 TL Operario",
+    "numeroPreguntaExamen": "30",
+    "texto": "¿Cómo sabemos, visualmente, que en una chapa de madera hay nudos muertos?",
+    "respuestas": [
+      {
+        "texto": "Porque aparecen rajas radiales desde la corteza",
+        "correcta": false
+      },
+      {
+        "texto": "Porque observamos orificios que atraviesan el espesor de la chapa",
+        "correcta": true
+      },
+      {
+        "texto": "Porque los nudos tienen un color oscuro",
+        "correcta": false
+      },
+      {
+        "correcta": false
+      }
+    ]
+  },
+  {
+    "id": "12_0._test_2017_tl_operario_31",
+    "categoria": "específico",
+    "tema": "12",
+    "descripcionTema": "Carpinteria",
+    "nombreExamen": "0. Test 2017 TL Operario",
+    "numeroPreguntaExamen": "31",
+    "texto": "De las siguientes respuestas, ¿cuál se considera una madera blanda?",
+    "respuestas": [
+      {
+        "texto": "Nogal",
+        "correcta": false
+      },
+      {
+        "texto": "Olmo",
+        "correcta": false
+      },
+      {
+        "texto": "Sequoya",
+        "correcta": true
+      },
+      {
+        "correcta": false
+      }
+    ]
+  },
+  {
+    "id": "12_0._test_2017_tl_operario_32",
+    "categoria": "específico",
+    "tema": "12",
+    "descripcionTema": "Carpinteria",
+    "nombreExamen": "0. Test 2017 TL Operario",
+    "numeroPreguntaExamen": "32",
+    "texto": "Cuando hablamos de 'serrar en sentido de la veta' nos referimos a:",
+    "respuestas": [
+      {
+        "texto": "Cortar la madera perpendicularmente respecto de la fibra",
+        "correcta": false
+      },
+      {
+        "texto": "Cortar la tabla a lo largo, en la misma dirección que las células longitudinales",
+        "correcta": true
+      },
+      {
+        "texto": "Cortar la tabla de forma inclinada hasta alcanzar el centro del tronco",
+        "correcta": false
+      },
+      {
+        "correcta": false
+      }
+    ]
+  },
+  {
+    "id": "12_0._test_2017_tl_operario_33",
+    "categoria": "específico",
+    "tema": "12",
+    "descripcionTema": "Carpinteria",
+    "nombreExamen": "0. Test 2017 TL Operario",
+    "numeroPreguntaExamen": "33",
+    "texto": "¿Cuál de las siguientes herramientas deberé utilizar si debemos eliminar las virutas que embotan la superficie de limas y escofinas?",
+    "respuestas": [
+      {
+        "texto": "Cepillo",
+        "correcta": false
+      },
+      {
+        "texto": "Carda",
+        "correcta": true
+      },
+      {
+        "texto": "Bruñidor",
+        "correcta": false
+      },
+      {
+        "correcta": false
+      }
+    ]
+  },
+  {
+    "id": "12_0._test_2017_tl_operario_34",
+    "categoria": "específico",
+    "tema": "12",
+    "descripcionTema": "Carpinteria",
+    "nombreExamen": "0. Test 2017 TL Operario",
+    "numeroPreguntaExamen": "34",
+    "texto": "Si tenemos que levantar tachuelas y pequeños clavos con cabeza de una pieza de madera deberemos usar:",
+    "respuestas": [
+      {
+        "texto": "El pie de cabra",
+        "correcta": true
+      },
+      {
+        "texto": "Bruñidor",
+        "correcta": false
+      },
+      {
+        "texto": "Gramil",
+        "correcta": false
+      },
+      {
+        "correcta": false
+      }
+    ]
+  },
+  {
+    "id": "12_0._test_2017_tl_operario_36",
+    "categoria": "específico",
+    "tema": "12",
+    "descripcionTema": "Carpinteria",
+    "nombreExamen": "0. Test 2017 TL Operario",
+    "numeroPreguntaExamen": "36",
+    "texto": "Las principales partes de un tornillo son:",
+    "respuestas": [
+      {
+        "texto": "Cabeza, vástago y rosca",
+        "correcta": true
+      },
+      {
+        "texto": "Cabeza, fondo y arandela",
+        "correcta": false
+      },
+      {
+        "texto": "Cabeza, sinfín y rosca",
+        "correcta": false
+      },
+      {
+        "correcta": false
+      }
+    ]
+  },
+  {
+    "id": "12_0._test_2017_tl_operario_37",
+    "categoria": "específico",
+    "tema": "12",
+    "descripcionTema": "Carpinteria",
+    "nombreExamen": "0. Test 2017 TL Operario",
+    "numeroPreguntaExamen": "37",
+    "texto": "Cuál de las siguientes respuestas no se refiere a un tipo de ranura de los tornillos:",
+    "respuestas": [
+      {
+        "texto": "Phillips o de cruz",
+        "correcta": false
+      },
+      {
+        "texto": "Torx",
+        "correcta": false
+      },
+      {
+        "texto": "Tiranta",
+        "correcta": true
+      },
+      {
+        "correcta": false
+      }
+    ]
+  },
+  {
+    "id": "12_0._test_2017_tl_operario_38",
+    "categoria": "específico",
+    "tema": "12",
+    "descripcionTema": "Carpinteria",
+    "nombreExamen": "0. Test 2017 TL Operario",
+    "numeroPreguntaExamen": "38",
+    "texto": "De los siguientes acabados para la madera, cuál no resiste bien la humedad ni el calor:",
+    "respuestas": [
+      {
+        "texto": "El barniz",
+        "correcta": false
+      },
+      {
+        "texto": "Los aceites y las ceras",
+        "correcta": false
+      },
+      {
+        "texto": "Las lacas",
+        "correcta": true
+      },
+      {
+        "correcta": false
+      }
+    ]
+  },
+  {
+    "id": "12_0._test_2017_tl_operario_39",
+    "categoria": "específico",
+    "tema": "12",
+    "descripcionTema": "Carpinteria",
+    "nombreExamen": "0. Test 2017 TL Operario",
+    "numeroPreguntaExamen": "39",
+    "texto": "Cuál de estos tipos de ranura de tornillo, tiene forma de estrella:",
+    "respuestas": [
+      {
+        "texto": "Phillips",
+        "correcta": false
+      },
+      {
+        "texto": "Pozidriv",
+        "correcta": true
+      },
+      {
+        "texto": "Torx",
+        "correcta": false
+      },
+      {
+        "correcta": false
+      }
+    ]
+  },
+  {
+    "id": "25_0._test_2017_tl_operario_40",
+    "categoria": "específico",
+    "tema": "25",
+    "descripcionTema": "Organigrama y Manual de Atencion",
+    "nombreExamen": "0. Test 2017 TL Operario",
+    "numeroPreguntaExamen": "40",
+    "texto": "Hay cuatro factores según los cuáles las personas usuarias juzgan la calidad de un servicio. Uno de los siguientes no está entre esos cuatro factores:",
+    "respuestas": [
+      {
+        "texto": "La seguridad y fiabilidad.",
+        "correcta": false
+      },
+      {
+        "texto": "Los aspectos tangibles.",
+        "correcta": false
+      },
+      {
+        "texto": "La apatía.",
+        "correcta": true
+      },
+      {
+        "correcta": false
+      }
+    ]
+  },
+  {
+    "id": "25_0._test_2017_tl_operario_41",
+    "categoria": "específico",
+    "tema": "25",
+    "descripcionTema": "Organigrama y Manual de Atencion",
+    "nombreExamen": "0. Test 2017 TL Operario",
+    "numeroPreguntaExamen": "41",
+    "texto": "El factor según el cual las personas usuarias juzgan la calidad de un servicio que consiste en recibir un tratamiento lo más sensible y personalizado posible, con demostraciones palpables de que el personal que lo atiende tiene voluntad de comprender y satisfacer sus necesidades concretas, se denomina:",
+    "respuestas": [
+      {
+        "texto": "Empatía.",
+        "correcta": true
+      },
+      {
+        "texto": "Capacidad de respuesta.",
+        "correcta": false
+      },
+      {
+        "texto": "Escucha.",
+        "correcta": false
+      },
+      {
+        "correcta": false
+      }
+    ]
+  },
+  {
+    "id": "25_0._test_2017_tl_operario_42",
+    "categoria": "específico",
+    "tema": "25",
+    "descripcionTema": "Organigrama y Manual de Atencion",
+    "nombreExamen": "0. Test 2017 TL Operario",
+    "numeroPreguntaExamen": "42",
+    "texto": "Desde el punto de vista de la atención a la ciudadanía una queja es:",
+    "respuestas": [
+      {
+        "texto": "Una buena fuente de información de cuáles pueden ser nuestros déficits en la prestación del servicio.",
+        "correcta": true
+      },
+      {
+        "texto": "Una oportunidad para el logro de un compromiso individual de todos los empleados.",
+        "correcta": false
+      },
+      {
+        "texto": "Una ocasión para desarrollar la disciplina verbal.",
+        "correcta": false
+      },
+      {
+        "correcta": false
+      }
+    ]
+  },
+  {
+    "id": "25_0._test_2017_tl_operario_43",
+    "categoria": "específico",
+    "tema": "25",
+    "descripcionTema": "Organigrama y Manual de Atencion",
+    "nombreExamen": "0. Test 2017 TL Operario",
+    "numeroPreguntaExamen": "43",
+    "texto": "Los siete errores de los servicios con atención a la ciudadanía son:",
+    "respuestas": [
+      {
+        "texto": "Frialdad, apatía, robotización, transferencias, sacárselos de encima, excesiva garantía, condescendencia.",
+        "correcta": false
+      },
+      {
+        "texto": "Frialdad, apatía, robotización, transferencias, sacárselos de encima, excesiva reglamentación, condescendencia.",
+        "correcta": true
+      },
+      {
+        "texto": "Frialdad, apatía, robotización, transacciones, sacárselos de encima, excesiva reglamentación, condescendencia.",
+        "correcta": false
+      },
+      {
+        "correcta": false
+      }
+    ]
+  },
+  {
+    "id": "25_0._test_2017_tl_operario_44",
+    "categoria": "específico",
+    "tema": "25",
+    "descripcionTema": "Organigrama y Manual de Atencion",
+    "nombreExamen": "0. Test 2017 TL Operario",
+    "numeroPreguntaExamen": "44",
+    "texto": "La mejora de la calidad desde el punto de vista de la atención a la ciudadanía, se basa en:",
+    "respuestas": [
+      {
+        "texto": "El autocontrol emocional, una actitud activa y de mejora continua.",
+        "correcta": false
+      },
+      {
+        "texto": "a y c son correctas.",
+        "correcta": true
+      },
+      {
+        "texto": "Considerar a cada ciudadano/a como si fuera único, el compromiso individual.",
+        "correcta": false
+      },
+      {
+        "correcta": false
+      }
+    ]
+  },
+  {
+    "id": "25_0._test_2017_tl_operario_45",
+    "categoria": "específico",
+    "tema": "25",
+    "descripcionTema": "Organigrama y Manual de Atencion",
+    "nombreExamen": "0. Test 2017 TL Operario",
+    "numeroPreguntaExamen": "45",
+    "texto": "La habilidad fundamental para la atención a la ciudadanía es:",
+    "respuestas": [
+      {
+        "texto": "La tolerancia a la frustración.",
+        "correcta": false
+      },
+      {
+        "texto": "La forma de atender y percibir.",
+        "correcta": false
+      },
+      {
+        "texto": "La comunicación.",
+        "correcta": true
+      },
+      {
+        "correcta": false
+      }
+    ]
+  },
+  {
+    "id": "25_0._test_2017_tl_operario_46",
+    "categoria": "específico",
+    "tema": "25",
+    "descripcionTema": "Organigrama y Manual de Atencion",
+    "nombreExamen": "0. Test 2017 TL Operario",
+    "numeroPreguntaExamen": "46",
+    "texto": "La habilidad de hablar en la atención a la ciudadanía requiere una 'expresión clara' que significa:",
+    "respuestas": [
+      {
+        "texto": "No utilizar más términos de los estrictamente necesarios.",
+        "correcta": false
+      },
+      {
+        "texto": "Que los términos lingüísticos empleados sean también conocidos por nuestra/o interlocutora/or.",
+        "correcta": true
+      },
+      {
+        "texto": "Que utilicemos la jerga o el argot propio de la Administración Pública.",
+        "correcta": false
+      },
+      {
+        "correcta": false
+      }
+    ]
+  },
+  {
+    "id": "25_0._test_2017_tl_operario_47",
+    "categoria": "específico",
+    "tema": "25",
+    "descripcionTema": "Organigrama y Manual de Atencion",
+    "nombreExamen": "0. Test 2017 TL Operario",
+    "numeroPreguntaExamen": "47",
+    "texto": "En la interacción con la ciudadanía el primer contacto es muy importante. Las primeras palabras deben ir precedidas:",
+    "respuestas": [
+      {
+        "texto": "De contacto ocular.",
+        "correcta": true
+      },
+      {
+        "texto": "De la emisión de un juicio de valor positivo.",
+        "correcta": false
+      },
+      {
+        "texto": "De una actitud firme.",
+        "correcta": false
+      },
+      {
+        "correcta": false
+      }
+    ]
+  },
+  {
+    "id": "25_0._test_2017_tl_operario_48",
+    "categoria": "específico",
+    "tema": "25",
+    "descripcionTema": "Organigrama y Manual de Atencion",
+    "nombreExamen": "0. Test 2017 TL Operario",
+    "numeroPreguntaExamen": "48",
+    "texto": "A la hora de personalizar la atención a la ciudadanía, existen tres niveles de atención:",
+    "respuestas": [
+      {
+        "texto": "Saludo, particularidad y resolución.",
+        "correcta": false
+      },
+      {
+        "texto": "Acogida, recogida y reconocimiento.",
+        "correcta": true
+      },
+      {
+        "texto": "Simpatía, empatía y escucha activa.",
+        "correcta": false
+      },
+      {
+        "correcta": false
+      }
+    ]
+  },
+  {
+    "id": "25_0._test_2017_tl_operario_49",
+    "categoria": "específico",
+    "tema": "25",
+    "descripcionTema": "Organigrama y Manual de Atencion",
+    "nombreExamen": "0. Test 2017 TL Operario",
+    "numeroPreguntaExamen": "49",
+    "texto": "En la escucha activa hay que evitar a toda costa:",
+    "respuestas": [
+      {
+        "texto": "Hacer comentarios acerca del estado emocional de nuestra/o interlocutora/or.",
+        "correcta": true
+      },
+      {
+        "texto": "Demostrar que estamos siguiendo la intervención de nuestra/o interlocutora/or.",
+        "correcta": false
+      },
+      {
+        "texto": "Controlar nuestro tono y volumen de voz.",
+        "correcta": false
+      },
+      {
+        "correcta": false
+      }
+    ]
+  },
+  {
+    "id": "25_0._test_2017_tl_operario_50",
+    "categoria": "específico",
+    "tema": "25",
+    "descripcionTema": "Organigrama y Manual de Atencion",
+    "nombreExamen": "0. Test 2017 TL Operario",
+    "numeroPreguntaExamen": "50",
+    "texto": "Para una correcta atención a la ciudadanía es, entre otras cosas, necesario conocer y controlar nuestros propios pensamientos, porque lo que pensamos sobre nosotros mismos y lo primero que pensamos sobre una ciudadana/o en particular es decisivo para predecir la 'calidad del encuentro'. Por eso:",
+    "respuestas": [
+      {
+        "texto": "Hay que conocer los componentes sociales que influyen en el comportamiento de las personas.",
+        "correcta": false
+      },
+      {
+        "texto": "Hay que expresarse de forma breve, clara y precisa.",
+        "correcta": false
+      },
+      {
+        "texto": "Hay que evitar las profecías autocumplidas y las etiquetas.",
+        "correcta": true
+      },
+      {
+        "correcta": false
+      }
+    ]
+  },
+  {
+    "id": "25_0._test_2017_tl_operario_51",
+    "categoria": "específico",
+    "tema": "25",
+    "descripcionTema": "Organigrama y Manual de Atencion",
+    "nombreExamen": "0. Test 2017 TL Operario",
+    "numeroPreguntaExamen": "51",
+    "texto": "El volumen y el tono de voz es un mensaje que se emite en la comunicación de tipo:",
+    "respuestas": [
+      {
+        "texto": "Verbal",
+        "correcta": false
+      },
+      {
+        "texto": "No verbal",
+        "correcta": true
+      },
+      {
+        "texto": "Proxémico",
+        "correcta": false
+      },
+      {
+        "correcta": false
+      }
+    ]
+  },
+  {
+    "id": "11_0._test_2017_tl_operario_52",
+    "categoria": "específico",
+    "tema": "11",
+    "descripcionTema": "Fontaneria",
+    "nombreExamen": "0. Test 2017 TL Operario",
+    "numeroPreguntaExamen": "52",
+    "texto": "El agua de consumo humano que se pone a disposición del consumidor, debe cumplir unos requisitos de calidad. Para las aguas suministradas a través de una red de distribución, ¿en qué punto debe cumplir esos requisitos de calidad?:",
+    "respuestas": [
+      {
+        "texto": "En la salida de la planta potabilizadora, ya que la obtención de datos de calidad del agua queda desvirtuada por la red de distribución.",
+        "correcta": false
+      },
+      {
+        "texto": "En la llave de paso de la acometida, ya que la instalación interior del inmueble no es responsabilidad del gestor del abastecimiento.",
+        "correcta": false
+      },
+      {
+        "texto": "En el punto en el cual surge de los grifos que son utilizados habitualmente para el consumo humano, ya que así lo establece la legislación.",
+        "correcta": true
+      },
+      {
+        "correcta": false
+      }
+    ]
+  },
+  {
+    "id": "11_0._test_2017_tl_operario_53",
+    "categoria": "específico",
+    "tema": "11",
+    "descripcionTema": "Fontaneria",
+    "nombreExamen": "0. Test 2017 TL Operario",
+    "numeroPreguntaExamen": "53",
+    "texto": "En una instalación de distribución de calefacción interior, mixta de acero negro y cobre, ¿qué material se debería colocar en primer lugar según el sentido de circulación del agua por las tuberías?",
+    "respuestas": [
+      {
+        "texto": "Es independiente, pero se suele colocar visto el cobre.",
+        "correcta": false
+      },
+      {
+        "texto": "Se debe instalar el acero antes del cobre, con relación al sentido de circulación del agua.",
+        "correcta": true
+      },
+      {
+        "texto": "Se coloca en primer lugar el cobre y posteriormente el acero, con relación al sentido de circulación del agua.",
+        "correcta": false
+      },
+      {
+        "correcta": false
+      }
+    ]
+  },
+  {
+    "id": "11_0._test_2017_tl_operario_54",
+    "categoria": "específico",
+    "tema": "11",
+    "descripcionTema": "Fontaneria",
+    "nombreExamen": "0. Test 2017 TL Operario",
+    "numeroPreguntaExamen": "54",
+    "texto": "El tubo de cobre que se usa para instalaciones de agua interiores en estado de calidad duro (temple duro), se suministra normalmente en:",
+    "respuestas": [
+      {
+        "texto": "En tiras rectas de longitudes entre 4 m a 6 m",
+        "correcta": true
+      },
+      {
+        "texto": "En rollos de entre 6 m y 30 m",
+        "correcta": false
+      },
+      {
+        "texto": "En rollo o en tira recta según le interese al instalador.",
+        "correcta": false
+      },
+      {
+        "correcta": false
+      }
+    ]
+  },
+  {
+    "id": "11_0._test_2017_tl_operario_55",
+    "categoria": "específico",
+    "tema": "11",
+    "descripcionTema": "Fontaneria",
+    "nombreExamen": "0. Test 2017 TL Operario",
+    "numeroPreguntaExamen": "55",
+    "texto": "Una ventilación primaria de la red de aguas residuales, correctamente calculada, en un edificio de dos plantas, se considera suficiente si:",
+    "respuestas": [
+      {
+        "texto": "Los ramales de desagüe no superan los 6 m.",
+        "correcta": false
+      },
+      {
+        "texto": "Los ramales de desagüe poseen una pendiente del 2%.",
+        "correcta": false
+      },
+      {
+        "texto": "Los ramales de desagüe no alcanzan los 5 m.",
+        "correcta": true
+      },
+      {
+        "correcta": false
+      }
+    ]
+  },
+  {
+    "id": "11_0._test_2017_tl_operario_56",
+    "categoria": "específico",
+    "tema": "11",
+    "descripcionTema": "Fontaneria",
+    "nombreExamen": "0. Test 2017 TL Operario",
+    "numeroPreguntaExamen": "56",
+    "texto": "La utilización de tubería de polietileno para la instalación de suministro de agua en un edificio implica que el material que la conforma:",
+    "respuestas": [
+      {
+        "texto": "Debe ser resistente a temperaturas de hasta 40 ºC.",
+        "correcta": true
+      },
+      {
+        "texto": "Debe ser resistente a temperaturas de hasta 60 ºC.",
+        "correcta": false
+      },
+      {
+        "texto": "Debe ser resistente a la temperatura máxima de cálculo de agua caliente.",
+        "correcta": false
+      },
+      {
+        "correcta": false
+      }
+    ]
+  },
+  {
+    "id": "11_0._test_2017_tl_operario_57",
+    "categoria": "específico",
+    "tema": "11",
+    "descripcionTema": "Fontaneria",
+    "nombreExamen": "0. Test 2017 TL Operario",
+    "numeroPreguntaExamen": "57",
+    "texto": "¿En qué consiste un cierre hidráulico en una red interior de saneamiento:",
+    "respuestas": [
+      {
+        "texto": "Es un dispositivo que retiene una determinada cantidad de agua que impide el paso de aire fétido desde la red de evacuación a los locales donde están instalados los aparatos sanitarios.",
+        "correcta": true
+      },
+      {
+        "texto": "Es un dispositivo que impide el paso de agua y paralelamente el paso de aire fétido desde la red de evacuación a los locales donde están instalados los aparatos sanitarios.",
+        "correcta": false
+      },
+      {
+        "texto": "Es un dispositivo que retiene una determinada cantidad de agua y por tanto elimina parte del paso de aire fétido desde la red de evacuación a los locales donde están instalados los aparatos sanitarios.",
+        "correcta": false
+      },
+      {
+        "correcta": false
+      }
+    ]
+  },
+  {
+    "id": "11_0._test_2017_tl_operario_58",
+    "categoria": "específico",
+    "tema": "11",
+    "descripcionTema": "Fontaneria",
+    "nombreExamen": "0. Test 2017 TL Operario",
+    "numeroPreguntaExamen": "58",
+    "texto": "De los tres grupos de herramientas y/o materiales relacionados a continuación, ¿cuál de ellos se puede clasificar como propio de fontanería?",
+    "respuestas": [
+      {
+        "texto": "Llave inglesa, abocardador, escofina de ajustar, estopa.",
+        "correcta": false
+      },
+      {
+        "texto": "Llave grifa, garlopa, cortatubos, llave de lavabo.",
+        "correcta": false
+      },
+      {
+        "texto": "Llave Stillson, tenaza curvatubos, cinta de teflón, abocinador.",
+        "correcta": true
+      },
+      {
+        "correcta": false
+      }
+    ]
+  },
+  {
+    "id": "11_0._test_2017_tl_operario_59",
+    "categoria": "específico",
+    "tema": "11",
+    "descripcionTema": "Fontaneria",
+    "nombreExamen": "0. Test 2017 TL Operario",
+    "numeroPreguntaExamen": "59",
+    "texto": "En la ejecución de redes de tuberías de cobre, las uniones se pueden realizar con manguitos mecánicos, que podrán ser:",
+    "respuestas": [
+      {
+        "texto": "De compresión sencilla, de compresión con junta tórica y de pestañas.",
+        "correcta": false
+      },
+      {
+        "texto": "De compresión, de ajuste cónico y de pestañas.",
+        "correcta": true
+      },
+      {
+        "texto": "De compresión y de ajuste cónico.",
+        "correcta": false
+      },
+      {
+        "correcta": false
+      }
+    ]
+  },
+  {
+    "id": "10_0._test_2017_tl_operario_60",
+    "categoria": "específico",
+    "tema": "10",
+    "descripcionTema": "Albañileria",
+    "nombreExamen": "0. Test 2017 TL Operario",
+    "numeroPreguntaExamen": "60",
+    "texto": "El aparejo de una fábrica en albañilería se entiende como:",
+    "respuestas": [
+      {
+        "texto": "Forma de conectar las tabiquerías de ladrillo cuando existen paños perpendiculares entre sí.",
+        "correcta": false
+      },
+      {
+        "texto": "Disposición regular de las piezas de ladrillo, bloque, etc., trabadas para que trabajen conjuntamente.",
+        "correcta": true
+      },
+      {
+        "texto": "Forma en que se disponen las llagas para que los tendeles mantengan la horizontalidad.",
+        "correcta": false
+      },
+      {
+        "correcta": false
+      }
+    ]
+  },
+  {
+    "id": "10_0._test_2017_tl_operario_61",
+    "categoria": "específico",
+    "tema": "10",
+    "descripcionTema": "Albañileria",
+    "nombreExamen": "0. Test 2017 TL Operario",
+    "numeroPreguntaExamen": "61",
+    "texto": "¿Qué son las adarajas y endejas en albañilería?",
+    "respuestas": [
+      {
+        "texto": "Pieza parcial de ladrillo superior a 1/2 de su soga pero inferior a 1 pie",
+        "correcta": false
+      },
+      {
+        "texto": "Forma de trabazón típica del enlace, a modo de llaves, entre las dos hojas de muros capuchinos cuando se interrumpe su construcción",
+        "correcta": false
+      },
+      {
+        "texto": "Traba de la fábrica, formando entrantes y salientes, cuando dos partes de ésta hayan de levantarse en épocas distintas, y no es posible dejar escalonada la que se ejecuta primero",
+        "correcta": true
+      },
+      {
+        "correcta": false
+      }
+    ]
+  },
+  {
+    "id": "10_0._test_2017_tl_operario_62",
+    "categoria": "específico",
+    "tema": "10",
+    "descripcionTema": "Albañileria",
+    "nombreExamen": "0. Test 2017 TL Operario",
+    "numeroPreguntaExamen": "62",
+    "texto": "¿Qué deberíamos hacer cuando se produce un falso fraguado en una pasta de cemento durante o después de su amasado?",
+    "respuestas": [
+      {
+        "texto": "El desprendimiento de calor de fraguado es escasamente importante y se manifiesta una brusca rigidez en la pasta, lo que obliga a incrementar el agua de amasado. Esta adición de agua no modificará la relación agua cemento en más del 50%",
+        "correcta": false
+      },
+      {
+        "texto": "Podemos utilizar la pasta para la ejecución de fábricas de ladrillo pero no para enfoscar, al ser más fácil su desprendimiento en el segundo caso",
+        "correcta": false
+      },
+      {
+        "texto": "El falso fraguado, aunque molesto para el amasado, en general, no suele presentar graves inconvenientes, por cuanto un amasado más continuado restituye a la pasta su plasticidad, haciéndose el fraguado normal y no variando apreciablemente las resistencias finales",
+        "correcta": true
+      },
+      {
+        "correcta": false
+      }
+    ]
+  },
+  {
+    "id": "10_0._test_2017_tl_operario_63",
+    "categoria": "específico",
+    "tema": "10",
+    "descripcionTema": "Albañileria",
+    "nombreExamen": "0. Test 2017 TL Operario",
+    "numeroPreguntaExamen": "63",
+    "texto": "La terraja es un utensilio utilizado en albañilería.",
+    "respuestas": [
+      {
+        "texto": "La afirmación es cierta, ya que sirve para ejecutar en obra las molduras de yeso, estuco y mortero",
+        "correcta": true
+      },
+      {
+        "texto": "Es falso. La denominación de terraja corresponde exclusivamente a la herramienta utilizada por el fontanero para realizar roscas",
+        "correcta": false
+      },
+      {
+        "texto": "Utensilio para marcar rehundidos en los enfoscados de mortero, que mejoren el agarre de la pasta de los alicatados",
+        "correcta": false
+      },
+      {
+        "correcta": false
+      }
+    ]
+  },
+  {
+    "id": "10_0._test_2017_tl_operario_64",
+    "categoria": "específico",
+    "tema": "10",
+    "descripcionTema": "Albañileria",
+    "nombreExamen": "0. Test 2017 TL Operario",
+    "numeroPreguntaExamen": "64",
+    "texto": "¿Cuál de estos hormigones es falso?",
+    "respuestas": [
+      {
+        "texto": "Hormigón ciclópeo",
+        "correcta": false
+      },
+      {
+        "texto": "Hormigón autocompactante",
+        "correcta": false
+      },
+      {
+        "texto": "Hormigón lastrado",
+        "correcta": true
+      },
+      {
+        "correcta": false
+      }
+    ]
+  },
+  {
+    "id": "10_0._test_2017_tl_operario_65",
+    "categoria": "específico",
+    "tema": "10",
+    "descripcionTema": "Albañileria",
+    "nombreExamen": "0. Test 2017 TL Operario",
+    "numeroPreguntaExamen": "65",
+    "texto": "La cal hidráulica natural, que se puede utilizar para la elaboración de morteros,...",
+    "respuestas": [
+      {
+        "texto": "es una cal procedente de la calcinación de calizas que contienen menos del 5% de arcilla",
+        "correcta": false
+      },
+      {
+        "texto": "tiene la propiedad de endurecer y fraguar en sitios húmedos y debajo del agua",
+        "correcta": true
+      },
+      {
+        "texto": "es una cal grasa cuyo contenido de arcilla es inferior al 5% y es capaz de disolverse en el agua",
+        "correcta": false
+      },
+      {
+        "correcta": false
+      }
+    ]
+  },
+  {
+    "id": "10_0._test_2017_tl_operario_66",
+    "categoria": "específico",
+    "tema": "10",
+    "descripcionTema": "Albañileria",
+    "nombreExamen": "0. Test 2017 TL Operario",
+    "numeroPreguntaExamen": "66",
+    "texto": "Las camillas utilizadas en construcción son:",
+    "respuestas": [
+      {
+        "texto": "estacas aisladas que conjuntamente con miras metálicas, permiten mediante cuerdas marcar el límite de la parcela",
+        "correcta": false
+      },
+      {
+        "texto": "camas de mortero de pequeña superficie, que sirven de asiento a los durmientes de apuntalamiento",
+        "correcta": false
+      },
+      {
+        "texto": "son elementos utilizados para señalizar el replanteo de los ejes de la obra, compuestas por dos estacas clavadas en el suelo que sirven de apoyo a una tabla horizontal, en la que se señala un punto de paso del eje mediante clavos",
+        "correcta": true
+      },
+      {
+        "correcta": false
+      }
+    ]
+  },
+  {
+    "id": "10_0._test_2017_tl_operario_67",
+    "categoria": "específico",
+    "tema": "10",
+    "descripcionTema": "Albañileria",
+    "nombreExamen": "0. Test 2017 TL Operario",
+    "numeroPreguntaExamen": "67",
+    "texto": "Para salvar un desnivel entre dos planos horizontales de pavimento que disten como máximo 5 cm en la vertical, la pendiente no podrá exceder del:",
+    "respuestas": [
+      {
+        "texto": 0.25,
+        "correcta": true
+      },
+      {
+        "texto": 0.1,
+        "correcta": false
+      },
+      {
+        "texto": 0.15,
+        "correcta": false
+      },
+      {
+        "correcta": false
+      }
+    ]
+  },
+  {
+    "id": "9_0._test_2017_tl_operario_68",
+    "categoria": "específico",
+    "tema": "9",
+    "descripcionTema": "Electricidad",
+    "nombreExamen": "0. Test 2017 TL Operario",
+    "numeroPreguntaExamen": "68",
+    "texto": "Los suministros de energía, a efectos del Reglamento Electrotécnico de Baja Tensión, se clasifican en normales y complementarios, ¿qué otro nombre reciben los suministros complementarios?",
+    "respuestas": [
+      {
+        "texto": "De señalización",
+        "correcta": false
+      },
+      {
+        "texto": "De seguridad",
+        "correcta": true
+      },
+      {
+        "texto": "De grupo electrógeno",
+        "correcta": false
+      },
+      {
+        "correcta": false
+      }
+    ]
+  },
+  {
+    "id": "9_0._test_2017_tl_operario_69",
+    "categoria": "específico",
+    "tema": "9",
+    "descripcionTema": "Electricidad",
+    "nombreExamen": "0. Test 2017 TL Operario",
+    "numeroPreguntaExamen": "69",
+    "texto": "Los circuitos destinados a las tomas de corriente, de uso general, en viviendas, normalmente utilizan:",
+    "respuestas": [
+      {
+        "texto": "Conductores de 2,5 mm² de sección sin toma de tierra",
+        "correcta": false
+      },
+      {
+        "texto": "Conductores de 1,5 mm² de sección y conductor de protección",
+        "correcta": false
+      },
+      {
+        "texto": "Conductores de 2,5 mm² de sección y conductor de protección",
+        "correcta": true
+      },
+      {
+        "correcta": false
+      }
+    ]
+  },
+  {
+    "id": "9_0._test_2017_tl_operario_70",
+    "categoria": "específico",
+    "tema": "9",
+    "descripcionTema": "Electricidad",
+    "nombreExamen": "0. Test 2017 TL Operario",
+    "numeroPreguntaExamen": "70",
+    "texto": "Las acometidas eléctricas según su trazado podrán ser aéreas, subterráneas o mixtas; esta línea parte de la red de distribución y alimenta:",
+    "respuestas": [
+      {
+        "texto": "El interruptor de control de potencia",
+        "correcta": false
+      },
+      {
+        "texto": "La caja general de protección o unidad funcional equivalente",
+        "correcta": true
+      },
+      {
+        "texto": "Ninguna de las anteriores respuestas es correcta",
+        "correcta": false
+      },
+      {
+        "correcta": false
+      }
+    ]
+  },
+  {
+    "id": "9_0._test_2017_tl_operario_71",
+    "categoria": "específico",
+    "tema": "9",
+    "descripcionTema": "Electricidad",
+    "nombreExamen": "0. Test 2017 TL Operario",
+    "numeroPreguntaExamen": "71",
+    "texto": "Si en una instalación eléctrica de una vivienda nueva, existe una derivación o fuga a tierra de 300 mA, ¿qué equipo de protección actúa?",
+    "respuestas": [
+      {
+        "texto": "El cortacircuito fusible si es de calibre adecuado",
+        "correcta": false
+      },
+      {
+        "texto": "Siempre el interruptor magnetotérmico",
+        "correcta": false
+      },
+      {
+        "texto": "El interruptor diferencial",
+        "correcta": true
+      },
+      {
+        "correcta": false
+      }
+    ]
+  },
+  {
+    "id": "9_0._test_2017_tl_operario_72",
+    "categoria": "específico",
+    "tema": "9",
+    "descripcionTema": "Electricidad",
+    "nombreExamen": "0. Test 2017 TL Operario",
+    "numeroPreguntaExamen": "72",
+    "texto": "¿Cuál es el objeto de la puesta a tierra en una instalación eléctrica?:",
+    "respuestas": [
+      {
+        "texto": "Eliminar totalmente la tensión respecto a tierra e impedir la actuación de protecciones",
+        "correcta": false
+      },
+      {
+        "texto": "Limitar la tensión respecto a tierra, asegurar la actuación de protecciones y disminuir riesgos",
+        "correcta": true
+      },
+      {
+        "texto": "Proteger los interruptores automáticos",
+        "correcta": false
+      },
+      {
+        "correcta": false
+      }
+    ]
+  },
+  {
+    "id": "9_0._test_2017_tl_operario_73",
+    "categoria": "específico",
+    "tema": "9",
+    "descripcionTema": "Electricidad",
+    "nombreExamen": "0. Test 2017 TL Operario",
+    "numeroPreguntaExamen": "73",
+    "texto": "La tensión eléctrica se mide con:",
+    "respuestas": [
+      {
+        "texto": "El voltímetro y se conecta en serie",
+        "correcta": false
+      },
+      {
+        "texto": "El voltímetro y se conecta en paralelo",
+        "correcta": true
+      },
+      {
+        "texto": "El amperímetro y se coloca en paralelo",
+        "correcta": false
+      },
+      {
+        "correcta": false
+      }
+    ]
+  },
+  {
+    "id": "9_0._test_2017_tl_operario_74",
+    "categoria": "específico",
+    "tema": "9",
+    "descripcionTema": "Electricidad",
+    "nombreExamen": "0. Test 2017 TL Operario",
+    "numeroPreguntaExamen": "74",
+    "texto": "Los conductores y cables que se emplean en las instalaciones eléctricas de los edificios, serán:",
+    "respuestas": [
+      {
+        "texto": "Excepcionalmente aislados",
+        "correcta": false
+      },
+      {
+        "texto": "A veces aislados",
+        "correcta": false
+      },
+      {
+        "texto": "Siempre aislados, excepto cuando vayan montados sobre aisladores",
+        "correcta": true
+      },
+      {
+        "correcta": false
+      }
+    ]
+  },
+  {
+    "id": "9_0._test_2017_tl_operario_75",
+    "categoria": "específico",
+    "tema": "9",
+    "descripcionTema": "Electricidad",
+    "nombreExamen": "0. Test 2017 TL Operario",
+    "numeroPreguntaExamen": "75",
+    "texto": "Los dispositivos generales de mando y protección de las viviendas, se situarán:",
+    "respuestas": [
+      {
+        "texto": "Lo más cerca posible del punto de entrada de la derivación individual al local o vivienda del usuario",
+        "correcta": true
+      },
+      {
+        "texto": "Cerca de la salida de emergencia",
+        "correcta": false
+      },
+      {
+        "texto": "En la centralización de contadores",
+        "correcta": false
+      },
+      {
+        "correcta": false
+      }
+    ]
+  },
+  {
+    "id": "9_0._test_2017_tl_operario_76",
+    "categoria": "específico",
+    "tema": "9",
+    "descripcionTema": "Electricidad",
+    "nombreExamen": "0. Test 2017 TL Operario",
+    "numeroPreguntaExamen": "76",
+    "texto": "En un circuito eléctrico de una lámpara fluorescente, con reactancia electrónica:",
+    "respuestas": [
+      {
+        "texto": "El cebador acelera el encendido de la lámpara",
+        "correcta": false
+      },
+      {
+        "texto": "El cebador reduce el consumo de energía",
+        "correcta": false
+      },
+      {
+        "texto": "El cebador no existe",
+        "correcta": true
+      },
+      {
+        "correcta": false
+      }
+    ]
+  },
+  {
+    "id": "9_0._test_2017_tl_operario_77",
+    "categoria": "específico",
+    "tema": "9",
+    "descripcionTema": "Electricidad",
+    "nombreExamen": "0. Test 2017 TL Operario",
+    "numeroPreguntaExamen": "77",
+    "texto": "Una unidad de intensidad eléctrica es:",
+    "respuestas": [
+      {
+        "texto": "Amperio (A)",
+        "correcta": true
+      },
+      {
+        "texto": "Vatio (W)",
+        "correcta": false
+      },
+      {
+        "texto": "Voltio (V)",
+        "correcta": false
+      },
+      {
+        "correcta": false
+      }
+    ]
+  },
+  {
+    "id": "9_0._test_2017_tl_operario_78",
+    "categoria": "específico",
+    "tema": "9",
+    "descripcionTema": "Electricidad",
+    "nombreExamen": "0. Test 2017 TL Operario",
+    "numeroPreguntaExamen": "78",
+    "texto": "Los interruptores diferenciales, cuando el valor de la sensibilidad de disparo es igual o inferior a 30 mA se denominan:",
+    "respuestas": [
+      {
+        "texto": "De baja sensibilidad",
+        "correcta": false
+      },
+      {
+        "texto": "De alta sensibilidad",
+        "correcta": true
+      },
+      {
+        "texto": "De sensibilidad reducida",
+        "correcta": false
+      },
+      {
+        "correcta": false
+      }
+    ]
+  },
+  {
+    "id": "9_0._test_2017_tl_operario_79",
+    "categoria": "específico",
+    "tema": "9",
+    "descripcionTema": "Electricidad",
+    "nombreExamen": "0. Test 2017 TL Operario",
+    "numeroPreguntaExamen": "79",
+    "texto": "En las rutas de evacuación de los edificios, el alumbrado de evacuación debe proporcionar a nivel del suelo y en el eje de los pasos, una iluminancia mínima de:",
+    "respuestas": [
+      {
+        "texto": "1 lux",
+        "correcta": true
+      },
+      {
+        "texto": "50 lux",
+        "correcta": false
+      },
+      {
+        "texto": "100 lux",
+        "correcta": false
+      },
+      {
+        "correcta": false
+      }
+    ]
+  },
+  {
+    "id": "9_0._test_2017_tl_operario_80",
+    "categoria": "específico",
+    "tema": "9",
+    "descripcionTema": "Electricidad",
+    "nombreExamen": "0. Test 2017 TL Operario",
+    "numeroPreguntaExamen": "80",
+    "texto": "Las revisiones de las tomas de tierra y su comprobación se deben efectuar:",
+    "respuestas": [
+      {
+        "texto": "Cada cinco años",
+        "correcta": false
+      },
+      {
+        "texto": "Cada dos años",
+        "correcta": false
+      },
+      {
+        "texto": "Al menos anualmente, en la época en la que el terreno esté más seco",
+        "correcta": true
+      },
+      {
+        "correcta": false
+      }
+    ]
+  },
+  {
+    "id": "9_0._test_2017_tl_operario_81",
+    "categoria": "específico",
+    "tema": "9",
+    "descripcionTema": "Electricidad",
+    "nombreExamen": "0. Test 2017 TL Operario",
+    "numeroPreguntaExamen": "81",
+    "texto": "La frecuencia empleada en las redes eléctricas será:",
+    "respuestas": [
+      {
+        "texto": "Entre 40 y 60 Hz",
+        "correcta": false
+      },
+      {
+        "texto": "50 Hz",
+        "correcta": false
+      },
+      {
+        "texto": "Otras frecuencias previa autorización",
+        "correcta": true
+      },
+      {
+        "correcta": false
+      }
+    ]
+  },
+  {
+    "id": "9_0._test_2017_tl_operario_82",
+    "categoria": "específico",
+    "tema": "9",
+    "descripcionTema": "Electricidad",
+    "nombreExamen": "0. Test 2017 TL Operario",
+    "numeroPreguntaExamen": "82",
+    "texto": "Cuando se habla de rigidez dieléctrica de una instalación eléctrica, significa:",
+    "respuestas": [
+      {
+        "texto": "Que los conductores son rígidos",
+        "correcta": false
+      },
+      {
+        "texto": "Ensayo efectuado en la instalación eléctrica",
+        "correcta": true
+      },
+      {
+        "texto": "No es válida ninguna de las anteriores",
+        "correcta": false
+      },
+      {
+        "correcta": false
+      }
+    ]
+  },
+  {
+    "id": "9_0._test_2017_tl_operario_83",
+    "categoria": "específico",
+    "tema": "9",
+    "descripcionTema": "Electricidad",
+    "nombreExamen": "0. Test 2017 TL Operario",
+    "numeroPreguntaExamen": "83",
+    "texto": "Las instalaciones eléctricas en los muebles y demás elementos de mobiliario solamente se podrán realizar si:",
+    "respuestas": [
+      {
+        "texto": "Conductores de 0,6/1 kV",
+        "correcta": false
+      },
+      {
+        "texto": "Conductores de sección mínima 6 mm²",
+        "correcta": false
+      },
+      {
+        "texto": "Ninguna de las dos respuestas es correcta",
+        "correcta": true
+      },
+      {
+        "correcta": false
+      }
+    ]
+  },
+  {
+    "id": "9_0._test_2017_tl_operario_84",
+    "categoria": "específico",
+    "tema": "9",
+    "descripcionTema": "Electricidad",
+    "nombreExamen": "0. Test 2017 TL Operario",
+    "numeroPreguntaExamen": "84",
+    "texto": "Las instalaciones eléctricas según el Reglamento Electrotécnico de Baja Tensión se subdividen en circuitos para:",
+    "respuestas": [
+      {
+        "texto": "Equilibrado de cargas",
+        "correcta": false
+      },
+      {
+        "texto": "Evitar interrupciones y limitar consecuencias de fallos",
+        "correcta": true
+      },
+      {
+        "texto": "Tener el número mínimo de circuitos",
+        "correcta": false
+      },
+      {
+        "correcta": false
+      }
+    ]
+  },
+  {
+    "id": "9_0._test_2017_tl_operario_85",
+    "categoria": "específico",
+    "tema": "9",
+    "descripcionTema": "Electricidad",
+    "nombreExamen": "0. Test 2017 TL Operario",
+    "numeroPreguntaExamen": "85",
+    "texto": "La sección del conductor de protección de una instalación eléctrica, será:",
+    "respuestas": [
+      {
+        "texto": "Siempre como la de fase",
+        "correcta": false
+      },
+      {
+        "texto": "Depende del neutro",
+        "correcta": false
+      },
+      {
+        "texto": "Ninguna de las dos anteriores",
+        "correcta": true
+      },
+      {
+        "correcta": false
+      }
+    ]
+  },
+  {
+    "id": "9_0._test_2017_tl_operario_86",
+    "categoria": "específico",
+    "tema": "9",
+    "descripcionTema": "Electricidad",
+    "nombreExamen": "0. Test 2017 TL Operario",
+    "numeroPreguntaExamen": "86",
+    "texto": "Al realizar modificaciones en las instalaciones eléctricas existentes:",
+    "respuestas": [
+      {
+        "texto": "No será necesario tramitar documentación",
+        "correcta": false
+      },
+      {
+        "texto": "Solo si aumenta la potencia",
+        "correcta": false
+      },
+      {
+        "texto": "Siempre es necesario tramitar documentación",
+        "correcta": true
+      },
+      {
+        "correcta": false
+      }
+    ]
+  },
+  {
+    "id": "9_0._test_2017_tl_operario_87",
+    "categoria": "específico",
+    "tema": "9",
+    "descripcionTema": "Electricidad",
+    "nombreExamen": "0. Test 2017 TL Operario",
+    "numeroPreguntaExamen": "87",
+    "texto": "El responsable de la acometida eléctrica de un edificio de viviendas será:",
+    "respuestas": [
+      {
+        "texto": "La compañía eléctrica suministradora",
+        "correcta": true
+      },
+      {
+        "texto": "El propietario",
+        "correcta": false
+      },
+      {
+        "texto": "El ayuntamiento",
+        "correcta": false
+      },
+      {
+        "correcta": false
+      }
+    ]
+  },
+  {
+    "id": "11_0._test_2017_tl_operario_88",
+    "categoria": "específico",
+    "tema": "11",
+    "descripcionTema": "Fontaneria",
+    "nombreExamen": "0. Test 2017 TL Operario",
+    "numeroPreguntaExamen": "88",
+    "texto": "¿En qué instalación podremos encontrarnos una caldereta?",
+    "respuestas": [
+      {
+        "texto": "Red de agua fría",
+        "correcta": false
+      },
+      {
+        "texto": "Red de evacuación y saneamiento",
+        "correcta": true
+      },
+      {
+        "texto": "Red de agua caliente sanitaria",
+        "correcta": false
+      },
+      {
+        "correcta": false
+      }
+    ]
+  },
+  {
+    "id": "11_0._test_2017_tl_operario_89",
+    "categoria": "específico",
+    "tema": "11",
+    "descripcionTema": "Fontaneria",
+    "nombreExamen": "0. Test 2017 TL Operario",
+    "numeroPreguntaExamen": "89",
+    "texto": "Para evacuar el aire del interior de las tuberías de una red, ¿qué tipo de válvula utilizaremos?",
+    "respuestas": [
+      {
+        "texto": "Válvula de control",
+        "correcta": false
+      },
+      {
+        "texto": "Válvula de ventosa",
+        "correcta": true
+      },
+      {
+        "texto": "Válvula de clapeta",
+        "correcta": false
+      },
+      {
+        "correcta": false
+      }
+    ]
+  },
+  {
+    "id": "11_0._test_2017_tl_operario_90",
+    "categoria": "específico",
+    "tema": "11",
+    "descripcionTema": "Fontaneria",
+    "nombreExamen": "0. Test 2017 TL Operario",
+    "numeroPreguntaExamen": "90",
+    "texto": "Entre las principales características de las calderas de condensación está:",
+    "respuestas": [
+      {
+        "texto": "Aprovechan el calor de condensación",
+        "correcta": false
+      },
+      {
+        "texto": "Necesidad de evacuar condensados",
+        "correcta": false
+      },
+      {
+        "texto": "Ambas son correctas",
+        "correcta": true
+      },
+      {
+        "correcta": false
+      }
+    ]
+  },
+  {
+    "id": "11_0._test_2017_tl_operario_91",
+    "categoria": "específico",
+    "tema": "11",
+    "descripcionTema": "Fontaneria",
+    "nombreExamen": "0. Test 2017 TL Operario",
+    "numeroPreguntaExamen": "91",
+    "texto": "Si usamos tubería PE-X, estamos usando:",
+    "respuestas": [
+      {
+        "texto": "Polietileno",
+        "correcta": false
+      },
+      {
+        "texto": "Polibutileno",
+        "correcta": false
+      },
+      {
+        "texto": "Polietileno reticulado",
+        "correcta": true
+      },
+      {
+        "correcta": false
+      }
+    ]
+  },
+  {
+    "id": "11_0._test_2017_tl_operario_92",
+    "categoria": "específico",
+    "tema": "11",
+    "descripcionTema": "Fontaneria",
+    "nombreExamen": "0. Test 2017 TL Operario",
+    "numeroPreguntaExamen": "92",
+    "texto": "¿Qué aparato sanitario suele tener cierre hidráulico incorporado?",
+    "respuestas": [
+      {
+        "texto": "Bañera",
+        "correcta": false
+      },
+      {
+        "texto": "Inodoro",
+        "correcta": true
+      },
+      {
+        "texto": "Ambos",
+        "correcta": false
+      },
+      {
+        "correcta": false
+      }
+    ]
+  },
+  {
+    "id": "12_0._test_2017_tl_operario_93",
+    "categoria": "específico",
+    "tema": "12",
+    "descripcionTema": "Carpinteria",
+    "nombreExamen": "0. Test 2017 TL Operario",
+    "numeroPreguntaExamen": "93",
+    "texto": "¿Para qué se usa un cincel?",
+    "respuestas": [
+      {
+        "texto": "Distribuir pegamento",
+        "correcta": false
+      },
+      {
+        "texto": "Ensachar tuberías",
+        "correcta": false
+      },
+      {
+        "texto": "Cortar, ranurar o desbastar material",
+        "correcta": true
+      },
+      {
+        "correcta": false
+      }
+    ]
+  },
+  {
+    "id": "11_0._test_2017_tl_operario_94",
+    "categoria": "específico",
+    "tema": "11",
+    "descripcionTema": "Fontaneria",
+    "nombreExamen": "0. Test 2017 TL Operario",
+    "numeroPreguntaExamen": "94",
+    "texto": "El caudal de agua:",
+    "respuestas": [
+      {
+        "texto": "Es inversamente proporcional",
+        "correcta": false
+      },
+      {
+        "texto": "Es directamente proporcional incluyendo longitud",
+        "correcta": false
+      },
+      {
+        "texto": "Es directamente proporcional a sección y velocidad",
+        "correcta": true
+      },
+      {
+        "correcta": false
+      }
+    ]
+  },
+  {
+    "id": "11_0._test_2017_tl_operario_95",
+    "categoria": "específico",
+    "tema": "11",
+    "descripcionTema": "Fontaneria",
+    "nombreExamen": "0. Test 2017 TL Operario",
+    "numeroPreguntaExamen": "95",
+    "texto": "¿Gracias a qué propiedad física se realiza la soldadura de tuberías de cobre?",
+    "respuestas": [
+      {
+        "texto": "Viscosidad",
+        "correcta": false
+      },
+      {
+        "texto": "Tensión superficial",
+        "correcta": false
+      },
+      {
+        "texto": "Capilaridad",
+        "correcta": true
+      },
+      {
+        "correcta": false
+      }
+    ]
+  },
+  {
+    "id": "10_0._test_2017_tl_operario_96",
+    "categoria": "específico",
+    "tema": "10",
+    "descripcionTema": "Albañileria",
+    "nombreExamen": "0. Test 2017 TL Operario",
+    "numeroPreguntaExamen": "96",
+    "texto": "¿Cuál es la diferencia entre un muro de carga y un tabique?",
+    "respuestas": [
+      {
+        "texto": "Hormigón vs ladrillo",
+        "correcta": false
+      },
+      {
+        "texto": "Contener tierras vs transmitir cargas",
+        "correcta": false
+      },
+      {
+        "texto": "Carga estructural vs división no resistente",
+        "correcta": true
+      },
+      {
+        "correcta": false
+      }
+    ]
+  },
+  {
+    "id": "10_0._test_2017_tl_operario_97",
+    "categoria": "específico",
+    "tema": "10",
+    "descripcionTema": "Albañileria",
+    "nombreExamen": "0. Test 2017 TL Operario",
+    "numeroPreguntaExamen": "97",
+    "texto": "¿Cómo se llama la cara del ladrillo delimitada entre la soga y el grueso?",
+    "respuestas": [
+      {
+        "texto": "Canto",
+        "correcta": true
+      },
+      {
+        "texto": "Testa",
+        "correcta": false
+      },
+      {
+        "texto": "Tabla",
+        "correcta": false
+      },
+      {
+        "correcta": false
+      }
+    ]
+  },
+  {
+    "id": "10_0._test_2017_tl_operario_98",
+    "categoria": "específico",
+    "tema": "10",
+    "descripcionTema": "Albañileria",
+    "nombreExamen": "0. Test 2017 TL Operario",
+    "numeroPreguntaExamen": "98",
+    "texto": "Se denomina escopeta en construcción a:",
+    "respuestas": [
+      {
+        "texto": "Herramienta metálica para golpear",
+        "correcta": false
+      },
+      {
+        "texto": "Junta en arco",
+        "correcta": true
+      },
+      {
+        "texto": "Apoyo de fábrica para arco",
+        "correcta": false
+      },
+      {
+        "correcta": false
+      }
+    ]
+  },
+  {
+    "id": "10_0._test_2017_tl_operario_99",
+    "categoria": "específico",
+    "tema": "10",
+    "descripcionTema": "Albañileria",
+    "nombreExamen": "0. Test 2017 TL Operario",
+    "numeroPreguntaExamen": "99",
+    "texto": "¿Para qué se utiliza un martillo de orejas?",
+    "respuestas": [
+      {
+        "texto": "Partir ladrillos",
+        "correcta": false
+      },
+      {
+        "texto": "Preformar metales",
+        "correcta": false
+      },
+      {
+        "texto": "Insertar y extraer clavos",
+        "correcta": true
+      },
+      {
+        "correcta": false
+      }
+    ]
+  },
+  {
+    "id": "10_0._test_2017_tl_operario_100",
+    "categoria": "específico",
+    "tema": "10",
+    "descripcionTema": "Albañileria",
+    "nombreExamen": "0. Test 2017 TL Operario",
+    "numeroPreguntaExamen": "100",
+    "texto": "Se denomina berenjeno a:",
+    "respuestas": [
+      {
+        "texto": "Ranura en voladizo para evitar agua",
+        "correcta": false
+      },
+      {
+        "texto": "Agujero en muro de contención",
+        "correcta": false
+      },
+      {
+        "texto": "Listón en encofrados para aristas",
+        "correcta": true
+      },
+      {
+        "correcta": false
+      }
+    ]
+  },
+  {
+    "id": "1_0._test_2016_co_operario_1",
+    "categoria": "jurídico",
+    "tema": "1",
+    "descripcionTema": "Constitución",
+    "nombreExamen": "0. Test 2016 CO Operario",
+    "numeroPreguntaExamen": "1",
+    "texto": "Un particular que sufra una lesión en cualquiera de sus bienes y derechos como consecuencia del funcionamiento de los servicios públicos, salvo en los casos de fuerza mayortendrá derecho a:",
+    "respuestas": [
+      {
+        "texto": "Solicitar la incoación de un procedimiento de habeas corpus.",
+        "correcta": false
+      },
+      {
+        "texto": "Indemnización en los términos establecidos por la Ley.",
+        "correcta": true
+      },
+      {
+        "texto": "Solicitar la responsabilidad in vigilando de la Administración Pública, salvo casos de acción fortuita:",
+        "correcta": false
+      },
+      {
+        "correcta": false
+      }
+    ]
+  },
+  {
+    "id": "1_0._test_2016_co_operario_2",
+    "categoria": "jurídico",
+    "tema": "1",
+    "descripcionTema": "Constitución",
+    "nombreExamen": "0. Test 2016 CO Operario",
+    "numeroPreguntaExamen": "2",
+    "texto": "¿Se regulan en la Constitución Española los principios de mérito, capacidad y transparencia?:",
+    "respuestas": [
+      {
+        "texto": "Sí, en el artículo 102.3 de la Constitución Española.",
+        "correcta": false
+      },
+      {
+        "texto": "Los principios de mérito y capacidad están previstos en el artículo 103.3 de la Constitución Española, y élprincipio de transparencia de los procedimientos de selección en elartículo 55.2 del Estatuto Básico del Empleado Público.",
+        "correcta": true
+      },
+      {
+        "texto": "Ninguno de los 3 principios se regulan en la Constitución Española.",
+        "correcta": false
+      },
+      {
+        "correcta": false
+      }
+    ]
+  },
+  {
+    "id": "1_0._test_2016_co_operario_3",
+    "categoria": "jurídico",
+    "tema": "1",
+    "descripcionTema": "Constitución",
+    "nombreExamen": "0. Test 2016 CO Operario",
+    "numeroPreguntaExamen": "3",
+    "texto": "Conforme prevé el artículo 140 de la Constitución Española, ¿quién elige a los Alcaldes?:",
+    "respuestas": [
+      {
+        "texto": "Los Concejales o los vecinos.",
+        "correcta": true
+      },
+      {
+        "texto": "El pueblo.",
+        "correcta": false
+      },
+      {
+        "texto": "Los vecinos y el pueblo.",
+        "correcta": false
+      },
+      {
+        "correcta": false
+      }
+    ]
+  },
+  {
+    "id": "1_0._test_2016_co_operario_4",
+    "categoria": "jurídico",
+    "tema": "1",
+    "descripcionTema": "Constitución",
+    "nombreExamen": "0. Test 2016 CO Operario",
+    "numeroPreguntaExamen": "4",
+    "texto": "Una de las siguientes afirmaciones no es correcta. La Administración Pública...:",
+    "respuestas": [
+      {
+        "texto": "Sirve con objetividad los intereses generales.",
+        "correcta": false
+      },
+      {
+        "texto": "Actúa de acuerdo, entre otros, con los principios de eficacia, jerarquía y autoridad.",
+        "correcta": true
+      },
+      {
+        "texto": "Actúa .de acuerdo, entre otros, con los principios de descentralización, desconcentración y coordinación.",
+        "correcta": false
+      },
+      {
+        "correcta": false
+      }
+    ]
+  },
+  {
+    "id": "2_0._test_2016_co_operario_5",
+    "categoria": "jurídico",
+    "tema": "2",
+    "descripcionTema": "Ley Org. 5/2007 Estatuto de Autonomia",
+    "nombreExamen": "0. Test 2016 CO Operario",
+    "numeroPreguntaExamen": "5",
+    "texto": "Conforme establece el artículo 1.2 del Estatuto de Autonomía de Aragón, los poderes de la Comunidad Autónoma de Aragón emanan:",
+    "respuestas": [
+      {
+        "texto": "Del pueblo y del Estatuto de Autonomía de Aragón.",
+        "correcta": false
+      },
+      {
+        "texto": "Del pueblo aragonés, de la Constitución y del Estatuto de Autonomía de Aragón.",
+        "correcta": false
+      },
+      {
+        "texto": "Del pueblo aragonés y de la Constitución.",
+        "correcta": true
+      },
+      {
+        "correcta": false
+      }
+    ]
+  },
+  {
+    "id": "2_0._test_2016_co_operario_6",
+    "categoria": "jurídico",
+    "tema": "2",
+    "descripcionTema": "Ley Org. 5/2007 Estatuto de Autonomia",
+    "nombreExamen": "0. Test 2016 CO Operario",
+    "numeroPreguntaExamen": "6",
+    "texto": "No corresponde a la Comunidad Autónoma de Aragón la competencia ejecutiva en:",
+    "respuestas": [
+      {
+        "texto": "Propiedad intelectual e industrial.",
+        "correcta": false
+      },
+      {
+        "texto": "Instalaciones radioactivas de segunda, terc,era y cuarta categoría.",
+        "correcta": true
+      },
+      {
+        "texto": "Productos farmacéuticos.",
+        "correcta": false
+      },
+      {
+        "correcta": false
+      }
+    ]
+  },
+  {
+    "id": "2_0._test_2016_co_operario_7",
+    "categoria": "jurídico",
+    "tema": "2",
+    "descripcionTema": "Ley Org. 5/2007 Estatuto de Autonomia",
+    "nombreExamen": "0. Test 2016 CO Operario",
+    "numeroPreguntaExamen": "7",
+    "texto": "En las materias que son competencia exclusiva de la Comunidad Autónoma de Aragón, el Derecho propio:",
+    "respuestas": [
+      {
+        "texto": "Será aplicable en su territorio con preferencia a cualquier otro, en los términos previstos en el Estatuto de Autonomía de Aragón. :",
+        "correcta": true
+      },
+      {
+        "texto": "Será aplicable a la ciudadanía aragonesa, en los términos previstos en el artículo 80.3 del Estatuto de Autonomía de Aragón.",
+        "correcta": false
+      },
+      {
+        "texto": "Será aplicable en su territorio a la ciudadanía aragonesa, en los términos previstos en el artículo 80.3 del Estatuto de Autonomía de Aragón.",
+        "correcta": false
+      },
+      {
+        "correcta": false
+      }
+    ]
+  },
+  {
+    "id": "2_0._test_2016_co_operario_8",
+    "categoria": "jurídico",
+    "tema": "2",
+    "descripcionTema": "Ley Org. 5/2007 Estatuto de Autonomia",
+    "nombreExamen": "0. Test 2016 CO Operario",
+    "numeroPreguntaExamen": "8",
+    "texto": "Gonstituye una competencia exclusiva de la Comunidad Autónoma de Aragón:",
+    "respuestas": [
+      {
+        "texto": "La energía",
+        "correcta": false
+      },
+      {
+        "texto": "La organización territorial propia de la Comunidad.",
+        "correcta": true
+      },
+      {
+        "texto": "El sistema penitenciario.",
+        "correcta": false
+      },
+      {
+        "correcta": false
+      }
+    ]
+  },
+  {
+    "id": "6_0._test_2016_co_operario_9",
+    "categoria": "jurídico",
+    "tema": "6",
+    "descripcionTema": "R.D.L. 5/2015 T.R.E.B.E.P",
+    "nombreExamen": "0. Test 2016 CO Operario",
+    "numeroPreguntaExamen": "9",
+    "texto": "Con carácter general, los puestos de trabajo en la Administración Local y sus Organismos Autónomos serán desempeñados por:",
+    "respuestas": [
+      {
+        "texto": "Personaleventual.",
+        "correcta": false
+      },
+      {
+        "texto": "Personallaboral.",
+        "correcta": false
+      },
+      {
+        "texto": "Personal funcionario.",
+        "correcta": true
+      },
+      {
+        "correcta": false
+      }
+    ]
+  },
+  {
+    "id": "5_0._test_2016_co_operario_10",
+    "categoria": "jurídico",
+    "tema": "5",
+    "descripcionTema": "Ley 7/1985 Reguladora de las Bases del Regimen Local",
+    "nombreExamen": "0. Test 2016 CO Operario",
+    "numeroPreguntaExamen": "10",
+    "texto": "Conforme establece elartículo 94.1 de la Ley de Bases de Régimen Local:",
+    "respuestas": [
+      {
+        "texto": "La jomada de trabajo de los funcionarios de la Administración Local será en cómputo mensual la misma que la fijada para la Administración del Èstado.",
+        "correcta": false
+      },
+      {
+        "texto": "La jornada de trabajo de los funcionarios de la Adminístración Local será en cómputo anual la misma que se fije para los funcionarios de la Administración Civil del Estado.",
+        "correcta": true
+      },
+      {
+        "texto": "'La jomada då tiabajo de los funcionarios de lá Administración Local será en cómputo inensual la que se determine en el respectivo acuerdo o pâcto que se acuerde en los términos previstos en elartículo 38.3 del Estatuto Básico del Empleado Público.",
+        "correcta": false
+      },
+      {
+        "correcta": false
+      }
+    ]
+  },
+  {
+    "id": "3_0._test_2016_co_operario_11",
+    "categoria": "jurídico",
+    "tema": "3",
+    "descripcionTema": "Ley 39/2015 Procedimiento Adm. Común.",
+    "nombreExamen": "0. Test 2016 CO Operario",
+    "numeroPreguntaExamen": "11",
+    "texto": "Según determina el artículo 2.2 de la Ley 39/2015, de 1 de octubre, del Procedimiento Administrativo -Común de las Administraciones Públicas, NO se integran. en el'sector público institucional:",
+    "respuestas": [
+      {
+        "texto": "Las.Universidades públicas. :",
+        "correcta": false
+      },
+      {
+        "texto": "Cuálesquiera .organismos públicos y entidades de derécho público vinculados o dependientes de la Administración Pública.",
+        "correcta": false
+      },
+      {
+        "texto": "Los colegios sujetos a concíerto",
+        "correcta": true
+      },
+      {
+        "correcta": false
+      }
+    ]
+  },
+  {
+    "id": "3_0._test_2016_co_operario_12",
+    "categoria": "jurídico",
+    "tema": "3",
+    "descripcionTema": "Ley 39/2015 Procedimiento Adm. Común.",
+    "nombreExamen": "0. Test 2016 CO Operario",
+    "numeroPreguntaExamen": "12",
+    "texto": "¿Quedan sujetas las entidades de derecho privado vinculadas o dependientes de las Administraciones Públicas a la Ley 39/2015, de I de octubre del Procedimiento Administrativo Común de las Administiaciones Públicas?:",
+    "respuestas": [
+      {
+        "texto": "Si, cuando específicamente se refiera a las mismas, y en todo caso, cuando ejezan potestades administrativas.",
+        "correcta": true
+      },
+      {
+        "texto": "Si, de forma supletoria siguiendo las previsiones contenidas en el artículo 5 de la Ley de Proced im iento Adm inistrativo Co mú n de las Administracíones Pú blicas.",
+        "correcta": false
+      },
+      {
+        "texto": "Las dos respuestas anteriores son incorrectas.",
+        "correcta": false
+      },
+      {
+        "correcta": false
+      }
+    ]
+  },
+  {
+    "id": "8_0._test_2016_co_operario_15",
+    "categoria": "jurídico",
+    "tema": "8",
+    "descripcionTema": "Ley 3/2007 Igualdad",
+    "nombreExamen": "0. Test 2016 CO Operario",
+    "numeroPreguntaExamen": "15",
+    "texto": "El principio de igualdad de trato entre mujeres y hombres supone:",
+    "respuestas": [
+      {
+        "texto": "La ausencia de cualquier tipo de discriminación total o parcial por.vufneración de lo dispuesto en el artículo 2 de la Ley Orgánica 3l2AO7, de22 de mazo.",
+        "correcta": false
+      },
+      {
+        "texto": "La ausencia de toda discriminación que vulnere lo dispuesto en el artlculo 6 de Ia Ley Orgánica 312007, de 22 de mazo.",
+        "correcta": false
+      },
+      {
+        "texto": "La ausencía de toda discriminación directa o indirecta, por îazón de sexo, y especialmente las derivadas de la maternidad, la asunción de obligaciones familiares y el estado civí!. aJ",
+        "correcta": true
+      },
+      {
+        "correcta": false
+      }
+    ]
+  },
+  {
+    "id": "8_0._test_2016_co_operario_16",
+    "categoria": "jurídico",
+    "tema": "8",
+    "descripcionTema": "Ley 3/2007 Igualdad",
+    "nombreExamen": "0. Test 2016 CO Operario",
+    "numeroPreguntaExamen": "16",
+    "texto": "El profesional o persona que tiene como objetivo primordial introducir el enfoque integrado de género o perspectiva de género en todas las Áreas organizativas del Ayuntamiento de Zaragoza es:",
+    "respuestas": [
+      {
+        "texto": "etngente de Igualdad.",
+        "correcta": true
+      },
+      {
+        "texto": "EIAgente de Género.",
+        "correcta": false
+      },
+      {
+        "texto": "El Agente de Control de las situaciones de discriminación.",
+        "correcta": false
+      },
+      {
+        "correcta": false
+      }
+    ]
+  },
+  {
+    "id": "3_0._test_2016_co_operario_17",
+    "categoria": "jurídico",
+    "tema": "3",
+    "descripcionTema": "Ley 39/2015 Procedimiento Adm. Común.",
+    "nombreExamen": "0. Test 2016 CO Operario",
+    "numeroPreguntaExamen": "17",
+    "texto": "Conforme a lo dispuesto en la Ley 39/2015, de 1 de octubre del Procedimiento Administrativo Común de las Administraciones Públicas es objeto de la citada norma y se incluye en la misma:",
+    "respuestas": [
+      {
+        "texto": "El procedimiento tributario.",
+        "correcta": false
+      },
+      {
+        "texto": "gt'procedimiento de resolución de las reclamaciones administrativas previas a la vía civil o laboral.",
+        "correcta": false
+      },
+      {
+        "texto": "El procedimiento sancionador.",
+        "correcta": true
+      },
+      {
+        "correcta": false
+      }
+    ]
+  },
+  {
+    "id": "5_0._test_2016_co_operario_18",
+    "categoria": "jurídico",
+    "tema": "5",
+    "descripcionTema": "Ley 7/1985 Reguladora de las Bases del Regimen Local",
+    "nombreExamen": "0. Test 2016 CO Operario",
+    "numeroPreguntaExamen": "18",
+    "texto": "Las Administraciones Públicas que, en el ejercicio de sus respectivas competencias, establezcan medidas que.limiten el ejercicio de derechos individuales o colectivos o exijan elcumplimiento de requisitos para eldesarrollo de una actividad, deberán aplicar:",
+    "respuestas": [
+      {
+        "texto": "El principio de eficacia.",
+        "correcta": false
+      },
+      {
+        "texto": "El principio de proporcionalidad.",
+        "correcta": true
+      },
+      {
+        "texto": "El principio de jerarquía.",
+        "correcta": false
+      },
+      {
+        "correcta": false
+      }
+    ]
+  },
+  {
+    "id": "5_0._test_2016_co_operario_19",
+    "categoria": "jurídico",
+    "tema": "5",
+    "descripcionTema": "Ley 7/1985 Reguladora de las Bases del Regimen Local",
+    "nombreExamen": "0. Test 2016 CO Operario",
+    "numeroPreguntaExamen": "19",
+    "texto": "Según establece et artículo 101 de la Ley de Bases de Régimen Local los puestos de trabajo vacantes que deban ser cubiertos por funcionarios propios de cada Corporación se proveerán por los procedimientos de:",
+    "respuestas": [
+      {
+        "texto": "Oposición o Concurso-oposición.",
+        "correcta": false
+      },
+      {
+        "texto": "Oposicíón, Concurso-oposíción o libre designacíón.",
+        "correcta": false
+      },
+      {
+        "texto": "Concurso de méritos o libre designación.",
+        "correcta": true
+      },
+      {
+        "correcta": false
+      }
+    ]
+  },
+  {
+    "id": "4_0._test_2016_co_operario_20",
+    "categoria": "jurídico",
+    "tema": "4",
+    "descripcionTema": "R.D.L. 2/2004 Ley Haciendas Locales",
+    "nombreExamen": "0. Test 2016 CO Operario",
+    "numeroPreguntaExamen": "20",
+    "texto": "Los órganos específicos de representación de los funcionarios son:",
+    "respuestas": [
+      {
+        "texto": "Los Delegados de Personal y las Juntas de Personal.",
+        "correcta": true
+      },
+      {
+        "texto": "Las Secciones Sindicales.",
+        "correcta": false
+      },
+      {
+        "texto": "El Comité de Empresa. ANEXO II",
+        "correcta": false
+      },
+      {
+        "correcta": false
+      }
+    ]
+  },
+  {
+    "id": "12_0._test_2016_co_operario_21",
+    "categoria": "específico",
+    "tema": "12",
+    "descripcionTema": "Carpinteria",
+    "nombreExamen": "0. Test 2016 CO Operario",
+    "numeroPreguntaExamen": "21",
+    "texto": "¿Qué es un xilófago?",
+    "respuestas": [
+      {
+        "texto": "Herramienta manual para lijar madera.",
+        "correcta": false
+      },
+      {
+        "texto": "lnstrumento musical.",
+        "correcta": false
+      },
+      {
+        "texto": "Insecto que se alimenta de la madera.",
+        "correcta": true
+      },
+      {
+        "correcta": false
+      }
+    ]
+  },
+  {
+    "id": "12_0._test_2016_co_operario_22",
+    "categoria": "específico",
+    "tema": "12",
+    "descripcionTema": "Carpinteria",
+    "nombreExamen": "0. Test 2016 CO Operario",
+    "numeroPreguntaExamen": "22",
+    "texto": "La iluminación en techo apropiada para trabajar en un taller de carpintería se realizarâ con:",
+    "respuestas": [
+      {
+        "texto": "Lámparas incandescentes.",
+        "correcta": false
+      },
+      {
+        "texto": "Lámparas de neón.",
+        "correcta": false
+      },
+      {
+        "texto": "Lámparas fluorescentes.",
+        "correcta": true
+      },
+      {
+        "correcta": false
+      }
+    ]
+  },
+  {
+    "id": "12_0._test_2016_co_operario_23",
+    "categoria": "específico",
+    "tema": "12",
+    "descripcionTema": "Carpinteria",
+    "nombreExamen": "0. Test 2016 CO Operario",
+    "numeroPreguntaExamen": "23",
+    "texto": "¿Cuál de estas medidas es obligatoria en eltaller de carpintería?",
+    "respuestas": [
+      {
+        "texto": "instalar un sistema de extinción de incendios.",
+        "correcta": true
+      },
+      {
+        "texto": "Acondicionar una zona para el descanso de los trabajadores.",
+        "correcta": false
+      },
+      {
+        "texto": "Organizar un espacio para realizar la facturación.",
+        "correcta": false
+      },
+      {
+        "correcta": false
+      }
+    ]
+  },
+  {
+    "id": "12_0._test_2016_co_operario_24",
+    "categoria": "específico",
+    "tema": "12",
+    "descripcionTema": "Carpinteria",
+    "nombreExamen": "0. Test 2016 CO Operario",
+    "numeroPreguntaExamen": "24",
+    "texto": "La escofina ês una herramienta muy útil de carpintería y nunca debe usarse con los siguientes materiales:",
+    "respuestas": [
+      {
+        "texto": "Maderas blandas.",
+        "correcta": false
+      },
+      {
+        "texto": "Férricos.",
+        "correcta": true
+      },
+      {
+        "texto": "Maderas duras.",
+        "correcta": false
+      },
+      {
+        "correcta": false
+      }
+    ]
+  },
+  {
+    "id": "12_0._test_2016_co_operario_25",
+    "categoria": "específico",
+    "tema": "12",
+    "descripcionTema": "Carpinteria",
+    "nombreExamen": "0. Test 2016 CO Operario",
+    "numeroPreguntaExamen": "25",
+    "texto": "Sólo se puede trabajar bien la madera si:",
+    "respuestas": [
+      {
+        "texto": "Las herramientas de corte están humedecidas con aceite.",
+        "correcta": false
+      },
+      {
+        "texto": "Las herramientas de corte tienen el mango de madera de nogal.",
+        "correcta": false
+      },
+      {
+        "texto": "Las herramientas de corte están correctamente afiladas.",
+        "correcta": true
+      },
+      {
+        "correcta": false
+      }
+    ]
+  },
+  {
+    "id": "12_0._test_2016_co_operario_26",
+    "categoria": "específico",
+    "tema": "12",
+    "descripcionTema": "Carpinteria",
+    "nombreExamen": "0. Test 2016 CO Operario",
+    "numeroPreguntaExamen": "26",
+    "texto": "¿Qué peculiaridad tiene el destornillador de carraca?",
+    "respuestas": [
+      {
+        "texto": "Realiza agujeros en la madera por separacíón de la fibra de la misma.",
+        "correcta": false
+      },
+      {
+        "texto": "Transforma un esfuerzo vertical en giratorio.",
+        "correcta": true
+      },
+      {
+        "texto": "Permite comenzar roscas en maderas donde se van a introducir tornillos.",
+        "correcta": false
+      },
+      {
+        "correcta": false
+      }
+    ]
+  },
+  {
+    "id": "12_0._test_2016_co_operario_27",
+    "categoria": "específico",
+    "tema": "12",
+    "descripcionTema": "Carpinteria",
+    "nombreExamen": "0. Test 2016 CO Operario",
+    "numeroPreguntaExamen": "27",
+    "texto": "¿Cuâl de éstas herramientas permite realizar taladros en la madera sin energía eléctrica?.",
+    "respuestas": [
+      {
+        "texto": "Elberbiquí.",
+        "correcta": true
+      },
+      {
+        "texto": "Elformón.",
+        "correcta": false
+      },
+      {
+        "texto": "La gubia",
+        "correcta": false
+      },
+      {
+        "correcta": false
+      }
+    ]
+  },
+  {
+    "id": "12_0._test_2016_co_operario_28",
+    "categoria": "específico",
+    "tema": "12",
+    "descripcionTema": "Carpinteria",
+    "nombreExamen": "0. Test 2016 CO Operario",
+    "numeroPreguntaExamen": "28",
+    "texto": "Si queremos realizar curvas en madera maciza y tableros manufacturados, ¿cuál de las siguientes herramientas deberemos usar?: '",
+    "respuestas": [
+      {
+        "texto": "Elserrucho para cola de milano.",
+        "correcta": false
+      },
+      {
+        "texto": "La sierra de hender.",
+        "correcta": false
+      },
+      {
+        "texto": "La segueta,",
+        "correcta": true
+      },
+      {
+        "correcta": false
+      }
+    ]
+  },
+  {
+    "id": "12_0._test_2016_co_operario_29",
+    "categoria": "específico",
+    "tema": "12",
+    "descripcionTema": "Carpinteria",
+    "nombreExamen": "0. Test 2016 CO Operario",
+    "numeroPreguntaExamen": "29",
+    "texto": "Se consideran maderas duras las procedentes de los siguientes árboles:",
+    "respuestas": [
+      {
+        "texto": "El nogal, laurel y la caoba.",
+        "correcta": true
+      },
+      {
+        "texto": "El roble, caoba y pino.",
+        "correcta": false
+      },
+      {
+        "texto": "El pino, álamo y guatambú.",
+        "correcta": false
+      },
+      {
+        "correcta": false
+      }
+    ]
+  },
+  {
+    "id": "12_0._test_2016_co_operario_30",
+    "categoria": "específico",
+    "tema": "12",
+    "descripcionTema": "Carpinteria",
+    "nombreExamen": "0. Test 2016 CO Operario",
+    "numeroPreguntaExamen": "30",
+    "texto": "¿Qué tipo de unión debemos realizar si queremos unir dos-piezas en ángùlo?",
+    "respuestas": [
+      {
+        "texto": "Tendremos que empalmar las piezas.",
+        "correcta": false
+      },
+      {
+        "texto": "Tendremos que realizar un ensainble entre las piezas.",
+        "correcta": true
+      },
+      {
+        "texto": "Tmdremos que acoplar las píezas.",
+        "correcta": false
+      },
+      {
+        "correcta": false
+      }
+    ]
+  },
+  {
+    "id": "12_0._test_2016_co_operario_31",
+    "categoria": "específico",
+    "tema": "12",
+    "descripcionTema": "Carpinteria",
+    "nombreExamen": "0. Test 2016 CO Operario",
+    "numeroPreguntaExamen": "31",
+    "texto": "Las colas son adhesivos usados habitualmente en carpintería. ¿De qué depende la durabilidad de una unión encolada?",
+    "respuestas": [
+      {
+        "texto": "Depende, en gran medida, de la humedâd que contengan las maderaS a unir\"",
+        "correcta": true
+      },
+      {
+        "texto": "Depende del estado de la superficie de la madera.",
+        "correcta": false
+      },
+      {
+        "texto": "Depende del corte realizado a las piezas",
+        "correcta": false
+      },
+      {
+        "correcta": false
+      }
+    ]
+  },
+  {
+    "id": "12_0._test_2016_co_operario_32",
+    "categoria": "específico",
+    "tema": "12",
+    "descripcionTema": "Carpinteria",
+    "nombreExamen": "0. Test 2016 CO Operario",
+    "numeroPreguntaExamen": "32",
+    "texto": "¿Cuál es el principal inconveniente de los pegamentos epóxidos?",
+    "respuestas": [
+      {
+        "texto": "Debe untarse las superficies a unir, y esperar a que-no pegue altacto unos 10 minutos.",
+        "correcta": false
+      },
+      {
+        "texto": "Se presentan en banítas flexibles y se debên carga) con pistola. .",
+        "correcta": false
+      },
+      {
+        "texto": "Resultan caros y suelen presentarse en dos componentes por separado.",
+        "correcta": true
+      },
+      {
+        "correcta": false
+      }
+    ]
+  },
+  {
+    "id": "12_0._test_2016_co_operario_33",
+    "categoria": "específico",
+    "tema": "12",
+    "descripcionTema": "Carpinteria",
+    "nombreExamen": "0. Test 2016 CO Operario",
+    "numeroPreguntaExamen": "33",
+    "texto": "De las siguientes, ¿cuál es la diferencia entre un tornillo de apriete de leva y un sargento de apriete rápido?",
+    "respuestas": [
+      {
+        "texto": "Elmango.",
+        "correcta": false
+      },
+      {
+        "texto": "El materialy la forma de ejercer presión.",
+        "correcta": true
+      },
+      {
+        "texto": "El número de mandíbulas.",
+        "correcta": false
+      },
+      {
+        "correcta": false
+      }
+    ]
+  },
+  {
+    "id": "12_0._test_2016_co_operario_34",
+    "categoria": "específico",
+    "tema": "12",
+    "descripcionTema": "Carpinteria",
+    "nombreExamen": "0. Test 2016 CO Operario",
+    "numeroPreguntaExamen": "34",
+    "texto": "Las partes principales de un tornillo son:",
+    "respuestas": [
+      {
+        "texto": "Cabeza, vástago y rosca.",
+        "correcta": true
+      },
+      {
+        "texto": "Cabeza, puntilla y arandela.",
+        "correcta": false
+      },
+      {
+        "texto": "Cabeza, masilla y rosca.",
+        "correcta": false
+      },
+      {
+        "correcta": false
+      }
+    ]
+  },
+  {
+    "id": "12_0._test_2016_co_operario_35",
+    "categoria": "específico",
+    "tema": "12",
+    "descripcionTema": "Carpinteria",
+    "nombreExamen": "0. Test 2016 CO Operario",
+    "numeroPreguntaExamen": "35",
+    "texto": "¿Qué paso previo debemos realizar a la madera para ocultar la cabeza de un tornillo?",
+    "respuestas": [
+      {
+        "texto": "Deberemos usar ovalillos para embellecer la cabeza del tornillo.",
+        "correcta": false
+      },
+      {
+        "texto": "Tendremos que comenzar avellanando el orificio de entrada.",
+        "correcta": true
+      },
+      {
+        "texto": "Será necesario rebajar la superficie con una esponja de lijado.",
+        "correcta": false
+      },
+      {
+        "correcta": false
+      }
+    ]
+  },
+  {
+    "id": "12_0._test_2016_co_operario_36",
+    "categoria": "específico",
+    "tema": "12",
+    "descripcionTema": "Carpinteria",
+    "nombreExamen": "0. Test 2016 CO Operario",
+    "numeroPreguntaExamen": "36",
+    "texto": "Si necesitamos realizar molduras, ranuras y cajeados usaremos:",
+    "respuestas": [
+      {
+        "texto": "Fresadora.",
+        "correcta": true
+      },
+      {
+        "texto": "Cepillo eléctrico.",
+        "correcta": false
+      },
+      {
+        "texto": "Garlopín.",
+        "correcta": false
+      },
+      {
+        "correcta": false
+      }
+    ]
+  },
+  {
+    "id": "12_0._test_2016_co_operario_37",
+    "categoria": "específico",
+    "tema": "12",
+    "descripcionTema": "Carpinteria",
+    "nombreExamen": "0. Test 2016 CO Operario",
+    "numeroPreguntaExamen": "37",
+    "texto": "En una ventana, ¿cómo se llama la parte superior destinada a soportar las cargas?",
+    "respuestas": [
+      {
+        "texto": "Bastidor.",
+        "correcta": false
+      },
+      {
+        "texto": "Alfeizar.",
+        "correcta": false
+      },
+      {
+        "texto": "Dintel.",
+        "correcta": true
+      },
+      {
+        "correcta": false
+      }
+    ]
+  },
+  {
+    "id": "12_0._test_2016_co_operario_38",
+    "categoria": "específico",
+    "tema": "12",
+    "descripcionTema": "Carpinteria",
+    "nombreExamen": "0. Test 2016 CO Operario",
+    "numeroPreguntaExamen": "38",
+    "texto": "El barniz es un acabado de la madera que le ofrece protección y la embellece. Para aplicar barniz es necesario primero:",
+    "respuestas": [
+      {
+        "texto": "Aplicar tapaporos o fondo",
+        "correcta": false
+      },
+      {
+        "texto": "Leer las instrucciones de uso que recomienda el fabricante del producto y seguirlas",
+        "correcta": false
+      },
+      {
+        "texto": "Ambas son correctas",
+        "correcta": true
+      },
+      {
+        "correcta": false
+      }
+    ]
+  },
+  {
+    "id": "10_0._test_2016_co_operario_39",
+    "categoria": "específico",
+    "tema": "10",
+    "descripcionTema": "Albañileria",
+    "nombreExamen": "0. Test 2016 CO Operario",
+    "numeroPreguntaExamen": "39",
+    "texto": "Cuando en una zanja realizada para la instalación de una tubería de abastecimiento aparecen en el fondo rocas incrustadas en elterreno, ¿cómo debe procederse?",
+    "respuestas": [
+      {
+        "texto": "Arrancar las rocas y posteriormente nivelar el fondo.",
+        "correcta": true
+      },
+      {
+        "texto": "Rellenar con árido y nivelarlo para que el tubo apoye uniformemente.",
+        "correcta": false
+      },
+      {
+        "texto": "Picar las partes sobresalientes de las rocas hasta que elfondo quede a nivel.",
+        "correcta": false
+      },
+      {
+        "correcta": false
+      }
+    ]
+  },
+  {
+    "id": "11_0._test_2016_co_operario_40",
+    "categoria": "específico",
+    "tema": "11",
+    "descripcionTema": "Fontaneria",
+    "nombreExamen": "0. Test 2016 CO Operario",
+    "numeroPreguntaExamen": "40",
+    "texto": "En la instalación de una tubería de presión es necesario contrarrestar las piezas especiales de la misma (codos, tes, etc.). ¿En qué casos podrán ejecutarse éstos con madera?",
+    "respuestas": [
+      {
+        "texto": "En los casos en que la madera apoye contra una obra de fábrica de hormigón.",
+        "correcta": false
+      },
+      {
+        "texto": "Nunca, excepto casos provisionales.",
+        "correcta": true
+      },
+      {
+        "texto": "Cuando apoyen en obras de fábrica de hormigón para tes y codos menores de 45o.",
+        "correcta": false
+      },
+      {
+        "correcta": false
+      }
+    ]
+  },
+  {
+    "id": "10_0._test_2016_co_operario_41",
+    "categoria": "específico",
+    "tema": "10",
+    "descripcionTema": "Albañileria",
+    "nombreExamen": "0. Test 2016 CO Operario",
+    "numeroPreguntaExamen": "41",
+    "texto": "En la entibación de una zanja, metálica o con madera ¿cómo se denominan los elementos horizontales que unen un lado de la entibación contra elotro?",
+    "respuestas": [
+      {
+        "texto": "Codales.",
+        "correcta": true
+      },
+      {
+        "texto": "Tablestacas.",
+        "correcta": false
+      },
+      {
+        "texto": "Puntales.",
+        "correcta": false
+      },
+      {
+        "correcta": false
+      }
+    ]
+  },
+  {
+    "id": "10_0._test_2016_co_operario_42",
+    "categoria": "específico",
+    "tema": "10",
+    "descripcionTema": "Albañileria",
+    "nombreExamen": "0. Test 2016 CO Operario",
+    "numeroPreguntaExamen": "42",
+    "texto": "Duránte la realización de una fábrica de ladrillo es necesario:",
+    "respuestas": [
+      {
+        "texto": "Que las piezas se encuentren libres de humedad para no afectar a [a mezcla de moñero",
+        "correcta": false
+      },
+      {
+        "texto": "Rernojar ligeramente ias piezas sin que goteen.",
+        "correcta": true
+      },
+      {
+        "texto": "Remojar completamente las piezas para asegurar que no absorven agua de la mezcla de mortero.",
+        "correcta": false
+      },
+      {
+        "correcta": false
+      }
+    ]
+  },
+  {
+    "id": "10_0._test_2016_co_operario_43",
+    "categoria": "específico",
+    "tema": "10",
+    "descripcionTema": "Albañileria",
+    "nombreExamen": "0. Test 2016 CO Operario",
+    "numeroPreguntaExamen": "43",
+    "texto": "Durante la realización de una fábrica de ladrillo:",
+    "respuestas": [
+      {
+        "texto": "No debe sobrar mortero de la junta horizontal entre hiladas.",
+        "correcta": false
+      },
+      {
+        "texto": "El mortero sobrante del tendel al apoyar la pieza puede colocarse sobre dicha pieza.",
+        "correcta": false
+      },
+      {
+        "texto": "El mortero que refluye deltendel al asentar la pieza puede utilizarse en la ejecución de Ia llaga",
+        "correcta": true
+      },
+      {
+        "correcta": false
+      }
+    ]
+  },
+  {
+    "id": "10_0._test_2016_co_operario_44",
+    "categoria": "específico",
+    "tema": "10",
+    "descripcionTema": "Albañileria",
+    "nombreExamen": "0. Test 2016 CO Operario",
+    "numeroPreguntaExamen": "44",
+    "texto": "En la señalización de obras en calzadàs de circulación de vehículos, ¿en qué casos será obligatorio colocar balizas luminosas?",
+    "respuestas": [
+      {
+        "texto": "fn todas las realizadas en vías interurbanas. I",
+        "correcta": false
+      },
+      {
+        "texto": "Cuando vaya a permanecer en horario noctumo, aunque la vía esté iluminada.",
+        "correcta": true
+      },
+      {
+        "texto": "Cuando en vías iluminadas no se haya colocado señalización reflectante.",
+        "correcta": false
+      },
+      {
+        "correcta": false
+      }
+    ]
+  },
+  {
+    "id": "10_0._test_2016_co_operario_45",
+    "categoria": "específico",
+    "tema": "10",
+    "descripcionTema": "Albañileria",
+    "nombreExamen": "0. Test 2016 CO Operario",
+    "numeroPreguntaExamen": "45",
+    "texto": "Para retirar la señalización de una obra en calzada de circulación de vehículos, ¿qué orden debe seguirse?",
+    "respuestas": [
+      {
+        "texto": "En el orden contrario al de su colocación.",
+        "correcta": true
+      },
+      {
+        "texto": "De forma que quede protegida la zona de obra.",
+        "correcta": false
+      },
+      {
+        "texto": "En elsentido de la circulación deltráfico.",
+        "correcta": false
+      },
+      {
+        "correcta": false
+      }
+    ]
+  },
+  {
+    "id": "10_0._test_2016_co_operario_46",
+    "categoria": "específico",
+    "tema": "10",
+    "descripcionTema": "Albañileria",
+    "nombreExamen": "0. Test 2016 CO Operario",
+    "numeroPreguntaExamen": "46",
+    "texto": "Previamente a la extensión de una capa de aglomerado asfáltico, ¿en qué casos será necesario realizar un riego con ligante hidrocarbonado?",
+    "respuestas": [
+      {
+        "texto": "solamente cuando la capa de base sea de hormigón, grava-cemento o árido.",
+        "correcta": false
+      },
+      {
+        "texto": "Solamente cuando la capa de base sea otra capa asfáltica.",
+        "correcta": false
+      },
+      {
+        "texto": "Cuando la capa de base sea de árido, hormigón, grava-cemento u otra capa asfáltÍca.",
+        "correcta": true
+      },
+      {
+        "correcta": false
+      }
+    ]
+  },
+  {
+    "id": "10_0._test_2016_co_operario_47",
+    "categoria": "específico",
+    "tema": "10",
+    "descripcionTema": "Albañileria",
+    "nombreExamen": "0. Test 2016 CO Operario",
+    "numeroPreguntaExamen": "47",
+    "texto": "En estructuras de hormigón armado, ¿cuál es la forma de asegurar los recubrimientos?",
+    "respuestas": [
+      {
+        "texto": "Colocando separadores en las armaduras exteriores.",
+        "correcta": true
+      },
+      {
+        "texto": "Colocando riostras entre las parrillas de armaduras.",
+        "correcta": false
+      },
+      {
+        "texto": "colocando anclajes verticales en el arranque inferior de las armaduras.",
+        "correcta": false
+      },
+      {
+        "correcta": false
+      }
+    ]
+  },
+  {
+    "id": "10_0._test_2016_co_operario_48",
+    "categoria": "específico",
+    "tema": "10",
+    "descripcionTema": "Albañileria",
+    "nombreExamen": "0. Test 2016 CO Operario",
+    "numeroPreguntaExamen": "48",
+    "texto": "¿Cuál de estas herramientas es la precisa para realizar la compactación de un hormigón en una estructura?",
+    "respuestas": [
+      {
+        "texto": "La trompa de elefante. .",
+        "correcta": false
+      },
+      {
+        "texto": "Elvibrador de aguja.",
+        "correcta": true
+      },
+      {
+        "texto": "El compactador de bandeja.",
+        "correcta": false
+      },
+      {
+        "correcta": false
+      }
+    ]
+  },
+  {
+    "id": "10_0._test_2016_co_operario_49",
+    "categoria": "específico",
+    "tema": "10",
+    "descripcionTema": "Albañileria",
+    "nombreExamen": "0. Test 2016 CO Operario",
+    "numeroPreguntaExamen": "49",
+    "texto": "¿A qué se le denomina \"muro aparejado\"?",
+    "respuestas": [
+      {
+        "texto": "Al-muro de ladrillo en el que se vân trabando entre sí hiladas de dos tipos de ladrillo.",
+        "correcta": false
+      },
+      {
+        "texto": "Al muro de ladrillo realizado mediante dos hojas adosadas con elementos intermedios que las enlazan.",
+        "correcta": false
+      },
+      {
+        "texto": "Al muro de ladrillo trabado en todo su espesor, ejecutado con una sola clase de.ladrillo.",
+        "correcta": true
+      },
+      {
+        "correcta": false
+      }
+    ]
+  },
+  {
+    "id": "10_0._test_2016_co_operario_51",
+    "categoria": "específico",
+    "tema": "10",
+    "descripcionTema": "Albañileria",
+    "nombreExamen": "0. Test 2016 CO Operario",
+    "numeroPreguntaExamen": "51",
+    "texto": "¿Gómo se denomina la dimensión de,la arista más larga de un ladrillo?",
+    "respuestas": [
+      {
+        "texto": "Grueso.",
+        "correcta": false
+      },
+      {
+        "texto": "Soga.",
+        "correcta": true
+      },
+      {
+        "texto": "Tizón.",
+        "correcta": false
+      },
+      {
+        "correcta": false
+      }
+    ]
+  },
+  {
+    "id": "10_0._test_2016_co_operario_52",
+    "categoria": "específico",
+    "tema": "10",
+    "descripcionTema": "Albañileria",
+    "nombreExamen": "0. Test 2016 CO Operario",
+    "numeroPreguntaExamen": "52",
+    "texto": "En la sujeción de eslingas para la realización de cargas o descargas de material, ¿cuál de estos accesorios podrá utilizarse?",
+    "respuestas": [
+      {
+        "texto": "Grillete.",
+        "correcta": false
+      },
+      {
+        "texto": "Guardacabos.",
+        "correcta": false
+      },
+      {
+        "texto": "Las dos respuestas anteriores son correctas.",
+        "correcta": true
+      },
+      {
+        "correcta": false
+      }
+    ]
+  },
+  {
+    "id": "10_0._test_2016_co_operario_53",
+    "categoria": "específico",
+    "tema": "10",
+    "descripcionTema": "Albañileria",
+    "nombreExamen": "0. Test 2016 CO Operario",
+    "numeroPreguntaExamen": "53",
+    "texto": "En el izado de una carga mediante pluma, y con una eslinga colocada a dos ramales, ¿influye el ángulo que forman estos ramales?",
+    "respuestas": [
+      {
+        "texto": "Sí, cuanto mayor es el ángulo en el gancho de la pluma mayor tensión tendrán que ser capaces de soportar.",
+        "correcta": true
+      },
+      {
+        "texto": "Sí, cuanto menor es el ángulo en el gancho de la pluma mayor tensión tendrán que ser capaces de soportar",
+        "correcta": false
+      },
+      {
+        "texto": "No, eL ángulo formado en el gancho de la pluma es indiferente de cara a la tensión que se generará en ambos ramales de la eslinga.",
+        "correcta": false
+      },
+      {
+        "correcta": false
+      }
+    ]
+  },
+  {
+    "id": "10_0._test_2016_co_operario_54",
+    "categoria": "específico",
+    "tema": "10",
+    "descripcionTema": "Albañileria",
+    "nombreExamen": "0. Test 2016 CO Operario",
+    "numeroPreguntaExamen": "54",
+    "texto": "Antes de extender una capa de grava-cemento deberá comprobarse que la superficie de asiento se encuentra:",
+    "respuestas": [
+      {
+        "texto": "Totalmente seca.",
+        "correcta": false
+      },
+      {
+        "texto": "Húmeda, pero no encharcada.",
+        "correcta": true
+      },
+      {
+        "texto": "Ligeramente encharcada, para que el agua inicie elfraguado del cemento.",
+        "correcta": false
+      },
+      {
+        "correcta": false
+      }
+    ]
+  },
+  {
+    "id": "10_0._test_2016_co_operario_55",
+    "categoria": "específico",
+    "tema": "10",
+    "descripcionTema": "Albañileria",
+    "nombreExamen": "0. Test 2016 CO Operario",
+    "numeroPreguntaExamen": "55",
+    "texto": "¿Cuáles serán los dos materiales que se colocarán bajo un solado de baldosa de terrazo en una acera de uso peatonal?",
+    "respuestas": [
+      {
+        "texto": "Base granular y hormigón.",
+        "correcta": false
+      },
+      {
+        "texto": "Hormigón y mortero.",
+        "correcta": true
+      },
+      {
+        "texto": "Árido fino y mortêro.",
+        "correcta": false
+      },
+      {
+        "correcta": false
+      }
+    ]
+  },
+  {
+    "id": "10_0._test_2016_co_operario_56",
+    "categoria": "específico",
+    "tema": "10",
+    "descripcionTema": "Albañileria",
+    "nombreExamen": "0. Test 2016 CO Operario",
+    "numeroPreguntaExamen": "56",
+    "texto": "Para el mantenimiento adecuado de las herramientas:",
+    "respuestas": [
+      {
+        "texto": "En las herramientas que no se usan con mucha frecuencia conViene tomar precaucíones contra la oxidación (p. ejemplo, untando las partes metálicas con algún aceite denso).",
+        "correcta": true
+      },
+      {
+        "texto": "Las herramieñtas con partes de madera se protegen de la humedad untando en ella algún producto graso.",
+        "correcta": false
+      },
+      {
+        "texto": "Por norma general, las herramientas no necesitan ninguna medida de mantenimiento.",
+        "correcta": false
+      },
+      {
+        "correcta": false
+      }
+    ]
+  },
+  {
+    "id": "11_0._test_2016_co_operario_57",
+    "categoria": "específico",
+    "tema": "11",
+    "descripcionTema": "Fontaneria",
+    "nombreExamen": "0. Test 2016 CO Operario",
+    "numeroPreguntaExamen": "57",
+    "texto": "Aquellos aparatos que, colocados en el extremo de las conducciones, dirigen y controlan la extracción de agua mediante movimientos manuales se llaman:",
+    "respuestas": [
+      {
+        "texto": "Cisternas.",
+        "correcta": false
+      },
+      {
+        "texto": "Vasos de expansíón.",
+        "correcta": false
+      },
+      {
+        "texto": "Grifos.",
+        "correcta": true
+      },
+      {
+        "correcta": false
+      }
+    ]
+  },
+  {
+    "id": "11_0._test_2016_co_operario_58",
+    "categoria": "específico",
+    "tema": "11",
+    "descripcionTema": "Fontaneria",
+    "nombreExamen": "0. Test 2016 CO Operario",
+    "numeroPreguntaExamen": "58",
+    "texto": "En las conducciones donde se quiere mantener una sola dirección de la corriente de agua, se colocará una válvula:",
+    "respuestas": [
+      {
+        "texto": "Termostática.",
+        "correcta": false
+      },
+      {
+        "texto": "De seguridad.",
+        "correcta": false
+      },
+      {
+        "texto": "De retencíón.",
+        "correcta": true
+      },
+      {
+        "correcta": false
+      }
+    ]
+  },
+  {
+    "id": "11_0._test_2016_co_operario_59",
+    "categoria": "específico",
+    "tema": "11",
+    "descripcionTema": "Fontaneria",
+    "nombreExamen": "0. Test 2016 CO Operario",
+    "numeroPreguntaExamen": "59",
+    "texto": "Cuando existe una instalación mixta que incluye fluxores con otros elementos de consumo, puede ocurrir:",
+    "respuestas": [
+      {
+        "texto": "Que se perciba un golpe de ariete en alguno de los aparatos cuando se use un flu¡or,",
+        "correcta": false
+      },
+      {
+        "texto": "Que se perciba una pérdida de presión en el conjunto de la acometida e instalación interior durante el empleo delfluxor.",
+        "correcta": true
+      },
+      {
+        "texto": "Que se peiciba un aumento del caudal de agua en el resto de los aparatos del mismo circuito durante el empleo delfluxor.",
+        "correcta": false
+      },
+      {
+        "correcta": false
+      }
+    ]
+  },
+  {
+    "id": "11_0._test_2016_co_operario_60",
+    "categoria": "específico",
+    "tema": "11",
+    "descripcionTema": "Fontaneria",
+    "nombreExamen": "0. Test 2016 CO Operario",
+    "numeroPreguntaExamen": "60",
+    "texto": "Las llaves de tubo tienen en la parte central uno o dos agujeros pasantes ¿Guál.es su cometido?",
+    "respuestas": [
+      {
+        "texto": "Quitar peso a la herramienta.",
+        "correcta": false
+      },
+      {
+        "texto": "Poder introducir varillas o destornilladores para hacer más fuerza al girar.",
+        "correcta": true
+      },
+      {
+        "texto": "Que no se llene de agua cuando se utiliza para desmontarválvulas.",
+        "correcta": false
+      },
+      {
+        "correcta": false
+      }
+    ]
+  },
+  {
+    "id": "11_0._test_2016_co_operario_61",
+    "categoria": "específico",
+    "tema": "11",
+    "descripcionTema": "Fontaneria",
+    "nombreExamen": "0. Test 2016 CO Operario",
+    "numeroPreguntaExamen": "61",
+    "texto": "¿Cómo se llama el surco horizontal o vertical abierto en las paredes para empotrar tuberías o cables?",
+    "respuestas": [
+      {
+        "texto": "Roza.",
+        "correcta": true
+      },
+      {
+        "texto": "Fisura.",
+        "correcta": false
+      },
+      {
+        "texto": "Junta.",
+        "correcta": false
+      },
+      {
+        "correcta": false
+      }
+    ]
+  },
+  {
+    "id": "11_0._test_2016_co_operario_62",
+    "categoria": "específico",
+    "tema": "11",
+    "descripcionTema": "Fontaneria",
+    "nombreExamen": "0. Test 2016 CO Operario",
+    "numeroPreguntaExamen": "62",
+    "texto": "El punto por donde se desaloja el agua que ya ha sido usada en un aparato sanitario se denomina:",
+    "respuestas": [
+      {
+        "texto": "Válvula de desagüe o válvula de evacuación.",
+        "correcta": true
+      },
+      {
+        "texto": "Válvula de mariposa.",
+        "correcta": false
+      },
+      {
+        "texto": "Sifón.",
+        "correcta": false
+      },
+      {
+        "correcta": false
+      }
+    ]
+  },
+  {
+    "id": "11_0._test_2016_co_operario_63",
+    "categoria": "específico",
+    "tema": "11",
+    "descripcionTema": "Fontaneria",
+    "nombreExamen": "0. Test 2016 CO Operario",
+    "numeroPreguntaExamen": "63",
+    "texto": "Se disþondrán sistemas de protección contra retornos:",
+    "respuestas": [
+      {
+        "texto": "En la parte más elevada de las tuberías ascendentes.",
+        "correcta": false
+      },
+      {
+        "texto": "Después de los contadores.",
+        "correcta": true
+      },
+      {
+        "texto": "Las dos anteriores son ciertas.",
+        "correcta": false
+      },
+      {
+        "correcta": false
+      }
+    ]
+  },
+  {
+    "id": "11_0._test_2016_co_operario_64",
+    "categoria": "específico",
+    "tema": "11",
+    "descripcionTema": "Fontaneria",
+    "nombreExamen": "0. Test 2016 CO Operario",
+    "numeroPreguntaExamen": "64",
+    "texto": "Las tuberías se clasifican, dependiendo de su comportamiento hidráulico, es decir, según la rugosidad interior de las paredes, en dos tipos: de pared lisa y de pared rugosa. Un ejemplo de tuberías de pared rugosa es:",
+    "respuestas": [
+      {
+        "texto": "Las tuberías de cobre.",
+        "correcta": false
+      },
+      {
+        "texto": "Las tuberías de acero inoxÍdable.",
+        "correcta": false
+      },
+      {
+        "texto": "Las tuberías de acero galvanizado",
+        "correcta": true
+      },
+      {
+        "correcta": false
+      }
+    ]
+  },
+  {
+    "id": "11_0._test_2016_co_operario_65",
+    "categoria": "específico",
+    "tema": "11",
+    "descripcionTema": "Fontaneria",
+    "nombreExamen": "0. Test 2016 CO Operario",
+    "numeroPreguntaExamen": "65",
+    "texto": "Aquellas válvulas cuyo mecanismo de cierre es un disco que gira sobre un eje vertical, se denominan:",
+    "respuestas": [
+      {
+        "texto": "Válvulas de compuerta o de corte.",
+        "correcta": false
+      },
+      {
+        "texto": "Válvulas de mariposa.",
+        "correcta": true
+      },
+      {
+        "texto": "Válvulas de bola o esfera.",
+        "correcta": false
+      },
+      {
+        "correcta": false
+      }
+    ]
+  },
+  {
+    "id": "11_0._test_2016_co_operario_66",
+    "categoria": "específico",
+    "tema": "11",
+    "descripcionTema": "Fontaneria",
+    "nombreExamen": "0. Test 2016 CO Operario",
+    "numeroPreguntaExamen": "66",
+    "texto": "Las válvulas que se colocan aguas abajo de una llave de paso con la finalidad de retener el agua contenida en una tubería después de abrir dicha llave, se denominan:",
+    "respuestas": [
+      {
+        "texto": "Válvulas reductoras de presión.",
+        "correcta": false
+      },
+      {
+        "texto": "Válvulas de retención.",
+        "correcta": true
+      },
+      {
+        "texto": "Válvulas de ventosa.",
+        "correcta": false
+      },
+      {
+        "correcta": false
+      }
+    ]
+  },
+  {
+    "id": "11_0._test_2016_co_operario_67",
+    "categoria": "específico",
+    "tema": "11",
+    "descripcionTema": "Fontaneria",
+    "nombreExamen": "0. Test 2016 CO Operario",
+    "numeroPreguntaExamen": "67",
+    "texto": "¿Qué se entiende por pérdida de carga en un tramo de tubería?",
+    "respuestas": [
+      {
+        "texto": "La caída de presión en eltramo",
+        "correcta": true
+      },
+      {
+        "texto": "La diferencia de temperaturas entre los dos extremos deltramo.",
+        "correcta": false
+      },
+      {
+        "texto": "Las dos respuestas anteriores son correctas.",
+        "correcta": false
+      },
+      {
+        "correcta": false
+      }
+    ]
+  },
+  {
+    "id": "11_0._test_2016_co_operario_68",
+    "categoria": "específico",
+    "tema": "11",
+    "descripcionTema": "Fontaneria",
+    "nombreExamen": "0. Test 2016 CO Operario",
+    "numeroPreguntaExamen": "68",
+    "texto": "Al volumen de líquido que atraviesa una sección transversal cualquiera de una conducción en una unidad de tiempo se denomina:",
+    "respuestas": [
+      {
+        "texto": "Presión.",
+        "correcta": false
+      },
+      {
+        "texto": "Caudal.",
+        "correcta": true
+      },
+      {
+        "texto": "Velocidad de circulación.",
+        "correcta": false
+      },
+      {
+        "correcta": false
+      }
+    ]
+  },
+  {
+    "id": "11_0._test_2016_co_operario_69",
+    "categoria": "específico",
+    "tema": "11",
+    "descripcionTema": "Fontaneria",
+    "nombreExamen": "0. Test 2016 CO Operario",
+    "numeroPreguntaExamen": "69",
+    "texto": "Un cable de acero, sencillo, con mango adaptable o enrollado en un cilindro asistido por una manivela, que se introduce en las tuberías para deshacer obstrucciones es una herramienta de uso habitual en fontanería que se denomina:",
+    "respuestas": [
+      {
+        "texto": "Desatascador de bomba.",
+        "correcta": false
+      },
+      {
+        "texto": "Muelle desatascador.",
+        "correcta": true
+      },
+      {
+        "texto": "Decapante.",
+        "correcta": false
+      },
+      {
+        "correcta": false
+      }
+    ]
+  },
+  {
+    "id": "11_0._test_2016_co_operario_70",
+    "categoria": "específico",
+    "tema": "11",
+    "descripcionTema": "Fontaneria",
+    "nombreExamen": "0. Test 2016 CO Operario",
+    "numeroPreguntaExamen": "70",
+    "texto": "Cuando tengamos que limpiar el sifón de un lavabo obstruido, lo primero que haremos será:",
+    "respuestas": [
+      {
+        "texto": "Cétttt la válvula que, desde la pared, suministra el agua al grifo del lavabo.",
+        "correcta": false
+      },
+      {
+        "texto": "Desmontar el tapón a rosca existente en la zona inferior y que permite el acceso al interior del sifón.",
+        "correcta": false
+      },
+      {
+        "texto": "Colocar un cubo debajo del lavabo.",
+        "correcta": true
+      },
+      {
+        "correcta": false
+      }
+    ]
+  },
+  {
+    "id": "11_0._test_2016_co_operario_71",
+    "categoria": "específico",
+    "tema": "11",
+    "descripcionTema": "Fontaneria",
+    "nombreExamen": "0. Test 2016 CO Operario",
+    "numeroPreguntaExamen": "71",
+    "texto": "Los recipientes diseñados para amortiguar sobrepresiones momentáneas que pudiesen dar lugar a ruidos o vibraciones peligrosas para las tuberías, se llaman:",
+    "respuestas": [
+      {
+        "texto": "Purgadores.",
+        "correcta": false
+      },
+      {
+        "texto": "Vasos de expansión.",
+        "correcta": true
+      },
+      {
+        "texto": "Liras' de dilatación.",
+        "correcta": false
+      },
+      {
+        "correcta": false
+      }
+    ]
+  },
+  {
+    "id": "11_0._test_2016_co_operario_72",
+    "categoria": "específico",
+    "tema": "11",
+    "descripcionTema": "Fontaneria",
+    "nombreExamen": "0. Test 2016 CO Operario",
+    "numeroPreguntaExamen": "72",
+    "texto": "Uno de los aspectos que aseguran una buena soldadura por capilaridad se consigue mediante el mantenimiento de la regutaridad de las superficies que forman el espacio entre paredes. Esto se consigue:",
+    "respuestas": [
+      {
+        "texto": "Mediante una buena limpieza mecánica, utilizando cepillos o lanas no abrasivos.",
+        "correcta": false
+      },
+      {
+        "texto": "Una buena limpieza química usando un buen decapante.",
+        "correcta": false
+      },
+      {
+        "texto": "Las dos anteriores son correctas.",
+        "correcta": true
+      },
+      {
+        "correcta": false
+      }
+    ]
+  },
+  {
+    "id": "9_0._test_2016_co_operario_73",
+    "categoria": "específico",
+    "tema": "9",
+    "descripcionTema": "Electricidad",
+    "nombreExamen": "0. Test 2016 CO Operario",
+    "numeroPreguntaExamen": "73",
+    "texto": "El mecanismo denominado cruzamiento, es uno de los utilizados para el accionarniento de un mismo punto de luz, desde:",
+    "respuestas": [
+      {
+        "texto": "Tres lugares distintos.",
+        "correcta": true
+      },
+      {
+        "texto": "Dos lugares distintos.",
+        "correcta": false
+      },
+      {
+        "texto": "No es cierta ninguna de las respuestas anteriores.",
+        "correcta": false
+      },
+      {
+        "correcta": false
+      }
+    ]
+  },
+  {
+    "id": "9_0._test_2016_co_operario_74",
+    "categoria": "específico",
+    "tema": "9",
+    "descripcionTema": "Electricidad",
+    "nombreExamen": "0. Test 2016 CO Operario",
+    "numeroPreguntaExamen": "74",
+    "texto": "Las tensiones nominales, usualmente utilizadas en la actualidad, en las distribuciones de corriente alterna son, según el Reglamento Electrotécnico de Baja Tensión:",
+    "respuestas": [
+      {
+        "texto": "220 V entre fases en las redes trifásicas de tres conductores.",
+        "correcta": false
+      },
+      {
+        "texto": "230 V entre fases y neutro, y 400 V entre fases, para redes trifásicas de cuatro conductores.",
+        "correcta": true
+      },
+      {
+        "texto": "Ninguna de las dos respuestas anteriores en correcta.",
+        "correcta": false
+      },
+      {
+        "correcta": false
+      }
+    ]
+  },
+  {
+    "id": "9_0._test_2016_co_operario_75",
+    "categoria": "específico",
+    "tema": "9",
+    "descripcionTema": "Electricidad",
+    "nombreExamen": "0. Test 2016 CO Operario",
+    "numeroPreguntaExamen": "75",
+    "texto": "Los circuitos destinados al alumbrado en las viviendas, normalmente utilizan:",
+    "respuestas": [
+      {
+        "texto": "Conductores de 6 mm2 monofásicos.",
+        "correcta": false
+      },
+      {
+        "texto": "Conductores de 1,5 mm' de sección y conductor de protección.",
+        "correcta": true
+      },
+      {
+        "texto": "Conductores de 2,5 mm2 de sección y conductor de protección.",
+        "correcta": false
+      },
+      {
+        "correcta": false
+      }
+    ]
+  },
+  {
+    "id": "9_0._test_2016_co_operario_76",
+    "categoria": "específico",
+    "tema": "9",
+    "descripcionTema": "Electricidad",
+    "nombreExamen": "0. Test 2016 CO Operario",
+    "numeroPreguntaExamen": "76",
+    "texto": "La caja general de protección delsuministro a un edificio, aloja en su interior:",
+    "respuestas": [
+      {
+        "texto": "Los portafusibles y fusibles de las tres fases y una conexión amovible del conductor neutro.",
+        "correcta": true
+      },
+      {
+        "texto": "Las proteccio nes ma g netotérmicas g enerales.",
+        "correcta": false
+      },
+      {
+        "texto": "Ninguna de las anteriores respuestas es correcta.",
+        "correcta": false
+      },
+      {
+        "correcta": false
+      }
+    ]
+  },
+  {
+    "id": "9_0._test_2016_co_operario_77",
+    "categoria": "específico",
+    "tema": "9",
+    "descripcionTema": "Electricidad",
+    "nombreExamen": "0. Test 2016 CO Operario",
+    "numeroPreguntaExamen": "77",
+    "texto": "Cuando en una instalación eléctrica existe una derivación o fuga a tierra, que equipo de protección actúa:",
+    "respuestas": [
+      {
+        "texto": "Elcortacircuito fusible sies de calibre adecuado.",
+        "correcta": false
+      },
+      {
+        "texto": "El interruptor diferencial, si la corriente de fuga a tierra, es igual o superior a la sensibilidad del diferencial.",
+        "correcta": true
+      },
+      {
+        "texto": "Siempre el Interruptor magnetotérmico.",
+        "correcta": false
+      },
+      {
+        "correcta": false
+      }
+    ]
+  },
+  {
+    "id": "9_0._test_2016_co_operario_78",
+    "categoria": "específico",
+    "tema": "9",
+    "descripcionTema": "Electricidad",
+    "nombreExamen": "0. Test 2016 CO Operario",
+    "numeroPreguntaExamen": "78",
+    "texto": "La intensidad de corriente eléctrica se mide con:",
+    "respuestas": [
+      {
+        "texto": "Elvoltímetro y se conecta en paralelo",
+        "correcta": false
+      },
+      {
+        "texto": "Elamperímetro y se conecta en serie.",
+        "correcta": true
+      },
+      {
+        "texto": "El amperímetro y se coloca en paralelo con el equipo de consumo",
+        "correcta": false
+      },
+      {
+        "correcta": false
+      }
+    ]
+  },
+  {
+    "id": "9_0._test_2016_co_operario_79",
+    "categoria": "específico",
+    "tema": "9",
+    "descripcionTema": "Electricidad",
+    "nombreExamen": "0. Test 2016 CO Operario",
+    "numeroPreguntaExamen": "79",
+    "texto": "Algunos colores para identificar a los conductores eléctricos de fase en un circuito son marrón y negro; cual de tos colores de conductores indicados es correcto:",
+    "respuestas": [
+      {
+        "texto": "El neutro puede ser gris y el conductor de protección amarillo.",
+        "correcta": false
+      },
+      {
+        "texto": "El conductor de protección verde y el neutro es azul ;",
+        "correcta": false
+      },
+      {
+        "texto": "El neutro es azul y conductor de protección verde-amarillo.",
+        "correcta": true
+      },
+      {
+        "correcta": false
+      }
+    ]
+  },
+  {
+    "id": "9_0._test_2016_co_operario_80",
+    "categoria": "específico",
+    "tema": "9",
+    "descripcionTema": "Electricidad",
+    "nombreExamen": "0. Test 2016 CO Operario",
+    "numeroPreguntaExamen": "80",
+    "texto": "Los interruptores automáticos magnetotérmicos, en las instalaciones de viviendas, son dispositivos de protección que:",
+    "respuestas": [
+      {
+        "texto": "No es obligatoria su instalacíón por ser instalaciones de poca potencia.",
+        "correcta": false
+      },
+      {
+        "texto": "Solo son oblþados en los circuitos destinados a tomas de corriente.",
+        "correcta": false
+      },
+      {
+        "texto": "Siempre es obligatoria su instalación.",
+        "correcta": true
+      },
+      {
+        "correcta": false
+      }
+    ]
+  },
+  {
+    "id": "9_0._test_2016_co_operario_81",
+    "categoria": "específico",
+    "tema": "9",
+    "descripcionTema": "Electricidad",
+    "nombreExamen": "0. Test 2016 CO Operario",
+    "numeroPreguntaExamen": "81",
+    "texto": "En un circuito eléctrico de encendido de una lámpara fluorescente, con reactancia electrónica,.que elemento de los siguientes no existe:",
+    "respuestas": [
+      {
+        "texto": "Interruptor.",
+        "correcta": false
+      },
+      {
+        "texto": "Cebador.",
+        "correcta": true
+      },
+      {
+        "texto": "Conductores. t0",
+        "correcta": false
+      },
+      {
+        "correcta": false
+      }
+    ]
+  },
+  {
+    "id": "9_0._test_2016_co_operario_82",
+    "categoria": "específico",
+    "tema": "9",
+    "descripcionTema": "Electricidad",
+    "nombreExamen": "0. Test 2016 CO Operario",
+    "numeroPreguntaExamen": "82",
+    "texto": "Una unidad de potencia eléctrica es:",
+    "respuestas": [
+      {
+        "texto": "Amperio (A).",
+        "correcta": false
+      },
+      {
+        "texto": "Vatio W)",
+        "correcta": true
+      },
+      {
+        "texto": "Vatio por hora (Wh).",
+        "correcta": false
+      },
+      {
+        "correcta": false
+      }
+    ]
+  },
+  {
+    "id": "9_0._test_2016_co_operario_83",
+    "categoria": "específico",
+    "tema": "9",
+    "descripcionTema": "Electricidad",
+    "nombreExamen": "0. Test 2016 CO Operario",
+    "numeroPreguntaExamen": "83",
+    "texto": "Una instalación protegida por un interruptor diferencial, es más segura cuando la sensibilidad del interruptor es:",
+    "respuestas": [
+      {
+        "texto": "30 mA",
+        "correcta": false
+      },
+      {
+        "texto": "10 mA.",
+        "correcta": true
+      },
+      {
+        "texto": "Ninguna de las dos'respuestas anteriores es correcta.",
+        "correcta": false
+      },
+      {
+        "correcta": false
+      }
+    ]
+  },
+  {
+    "id": "9_0._test_2016_co_operario_84",
+    "categoria": "específico",
+    "tema": "9",
+    "descripcionTema": "Electricidad",
+    "nombreExamen": "0. Test 2016 CO Operario",
+    "numeroPreguntaExamen": "84",
+    "texto": "Un cable se denomina como cable unipolar cuando:",
+    "respuestas": [
+      {
+        "texto": "Alimenta a una instalación monofásica con neutro:",
+        "correcta": false
+      },
+      {
+        "texto": "Tiene un solo conductor aislado.",
+        "correcta": true
+      },
+      {
+        "texto": "Tene uno de los conductores identificado como neutro para la instalación .",
+        "correcta": false
+      },
+      {
+        "correcta": false
+      }
+    ]
+  },
+  {
+    "id": "9_0._test_2016_co_operario_85",
+    "categoria": "específico",
+    "tema": "9",
+    "descripcionTema": "Electricidad",
+    "nombreExamen": "0. Test 2016 CO Operario",
+    "numeroPreguntaExamen": "85",
+    "texto": "La fórmula que relaciona la intensidad, tensión y resistencia se llama:",
+    "respuestas": [
+      {
+        "texto": "Ley de Coulomb.",
+        "correcta": false
+      },
+      {
+        "texto": "Ley de Ohm .",
+        "correcta": true
+      },
+      {
+        "texto": "Ley de la Caída de tensión.",
+        "correcta": false
+      },
+      {
+        "correcta": false
+      }
+    ]
+  },
+  {
+    "id": "9_0._test_2016_co_operario_86",
+    "categoria": "específico",
+    "tema": "9",
+    "descripcionTema": "Electricidad",
+    "nombreExamen": "0. Test 2016 CO Operario",
+    "numeroPreguntaExamen": "86",
+    "texto": "Cuando hablamos de aparamenta en lo referente a instalaciones eléctricas, nos referimos a:",
+    "respuestas": [
+      {
+        "texto": "Cableado utilizado en la ejecución de cuadros eléctricos.",
+        "correcta": false
+      },
+      {
+        "texto": "Material utilizado solamente para el conexionado de la instalación.",
+        "correcta": false
+      },
+      {
+        "texto": "Equipos, aparatos o materialdestinado a funciones como la protección, controly conexionado.",
+        "correcta": true
+      },
+      {
+        "correcta": false
+      }
+    ]
+  },
+  {
+    "id": "9_0._test_2016_co_operario_87",
+    "categoria": "específico",
+    "tema": "9",
+    "descripcionTema": "Electricidad",
+    "nombreExamen": "0. Test 2016 CO Operario",
+    "numeroPreguntaExamen": "87",
+    "texto": "La medida de resistencia de aislamiento de una,instalación eléctrica:",
+    "respuestas": [
+      {
+        "texto": "Se mide en serie con elamperímetro.",
+        "correcta": false
+      },
+      {
+        "texto": "Es una de las pruebas para verificar que una instalación es correcta.",
+        "correcta": true
+      },
+      {
+        "texto": "Nos sirve para medir el aislamiento de los receptores de la instalación.",
+        "correcta": false
+      },
+      {
+        "correcta": false
+      }
+    ]
+  },
+  {
+    "id": "9_0._test_2016_co_operario_88",
+    "categoria": "específico",
+    "tema": "9",
+    "descripcionTema": "Electricidad",
+    "nombreExamen": "0. Test 2016 CO Operario",
+    "numeroPreguntaExamen": "88",
+    "texto": "El conductor de protección de una instalación eléctrica:",
+    "respuestas": [
+      {
+        "texto": "Solo se instala en líneas que alimentan a equipos de fuerza .",
+        "correcta": false
+      },
+      {
+        "texto": "Será de color amarillo.",
+        "correcta": false
+      },
+      {
+        "texto": "Su sección depende de la sección de los conductores de fase.",
+        "correcta": true
+      },
+      {
+        "correcta": false
+      }
+    ]
+  },
+  {
+    "id": "25_0._test_2016_co_operario_89",
+    "categoria": "específico",
+    "tema": "25",
+    "descripcionTema": "Organigrama y Manual de Atencion",
+    "nombreExamen": "0. Test 2016 CO Operario",
+    "numeroPreguntaExamen": "89",
+    "texto": "La impresión de competencia y cortesía, la confianza que percibe la ciudadanía en que van a ser atendidos con exactitud por el personal de servicio, la tranquilidad de que su demanda ya empieza a ser atendida es un factor según el cual se juzga la calidad de servicio a la ciudadanía que se denomina:",
+    "respuestas": [
+      {
+        "texto": "Seguridad y fiabilidad.",
+        "correcta": true
+      },
+      {
+        "texto": "Capacidad de respuesta",
+        "correcta": false
+      },
+      {
+        "texto": "Empatía.",
+        "correcta": false
+      },
+      {
+        "correcta": false
+      }
+    ]
+  },
+  {
+    "id": "25_0._test_2016_co_operario_90",
+    "categoria": "específico",
+    "tema": "25",
+    "descripcionTema": "Organigrama y Manual de Atencion",
+    "nombreExamen": "0. Test 2016 CO Operario",
+    "numeroPreguntaExamen": "90",
+    "texto": "La habilidad fundamental para la atención a la ciudadanía es:",
+    "respuestas": [
+      {
+        "texto": "Tener conocimientos.",
+        "correcta": false
+      },
+      {
+        "texto": "La comunicación.",
+        "correcta": true
+      },
+      {
+        "texto": "La seguridad.",
+        "correcta": false
+      },
+      {
+        "correcta": false
+      }
+    ]
+  },
+  {
+    "id": "25_0._test_2016_co_operario_91",
+    "categoria": "específico",
+    "tema": "25",
+    "descripcionTema": "Organigrama y Manual de Atencion",
+    "nombreExamen": "0. Test 2016 CO Operario",
+    "numeroPreguntaExamen": "91",
+    "texto": "Dentro de los componentes básicos de la conducta humana, como base de la atención a la ciudadanía; al conjunto de sensaciones que van del agrado al desagrado ante un ciudadano o ciudadana en particular y que tienen un gran componente emocional, se le denomina:",
+    "respuestas": [
+      {
+        "texto": "Sentimientos.",
+        "correcta": true
+      },
+      {
+        "texto": "Pensamientos.",
+        "correcta": false
+      },
+      {
+        "texto": "Atención y percepción. !' ) l1",
+        "correcta": false
+      },
+      {
+        "correcta": false
+      }
+    ]
+  },
+  {
+    "id": "25_0._test_2016_co_operario_92",
+    "categoria": "específico",
+    "tema": "25",
+    "descripcionTema": "Organigrama y Manual de Atencion",
+    "nombreExamen": "0. Test 2016 CO Operario",
+    "numeroPreguntaExamen": "92",
+    "texto": "La verdadera escucha debe ser:",
+    "respuestas": [
+      {
+        "texto": "Pasiva.",
+        "correcta": false
+      },
+      {
+        "texto": "Recíproca.",
+        "correcta": false
+      },
+      {
+        "texto": "Activa.",
+        "correcta": true
+      },
+      {
+        "correcta": false
+      }
+    ]
+  },
+  {
+    "id": "25_0._test_2016_co_operario_93",
+    "categoria": "específico",
+    "tema": "25",
+    "descripcionTema": "Organigrama y Manual de Atencion",
+    "nombreExamen": "0. Test 2016 CO Operario",
+    "numeroPreguntaExamen": "93",
+    "texto": "Un error típico a la hora de escuchar es:",
+    "respuestas": [
+      {
+        "texto": "lnterrumpir a nuestro interlocutor.",
+        "correcta": true
+      },
+      {
+        "texto": "Establecer contacto ocular.",
+        "correcta": false
+      },
+      {
+        "texto": "Proporcionar incentivos para que continúe hablando",
+        "correcta": false
+      },
+      {
+        "correcta": false
+      }
+    ]
+  },
+  {
+    "id": "25_0._test_2016_co_operario_94",
+    "categoria": "específico",
+    "tema": "25",
+    "descripcionTema": "Organigrama y Manual de Atencion",
+    "nombreExamen": "0. Test 2016 CO Operario",
+    "numeroPreguntaExamen": "94",
+    "texto": "Es recomendable que el primer contacto con el ciudadano o ciudadana sea:",
+    "respuestas": [
+      {
+        "texto": "La expresión de la petición.",
+        "correcta": false
+      },
+      {
+        "texto": "Elsaludo.",
+        "correcta": true
+      },
+      {
+        "texto": "Resolver la demanda.",
+        "correcta": false
+      },
+      {
+        "correcta": false
+      }
+    ]
+  },
+  {
+    "id": "25_0._test_2016_co_operario_95",
+    "categoria": "específico",
+    "tema": "25",
+    "descripcionTema": "Organigrama y Manual de Atencion",
+    "nombreExamen": "0. Test 2016 CO Operario",
+    "numeroPreguntaExamen": "95",
+    "texto": "La. estrategia de dialogar constructivamente con uno mismo, es decir emitir autoverbalizaciones, es útil para:",
+    "respuestas": [
+      {
+        "texto": "Distraerse.",
+        "correcta": false
+      },
+      {
+        "texto": "Recordar datos.",
+        "correcta": false
+      },
+      {
+        "texto": "Mantener la calma.",
+        "correcta": true
+      },
+      {
+        "correcta": false
+      }
+    ]
+  },
+  {
+    "id": "25_0._test_2016_co_operario_96",
+    "categoria": "específico",
+    "tema": "25",
+    "descripcionTema": "Organigrama y Manual de Atencion",
+    "nombreExamen": "0. Test 2016 CO Operario",
+    "numeroPreguntaExamen": "96",
+    "texto": "Proporcionamos pequeños incentivos.verbales y no verbales (ya, entiendo, sí si, aja) con la intención de:",
+    "respuestas": [
+      {
+        "texto": "Demostrar que estamos escuchando activamente.",
+        "correcta": true
+      },
+      {
+        "texto": "No perder el hilo.",
+        "correcta": false
+      },
+      {
+        "texto": "Demostrar conocimiento de las cosas.",
+        "correcta": false
+      },
+      {
+        "correcta": false
+      }
+    ]
+  },
+  {
+    "id": "25_0._test_2016_co_operario_97",
+    "categoria": "específico",
+    "tema": "25",
+    "descripcionTema": "Organigrama y Manual de Atencion",
+    "nombreExamen": "0. Test 2016 CO Operario",
+    "numeroPreguntaExamen": "97",
+    "texto": "La curva de la hostilidad atraviesa seis fases: Racional, disparo, XXXXXX, afrontamiento, enfriamiento, solución de problemas; sustituir las X por la respuesta correcta:",
+    "respuestas": [
+      {
+        "texto": "Empatía",
+        "correcta": false
+      },
+      {
+        "texto": "Enlentecimiento.",
+        "correcta": true
+      },
+      {
+        "texto": "Asertividad.",
+        "correcta": false
+      },
+      {
+        "correcta": false
+      }
+    ]
+  },
+  {
+    "id": "25_0._test_2016_co_operario_98",
+    "categoria": "específico",
+    "tema": "25",
+    "descripcionTema": "Organigrama y Manual de Atencion",
+    "nombreExamen": "0. Test 2016 CO Operario",
+    "numeroPreguntaExamen": "98",
+    "texto": "Un trato a la ciudadanía por parte de la empleada o empleado público estereotipado, con saludos y despedidas mecanizadas se denomina.",
+    "respuestas": [
+      {
+        "texto": "Condescendencia.",
+        "correcta": false
+      },
+      {
+        "texto": "Apatía.",
+        "correcta": false
+      },
+      {
+        "texto": "Robotización. \\",
+        "correcta": true
+      },
+      {
+        "correcta": false
+      }
+    ]
+  },
+  {
+    "id": "25_0._test_2016_co_operario_99",
+    "categoria": "específico",
+    "tema": "25",
+    "descripcionTema": "Organigrama y Manual de Atencion",
+    "nombreExamen": "0. Test 2016 CO Operario",
+    "numeroPreguntaExamen": "99",
+    "texto": "En las situaciones difíciles que se producen en la atención a la ciudadanía, para autocontrolar nuestras emociones y canalizar las del ciudadano o ciudadana conviene no hacer una de las siguientes cosas:",
+    "respuestas": [
+      {
+        "texto": "Mantener una actitud abierta y un tono de voz pausado.",
+        "correcta": false
+      },
+      {
+        "texto": "Decirle al ciudadano o ciudadana irritado/a lo que debería o no debería hacer.",
+        "correcta": true
+      },
+      {
+        "texto": "Expresar nuestra posición después del incidente",
+        "correcta": false
+      },
+      {
+        "correcta": false
+      }
+    ]
+  },
+  {
+    "id": "25_0._test_2016_co_operario_100",
+    "categoria": "específico",
+    "tema": "25",
+    "descripcionTema": "Organigrama y Manual de Atencion",
+    "nombreExamen": "0. Test 2016 CO Operario",
+    "numeroPreguntaExamen": "100",
+    "texto": "El tono de voz en la comunicación es un mensaje:",
+    "respuestas": [
+      {
+        "texto": "Verbal.",
+        "correcta": false
+      },
+      {
+        "texto": "No verbal.",
+        "correcta": true
+      },
+      {
+        "texto": "Verbal y no verbal T2",
+        "correcta": false
       },
       {
         "correcta": false
