@@ -28,3 +28,5 @@ Si quiero actualizar la base de datos o ver los ultimos cambios en la app
     git add .
     git commit -m "Ultimos cambios"
     git push
+
+git branch
