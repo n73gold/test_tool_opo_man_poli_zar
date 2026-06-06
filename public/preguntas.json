@@ -3413,32 +3413,6 @@
     ]
   },
   {
-    "id": "3_test_nº2_alumno_2",
-    "categoria": "jurídico",
-    "tema": "3",
-    "descripcionTema": "Ley 39/2015 Procedimiento Adm. Común.",
-    "nombreExamen": "Test nº2 alumno",
-    "numeroPreguntaExamen": "2",
-    "texto": "Están incluidos en el sector público institucional, conforme a la Ley 39/2015 de 1 de Octubre:",
-    "respuestas": [
-      {
-        "texto": "Los organismos públicos y entidades de derecho público vinculados o dependientes de las Administraciones Públicas.",
-        "correcta": true
-      },
-      {
-        "texto": "Las entidades de derecho privado, no vinculados o independientes de las Administraciones Públicas.",
-        "correcta": false
-      },
-      {
-        "texto": "Todas ellas a, b,  integran el sector público institucional a efectos de la Ley 39/2015 de 1 de Octubre del Procedimiento Administrativo común de las Administraciones Públicas.",
-        "correcta": false
-      },
-      {
-        "correcta": false
-      }
-    ]
-  },
-  {
     "id": "3_test_nº2_alumno_3",
     "categoria": "jurídico",
     "tema": "3",
@@ -5854,33 +5828,6 @@
     ]
   },
   {
-    "id": "4_test_gallocanta_2_23",
-    "categoria": "jurídico",
-    "tema": "4",
-    "descripcionTema": "R.D.L. 2/2004 Ley Haciendas Locales",
-    "nombreExamen": "Test Gallocanta 2",
-    "numeroPreguntaExamen": "23",
-    "texto": "En los Ayuntamientos, con carácter general,  las funciones de ordenación de pagos:",
-    "respuestas": [
-      {
-        "texto": "Competen al Alcalde.",
-        "correcta": true
-      },
-      {
-        "texto": "Las realiza el órgano que determine el Pleno.",
-        "correcta": false
-      },
-      {
-        "texto": "Las realiza en todo caso la unidad de ordenación de pagos.",
-        "correcta": false
-      },
-      {
-        "texto": "Ninguna es correcta.",
-        "correcta": false
-      }
-    ]
-  },
-  {
     "id": "4_test_gallocanta_2_24",
     "categoria": "jurídico",
     "tema": "4",
@@ -6011,33 +5958,6 @@
       },
       {
         "texto": "B y C son no correctas.",
-        "correcta": false
-      }
-    ]
-  },
-  {
-    "id": "4_test_gallocanta_2_30",
-    "categoria": "jurídico",
-    "tema": "4",
-    "descripcionTema": "R.D.L. 2/2004 Ley Haciendas Locales",
-    "nombreExamen": "Test Gallocanta 2",
-    "numeroPreguntaExamen": "30",
-    "texto": "Se considera vehículo apto para la circulación, a efectos del Impuesto sobre Vehículos de Tracción Mecánica:",
-    "respuestas": [
-      {
-        "texto": "El que hubiera sido matriculado en los registros públicos correspondientes y mientras no haya causado baja en éstos.",
-        "correcta": false
-      },
-      {
-        "texto": "Entre otros, a los efectos de este impuesto  se considerarán aptos los vehículos provistos de permisos temporales y matrícula turística.",
-        "correcta": false
-      },
-      {
-        "texto": "A y B son correctas.",
-        "correcta": true
-      },
-      {
-        "texto": "A y b no son correctas.",
         "correcta": false
       }
     ]
@@ -13495,32 +13415,6 @@
     ]
   },
   {
-    "id": "2_examenes_ayunt_1_22",
-    "categoria": "jurídico",
-    "tema": "2",
-    "descripcionTema": "Ley Org. 5/2007 Estatuto de Autonomia",
-    "nombreExamen": "Examenes ayunt 1",
-    "numeroPreguntaExamen": "22",
-    "texto": "De acuerdo con el artículo 72.1 del Estatuto de Autonomía de Aragón, en materia de aguas que discurran íntegramente por su territorio corresponde  a la Comunidad Autónoma la competencia:",
-    "respuestas": [
-      {
-        "texto": "Ejecutiva.",
-        "correcta": false
-      },
-      {
-        "texto": "Compartida.",
-        "correcta": false
-      },
-      {
-        "texto": "Exclusiva.",
-        "correcta": true
-      },
-      {
-        "correcta": false
-      }
-    ]
-  },
-  {
     "id": "1_examenes_ayunt_1_23",
     "categoria": "jurídico",
     "tema": "1",
@@ -15159,136 +15053,6 @@
     ]
   },
   {
-    "id": "1_examenes_ayunt_4_2",
-    "categoria": "jurídico",
-    "tema": "1",
-    "descripcionTema": "Constitución",
-    "nombreExamen": "Examenes ayunt 4",
-    "numeroPreguntaExamen": "2",
-    "texto": "De acuerdo con el artículo 142 de la Constitución, las Haciendas locales deberán disponer de los medios suficientes para el desempeño de las funciones que la ley atribuye a las Corporaciones respectivas y se nutrirán fundamentalmente de tributos propios y de participación:",
-    "respuestas": [
-      {
-        "texto": "En los del Estado.",
-        "correcta": false
-      },
-      {
-        "texto": "En los de las Comunidades Autónomas.",
-        "correcta": false
-      },
-      {
-        "texto": "Las respuestas a) y b) son correctas.",
-        "correcta": true
-      },
-      {
-        "correcta": false
-      }
-    ]
-  },
-  {
-    "id": "1_examenes_ayunt_4_3",
-    "categoria": "jurídico",
-    "tema": "1",
-    "descripcionTema": "Constitución",
-    "nombreExamen": "Examenes ayunt 4",
-    "numeroPreguntaExamen": "3",
-    "texto": "De acuerdo con el artículo 141.4 de la Constitución, en los archipiélagos, las islas tendrán además su administración propia en forma de:",
-    "respuestas": [
-      {
-        "texto": "Cabildos o Consejos.",
-        "correcta": true
-      },
-      {
-        "texto": "Cabildos.",
-        "correcta": false
-      },
-      {
-        "texto": "Consejos.",
-        "correcta": false
-      },
-      {
-        "correcta": false
-      }
-    ]
-  },
-  {
-    "id": "5_examenes_ayunt_4_4",
-    "categoria": "jurídico",
-    "tema": "5",
-    "descripcionTema": "Ley 7/1985 Reguladora de las Bases del Regimen Local",
-    "nombreExamen": "Examenes ayunt 4",
-    "numeroPreguntaExamen": "4",
-    "texto": "De acuerdo con el artículo 14.2 de la Ley 7/1985, de 2 de abril, reguladora de las bases del Régimen Local, ¿Puede la denominación de un municipio ser en una lengua distinta del castellano?",
-    "respuestas": [
-      {
-        "texto": "No.",
-        "correcta": false
-      },
-      {
-        "texto": "Sí, cuando se trate de cualquier otra lengua española.",
-        "correcta": false
-      },
-      {
-        "texto": "Sí, cuando se trate de una lengua española que sea oficial en la respectiva Comunidad Autónoma.",
-        "correcta": true
-      },
-      {
-        "correcta": false
-      }
-    ]
-  },
-  {
-    "id": "5_examenes_ayunt_4_5",
-    "categoria": "jurídico",
-    "tema": "5",
-    "descripcionTema": "Ley 7/1985 Reguladora de las Bases del Regimen Local",
-    "nombreExamen": "Examenes ayunt 4",
-    "numeroPreguntaExamen": "5",
-    "texto": "De acuerdo con el artículo 15, párrafo primero, de la Ley 7/1985, de 2 de abril, reguladora de las bases del Régimen Local:",
-    "respuestas": [
-      {
-        "texto": "Toda persona que viva en España está obligada a inscribirse en el Padrón del municipio en el que resida habitualmente.",
-        "correcta": false
-      },
-      {
-        "texto": "Quien viva en varios municipios deberá inscribirse únicamente en el que habite durante más tiempo al año.",
-        "correcta": false
-      },
-      {
-        "texto": "Las respuestas a) y b) son correctas.",
-        "correcta": true
-      },
-      {
-        "correcta": false
-      }
-    ]
-  },
-  {
-    "id": "2_examenes_ayunt_4_6",
-    "categoria": "jurídico",
-    "tema": "2",
-    "descripcionTema": "Ley Org. 5/2007 Estatuto de Autonomia",
-    "nombreExamen": "Examenes ayunt 4",
-    "numeroPreguntaExamen": "6",
-    "texto": "El artículo 1.1 del Estatuto de Autonomía de Aragón, define Aragón como:",
-    "respuestas": [
-      {
-        "texto": "Nación.",
-        "correcta": false
-      },
-      {
-        "texto": "Nacionalidad histórica.",
-        "correcta": true
-      },
-      {
-        "texto": "Nacionalidad.",
-        "correcta": false
-      },
-      {
-        "correcta": false
-      }
-    ]
-  },
-  {
     "id": "2_examenes_ayunt_4_7",
     "categoria": "jurídico",
     "tema": "2",
@@ -15334,58 +15098,6 @@
       {
         "texto": "Exclusiva.",
         "correcta": true
-      },
-      {
-        "correcta": false
-      }
-    ]
-  },
-  {
-    "id": "5_examenes_ayunt_4_9",
-    "categoria": "jurídico",
-    "tema": "5",
-    "descripcionTema": "Ley 7/1985 Reguladora de las Bases del Regimen Local",
-    "nombreExamen": "Examenes ayunt 4",
-    "numeroPreguntaExamen": "9",
-    "texto": "De acuerdo con el artículo 89 de la Ley 7/1985 de 2 de abril, reguladora de las bases del Régimen Local, el desempeño de puestos de confianza o asesoramiento especial corresponde:",
-    "respuestas": [
-      {
-        "texto": "A funcionarios de carrera.",
-        "correcta": false
-      },
-      {
-        "texto": "A personal eventual.",
-        "correcta": true
-      },
-      {
-        "texto": "A contratados en régimen de derecho laboral.",
-        "correcta": false
-      },
-      {
-        "correcta": false
-      }
-    ]
-  },
-  {
-    "id": "5_examenes_ayunt_4_10",
-    "categoria": "jurídico",
-    "tema": "5",
-    "descripcionTema": "Ley 7/1985 Reguladora de las Bases del Regimen Local",
-    "nombreExamen": "Examenes ayunt 4",
-    "numeroPreguntaExamen": "10",
-    "texto": "De acuerdo con el artículo 92 bis de la Ley 7/1985, de 2 de abril, reguladora de las bases del Régimen Local, la Secretaría es una función públicas necesaria en todas las Corporaciones locales, cuya responsabilidad administrativa está reservada a funcionarios de administración local con habilitación de carácter nacional. Dicha función es comprensiva:",
-    "respuestas": [
-      {
-        "texto": "De la fe pública y el asesoramiento legal preceptivo.",
-        "correcta": true
-      },
-      {
-        "texto": "Del asesoramiento legal preceptivo.",
-        "correcta": false
-      },
-      {
-        "texto": "De la fe pública.",
-        "correcta": false
       },
       {
         "correcta": false
@@ -15796,32 +15508,6 @@
     ]
   },
   {
-    "id": "1_examenes_ayunt_5_1",
-    "categoria": "jurídico",
-    "tema": "1",
-    "descripcionTema": "Constitución",
-    "nombreExamen": "Examenes ayunt 5",
-    "numeroPreguntaExamen": "1",
-    "texto": "De acuerdo con el artículo 105.b) de la Constitución española, la ley regulará el acceso de los ciudadanos a los archivos y registros administrativos, salvo en lo que afecte a la seguridad y defensa del Estado, la intimidad de las personas y la averiguación:",
-    "respuestas": [
-      {
-        "texto": "De los delitos y faltas.",
-        "correcta": false
-      },
-      {
-        "texto": "De los delitos.",
-        "correcta": true
-      },
-      {
-        "texto": "De los delitos, faltas e infracciones administrativas.",
-        "correcta": false
-      },
-      {
-        "correcta": false
-      }
-    ]
-  },
-  {
     "id": "3_examenes_ayunt_5_2",
     "categoria": "jurídico",
     "tema": "3",
@@ -15840,84 +15526,6 @@
       },
       {
         "texto": "De oficio o a solicitud del interesado",
-        "correcta": false
-      },
-      {
-        "correcta": false
-      }
-    ]
-  },
-  {
-    "id": "3_examenes_ayunt_5_3",
-    "categoria": "jurídico",
-    "tema": "3",
-    "descripcionTema": "Ley 39/2015 Procedimiento Adm. Común.",
-    "nombreExamen": "Examenes ayunt 5",
-    "numeroPreguntaExamen": "3",
-    "texto": "De acuerdo con el artículo 100.1 de la Ley 39/2015, de 1 de octubre, del Procedimiento Administrativo Común de las Administraciones Públicas, la ejecución forzosa de los actos administrativos por las Administraciones Públicas se efectuará, respetando siempre el principio de:",
-    "respuestas": [
-      {
-        "texto": "Legalidad.",
-        "correcta": false
-      },
-      {
-        "texto": "Proporcionalidad.",
-        "correcta": true
-      },
-      {
-        "texto": "Las respuestas a) y b) son correctas.",
-        "correcta": false
-      },
-      {
-        "correcta": false
-      }
-    ]
-  },
-  {
-    "id": "2_examenes_ayunt_5_4",
-    "categoria": "jurídico",
-    "tema": "2",
-    "descripcionTema": "Ley Org. 5/2007 Estatuto de Autonomia",
-    "nombreExamen": "Examenes ayunt 5",
-    "numeroPreguntaExamen": "4",
-    "texto": "De acuerdo con el artículo 70.1 del Estatuto de Autonomía de Aragón, las competencias de la Comunidad Autónoma se clasifican en exclusivas, compartidas y:",
-    "respuestas": [
-      {
-        "texto": "Reglamentarias.",
-        "correcta": false
-      },
-      {
-        "texto": "Ejecutivas.",
-        "correcta": true
-      },
-      {
-        "texto": "Administrativas.",
-        "correcta": false
-      },
-      {
-        "correcta": false
-      }
-    ]
-  },
-  {
-    "id": "5_examenes_ayunt_5_5",
-    "categoria": "jurídico",
-    "tema": "5",
-    "descripcionTema": "Ley 7/1985 Reguladora de las Bases del Regimen Local",
-    "nombreExamen": "Examenes ayunt 5",
-    "numeroPreguntaExamen": "5",
-    "texto": "De acuerdo con el artículo 11 de la Ley 7/1985, de 2 de abril, reguladora de las bases del Régimen Local, el municipio es:",
-    "respuestas": [
-      {
-        "texto": "Una entidad local.",
-        "correcta": false
-      },
-      {
-        "texto": "La entidad local básica de la organización territorial del Estado",
-        "correcta": true
-      },
-      {
-        "texto": "Una entidad local territorial.",
         "correcta": false
       },
       {
@@ -15945,58 +15553,6 @@
       {
         "texto": "El valor catastral.",
         "correcta": true
-      },
-      {
-        "correcta": false
-      }
-    ]
-  },
-  {
-    "id": "4_examenes_ayunt_5_7",
-    "categoria": "jurídico",
-    "tema": "4",
-    "descripcionTema": "R.D.L. 2/2004 Ley Haciendas Locales",
-    "nombreExamen": "Examenes ayunt 5",
-    "numeroPreguntaExamen": "7",
-    "texto": "De acuerdo con el artículo 168.1 del Real Decreto Legislativo 2/2004, de 5 de marzo, que aprueba el texto refundido de la Ley reguladora de las Haciendas Locales, el presupuesto de la entidad local será formado:",
-    "respuestas": [
-      {
-        "texto": "Por su Presidente.",
-        "correcta": true
-      },
-      {
-        "texto": "Por el Pleno.",
-        "correcta": false
-      },
-      {
-        "texto": "Por la Junta de Gobierno Local.",
-        "correcta": false
-      },
-      {
-        "correcta": false
-      }
-    ]
-  },
-  {
-    "id": "6_examenes_ayunt_5_8",
-    "categoria": "jurídico",
-    "tema": "6",
-    "descripcionTema": "R.D.L. 5/2015 T.R.E.B.E.P",
-    "nombreExamen": "Examenes ayunt 5",
-    "numeroPreguntaExamen": "8",
-    "texto": "De acuerdo con el artículo 39.1 del Real Decreto Legislativo 5/2015, de 30 de octubre, que aprueba el texto refundido de la Ley del Estatuto Básico del Empleado Público, los órganos específicos de representación de los funcionarios son:",
-    "respuestas": [
-      {
-        "texto": "Las Juntas de Personal.",
-        "correcta": false
-      },
-      {
-        "texto": "Los Delegados de Personal y las Juntas de personal.",
-        "correcta": true
-      },
-      {
-        "texto": "Los Delegados de personal.",
-        "correcta": false
       },
       {
         "correcta": false
@@ -16048,32 +15604,6 @@
       },
       {
         "texto": "Acoso por orientación sexual.",
-        "correcta": false
-      },
-      {
-        "correcta": false
-      }
-    ]
-  },
-  {
-    "id": "8_examenes_ayunt_5_12",
-    "categoria": "jurídico",
-    "tema": "8",
-    "descripcionTema": "Ley 3/2007 Igualdad",
-    "nombreExamen": "Examenes ayunt 5",
-    "numeroPreguntaExamen": "12",
-    "texto": "De acuerdo con el Plan de igualdad para las empleadas y empleados del Ayuntamiento de Zaragoza, su periodo de vigencia desde su aprobación por el Gobierno de Zaragoza y publicación en el Boletín Oficial de la Provincia es de:",
-    "respuestas": [
-      {
-        "texto": "Dos años.",
-        "correcta": false
-      },
-      {
-        "texto": "Cuatro años.",
-        "correcta": true
-      },
-      {
-        "texto": "Tres años.",
         "correcta": false
       },
       {
@@ -16472,32 +16002,6 @@
     ]
   },
   {
-    "id": "10_test_fran_1_5",
-    "categoria": "específico",
-    "tema": "10",
-    "descripcionTema": "Albañileria",
-    "nombreExamen": "Test fran 1",
-    "numeroPreguntaExamen": "5",
-    "texto": "¿Cómo se llama el problema de humedad ascendente en parámetros verticales?",
-    "respuestas": [
-      {
-        "texto": "Filtración",
-        "correcta": false
-      },
-      {
-        "texto": "Capilaridad",
-        "correcta": true
-      },
-      {
-        "texto": "Fugas",
-        "correcta": false
-      },
-      {
-        "correcta": false
-      }
-    ]
-  },
-  {
     "id": "10_test_fran_1_6",
     "categoria": "específico",
     "tema": "10",
@@ -16698,32 +16202,6 @@
       },
       {
         "texto": "Es una mezcla de cemento blanco muy tamizado con aditivos para conseguir un fraguado rápido.",
-        "correcta": false
-      },
-      {
-        "correcta": false
-      }
-    ]
-  },
-  {
-    "id": "10_test_fran_1_14",
-    "categoria": "específico",
-    "tema": "10",
-    "descripcionTema": "Albañileria",
-    "nombreExamen": "Test fran 1",
-    "numeroPreguntaExamen": "14",
-    "texto": "Para la fabricación de escayola se parte de una piedra de yeso con una pureza superior al:",
-    "respuestas": [
-      {
-        "texto": "60%.",
-        "correcta": false
-      },
-      {
-        "texto": "90%.",
-        "correcta": true
-      },
-      {
-        "texto": "80%",
         "correcta": false
       },
       {
@@ -18188,84 +17666,6 @@
     ]
   },
   {
-    "id": "10_test_fran_2_44",
-    "categoria": "específico",
-    "tema": "10",
-    "descripcionTema": "Albañileria",
-    "nombreExamen": "Test fran 2",
-    "numeroPreguntaExamen": "44",
-    "texto": "Durante la realización de una fábrica de ladrillo:",
-    "respuestas": [
-      {
-        "texto": "No debe sobrar mortero de la junta horizontal entre hiladas.",
-        "correcta": false
-      },
-      {
-        "texto": "El mortero sobrante del tendel al apoyar la pieza puede colocarse sobre dicha pieza.",
-        "correcta": false
-      },
-      {
-        "texto": "El mortero que refluye del tendel al asentar la pieza puede utilizarse en la ejecución de la llaga.",
-        "correcta": true
-      },
-      {
-        "correcta": false
-      }
-    ]
-  },
-  {
-    "id": "10_test_fran_2_45",
-    "categoria": "específico",
-    "tema": "10",
-    "descripcionTema": "Albañileria",
-    "nombreExamen": "Test fran 2",
-    "numeroPreguntaExamen": "45",
-    "texto": "¿A qué se le denomina \"muro aparejado\"?",
-    "respuestas": [
-      {
-        "texto": "Al muro de ladrillo en el que se van trabando entre sí hiladas de dos tipos de ladrillo.",
-        "correcta": false
-      },
-      {
-        "texto": "Al muro de ladrillo realizado mediante dos hojas adosadas con elementos intermedios que las enlazan.",
-        "correcta": false
-      },
-      {
-        "texto": "Al muro de ladrillo trabado en todo su espesor, ejecutado con una sola clase de ladrillo.",
-        "correcta": true
-      },
-      {
-        "correcta": false
-      }
-    ]
-  },
-  {
-    "id": "10_test_fran_2_46",
-    "categoria": "específico",
-    "tema": "10",
-    "descripcionTema": "Albañileria",
-    "nombreExamen": "Test fran 2",
-    "numeroPreguntaExamen": "46",
-    "texto": "Antes de extender una capa de grava-cemento deberá comprobarse que la superficie de asiento se encuentra:",
-    "respuestas": [
-      {
-        "texto": "Totalmente seca.",
-        "correcta": false
-      },
-      {
-        "texto": "Húmeda, pero no encharcada.",
-        "correcta": true
-      },
-      {
-        "texto": "Ligeramente encharcada, para que el agua inicie el fraguado del cemento.",
-        "correcta": false
-      },
-      {
-        "correcta": false
-      }
-    ]
-  },
-  {
     "id": "10_test_fran_2_47",
     "categoria": "específico",
     "tema": "10",
@@ -18493,32 +17893,6 @@
       {
         "texto": "A la junta de mortero vertical y paralela a la cara del muro.",
         "correcta": true
-      },
-      {
-        "correcta": false
-      }
-    ]
-  },
-  {
-    "id": "10_test_fran_2_56",
-    "categoria": "específico",
-    "tema": "10",
-    "descripcionTema": "Albañileria",
-    "nombreExamen": "Test fran 2",
-    "numeroPreguntaExamen": "56",
-    "texto": "Cuando dos partes de una obra de fábrica hayan de levantarse en épocas distintas, para realizar la traba se dejará un conjunto de entrantes y salientes de forma alternativa. ¿ Como se denomina a los salientes?",
-    "respuestas": [
-      {
-        "texto": "Dientes.",
-        "correcta": false
-      },
-      {
-        "texto": "Endejas.",
-        "correcta": true
-      },
-      {
-        "texto": "Salmeres.",
-        "correcta": false
       },
       {
         "correcta": false
@@ -19792,32 +19166,6 @@
       },
       {
         "texto": "A la cal apagada no absorbe agua",
-        "correcta": false
-      },
-      {
-        "correcta": false
-      }
-    ]
-  },
-  {
-    "id": "10_test_octubre_2025_25",
-    "categoria": "específico",
-    "tema": "10",
-    "descripcionTema": "Albañileria",
-    "nombreExamen": "Test octubre 2025",
-    "numeroPreguntaExamen": "25",
-    "texto": "¿Qué materiales pertenecen al grupo de aglomerantes?",
-    "respuestas": [
-      {
-        "texto": "Betún, plástico, barro, brea, pintura, pegamentos, cemento, asfalto y resinas",
-        "correcta": false
-      },
-      {
-        "texto": "Barro, asfalto, betún, pinturas, pegamentos, resinas, silicona, plásticos y brea",
-        "correcta": true
-      },
-      {
-        "texto": "Cal, pinturas, brea, plásticos, betún, pegamentos, resinas, asfalto y silicona",
         "correcta": false
       },
       {
@@ -22244,32 +21592,6 @@
     ]
   },
   {
-    "id": "12_test_carpinteria_8_2024_21",
-    "categoria": "específico",
-    "tema": "12",
-    "descripcionTema": "Carpinteria",
-    "nombreExamen": "Test carpinteria 8 2024",
-    "numeroPreguntaExamen": "21",
-    "texto": "La anomalía local de la estructura de la madera producida por la parte inferior de una rama que va quedando englobada en el tronco, a medida que se producen los crecimientos de este, se denomina:",
-    "respuestas": [
-      {
-        "texto": "Desviación",
-        "correcta": false
-      },
-      {
-        "texto": "Gema",
-        "correcta": false
-      },
-      {
-        "texto": "Nudo",
-        "correcta": true
-      },
-      {
-        "correcta": false
-      }
-    ]
-  },
-  {
     "id": "12_test_carpinteria_8_2024_22",
     "categoria": "específico",
     "tema": "12",
@@ -22504,32 +21826,6 @@
     ]
   },
   {
-    "id": "12_test_carpinteria_2016_1",
-    "categoria": "específico",
-    "tema": "12",
-    "descripcionTema": "Carpinteria",
-    "nombreExamen": "Test carpinteria 2016",
-    "numeroPreguntaExamen": "1",
-    "texto": "En los casos normales, la posición correcta de las hojas de la sierra de arco para el corte de perfiles metálicos, deberá ser de tal manera que la penetración la efectúe en el movimiento de:",
-    "respuestas": [
-      {
-        "texto": "Empujado o avance",
-        "correcta": true
-      },
-      {
-        "texto": "Recogido o retroceso",
-        "correcta": false
-      },
-      {
-        "texto": "Es indistinto",
-        "correcta": false
-      },
-      {
-        "correcta": false
-      }
-    ]
-  },
-  {
     "id": "12_test_carpinteria_2016_2",
     "categoria": "específico",
     "tema": "12",
@@ -22548,32 +21844,6 @@
       },
       {
         "texto": "Muerdago",
-        "correcta": false
-      },
-      {
-        "correcta": false
-      }
-    ]
-  },
-  {
-    "id": "12_test_carpinteria_2016_3",
-    "categoria": "específico",
-    "tema": "12",
-    "descripcionTema": "Carpinteria",
-    "nombreExamen": "Test carpinteria 2016",
-    "numeroPreguntaExamen": "3",
-    "texto": "El cepillo de carpintero, de hoja estrecha utilizado para hacer molduras que no se pueden hacer con la garlopa se llama:",
-    "respuestas": [
-      {
-        "texto": "Guillame",
-        "correcta": true
-      },
-      {
-        "texto": "Garlopa",
-        "correcta": false
-      },
-      {
-        "texto": "Cepillo de mol",
         "correcta": false
       },
       {
@@ -22634,110 +21904,6 @@
     ]
   },
   {
-    "id": "12_test_carpinteria_2016_6",
-    "categoria": "específico",
-    "tema": "12",
-    "descripcionTema": "Carpinteria",
-    "nombreExamen": "Test carpinteria 2016",
-    "numeroPreguntaExamen": "6",
-    "texto": "Qué tipo de bisagra desmontable sin herramienta es aquella que se utiliza para las puertas y se compone de una parte macho (la que incorpora el pasador) y una hembra (la que cubre el pasador)",
-    "respuestas": [
-      {
-        "texto": "Bisagra oculta",
-        "correcta": false
-      },
-      {
-        "texto": "Bisagra de piano",
-        "correcta": false
-      },
-      {
-        "texto": "Goznes",
-        "correcta": true
-      },
-      {
-        "correcta": false
-      }
-    ]
-  },
-  {
-    "id": "12_test_carpinteria_2016_7",
-    "categoria": "específico",
-    "tema": "12",
-    "descripcionTema": "Carpinteria",
-    "nombreExamen": "Test carpinteria 2016",
-    "numeroPreguntaExamen": "7",
-    "texto": "La cola blanca de carpintero se diluye con...",
-    "respuestas": [
-      {
-        "texto": "Disolvente universal",
-        "correcta": false
-      },
-      {
-        "texto": "Aguarras",
-        "correcta": false
-      },
-      {
-        "texto": "Agua",
-        "correcta": true
-      },
-      {
-        "correcta": false
-      }
-    ]
-  },
-  {
-    "id": "12_test_carpinteria_2016_8",
-    "categoria": "específico",
-    "tema": "12",
-    "descripcionTema": "Carpinteria",
-    "nombreExamen": "Test carpinteria 2016",
-    "numeroPreguntaExamen": "8",
-    "texto": "Cuantas cuchillas tiene un cepillo de carpintero de desbastar",
-    "respuestas": [
-      {
-        "texto": "Una",
-        "correcta": true
-      },
-      {
-        "texto": "Dos",
-        "correcta": false
-      },
-      {
-        "texto": "Una lisa y otra dentada",
-        "correcta": false
-      },
-      {
-        "correcta": false
-      }
-    ]
-  },
-  {
-    "id": "12_test_carpinteria_2016_9",
-    "categoria": "específico",
-    "tema": "12",
-    "descripcionTema": "Carpinteria",
-    "nombreExamen": "Test carpinteria 2016",
-    "numeroPreguntaExamen": "9",
-    "texto": "El hundimiento cónico alrededor de un agujero en el cual se alojará la cabeza de un tornillo para que quede a ras de superficie se denomina:",
-    "respuestas": [
-      {
-        "texto": "Avellanado",
-        "correcta": true
-      },
-      {
-        "texto": "Taladrado jónico",
-        "correcta": false
-      },
-      {
-        "texto": "Abocardado",
-        "correcta": false
-      },
-      {
-        "correcta": false
-      }
-    ]
-  },
-  {
     "id": "12_test_carpinteria_2016_10",
     "categoria": "específico",
     "tema": "12",
@@ -22756,32 +21922,6 @@
       },
       {
         "texto": "Alicantina",
-        "correcta": true
-      },
-      {
-        "correcta": false
-      }
-    ]
-  },
-  {
-    "id": "12_test_carpinteria_2016_11",
-    "categoria": "específico",
-    "tema": "12",
-    "descripcionTema": "Carpinteria",
-    "nombreExamen": "Test carpinteria 2016",
-    "numeroPreguntaExamen": "11",
-    "texto": "¿Cuál de las siguientes herramientas no se utiliza habitualmente en carpintería?",
-    "respuestas": [
-      {
-        "texto": "Escofina",
-        "correcta": false
-      },
-      {
-        "texto": "Bastrén",
-        "correcta": false
-      },
-      {
-        "texto": "Espuerta",
         "correcta": true
       },
       {
@@ -22835,58 +21975,6 @@
       {
         "texto": "Irwin",
         "correcta": false
-      },
-      {
-        "correcta": false
-      }
-    ]
-  },
-  {
-    "id": "12_test_carpinteria_2016_14",
-    "categoria": "específico",
-    "tema": "12",
-    "descripcionTema": "Carpinteria",
-    "nombreExamen": "Test carpinteria 2016",
-    "numeroPreguntaExamen": "14",
-    "texto": "¿qué tipo de serrucho es el más utilizado para hacer cortes curvos en la madera?",
-    "respuestas": [
-      {
-        "texto": "Serrucho",
-        "correcta": false
-      },
-      {
-        "texto": "Sierra de costilla",
-        "correcta": false
-      },
-      {
-        "texto": "Serrucho de punta",
-        "correcta": true
-      },
-      {
-        "correcta": false
-      }
-    ]
-  },
-  {
-    "id": "12_test_carpinteria_2016_15",
-    "categoria": "específico",
-    "tema": "12",
-    "descripcionTema": "Carpinteria",
-    "nombreExamen": "Test carpinteria 2016",
-    "numeroPreguntaExamen": "15",
-    "texto": "Para tapar grietas o pequeños agujeros en una carpintería, se puede utilizar una masilla universal elaborada con:",
-    "respuestas": [
-      {
-        "texto": "Resina y viruta",
-        "correcta": false
-      },
-      {
-        "texto": "Serrín y viruta",
-        "correcta": false
-      },
-      {
-        "texto": "Serrín y cola blanca",
-        "correcta": true
       },
       {
         "correcta": false
@@ -24480,32 +23568,6 @@
     ]
   },
   {
-    "id": "12_test_carpinteria_2016_80",
-    "categoria": "específico",
-    "tema": "12",
-    "descripcionTema": "Carpinteria",
-    "nombreExamen": "Test carpinteria 2016",
-    "numeroPreguntaExamen": "80",
-    "texto": "¿Qué es un xilófago?",
-    "respuestas": [
-      {
-        "texto": "Herramienta manual para lijar madera",
-        "correcta": false
-      },
-      {
-        "texto": "Instrumento musical",
-        "correcta": false
-      },
-      {
-        "texto": "Insecto que se alimenta de madera",
-        "correcta": true
-      },
-      {
-        "correcta": false
-      }
-    ]
-  },
-  {
     "id": "12_test_carpinteria_2016_81",
     "categoria": "específico",
     "tema": "12",
@@ -24688,32 +23750,6 @@
     ]
   },
   {
-    "id": "12_test_carpinteria_2016_88",
-    "categoria": "específico",
-    "tema": "12",
-    "descripcionTema": "Carpinteria",
-    "nombreExamen": "Test carpinteria 2016",
-    "numeroPreguntaExamen": "88",
-    "texto": "Se consideran maderas duras las procedentes de los siguientes árboles:",
-    "respuestas": [
-      {
-        "texto": "El nogal, laurel y la caoba.",
-        "correcta": true
-      },
-      {
-        "texto": "El roble, caoba y pino",
-        "correcta": false
-      },
-      {
-        "texto": "El pino, álamo y guatambú.",
-        "correcta": false
-      },
-      {
-        "correcta": false
-      }
-    ]
-  },
-  {
     "id": "12_test_carpinteria_2016_89",
     "categoria": "específico",
     "tema": "12",
@@ -24818,32 +23854,6 @@
     ]
   },
   {
-    "id": "12_test_carpinteria_2016_93",
-    "categoria": "específico",
-    "tema": "12",
-    "descripcionTema": "Carpinteria",
-    "nombreExamen": "Test carpinteria 2016",
-    "numeroPreguntaExamen": "93",
-    "texto": "Las principales partes de un tornillo son:",
-    "respuestas": [
-      {
-        "texto": "Cabeza, vástago y rosca",
-        "correcta": true
-      },
-      {
-        "texto": "Cabeza, puntilla y arandela",
-        "correcta": false
-      },
-      {
-        "texto": "Cabeza, masilla y rosca",
-        "correcta": false
-      },
-      {
-        "correcta": false
-      }
-    ]
-  },
-  {
     "id": "12_test_carpinteria_2016_94",
     "categoria": "específico",
     "tema": "12",
@@ -24914,32 +23924,6 @@
       },
       {
         "texto": "Dintel",
-        "correcta": true
-      },
-      {
-        "correcta": false
-      }
-    ]
-  },
-  {
-    "id": "12_test_carpinteria_2016_97",
-    "categoria": "específico",
-    "tema": "12",
-    "descripcionTema": "Carpinteria",
-    "nombreExamen": "Test carpinteria 2016",
-    "numeroPreguntaExamen": "97",
-    "texto": "El barniz es un acabado de la madera que le ofrece protección y la embellece. Para aplicar barniz es necesario primero:",
-    "respuestas": [
-      {
-        "texto": "Aplicar tapaporos o fondo",
-        "correcta": false
-      },
-      {
-        "texto": "Leer las instrucciones que recomienda el fabricante del producto y seguirlas",
-        "correcta": false
-      },
-      {
-        "texto": "Ambas son correctas",
         "correcta": true
       },
       {
@@ -25590,32 +24574,6 @@
       },
       {
         "texto": "Pintura",
-        "correcta": false
-      },
-      {
-        "correcta": false
-      }
-    ]
-  },
-  {
-    "id": "12_test_carpinteria_2021_8",
-    "categoria": "específico",
-    "tema": "12",
-    "descripcionTema": "Carpinteria",
-    "nombreExamen": "Test carpinteria 2021",
-    "numeroPreguntaExamen": "8",
-    "texto": "¿Qué broca se utiliza para hacer en la madera taladros grandes, pero de poco calado?",
-    "respuestas": [
-      {
-        "texto": "Fresa",
-        "correcta": true
-      },
-      {
-        "texto": "Irwin",
-        "correcta": false
-      },
-      {
-        "texto": "Helicoidal",
         "correcta": false
       },
       {
@@ -44378,58 +43336,6 @@
     ]
   },
   {
-    "id": "9_0._test_2024_tl_of._mantenimiento_24",
-    "categoria": "específico",
-    "tema": "9",
-    "descripcionTema": "Electricidad",
-    "nombreExamen": "0. Test 2024 TL Of. Mantenimiento",
-    "numeroPreguntaExamen": "24",
-    "texto": "La iluminancia o iluminación es:",
-    "respuestas": [
-      {
-        "texto": "Es el flujo luminoso recibido por unidad de superficie. Se mide en lux.",
-        "correcta": true
-      },
-      {
-        "texto": "Es la energía luminosa emitida por unidad de tiempo. Su unidad es el lumen.",
-        "correcta": false
-      },
-      {
-        "texto": "Es la intensidad luminosa en una dirección dada por unidad de superficie aparente luminosa o iluminada.",
-        "correcta": false
-      },
-      {
-        "correcta": false
-      }
-    ]
-  },
-  {
-    "id": "9_0._test_2024_tl_of._mantenimiento_25",
-    "categoria": "específico",
-    "tema": "9",
-    "descripcionTema": "Electricidad",
-    "nombreExamen": "0. Test 2024 TL Of. Mantenimiento",
-    "numeroPreguntaExamen": "25",
-    "texto": "En las lámparas o tubos fluorescentes:",
-    "respuestas": [
-      {
-        "texto": "La emisión de luz es el resultado de la alta temperatura adquirida por un filamento.",
-        "correcta": false
-      },
-      {
-        "texto": "La emisión de luz se produce al paso de una corriente eléctrica de baja intensidad por un semiconductor.",
-        "correcta": false
-      },
-      {
-        "texto": "La emisión de luz es la consecuencia de la descarga eléctrica a través de vapor de mercurio a baja presión",
-        "correcta": true
-      },
-      {
-        "correcta": false
-      }
-    ]
-  },
-  {
     "id": "11_0._test_2024_tl_of._mantenimiento_27",
     "categoria": "específico",
     "tema": "11",
@@ -58868,32 +57774,6 @@
     ]
   },
   {
-    "id": "10_0._test_2025_pi_of._mantenimiento_13",
-    "categoria": "específico",
-    "tema": "10",
-    "descripcionTema": "Albañileria",
-    "nombreExamen": "0. Test 2025 PI Of. Mantenimiento",
-    "numeroPreguntaExamen": "13",
-    "texto": "EN 197-1- CEM I 42,5 R. La denominación corresponde a un cemento pórtland pero, qué significa 42,5 R:",
-    "respuestas": [
-      {
-        "texto": "Clase resistente 42,5 y alta resistencia inicial.",
-        "correcta": true
-      },
-      {
-        "texto": "Clase resistente 42,5 y resistencia inicial normal",
-        "correcta": false
-      },
-      {
-        "texto": "Clase resistente 42,5 y baja resistencia inicial.",
-        "correcta": false
-      },
-      {
-        "correcta": false
-      }
-    ]
-  },
-  {
     "id": "10_0._test_2025_pi_of._mantenimiento_14",
     "categoria": "específico",
     "tema": "10",
@@ -58965,32 +57845,6 @@
       {
         "texto": "El revoco.",
         "correcta": false
-      },
-      {
-        "correcta": false
-      }
-    ]
-  },
-  {
-    "id": "10_0._test_2025_pi_of._mantenimiento_17",
-    "categoria": "específico",
-    "tema": "10",
-    "descripcionTema": "Albañileria",
-    "nombreExamen": "0. Test 2025 PI Of. Mantenimiento",
-    "numeroPreguntaExamen": "17",
-    "texto": "La escayola es yeso fino calcinado. En construcción se puede usar para fabricar placas, estando constituidas principalmente por yeso y otro material. Indique a qué otro material nos referimos:",
-    "respuestas": [
-      {
-        "texto": "Lana de roca.",
-        "correcta": false
-      },
-      {
-        "texto": "Poliestireno extruido.",
-        "correcta": false
-      },
-      {
-        "texto": "Fibra de vidrio.",
-        "correcta": true
       },
       {
         "correcta": false
@@ -59433,32 +58287,6 @@
       {
         "texto": "Es semejante al cepillo de debastar, en lo que se refiere a cuchilla, el contrahierro y la cuña; pero la base está hecha de una plancha de acero flexible que se ajusta mediante una tuerca pudiendo formar una superficie cóncava o convexa.",
         "correcta": true
-      },
-      {
-        "correcta": false
-      }
-    ]
-  },
-  {
-    "id": "12_0._test_2025_pi_of._mantenimiento_35",
-    "categoria": "específico",
-    "tema": "12",
-    "descripcionTema": "Carpinteria",
-    "nombreExamen": "0. Test 2025 PI Of. Mantenimiento",
-    "numeroPreguntaExamen": "35",
-    "texto": "¿Qué es una gubia?",
-    "respuestas": [
-      {
-        "texto": "Es un formón, que visto transversalmente, presenta una hoja curva (en forma de U o de V). La hoja presenta un biselado hacia fuera (de corte exterior) o hacia dentro (de corte interior).",
-        "correcta": true
-      },
-      {
-        "texto": "Es un formón con una hoja curva, que permite retirar los sobrantes de una escopladura profunda.",
-        "correcta": false
-      },
-      {
-        "texto": "Es un escoplo acodado, que se utiliza para hacer escopleaduras en los lugares de difícil acceso.",
-        "correcta": false
       },
       {
         "correcta": false
@@ -64316,7 +63144,7 @@
     "id": "24_test_juntas_vecinales_1",
     "categoria": "específico",
     "tema": "24",
-    "descripcionTema": "Juntas Vecinales",
+    "descripcionTema": "Juntas Municipales y Vecinales",
     "nombreExamen": "Test Juntas Vecinales",
     "numeroPreguntaExamen": "1",
     "texto": "¿A qué corresponde esta definición “órganos del Ayuntamiento de Zaragoza de ámbito territorial para la gestión de los Distritos y los Barrios Rurales en los que, mediante la participación vecinal, se realiza la gestión desconcentrada de asuntos que afectan al territorio y los vecinos en el ámbito del mismo, mejorando la eficacia de los servicios públicos que gestionan y siendo instrumento para la corrección de desequilibrios entre zonas y barrios de Zaragoza”",
@@ -64343,7 +63171,7 @@
     "id": "24_test_juntas_vecinales_2",
     "categoria": "específico",
     "tema": "24",
-    "descripcionTema": "Juntas Vecinales",
+    "descripcionTema": "Juntas Municipales y Vecinales",
     "nombreExamen": "Test Juntas Vecinales",
     "numeroPreguntaExamen": "2",
     "texto": "¿Cuáles son los órganos necesarios de las Juntas Municipales?",
@@ -64370,7 +63198,7 @@
     "id": "24_test_juntas_vecinales_3",
     "categoria": "específico",
     "tema": "24",
-    "descripcionTema": "Juntas Vecinales",
+    "descripcionTema": "Juntas Municipales y Vecinales",
     "nombreExamen": "Test Juntas Vecinales",
     "numeroPreguntaExamen": "3",
     "texto": "¿Quién es el presidente nato de las Juntas Municipales?",
@@ -64397,7 +63225,7 @@
     "id": "24_test_juntas_vecinales_4",
     "categoria": "específico",
     "tema": "24",
-    "descripcionTema": "Juntas Vecinales",
+    "descripcionTema": "Juntas Municipales y Vecinales",
     "nombreExamen": "Test Juntas Vecinales",
     "numeroPreguntaExamen": "4",
     "texto": "¿Por cuántos vocales estará formado el Pleno de la Junta?",
@@ -64424,7 +63252,7 @@
     "id": "24_test_juntas_vecinales_5",
     "categoria": "específico",
     "tema": "24",
-    "descripcionTema": "Juntas Vecinales",
+    "descripcionTema": "Juntas Municipales y Vecinales",
     "nombreExamen": "Test Juntas Vecinales",
     "numeroPreguntaExamen": "5",
     "texto": "¿Cuál de estos miembros tendrán voz y voto en la Junta Municipal?",
@@ -64451,7 +63279,7 @@
     "id": "24_test_juntas_vecinales_6",
     "categoria": "específico",
     "tema": "24",
-    "descripcionTema": "Juntas Vecinales",
+    "descripcionTema": "Juntas Municipales y Vecinales",
     "nombreExamen": "Test Juntas Vecinales",
     "numeroPreguntaExamen": "6",
     "texto": "¿Cada cuánto se reunirá como mínimo el Concejo Rector de la Junta Municipal?",
@@ -64478,7 +63306,7 @@
     "id": "24_test_juntas_vecinales_7",
     "categoria": "específico",
     "tema": "24",
-    "descripcionTema": "Juntas Vecinales",
+    "descripcionTema": "Juntas Municipales y Vecinales",
     "nombreExamen": "Test Juntas Vecinales",
     "numeroPreguntaExamen": "7",
     "texto": "¿Cada cuanto se reunirá como mínimo el Pleno de la Junta Municipal?",
@@ -64505,7 +63333,7 @@
     "id": "24_test_juntas_vecinales_8",
     "categoria": "específico",
     "tema": "24",
-    "descripcionTema": "Juntas Vecinales",
+    "descripcionTema": "Juntas Municipales y Vecinales",
     "nombreExamen": "Test Juntas Vecinales",
     "numeroPreguntaExamen": "8",
     "texto": "¿Cómo podrán ser las sesiones de las Juntas Municipales y Vecinales?",
@@ -64532,7 +63360,7 @@
     "id": "24_test_juntas_vecinales_9",
     "categoria": "específico",
     "tema": "24",
-    "descripcionTema": "Juntas Vecinales",
+    "descripcionTema": "Juntas Municipales y Vecinales",
     "nombreExamen": "Test Juntas Vecinales",
     "numeroPreguntaExamen": "9",
     "texto": "¿Cuántas sesiones extraordinarias puede solicitar como máximo un miembro de la Junta Municipal o de la Junta Vecinal?",
@@ -64559,7 +63387,7 @@
     "id": "24_test_juntas_vecinales_10",
     "categoria": "específico",
     "tema": "24",
-    "descripcionTema": "Juntas Vecinales",
+    "descripcionTema": "Juntas Municipales y Vecinales",
     "nombreExamen": "Test Juntas Vecinales",
     "numeroPreguntaExamen": "10",
     "texto": "¿Cuántos barrios rurales hay en Zaragoza?",
@@ -64586,7 +63414,7 @@
     "id": "24_test_juntas_vecinales_11",
     "categoria": "específico",
     "tema": "24",
-    "descripcionTema": "Juntas Vecinales",
+    "descripcionTema": "Juntas Municipales y Vecinales",
     "nombreExamen": "Test Juntas Vecinales",
     "numeroPreguntaExamen": "11",
     "texto": "¿Cuál de estas afirmaciones no es correcta?",
@@ -64613,7 +63441,7 @@
     "id": "24_test_juntas_vecinales_12",
     "categoria": "específico",
     "tema": "24",
-    "descripcionTema": "Juntas Vecinales",
+    "descripcionTema": "Juntas Municipales y Vecinales",
     "nombreExamen": "Test Juntas Vecinales",
     "numeroPreguntaExamen": "12",
     "texto": "¿Quién nombrará a un vecino del barrio como Representante personal, con la denominación tradicional de Alcalde de Barrio?",
@@ -64640,7 +63468,7 @@
     "id": "24_test_juntas_vecinales_13",
     "categoria": "específico",
     "tema": "24",
-    "descripcionTema": "Juntas Vecinales",
+    "descripcionTema": "Juntas Municipales y Vecinales",
     "nombreExamen": "Test Juntas Vecinales",
     "numeroPreguntaExamen": "13",
     "texto": "¿Quién es el Presidente del Pleno de la Junta Vecinal?",
@@ -64667,7 +63495,7 @@
     "id": "24_test_juntas_vecinales_14",
     "categoria": "específico",
     "tema": "24",
-    "descripcionTema": "Juntas Vecinales",
+    "descripcionTema": "Juntas Municipales y Vecinales",
     "nombreExamen": "Test Juntas Vecinales",
     "numeroPreguntaExamen": "14",
     "texto": "¿Cuál de estos no es un barrio rural de Zaragoza?",
@@ -64694,7 +63522,7 @@
     "id": "24_test_juntas_vecinales_15",
     "categoria": "específico",
     "tema": "24",
-    "descripcionTema": "Juntas Vecinales",
+    "descripcionTema": "Juntas Municipales y Vecinales",
     "nombreExamen": "Test Juntas Vecinales",
     "numeroPreguntaExamen": "15",
     "texto": "¿Cuál es el órgano colegiado de la Junta Vecinal?",
@@ -64721,7 +63549,7 @@
     "id": "24_test_juntas_vecinales_16",
     "categoria": "específico",
     "tema": "24",
-    "descripcionTema": "Juntas Vecinales",
+    "descripcionTema": "Juntas Municipales y Vecinales",
     "nombreExamen": "Test Juntas Vecinales",
     "numeroPreguntaExamen": "16",
     "texto": "Las Juntas Vecinales con menos de 2000 habitantes cuántos representantes tendrán en el Pleno de la Junta Vecinal?",
@@ -64748,7 +63576,7 @@
     "id": "24_test_juntas_vecinales_17",
     "categoria": "específico",
     "tema": "24",
-    "descripcionTema": "Juntas Vecinales",
+    "descripcionTema": "Juntas Municipales y Vecinales",
     "nombreExamen": "Test Juntas Vecinales",
     "numeroPreguntaExamen": "17",
     "texto": "Las Juntas Vecinales con más de 2000 habitantes cuántos representantes tendrán en el Pleno de la Junta Vecinal?",
@@ -64775,7 +63603,7 @@
     "id": "24_test_juntas_vecinales_18",
     "categoria": "específico",
     "tema": "24",
-    "descripcionTema": "Juntas Vecinales",
+    "descripcionTema": "Juntas Municipales y Vecinales",
     "nombreExamen": "Test Juntas Vecinales",
     "numeroPreguntaExamen": "18",
     "texto": "¿Por quién serán nombrados los miembros del Pleno de la Junta Vecinal?",
@@ -64802,7 +63630,7 @@
     "id": "24_test_juntas_vecinales_19",
     "categoria": "específico",
     "tema": "24",
-    "descripcionTema": "Juntas Vecinales",
+    "descripcionTema": "Juntas Municipales y Vecinales",
     "nombreExamen": "Test Juntas Vecinales",
     "numeroPreguntaExamen": "19",
     "texto": "¿Cómo mínimo cada cuanto se reunirá el Concejo Rector de las Juntas Vecinales?",
@@ -64829,7 +63657,7 @@
     "id": "24_test_juntas_vecinales_20",
     "categoria": "específico",
     "tema": "24",
-    "descripcionTema": "Juntas Vecinales",
+    "descripcionTema": "Juntas Municipales y Vecinales",
     "nombreExamen": "Test Juntas Vecinales",
     "numeroPreguntaExamen": "20",
     "texto": "la participación ciudadana se articula sectorialmente a través del:",
@@ -71288,32 +70116,6 @@
     ]
   },
   {
-    "id": "11_test_marzo_2021_10",
-    "categoria": "específico",
-    "tema": "11",
-    "descripcionTema": "Fontaneria",
-    "nombreExamen": "Test marzo 2021",
-    "numeroPreguntaExamen": "10",
-    "texto": "¿Cuál es el orden de soltar elementos a la hora de cambiar una válvula de un radiador?",
-    "respuestas": [
-      {
-        "texto": "Primero del tubo de la instalación, después del radiador",
-        "correcta": false
-      },
-      {
-        "texto": "Primero del radiador, después del tubo de la instalación",
-        "correcta": true
-      },
-      {
-        "texto": "Es indiferente el orden de soltar elementos",
-        "correcta": false
-      },
-      {
-        "correcta": false
-      }
-    ]
-  },
-  {
     "id": "11_test_marzo_2021_11",
     "categoria": "específico",
     "tema": "11",
@@ -72536,32 +71338,6 @@
     ]
   },
   {
-    "id": "11_test_marzo_2021_58",
-    "categoria": "específico",
-    "tema": "11",
-    "descripcionTema": "Fontaneria",
-    "nombreExamen": "Test marzo 2021",
-    "numeroPreguntaExamen": "58",
-    "texto": "¿Cuál es método de colocación de un contador?",
-    "respuestas": [
-      {
-        "texto": "Roscado",
-        "correcta": false
-      },
-      {
-        "texto": "Con bridas",
-        "correcta": false
-      },
-      {
-        "texto": "Ambas respuestas son correctas",
-        "correcta": true
-      },
-      {
-        "correcta": false
-      }
-    ]
-  },
-  {
     "id": "11_test_marzo_2021_59",
     "categoria": "específico",
     "tema": "11",
@@ -72788,32 +71564,6 @@
       },
       {
         "texto": "Es indiferente la aplicación del pegamento",
-        "correcta": false
-      },
-      {
-        "correcta": false
-      }
-    ]
-  },
-  {
-    "id": "11_test_marzo_2021_68",
-    "categoria": "específico",
-    "tema": "11",
-    "descripcionTema": "Fontaneria",
-    "nombreExamen": "Test marzo 2021",
-    "numeroPreguntaExamen": "68",
-    "texto": "¿Cómo se denominan otros sistemas de grifería mezcladora?",
-    "respuestas": [
-      {
-        "texto": "Mezclador termostático",
-        "correcta": true
-      },
-      {
-        "texto": "Mezclador de nivel",
-        "correcta": false
-      },
-      {
-        "texto": "Ninguna respuesta es correcta",
         "correcta": false
       },
       {
@@ -85193,6 +83943,1922 @@
         "correcta": false
       },
       {
+        "correcta": false
+      }
+    ]
+  },
+  {
+    "id": "1_0._test_2026_tl_of._mantenimiento_1",
+    "categoria": "jurídico",
+    "tema": "1",
+    "descripcionTema": "Constitución",
+    "nombreExamen": "0. Test 2026 TL Of. Mantenimiento",
+    "numeroPreguntaExamen": "1",
+    "texto": "¿Qué título de la Constitución española de 1978 tiene como epígrafe “De las Cortes Generales”?",
+    "respuestas": [
+      {
+        "texto": "El Título II.",
+        "correcta": false
+      },
+      {
+        "texto": "El Título III.",
+        "correcta": false
+      },
+      {
+        "texto": "El Título IV.",
+        "correcta": false
+      },
+      {
+        "correcta": false
+      }
+    ]
+  },
+  {
+    "id": "1_0._test_2026_tl_of._mantenimiento_2",
+    "categoria": "jurídico",
+    "tema": "1",
+    "descripcionTema": "Constitución",
+    "nombreExamen": "0. Test 2026 TL Of. Mantenimiento",
+    "numeroPreguntaExamen": "2",
+    "texto": "Según el artículo 6 de la Constitución española de 1978:",
+    "respuestas": [
+      {
+        "texto": "Los partidos políticos son instrumento único para la participación política.",
+        "correcta": false
+      },
+      {
+        "texto": "Los partidos políticos son instrumento fundamental para la participación política.",
+        "correcta": false
+      },
+      {
+        "texto": "Ninguna de las respuestas anteriores es correcta.",
+        "correcta": false
+      },
+      {
+        "correcta": false
+      }
+    ]
+  },
+  {
+    "id": "1_0._test_2026_tl_of._mantenimiento_3",
+    "categoria": "jurídico",
+    "tema": "1",
+    "descripcionTema": "Constitución",
+    "nombreExamen": "0. Test 2026 TL Of. Mantenimiento",
+    "numeroPreguntaExamen": "3",
+    "texto": "De acuerdo con el artículo 141.1 de la Constitución española de 1978:",
+    "respuestas": [
+      {
+        "texto": "La provincia es una entidad local con personalidad jurídica propia, determinada por la agrupación de municipios.",
+        "correcta": false
+      },
+      {
+        "texto": "La provincia es una división territorial para el cumplimiento de las actividades del Estado.",
+        "correcta": false
+      },
+      {
+        "texto": "Las respuestas a) y b) son correctas.",
+        "correcta": false
+      },
+      {
+        "correcta": false
+      }
+    ]
+  },
+  {
+    "id": "2_0._test_2026_tl_of._mantenimiento_4",
+    "categoria": "jurídico",
+    "tema": "2",
+    "descripcionTema": "Ley Org. 5/2007 Estatuto de Autonomia",
+    "nombreExamen": "0. Test 2026 TL Of. Mantenimiento",
+    "numeroPreguntaExamen": "4",
+    "texto": "El artículo 1.1 del Estatuto de Autonomía de Aragón califica a Aragón como:",
+    "respuestas": [
+      {
+        "texto": "Una nacionalidad histórica.",
+        "correcta": false
+      },
+      {
+        "texto": "Una región.",
+        "correcta": false
+      },
+      {
+        "texto": "Una nacionalidad.",
+        "correcta": false
+      },
+      {
+        "correcta": false
+      }
+    ]
+  },
+  {
+    "id": "2_0._test_2026_tl_of._mantenimiento_5",
+    "categoria": "jurídico",
+    "tema": "2",
+    "descripcionTema": "Ley Org. 5/2007 Estatuto de Autonomia",
+    "nombreExamen": "0. Test 2026 TL Of. Mantenimiento",
+    "numeroPreguntaExamen": "5",
+    "texto": "De acuerdo con los artículos 59 y 60 del Estatuto de Autonomía de Aragón, el Justicia de Aragón:",
+    "respuestas": [
+      {
+        "texto": "Es elegido por las Cortes de Aragón.",
+        "correcta": false
+      },
+      {
+        "texto": "Rinde cuentas de su gestión ante el Tribunal Superior de Justicia de Aragón.",
+        "correcta": false
+      },
+      {
+        "texto": "Las dos respuestas anteriores son correctas.",
+        "correcta": false
+      },
+      {
+        "correcta": false
+      }
+    ]
+  },
+  {
+    "id": "3_0._test_2026_tl_of._mantenimiento_6",
+    "categoria": "jurídico",
+    "tema": "3",
+    "descripcionTema": "Ley 39/2015 Procedimiento Adm. Común.",
+    "nombreExamen": "0. Test 2026 TL Of. Mantenimiento",
+    "numeroPreguntaExamen": "6",
+    "texto": "Según el artículo 54 de la Ley 39/2015, de 1 de octubre, del Procedimiento Administrativo Común de las Administraciones Públicas, los procedimientos:",
+    "respuestas": [
+      {
+        "texto": "Deberán iniciarse de oficio.",
+        "correcta": false
+      },
+      {
+        "texto": "Deberán iniciarse a solicitud del interesado.",
+        "correcta": false
+      },
+      {
+        "texto": "Ninguna de las respuestas anteriores es correcta.",
+        "correcta": false
+      },
+      {
+        "correcta": false
+      }
+    ]
+  },
+  {
+    "id": "3_0._test_2026_tl_of._mantenimiento_7",
+    "categoria": "jurídico",
+    "tema": "3",
+    "descripcionTema": "Ley 39/2015 Procedimiento Adm. Común.",
+    "nombreExamen": "0. Test 2026 TL Of. Mantenimiento",
+    "numeroPreguntaExamen": "7",
+    "texto": "Según el artículo 80.1 de la Ley 39/2015, de 1 de octubre, del Procedimiento Administrativo Común de las Administraciones Públicas:",
+    "respuestas": [
+      {
+        "texto": "Los informes serán preceptivos y no vinculantes.",
+        "correcta": false
+      },
+      {
+        "texto": "Salvo disposición expresa en contrario, los informes serán preceptivos y no vinculantes.",
+        "correcta": false
+      },
+      {
+        "texto": "Ninguna de las respuestas anteriores es correcta.",
+        "correcta": false
+      },
+      {
+        "correcta": false
+      }
+    ]
+  },
+  {
+    "id": "7_0._test_2026_tl_of._mantenimiento_8",
+    "categoria": "jurídico",
+    "tema": "7",
+    "descripcionTema": "Ley 10/2017 Regimen especial Municipio Zaragoza",
+    "nombreExamen": "0. Test 2026 TL Of. Mantenimiento",
+    "numeroPreguntaExamen": "8",
+    "texto": "De acuerdo con el artículo 13 de la Ley 10/2017, de 30 de noviembre, de régimen especial del municipio de Zaragoza como capital de Aragón, el nombramiento de los miembros del Gobierno de Zaragoza corresponde:",
+    "respuestas": [
+      {
+        "texto": "Al Pleno.",
+        "correcta": false
+      },
+      {
+        "texto": "Al Alcalde.",
+        "correcta": false
+      },
+      {
+        "texto": "Al Pleno, que puede delegar en el Alcalde.",
+        "correcta": false
+      },
+      {
+        "correcta": false
+      }
+    ]
+  },
+  {
+    "id": "4_0._test_2026_tl_of._mantenimiento_9",
+    "categoria": "jurídico",
+    "tema": "4",
+    "descripcionTema": "R.D.L. 2/2004 Ley Haciendas Locales",
+    "nombreExamen": "0. Test 2026 TL Of. Mantenimiento",
+    "numeroPreguntaExamen": "9",
+    "texto": "Según el artículo 59 del Real Decreto Legislativo 2/2004, de 5 de marzo, por el que se aprueba el texto refundido de la Ley Reguladora de las Haciendas Locales, es un impuesto municipal:",
+    "respuestas": [
+      {
+        "texto": "El Impuesto sobre el Incremento de Valor de los Terrenos de Naturaleza Rústica.",
+        "correcta": false
+      },
+      {
+        "texto": "El Impuesto sobre el Incremento de Valor de los Terrenos de Naturaleza Urbana.",
+        "correcta": false
+      },
+      {
+        "texto": "El Impuesto sobre el Incremento de Valor de los Terrenos de Naturaleza Rústica y Urbana.",
+        "correcta": false
+      },
+      {
+        "correcta": false
+      }
+    ]
+  },
+  {
+    "id": "4_0._test_2026_tl_of._mantenimiento_10",
+    "categoria": "jurídico",
+    "tema": "4",
+    "descripcionTema": "R.D.L. 2/2004 Ley Haciendas Locales",
+    "nombreExamen": "0. Test 2026 TL Of. Mantenimiento",
+    "numeroPreguntaExamen": "10",
+    "texto": "Según el artículo 59 del Real Decreto Legislativo 2/2004, de 5 de marzo, por el que se aprueba el texto refundido de la Ley Reguladora de las Haciendas Locales, es un impuesto municipal:",
+    "respuestas": [
+      {
+        "texto": "El Impuesto Especial sobre determinados Medios de Transporte.",
+        "correcta": false
+      },
+      {
+        "texto": "El Impuesto sobre Vehículos de Tracción Mecánica.",
+        "correcta": false
+      },
+      {
+        "texto": "Las respuestas a) y b) son correctas.",
+        "correcta": false
+      },
+      {
+        "correcta": false
+      }
+    ]
+  },
+  {
+    "id": "12_0._test_2026_tl_of._mantenimiento_11",
+    "categoria": "específico",
+    "tema": "12",
+    "descripcionTema": "Carpinteria",
+    "nombreExamen": "0. Test 2026 TL Of. Mantenimiento",
+    "numeroPreguntaExamen": "11",
+    "texto": "¿Cómo se llama la herramienta manual de carpintero que presenta una pequeña oreja curva diseñada para levantar grapas, clavos y tachuelas de tapicero?",
+    "respuestas": [
+      {
+        "texto": "Pie de cabra.",
+        "correcta": false
+      },
+      {
+        "texto": "Botador.",
+        "correcta": false
+      },
+      {
+        "texto": "Bruñidor.",
+        "correcta": false
+      },
+      {
+        "correcta": false
+      }
+    ]
+  },
+  {
+    "id": "12_0._test_2026_tl_of._mantenimiento_12",
+    "categoria": "específico",
+    "tema": "12",
+    "descripcionTema": "Carpinteria",
+    "nombreExamen": "0. Test 2026 TL Of. Mantenimiento",
+    "numeroPreguntaExamen": "12",
+    "texto": "En España, para que una puerta sea considerada accesible (por ejemplo, en edificios públicos o zonas comunes). ¿A qué altura deben de estar situados los mecanismos de apertura, según el Código Técnico de Edificación Documento Básico de Seguridad de Utilización y Accesibilidad (CTE - BD SUA)?",
+    "respuestas": [
+      {
+        "texto": "A una altura de 105 cm desde el suelo terminado.",
+        "correcta": false
+      },
+      {
+        "texto": "A una altura comprendida entre 80 y 120 cm desde el suelo terminado.",
+        "correcta": false
+      },
+      {
+        "texto": "A una altura de 105 cm desde el umbral de la puerta.",
+        "correcta": false
+      },
+      {
+        "correcta": false
+      }
+    ]
+  },
+  {
+    "id": "12_0._test_2026_tl_of._mantenimiento_13",
+    "categoria": "específico",
+    "tema": "12",
+    "descripcionTema": "Carpinteria",
+    "nombreExamen": "0. Test 2026 TL Of. Mantenimiento",
+    "numeroPreguntaExamen": "13",
+    "texto": "Según la Norma EN 204 para adhesivos en madera, ¿a qué categoría corresponde la definición: “Uso exterior total. Resistente a la exposición directa al agua, cambios climáticos y condensación persistente”?",
+    "respuestas": [
+      {
+        "texto": "D1.",
+        "correcta": false
+      },
+      {
+        "texto": "D3.",
+        "correcta": false
+      },
+      {
+        "texto": "D4.",
+        "correcta": false
+      },
+      {
+        "correcta": false
+      }
+    ]
+  },
+  {
+    "id": "12_0._test_2026_tl_of._mantenimiento_14",
+    "categoria": "específico",
+    "tema": "12",
+    "descripcionTema": "Carpinteria",
+    "nombreExamen": "0. Test 2026 TL Of. Mantenimiento",
+    "numeroPreguntaExamen": "14",
+    "texto": "En una cerradura ¿cómo se llama el elemento realizado en fundición de acero, bronce y actualmente en algunas de ellas se emplea en su construcción plásticos de alto impacto, que actúa como un eje rotatorio y sirve para accionar el pestillo de empuje por medio de una manija o picaporte? Suele tener un orificio cuadrado en el centro.",
+    "respuestas": [
+      {
+        "texto": "Guarda.",
+        "correcta": false
+      },
+      {
+        "texto": "Pomo.",
+        "correcta": false
+      },
+      {
+        "texto": "Nuez.",
+        "correcta": false
+      },
+      {
+        "correcta": false
+      }
+    ]
+  },
+  {
+    "id": "12_0._test_2026_tl_of._mantenimiento_15",
+    "categoria": "específico",
+    "tema": "12",
+    "descripcionTema": "Carpinteria",
+    "nombreExamen": "0. Test 2026 TL Of. Mantenimiento",
+    "numeroPreguntaExamen": "15",
+    "texto": "¿Cuál sería el tipo de leva, y la medida para el bombillo de una cerradura de embutir al canto en una puerta de madera?",
+    "respuestas": [
+      {
+        "texto": "En la mayoría de casos sería de leva larga (15 mm).",
+        "correcta": false
+      },
+      {
+        "texto": "Siempre tiene que ser de leva corta (13,2 mm).",
+        "correcta": false
+      },
+      {
+        "texto": "Cualquiera de los dos tipos de leva (corta y larga) se puede usar sin ningún tipo de problema.",
+        "correcta": false
+      },
+      {
+        "correcta": false
+      }
+    ]
+  },
+  {
+    "id": "20_0._test_2026_tl_of._mantenimiento_16",
+    "categoria": "específico",
+    "tema": "20",
+    "descripcionTema": "Servicios Sociales Comunitarios",
+    "nombreExamen": "0. Test 2026 TL Of. Mantenimiento",
+    "numeroPreguntaExamen": "16",
+    "texto": "Según el reglamento de la Casa de Amparo, ¿cuál de las siguientes funciones no corresponde a la Dirección del Centro?",
+    "respuestas": [
+      {
+        "texto": "Aplicar el conjunto de las disposiciones reguladoras del funcionamiento de la Residencia.",
+        "correcta": false
+      },
+      {
+        "texto": "Proponer programas de actividades socioculturales.",
+        "correcta": false
+      },
+      {
+        "texto": "Prestar apoyo y asesoramiento al Servicio de Acción Social por medio de todos los recursos de la Residencia.",
+        "correcta": false
+      },
+      {
+        "correcta": false
+      }
+    ]
+  },
+  {
+    "id": "20_0._test_2026_tl_of._mantenimiento_17",
+    "categoria": "específico",
+    "tema": "20",
+    "descripcionTema": "Servicios Sociales Comunitarios",
+    "nombreExamen": "0. Test 2026 TL Of. Mantenimiento",
+    "numeroPreguntaExamen": "17",
+    "texto": "¿Qué condición es necesaria para ser admitido en el Albergue Municipal?",
+    "respuestas": [
+      {
+        "texto": "Ser mayor de edad, no precisar ayuda para el normal desenvolvimiento y no padecer enfermedad psíquica que requiera atención periódica de profesionales.",
+        "correcta": false
+      },
+      {
+        "texto": "Personas que sin estar empadronadas, ni tener establecida su residencia en la ciudad de Zaragoza, estén en situación de desarraigo y carezcan de recursos personales y económicos para afrontar su situación.",
+        "correcta": false
+      },
+      {
+        "texto": "Hay que reunir todas las condiciones enunciadas en las dos respuestas anteriores.",
+        "correcta": false
+      },
+      {
+        "correcta": false
+      }
+    ]
+  },
+  {
+    "id": "21_0._test_2026_tl_of._mantenimiento_18",
+    "categoria": "específico",
+    "tema": "21",
+    "descripcionTema": "Centros Cívicos",
+    "nombreExamen": "0. Test 2026 TL Of. Mantenimiento",
+    "numeroPreguntaExamen": "18",
+    "texto": "Según el reglamento de Centros Cívicos, ¿qué consideración de infracción tendría, por parte de un usuario del centro, el mal trato de palabra u obra a otros usuarios o personal dependiente del Centro?",
+    "respuestas": [
+      {
+        "texto": "Infracción leve.",
+        "correcta": false
+      },
+      {
+        "texto": "Infracción grave.",
+        "correcta": false
+      },
+      {
+        "texto": "Infracción muy grave.",
+        "correcta": false
+      },
+      {
+        "correcta": false
+      }
+    ]
+  },
+  {
+    "id": "22_0._test_2026_tl_of._mantenimiento_19",
+    "categoria": "específico",
+    "tema": "22",
+    "descripcionTema": "Centros Publicos Escolares",
+    "nombreExamen": "0. Test 2026 TL Of. Mantenimiento",
+    "numeroPreguntaExamen": "19",
+    "texto": "¿Cuál de los siguientes Centros de Educación Infantil y Primaria está ubicado en la Plaza de los Sitios número 4?",
+    "respuestas": [
+      {
+        "texto": "C.E.I.P Joaquín Costa.",
+        "correcta": false
+      },
+      {
+        "texto": "C.E.I.P Gascón y Marín.",
+        "correcta": false
+      },
+      {
+        "texto": "C.E.I.P Gustavo Adolfo Bécquer.",
+        "correcta": false
+      },
+      {
+        "correcta": false
+      }
+    ]
+  },
+  {
+    "id": "14_0._test_2026_tl_of._mantenimiento_20",
+    "categoria": "específico",
+    "tema": "14",
+    "descripcionTema": "Persianas",
+    "nombreExamen": "0. Test 2026 TL Of. Mantenimiento",
+    "numeroPreguntaExamen": "20",
+    "texto": "¿Cuál es la medida del ancho más común de una cinta de persiana (estandar/Ancha), en España y gran parte de Europa, para una persiana enrrollable de aluminio, en una ventana de madera, cuyo recogedor está empotrado en la pared?",
+    "respuestas": [
+      {
+        "texto": "Cinta de 19 mm.",
+        "correcta": false
+      },
+      {
+        "texto": "Cinta de 22 mm.",
+        "correcta": false
+      },
+      {
+        "texto": "Cinta de 25 mm.",
+        "correcta": false
+      },
+      {
+        "correcta": false
+      }
+    ]
+  },
+  {
+    "id": "9_0._test_2026_tl_of._mantenimiento_21",
+    "categoria": "específico",
+    "tema": "9",
+    "descripcionTema": "Electricidad",
+    "nombreExamen": "0. Test 2026 TL Of. Mantenimiento",
+    "numeroPreguntaExamen": "21",
+    "texto": "¿Qué unidad de medida se utiliza para expresar la Potencia Eléctrica (la cantidad de energía consumida o generada por unidad de tiempo)?",
+    "respuestas": [
+      {
+        "texto": "Voltio.",
+        "correcta": false
+      },
+      {
+        "texto": "Ohmio.",
+        "correcta": false
+      },
+      {
+        "texto": "Vatio.",
+        "correcta": false
+      },
+      {
+        "correcta": false
+      }
+    ]
+  },
+  {
+    "id": "9_0._test_2026_tl_of._mantenimiento_22",
+    "categoria": "específico",
+    "tema": "9",
+    "descripcionTema": "Electricidad",
+    "nombreExamen": "0. Test 2026 TL Of. Mantenimiento",
+    "numeroPreguntaExamen": "22",
+    "texto": "En una luminaria fluorescente, si el tubo intenta encenderse repetidamente (parpadea) pero no llega a quedarse iluminado, ¿qué elemento suele estar agotado o defectuoso?",
+    "respuestas": [
+      {
+        "texto": "El cebador.",
+        "correcta": false
+      },
+      {
+        "texto": "El fluxómetro.",
+        "correcta": false
+      },
+      {
+        "texto": "El condensador de filtrado.",
+        "correcta": false
+      },
+      {
+        "correcta": false
+      }
+    ]
+  },
+  {
+    "id": "9_0._test_2026_tl_of._mantenimiento_23",
+    "categoria": "específico",
+    "tema": "9",
+    "descripcionTema": "Electricidad",
+    "nombreExamen": "0. Test 2026 TL Of. Mantenimiento",
+    "numeroPreguntaExamen": "23",
+    "texto": "Según el Reglamento Electrotécnico de Baja Tensión (REBT), ¿de qué color debe ser obligatoriamente el aislamiento del conductor de protección (toma de tierra)?",
+    "respuestas": [
+      {
+        "texto": "Azul.",
+        "correcta": false
+      },
+      {
+        "texto": "Negro.",
+        "correcta": false
+      },
+      {
+        "texto": "Amarillo-verde.",
+        "correcta": false
+      },
+      {
+        "correcta": false
+      }
+    ]
+  },
+  {
+    "id": "27_0._test_2026_tl_of._mantenimiento_24",
+    "categoria": "específico",
+    "tema": "27",
+    "descripcionTema": "Prevencion",
+    "nombreExamen": "0. Test 2026 TL Of. Mantenimiento",
+    "numeroPreguntaExamen": "24",
+    "texto": "¿Cómo se denomina al mantenimiento que consiste en el seguimiento de parámetros (vibraciones, temperatura, etc.) para intervenir justo antes de que el equipo falle?",
+    "respuestas": [
+      {
+        "texto": "Mantenimiento preventivo.",
+        "correcta": false
+      },
+      {
+        "texto": "Mantenimiento correctivo.",
+        "correcta": false
+      },
+      {
+        "texto": "Mantenimiento predictivo.",
+        "correcta": false
+      },
+      {
+        "correcta": false
+      }
+    ]
+  },
+  {
+    "id": "15_0._test_2026_tl_of._mantenimiento_25",
+    "categoria": "específico",
+    "tema": "15",
+    "descripcionTema": "Alarmas",
+    "nombreExamen": "0. Test 2026 TL Of. Mantenimiento",
+    "numeroPreguntaExamen": "25",
+    "texto": "En un sistema de intrusión (alarma de robo), ¿cuál es la función de los contactos magnéticos?",
+    "respuestas": [
+      {
+        "texto": "Detectar el movimiento de una persona dentro de una habitación con magnetismo.",
+        "correcta": false
+      },
+      {
+        "texto": "Detectar la apertura de puertas o ventanas mediante la separación de un imán.",
+        "correcta": false
+      },
+      {
+        "texto": "Captar el sonido de la rotura de un cristal, al aproximar un imán.",
+        "correcta": false
+      },
+      {
+        "correcta": false
+      }
+    ]
+  },
+  {
+    "id": "16_0._test_2026_tl_of._mantenimiento_26",
+    "categoria": "específico",
+    "tema": "16",
+    "descripcionTema": "Ascensores",
+    "nombreExamen": "0. Test 2026 TL Of. Mantenimiento",
+    "numeroPreguntaExamen": "26",
+    "texto": "Si realizas una tarea de limpieza y engrasado programado de los carriles de un ascensor cada 3 meses, ¿qué tipo de mantenimiento estás ejecutando?",
+    "respuestas": [
+      {
+        "texto": "Mantenimiento preventivo.",
+        "correcta": false
+      },
+      {
+        "texto": "Mantenimiento predictivo.",
+        "correcta": false
+      },
+      {
+        "texto": "Mantenimiento correctivo.",
+        "correcta": false
+      },
+      {
+        "correcta": false
+      }
+    ]
+  },
+  {
+    "id": "17_0._test_2026_tl_of._mantenimiento_27",
+    "categoria": "específico",
+    "tema": "17",
+    "descripcionTema": "Aparatos de audio, video e imagen",
+    "nombreExamen": "0. Test 2026 TL Of. Mantenimiento",
+    "numeroPreguntaExamen": "27",
+    "texto": "¿Cuál es la principal diferencia entre un archivo de audio en formato WAV y uno en formato MP3?",
+    "respuestas": [
+      {
+        "texto": "El formato WAV permite reproducción inalámbrica y el MP3 no.",
+        "correcta": false
+      },
+      {
+        "texto": "El WAV es audio sin compresión (calidad original), mientras que el MP3 utiliza compresión con pérdida para reducir el tamaño del archivo.",
+        "correcta": false
+      },
+      {
+        "texto": "El MP3 es un formato exclusivo para discos duros y el WAV para ordenadores.",
+        "correcta": false
+      },
+      {
+        "correcta": false
+      }
+    ]
+  },
+  {
+    "id": "17_0._test_2026_tl_of._mantenimiento_28",
+    "categoria": "específico",
+    "tema": "17",
+    "descripcionTema": "Aparatos de audio, video e imagen",
+    "nombreExamen": "0. Test 2026 TL Of. Mantenimiento",
+    "numeroPreguntaExamen": "28",
+    "texto": "¿Qué formato de archivo es el estándar más utilizado actualmente para vídeo digital debido a su excelente relación entre calidad de imagen y poco peso del archivo (ideal para Smart TV y streaming)?",
+    "respuestas": [
+      {
+        "texto": "MP4.",
+        "correcta": false
+      },
+      {
+        "texto": "JPG.",
+        "correcta": false
+      },
+      {
+        "texto": "GIF.",
+        "correcta": false
+      },
+      {
+        "correcta": false
+      }
+    ]
+  },
+  {
+    "id": "17_0._test_2026_tl_of._mantenimiento_29",
+    "categoria": "específico",
+    "tema": "17",
+    "descripcionTema": "Aparatos de audio, video e imagen",
+    "nombreExamen": "0. Test 2026 TL Of. Mantenimiento",
+    "numeroPreguntaExamen": "29",
+    "texto": "En la tecnología Bluetooth para reproducción inalámbrica, ¿cuál es la limitación técnica más importante que debemos tener en cuenta en un entorno de trabajo?",
+    "respuestas": [
+      {
+        "texto": "Que sólo permite transmitir archivos de imagen, pero no de sonido en tiempo real.",
+        "correcta": false
+      },
+      {
+        "texto": "Su corto alcance de cobertura, que generalmente no supera los 10 metros sin obstáculos.",
+        "correcta": false
+      },
+      {
+        "texto": "Que requiere obligatoriamente una conexión a Internet de alta velocidad para emparejar los dispositivos.",
+        "correcta": false
+      },
+      {
+        "correcta": false
+      }
+    ]
+  },
+  {
+    "id": "18_0._test_2026_tl_of._mantenimiento_30",
+    "categoria": "específico",
+    "tema": "18",
+    "descripcionTema": "Ofimatica",
+    "nombreExamen": "0. Test 2026 TL Of. Mantenimiento",
+    "numeroPreguntaExamen": "30",
+    "texto": "En el procesador de textos LibreOffice Writer, ¿qué combinación de teclas se utiliza por defecto para copiar datos en el portapapeles de forma rápida?",
+    "respuestas": [
+      {
+        "texto": "Ctrl + P.",
+        "correcta": false
+      },
+      {
+        "texto": "Ctrl + G.",
+        "correcta": false
+      },
+      {
+        "texto": "Ctrl + C.",
+        "correcta": false
+      },
+      {
+        "correcta": false
+      }
+    ]
+  },
+  {
+    "id": "11_0._test_2026_tl_of._mantenimiento_31",
+    "categoria": "específico",
+    "tema": "11",
+    "descripcionTema": "Fontaneria",
+    "nombreExamen": "0. Test 2026 TL Of. Mantenimiento",
+    "numeroPreguntaExamen": "31",
+    "texto": "Aunque no corresponde a una normativa de seguridad o técnica específica, sino a una convención técnica de fabricación, ¿Qué significado tiene la letra S en el tapón del radiador de calefacción?",
+    "respuestas": [
+      {
+        "texto": "Indica que el tapón tiene rosca a izquierdas, sentido antihorario para apretar.",
+        "correcta": false
+      },
+      {
+        "texto": "Indica que el tapón tiene rosca a derechas, sentido horario para apretar.",
+        "correcta": false
+      },
+      {
+        "texto": "Indica que el tapón es menor de una pulgada.",
+        "correcta": false
+      },
+      {
+        "correcta": false
+      }
+    ]
+  },
+  {
+    "id": "11_0._test_2026_tl_of._mantenimiento_32",
+    "categoria": "específico",
+    "tema": "11",
+    "descripcionTema": "Fontaneria",
+    "nombreExamen": "0. Test 2026 TL Of. Mantenimiento",
+    "numeroPreguntaExamen": "32",
+    "texto": "Indique cuál de las siguientes herramientas no es característica de fontanería.",
+    "respuestas": [
+      {
+        "texto": "Botador.",
+        "correcta": false
+      },
+      {
+        "texto": "Tenaza de Sifón.",
+        "correcta": false
+      },
+      {
+        "texto": "Llave de lavabo.",
+        "correcta": false
+      },
+      {
+        "correcta": false
+      }
+    ]
+  },
+  {
+    "id": "24_0._test_2026_tl_of._mantenimiento_33",
+    "categoria": "específico",
+    "tema": "24",
+    "descripcionTema": "Juntas Municipales y Vecinales",
+    "nombreExamen": "0. Test 2026 TL Of. Mantenimiento",
+    "numeroPreguntaExamen": "33",
+    "texto": "¿Dónde puede usted solicitar autorización para reparar la llave de paso de su toma de agua, con intervención municipal?. Señale la respuesta correcta o la más correcta.",
+    "respuestas": [
+      {
+        "texto": "En la mayoría de las Juntas Municipales.",
+        "correcta": false
+      },
+      {
+        "texto": "En la mayoría de las Juntas Vecinales.",
+        "correcta": false
+      },
+      {
+        "texto": "En ninguna de las dos, únicamente en los Negociados de Información y Atención al Ciudadano en la planta baja del Edificio Seminario.",
+        "correcta": false
+      },
+      {
+        "correcta": false
+      }
+    ]
+  },
+  {
+    "id": "24_0._test_2026_tl_of._mantenimiento_34",
+    "categoria": "específico",
+    "tema": "24",
+    "descripcionTema": "Juntas Municipales y Vecinales",
+    "nombreExamen": "0. Test 2026 TL Of. Mantenimiento",
+    "numeroPreguntaExamen": "34",
+    "texto": "Si necesita la prestación de servicios para que un semáforo sea desplazado por motivo de unas obras, ¿Dónde realizaría la solicitud?",
+    "respuestas": [
+      {
+        "texto": "En la mayoría de las Juntas Vecinales y en las Juntas Municipales.",
+        "correcta": false
+      },
+      {
+        "texto": "Únicamente en la mayoría de las Juntas Vecinales y la Unidad de Alumbrado Público.",
+        "correcta": false
+      },
+      {
+        "texto": "En ninguna de las dos opciones anteriores.",
+        "correcta": false
+      },
+      {
+        "correcta": false
+      }
+    ]
+  },
+  {
+    "id": "26_0._test_2026_tl_of._mantenimiento_35",
+    "categoria": "específico",
+    "tema": "26",
+    "descripcionTema": "Incendios",
+    "nombreExamen": "0. Test 2026 TL Of. Mantenimiento",
+    "numeroPreguntaExamen": "35",
+    "texto": "Un patinete eléctrico que han dejado en la entrada del edificio público en el que está trabajando se ha incendiado sin previo aviso produciendo graves daños y peligro. ¿Según un criterio técnico, qué clase de fuego es y como actuaría a continuación?. Señale la respuesta correcta o más correcta.",
+    "respuestas": [
+      {
+        "texto": "Es un incendio tipo D, avisar al 112 y hasta que llegara bomberos se contendría con extintores de CO2, sin dejar acceder a nadie y evitando la inhalación de humo.",
+        "correcta": false
+      },
+      {
+        "texto": "Es un fuego de metal puro, no se puede contener con extintores normales, hay que avisar al 112 e impedir el paso por esa entrada evitando la inhalación de humo.",
+        "correcta": false
+      },
+      {
+        "texto": "Según la normativa técnica internacional, se trata de clase L, hay que avisar al 112 y proceder a evacuar la zona inmediatamente.",
+        "correcta": false
+      },
+      {
+        "correcta": false
+      }
+    ]
+  },
+  {
+    "id": "26_0._test_2026_tl_of._mantenimiento_36",
+    "categoria": "específico",
+    "tema": "26",
+    "descripcionTema": "Incendios",
+    "nombreExamen": "0. Test 2026 TL Of. Mantenimiento",
+    "numeroPreguntaExamen": "36",
+    "texto": "Si decide utilizar un extintor de incendio para sofocar un conato, ¿dónde debe situarse respecto al fuego?",
+    "respuestas": [
+      {
+        "texto": "A favor del viento (si es en exterior) y siempre con una vía de evacuación a sus espaldas.",
+        "correcta": false
+      },
+      {
+        "texto": "Lo más cerca posible de las llamas para aumentar la presión del agente extintor.",
+        "correcta": false
+      },
+      {
+        "texto": "En contra del viento para que el agente extintor sea empujado hacia el foco.",
+        "correcta": false
+      },
+      {
+        "correcta": false
+      }
+    ]
+  },
+  {
+    "id": "27_0._test_2026_tl_of._mantenimiento_37",
+    "categoria": "específico",
+    "tema": "27",
+    "descripcionTema": "Prevencion",
+    "nombreExamen": "0. Test 2026 TL Of. Mantenimiento",
+    "numeroPreguntaExamen": "37",
+    "texto": "En aplicación de lo dispuesto en el Artículo 10 del Real Decreto 773/1997 sobre la utilización de equipos de protección individual (EPIs), los trabajadores con arreglo a su formación y siguiendo las instrucciones recibidas, deberán realizar una serie de acciones. Indique de las expuestas a continuación cuál es la correcta o la más correcta.",
+    "respuestas": [
+      {
+        "texto": "Colocar el equipo de protección individual después de su utilización en el lugar indicado para ello.",
+        "correcta": false
+      },
+      {
+        "texto": "Informar de inmediato a su superior jerárquico directo de cualquier defecto, anomalía o daño apreciado en el equipo de protección individual utilizado que, a su juicio, pueda entrañar una pérdida de su eficacia protectora.",
+        "correcta": false
+      },
+      {
+        "texto": "Ambas son correctas.",
+        "correcta": false
+      },
+      {
+        "correcta": false
+      }
+    ]
+  },
+  {
+    "id": "27_0._test_2026_tl_of._mantenimiento_38",
+    "categoria": "específico",
+    "tema": "27",
+    "descripcionTema": "Prevencion",
+    "nombreExamen": "0. Test 2026 TL Of. Mantenimiento",
+    "numeroPreguntaExamen": "38",
+    "texto": "Según la OIT (Organización Internacional del Trabajo), corroborado por el propio Ayuntamiento de Zaragoza, una de las causas que provoca accidentes laborales con mayor frecuencia es:",
+    "respuestas": [
+      {
+        "texto": "La falta de atención a las señales de advertencia.",
+        "correcta": false
+      },
+      {
+        "texto": "La manipulación manual de cargas.",
+        "correcta": false
+      },
+      {
+        "texto": "La manipulación de sustancias químicas.",
+        "correcta": false
+      },
+      {
+        "correcta": false
+      }
+    ]
+  },
+  {
+    "id": "26_0._test_2026_tl_of._mantenimiento_39",
+    "categoria": "específico",
+    "tema": "26",
+    "descripcionTema": "Incendios",
+    "nombreExamen": "0. Test 2026 TL Of. Mantenimiento",
+    "numeroPreguntaExamen": "39",
+    "texto": "Ante la detección de un incendio en un edificio público, ¿cuál es el orden correcto de actuación según el protocolo general de emergencias?",
+    "respuestas": [
+      {
+        "texto": "Socorrer a los heridos, Avisar a los bomberos y Proteger el área.",
+        "correcta": false
+      },
+      {
+        "texto": "Avisar al 112, Socorrer a los heridos y Proteger las pertenencias de valor.",
+        "correcta": false
+      },
+      {
+        "texto": "Proteger (a uno mismo y el entorno), Avisar (112) y Socorrer (a las víctimas si es posible).",
+        "correcta": false
+      },
+      {
+        "correcta": false
+      }
+    ]
+  },
+  {
+    "id": "24_0._test_2026_tl_of._mantenimiento_40",
+    "categoria": "específico",
+    "tema": "24",
+    "descripcionTema": "Juntas Municipales y Vecinales",
+    "nombreExamen": "0. Test 2026 TL Of. Mantenimiento",
+    "numeroPreguntaExamen": "40",
+    "texto": "¿Quién se encarga de la elección del Alcalde de Barrio?",
+    "respuestas": [
+      {
+        "texto": "La Alcaldesa.",
+        "correcta": false
+      },
+      {
+        "texto": "El Concejal Presidente del Distrito Rural.",
+        "correcta": false
+      },
+      {
+        "texto": "Los vecinos de dicho Barrio.",
+        "correcta": false
+      },
+      {
+        "correcta": false
+      }
+    ]
+  },
+  {
+    "id": "10_0._test_2026_tl_of._mantenimiento_41",
+    "categoria": "específico",
+    "tema": "10",
+    "descripcionTema": "Albañileria",
+    "nombreExamen": "0. Test 2026 TL Of. Mantenimiento",
+    "numeroPreguntaExamen": "41",
+    "texto": "Morteros para fábricas. Resistencia: El mortero ordinario para fábricas convencionales no será inferior a:",
+    "respuestas": [
+      {
+        "texto": "M4.",
+        "correcta": false
+      },
+      {
+        "texto": "M2.",
+        "correcta": false
+      },
+      {
+        "texto": "M1.",
+        "correcta": false
+      },
+      {
+        "correcta": false
+      }
+    ]
+  },
+  {
+    "id": "10_0._test_2026_tl_of._mantenimiento_42",
+    "categoria": "específico",
+    "tema": "10",
+    "descripcionTema": "Albañileria",
+    "nombreExamen": "0. Test 2026 TL Of. Mantenimiento",
+    "numeroPreguntaExamen": "42",
+    "texto": "El mortero y el hormigón de relleno se emplearán:",
+    "respuestas": [
+      {
+        "texto": "Después de iniciarse el fraguado.",
+        "correcta": false
+      },
+      {
+        "texto": "Antes de finalizar el fraguado.",
+        "correcta": false
+      },
+      {
+        "texto": "Antes de iniciarse el fraguado.",
+        "correcta": false
+      },
+      {
+        "correcta": false
+      }
+    ]
+  },
+  {
+    "id": "10_0._test_2026_tl_of._mantenimiento_43",
+    "categoria": "específico",
+    "tema": "10",
+    "descripcionTema": "Albañileria",
+    "nombreExamen": "0. Test 2026 TL Of. Mantenimiento",
+    "numeroPreguntaExamen": "43",
+    "texto": "“Instrumento óptico para establecer puntos en el mismo plano horizontal (nivelación)”. De las señaladas, indicar la respuesta que se ajusta a la descripción:",
+    "respuestas": [
+      {
+        "texto": "Teodolito.",
+        "correcta": false
+      },
+      {
+        "texto": "Garlopa.",
+        "correcta": false
+      },
+      {
+        "texto": "Artesa.",
+        "correcta": false
+      },
+      {
+        "correcta": false
+      }
+    ]
+  },
+  {
+    "id": "25_0._test_2026_tl_of._mantenimiento_44",
+    "categoria": "específico",
+    "tema": "25",
+    "descripcionTema": "Organigrama y Manual de Atencion",
+    "nombreExamen": "0. Test 2026 TL Of. Mantenimiento",
+    "numeroPreguntaExamen": "44",
+    "texto": "Organigrama del Ayuntamiento de Zaragoza. Cuál de los siguientes apartados, NO corresponde a ningún Area, como Estructura adscrita:",
+    "respuestas": [
+      {
+        "texto": "Area de Economía, Transformación Digital y Transparencia.",
+        "correcta": false
+      },
+      {
+        "texto": "Área de Hacienda y Movilidad.",
+        "correcta": false
+      },
+      {
+        "texto": "Área de Presidencia, Relaciones Institucionales y Seguridad Ciudadana.",
+        "correcta": false
+      },
+      {
+        "correcta": false
+      }
+    ]
+  },
+  {
+    "id": "25_0._test_2026_tl_of._mantenimiento_45",
+    "categoria": "específico",
+    "tema": "25",
+    "descripcionTema": "Organigrama y Manual de Atencion",
+    "nombreExamen": "0. Test 2026 TL Of. Mantenimiento",
+    "numeroPreguntaExamen": "45",
+    "texto": "La información telefónica en el Ayuntamiento de Zaragoza a través del servicio de información 010, puede realizarse:",
+    "respuestas": [
+      {
+        "texto": "De lunes a domingo.",
+        "correcta": false
+      },
+      {
+        "texto": "De lunes a viernes.",
+        "correcta": false
+      },
+      {
+        "texto": "De lunes a sábado.",
+        "correcta": false
+      },
+      {
+        "correcta": false
+      }
+    ]
+  },
+  {
+    "id": "25_0._test_2026_tl_of._mantenimiento_46",
+    "categoria": "específico",
+    "tema": "25",
+    "descripcionTema": "Organigrama y Manual de Atencion",
+    "nombreExamen": "0. Test 2026 TL Of. Mantenimiento",
+    "numeroPreguntaExamen": "46",
+    "texto": "La Oficina de Relaciones con la Ciudadanía del Ayuntamiento de Zaragoza está ubicada en:",
+    "respuestas": [
+      {
+        "texto": "Vía Hispanidad 20.",
+        "correcta": false
+      },
+      {
+        "texto": "Plaza del Pilar 18.",
+        "correcta": false
+      },
+      {
+        "texto": "Plaza del Pilar 22.",
+        "correcta": false
+      },
+      {
+        "correcta": false
+      }
+    ]
+  },
+  {
+    "id": "19_0._test_2026_tl_of._mantenimiento_47",
+    "categoria": "específico",
+    "tema": "19",
+    "descripcionTema": "Tipos de documentos",
+    "nombreExamen": "0. Test 2026 TL Of. Mantenimiento",
+    "numeroPreguntaExamen": "47",
+    "texto": "Según la Ley de Procedimiento Administrativo Común de las Administraciones Públicas, a los solos efectos de entender cumplida la obligación de notificar dentro del plazo máximo de duración de los procedimientos, será suficiente la notificación que contenga, cuando menos:",
+    "respuestas": [
+      {
+        "texto": "El intento de notificación debidamente acreditado.",
+        "correcta": false
+      },
+      {
+        "texto": "El texto íntegro de la resolución.",
+        "correcta": false
+      },
+      {
+        "texto": "El texto íntegro de la resolución y el intento de notificación debidamente acreditado.",
+        "correcta": false
+      },
+      {
+        "correcta": false
+      }
+    ]
+  },
+  {
+    "id": "19_0._test_2026_tl_of._mantenimiento_48",
+    "categoria": "específico",
+    "tema": "19",
+    "descripcionTema": "Tipos de documentos",
+    "nombreExamen": "0. Test 2026 TL Of. Mantenimiento",
+    "numeroPreguntaExamen": "48",
+    "texto": "“Los actos administrativos serán objeto de publicación cuando así lo establezcan las normas reguladoras de cada procedimiento o cuando lo aconsejen razones de interés público apreciadas por el órgano competente”. Señale el apartado correcto:",
+    "respuestas": [
+      {
+        "texto": "No. Serán objeto de publicación en todos los casos.",
+        "correcta": false
+      },
+      {
+        "texto": "Sí. La afirmación, es correcta.",
+        "correcta": false
+      },
+      {
+        "texto": "Sólo serán objeto de publicación cuando lo establezca el órgano político competente.",
+        "correcta": false
+      },
+      {
+        "correcta": false
+      }
+    ]
+  },
+  {
+    "id": "19_0._test_2026_tl_of._mantenimiento_49",
+    "categoria": "específico",
+    "tema": "19",
+    "descripcionTema": "Tipos de documentos",
+    "nombreExamen": "0. Test 2026 TL Of. Mantenimiento",
+    "numeroPreguntaExamen": "49",
+    "texto": "“Cada Administración deberá mantener (X) de los documentos electrónicos que correspondan a procedimientos finalizados, en los términos establecidos en la normativa reguladora aplicable”. Señale, de los apartados siguientes, a qué se refiere (X):",
+    "respuestas": [
+      {
+        "texto": "Un archivo electrónico, según las materias.",
+        "correcta": false
+      },
+      {
+        "texto": "Un archivo electrónico único.",
+        "correcta": false
+      },
+      {
+        "texto": "Un archivo electrónico y un archivo en papel.",
+        "correcta": false
+      },
+      {
+        "correcta": false
+      }
+    ]
+  },
+  {
+    "id": "23_0._test_2026_tl_of._mantenimiento_50",
+    "categoria": "específico",
+    "tema": "23",
+    "descripcionTema": "Movilidad Urbana",
+    "nombreExamen": "0. Test 2026 TL Of. Mantenimiento",
+    "numeroPreguntaExamen": "50",
+    "texto": "Módulos de escenarios portátiles. La máxima sobrecarga repartida admitida por unidad de superficie será de:",
+    "respuestas": [
+      {
+        "texto": "1.500 kg/m².",
+        "correcta": false
+      },
+      {
+        "texto": "1.200 kg/m².",
+        "correcta": false
+      },
+      {
+        "texto": "1.000 kg/m².",
+        "correcta": false
+      },
+      {
+        "correcta": false
+      }
+    ]
+  },
+  {
+    "id": "12_0._test_2026_tl_of._mantenimiento_r1",
+    "categoria": "específico",
+    "tema": "12",
+    "descripcionTema": "Carpinteria",
+    "nombreExamen": "0. Test 2026 TL Of. Mantenimiento",
+    "numeroPreguntaExamen": "R1",
+    "texto": "¿Cómo se llama el larguero, de las puertas batientes, donde se engozna en el marco de uno de los lados longitudinales?",
+    "respuestas": [
+      {
+        "texto": "Larguero durmiente o larguero de colguel.",
+        "correcta": false
+      },
+      {
+        "texto": "Larguero hastial.",
+        "correcta": false
+      },
+      {
+        "texto": "Larguero compás.",
+        "correcta": false
+      },
+      {
+        "correcta": false
+      }
+    ]
+  },
+  {
+    "id": "18_0._test_2026_tl_of._mantenimiento_r2",
+    "categoria": "específico",
+    "tema": "18",
+    "descripcionTema": "Ofimatica",
+    "nombreExamen": "0. Test 2026 TL Of. Mantenimiento",
+    "numeroPreguntaExamen": "R2",
+    "texto": "En una hoja de cálculo de LibreOffice Calc, ¿cómo se debe iniciar siempre una fórmula para que el programa realice el cálculo correctamente?",
+    "respuestas": [
+      {
+        "texto": "Con un guion (-).",
+        "correcta": false
+      },
+      {
+        "texto": "Con la palabra “SUMA”.",
+        "correcta": false
+      },
+      {
+        "texto": "Con el signo igual (=).",
+        "correcta": false
+      },
+      {
+        "correcta": false
+      }
+    ]
+  },
+  {
+    "id": "27_0._test_2026_tl_of._mantenimiento_r3",
+    "categoria": "específico",
+    "tema": "27",
+    "descripcionTema": "Prevencion",
+    "nombreExamen": "0. Test 2026 TL Of. Mantenimiento",
+    "numeroPreguntaExamen": "R3",
+    "texto": "En caso de presenciar un grave accidente de trabajo de un compañero, ¿Qué teléfono de emergencia de los indicados a continuación usará para solicitar ayuda?",
+    "respuestas": [
+      {
+        "texto": 80,
+        "correcta": false
+      },
+      {
+        "texto": 6,
+        "correcta": false
+      },
+      {
+        "texto": 3636,
+        "correcta": false
+      },
+      {
+        "correcta": false
+      }
+    ]
+  },
+  {
+    "id": "6_0._test_2026_tl_of._mantenimiento_r4",
+    "categoria": "jurídico",
+    "tema": "6",
+    "descripcionTema": "R.D.L. 5/2015 T.R.E.B.E.P",
+    "nombreExamen": "0. Test 2026 TL Of. Mantenimiento",
+    "numeroPreguntaExamen": "R4",
+    "texto": "De acuerdo con el artículo 23 del Real Decreto Legislativo 5/2015, de 30 de octubre, por el que se aprueba el texto refundido de la Ley del Estatuto Básico del Empleado Público:",
+    "respuestas": [
+      {
+        "texto": "El sueldo es una retribución básica.",
+        "correcta": false
+      },
+      {
+        "texto": "Los trienios no constituyen una retribución básica.",
+        "correcta": false
+      },
+      {
+        "texto": "Las respuestas a) y b) son correctas.",
+        "correcta": false
+      },
+      {
+        "correcta": false
+      }
+    ]
+  },
+  {
+    "id": "6_0._test_2026_tl_of._mantenimiento_r5",
+    "categoria": "jurídico",
+    "tema": "6",
+    "descripcionTema": "R.D.L. 5/2015 T.R.E.B.E.P",
+    "nombreExamen": "0. Test 2026 TL Of. Mantenimiento",
+    "numeroPreguntaExamen": "R5",
+    "texto": "De acuerdo con el artículo 39.1 del Real Decreto Legislativo 5/2015, de 30 de octubre, por el que se aprueba el texto refundido de la Ley del Estatuto Básico del Empleado Público, los órganos específicos de representación de los funcionarios son:",
+    "respuestas": [
+      {
+        "texto": "Los Delegados de Personal y las Juntas de Personal.",
+        "correcta": false
+      },
+      {
+        "texto": "Los Delegados de Personal.",
+        "correcta": false
+      },
+      {
+        "texto": "Las Juntas de Personal.",
+        "correcta": false
+      },
+      {
+        "correcta": false
+      }
+    ]
+  },
+  {
+    "id": "11_0._pract_2026_tl_of._mantenimiento_1",
+    "categoria": "específico",
+    "tema": "11",
+    "descripcionTema": "Fontaneria",
+    "nombreExamen": "0. Pract 2026 TL Of. Mantenimiento",
+    "numeroPreguntaExamen": "1",
+    "texto": "En un inodoro, la válvula de flotador de la cisterna se encuentra bloqueada mecánicamente en su nivel máximo de carrera por lo que el mecanismo ha perdido su capacidad de retracción, enclavado en el asiento de la válvula. En un urinario de pie, un fluxor temporizado de instalación mural de 1\" presenta una rotura en la junta de estanqueidad del racor de salida. Ante un uso continuado de la instalación, ¿cuál de las dos situaciones supone una mayor pérdida de agua?. Señale la respuesta correcta o más correcta.",
+    "respuestas": [
+      {
+        "texto": "Ambas por igual, producen una pérdida pequeña pero continua de agua.",
+        "correcta": false
+      },
+      {
+        "texto": "La cisterna del inodoro porque no permite el cierre del sistema y está \"tirando\" agua continuamente.",
+        "correcta": false
+      },
+      {
+        "texto": "El fluxor, porque aunque la fuga se produce sólo al accionarlo, en la cisterna no entra agua y no hay pérdida.",
+        "correcta": false
+      },
+      {
+        "texto": "Ninguna produce pérdidas de agua, por lo que no son el motivo del exceso de consumo.",
+        "correcta": false
+      }
+    ]
+  },
+  {
+    "id": "11_0._pract_2026_tl_of._mantenimiento_2",
+    "categoria": "específico",
+    "tema": "11",
+    "descripcionTema": "Fontaneria",
+    "nombreExamen": "0. Pract 2026 TL Of. Mantenimiento",
+    "numeroPreguntaExamen": "2",
+    "texto": "Para solucionar el problema del inodoro, expuesto en la cuestión anterior, vamos a sustituir el mecanismo de descarga. Indique cuál de las siguientes afirmaciones, teniendo en cuenta el origen de la malfunción, es la correcta o la más correcta.",
+    "respuestas": [
+      {
+        "texto": "Para sustituir el mecanismo de descarga actual basta con girar y soltar la pieza.",
+        "correcta": false
+      },
+      {
+        "texto": "Si el mecanismo es muy antiguo puede que haya que retirar la base y para eso será necesario retirar la cisterna.",
+        "correcta": false
+      },
+      {
+        "texto": "Para proceder a sustituir el nuevo mecanismo de descarga hay que cerrar la llave de paso y soltar la tuerca del manguito con una llave fija.",
+        "correcta": false
+      },
+      {
+        "texto": "Ninguna de las opciones soluciona el problema en el flotador (boya).",
+        "correcta": false
+      }
+    ]
+  },
+  {
+    "id": "11_0._pract_2026_tl_of._mantenimiento_3",
+    "categoria": "específico",
+    "tema": "11",
+    "descripcionTema": "Fontaneria",
+    "nombreExamen": "0. Pract 2026 TL Of. Mantenimiento",
+    "numeroPreguntaExamen": "3",
+    "texto": "Para reparar el fluxor de pulgada de superficie, según la avería indicada en el apartado primero, ¿qué operación u operaciones realizaría?. Señale la respuesta correcta o más correcta.",
+    "respuestas": [
+      {
+        "texto": "Soltaría el fluxor, desenroscaría la base y cambiaría la junta dañada.",
+        "correcta": false
+      },
+      {
+        "texto": "Soltaría el fluxor y sustituiría el filtro retenedor y su junta.",
+        "correcta": false
+      },
+      {
+        "texto": "Para realizar una reparación que nos dure en el tiempo, desmontaría la cabeza del fluxor y sustituiría el cartucho con su junta, retén y collarín del retén.",
+        "correcta": false
+      },
+      {
+        "texto": "Desmontaría la cabeza del fluxor, sacaría el cartucho, limpiaría el interior con estropajo de acero, y sustituiría la junta de la base del cartucho.",
+        "correcta": false
+      }
+    ]
+  },
+  {
+    "id": "11_0._pract_2026_tl_of._mantenimiento_4",
+    "categoria": "específico",
+    "tema": "11",
+    "descripcionTema": "Fontaneria",
+    "nombreExamen": "0. Pract 2026 TL Of. Mantenimiento",
+    "numeroPreguntaExamen": "4",
+    "texto": "Posteriormente se observa un gran mancha de agua en la pared de la cocina y se escucha un goteo continuo. Se pica la pared y se comprueba que el tubo multicapa de 20 mm tiene una fuga importante por una unión prensada. Indique cual sería la forma mas correcta y duradera de realizar la reparación de esta tubería.",
+    "respuestas": [
+      {
+        "texto": "Colocaría un racor tipo \"gebo\" (universal metálico) sobre la unión con pérdida de agua y apretaría los tornillos hasta que quedara perfectamente ajustado sin fugas.",
+        "correcta": false
+      },
+      {
+        "texto": "Cortaría el tubo por encima y debajo de la unión prensada y colocaría un nuevo tubo que uniría mediante prensado mecánico sin soldadura.",
+        "correcta": false
+      },
+      {
+        "texto": "Cortaría el tubo, en la parte dañada, colocaría el manguito uniendo las dos partes y lo electrosoldaría.",
+        "correcta": false
+      },
+      {
+        "texto": "Cortaría el tubo antes y después de la unión y utilizaría un racor de compresión para multicapa.",
+        "correcta": false
+      }
+    ]
+  },
+  {
+    "id": "26_0._pract_2026_tl_of._mantenimiento_5",
+    "categoria": "específico",
+    "tema": "26",
+    "descripcionTema": "Incendios",
+    "nombreExamen": "0. Pract 2026 TL Of. Mantenimiento",
+    "numeroPreguntaExamen": "5",
+    "texto": "En estos momentos presencia un incendio que se ha originado por un cortocircuito (causado por la fuga de agua anterior) que ha prendido unas cortinas en la cocina y comienza a afectar a un bidón de aceite cercano. Tras realizar el corte del suministro eléctrico de forma segura y comprobar que no hay riesgo de electrocución por el agua acumulada, ¿qué acción y medio de extinción son los más adecuados según los protocolos de autoprotección?",
+    "respuestas": [
+      {
+        "texto": "Utilizar un extintor de CO2 para evitar dejar residuos en el aceite y facilitar su posterior reciclaje.",
+        "correcta": false
+      },
+      {
+        "texto": "Emplear una manguera de la BIE más cercana aplicando el agua de forma pulverizada sobre el aceite para refrigerarlo.",
+        "correcta": false
+      },
+      {
+        "texto": "Utilizar un extintor de polvo ABC, atacando las llamas en la base y manteniendo una distancia de seguridad.",
+        "correcta": false
+      },
+      {
+        "texto": "Abandonar el lugar inmediatamente, ya que el polvo químico es ineficaz ante incendios donde ha habido presencia de agua.",
+        "correcta": false
+      }
+    ]
+  },
+  {
+    "id": "23_0._pract_2026_tl_of._mantenimiento_6",
+    "categoria": "específico",
+    "tema": "23",
+    "descripcionTema": "Movilidad Urbana",
+    "nombreExamen": "0. Pract 2026 TL Of. Mantenimiento",
+    "numeroPreguntaExamen": "6",
+    "texto": "Solucionados los problemas con las averías y reparaciones de fontanería, nos centramos con la ayuda a la organización del evento que va a tener lugar en las instalaciones municipales. Entre otros asuntos debemos ayudar en la organización de la descarga del material necesario para realizar la actividad programada. La mercancía llega al equipamiento a las 22:00 horas del día previsto para la descarga; es por ello que la empresa transportista deberá tramitar:",
+    "respuestas": [
+      {
+        "texto": "Un permiso especial de tránsito y circulación.",
+        "correcta": false
+      },
+      {
+        "texto": "Un permiso especial por mudanza.",
+        "correcta": false
+      },
+      {
+        "texto": "Un permiso especial por descarga nocturna.",
+        "correcta": false
+      },
+      {
+        "texto": "Ninguna de las anteriores es correcta.",
+        "correcta": false
+      }
+    ]
+  },
+  {
+    "id": "23_0._pract_2026_tl_of._mantenimiento_7",
+    "categoria": "específico",
+    "tema": "23",
+    "descripcionTema": "Movilidad Urbana",
+    "nombreExamen": "0. Pract 2026 TL Of. Mantenimiento",
+    "numeroPreguntaExamen": "7",
+    "texto": "Así mismo, se hace necesario facilitar información a la empresa constructora que está realizando ciertos trabajos en la vía pública. Deberá tramitar los permisos conforme a la Ordenanza de movilidad urbana de Zaragoza donde se establecen los tipos de permisos que podrán otorgarse. De los siguientes permisos ¿cuál No está recogido en su articulado?",
+    "respuestas": [
+      {
+        "texto": "Permiso de obras de zanjas transversales peatonales.",
+        "correcta": false
+      },
+      {
+        "texto": "Permiso de obras en vías ciclistas.",
+        "correcta": false
+      },
+      {
+        "texto": "Permiso de obras en acera y calzada en vías de sentido único.",
+        "correcta": false
+      },
+      {
+        "texto": "Permiso de obras en acera o zonas peatonales.",
+        "correcta": false
+      }
+    ]
+  },
+  {
+    "id": "23_0._pract_2026_tl_of._mantenimiento_8",
+    "categoria": "específico",
+    "tema": "23",
+    "descripcionTema": "Movilidad Urbana",
+    "nombreExamen": "0. Pract 2026 TL Of. Mantenimiento",
+    "numeroPreguntaExamen": "8",
+    "texto": "Uno de los ciudadanos habituales del equipamiento plantea la cuestión de solicitar al Ayuntamiento el préstamo de un escenario portátil, para un evento privado. Todas las cuestiones referidas a este asunto están reguladas en la Ordenanza fiscal n.º 24.23; en cuanto a la tarifa, la cuantía de los precios a satisfacer se establece en base al número de módulos de:",
+    "respuestas": [
+      {
+        "texto": "2 x 1 m. en planta y 1 m. de altura.",
+        "correcta": false
+      },
+      {
+        "texto": "1 x 1 m. en planta y 1 m. de altura.",
+        "correcta": false
+      },
+      {
+        "texto": "2 x 1 m. en planta y 0,90 m. de altura.",
+        "correcta": false
+      },
+      {
+        "texto": "1 x 1 m. en planta y 0,90 m. de altura.",
+        "correcta": false
+      }
+    ]
+  },
+  {
+    "id": "10_0._pract_2026_tl_of._mantenimiento_10",
+    "categoria": "específico",
+    "tema": "10",
+    "descripcionTema": "Albañileria",
+    "nombreExamen": "0. Pract 2026 TL Of. Mantenimiento",
+    "numeroPreguntaExamen": "10",
+    "texto": "Por último, se ha decidido por personal competente en la materia que se use para la reparación de un desconchado, un mortero que tiene la siguiente denominación: \"Mortero elaborado con una dosificación establecida, cuyas propiedades se suponen ligadas a ella\". De los apartados siguientes indique el que hace referencia a la denominación:",
+    "respuestas": [
+      {
+        "texto": "Mortero ligero.",
+        "correcta": false
+      },
+      {
+        "texto": "Mortero por dosificación.",
+        "correcta": false
+      },
+      {
+        "texto": "Mortero por resistencia.",
+        "correcta": false
+      },
+      {
+        "texto": "Mortero de obra.",
+        "correcta": false
+      }
+    ]
+  },
+  {
+    "id": "21_0._pract_2026_tl_of._mantenimiento_11",
+    "categoria": "específico",
+    "tema": "21",
+    "descripcionTema": "Centros Cívicos",
+    "nombreExamen": "0. Pract 2026 TL Of. Mantenimiento",
+    "numeroPreguntaExamen": "11",
+    "texto": "En el Centro Cívico que estamos trabajando hay que hacer una serie de reparaciones en varias aulas. Todos los trabajos a realizar son de cerrajería, persianas y electricidad. En el Aula n.º 1 hemos visto que la persiana de una de las ventanas está abajo del todo, la cinta se ve colgando de la parte del cajón de la persiana y donde el recogedor no se ve nada de cinta. ¿Habrá que abrir el cajón de la persiana para repararla?",
+    "respuestas": [
+      {
+        "texto": "No será necesario.",
+        "correcta": false
+      },
+      {
+        "texto": "Sí será necesario, si probamos a estirar de la cinta que cuelga y la persiana no llega a subir del todo.",
+        "correcta": false
+      },
+      {
+        "texto": "No será necesario, si probamos a estirar de la cinta que cuelga y la persiana no llega a subir del todo.",
+        "correcta": false
+      },
+      {
+        "texto": "No es obligatorio abrir el cajón para su reparación porque el problema está en la polea.",
+        "correcta": false
+      }
+    ]
+  },
+  {
+    "id": "14_0._pract_2026_tl_of._mantenimiento_12",
+    "categoria": "específico",
+    "tema": "14",
+    "descripcionTema": "Persianas",
+    "nombreExamen": "0. Pract 2026 TL Of. Mantenimiento",
+    "numeroPreguntaExamen": "12",
+    "texto": "En otra ventana del Aula n.º 2, se ve la persiana abajo del todo y cuando intentamos subirla, al tirar de la cinta, vemos que solamente sube unos 15 centímetros, pero solo del lado derecho, y se queda atascada y ya no sube más. ¿Cuál sería la causa de este problema?",
+    "respuestas": [
+      {
+        "texto": "La cinta que une la última lama al tambor (o rulo) se ha roto en el lado de la persiana que no sube.",
+        "correcta": false
+      },
+      {
+        "texto": "El fleje, del lado que no sube la persiana, se ha roto.",
+        "correcta": false
+      },
+      {
+        "texto": "El tambor de la persiana se ha descolgado del lado que no sube la persiana.",
+        "correcta": false
+      },
+      {
+        "texto": "Las tres respuestas anteriores a), b) y c) son correctas.",
+        "correcta": false
+      }
+    ]
+  },
+  {
+    "id": "14_0._pract_2026_tl_of._mantenimiento_13",
+    "categoria": "específico",
+    "tema": "14",
+    "descripcionTema": "Persianas",
+    "nombreExamen": "0. Pract 2026 TL Of. Mantenimiento",
+    "numeroPreguntaExamen": "13",
+    "texto": "Nos ha dicho la directora del centro que en el Aula n.º 5 hay una persiana que sube y baja muy mal; hay tramos que sube fácil y otros va bastante dura; pero se puede subir y bajar, con dificultad. Con la ayuda de dos escaleras, los dos oficiales de mantenimiento del Centro retiramos la tapa del cajón de la persiana y observamos que muchas lamas no están perfectamente alineadas en los extremos. Unas desplazadas hacia derecha y algunas otras hacia la izquierda. ¿Cómo se podría solucionar definitivamente este problema?",
+    "respuestas": [
+      {
+        "texto": "Se solucionaría si, una lama sin otra, llevasen topes laterales (o patines) en sus dos extremos.",
+        "correcta": false
+      },
+      {
+        "texto": "Se solucionaría si, todas las lamas, llevasen topes (o patines) laterales en sus dos extremos.",
+        "correcta": false
+      },
+      {
+        "texto": "Se solucionaría si, una lama sin otra, llevasen topes laterales (o patines) en uno de sus extremos.",
+        "correcta": false
+      },
+      {
+        "texto": "Las tres respuestas anteriores a), b) y c) son correctas.",
+        "correcta": false
+      }
+    ]
+  },
+  {
+    "id": "14_0._pract_2026_tl_of._mantenimiento_14",
+    "categoria": "específico",
+    "tema": "14",
+    "descripcionTema": "Persianas",
+    "nombreExamen": "0. Pract 2026 TL Of. Mantenimiento",
+    "numeroPreguntaExamen": "14",
+    "texto": "Nos han encargado que tomemos las medidas para motorizar la persiana del despacho n.º 3 de la segunda planta. ¿Cuáles son las medidas que tendremos que realizar para poder hacer el pedido del motor adecuado?",
+    "respuestas": [
+      {
+        "texto": "Hay que ver la forma del tubo (o rulo), redondo, medir el diámetro; si es hexagonal u octogonal (el más común) y medir entre planos. También habrá que medir el largo del tubo, porque si la persiana es muy estrecha igual no nos cabe el motor dentro.",
+        "correcta": false
+      },
+      {
+        "texto": "Hay que medir la superficie de la persiana para poder calcular el peso y así tener en cuenta la potencia del motor.",
+        "correcta": false
+      },
+      {
+        "texto": "No es necesario medir nada, los motores de persiana son universales.",
+        "correcta": false
+      },
+      {
+        "texto": "Las respuestas a) y b) son correctas.",
+        "correcta": false
+      }
+    ]
+  },
+  {
+    "id": "9_0._pract_2026_tl_of._mantenimiento_16",
+    "categoria": "específico",
+    "tema": "9",
+    "descripcionTema": "Electricidad",
+    "nombreExamen": "0. Pract 2026 TL Of. Mantenimiento",
+    "numeroPreguntaExamen": "16",
+    "texto": "Nos piden poner una toma de corriente de 16 A para enchufar una lámpara, ¿qué sección de cable normalizada,sería la más adecuada para dar alimentación a la toma de corriente?",
+    "respuestas": [
+      {
+        "texto": "1 mm2.",
+        "correcta": false
+      },
+      {
+        "texto": "2 mm2.",
+        "correcta": false
+      },
+      {
+        "texto": "2,5 mm2.",
+        "correcta": false
+      },
+      {
+        "texto": "6 mm2.",
+        "correcta": false
+      }
+    ]
+  },
+  {
+    "id": "9_0._pract_2026_tl_of._mantenimiento_17",
+    "categoria": "específico",
+    "tema": "9",
+    "descripcionTema": "Electricidad",
+    "nombreExamen": "0. Pract 2026 TL Of. Mantenimiento",
+    "numeroPreguntaExamen": "17",
+    "texto": "Para cumplir la normativa, tenemos que instalar un aparato que me controle la intensidad de luz que emiten las luminarias en función de la luz que nos entra por las ventanas, ¿Que aparato es el que tendríamos que instalar?",
+    "respuestas": [
+      {
+        "texto": "Luxometro.",
+        "correcta": false
+      },
+      {
+        "texto": "Ampericimetro.",
+        "correcta": false
+      },
+      {
+        "texto": "Sensor de luminosidad.",
+        "correcta": false
+      },
+      {
+        "texto": "Interruptortemporizado.",
+        "correcta": false
+      }
+    ]
+  },
+  {
+    "id": "9_0._pract_2026_tl_of._mantenimiento_18",
+    "categoria": "específico",
+    "tema": "9",
+    "descripcionTema": "Electricidad",
+    "nombreExamen": "0. Pract 2026 TL Of. Mantenimiento",
+    "numeroPreguntaExamen": "18",
+    "texto": "Hay un ordenador en el Aula 5 que parece que no tiene tensión, con que aparato podemos comprobar la tensión en la toma de corriente .",
+    "respuestas": [
+      {
+        "texto": "Amperímetro.",
+        "correcta": false
+      },
+      {
+        "texto": "Potenciómetro.",
+        "correcta": false
+      },
+      {
+        "texto": "Voltímetro.",
+        "correcta": false
+      },
+      {
+        "texto": "Tensiómetro.",
+        "correcta": false
+      }
+    ]
+  },
+  {
+    "id": "9_0._pract_2026_tl_of._mantenimiento_29",
+    "categoria": "específico",
+    "tema": "9",
+    "descripcionTema": "Electricidad",
+    "nombreExamen": "0. Pract 2026 TL Of. Mantenimiento",
+    "numeroPreguntaExamen": "29",
+    "texto": "Nos avisan que no hay luz en un aula y cuando revisamos la caja de empalmes vemos un cable negro de 1,5 mm2,suelto, ¿Que herramienta es la más adecuada para volver a conectar el cable en la borna de empalme?",
+    "respuestas": [
+      {
+        "texto": "Tijeras de electricista.",
+        "correcta": false
+      },
+      {
+        "texto": "Alicate.",
+        "correcta": false
+      },
+      {
+        "texto": "Destornillador plano.",
+        "correcta": false
+      },
+      {
+        "texto": "Destornillador Torx.",
+        "correcta": false
+      }
+    ]
+  },
+  {
+    "id": "9_0._pract_2026_tl_of._mantenimiento_20",
+    "categoria": "específico",
+    "tema": "9",
+    "descripcionTema": "Electricidad",
+    "nombreExamen": "0. Pract 2026 TL Of. Mantenimiento",
+    "numeroPreguntaExamen": "20",
+    "texto": "Arreglando una luminaria, hemos conectado sin darnos cuenta el cable de tierra con el de fase y ha saltado la luz, nos vamos al cuadro de baja tensión y vemos que se ha disparado el siguiente elemento?",
+    "respuestas": [
+      {
+        "texto": "PIA 10 A.",
+        "correcta": false
+      },
+      {
+        "texto": "Diferencial.",
+        "correcta": false
+      },
+      {
+        "texto": "Relé térmico.",
+        "correcta": false
+      },
+      {
+        "texto": "Driver de la luminaria.",
         "correcta": false
       }
     ]
