@@ -33,12 +33,178 @@ function parseExcel(rows) {
   });
 }
 
+function ScreenLayout({
+  title,
+  subtitle = null,
+  topActions = null,
+  bottomActions = null,
+  children,
+  maxWidth = 900
+}) {
+  return (
+    <div
+      style={{
+        height: "100dvh",
+        display: "flex",
+        flexDirection: "column",
+        overflow: "hidden",
+        boxSizing: "border-box",
+        background: "#242424"
+      }}
+    >
+      <div
+        style={{
+          flex: "0 0 auto",
+          borderBottom: "1px solid rgba(255,255,255,0.12)",
+          padding: "calc(14px + env(safe-area-inset-top)) clamp(12px, 4vw, 20px) 12px",
+          boxSizing: "border-box",
+          background: "#242424",
+          backdropFilter: "blur(8px)"
+        }}
+      >
+        <div
+          style={{
+            width: "100%",
+            maxWidth,
+            margin: "0 auto",
+            display: "flex",
+            justifyContent: "space-between",
+            alignItems: "center",
+            gap: 12
+          }}
+        >
+          <div style={{ minWidth: 0 }}>
+            <h1
+              style={{
+                margin: 0,
+                fontSize: 22,
+                lineHeight: 1.2
+              }}
+            >
+              {title}
+            </h1>
+
+            {subtitle && (
+              <div
+                style={{
+                  marginTop: 4,
+                  fontSize: 13,
+                  opacity: 0.75,
+                  overflow: "hidden",
+                  textOverflow: "ellipsis",
+                  whiteSpace: "nowrap"
+                }}
+              >
+                {subtitle}
+              </div>
+            )}
+          </div>
+
+          {topActions && (
+            <div
+              style={{
+                flex: "0 0 auto",
+                display: "flex",
+                alignItems: "center",
+                gap: 8
+              }}
+            >
+              {topActions}
+            </div>
+          )}
+        </div>
+      </div>
+
+      <main
+        style={{
+          width: "100%",
+          maxWidth: "100%",
+          flex: "1 1 auto",
+          minHeight: 0,
+          overflowY: "auto",
+          overflowX: "hidden",
+          WebkitOverflowScrolling: "touch",
+          padding: "18px clamp(12px, 4vw, 20px)",
+          boxSizing: "border-box",
+          background: "#242424"
+        }}
+      >
+        <div
+          style={{
+            width: "100%",
+            maxWidth,
+            minWidth: 0,
+            boxSizing: "border-box",
+            margin: "0 auto"
+          }}
+        >
+          {children}
+        </div>
+      </main>
+
+      {bottomActions && (
+        <div
+          style={{
+            flex: "0 0 auto",
+            borderTop: "1px solid rgba(255,255,255,0.12)",
+            padding: "12px clamp(12px, 4vw, 20px) calc(12px + env(safe-area-inset-bottom))",
+            boxSizing: "border-box",
+            background: "#242424",
+            backdropFilter: "blur(8px)"
+          }}
+        >
+          <div
+            style={{
+              width: "100%",
+              maxWidth,
+              margin: "0 auto",
+              display: "flex",
+              justifyContent: "space-between",
+              gap: 12
+            }}
+          >
+            {bottomActions}
+          </div>
+        </div>
+      )}
+    </div>
+  );
+}
 
 function App() {
   const [mensaje, setMensaje] = useState("");
   const [totalPreguntas, setTotalPreguntas] = useState(0);
 
-  const [pantalla, setPantalla] = useState("home");
+  function leerOposicionActivaGuardada() {
+    const valor = localStorage.getItem("oposicionActiva");
+
+    if (!valor) return null;
+
+    try {
+      const parsed = JSON.parse(valor);
+
+      if (typeof parsed === "string" && parsed.trim()) {
+        const limpio = parsed.trim();
+        localStorage.setItem("oposicionActiva", limpio);
+        return limpio;
+      }
+    } catch {
+      // Si no es JSON, usamos el valor tal cual
+    }
+
+    return valor.trim();
+  }
+
+  const oposicionGuardadaInicial = leerOposicionActivaGuardada();
+
+  const [oposicionActiva, setOposicionActiva] = useState(oposicionGuardadaInicial);
+
+  const [pantalla, setPantalla] = useState(() => {
+    return oposicionGuardadaInicial
+      ? "home"
+      : "selector-oposicion";
+  });
+
   const [preguntas, setPreguntas] = useState([]);
   const [preguntaActual, setPreguntaActual] = useState(null);
   
@@ -59,6 +225,9 @@ function App() {
 
   const [modoFavoritas, setModoFavoritas] = useState(false);
 
+  const [tipoFiltroTemario, setTipoFiltroTemario] = useState(null);
+  const [temasFiltroTemario, setTemasFiltroTemario] = useState([]);
+
   const [configOposicion, setConfigOposicion] = useState(20);
 
   const [penalizacionOposicion, setPenalizacionOposicion] = useState(3);
@@ -70,10 +239,58 @@ function App() {
   const [desdeRepaso, setDesdeRepaso] = useState(false);
 
   const MAX_TESTS_RECIENTES = 5;
+  const DIAS_SIN_REPETIR = 6;
 
   const version = __APP_VERSION__;
 
   const preguntasActivas = preguntasRevision ?? preguntasTest;
+
+  function storageKey(nombre, codigo = oposicionActiva) {
+    const clavesPorOposicion = [
+      "historicoTests",
+      "historicoIdCounter",
+      "temasActivos"
+    ];
+
+    if (!codigo || !clavesPorOposicion.includes(nombre)) {
+      return nombre;
+    }
+
+    return `${nombre}__${codigo}`;
+  }
+
+  function getTemasDeOposicion(codigo, listaPreguntas = preguntas) {
+    if (!codigo) return [];
+
+    return Array.from(
+      new Set(
+        listaPreguntas
+          .filter(p =>
+            Array.isArray(p.oposiciones) &&
+            p.oposiciones.includes(codigo)
+          )
+          .map(p => p.tema)
+          .filter(Boolean)
+      )
+    );
+  }
+
+  function cargarTemasActivosDeOposicion(codigo, listaPreguntas = preguntas) {
+    const key = storageKey("temasActivos", codigo);
+    const guardados = JSON.parse(localStorage.getItem(key) || "null");
+
+    if (guardados && Array.isArray(guardados) && guardados.length > 0) {
+      return guardados;
+    }
+
+    const temas = getTemasDeOposicion(codigo, listaPreguntas);
+
+    if (temas.length > 0) {
+      localStorage.setItem(key, JSON.stringify(temas));
+    }
+
+    return temas;
+  }
 
   const [temasActivos, setTemasActivos] = useState([]);
 
@@ -129,11 +346,9 @@ function App() {
 
   useEffect(() => {
     const guardadas = localStorage.getItem("preguntas");
-    setHistorico(getHistorico());
-    const temasGuardados = JSON.parse(localStorage.getItem("temasActivos") || "null");
 
-    if (temasGuardados) {
-      setTemasActivos(temasGuardados);
+    if (oposicionActiva) {
+      setHistorico(getHistorico(oposicionActiva));
     }
 
     if (guardadas) {
@@ -141,6 +356,12 @@ function App() {
 
       setPreguntas(data);
       setTotalPreguntas(data.length);
+
+      if (oposicionActiva) {
+        setTemasActivos(
+          cargarTemasActivosDeOposicion(oposicionActiva, data)
+        );
+      }
     }
 
     fetch(import.meta.env.BASE_URL + "preguntas.json")
@@ -150,11 +371,12 @@ function App() {
         setPreguntas(data);
         setTotalPreguntas(data.length);
         // Inicializar temas activos si no existen
-        const temasUnicos = Array.from(new Set(data.map(p => p.tema)));
+        if (oposicionActiva) {
+          setTemasActivos(
+            cargarTemasActivosDeOposicion(oposicionActiva, data)
+          );
 
-        if (!localStorage.getItem("temasActivos")) {
-          setTemasActivos(temasUnicos);
-          localStorage.setItem("temasActivos", JSON.stringify(temasUnicos));
+          setHistorico(getHistorico(oposicionActiva));
         }
       })
 
@@ -163,7 +385,9 @@ function App() {
         // si no hay red, no pasa nada
       });
 
-      setHistorico(getHistorico());
+      if (oposicionActiva) {
+        setHistorico(getHistorico(oposicionActiva));
+      }
 
       const savedPomodoro = JSON.parse(localStorage.getItem("pomodoroStats") || "null");
       if (savedPomodoro) {
@@ -207,7 +431,6 @@ function App() {
         if (saved.end > now) {
           setPomodoroMode(saved.mode);
           setPomodoroStart(saved.start);
-          setPomodoroEnd(saved.end);
           setPomodoroRunning(true);
         } else {
           localStorage.removeItem("pomodoroActive");
@@ -399,19 +622,20 @@ function App() {
     setPomodoroMode("work");
   }
 
-  function getHistorico() {
-    return JSON.parse(localStorage.getItem("historicoTests") || "[]");
+  function getHistorico(codigo = oposicionActiva) {
+    return JSON.parse(localStorage.getItem(storageKey("historicoTests", codigo)) || "[]");
   }
 
-  function getNextHistoricoId() {
-    const current = Number(localStorage.getItem("historicoIdCounter") || 0);
+  function getNextHistoricoId(codigo = oposicionActiva) {
+    const key = storageKey("historicoIdCounter", codigo);
+    const current = Number(localStorage.getItem(key) || 0);
     const next = current + 1;
-    localStorage.setItem("historicoIdCounter", next);
+    localStorage.setItem(key, next);
     return next;
   }
 
-  function guardarHistorico(lista) {
-    localStorage.setItem("historicoTests", JSON.stringify(lista));
+  function guardarHistorico(lista, codigo = oposicionActiva) {
+    localStorage.setItem(storageKey("historicoTests", codigo), JSON.stringify(lista));
     setHistorico(lista);
   }
 
@@ -430,33 +654,34 @@ function App() {
   function toggleFavorita(id) {
     const actuales = getFavoritas();
 
-    if (actuales.includes(id)) {
-      guardarFavoritas(actuales.filter(x => x !== id));
-    } else {
-      guardarFavoritas([...actuales, id]);
-    }
+    const nuevasFavoritasIds = actuales.includes(id)
+      ? actuales.filter(x => x !== id)
+      : [...actuales, id];
 
-    // Forzar re-render
-    setTestActual(prev => ({ ...prev }));
+    guardarFavoritas(nuevasFavoritasIds);
 
-    // 🔧 FIX: actualizar lista en modo favoritas
+    // Forzar re-render sin romper si no hay testActual
+    setTestActual(prev => (prev ? { ...prev } : prev));
+
+    // Si estamos viendo favoritas, mantenemos solo la lista actual filtrada
     if (modoFavoritas) {
-      const nuevasFavoritasIds = getFavoritas();
-      const nuevasFavoritas = preguntas.filter(p =>
+      const baseActual = preguntasRevision || [];
+
+      const nuevasFavoritas = baseActual.filter(p =>
         nuevasFavoritasIds.includes(p.id)
       );
 
       if (nuevasFavoritas.length === 0) {
-        // salir si no quedan favoritas
         setModoFavoritas(false);
         setPreguntasRevision(null);
+        setTipoFiltroTemario(null);
+        setTemasFiltroTemario([]);
         setPantalla("home");
         return;
       }
 
       setPreguntasRevision(nuevasFavoritas);
 
-      // ajustar índice si se sale de rango
       if (indicePregunta >= nuevasFavoritas.length) {
         const nuevoIndice = nuevasFavoritas.length - 1;
         setIndicePregunta(nuevoIndice);
@@ -483,9 +708,10 @@ function App() {
     const ahora = Date.now();
     const usadas = JSON.parse(localStorage.getItem("preguntasUsadas") || "[]");
 
-    const vigentes = usadas.filter(
-      p => ahora - p.fecha < 7 * 24 * 60 * 60 * 1000
-    );
+    const limiteMs = DIAS_SIN_REPETIR * 24 * 60 * 60 * 1000;
+
+    const vigentes = usadas
+      .filter(p => p?.id && p?.fecha && ahora - p.fecha < limiteMs);
 
     localStorage.setItem("preguntasUsadas", JSON.stringify(vigentes));
 
@@ -494,12 +720,78 @@ function App() {
 
   function registrarPreguntaUsada(id) {
     if (!id) return;
-    const ahora = Date.now();
-    const usadas = JSON.parse(localStorage.getItem("preguntasUsadas") || "[]");
 
-    usadas.push({ id, fecha: ahora });
+    registrarPreguntasUsadas([{ id }]);
+  }
+
+  function registrarPreguntasUsadas(listaPreguntas) {
+    if (!Array.isArray(listaPreguntas) || listaPreguntas.length === 0) return;
+
+    const ahora = Date.now();
+    const limiteMs = DIAS_SIN_REPETIR * 24 * 60 * 60 * 1000;
+
+    const usadas = JSON.parse(localStorage.getItem("preguntasUsadas") || "[]")
+      .filter(p => p?.id && p?.fecha && ahora - p.fecha < limiteMs);
+
+    const idsVigentes = new Set(usadas.map(p => p.id));
+
+    listaPreguntas.forEach(p => {
+      if (!p?.id) return;
+
+      if (!idsVigentes.has(p.id)) {
+        usadas.push({
+          id: p.id,
+          fecha: ahora
+        });
+
+        idsVigentes.add(p.id);
+      }
+    });
 
     localStorage.setItem("preguntasUsadas", JSON.stringify(usadas));
+  }
+
+  function getIdsPreguntasBloqueadas() {
+    return getPreguntasUsadasSemana();
+  }
+
+  function separarPreguntasPorRepeticion(lista) {
+    const bloqueadas = new Set(getIdsPreguntasBloqueadas());
+
+    return {
+      nuevas: lista.filter(p => p.id && !bloqueadas.has(p.id)),
+      repetidas: lista.filter(p => p.id && bloqueadas.has(p.id))
+    };
+  }
+
+  function seleccionarPreguntasSinRepetir(lista, cantidad, maxPorTema = 3) {
+    const { nuevas, repetidas } = separarPreguntasPorRepeticion(lista);
+
+    const seleccionadasNuevas = seleccionarPreguntasEquilibradasConLimitePorTema(
+      nuevas,
+      cantidad,
+      maxPorTema
+    );
+
+    if (seleccionadasNuevas.length >= cantidad) {
+      return seleccionadasNuevas;
+    }
+
+    const idsYaSeleccionadas = new Set(
+      seleccionadasNuevas.map(p => p.id)
+    );
+
+    const repetidasDisponibles = repetidas.filter(
+      p => !idsYaSeleccionadas.has(p.id)
+    );
+
+    const relleno = seleccionarPreguntasEquilibradasConLimitePorTema(
+      repetidasDisponibles,
+      cantidad - seleccionadasNuevas.length,
+      maxPorTema
+    );
+
+    return [...seleccionadasNuevas, ...relleno];
   }
 
   function guardarTestReciente(preguntasTest) {
@@ -510,12 +802,174 @@ function App() {
     tests.push(ids);
 
     if (tests.length > MAX_TESTS_RECIENTES) {
-      tests.shift(); // elimina el más antiguo
+      tests.shift();
     }
 
     localStorage.setItem("testsRecientes", JSON.stringify(tests));
   }
+
+  function getOposicionesDisponibles() {
+    return Array.from(
+      new Set(
+        preguntas.flatMap(p =>
+          Array.isArray(p.oposiciones) ? p.oposiciones : []
+        )
+      )
+    ).sort();
+  }
+
+  function getPreguntasOposicionActiva() {
+    if (!oposicionActiva) return [];
+
+    return preguntas.filter(p =>
+      Array.isArray(p.oposiciones) &&
+      p.oposiciones.includes(oposicionActiva)
+    );
+  }
+
+  function seleccionarOposicion(codigo) {
+    localStorage.setItem("oposicionActiva", codigo);
+    setOposicionActiva(codigo);
+
+    setHistorico(getHistorico(codigo));
+    setTemasActivos(cargarTemasActivosDeOposicion(codigo, preguntas));
+
+    setPreguntasTest([]);
+    setTestActual(null);
+    setIndicePregunta(0);
+    setPreguntaActual(null);
+    setAciertos(0);
+    setPreguntasRevision(null);
+    setModoFavoritas(false);
+    setDesdeRepaso(false);
+    setTipoFiltroTemario(null);
+    setTemasFiltroTemario([]);
+
+    setPantalla("home");
+  }
+
+  function volverASelectorOposicion() {
+    setPreguntasTest([]);
+    setTestActual(null);
+    setIndicePregunta(0);
+    setPreguntaActual(null);
+    setAciertos(0);
+    setPreguntasRevision(null);
+    setModoFavoritas(false);
+    setDesdeRepaso(false);
+    setTipoFiltroTemario(null);
+    setTemasFiltroTemario([]);
+
+    setPantalla("selector-oposicion");
+  }
   
+  function getPreguntasCandidatasFiltroTemario(tipo = tipoFiltroTemario) {
+    const basePreguntas = getPreguntasOposicionActiva();
+
+    if (tipo === "favoritas") {
+      const favoritasIds = getFavoritas();
+
+      return basePreguntas.filter(p =>
+        favoritasIds.includes(p.id)
+      );
+    }
+
+    if (tipo === "repaso") {
+      const pendientes = getRepasoPendientes();
+
+      return pendientes
+        .map(id => basePreguntas.find(p => p.id === id))
+        .filter(Boolean);
+    }
+
+    return [];
+  }
+
+  function getTemasFiltroTemario(tipo = tipoFiltroTemario) {
+    const candidatas = getPreguntasCandidatasFiltroTemario(tipo);
+
+    const mapa = new Map();
+
+    candidatas.forEach(p => {
+      const tema = p.tema || "Sin tema";
+
+      if (!mapa.has(tema)) {
+        const match = String(tema).match(/^(\d+)/);
+        const numero = match ? Number(match[1]) : null;
+
+        mapa.set(tema, {
+          tema,
+          descripcion: p.descripcionTema,
+          numero,
+          total: 0
+        });
+      }
+
+      mapa.get(tema).total += 1;
+    });
+
+    return Array.from(mapa.values()).sort((a, b) => {
+      if (a.numero === null && b.numero === null) {
+        return String(a.tema).localeCompare(String(b.tema));
+      }
+
+      if (a.numero === null) return 1;
+      if (b.numero === null) return -1;
+
+      return a.numero - b.numero;
+    });
+  }
+
+  function abrirFiltroTemario(tipo) {
+    const candidatas = getPreguntasCandidatasFiltroTemario(tipo);
+
+    if (candidatas.length === 0) {
+      alert(
+        tipo === "favoritas"
+          ? "No tienes preguntas favoritas aún."
+          : "No hay preguntas pendientes de repaso."
+      );
+      return;
+    }
+
+    const temas = getTemasFiltroTemario(tipo).map(t => t.tema);
+
+    setTipoFiltroTemario(tipo);
+    setTemasFiltroTemario(temas);
+    setPantalla("filtro-temario");
+  }
+
+  function iniciarDesdeFiltroTemario() {
+    const candidatas = getPreguntasCandidatasFiltroTemario(tipoFiltroTemario);
+
+    const filtradas = candidatas.filter(p =>
+      temasFiltroTemario.includes(p.tema || "Sin tema")
+    );
+
+    if (filtradas.length === 0) {
+      alert("No hay preguntas para los temas seleccionados.");
+      return;
+    }
+
+    if (tipoFiltroTemario === "favoritas") {
+      setPreguntasRevision(filtradas);
+      setModoFavoritas(true);
+      setIndicePregunta(0);
+      setPreguntaActual(filtradas[0]);
+      setPantalla("pregunta");
+      return;
+    }
+
+    if (tipoFiltroTemario === "repaso") {
+      const ids = filtradas.map(p => p.id);
+
+      setTipoFiltroTemario(null);
+      setTemasFiltroTemario([]);
+
+      iniciarTestRepaso(ids);
+    }
+  }
+
   function getPreguntasPorTema() {
     return JSON.parse(localStorage.getItem("preguntasPorTema") || "{}");
   }
@@ -667,8 +1121,10 @@ function App() {
 
     const idsUnicos = [...new Set(idsFuente)];
 
+    const basePreguntas = getPreguntasOposicionActiva();
+
     const seleccionadas = idsUnicos
-      .map(id => preguntas.find(p => p.id === id))
+      .map(id => basePreguntas.find(p => p.id === id))
       .filter(Boolean);
 
     if (seleccionadas.length === 0) {
@@ -704,9 +1160,17 @@ function App() {
     if (omitirConteo) return;
     if (!Array.isArray(listaPreguntas) || listaPreguntas.length === 0) return;
 
+    const respondidas = listaPreguntas.filter(
+      p =>
+        p.respuestaSeleccionada !== null &&
+        p.respuestaSeleccionada !== undefined
+    );
+
+    if (respondidas.length === 0) return;
+
     const stats = getPreguntasPorTema();
 
-    listaPreguntas.forEach(p => {
+    respondidas.forEach(p => {
       const tema = p.tema || "Sin tema";
       stats[tema] = (stats[tema] || 0) + 1;
     });
@@ -859,7 +1323,7 @@ function App() {
     }
 
     const nuevoRegistro = {
-      id: getNextHistoricoId(),
+      id: getNextHistoricoId(oposicionActiva),
       fecha: Date.now(),
       modo: test.modo,
       porcentajeJuridico,
@@ -871,11 +1335,11 @@ function App() {
       nombreExamen: nombreExamenGuardado,
     };
 
-    const historicoActual = getHistorico();
+    const historicoActual = getHistorico(oposicionActiva);
 
     const nuevoHistorico = [...historicoActual, nuevoRegistro];
 
-    guardarHistorico(nuevoHistorico); // 👈 ESTA ES LA CLAVE
+    guardarHistorico(nuevoHistorico, oposicionActiva);
   }
 
   function borrarTest(id) {
@@ -1045,40 +1509,32 @@ function App() {
   function empezarTest(tipo) {
     setTipoTest(tipo);
 
+    const basePreguntas = getPreguntasOposicionActiva();
+
+    if (basePreguntas.length === 0) {
+      alert("No hay preguntas disponibles para la oposición activa.");
+      return;
+    }
+
     if (tipo === "mixto") {
-      const juridico = preguntas.filter(
+      const juridico = basePreguntas.filter(
         p => p.categoria === "jurídico" && temasActivos.includes(p.tema)
       );
-      const especifico = preguntas.filter(
+      const especifico = basePreguntas.filter(
         p => p.categoria === "específico" && temasActivos.includes(p.tema)
       );
 
       const mitad = 10;
 
       const seleccionBase = [
-        ...seleccionarPreguntasEquilibradasConLimitePorTema(juridico, mitad, 3),
-        ...seleccionarPreguntasEquilibradasConLimitePorTema(especifico, mitad, 3)
+        ...seleccionarPreguntasSinRepetir(juridico, mitad, 3),
+        ...seleccionarPreguntasSinRepetir(especifico, mitad, 3)
       ];
 
-      const idsRecientes = [
-        ...getIdsRecientes(),
-        ...getPreguntasUsadasSemana()
-      ];
-
-      let disponibles = seleccionBase.filter(
-        p => !idsRecientes.includes(p.id)
-      );
-
-
-      if (disponibles.length < 20) {
-        disponibles = seleccionBase;
-      }
-
-      const mezcladas = barajarConEquilibrioPorTema(disponibles);
+      const mezcladas = barajarConEquilibrioPorTema(seleccionBase);
 
       guardarTestReciente(mezcladas);
-      mezcladas.forEach(p => registrarPreguntaUsada(p.id));
-      registrarPreguntasPorTema(mezcladas);
+      registrarPreguntasUsadas(mezcladas);
 
       const nuevoTest = {
         modo: modoTest,
@@ -1104,7 +1560,7 @@ function App() {
 
     }
 
-    let filtradas = preguntas.filter(
+    let filtradas = basePreguntas.filter(
       p => p.categoria === tipo && temasActivos.includes(p.tema)
     );
 
@@ -1224,9 +1680,14 @@ function App() {
           return;
         }
 
+        registrarPreguntasPorTema(
+          testFinal.preguntas,
+          !!testFinal.desdeElegirTest || testFinal.tipoGuardado === "repaso"
+        );
+
         registrarRendimientoPorTema(
           testFinal,
-          !!testFinal.desdeElegirTest
+          !!testFinal.desdeElegirTest || testFinal.tipoGuardado === "repaso"
         );
 
         guardarHistoricoTest(testFinal);
@@ -1238,41 +1699,27 @@ function App() {
 
   }
 
-  function iniciarTestConTemas() {
-    let filtradas = preguntas;
+    function iniciarTestConTemas() {
+      const basePreguntas = getPreguntasOposicionActiva();
 
-    if (tipoTest !== "mixto") {
-      filtradas = preguntas.filter(p => p.categoria === tipoTest);
-    }
+      let filtradas = basePreguntas;
 
-    filtradas = filtradas.filter(p =>
-      temasSeleccionados.includes(p.tema)
-    );
+      if (tipoTest !== "mixto") {
+        filtradas = basePreguntas.filter(p => p.categoria === tipoTest);
+      }
 
-    const idsRecientes = [
-      ...getIdsRecientes(),
-      ...getPreguntasUsadasSemana()
-    ];
+      filtradas = filtradas.filter(p =>
+        temasSeleccionados.includes(p.tema)
+      );
 
+      const seleccionadas = seleccionarPreguntasSinRepetir(
+        filtradas,
+        20,
+        3
+      );
 
-    let disponibles = filtradas.filter(
-      p => !idsRecientes.includes(p.id)
-    );
-
-
-    if (disponibles.length < 20) {
-      disponibles = filtradas;
-    }
-
-    const seleccionadas = seleccionarPreguntasEquilibradasConLimitePorTema(
-      disponibles,
-      20,
-      3
-    );
-
-    guardarTestReciente(seleccionadas);
-    seleccionadas.forEach(p => registrarPreguntaUsada(p.id));
-    registrarPreguntasPorTema(seleccionadas);
+      guardarTestReciente(seleccionadas);
+      registrarPreguntasUsadas(seleccionadas);
 
     const nuevoTest = {
       modo: modoTest,
@@ -1298,38 +1745,26 @@ function App() {
   }
 
   function iniciarTestAleatorio() {
-    let filtradas = preguntas;
+    const basePreguntas = getPreguntasOposicionActiva();
+
+    let filtradas = basePreguntas;
 
     if (tipoTest !== "mixto") {
-      filtradas = preguntas.filter(
+      filtradas = basePreguntas.filter(
         p => p.categoria === tipoTest && temasActivos.includes(p.tema)
       );
     } else {
-      filtradas = preguntas.filter(p => temasActivos.includes(p.tema));
+      filtradas = basePreguntas.filter(p => temasActivos.includes(p.tema));
     }
 
-    const idsRecientes = [
-      ...getIdsRecientes(),
-      ...getPreguntasUsadasSemana()
-    ];
-
-    let disponibles = filtradas.filter(
-      p => !idsRecientes.includes(p.id)
-    );
-
-    if (disponibles.length < 20) {
-      disponibles = filtradas;
-    }
-
-    const seleccionadas = seleccionarPreguntasEquilibradasConLimitePorTema(
-      disponibles,
+    const seleccionadas = seleccionarPreguntasSinRepetir(
+      filtradas,
       20,
       3
     );
 
     guardarTestReciente(seleccionadas);
-    seleccionadas.forEach(p => registrarPreguntaUsada(p.id));
-    registrarPreguntasPorTema(seleccionadas);
+    registrarPreguntasUsadas(seleccionadas);
 
     const nuevoTest = {
       modo: modoTest,
@@ -1360,40 +1795,28 @@ function App() {
     const numJuridico = Math.round((configOposicion / 100) * total);
     const numEspecifico = total - numJuridico;
 
-    const juridico = preguntas.filter(
+    const basePreguntas = getPreguntasOposicionActiva();
+
+    const juridico = basePreguntas.filter(
       p => p.categoria === "jurídico" && temasActivos.includes(p.tema)
     );
-    const especifico = preguntas.filter(
+    const especifico = basePreguntas.filter(
       p => p.categoria === "específico" && temasActivos.includes(p.tema)
     );
 
     const seleccionBase = [
-      ...seleccionarPreguntasEquilibradasConLimitePorTema(juridico, numJuridico, 3),
-      ...seleccionarPreguntasEquilibradasConLimitePorTema(especifico, numEspecifico, 3)
+      ...seleccionarPreguntasSinRepetir(juridico, numJuridico, 3),
+      ...seleccionarPreguntasSinRepetir(especifico, numEspecifico, 3)
     ];
 
-    const idsRecientes = [
-      ...getIdsRecientes(),
-      ...getPreguntasUsadasSemana()
-    ];
-
-    let disponibles = seleccionBase.filter(
-      p => !idsRecientes.includes(p.id)
-    );
-
-    if (disponibles.length < 50) {
-      disponibles = seleccionBase;
-    }
-
-    const final = barajarConEquilibrioPorTema(disponibles);
+    const final = barajarConEquilibrioPorTema(seleccionBase);
 
     guardarTestReciente(final);
-    final.forEach(p => registrarPreguntaUsada(p.id));
-    registrarPreguntasPorTema(final);
+    registrarPreguntasUsadas(final);
 
     const nuevoTest = {
       modo: "oposicion",
-      penalizacion: penalizacionOposicion,
+      penalizacion: Number(penalizacionOposicion) || 1,
       fechaInicio: Date.now(),
       preguntas: final.map(p => ({
         ...p,
@@ -1412,20 +1835,19 @@ function App() {
   }
 
   function empezarModoRapido() {
-    const juridicoBase = preguntas.filter(
+    const basePreguntas = getPreguntasOposicionActiva();
+
+    const juridicoBase = basePreguntas.filter(
       p => p.categoria === "jurídico" && temasActivos.includes(p.tema)
     );
-    const especificoBase = preguntas.filter(
+    const especificoBase = basePreguntas.filter(
       p => p.categoria === "específico" && temasActivos.includes(p.tema)
     );
 
-    const idsRecientes = [
-      ...getIdsRecientes(),
-      ...getPreguntasUsadasSemana()
-    ];
+    const idsBloqueadas = getIdsPreguntasBloqueadas();
 
-    let juridico = juridicoBase.filter(p => !idsRecientes.includes(p.id));
-    let especifico = especificoBase.filter(p => !idsRecientes.includes(p.id));
+    let juridico = juridicoBase.filter(p => !idsBloqueadas.includes(p.id));
+    let especifico = especificoBase.filter(p => !idsBloqueadas.includes(p.id));
 
     if (juridico.length === 0) {
       juridico = juridicoBase;
@@ -1521,10 +1943,9 @@ function App() {
 
   function exportarDatos() {
 
-    const claves = [
+    const clavesGlobales = [
+      "oposicionActiva",
       "preguntasFavoritas",
-      "historicoTests",
-      "historicoIdCounter",
       "testsRecientes",
       "preguntasUsadas",
       "preguntasPorTema",
@@ -1536,14 +1957,44 @@ function App() {
       "pomodoroActive"
     ];
 
+    const prefijosPorOposicion = [
+      "historicoTests__",
+      "historicoIdCounter__",
+      "temasActivos__"
+    ];
+
     const backup = {};
 
-    claves.forEach(k => {
+    clavesGlobales.forEach(k => {
       const valor = localStorage.getItem(k);
       if (valor !== null) {
-        backup[k] = JSON.parse(valor);
+        try {
+          backup[k] = JSON.parse(valor);
+        } catch {
+          backup[k] = valor;
+        }
       }
     });
+
+    for (let i = 0; i < localStorage.length; i++) {
+      const clave = localStorage.key(i);
+
+      if (
+        prefijosPorOposicion.some(prefijo =>
+          clave.startsWith(prefijo)
+        )
+      ) {
+        const valor = localStorage.getItem(clave);
+
+        if (valor !== null) {
+          try {
+            backup[clave] = JSON.parse(valor);
+          } catch {
+            backup[clave] = valor;
+          }
+        }
+      }
+    }
 
     const blob = new Blob(
       [JSON.stringify(backup, null, 2)],
@@ -1575,11 +2026,100 @@ function App() {
 
         const datos = JSON.parse(e.target.result);
 
+        if (!datos || typeof datos !== "object" || Array.isArray(datos)) {
+          alert("El archivo de copia no tiene un formato válido.");
+          return;
+        }
+
+        const clavesGlobalesPermitidas = [
+          "oposicionActiva",
+          "preguntasFavoritas",
+          "testsRecientes",
+          "preguntasUsadas",
+          "preguntasPorTema",
+          "rendimientoPorTema",
+          "repasoPendientes",
+          "repasoAciertos",
+          "pomodoroStats",
+          "pomodoroConfig",
+          "pomodoroActive"
+        ];
+
+        const prefijosPorOposicionPermitidos = [
+          "historicoTests__",
+          "historicoIdCounter__",
+          "temasActivos__"
+        ];
+
+        // Compatibilidad con backups antiguos de una sola oposición
+        const clavesAntiguasMigrables = [
+          "historicoTests",
+          "historicoIdCounter",
+          "temasActivos"
+        ];
+
+        const codigoMigracion =
+          typeof datos.oposicionActiva === "string" && datos.oposicionActiva.trim()
+            ? datos.oposicionActiva.trim()
+            : localStorage.getItem("oposicionActiva");
+
+        let clavesImportadas = 0;
+        let clavesIgnoradas = 0;
+
         Object.entries(datos).forEach(([clave, valor]) => {
-          localStorage.setItem(clave, JSON.stringify(valor));
+
+          const esGlobalPermitida = clavesGlobalesPermitidas.includes(clave);
+
+          const esPorOposicionPermitida = prefijosPorOposicionPermitidos.some(
+            prefijo => clave.startsWith(prefijo)
+          );
+
+          const esAntiguaMigrable = clavesAntiguasMigrables.includes(clave);
+
+          if (esGlobalPermitida || esPorOposicionPermitida) {
+            if (clave === "oposicionActiva") {
+              const codigo = typeof valor === "string" ? valor.trim() : "";
+
+              if (codigo) {
+                localStorage.setItem(clave, codigo);
+                clavesImportadas++;
+              } else {
+                clavesIgnoradas++;
+              }
+
+              return;
+            }
+
+            localStorage.setItem(clave, JSON.stringify(valor));
+            clavesImportadas++;
+            return;
+          }
+
+          if (esAntiguaMigrable && codigoMigracion) {
+            const nuevaClave = `${clave}__${codigoMigracion}`;
+
+            // No machacamos datos nuevos si ya existen
+            if (localStorage.getItem(nuevaClave) === null) {
+              localStorage.setItem(nuevaClave, JSON.stringify(valor));
+              clavesImportadas++;
+            } else {
+              clavesIgnoradas++;
+            }
+
+            return;
+          }
+
+          clavesIgnoradas++;
         });
 
-        alert("Datos importados correctamente. La app se recargará.");
+        if (clavesImportadas === 0) {
+          alert("No se ha importado nada. El archivo no contiene claves válidas.");
+          return;
+        }
+
+        alert(
+          `Datos importados correctamente.\n\nClaves importadas: ${clavesImportadas}\nClaves ignoradas: ${clavesIgnoradas}\n\nLa app se recargará.`
+        );
 
         window.location.reload();
 
@@ -1590,6 +2130,9 @@ function App() {
     };
 
     reader.readAsText(file);
+
+    // Permite volver a importar el mismo archivo si hace falta
+    event.target.value = "";
   }
 
   function borrarFavoritas() {
@@ -1653,7 +2196,9 @@ function App() {
 
   function iniciarTestDesdeLista(nombreExamen) {
 
-    let seleccionadas = preguntas
+    const basePreguntas = getPreguntasOposicionActiva();
+
+    let seleccionadas = basePreguntas
       .filter(p => p.nombreExamen === nombreExamen)
       .sort(
         (a, b) =>
@@ -1692,35 +2237,332 @@ function App() {
         ]
       : null;
 
-  return (
+  function getTituloPregunta() {
+    if (modoFavoritas) return "Favoritas";
+    if (testActual?.revisando) return "Revisión";
+    if (testActual?.tipoGuardado === "repaso") return "Repaso";
 
+    const total = testActual?.preguntas.length || 0;
+
+    const juridico = testActual?.preguntas.filter(
+      p => p.categoria === "jurídico"
+    ).length || 0;
+
+    const especifico = testActual?.preguntas.filter(
+      p => p.categoria === "específico"
+    ).length || 0;
+
+    if (juridico === total && total > 0) return "Jurídico";
+    if (especifico === total && total > 0) return "Específico";
+
+    return "Mixto";
+  }
+
+  function getSubtituloPregunta() {
+    const contador = testActual?.modo === "rapido"
+      ? `Pregunta ${getNumeroPreguntaRapidaActual()}`
+      : `Pregunta ${indicePregunta + 1} / ${preguntasActivas.length}`;
+
+    return preguntaSegura?.descripcionTema
+      ? `${contador} · ${preguntaSegura.descripcionTema}`
+      : contador;
+  }
+
+  function getTextoBotonSalidaPregunta() {
+    if (modoFavoritas) return "Salir";
+    if (testActual?.tipoGuardado === "repaso") return "Finalizar";
+    if (testActual?.revisando) return "Finalizar";
+    if (testActual?.modo === "rapido") return "Finalizar";
+
+    return indicePregunta === preguntasActivas.length - 1
+      ? "Finalizar"
+      : "Salir";
+  }
+
+  function salirOFinalizarPregunta() {
+    if (modoFavoritas) {
+      setModoFavoritas(false);
+      setPreguntasRevision(null);
+      setPreguntasTest([]);
+      setTestActual(null);
+      setIndicePregunta(0);
+      setPreguntaActual(null);
+      setTipoFiltroTemario(null);
+      setTemasFiltroTemario([]);
+      setPantalla("home");
+      return;
+    }
+
+    if (testActual?.revisando) {
+      setPreguntasRevision(null);
+      setIndicePregunta(0);
+      setPreguntaActual(null);
+
+      if (testActual?.modo === "oposicion") {
+        setPantalla("modo");
+      } else if (testActual?.modo === "rapido") {
+        setPantalla("modo");
+      } else {
+        setPantalla("tipo");
+      }
+
+      setPreguntasTest([]);
+      setTestActual(null);
+      setAciertos(0);
+      setModoFavoritas(false);
+      return;
+    }
+
+    if (testActual?.modo === "rapido") {
+      const testFinal = {
+        ...testActual,
+        finalizado: true,
+        revisando: false,
+        fechaFin: Date.now()
+      };
+
+      const preguntasRespondidas = testFinal.preguntas.filter(
+        p => p.respuestaSeleccionada !== null
+      );
+
+      registrarPreguntasPorTema(
+        preguntasRespondidas,
+        !!testFinal.desdeElegirTest || testFinal.tipoGuardado === "repaso"
+      );
+
+      registrarRendimientoPorTema(
+        testFinal,
+        !!testFinal.desdeElegirTest || testFinal.tipoGuardado === "repaso"
+      );
+
+      registrarPreguntasUsadas(preguntasRespondidas);
+
+      agregarFalladasDeTestARepaso(testFinal);
+      guardarHistoricoTest(testFinal);
+      setTestActual(testFinal);
+      setPantalla("resumen");
+      return;
+    }
+
+    const esUltima = indicePregunta === preguntasActivas.length - 1;
+
+    if (testActual?.tipoGuardado === "repaso") {
+      const testFinal = {
+        ...testActual,
+        finalizado: true,
+        revisando: false,
+        fechaFin: Date.now()
+      };
+
+      actualizarProgresoRepaso(testFinal);
+
+      setPreguntasTest([]);
+      setTestActual(null);
+      setIndicePregunta(0);
+      setPreguntaActual(null);
+      setAciertos(0);
+      setPreguntasRevision(null);
+      setModoFavoritas(false);
+      setPantalla("home");
+      return;
+    }
+
+    if (!esUltima) {
+      setPreguntasTest([]);
+      setTestActual(null);
+      setIndicePregunta(0);
+      setPreguntaActual(null);
+      setPantalla(
+        testActual?.tipoGuardado === "repaso" ? "home" : "modo"
+      );
+      return;
+    }
+
+    const testFinal = {
+      ...testActual,
+      finalizado: true,
+      revisando: false,
+      fechaFin: Date.now()
+    };
+
+    if (testFinal.tipoGuardado === "repaso") {
+      actualizarProgresoRepaso(testFinal);
+
+      setPreguntasTest([]);
+      setTestActual(null);
+      setIndicePregunta(0);
+      setPreguntaActual(null);
+      setAciertos(0);
+      setPreguntasRevision(null);
+      setModoFavoritas(false);
+      setPantalla("home");
+      return;
+    }
+
+    if (testFinal.modo === "oposicion" || testFinal.modo === "rapido") {
+      agregarFalladasDeTestARepaso(testFinal);
+    }
+
+    registrarPreguntasPorTema(
+      testFinal.preguntas,
+      !!testFinal.desdeElegirTest || testFinal.tipoGuardado === "repaso"
+    );
+
+    registrarRendimientoPorTema(
+      testFinal,
+      !!testFinal.desdeElegirTest || testFinal.tipoGuardado === "repaso"
+    );
+
+    guardarHistoricoTest(testFinal);
+
+    setTestActual(testFinal);
+    setPantalla("resumen");
+  }
+
+  function irPreguntaAnterior() {
+    const anterior = indicePregunta - 1;
+
+    setIndicePregunta(anterior);
+
+    if (preguntasRevision) {
+      setPreguntaActual(preguntasRevision[anterior]);
+    } else {
+      setPreguntaActual(preguntasTest[anterior]);
+    }
+  }
+
+  const pantallasConLayout = [
+    "selector-oposicion",
+    "home",
+    "settings",
+    "elegir-test",
+    "temas",
+    "temario",
+    "preguntas-por-tema",
+    "modo",
+    "tipo",
+    "config-oposicion",
+    "resumen",
+    "repaso-oposicion",
+    "pomodoro",
+    "estadisticas",
+    "filtro-temario"
+  ];
+
+  return (
     <div
       style={{
-        padding: pantalla === "pregunta" ? 0 : 20,
+        width: "100%",
+        maxWidth: "100vw",
+        minWidth: 0,
+        padding:
+          pantalla === "pregunta" || pantallasConLayout.includes(pantalla)
+            ? 0
+            : 20,
         minHeight: "100dvh",
         overflow: "hidden",
         boxSizing: "border-box",
         display: "flex",
-        flexDirection: "column"
+        flexDirection: "column",
+        background: "#242424"
       }}
     >
 
+    {/* SELECTOR DE OPOSICIÓN */}
+    {pantalla === "selector-oposicion" && (
+      <ScreenLayout
+        title="Selecciona oposición"
+        subtitle={
+          preguntas.length === 0
+            ? "Cargando preguntas..."
+            : `${getOposicionesDisponibles().length} oposiciones disponibles`
+        }
+      >
+        {(() => {
+          const oposiciones = getOposicionesDisponibles();
+
+          if (preguntas.length === 0) {
+            return <p>Cargando preguntas...</p>;
+          }
+
+          if (oposiciones.length === 0) {
+            return (
+              <p>
+                No se han encontrado oposiciones en la base de preguntas.
+              </p>
+            );
+          }
+
+          return (
+            <div
+              style={{
+                display: "grid",
+                gridTemplateColumns: "1fr",
+                gap: 16
+              }}
+            >
+              {oposiciones.map(codigo => {
+                const total = preguntas.filter(p =>
+                  Array.isArray(p.oposiciones) &&
+                  p.oposiciones.includes(codigo)
+                ).length;
+
+                return (
+                  <button
+                    key={codigo}
+                    onClick={() => seleccionarOposicion(codigo)}
+                    style={{
+                      padding: 18,
+                      borderRadius: 12,
+                      fontSize: 18,
+                      textAlign: "left",
+                      width: "100%"
+                    }}
+                  >
+                    <div style={{ fontWeight: "bold" }}>
+                      {codigo}
+                    </div>
+
+                    <div style={{ fontSize: 13, opacity: 0.75, marginTop: 6 }}>
+                      {total} preguntas disponibles
+                    </div>
+                  </button>
+                );
+              })}
+            </div>
+          );
+        })()}
+      </ScreenLayout>
+    )}
+
     {/* HOME */}
     {pantalla === "home" && (
-      <>
-        <h1>Mi app</h1>
-
-        {totalPreguntas > 0 && (
-          <p>📊 Preguntas disponibles: {totalPreguntas}</p>
-        )}
-
+      <ScreenLayout
+        title="Mi app"
+        subtitle={
+          oposicionActiva
+            ? `${oposicionActiva} · ${getPreguntasOposicionActiva().length} preguntas`
+            : null
+        }
+        topActions={
+          <button
+            onClick={volverASelectorOposicion}
+            style={{
+              padding: "8px 10px",
+              fontSize: 13,
+              whiteSpace: "nowrap"
+            }}
+          >
+            Cambiar
+          </button>
+        }
+      >
         <div
           style={{
             display: "grid",
-            gridTemplateColumns: "1fr 1fr",
+            gridTemplateColumns: "repeat(auto-fit, minmax(145px, 1fr))",
             gridAutoRows: "1fr",
-            gap: 20,
-            marginTop: 15
+            gap: 20
           }}
         >
 
@@ -1736,7 +2578,7 @@ function App() {
               Test esta semana
             </p>
           </div>
-          
+
           {/* HACER TEST */}
           <div
             onClick={() => setPantalla("modo")}
@@ -1748,32 +2590,16 @@ function App() {
 
           {/* FAVORITAS */}
           <div
-            onClick={() => {
-              const favoritasIds = getFavoritas();
-              const favoritas = preguntas.filter(p =>
-                favoritasIds.includes(p.id)
-              );
-
-              if (favoritas.length === 0) {
-                alert("No tienes preguntas favoritas aún.");
-                return;
-              }
-
-              setPreguntasRevision(favoritas);
-              setModoFavoritas(true);
-              setIndicePregunta(0);
-              setPreguntaActual(favoritas[0]);
-              setPantalla("pregunta");
-            }}
+            onClick={() => abrirFiltroTemario("favoritas")}
             style={cardStyle}
           >
             <div style={{ fontSize: 40 }}>⭐</div>
             <p style={cardTextStyle}>Favoritas</p>
           </div>
-          
+
           {/* REPASO */}
           <div
-            onClick={() => iniciarTestRepaso()}
+            onClick={() => abrirFiltroTemario("repaso")}
             style={cardStyle}
           >
             <div style={{ fontSize: 40 }}>🧠</div>
@@ -1813,54 +2639,88 @@ function App() {
             Versión {version}
           </p>
         </div>
-
-      </>
+      </ScreenLayout>
     )}
     
     {/* ESTADISTICAS */}
     {pantalla === "estadisticas" && (
-      <>
+      <ScreenLayout
+        title="Estadísticas"
+        subtitle={
+          oposicionActiva
+            ? `Oposición activa: ${oposicionActiva} · ${getTestsSemanaActual()} test esta semana`
+            : `${getTestsSemanaActual()} test esta semana`
+        }
+        bottomActions={
+          <button
+            onClick={() => setPantalla("home")}
+            style={{ padding: 12, width: "100%" }}
+          >
+            Volver
+          </button>
+        }
+      >
         <div
           style={{
-            display: "flex",
-            flexDirection: "column",
-            flex: 1,
-            minHeight: 0,
-            padding: 20,
+            display: "grid",
+            gap: 24,
+            width: "100%",
+            maxWidth: "100%",
+            minWidth: 0,
             boxSizing: "border-box"
           }}
         >
 
-          <h2>Estadísticas</h2>
-
-          <div
+          <section
             style={{
-              flex: 1,
-              overflowY: "auto",
+              width: "100%",
+              maxWidth: "100%",
+              minWidth: 0,
+              boxSizing: "border-box",
+              padding: 16,
+              borderRadius: 12,
+              background: "rgba(255,255,255,0.06)"
             }}
           >
+            <h3 style={{ marginTop: 0 }}>Evolución semanal</h3>
 
             {getDatosEstadisticas().length === 0 ? (
               <p>No hay datos suficientes aún.</p>
             ) : (
-              <div style={{ marginTop: 20, width: "100%", height: 260 }}>
-
+              <div
+                style={{
+                  marginTop: 20,
+                  width: "100%",
+                  maxWidth: "100%",
+                  height: 260,
+                  overflow: "hidden"
+                }}
+              >
                 <div
                   style={{
+                    width: "100%",
+                    maxWidth: "100%",
                     overflowX: "auto",
-                    paddingBottom: 10
+                    overflowY: "hidden",
+                    paddingBottom: 10,
+                    WebkitOverflowScrolling: "touch"
                   }}
                 >
-
-                  <ResponsiveContainer
-                    width={getDatosEstadisticas().length * 70}
-                    height={230}
+                  <div
+                    style={{
+                      width: Math.max(getDatosEstadisticas().length * 70, 280),
+                      minWidth: "100%",
+                      height: 230
+                    }}
                   >
+                    <ResponsiveContainer
+                      width="100%"
+                      height={230}
+                    >
                     <LineChart
                       data={getDatosEstadisticas()}
                       margin={{ top: 5, right: 10, left: 0, bottom: 5 }}
                     >
-
                       <CartesianGrid strokeDasharray="3 3" />
 
                       <XAxis
@@ -1878,7 +2738,6 @@ function App() {
                           return (
                             <g transform={`translate(${x},${y})`}>
 
-                              {/* valores */}
                               <text
                                 x={0}
                                 y={30}
@@ -1899,7 +2758,6 @@ function App() {
                                 J: {datos?.juridico ?? "-"}
                               </text>
 
-                              {/* semana */}
                               <text
                                 x={0}
                                 y={14}
@@ -1940,511 +2798,1038 @@ function App() {
                         name="Específico"
                         dot={{ r: 4 }}
                       />
-
-                    </LineChart>
-                  </ResponsiveContainer>
+                      </LineChart>
+                    </ResponsiveContainer>
+                  </div>
                 </div>
               </div>
             )}
+          </section>
 
-            <br />
-
-            <div style={{ marginTop: 20 }}>
-              <h3 style={{ marginBottom: 20 }}>Histórico semanal</h3>
-
-              {(() => {
-                const semanas = getSemanasOrdenadas();
-                const maxTests = Math.max(...semanas.map(s => s.total), 1);
-
-                return semanas.map((item, index) => (
-                  <div key={index} style={{ marginBottom: 24 }}>
-
-                    <div
-                      onClick={() =>
-                        setSemanaAbierta(
-                          semanaAbierta === item.semana ? null : item.semana
-                        )
-                      }
-                      style={{
-                        display: "grid",
-                        gridTemplateColumns: "70px 40px 1fr",
-                        alignItems: "center",
-                        cursor: "pointer"
-                      }}
-                    >
-                      <div style={{ fontWeight: 600 }}>
-                        {item.semana}
-                      </div>
-
-                      <div>
-                        {item.total}
-                      </div>
-
-                      <div style={{ paddingLeft: 10, paddingRight: 10 }}>
-                        <div
-                          style={{
-                            height: 24,
-                            width: `${(item.total / maxTests) * 100}%`,
-                            minWidth: 8,
-                            background: "linear-gradient(90deg, #4f46e5, #3b82f6)",
-                            borderRadius: 12
-                          }}
-                        />
-                      </div>
-                    </div>
-
-                    {semanaAbierta === item.semana && (
-                      <div style={{ marginLeft: 70, marginTop: 12 }}>
-                        {historico
-                          .filter(h => {
-                            const { year, week } = getYearWeek(h.fecha);
-                            const clave = `${String(year).slice(-2)}w${week}`;
-                            return clave === item.semana;
-                          })
-                          .map(h => (
-                            <div
-                              key={h.id}
-                              style={{
-                                display: "flex",
-                                justifyContent: "space-between",
-                                alignItems: "center",
-                                marginBottom: 10,
-                                padding: "6px 0",
-                                borderBottom: "1px solid rgba(255,255,255,0.08)"
-                              }}
-                            >
-                              <div style={{ color: "#d1d5db", fontSize: 14 }}>
-                                {h.modo === "rapido" ? (
-                                  <>
-                                    <div>
-                                      {new Date(h.fecha).toLocaleDateString()} · rápido
-                                    </div>
-                                    <div>
-                                      {h.porcentajeJuridico !== null ? `J${h.porcentajeJuridico}%` : ""}
-                                      {h.porcentajeJuridico !== null && h.porcentajeEspecifico !== null ? " · " : ""}
-                                      {h.porcentajeEspecifico !== null ? `E${h.porcentajeEspecifico}%` : ""}
-                                    </div>
-                                  </>
-                                ) : (
-                                  <>
-                                    <div>
-                                      {new Date(h.fecha).toLocaleDateString()} · {h.modo}
-                                      {h.nombreExamen ? ` · ${h.nombreExamen}` : ""}
-                                    </div>
-
-                                    <div>
-                                      {(h.modo === "oposicion") ? (
-                                        <>
-                                          {h.nota !== null ? h.nota.toFixed(2) : "-"} · ✔ {h.aciertos ?? 0} · ✖ {h.fallos ?? 0}
-                                        </>
-                                      ) : (
-                                        <>
-                                          J: {h.porcentajeJuridico ?? "-"}% · E: {h.porcentajeEspecifico ?? "-"}%
-                                        </>
-                                      )}
-                                    </div>
-                                  </>
-                                )}
-                              </div>
-
-                              <span
-                                onClick={(e) => {
-                                  e.stopPropagation();
-                                  borrarTest(h.id);
-                                }}
-                                style={{
-                                  cursor: "pointer",
-                                  opacity: 0.6,
-                                  fontSize: 16
-                                }}
-                              >
-                                🗑
-                              </span>
-                            </div>
-                          ))}
-                      </div>
-                    )}
-
-                  </div>
-                ));
-              })()}
-            </div>
-
-          </div>
-
-          <button
-            onClick={() => setPantalla("home")}
+          <section
             style={{
-              marginTop: 10,
-              padding: 12
+              padding: 16,
+              borderRadius: 12,
+              background: "rgba(255,255,255,0.06)"
             }}
           >
-            Volver
-          </button>
+            <h3 style={{ marginTop: 0, marginBottom: 20 }}>
+              Histórico semanal
+            </h3>
+
+            {(() => {
+              const semanas = getSemanasOrdenadas();
+
+              if (semanas.length === 0) {
+                return <p>No hay test guardados todavía.</p>;
+              }
+
+              const maxTests = Math.max(...semanas.map(s => s.total), 1);
+
+              return semanas.map((item, index) => (
+                <div key={index} style={{ marginBottom: 24 }}>
+
+                  <div
+                    onClick={() =>
+                      setSemanaAbierta(
+                        semanaAbierta === item.semana ? null : item.semana
+                      )
+                    }
+                    style={{
+                      display: "grid",
+                      gridTemplateColumns: "64px 32px minmax(0, 1fr)",
+                      alignItems: "center",
+                      cursor: "pointer",
+                      minWidth: 0
+                    }}
+                  >
+                    <div style={{ fontWeight: 600 }}>
+                      {item.semana}
+                    </div>
+
+                    <div>
+                      {item.total}
+                    </div>
+
+                    <div style={{ paddingLeft: 10, paddingRight: 10, minWidth: 0 }}>
+                      <div
+                        style={{
+                          height: 24,
+                          width: `${(item.total / maxTests) * 100}%`,
+                          minWidth: 8,
+                          background: "linear-gradient(90deg, #4f46e5, #3b82f6)",
+                          borderRadius: 12
+                        }}
+                      />
+                    </div>
+                  </div>
+
+                  {semanaAbierta === item.semana && (
+                    <div style={{ marginTop: 12 }}>
+                      {historico
+                        .filter(h => {
+                          const { year, week } = getYearWeek(h.fecha);
+                          const clave = `${String(year).slice(-2)}w${week}`;
+                          return clave === item.semana;
+                        })
+                        .map(h => (
+                          <div
+                            key={h.id}
+                            style={{
+                              display: "flex",
+                              justifyContent: "space-between",
+                              alignItems: "center",
+                              gap: 12,
+                              marginBottom: 10,
+                              padding: "8px 0",
+                              borderBottom: "1px solid rgba(255,255,255,0.08)"
+                            }}
+                          >
+                            <div
+                              style={{
+                                color: "#d1d5db",
+                                fontSize: 14,
+                                minWidth: 0,
+                                overflow: "hidden"
+                              }}
+                            >
+                              {h.modo === "rapido" ? (
+                                <>
+                                  <div>
+                                    {new Date(h.fecha).toLocaleDateString()} · rápido
+                                  </div>
+
+                                  <div>
+                                    {h.porcentajeJuridico !== null ? `J${h.porcentajeJuridico}%` : ""}
+                                    {h.porcentajeJuridico !== null && h.porcentajeEspecifico !== null ? " · " : ""}
+                                    {h.porcentajeEspecifico !== null ? `E${h.porcentajeEspecifico}%` : ""}
+                                  </div>
+                                </>
+                              ) : (
+                                <>
+                                  <div
+                                    style={{
+                                      overflow: "hidden",
+                                      textOverflow: "ellipsis",
+                                      whiteSpace: "nowrap"
+                                    }}
+                                  >
+                                    {new Date(h.fecha).toLocaleDateString()} · {h.modo}
+                                    {h.nombreExamen ? ` · ${h.nombreExamen}` : ""}
+                                  </div>
+
+                                  <div>
+                                    {h.modo === "oposicion" ? (
+                                      <>
+                                        {h.nota !== null ? h.nota.toFixed(2) : "-"} · ✔ {h.aciertos ?? 0} · ✖ {h.fallos ?? 0}
+                                      </>
+                                    ) : (
+                                      <>
+                                        J: {h.porcentajeJuridico ?? "-"}% · E: {h.porcentajeEspecifico ?? "-"}%
+                                      </>
+                                    )}
+                                  </div>
+                                </>
+                              )}
+                            </div>
+
+                            <span
+                              onClick={(e) => {
+                                e.stopPropagation();
+                                borrarTest(h.id);
+                              }}
+                              style={{
+                                cursor: "pointer",
+                                opacity: 0.6,
+                                fontSize: 16,
+                                flex: "0 0 auto"
+                              }}
+                            >
+                              🗑
+                            </span>
+                          </div>
+                        ))}
+                    </div>
+                  )}
+
+                </div>
+              ));
+            })()}
+          </section>
+
         </div>
-      </>
+      </ScreenLayout>
     )}
 
     {/* SELECCIÓN DE MODO */}
     {pantalla === "modo" && (
-      <>
-        <h2>Selecciona modo</h2>
+      <ScreenLayout
+        title="Selecciona modo"
+        subtitle={
+          oposicionActiva
+            ? `Oposición activa: ${oposicionActiva}`
+            : null
+        }
+        bottomActions={
+          <button
+            onClick={() => setPantalla("home")}
+            style={{ padding: 12, width: "100%" }}
+          >
+            Volver
+          </button>
+        }
+      >
+        <div
+          style={{
+            display: "grid",
+            gridTemplateColumns: "repeat(auto-fit, minmax(180px, 1fr))",
+            gap: 16
+          }}
+        >
+          <button
+            onClick={() => {
+              setModoTest("practica");
+              setPantalla("tipo");
+            }}
+            style={{
+              padding: 18,
+              borderRadius: 12,
+              textAlign: "left"
+            }}
+          >
+            <div style={{ fontSize: 28 }}>🟢</div>
+            <strong>Modo práctica</strong>
+            <div style={{ fontSize: 13, opacity: 0.75, marginTop: 6 }}>
+              Corrección inmediata y repaso al finalizar.
+            </div>
+          </button>
 
-        <button onClick={() => {
-          setModoTest("practica");
-          setPantalla("tipo");
-        }}>
-          🟢 Modo práctica
-        </button>
+          <button
+            onClick={() => {
+              setModoTest("rapido");
+              empezarModoRapido();
+            }}
+            style={{
+              padding: 18,
+              borderRadius: 12,
+              textAlign: "left"
+            }}
+          >
+            <div style={{ fontSize: 28 }}>🟡</div>
+            <strong>Modo rápido</strong>
+            <div style={{ fontSize: 13, opacity: 0.75, marginTop: 6 }}>
+              Preguntas alternas jurídico/específico.
+            </div>
+          </button>
 
-        <br /><br />
-
-        <button onClick={() => {
-          setModoTest("rapido");
-          empezarModoRapido();
-        }}>
-          🟡 Modo rapido
-        </button>
-
-        <br /><br />
-
-        <button onClick={() => {
-          setModoTest("oposicion");
-          setPantalla("config-oposicion");
-        }}>
-          🔵 Modo oposición
-        </button>
-
-        <br /><br />
-
-        <button onClick={() => setPantalla("home")}>
-          Volver
-        </button>
-      </>
+          <button
+            onClick={() => {
+              setModoTest("oposicion");
+              setPantalla("config-oposicion");
+            }}
+            style={{
+              padding: 18,
+              borderRadius: 12,
+              textAlign: "left"
+            }}
+          >
+            <div style={{ fontSize: 28 }}>🔵</div>
+            <strong>Modo oposición</strong>
+            <div style={{ fontSize: 13, opacity: 0.75, marginTop: 6 }}>
+              Simulación con nota y penalización.
+            </div>
+          </button>
+        </div>
+      </ScreenLayout>
     )}
 
     {/* CONFIGURACIÓN OPOSICIÓN */}
     {pantalla === "config-oposicion" && (
-      <>
-        <h2>Configurar reparto oposición</h2>
+      <ScreenLayout
+        title="Configurar oposición"
+        subtitle={`Jurídico ${configOposicion}% · Específico ${100 - configOposicion}%`}
+        bottomActions={
+          <>
+            <button
+              onClick={() => setPantalla("modo")}
+              style={{ padding: 12, flex: 1 }}
+            >
+              Volver
+            </button>
 
-        <div style={{ marginTop: 30 }}>
+            <button
+              onClick={() => empezarOposicion()}
+              style={{ padding: 12, flex: 1 }}
+            >
+              Empezar
+            </button>
+          </>
+        }
+      >
+        <div
+          style={{
+            display: "grid",
+            gap: 24
+          }}
+        >
+          <section
+            style={{
+              padding: 16,
+              borderRadius: 12,
+              background: "rgba(255,255,255,0.06)"
+            }}
+          >
+            <h3 style={{ marginTop: 0 }}>Reparto del test</h3>
 
-          <div style={{ display: "flex", justifyContent: "space-between" }}>
-            <span>Jurídico: {configOposicion}%</span>
-            <span>Específico: {100 - configOposicion}%</span>
-          </div>
-
-          <input
-            type="range"
-            min="0"
-            max="100"
-            step="5"
-            value={configOposicion}
-            onChange={(e) => setConfigOposicion(Number(e.target.value))}
-            style={{ width: "100%", marginTop: 20 }}
-          />
-
-        </div>
-
-        <div style={{ marginTop: 30 }}>
-          <label>
-            Cada fallo resta 1/
-            <input
-              type="number"
-              min="1"
-              value={penalizacionOposicion}
-              onChange={(e) => {
-                const val = Number(e.target.value);
-                if (!isNaN(val) && val > 0) {
-                  setPenalizacionOposicion(val);
-                }
-              }}
+            <div
               style={{
-                width: 60,
-                marginLeft: 8,
-                marginRight: 8,
-                padding: "6px 8px",
-                fontSize: 16,
-                borderRadius: 6
+                display: "flex",
+                justifyContent: "space-between",
+                marginBottom: 12
               }}
+            >
+              <span>Jurídico: {configOposicion}%</span>
+              <span>Específico: {100 - configOposicion}%</span>
+            </div>
+
+            <input
+              type="range"
+              min="0"
+              max="100"
+              step="5"
+              value={configOposicion}
+              onChange={(e) => setConfigOposicion(Number(e.target.value))}
+              style={{ width: "100%" }}
             />
-            de una acertada
-          </label>
+          </section>
+
+          <section
+            style={{
+              padding: 16,
+              borderRadius: 12,
+              background: "rgba(255,255,255,0.06)"
+            }}
+          >
+            <h3 style={{ marginTop: 0 }}>Penalización</h3>
+
+            <label>
+              Cada fallo resta 1/
+              <input
+                type="number"
+                min="1"
+                value={penalizacionOposicion}
+                onChange={(e) => {
+                  const value = e.target.value;
+
+                  if (value === "") {
+                    setPenalizacionOposicion("");
+                    return;
+                  }
+
+                  const val = Number(value);
+
+                  if (!isNaN(val) && val > 0) {
+                    setPenalizacionOposicion(value);
+                  }
+                }}
+                onBlur={() => {
+                  const val = Number(penalizacionOposicion);
+
+                  if (!penalizacionOposicion || isNaN(val) || val <= 0) {
+                    setPenalizacionOposicion("1");
+                  }
+                }}
+                style={{
+                  width: 70,
+                  marginLeft: 8,
+                  marginRight: 8,
+                  padding: "6px 8px",
+                  fontSize: 16,
+                  borderRadius: 6
+                }}
+              />
+              de una acertada
+            </label>
+          </section>
+
+          <button
+            onClick={() => setPantalla("elegir-test")}
+            style={{
+              padding: 14,
+              borderRadius: 10,
+              width: "100%"
+            }}
+          >
+            📋 Elegir test concreto
+          </button>
         </div>
-
-        <br /><br />
-
-        <button onClick={() => empezarOposicion()}>
-          Empezar oposición (50 preguntas)
-        </button>
-
-        <br /><br />
-
-        <button onClick={() => setPantalla("elegir-test")}>
-          📋 Elegir test
-        </button>
-
-        <br /><br />
-
-        <button onClick={() => setPantalla("modo")}>
-          Volver
-        </button>
-      </>
+      </ScreenLayout>
     )}
 
     {/* SELECCIÓN DE TIPO */}
     {pantalla === "tipo" && (
-      <>
-        <h2>Selecciona tipo de test</h2>
+      <ScreenLayout
+        title="Selecciona tipo de test"
+        subtitle={
+          modoTest === "practica"
+            ? "Modo práctica"
+            : modoTest === "oposicion"
+            ? "Modo oposición"
+            : null
+        }
+        bottomActions={
+          <button
+            onClick={() => setPantalla("modo")}
+            style={{ padding: 12, width: "100%" }}
+          >
+            Volver
+          </button>
+        }
+      >
+        <div
+          style={{
+            display: "grid",
+            gridTemplateColumns: "repeat(auto-fit, minmax(180px, 1fr))",
+            gap: 16
+          }}
+        >
+          <button
+            onClick={() => empezarTest("jurídico")}
+            style={{
+              padding: 18,
+              borderRadius: 12,
+              textAlign: "left"
+            }}
+          >
+            <div style={{ fontSize: 28 }}>⚖️</div>
+            <strong>Jurídico</strong>
+            <div style={{ fontSize: 13, opacity: 0.75, marginTop: 6 }}>
+              Solo preguntas jurídicas activas.
+            </div>
+          </button>
 
-        <button onClick={() => empezarTest("jurídico")}>
-          Jurídico
-        </button>
-        <br /><br />
+          <button
+            onClick={() => empezarTest("específico")}
+            style={{
+              padding: 18,
+              borderRadius: 12,
+              textAlign: "left"
+            }}
+          >
+            <div style={{ fontSize: 28 }}>🛠️</div>
+            <strong>Específico</strong>
+            <div style={{ fontSize: 13, opacity: 0.75, marginTop: 6 }}>
+              Solo preguntas específicas activas.
+            </div>
+          </button>
 
-        <button onClick={() => empezarTest("específico")}>
-          Específico
-        </button>
-        <br /><br />
+          <button
+            onClick={() => empezarTest("mixto")}
+            style={{
+              padding: 18,
+              borderRadius: 12,
+              textAlign: "left"
+            }}
+          >
+            <div style={{ fontSize: 28 }}>🔀</div>
+            <strong>Mixto</strong>
+            <div style={{ fontSize: 13, opacity: 0.75, marginTop: 6 }}>
+              Combina jurídico y específico.
+            </div>
+          </button>
 
-        <button onClick={() => empezarTest("mixto")}>
-          Mixto
-        </button>
-        <br /><br />
-
-        <button onClick={() => setPantalla("elegir-test")}>
-          📋 Elegir test
-        </button>
-        <br /><br />
-
-        <button onClick={() => setPantalla("modo")}>
-          Volver
-        </button>
-      </>
+          <button
+            onClick={() => setPantalla("elegir-test")}
+            style={{
+              padding: 18,
+              borderRadius: 12,
+              textAlign: "left"
+            }}
+          >
+            <div style={{ fontSize: 28 }}>📋</div>
+            <strong>Elegir test</strong>
+            <div style={{ fontSize: 13, opacity: 0.75, marginTop: 6 }}>
+              Hacer un test concreto del Excel.
+            </div>
+          </button>
+        </div>
+      </ScreenLayout>
     )}
 
     {/* ELEGIR TEST */}
     {pantalla === "elegir-test" && (
-      <>
-        <h2>Selecciona un test</h2>
-
+      <ScreenLayout
+        title="Selecciona un test"
+        subtitle={`${Array.from(
+          new Set(
+            getPreguntasOposicionActiva()
+              .map(p => p.nombreExamen)
+              .filter(Boolean)
+          )
+        ).length} tests disponibles`}
+        bottomActions={
+          <button
+            onClick={() => setPantalla(modoTest === "oposicion" ? "config-oposicion" : "tipo")}
+            style={{ padding: 12, width: "100%" }}
+          >
+            Volver
+          </button>
+        }
+      >
         {(() => {
 
-          // Obtener tests únicos
+          const basePreguntas = getPreguntasOposicionActiva();
+
           const testsUnicos = Array.from(
-            new Set(preguntas.map(p => p.nombreExamen))
+            new Set(
+              basePreguntas
+                .map(p => p.nombreExamen)
+                .filter(Boolean)
+            )
           ).sort();
 
-          return testsUnicos.map((nombre, i) => {
+          if (testsUnicos.length === 0) {
+            return <p>No hay tests disponibles para esta oposición.</p>;
+          }
 
-            const total = preguntas.filter(p => p.nombreExamen === nombre).length;
+          return (
+            <div
+              style={{
+                display: "grid",
+                gap: 10
+              }}
+            >
+              {testsUnicos.map((nombre, i) => {
 
-            return (
-              <div
-                key={i}
-                onClick={() => iniciarTestDesdeLista(nombre)}
-                style={{
-                  padding: 12,
-                  marginBottom: 10,
-                  borderRadius: 8,
-                  background: "#1f2937",
-                  color: "white",
-                  cursor: "pointer"
-                }}
-              >
-                <div style={{ fontWeight: "bold" }}>{nombre}</div>
-                <div style={{ fontSize: 12, opacity: 0.7 }}>
-                  {total} preguntas
-                </div>
-              </div>
-            );
-          });
+                const total = basePreguntas.filter(
+                  p => p.nombreExamen === nombre
+                ).length;
+
+                const vecesTotal = historico.filter(
+                  h =>
+                    h.nombreExamen === nombre &&
+                    (h.modo === "practica" || h.modo === "oposicion")
+                ).length;
+
+                return (
+                  <div
+                    key={i}
+                    onClick={() => iniciarTestDesdeLista(nombre)}
+                    style={{
+                      padding: 12,
+                      borderRadius: 8,
+                      background: "#1f2937",
+                      color: "white",
+                      cursor: "pointer"
+                    }}
+                  >
+                    <div style={{ fontWeight: "bold" }}>{nombre}</div>
+
+                    <div style={{ fontSize: 12, opacity: 0.7, marginTop: 4 }}>
+                      {total} preguntas ·{" "}
+                      {vecesTotal === 0
+                        ? "No realizado"
+                        : vecesTotal === 1
+                        ? "Realizado 1 vez"
+                        : `Realizado ${vecesTotal} veces`}
+                    </div>
+                  </div>
+                );
+              })}
+            </div>
+          );
 
         })()}
-
-        <br />
-
-        <button onClick={() => setPantalla(modoTest === "oposicion" ? "config-oposicion" : "tipo")}>
-          Volver
-        </button>
-      </>
+      </ScreenLayout>
     )}
 
     {/* SELECCIÓN DE TEMAS */}
     {pantalla === "temas" && (
-      <>
-        <h2>Selecciona los temas</h2>
+      <ScreenLayout
+        title="Selecciona los temas"
+        subtitle={`${temasSeleccionados.length} seleccionados de ${temasDisponibles.length}`}
+        bottomActions={
+          <>
+            <button
+              onClick={() => setPantalla("tipo")}
+              style={{ padding: 12, flex: 1 }}
+            >
+              Volver
+            </button>
 
-        {temasDisponibles.map((t, i) => (
-          <label key={i} style={{ display: "block", marginBottom: 6 }}>
-            <input
-              type="checkbox"
-              checked={temasSeleccionados.includes(t.tema)}
-              onChange={(e) => {
-                if (e.target.checked) {
-                  setTemasSeleccionados(prev => [...prev, t.tema]);
-                } else {
-                  setTemasSeleccionados(prev =>
-                    prev.filter(x => x !== t.tema)
-                  );
-                }
+            <button
+              disabled={temasSeleccionados.length === 0}
+              onClick={() => iniciarTestConTemas()}
+              style={{ padding: 12, flex: 1 }}
+            >
+              Empezar
+            </button>
+
+            <button
+              onClick={() => iniciarTestAleatorio()}
+              style={{ padding: 12, flex: 1 }}
+            >
+              🎲 Aleatorio
+            </button>
+          </>
+        }
+      >
+        {temasDisponibles.length === 0 ? (
+          <p>No hay temas disponibles para esta selección.</p>
+        ) : (
+          <div style={{ display: "grid", gap: 8 }}>
+            {temasDisponibles.map((t, i) => (
+              <label
+                key={i}
+                style={{
+                  display: "flex",
+                  gap: 8,
+                  alignItems: "flex-start",
+                  padding: 10,
+                  borderRadius: 8,
+                  background: "rgba(255,255,255,0.06)"
+                }}
+              >
+                <input
+                  type="checkbox"
+                  checked={temasSeleccionados.includes(t.tema)}
+                  onChange={(e) => {
+                    if (e.target.checked) {
+                      setTemasSeleccionados(prev => [...prev, t.tema]);
+                    } else {
+                      setTemasSeleccionados(prev =>
+                        prev.filter(x => x !== t.tema)
+                      );
+                    }
+                  }}
+                  style={{ marginTop: 3 }}
+                />
+
+                <span>
+                  <strong>{t.tema}</strong>
+                  {t.descripcion ? ` - ${t.descripcion}` : ""}
+                </span>
+              </label>
+            ))}
+          </div>
+        )}
+      </ScreenLayout>
+    )}
+
+    {/* FILTRO TEMARIO FAVORITAS / REPASO */}
+    {pantalla === "filtro-temario" && (
+      <ScreenLayout
+        title={
+          tipoFiltroTemario === "favoritas"
+            ? "Filtrar favoritas"
+            : "Filtrar repaso"
+        }
+        subtitle={`${temasFiltroTemario.length} temas seleccionados`}
+        bottomActions={
+          <>
+            <button
+              onClick={() => {
+                setTipoFiltroTemario(null);
+                setTemasFiltroTemario([]);
+                setPantalla("home");
               }}
-            />
-            {" "}
-            {t.tema} - {t.descripcion}
-          </label>
-        ))}
+              style={{ padding: 12, flex: 1 }}
+            >
+              Volver
+            </button>
 
-        <br />
+            <button
+              disabled={temasFiltroTemario.length === 0}
+              onClick={iniciarDesdeFiltroTemario}
+              style={{ padding: 12, flex: 1 }}
+            >
+              Empezar
+            </button>
+          </>
+        }
+      >
+        {(() => {
+          const temas = getTemasFiltroTemario();
+          const candidatas = getPreguntasCandidatasFiltroTemario();
 
-        <div style={{ display: "flex", gap: 10 }}>
-          <button
-            disabled={temasSeleccionados.length === 0}
-            onClick={() => iniciarTestConTemas()}
-          >
-            Empezar test
-          </button>
+          if (temas.length === 0) {
+            return <p>No hay temas disponibles.</p>;
+          }
 
-          <button
-            onClick={() => iniciarTestAleatorio()}
-          >
-            🎲 Test aleatorio
-          </button>
-        </div>
+          return (
+            <div style={{ display: "grid", gap: 14 }}>
+              <section
+                style={{
+                  padding: 12,
+                  borderRadius: 12,
+                  background: "rgba(255,255,255,0.06)"
+                }}
+              >
+                <p style={{ marginTop: 0 }}>
+                  {candidatas.length} preguntas disponibles
+                </p>
 
+                <div
+                  style={{
+                    display: "flex",
+                    gap: 10,
+                    flexWrap: "wrap"
+                  }}
+                >
+                  <button
+                    onClick={() =>
+                      setTemasFiltroTemario(temas.map(t => t.tema))
+                    }
+                    style={{ padding: "8px 10px" }}
+                  >
+                    Seleccionar todos
+                  </button>
 
-        <br /><br />
+                  <button
+                    onClick={() => setTemasFiltroTemario([])}
+                    style={{ padding: "8px 10px" }}
+                  >
+                    Limpiar
+                  </button>
+                </div>
+              </section>
 
-        <button onClick={() => setPantalla("tipo")}>
-          Volver
-        </button>
-      </>
+              <div style={{ display: "grid", gap: 8 }}>
+                {temas.map((t, i) => (
+                  <label
+                    key={i}
+                    style={{
+                      display: "flex",
+                      gap: 8,
+                      alignItems: "flex-start",
+                      padding: 10,
+                      borderRadius: 8,
+                      background: "rgba(255,255,255,0.06)"
+                    }}
+                  >
+                    <input
+                      type="checkbox"
+                      checked={temasFiltroTemario.includes(t.tema)}
+                      onChange={(e) => {
+                        if (e.target.checked) {
+                          setTemasFiltroTemario(prev => [...prev, t.tema]);
+                        } else {
+                          setTemasFiltroTemario(prev =>
+                            prev.filter(x => x !== t.tema)
+                          );
+                        }
+                      }}
+                      style={{ marginTop: 3 }}
+                    />
+
+                    <span>
+                      <strong>{t.tema}</strong>
+                      {t.descripcion ? ` - ${t.descripcion}` : ""}
+                      <span style={{ opacity: 0.65 }}>
+                        {" "}({t.total})
+                      </span>
+                    </span>
+                  </label>
+                ))}
+              </div>
+            </div>
+          );
+        })()}
+      </ScreenLayout>
     )}
 
     {/* PREGUNTA */}
     {pantalla === "pregunta" && preguntaSegura && (
-      <div
-        style={{
-          display: "flex",
-          flexDirection: "column",
-          height: "100dvh",
-          padding: 20,
-          boxSizing: "border-box"
-        }}
+      <ScreenLayout
+        title={getTituloPregunta()}
+        subtitle={getSubtituloPregunta()}
+        topActions={
+          !desdeRepaso && (
+            <>
+              <button
+                onClick={() => toggleFavorita(preguntaSegura.id)}
+                style={{
+                  padding: "8px 10px",
+                  backgroundColor: esFavorita(preguntaSegura.id)
+                    ? "#ffd700"
+                    : "white",
+                  color: "black",
+                  whiteSpace: "nowrap"
+                }}
+              >
+                ⭐
+              </button>
+
+              <button
+                onClick={salirOFinalizarPregunta}
+                style={{
+                  padding: "8px 10px",
+                  whiteSpace: "nowrap"
+                }}
+              >
+                {getTextoBotonSalidaPregunta()}
+              </button>
+            </>
+          )
+        }
+        bottomActions={
+          desdeRepaso ? (
+            <button
+              onClick={() => {
+                setDesdeRepaso(false);
+                setPantalla("repaso-oposicion");
+              }}
+              style={{ padding: 12, width: "100%" }}
+            >
+              Volver a pantalla de repaso
+            </button>
+          ) : (
+            <>
+              {indicePregunta > 0 ? (
+                <button
+                  onClick={irPreguntaAnterior}
+                  style={{ padding: 12, flex: 1 }}
+                >
+                  Anterior
+                </button>
+              ) : (
+                <div style={{ flex: 1 }} />
+              )}
+
+              <div
+                style={{
+                  flex: 1,
+                  display: "flex",
+                  justifyContent: "flex-end"
+                }}
+              >
+                {testActual?.modo === "oposicion" ? (
+                  testActual?.revisando ? (
+                    indicePregunta < preguntasActivas.length - 1 ? (
+                      <button
+                        onClick={siguientePregunta}
+                        style={{ padding: 12, width: "100%" }}
+                      >
+                        Siguiente
+                      </button>
+                    ) : (
+                      <div />
+                    )
+                  ) : indicePregunta < preguntasActivas.length - 1 ? (
+                    <button
+                      onClick={siguientePregunta}
+                      style={{ padding: 12, width: "100%" }}
+                    >
+                      Siguiente
+                    </button>
+                  ) : (
+                    <button
+                      onClick={() => setPantalla("repaso-oposicion")}
+                      style={{ padding: 12, width: "100%" }}
+                    >
+                      Repasar
+                    </button>
+                  )
+                ) : testActual?.modo === "rapido" ? (
+                  indicePregunta < preguntasActivas.length - 1 ? (
+                    <button
+                      onClick={siguientePregunta}
+                      style={{ padding: 12, width: "100%" }}
+                    >
+                      Siguiente
+                    </button>
+                  ) : (
+                    <div />
+                  )
+                ) : indicePregunta < preguntasActivas.length - 1 ? (
+                  <button
+                    onClick={siguientePregunta}
+                    style={{ padding: 12, width: "100%" }}
+                  >
+                    Siguiente
+                  </button>
+                ) : (
+                  <div />
+                )}
+              </div>
+            </>
+          )
+        }
       >
-        {!desdeRepaso && (
-          <div
+        <div
+          style={{
+            display: "grid",
+            gap: 14,
+            width: "100%",
+            maxWidth: "100%",
+            minWidth: 0,
+            boxSizing: "border-box"
+          }}
+        >
+          <section
             style={{
-              display: "flex",
-              justifyContent: "space-between",
-              alignItems: "center"
+              padding: 12,
+              borderRadius: 12,
+              background: "rgba(255,255,255,0.06)",
+              boxSizing: "border-box",
+              minWidth: 0
             }}
           >
-            <h2 style={{ marginBottom: 4 }}>
-              {(() => {
-                const total = testActual?.preguntas.length || 0;
+            <p
+              style={{
+                fontSize: 13,
+                opacity: 0.75,
+                margin: 0,
+                overflowWrap: "anywhere"
+              }}
+            >
+              {preguntaSegura.nombreExamen}
+              {preguntaSegura.numeroPreguntaExamen
+                ? ` · Nº ${preguntaSegura.numeroPreguntaExamen}`
+                : ""}
+            </p>
+          </section>
 
-                const juridico = testActual?.preguntas.filter(
-                  p => p.categoria === "jurídico"
-                ).length || 0;
+          <section
+            style={{
+              padding: 14,
+              borderRadius: 12,
+              background: "rgba(255,255,255,0.06)",
+              boxSizing: "border-box",
+              minWidth: 0
+            }}
+          >
+            <h3
+              style={{
+                marginTop: 0,
+                marginBottom: 0,
+                lineHeight: 1.35,
+                overflowWrap: "anywhere"
+              }}
+            >
+              {preguntaSegura.texto}
+            </h3>
+          </section>
 
-                const especifico = testActual?.preguntas.filter(
-                  p => p.categoria === "específico"
-                ).length || 0;
+          <div style={{ display: "grid", gap: 10 }}>
+            {modoFavoritas ? (
+              preguntaSegura.respuestas.map((r, i) => (
+                <div
+                  key={i}
+                  style={{
+                    padding: 12,
+                    backgroundColor: r.correcta ? "lightgreen" : "white",
+                    borderRadius: 8,
+                    color: "black",
+                    lineHeight: 1.35,
+                    overflowWrap: "anywhere"
+                  }}
+                >
+                  {r.texto}
+                </div>
+              ))
+            ) : (
+              preguntaSegura.respuestas.map((r, i) => (
+                <button
+                  key={i}
+                  onClick={() => responder(i)}
+                  style={{
+                    display: "block",
+                    width: "100%",
+                    padding: 12,
+                    borderRadius: 8,
+                    textAlign: "left",
+                    lineHeight: 1.35,
+                    whiteSpace: "normal",
+                    overflowWrap: "anywhere",
+                    backgroundColor: (() => {
+                      const seleccionada =
+                        testActual?.preguntas[indicePregunta]?.respuestaSeleccionada;
 
-                if (juridico === total && total > 0) return "Jurídico";
-                if (especifico === total && total > 0) return "Específico";
+                      if (testActual?.modo === "practica" || testActual?.modo === "rapido") {
+                        if (seleccionada === null) return "white";
 
-                return "Mixto";
-              })()}
-            </h2>
+                        if (i === seleccionada) {
+                          return r.correcta ? "lightgreen" : "salmon";
+                        }
+
+                        return r.correcta ? "lightgreen" : "white";
+                      }
+
+                      if (!testActual?.revisando) {
+                        if (seleccionada === null) return "white";
+                        return i === seleccionada ? "#cce5ff" : "white";
+                      }
+
+                      if (testActual?.modo === "oposicion") {
+                        if (!testActual?.revisando) {
+                          if (seleccionada === null) return "white";
+                          return i === seleccionada ? "#cce5ff" : "white";
+                        }
+
+                        if (seleccionada === null) {
+                          return r.correcta ? "#166534" : "white";
+                        }
+
+                        if (i === seleccionada) {
+                          return r.correcta ? "lightgreen" : "salmon";
+                        }
+
+                        return r.correcta ? "lightgreen" : "white";
+                      }
+
+                      return "white";
+                    })(),
+                    color: "black"
+                  }}
+                >
+                  {r.texto}
+                </button>
+              ))
+            )}
+          </div>
+
+          {(
+            (
+              (testActual?.modo === "practica" || testActual?.modo === "rapido") &&
+              testActual?.preguntas[indicePregunta]?.respuestaSeleccionada !== null
+            )
+            ||
+            testActual?.revisando
+          ) && (
+            <button
+              onClick={explicarConIA}
+              style={{
+                padding: 12,
+                width: "100%",
+                backgroundColor: "#6366f1",
+                color: "white",
+                borderRadius: 8
+              }}
+            >
+              🤖 Explicar pregunta con IA
+            </button>
+          )}
+        </div>
+      </ScreenLayout>
+    )}
+
+    {/* REPASO OPOSICIÓN */}
+    {pantalla === "repaso-oposicion" && (
+      <ScreenLayout
+        title="Repasar preguntas"
+        subtitle={`${testActual?.preguntas?.filter(p => p.respuestaSeleccionada !== null).length || 0} respondidas de ${testActual?.preguntas?.length || 0}`}
+        bottomActions={
+          <>
+            <button
+              onClick={() => setPantalla("pregunta")}
+              style={{ padding: 12, flex: 1 }}
+            >
+              Volver al examen
+            </button>
 
             <button
-
               onClick={() => {
-                if (modoFavoritas) {
-                  setModoFavoritas(false);
-                  setPreguntasRevision(null);
-                  setPreguntasTest([]);
-                  setTestActual(null);
-                  setIndicePregunta(0);
-                  setPreguntaActual(null);
-                  setPantalla("home");
-                  return;
-                }
-
-
-                if (testActual?.revisando) {
-                  setPreguntasRevision(null);
-                  setIndicePregunta(0);
-                  setPreguntaActual(null);
-
-                  if (testActual?.modo === "oposicion") {
-                    setPantalla("modo");
-                  } else if (testActual?.modo === "rapido") {
-                    setPantalla("modo");
-                  } else {
-                    setPantalla("tipo");
-                  }
-
-                  setPreguntasTest([]);
-                  setTestActual(null);
-                  setAciertos(0);
-                  setModoFavoritas(false);
-                  return;
-                }
-
-                if (testActual?.modo === "rapido") {
-                  const testFinal = {
-                    ...testActual,
-                    finalizado: true,
-                    revisando: false,
-                    fechaFin: Date.now()
-                  };
-
-                  agregarFalladasDeTestARepaso(testFinal);
-                  guardarHistoricoTest(testFinal);
-                  setTestActual(testFinal);
-                  setPantalla("resumen");
-                  return;
-                }
-
-                const esUltima = indicePregunta === preguntasActivas.length - 1;
-
-                if (testActual?.tipoGuardado === "repaso") {
-                  const testFinal = {
-                    ...testActual,
-                    finalizado: true,
-                    revisando: false,
-                    fechaFin: Date.now()
-                  };
-
-                  actualizarProgresoRepaso(testFinal);
-
-                  setPreguntasTest([]);
-                  setTestActual(null);
-                  setIndicePregunta(0);
-                  setPreguntaActual(null);
-                  setAciertos(0);
-                  setPreguntasRevision(null);
-                  setModoFavoritas(false);
-                  setPantalla("home");
-                  return;
-                }
-
-                // 🛑 Si NO es la última → salir sin guardar
-                if (!esUltima) {
-                  setPreguntasTest([]);
-                  setTestActual(null);
-                  setIndicePregunta(0);
-                  setPreguntaActual(null);
-                  setPantalla(
-                    testActual?.tipoGuardado === "repaso" ? "home" : "modo"
-                  );
-                  return;
-                }
-
 
                 const testFinal = {
                   ...testActual,
@@ -2453,284 +3838,35 @@ function App() {
                   fechaFin: Date.now()
                 };
 
-                if (testFinal.tipoGuardado === "repaso") {
-                  actualizarProgresoRepaso(testFinal);
-
-                  setPreguntasTest([]);
-                  setTestActual(null);
-                  setIndicePregunta(0);
-                  setPreguntaActual(null);
-                  setAciertos(0);
-                  setPreguntasRevision(null);
-                  setModoFavoritas(false);
-                  setPantalla("home");
-                  return;
-                }
-
-              if (testFinal.modo === "oposicion" || testFinal.modo === "rapido") {
                 agregarFalladasDeTestARepaso(testFinal);
-              }
 
-              registrarRendimientoPorTema(
-                testFinal,
-                !!testFinal.desdeElegirTest || testFinal.tipoGuardado === "repaso"
-              );
+                registrarPreguntasPorTema(
+                  testFinal.preguntas,
+                  !!testFinal.desdeElegirTest || testFinal.tipoGuardado === "repaso"
+                );
 
-              guardarHistoricoTest(testFinal);
+                registrarRendimientoPorTema(
+                  testFinal,
+                  !!testFinal.desdeElegirTest || testFinal.tipoGuardado === "repaso"
+                );
 
-              setTestActual(testFinal);
-              setPantalla("resumen");
+                guardarHistoricoTest(testFinal);
+
+                setTestActual(testFinal);
+                setPantalla("resumen");
               }}
+              style={{ padding: 12, flex: 1 }}
             >
-              {modoFavoritas
-                ? "Salir"
-                : testActual?.tipoGuardado === "repaso"
-                  ? "Finalizar"
-                  : testActual?.revisando
-                    ? "Finalizar"
-                    : testActual?.modo === "rapido"
-                      ? "Finalizar"
-                      : indicePregunta === preguntasActivas.length - 1
-                        ? "Finalizar"
-                        : "Salir"}
+              Finalizar test
             </button>
-
-
-            <button
-              onClick={() => toggleFavorita(preguntaActual.id)}
-              style={{
-                marginRight: 10,
-                backgroundColor: esFavorita(preguntaActual.id)
-                  ? "#ffd700"
-                  : "white"
-              }}
-            >
-              ⭐
-            </button>
-
-          </div>
-        )}
-
-        <p style={{ fontSize: 14, opacity: 0.8, marginTop: 0 }}>
-          {preguntaSegura.descripcionTema}
-        </p>
-
-        <p style={{ fontSize: 13, opacity: 0.7, marginTop: 4 }}>
-          {preguntaSegura.nombreExamen} - Nº {preguntaSegura.numeroPreguntaExamen}
-        </p>
-
-        <p>
-          {testActual?.modo === "rapido"
-            ? `Pregunta ${getNumeroPreguntaRapidaActual()}`
-            : `Pregunta ${indicePregunta + 1} / ${preguntasActivas.length}`}
-        </p>
-
-        <div
-          style={{
-            flex: 1,
-            overflowY: "auto",
-            marginTop: 20,
-            paddingRight: 5
-          }}
-        >
-
-        <h3>{preguntaSegura.texto}</h3>
-      
-        {modoFavoritas ? (
-          preguntaSegura.respuestas.map((r, i) => (
-            <div
-              key={i}
-              style={{
-                padding: 12,
-                marginBottom: 8,
-                backgroundColor: r.correcta ? "lightgreen" : "white",
-                borderRadius: 6,
-                color: "black"
-              }}
-            >
-              {r.texto}
-            </div>
-          ))
-        ) : (
-          preguntaSegura.respuestas.map((r, i) => (
-            <button
-              key={i}
-              onClick={() => responder(i)}
-              style={{
-                display: "block",
-                width: "100%",
-                marginBottom: 8,
-                padding: 10,
-                backgroundColor: (() => {
-                  const seleccionada =
-                    testActual?.preguntas[indicePregunta]?.respuestaSeleccionada;
-
-                  if (testActual.modo === "practica" || testActual.modo === "rapido") {
-                    if (seleccionada === null) return "white";
-                    if (i === seleccionada) {
-                      return r.correcta ? "lightgreen" : "salmon";
-                    }
-                    return r.correcta ? "lightgreen" : "white";
-                  }
-
-                  if (!testActual.revisando) {
-                    if (seleccionada === null) return "white";
-                    return i === seleccionada ? "#cce5ff" : "white";
-                  }
-
-                  if (testActual.modo === "oposicion") {
-                    if (!testActual.revisando) {
-                      if (seleccionada === null) return "white";
-                      return i === seleccionada ? "#cce5ff" : "white";
-                    }
-
-                    if (seleccionada === null) {
-                      return r.correcta ? "#166534" : "white";
-                    }
-
-                    if (i === seleccionada) {
-                      return r.correcta ? "lightgreen" : "salmon";
-                    }
-
-                    return r.correcta ? "lightgreen" : "white";
-                  }
-
-                  return "white";
-                })(),
-                color: "black"
-              }}
-            >
-              {r.texto}
-            </button>
-          ))
-        )}
-
-        </div>
-
-        {(
-          (
-            (testActual?.modo === "practica" || testActual?.modo === "rapido") &&
-            testActual?.preguntas[indicePregunta]?.respuestaSeleccionada !== null
-          )
-          ||
-          testActual?.revisando
-        ) && (
-
-          <button
-            onClick={explicarConIA}
-            style={{
-              marginTop: 12,
-              padding: 12,
-              width: "100%",
-              backgroundColor: "#6366f1",
-              color: "white",
-              borderRadius: 6
-            }}
-          >
-            🤖 Explicar pregunta con IA
-          </button>
-
-        )}
-
-        <div
-          style={{
-            display: "flex",
-            alignItems: "center",
-            marginTop: 30
-          }}
-        >
-          {desdeRepaso ? (
-
-            <button
-              onClick={() => {
-                setDesdeRepaso(false);
-                setPantalla("repaso-oposicion");
-              }}
-            >
-              Volver a pantalla de repaso
-            </button>
-
-          ) : (
-
-            <>
-              {/* IZQUIERDA */}
-              {indicePregunta > 0 && (
-                <button
-                  onClick={() => {
-                    const anterior = indicePregunta - 1;
-                    setIndicePregunta(anterior);
-                    if (preguntasRevision) {
-                      setPreguntaActual(preguntasRevision[anterior]);
-                    } else {
-                      setPreguntaActual(preguntasTest[anterior]);
-                    }
-                  }}
-                >
-                  Anterior
-                </button>
-              )}
-
-              {/* DERECHA */}
-              <div style={{ marginLeft: "auto" }}>
-                {testActual?.modo === "oposicion" ? (
-
-                  testActual?.revisando ? (
-                    indicePregunta < preguntasActivas.length - 1 && (
-                      <button onClick={siguientePregunta}>
-                        Siguiente pregunta
-                      </button>
-                    )
-                  ) : (
-                    indicePregunta < preguntasActivas.length - 1 ? (
-                      <button onClick={siguientePregunta}>
-                        Siguiente pregunta
-                      </button>
-                    ) : (
-                      <button onClick={() => setPantalla("repaso-oposicion")}>
-                        Repasar preguntas
-                      </button>
-                    )
-                  )
-
-                ) : testActual?.modo === "rapido" ? (
-
-                  indicePregunta < preguntasActivas.length - 1 && (
-                    <button onClick={siguientePregunta}>
-                      Siguiente pregunta
-                    </button>
-                  )
-
-                ) : (
-
-                  indicePregunta < preguntasActivas.length - 1 && (
-                    <button onClick={siguientePregunta}>
-                      Siguiente pregunta
-                    </button>
-                  )
-
-                )}
-              </div>
-            </>
-
-          )}
-        </div>
-
-
-        </div>
-      
-    )}
-
-    {/* REPASO OPOSICIÓN */}
-    {pantalla === "repaso-oposicion" && (
-      <>
-        <h2>Repasar preguntas</h2>
-
+          </>
+        }
+      >
         <div
           style={{
             display: "grid",
-            gridTemplateColumns: "repeat(5, 1fr)",
-            gap: 10,
-            marginTop: 30
+            gridTemplateColumns: "repeat(auto-fit, minmax(52px, 1fr))",
+            gap: 10
           }}
         >
           {testActual.preguntas.map((p, i) => {
@@ -2746,7 +3882,6 @@ function App() {
                   setDesdeRepaso(true);
                   setPantalla("pregunta");
                 }}
-
                 style={{
                   padding: 12,
                   fontWeight: "bold",
@@ -2760,57 +3895,99 @@ function App() {
             );
           })}
         </div>
-
-        <div
-          style={{
-            marginTop: 40,
-            display: "flex",
-            justifyContent: "space-between"
-          }}
-        >
-          <button onClick={() => setPantalla("pregunta")}>
-            Volver al examen
-          </button>
-
-          <button
-            onClick={() => {
-
-              const testFinal = {
-                ...testActual,
-                finalizado: true,
-                revisando: false,
-                fechaFin: Date.now()
-              };
-
-              agregarFalladasDeTestARepaso(testFinal);
-
-              registrarRendimientoPorTema(
-                testFinal,
-                !!testFinal.desdeElegirTest || testFinal.tipoGuardado === "repaso"
-              );
-
-              guardarHistoricoTest(testFinal);
-
-              setTestActual(testFinal);
-              setPantalla("resumen");
-            }}
-          >
-            Finalizar test
-          </button>
-        </div>
-      </>
+      </ScreenLayout>
     )}
 
     {/* RESUMEN */}
     {pantalla === "resumen" && (
-      <>
-        <h2>Resumen del test</h2>
+      <ScreenLayout
+        title="Resumen del test"
+        subtitle={
+          testActual?.modo === "oposicion"
+            ? "Resultado de oposición"
+            : testActual?.modo === "rapido"
+            ? "Resultado del modo rápido"
+            : "Resultado de práctica"
+        }
+        bottomActions={
+          <>
+            <button
+              onClick={() => {
+                if (testActual?.tipoGuardado === "repaso") {
+                  setPantalla("home");
+                } else if (testActual?.modo === "rapido") {
+                  setPantalla("modo");
+                } else {
+                  setPantalla("tipo");
+                }
 
+                setPreguntasTest([]);
+                setTestActual(null);
+                setIndicePregunta(0);
+                setPreguntaActual(null);
+                setAciertos(0);
+                setPreguntasRevision(null);
+                setModoFavoritas(false);
+              }}
+              style={{ padding: 12, flex: 1 }}
+            >
+              Finalizar
+            </button>
+
+            {testActual?.modo === "practica" && testActual?.tipoGuardado !== "repaso" ? (
+              <button
+                onClick={() => {
+                  const pendientes = testActual.preguntas.filter(p =>
+                    p.respuestaSeleccionada === null ||
+                    !p.respuestas[p.respuestaSeleccionada]?.correcta
+                  );
+
+                  if (pendientes.length === 0) {
+                    alert("No hay preguntas falladas para repasar.");
+                    return;
+                  }
+
+                  agregarPreguntasARepaso(pendientes);
+                  iniciarTestRepaso(pendientes.map(p => p.id));
+                }}
+                style={{ padding: 12, flex: 1 }}
+              >
+                Repaso
+              </button>
+            ) : testActual?.modo !== "rapido" ? (
+              <button
+                onClick={() => {
+                  const todas = testActual.preguntas;
+
+                  const revision = todas;
+
+                  setPreguntasRevision(revision);
+
+                  setTestActual(prev => ({
+                    ...prev,
+                    revisando: true
+                  }));
+
+                  setIndicePregunta(0);
+                  setPreguntaActual(revision[0]);
+                  setPantalla("pregunta");
+                }}
+                style={{ padding: 12, flex: 1 }}
+              >
+                Revisar test
+              </button>
+            ) : (
+              <div style={{ flex: 1 }} />
+            )}
+          </>
+        }
+      >
         {(() => {
-          let total = testActual?.preguntas.length || 0;
+          const total = testActual?.preguntas.length || 0;
           let aciertosFinal = 0;
           let correctas = 0;
           let incorrectas = 0;
+
           const respondidas = testActual?.preguntas.filter(
             p => p.respuestaSeleccionada !== null
           ).length || 0;
@@ -2832,15 +4009,28 @@ function App() {
             const nota = total > 0 ? (neta / total) * 10 : 0;
 
             return (
-              <>
-                <p>Correctas: {correctas}</p>
-                <p>Incorrectas: {incorrectas}</p>
-                <p>En blanco: {total - correctas - incorrectas}</p>
+              <div
+                style={{
+                  display: "grid",
+                  gap: 14
+                }}
+              >
+                <div
+                  style={{
+                    padding: 16,
+                    borderRadius: 12,
+                    background: "rgba(255,255,255,0.06)"
+                  }}
+                >
+                  <p>Correctas: {correctas}</p>
+                  <p>Incorrectas: {incorrectas}</p>
+                  <p>En blanco: {total - correctas - incorrectas}</p>
 
-                <h3>
-                  Nota final: {nota.toFixed(2)} / 10
-                </h3>
-              </>
+                  <h3>
+                    Nota final: {nota.toFixed(2)} / 10
+                  </h3>
+                </div>
+              </div>
             );
           }
 
@@ -2862,7 +4052,13 @@ function App() {
               : 0;
 
             return (
-              <>
+              <div
+                style={{
+                  padding: 16,
+                  borderRadius: 12,
+                  background: "rgba(255,255,255,0.06)"
+                }}
+              >
                 <p>
                   Acertadas {aciertosFinal} de {respondidas} preguntas
                 </p>
@@ -2878,14 +4074,24 @@ function App() {
                     ? "Buen resultado 👍"
                     : "Conviene repasar 📘"}
                 </p>
-              </>
+              </div>
             );
           }
 
           return (
-            <>
+            <div
+              style={{
+                padding: 16,
+                borderRadius: 12,
+                background: "rgba(255,255,255,0.06)"
+              }}
+            >
               <p>
                 Acertadas {aciertosFinal} de {total} preguntas
+              </p>
+
+              <p>
+                Falladas {fallosFinal}
               </p>
 
               <p>
@@ -2905,274 +4111,257 @@ function App() {
                   ? "Buen resultado 👍"
                   : "Conviene repasar 📘"}
               </p>
-            </>
+            </div>
           );
         })()}
-
-        <br />
-
-        <div
-          style={{
-            display: "flex",
-            justifyContent: "space-between",
-            alignItems: "center",
-            marginTop: 30,
-            width: "100%"
-          }}
-        >
-
-          {/* IZQUIERDA - Salir */}
-          <div>
-            <button
-              onClick={() => {
-                if (testActual?.tipoGuardado === "repaso") {
-                  setPantalla("home");
-                } else if (testActual?.modo === "rapido") {
-                  setPantalla("modo");
-                } else {
-                  setPantalla("tipo");
-                }
-
-                setPreguntasTest([]);
-                setTestActual(null);
-                setIndicePregunta(0);
-                setPreguntaActual(null);
-                setAciertos(0);
-                setPreguntasRevision(null);
-                setModoFavoritas(false);
-              }}
-            >
-              Finalizar
-            </button>
-          </div>
-
-          {/* DERECHA - Acción */}
-          {testActual?.modo === "practica" && testActual?.tipoGuardado !== "repaso" ? (
-            <div>
-              <button
-                onClick={() => {
-                  const pendientes = testActual.preguntas.filter(p =>
-                    p.respuestaSeleccionada === null ||
-                    !p.respuestas[p.respuestaSeleccionada]?.correcta
-                  );
-
-                  if (pendientes.length === 0) {
-                    alert("No hay preguntas falladas para repasar.");
-                    return;
-                  }
-
-                  agregarPreguntasARepaso(pendientes);
-                  iniciarTestRepaso(pendientes.map(p => p.id));
-                }}
-              >
-                Repaso
-              </button>
-            </div>
-          ) : testActual?.modo !== "rapido" ? (
-            <div>
-              <button
-                onClick={() => {
-                  const todas = testActual.preguntas;
-
-                  let revision;
-
-                  revision = todas;
-
-                  setPreguntasRevision(revision);
-
-                  setTestActual(prev => ({
-                    ...prev,
-                    revisando: true
-                  }));
-
-                  setIndicePregunta(0);
-                  setPreguntaActual(revision[0]);
-                  setPantalla("pregunta");
-                }}
-              >
-                Revisar test
-              </button>
-            </div>
-          ) : null}
-        </div>
-      </>
+      </ScreenLayout>
     )}
 
     {/* POMODORO */}
     {pantalla === "pomodoro" && (
-      <>
-        <h2>Modo Estudio 🍅</h2>
-
-        <div style={{ marginTop: 10, marginBottom: 10 }}>
-
-        <div style={{ marginBottom: 10 }}>
-          Estudio:
-          <input
-            type="number"
-            min="1"
-            value={workDuration}
-            onChange={(e) => {
-              const value = parseInt(e.target.value, 10);
-              if (!isNaN(value) && value > 0) {
-                setWorkDuration(e.target.value);
-              }
-            }}
-
-            style={{
-              width: 70,
-              marginLeft: 10,
-              padding: "6px 8px",
-              fontSize: 16,      // 🔥 clave anti-zoom iOS
-              borderRadius: 8
-            }}
-          />
-          <span style={{ marginLeft: 4 }}>min</span>
-        </div>
-
-        <div>
-          Descanso:
-          <input
-            type="number"
-            min="1"
-            value={breakDuration}
-            onChange={(e) => {
-              const value = parseInt(e.target.value, 10);
-              if (!isNaN(value) && value > 0) {
-                setBreakDuration(e.target.value);
-              }
-            }}
-
-            style={{
-              width: 70,
-              marginLeft: 10,
-              padding: "6px 8px",
-              fontSize: 16,      // 🔥 clave anti-zoom iOS
-              borderRadius: 8
-            }}
-          />
-          <span style={{ marginLeft: 4 }}>min</span>
-        </div>
-
-      </div>
-
-        <div style={{ marginTop: 15, textAlign: "center" }}>
-
-          <h3 style={{ fontSize: 24 }}>
-            {pomodoroMode === "work" ? "Estudio" : "Descanso"}
-          </h3>
-
-          <div
-            style={{
-              fontSize: 64,
-              fontWeight: "bold",
-              margin: "20px 0"
-            }}
+      <ScreenLayout
+        title="Modo Estudio 🍅"
+        subtitle={pomodoroMode === "work" ? "Estudio" : "Descanso"}
+        bottomActions={
+          <button
+            onClick={() => setPantalla("home")}
+            style={{ padding: 12, width: "100%" }}
           >
-            {String(Math.floor(pomodoroElapsed / 60)).padStart(2, "0")}:
-            {String(pomodoroElapsed % 60).padStart(2, "0")}
-          </div>
-
-
-          <div style={{ display: "flex", gap: 10, justifyContent: "center" }}>
-
-            {!pomodoroRunning ? (
-              <button
-                onClick={iniciarPomodoro}
-                style={{ padding: 12, fontSize: 18 }}
-              >
-                {pomodoroPaused ? "Reanudar" : "Iniciar"}
-              </button>
-            ) : (
-              <>
-                <button
-                  onClick={pausarPomodoro}
-                  style={{ padding: 12, fontSize: 18 }}
-                >
-                  Pausar
-                </button>
-
-                <button
-                  onClick={terminarPomodoro}
-                  style={{ padding: 12, fontSize: 18 }}
-                >
-                  Terminar
-                </button>
-              </>
-            )}
-
-          </div>
-
-        </div>
-
-        <div style={{ marginTop: 40 }}>
-          <h3>Estadísticas</h3>
-
+            Volver
+          </button>
+        }
+      >
         <div
           style={{
-            display: "flex",
-            justifyContent: "space-between",
-            alignItems: "center",
-            maxWidth: 300
+            display: "grid",
+            gap: 24
           }}
         >
-          <p style={{ margin: 0 }}>
-            Hoy:{" "}
-            {pomodoroStats.byDay[new Date().toISOString().slice(0, 10)] || 0} min
-          </p>
 
-          <span
-            onClick={sumarManualPomodoro}
+          <section
             style={{
-              cursor: "pointer",
-              fontSize: 18,
-              color: "#646cff",
-              fontWeight: "bold"
+              padding: 16,
+              borderRadius: 12,
+              background: "rgba(255,255,255,0.06)"
             }}
           >
-            ➕
-          </span>
+            <h3 style={{ marginTop: 0 }}>Configuración</h3>
 
-        </div>
+            <div style={{ display: "grid", gap: 12 }}>
+              <label>
+                Estudio:
+                <input
+                  type="number"
+                  min="1"
+                  value={workDuration}
+                  onChange={(e) => {
+                    const value = e.target.value;
 
+                    if (value === "") {
+                      setWorkDuration("");
+                      return;
+                    }
 
-          <p>
-            Semana:{" "}
-            {pomodoroStats.byWeek[
-              `${String(getYearWeek(Date.now()).year).slice(-2)}w${getYearWeek(Date.now()).week}`
-            ] || 0} min
-          </p>
+                    const minutes = Number(value);
 
-          {(() => {
-            const total = pomodoroStats.totalMinutes;
-            const horas = Math.floor(total / 60);
-            const minutos = total % 60;
+                    if (!isNaN(minutes) && minutes > 0) {
+                      setWorkDuration(value);
+                    }
+                  }}
+                  onBlur={() => {
+                    const minutes = Number(workDuration);
 
-            return (
-              <p>
-                Total acumulado: {horas}h {minutos}m
+                    if (!workDuration || isNaN(minutes) || minutes <= 0) {
+                      setWorkDuration("1");
+                    }
+                  }}
+                  style={{
+                    width: 70,
+                    marginLeft: 10,
+                    padding: "6px 8px",
+                    fontSize: 16,
+                    borderRadius: 8
+                  }}
+                />
+                <span style={{ marginLeft: 4 }}>min</span>
+              </label>
+
+              <label>
+                Descanso:
+                <input
+                  type="number"
+                  min="1"
+                  value={breakDuration}
+                  onChange={(e) => {
+                    const value = e.target.value;
+
+                    if (value === "") {
+                      setBreakDuration("");
+                      return;
+                    }
+
+                    const minutes = Number(value);
+
+                    if (!isNaN(minutes) && minutes > 0) {
+                      setBreakDuration(value);
+                    }
+                  }}
+                  onBlur={() => {
+                    const minutes = Number(breakDuration);
+
+                    if (!breakDuration || isNaN(minutes) || minutes <= 0) {
+                      setBreakDuration("1");
+                    }
+                  }}
+                  style={{
+                    width: 70,
+                    marginLeft: 10,
+                    padding: "6px 8px",
+                    fontSize: 16,
+                    borderRadius: 8
+                  }}
+                />
+                <span style={{ marginLeft: 4 }}>min</span>
+              </label>
+            </div>
+          </section>
+
+          <section
+            style={{
+              padding: 20,
+              borderRadius: 12,
+              background: "rgba(255,255,255,0.06)",
+              textAlign: "center"
+            }}
+          >
+            <h3 style={{ fontSize: 24, marginTop: 0 }}>
+              {pomodoroMode === "work" ? "Estudio" : "Descanso"}
+            </h3>
+
+            <div
+              style={{
+                fontSize: 64,
+                fontWeight: "bold",
+                margin: "20px 0"
+              }}
+            >
+              {String(Math.floor(pomodoroElapsed / 60)).padStart(2, "0")}:
+              {String(pomodoroElapsed % 60).padStart(2, "0")}
+            </div>
+
+            <div
+              style={{
+                display: "flex",
+                gap: 10,
+                justifyContent: "center",
+                flexWrap: "wrap"
+              }}
+            >
+              {!pomodoroRunning ? (
+                <button
+                  onClick={iniciarPomodoro}
+                  style={{ padding: 12, fontSize: 18 }}
+                >
+                  {pomodoroPaused ? "Reanudar" : "Iniciar"}
+                </button>
+              ) : (
+                <>
+                  <button
+                    onClick={pausarPomodoro}
+                    style={{ padding: 12, fontSize: 18 }}
+                  >
+                    Pausar
+                  </button>
+
+                  <button
+                    onClick={terminarPomodoro}
+                    style={{ padding: 12, fontSize: 18 }}
+                  >
+                    Terminar
+                  </button>
+                </>
+              )}
+            </div>
+          </section>
+
+          <section
+            style={{
+              padding: 16,
+              borderRadius: 12,
+              background: "rgba(255,255,255,0.06)"
+            }}
+          >
+            <h3 style={{ marginTop: 0 }}>Estadísticas</h3>
+
+            <div
+              style={{
+                display: "flex",
+                justifyContent: "space-between",
+                alignItems: "center",
+                maxWidth: 300
+              }}
+            >
+              <p style={{ margin: 0 }}>
+                Hoy:{" "}
+                {pomodoroStats.byDay[new Date().toISOString().slice(0, 10)] || 0} min
               </p>
-            );
-          })()}
+
+              <span
+                onClick={sumarManualPomodoro}
+                style={{
+                  cursor: "pointer",
+                  fontSize: 18,
+                  color: "#646cff",
+                  fontWeight: "bold"
+                }}
+              >
+                ➕
+              </span>
+            </div>
+
+            <p>
+              Semana:{" "}
+              {pomodoroStats.byWeek[
+                `${String(getYearWeek(Date.now()).year).slice(-2)}w${getYearWeek(Date.now()).week}`
+              ] || 0} min
+            </p>
+
+            {(() => {
+              const total = pomodoroStats.totalMinutes;
+              const horas = Math.floor(total / 60);
+              const minutos = total % 60;
+
+              return (
+                <p>
+                  Total acumulado: {horas}h {minutos}m
+                </p>
+              );
+            })()}
+          </section>
+
         </div>
-
-        <br />
-
-        <button onClick={() => setPantalla("home")}>
-          Volver
-        </button>
-      </>
+      </ScreenLayout>
     )}
 
     {/* SETTINGS */}
     {pantalla === "settings" && (
-      <>
-        <h2>Ajustes</h2>
-
-        <div style={{ marginTop: 30 }}>
+      <ScreenLayout
+        title="Ajustes"
+        subtitle="Copia de seguridad, temario y mantenimiento"
+        bottomActions={
+          <button
+            onClick={() => setPantalla("home")}
+            style={{ padding: 12, width: "100%" }}
+          >
+            Volver
+          </button>
+        }
+      >
+        <div style={{ display: "grid", gap: 14 }}>
 
           <button
             onClick={exportarDatos}
-            style={{ padding: 12, marginBottom: 20, width: "100%" }}
+            style={{ padding: 12, width: "100%" }}
           >
             💾 Exportar datos
           </button>
@@ -3197,67 +4386,71 @@ function App() {
             />
           </label>
 
+          <hr style={{ width: "100%", margin: "16px 0" }} />
+
+          <button
+            onClick={borrarFavoritas}
+            style={{ padding: 12, width: "100%" }}
+          >
+            🧹 Borrar favoritas
+          </button>
+
+          <button
+            onClick={borrarRepaso}
+            style={{ padding: 12, width: "100%" }}
+          >
+            🧹 Borrar preguntas de repaso
+          </button>
+
+          <hr style={{ width: "100%", margin: "16px 0" }} />
+
+          <button
+            onClick={reiniciarRepeticion}
+            style={{ padding: 12, width: "100%" }}
+          >
+            🔁 Reiniciar control de repetición
+          </button>
+
+          <button
+            onClick={() => setPantalla("temario")}
+            style={{ padding: 12, width: "100%" }}
+          >
+            📚 Selección de temario
+          </button>
+
+          <button
+            onClick={() => setPantalla("preguntas-por-tema")}
+            style={{ padding: 12, width: "100%" }}
+          >
+            📊 Preguntas por tema
+          </button>
+
         </div>
-
-        <hr style={{ margin: "30px 0" }} />
-
-        <button
-          onClick={borrarFavoritas}
-          style={{ padding: 12, marginBottom: 20, width: "100%" }}
-        >
-          🧹 Borrar favoritas
-        </button>
-
-        <button
-          onClick={borrarRepaso}
-          style={{ padding: 12, width: "100%" }}
-        >
-          🧹 Borrar preguntas de repaso
-        </button>
-
-        <hr style={{ margin: "30px 0" }} />
-
-        <button
-          onClick={reiniciarRepeticion}
-          style={{ padding: 12, marginBottom: 20, width: "100%" }}
-        >
-          🔁 Reiniciar control de repetición
-        </button>
-
-        <button
-          onClick={() => setPantalla("temario")}
-          style={{ padding: 12, marginBottom: 20, width: "100%" }}
-        >
-          📚 Selección de temario
-        </button>
-
-        <button
-          onClick={() => setPantalla("preguntas-por-tema")}
-          style={{ padding: 12, marginBottom: 20, width: "100%" }}
-        >
-          📊 Preguntas por tema
-        </button>
-
-        <br /><br />
-
-        <button onClick={() => setPantalla("home")}>
-          Volver
-        </button>
-      </>
+      </ScreenLayout>
     )}
 
     {/* SELECCIÓN DE TEMARIO */}
     {pantalla === "temario" && (
-      <>
-        <h2>Selección de temario</h2>
-
+      <ScreenLayout
+        title="Selección de temario"
+        subtitle={`${temasActivos.length} temas activos`}
+        bottomActions={
+          <button
+            onClick={() => setPantalla("settings")}
+            style={{ padding: 12, width: "100%" }}
+          >
+            Volver
+          </button>
+        }
+      >
         {(() => {
+
+          const basePreguntas = getPreguntasOposicionActiva();
 
           const temasOrdenados = Array.from(
             new Map(
-              preguntas.map(p => {
+              basePreguntas.map(p => {
 
-                // 🔥 EXTRAER NÚMERO DEL TEXTO
                 const match = p.tema?.match(/^(\d+)/);
                 const numero = match ? Number(match[1]) : null;
 
@@ -3273,7 +4466,6 @@ function App() {
             ).values()
           ).sort((a, b) => {
 
-            // SIN DEFINIR arriba
             if (a.numero === null && b.numero === null) return 0;
             if (a.numero === null) return -1;
             if (b.numero === null) return 1;
@@ -3281,60 +4473,97 @@ function App() {
             return a.numero - b.numero;
           });
 
-          return temasOrdenados.map((t, i) => (
-            <label key={i} style={{ display: "block", marginBottom: 6 }}>
-              <input
-                type="checkbox"
-                checked={temasActivos.includes(t.tema)}
-                onChange={(e) => {
+          if (temasOrdenados.length === 0) {
+            return <p>No hay temas disponibles para esta oposición.</p>;
+          }
 
-                  let nuevos;
+          return (
+            <div style={{ display: "grid", gap: 8 }}>
+              {temasOrdenados.map((t, i) => (
+                <label
+                  key={i}
+                  style={{
+                    display: "flex",
+                    gap: 8,
+                    alignItems: "flex-start",
+                    padding: 10,
+                    borderRadius: 8,
+                    background: "rgba(255,255,255,0.06)"
+                  }}
+                >
+                  <input
+                    type="checkbox"
+                    checked={temasActivos.includes(t.tema)}
+                    onChange={(e) => {
 
-                  if (e.target.checked) {
-                    nuevos = [...temasActivos, t.tema];
-                  } else {
-                    if (temasActivos.length === 1) {
-                      alert("Debe haber al menos un tema seleccionado.");
-                      return;
-                    }
-                    nuevos = temasActivos.filter(x => x !== t.tema);
-                  }
+                      let nuevos;
 
-                  setTemasActivos(nuevos);
-                  localStorage.setItem("temasActivos", JSON.stringify(nuevos));
-                }}
-              />
-              {" "}
-              {t.tema} - {t.descripcion}
-            </label>
-          ));
+                      if (e.target.checked) {
+                        nuevos = [...temasActivos, t.tema];
+                      } else {
+                        if (temasActivos.length === 1) {
+                          alert("Debe haber al menos un tema seleccionado.");
+                          return;
+                        }
+
+                        nuevos = temasActivos.filter(x => x !== t.tema);
+                      }
+
+                      setTemasActivos(nuevos);
+
+                      localStorage.setItem(
+                        storageKey("temasActivos", oposicionActiva),
+                        JSON.stringify(nuevos)
+                      );
+                    }}
+                    style={{ marginTop: 3 }}
+                  />
+
+                  <span>
+                    <strong>{t.tema}</strong>
+                    {t.descripcion ? ` - ${t.descripcion}` : ""}
+                  </span>
+                </label>
+              ))}
+            </div>
+          );
 
         })()}
-
-        <br />
-
-        <button onClick={() => setPantalla("settings")}>
-          Volver
-        </button>
-      </>
+      </ScreenLayout>
     )}
 
     {/* PREGUNTAS POR TEMA */}
     {pantalla === "preguntas-por-tema" && (
-      <>
-        <h2>Preguntas preguntadas por tema</h2>
-
-        <button
-          onClick={borrarPreguntasPorTema}
-          style={{ padding: 12, marginTop: 10, marginBottom: 20, width: "100%" }}
-        >
-          🧹 Borrar registro de preguntas por tema
-        </button>
-
+      <ScreenLayout
+        title="Preguntas por tema"
+        subtitle={`Orden: ${ordenPreguntasPorTema === "preguntas" ? "preguntas" : "% aciertos"}`}
+        topActions={
+          <button
+            onClick={borrarPreguntasPorTema}
+            style={{
+              padding: "8px 10px",
+              fontSize: 13,
+              whiteSpace: "nowrap"
+            }}
+          >
+            🧹 Borrar
+          </button>
+        }
+        bottomActions={
+          <button
+            onClick={() => setPantalla("settings")}
+            style={{ padding: 12, width: "100%" }}
+          >
+            Volver
+          </button>
+        }
+      >
         {(() => {
+          const basePreguntas = getPreguntasOposicionActiva();
+
           const temasOrdenados = Array.from(
             new Map(
-              preguntas.map(p => {
+              basePreguntas.map(p => {
                 const match = p.tema?.match(/^(\d+)/);
                 const numero = match ? Number(match[1]) : null;
 
@@ -3351,6 +4580,7 @@ function App() {
           )
             .map(t => {
               const total = preguntasPorTema[t.tema] || 0;
+
               const rendimiento = rendimientoPorTema[t.tema] || {
                 respondidas: 0,
                 aciertos: 0
@@ -3380,36 +4610,54 @@ function App() {
               if (a.numero === null && b.numero === null) {
                 return String(a.tema).localeCompare(String(b.tema));
               }
+
               if (a.numero === null) return 1;
               if (b.numero === null) return -1;
 
               return a.numero - b.numero;
             });
 
+          if (temasOrdenados.length === 0) {
+            return <p>No hay temas disponibles para esta oposición.</p>;
+          }
+
           return (
-            <div style={{ marginTop: 20, overflowX: "auto" }}>
+            <div
+              style={{
+                width: "100%",
+                maxWidth: "100%",
+                minWidth: 0,
+                boxSizing: "border-box"
+              }}
+            >
               <div
                 style={{
                   display: "grid",
-                  gridTemplateColumns: "90px 90px 1fr",
-                  gap: 12,
+                  gridTemplateColumns: "64px 72px minmax(0, 1fr)",
+                  gap: 8,
                   padding: "10px 0",
                   borderBottom: "2px solid rgba(255,255,255,0.2)",
-                  fontWeight: "bold"
+                  fontWeight: "bold",
+                  position: "sticky",
+                  top: 0,
+                  background: "#242424",
+                  zIndex: 20,
+                  fontSize: 13,
+                  boxShadow: "0 -24px 0 #242424, 0 8px 12px rgba(36,36,36,0.9)"
                 }}
               >
                 <div
                   onClick={() => setOrdenPreguntasPorTema("preguntas")}
                   style={{ cursor: "pointer" }}
                 >
-                  Preguntas {ordenPreguntasPorTema === "preguntas" ? "↓" : ""}
+                  Nº {ordenPreguntasPorTema === "preguntas" ? "↓" : ""}
                 </div>
 
                 <div
                   onClick={() => setOrdenPreguntasPorTema("aciertos")}
                   style={{ cursor: "pointer" }}
                 >
-                  % aciertos {ordenPreguntasPorTema === "aciertos" ? "↓" : ""}
+                  % {ordenPreguntasPorTema === "aciertos" ? "↓" : ""}
                 </div>
 
                 <div>Tema</div>
@@ -3420,29 +4668,50 @@ function App() {
                   key={i}
                   style={{
                     display: "grid",
-                    gridTemplateColumns: "90px 90px 1fr",
-                    gap: 12,
-                    padding: "10px 0",
-                    borderBottom: "1px solid rgba(255,255,255,0.08)"
+                    gridTemplateColumns: "64px 72px minmax(0, 1fr)",
+                    gap: 8,
+                    padding: "12px 0",
+                    borderBottom: "1px solid rgba(255,255,255,0.08)",
+                    alignItems: "start",
+                    minWidth: 0
                   }}
                 >
-                  <div>{t.total}</div>
-                  <div>{t.porcentajeAcierto !== null ? `${t.porcentajeAcierto}%` : "-"}</div>
-                  <div>
-                    {t.tema} - {t.descripcion}
+                  <div
+                    style={{
+                      fontWeight: 600,
+                      fontSize: 14
+                    }}
+                  >
+                    {t.total}
+                  </div>
+
+                  <div
+                    style={{
+                      fontWeight: 600,
+                      fontSize: 14
+                    }}
+                  >
+                    {t.porcentajeAcierto !== null
+                      ? `${t.porcentajeAcierto}%`
+                      : "-"}
+                  </div>
+
+                  <div
+                    style={{
+                      minWidth: 0,
+                      overflowWrap: "anywhere",
+                      lineHeight: 1.35
+                    }}
+                  >
+                    <strong>{t.tema}</strong>
+                    {t.descripcion ? ` - ${t.descripcion}` : ""}
                   </div>
                 </div>
               ))}
             </div>
           );
         })()}
-
-        <br />
-
-        <button onClick={() => setPantalla("settings")}>
-          Volver
-        </button>
-      </>
+      </ScreenLayout>
     )}
 
     </div>

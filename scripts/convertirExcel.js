@@ -22,34 +22,138 @@ const sheet = workbook.Sheets[sheetName];
 
 const rows = XLSX.utils.sheet_to_json(sheet, { header: 1 });
 
-const preguntas = rows.slice(1).map(row => {
-  const correcta = String(row[11] ?? "").toLowerCase().trim();
+// Columnas importantes, índice base 0:
+// L  = 11 -> solucion
+// M  = 12 -> ID
+// AA = 26 -> OposicionesApp
+// AB = 27 -> primera oposición marcada con x
 
-  const tema = String(row[1] ?? "").trim();
-  const nombreExamen = String(row[4] ?? "").trim();
-  const numeroPreguntaExamen = String(row[5] ?? "").trim();
+const COL_ID = 12;
+const COL_OPOSICIONES_APP = 26;
+const COL_PRIMERA_OPOSICION = 27;
 
-  // ID estable único
-  const id = `${tema}_${nombreExamen}_${numeroPreguntaExamen}`
-    .toLowerCase()
+function limpiarTexto(valor) {
+  return String(valor ?? "").trim();
+}
+
+function normalizarCodigoOposicion(valor) {
+  return limpiarTexto(valor)
+    .toUpperCase()
     .replace(/\s+/g, "_");
+}
 
-  return {
-    id,
-    categoria: String(row[0] ?? "").toLowerCase(),
-    tema,
-    descripcionTema: row[2],
-    nombreExamen,
-    numeroPreguntaExamen,
-    texto: row[6],
-    respuestas: [
-      { texto: row[7], correcta: correcta === "a" },
-      { texto: row[8], correcta: correcta === "b" },
-      { texto: row[9], correcta: correcta === "c" },
-      { texto: row[10], correcta: correcta === "d" }
-    ]
-  };
-});
+function leerOposicionesDesdeAA(row) {
+  const valor = limpiarTexto(row[COL_OPOSICIONES_APP]);
+
+  if (!valor) return [];
+
+  return valor
+    .split(",")
+    .map(normalizarCodigoOposicion)
+    .filter(Boolean);
+}
+
+function leerOposicionesDesdeColumnas(row, headers) {
+  const oposiciones = [];
+
+  for (let i = COL_PRIMERA_OPOSICION; i < headers.length; i++) {
+    const codigo = normalizarCodigoOposicion(headers[i]);
+    const marcado = limpiarTexto(row[i]).toLowerCase();
+
+    if (!codigo) continue;
+
+    if (marcado === "x" || marcado === "si" || marcado === "sí" || marcado === "1") {
+      oposiciones.push(codigo);
+    }
+  }
+
+  return oposiciones;
+}
+
+const headers = rows[0] || [];
+
+const avisos = {
+  sinId: [],
+  sinOposicion: [],
+  idsDuplicadas: []
+};
+
+const idsVistas = new Map();
+
+const preguntas = rows
+  .slice(1)
+  .map((row, index) => {
+    const filaExcel = index + 2;
+
+    const correcta = limpiarTexto(row[11]).toLowerCase();
+
+    const tema = limpiarTexto(row[1]);
+    const nombreExamen = limpiarTexto(row[4]);
+    const numeroPreguntaExamen = limpiarTexto(row[5]);
+
+    const id = limpiarTexto(row[COL_ID]);
+
+    const oposicionesDesdeAA = leerOposicionesDesdeAA(row);
+    const oposicionesDesdeColumnas = leerOposicionesDesdeColumnas(row, headers);
+
+    const oposiciones = oposicionesDesdeAA.length > 0
+      ? oposicionesDesdeAA
+      : oposicionesDesdeColumnas;
+
+    const oposicionesUnicas = [...new Set(oposiciones)];
+
+    if (!id) {
+      avisos.sinId.push(filaExcel);
+    }
+
+    if (oposicionesUnicas.length === 0) {
+      avisos.sinOposicion.push(filaExcel);
+    }
+
+    if (id) {
+      if (idsVistas.has(id)) {
+        avisos.idsDuplicadas.push({
+          id,
+          filas: [idsVistas.get(id), filaExcel]
+        });
+      } else {
+        idsVistas.set(id, filaExcel);
+      }
+    }
+
+    return {
+      id,
+      oposiciones: oposicionesUnicas,
+      categoria: limpiarTexto(row[0]).toLowerCase(),
+      tema,
+      descripcionTema: row[2],
+      nombreExamen,
+      numeroPreguntaExamen,
+      texto: row[6],
+      respuestas: [
+        { texto: limpiarTexto(row[7]), correcta: correcta === "a" },
+        { texto: limpiarTexto(row[8]), correcta: correcta === "b" },
+        { texto: limpiarTexto(row[9]), correcta: correcta === "c" },
+        { texto: limpiarTexto(row[10]), correcta: correcta === "d" }
+      ].filter(r => r.texto)
+    };
+  })
+  .filter(p => p.id && p.texto);
+
+if (avisos.sinId.length > 0) {
+  console.warn("⚠️ Filas sin ID en columna M:", avisos.sinId.join(", "));
+}
+
+if (avisos.sinOposicion.length > 0) {
+  console.warn("⚠️ Filas sin oposición en AA ni columnas AB+:", avisos.sinOposicion.join(", "));
+}
+
+if (avisos.idsDuplicadas.length > 0) {
+  console.warn("⚠️ IDs duplicadas detectadas:");
+  avisos.idsDuplicadas.forEach(item => {
+    console.warn(`   ID ${item.id} en filas ${item.filas.join(" y ")}`);
+  });
+}
 
 
 fs.writeFileSync(outputPath, JSON.stringify(preguntas, null, 2), "utf-8");

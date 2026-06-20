@@ -19,8 +19,8 @@ export default defineConfig({
         name: "Test Oposiciones",
         short_name: "Oposiciones",
         description: "App de test de oposiciones",
-        theme_color: "#ffffff",
-        background_color: "#ffffff",
+        theme_color: "#242424",
+        background_color: "#242424",
         display: "standalone",
         start_url: "/test_tool_opo_man_poli_zar/", // 👈 MUY IMPORTANTE
         icons: [
