@@ -2446,7 +2446,8 @@ function App() {
     "repaso-oposicion",
     "pomodoro",
     "estadisticas",
-    "filtro-temario"
+    "filtro-temario",
+    "aviso-uso"
   ];
 
   return (
@@ -2493,45 +2494,159 @@ function App() {
             );
           }
 
-          return (
-            <div
-              style={{
-                display: "grid",
-                gridTemplateColumns: "1fr",
-                gap: 16
-              }}
-            >
-              {oposiciones.map(codigo => {
-                const total = preguntas.filter(p =>
-                  Array.isArray(p.oposiciones) &&
-                  p.oposiciones.includes(codigo)
-                ).length;
+            return (
+            <>
+              <div
+                style={{
+                  display: "grid",
+                  gridTemplateColumns: "1fr",
+                  gap: 16
+                }}
+              >
+                {oposiciones.map(codigo => {
+                  const total = preguntas.filter(p =>
+                    Array.isArray(p.oposiciones) &&
+                    p.oposiciones.includes(codigo)
+                  ).length;
 
-                return (
-                  <button
-                    key={codigo}
-                    onClick={() => seleccionarOposicion(codigo)}
+                  return (
+                    <button
+                      key={codigo}
+                      onClick={() => seleccionarOposicion(codigo)}
+                      style={{
+                        padding: 18,
+                        borderRadius: 12,
+                        fontSize: 18,
+                        textAlign: "left",
+                        width: "100%"
+                      }}
+                    >
+                      <div style={{ fontWeight: "bold" }}>
+                        {codigo}
+                      </div>
+
+                      <div style={{ fontSize: 13, opacity: 0.75, marginTop: 6 }}>
+                        {total} preguntas disponibles
+                      </div>
+                    </button>
+                  );
+                })}
+              </div>
+
+              <div
+                style={{
+                  marginTop: 60,
+                  textAlign: "center"
+                }}
+              >
+                <hr
+                  style={{
+                    border: "none",
+                    height: 1,
+                    background: "rgba(255,255,255,0.2)",
+                    marginBottom: 18
+                  }}
+                />
+
+                <p style={{ opacity: 0.6, fontSize: 14, margin: 0 }}>
+                  Versión {version}
+                </p>
+
+                <p style={{ opacity: 0.6, fontSize: 14, margin: "14px 0 0" }}>
+                  © 2026 OpoTool. Todos los derechos reservados.
+                </p>
+
+                <div
+                  style={{
+                    marginTop: 14,
+                    display: "flex",
+                    justifyContent: "center",
+                    gap: 18,
+                    flexWrap: "wrap",
+                    fontSize: 14
+                  }}
+                >
+                  <a
+                    href="mailto:soporte@opotool.app?subject=Contacto%20OpoTool"
                     style={{
-                      padding: 18,
-                      borderRadius: 12,
-                      fontSize: 18,
-                      textAlign: "left",
-                      width: "100%"
+                      border: "none",
+                      background: "transparent",
+                      color: "#60a5fa",
+                      textDecoration: "underline",
+                      cursor: "pointer",
+                      font: "inherit"
                     }}
                   >
-                    <div style={{ fontWeight: "bold" }}>
-                      {codigo}
-                    </div>
+                    Contacto / reportar bug
+                  </a>
 
-                    <div style={{ fontSize: 13, opacity: 0.75, marginTop: 6 }}>
-                      {total} preguntas disponibles
-                    </div>
+                  <button
+                    onClick={() => setPantalla("aviso-uso")}
+                    style={{
+                      padding: 0,
+                      border: "none",
+                      background: "transparent",
+                      color: "#60a5fa",
+                      textDecoration: "underline",
+                      cursor: "pointer",
+                      font: "inherit"
+                    }}
+                  >
+                    Aviso
                   </button>
-                );
-              })}
-            </div>
+                </div>
+              </div>
+            </>
           );
         })()}
+      </ScreenLayout>
+    )}
+
+    {/* AVISO */}
+    {pantalla === "aviso-uso" && (
+      <ScreenLayout
+        title="Aviso"
+        subtitle="OpoTool"
+        bottomActions={
+          <button
+            onClick={() => setPantalla("selector-oposicion")}
+            style={{ padding: 12, width: "100%" }}
+          >
+            Volver
+          </button>
+        }
+      >
+        <div
+          style={{
+            display: "grid",
+            gap: 16,
+            padding: 16,
+            borderRadius: 12,
+            background: "rgba(255,255,255,0.06)",
+            lineHeight: 1.5
+          }}
+        >
+          <p style={{ marginTop: 0 }}>
+            OpoTool es una aplicación de entrenamiento para oposiciones.
+          </p>
+
+          <p>
+            El uso de esta aplicación es personal. Queda prohibida la copia,
+            redistribución, extracción o reutilización no autorizada de las
+            preguntas, respuestas, estructura de test o cualquier otro contenido
+            incluido en la aplicación.
+          </p>
+
+          <p>
+            El contenido se ofrece como herramienta de estudio y preparación,
+            sin garantizar resultados concretos en procesos selectivos.
+          </p>
+
+          <p>
+            En esta versión, el progreso y los datos de uso se guardan en el
+            propio dispositivo mediante almacenamiento local.
+          </p>
+        </div>
       </ScreenLayout>
     )}
 
@@ -2624,20 +2739,6 @@ function App() {
             <p style={cardTextStyle}>Ajustes</p>
           </div>
 
-        </div>
-
-        <div style={{ marginTop: 60 }}>
-          <hr
-            style={{
-              border: "none",
-              height: 1,
-              background: "rgba(255,255,255,0.2)",
-              marginBottom: 20
-            }}
-          />
-          <p style={{ opacity: 0.6, fontSize: 14, margin: 0 }}>
-            Versión {version}
-          </p>
         </div>
       </ScreenLayout>
     )}
