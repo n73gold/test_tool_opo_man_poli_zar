@@ -1,7 +1,7 @@
 {
   "name": "mi-app",
   "private": true,
-  "version": "0.0.130",
+  "version": "0.0.132",
   "type": "module",
   "homepage": "https://n73gold.github.io/test_tool_opo_man_poli_zar/",
   "scripts": {
