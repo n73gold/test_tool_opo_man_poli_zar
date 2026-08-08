@@ -1511,37 +1511,6 @@
     ]
   },
   {
-    "id": "J_1_4_27",
-    "oposiciones": [
-      "MG",
-      "PISCINAS"
-    ],
-    "categoria": "jurídico",
-    "tema": "1",
-    "descripcionTema": "Constitución",
-    "nombreExamen": "TEST CUCALON 2",
-    "numeroPreguntaExamen": "27",
-    "texto": "El órgano legislativo de la Comunidad Autónoma es:",
-    "respuestas": [
-      {
-        "texto": "El Consejo legislativo",
-        "correcta": false
-      },
-      {
-        "texto": "El Congreso autonómico",
-        "correcta": false
-      },
-      {
-        "texto": "El Senado",
-        "correcta": false
-      },
-      {
-        "texto": "La Asamblea",
-        "correcta": true
-      }
-    ]
-  },
-  {
     "id": "J_1_4_1",
     "oposiciones": [
       "MG",
@@ -18663,58 +18632,6 @@
     ]
   },
   {
-    "id": "E_10_33_19",
-    "oposiciones": [
-      "MG"
-    ],
-    "categoria": "específico",
-    "tema": "10",
-    "descripcionTema": "Albañileria",
-    "nombreExamen": "Test fran 2",
-    "numeroPreguntaExamen": "19",
-    "texto": "- ¿En cuantas categorías se clasifican los equipos de protección individual?",
-    "respuestas": [
-      {
-        "texto": "5 categorías.",
-        "correcta": false
-      },
-      {
-        "texto": "4 categorías.",
-        "correcta": false
-      },
-      {
-        "texto": "3 categorías.",
-        "correcta": true
-      }
-    ]
-  },
-  {
-    "id": "E_10_33_20",
-    "oposiciones": [
-      "MG"
-    ],
-    "categoria": "específico",
-    "tema": "10",
-    "descripcionTema": "Albañileria",
-    "nombreExamen": "Test fran 2",
-    "numeroPreguntaExamen": "20",
-    "texto": "Según el Decreto 1299/2006 en el que se aprueba el cuadro de enfermedades profesionales, estas se clasifican en:",
-    "respuestas": [
-      {
-        "texto": "4 grupos.",
-        "correcta": false
-      },
-      {
-        "texto": "6 grupos.",
-        "correcta": true
-      },
-      {
-        "texto": "8 grupos.",
-        "correcta": false
-      }
-    ]
-  },
-  {
     "id": "E_10_33_21",
     "oposiciones": [
       "MG"
@@ -25965,7 +25882,7 @@
     ]
   },
   {
-    "id": "E_12_39_4",
+    "id": "E_12_39_5",
     "oposiciones": [
       "MG"
     ],
@@ -25973,7 +25890,7 @@
     "tema": "12",
     "descripcionTema": "Carpinteria",
     "nombreExamen": "Test carpinteria 2021",
-    "numeroPreguntaExamen": "4",
+    "numeroPreguntaExamen": "5",
     "texto": "La sierra de ingletar no nos permite",
     "respuestas": [
       {
@@ -26095,7 +26012,7 @@
     ]
   },
   {
-    "id": "E_12_39_1",
+    "id": "E_12_39_10",
     "oposiciones": [
       "MG"
     ],
@@ -26103,7 +26020,7 @@
     "tema": "12",
     "descripcionTema": "Carpinteria",
     "nombreExamen": "Test carpinteria 2021",
-    "numeroPreguntaExamen": "1",
+    "numeroPreguntaExamen": "10",
     "texto": "¿Cuál de las siguientes herramientas no se utiliza habitualmente en carpintería?",
     "respuestas": [
       {
@@ -26121,7 +26038,7 @@
     ]
   },
   {
-    "id": "E_12_39_2",
+    "id": "E_12_39_11",
     "oposiciones": [
       "MG"
     ],
@@ -26129,7 +26046,7 @@
     "tema": "12",
     "descripcionTema": "Carpinteria",
     "nombreExamen": "Test carpinteria 2021",
-    "numeroPreguntaExamen": "2",
+    "numeroPreguntaExamen": "11",
     "texto": "¿Cuántos tipos de piezas tiene un marco moderno en la puerta?",
     "respuestas": [
       {
@@ -26147,7 +26064,7 @@
     ]
   },
   {
-    "id": "E_12_39_3",
+    "id": "E_12_39_12",
     "oposiciones": [
       "MG"
     ],
@@ -26155,7 +26072,7 @@
     "tema": "12",
     "descripcionTema": "Carpinteria",
     "nombreExamen": "Test carpinteria 2021",
-    "numeroPreguntaExamen": "3",
+    "numeroPreguntaExamen": "12",
     "texto": "De las siguientes herramientas cual es utilizada en la operación de labrado",
     "respuestas": [
       {
@@ -26173,7 +26090,7 @@
     ]
   },
   {
-    "id": "E_12_39_4",
+    "id": "E_12_39_13",
     "oposiciones": [
       "MG"
     ],
@@ -26181,7 +26098,7 @@
     "tema": "12",
     "descripcionTema": "Carpinteria",
     "nombreExamen": "Test carpinteria 2021",
-    "numeroPreguntaExamen": "4",
+    "numeroPreguntaExamen": "13",
     "texto": "El hundimiento cónico alrededor de un agujero en el cual se alojará la cabeza de un tornillo para que quede a ras de superficie se denomina:",
     "respuestas": [
       {
@@ -26199,7 +26116,7 @@
     ]
   },
   {
-    "id": "E_12_39_5",
+    "id": "E_12_39_14",
     "oposiciones": [
       "MG"
     ],
@@ -26207,7 +26124,7 @@
     "tema": "12",
     "descripcionTema": "Carpinteria",
     "nombreExamen": "Test carpinteria 2021",
-    "numeroPreguntaExamen": "5",
+    "numeroPreguntaExamen": "14",
     "texto": "¿Qué herramienta utilizaremos para eliminar de forma manual la madera sobrante de los ensambles?",
     "respuestas": [
       {
@@ -26225,7 +26142,7 @@
     ]
   },
   {
-    "id": "E_12_39_6",
+    "id": "E_12_39_15",
     "oposiciones": [
       "MG"
     ],
@@ -26233,7 +26150,7 @@
     "tema": "12",
     "descripcionTema": "Carpinteria",
     "nombreExamen": "Test carpinteria 2021",
-    "numeroPreguntaExamen": "6",
+    "numeroPreguntaExamen": "15",
     "texto": "¿Cúal de las siguientes herramientas es de trazado?",
     "respuestas": [
       {
@@ -26251,7 +26168,7 @@
     ]
   },
   {
-    "id": "E_12_39_7",
+    "id": "E_12_39_16",
     "oposiciones": [
       "MG"
     ],
@@ -26259,7 +26176,7 @@
     "tema": "12",
     "descripcionTema": "Carpinteria",
     "nombreExamen": "Test carpinteria 2021",
-    "numeroPreguntaExamen": "7",
+    "numeroPreguntaExamen": "16",
     "texto": "¿Cuál de los siguientes protectores de la madera es el menos resistente?",
     "respuestas": [
       {
@@ -26277,7 +26194,7 @@
     ]
   },
   {
-    "id": "E_12_39_9",
+    "id": "E_12_39_17",
     "oposiciones": [
       "MG"
     ],
@@ -26285,7 +26202,7 @@
     "tema": "12",
     "descripcionTema": "Carpinteria",
     "nombreExamen": "Test carpinteria 2021",
-    "numeroPreguntaExamen": "9",
+    "numeroPreguntaExamen": "17",
     "texto": "Dos reglas unidas por un tornillo fijo en el extremo de una de ellas que se emplea para trazar ángulos oblicuos ¿Se llama?",
     "respuestas": [
       {
@@ -26303,7 +26220,7 @@
     ]
   },
   {
-    "id": "E_12_39_1",
+    "id": "E_12_39_18",
     "oposiciones": [
       "MG"
     ],
@@ -26311,7 +26228,7 @@
     "tema": "12",
     "descripcionTema": "Carpinteria",
     "nombreExamen": "Test carpinteria 2021",
-    "numeroPreguntaExamen": "1",
+    "numeroPreguntaExamen": "18",
     "texto": "Para tapar grietas o pequeños agujeros en una carpintería, se puede utilizar una masilla universal elaborada con:",
     "respuestas": [
       {
@@ -26329,7 +26246,7 @@
     ]
   },
   {
-    "id": "E_12_39_2",
+    "id": "E_12_39_19",
     "oposiciones": [
       "MG"
     ],
@@ -26337,7 +26254,7 @@
     "tema": "12",
     "descripcionTema": "Carpinteria",
     "nombreExamen": "Test carpinteria 2021",
-    "numeroPreguntaExamen": "2",
+    "numeroPreguntaExamen": "19",
     "texto": "La unión de dos maderas consistente en una espiga de forma trapezoidal de cabeza más ancha que en el arranque ¿Se denomina?",
     "respuestas": [
       {
@@ -26355,7 +26272,7 @@
     ]
   },
   {
-    "id": "E_12_39_3",
+    "id": "E_12_39_20",
     "oposiciones": [
       "MG"
     ],
@@ -26363,7 +26280,7 @@
     "tema": "12",
     "descripcionTema": "Carpinteria",
     "nombreExamen": "Test carpinteria 2021",
-    "numeroPreguntaExamen": "3",
+    "numeroPreguntaExamen": "20",
     "texto": "Qué tipo de bisagra desmontable sin herramienta es aquella que se utiliza para las puertas y se compone de una parte macho (la que incorpora el pasador) y una hembra (la que cubre el pasador)",
     "respuestas": [
       {
@@ -26381,7 +26298,7 @@
     ]
   },
   {
-    "id": "E_12_39_4",
+    "id": "E_12_39_21",
     "oposiciones": [
       "MG"
     ],
@@ -26389,7 +26306,7 @@
     "tema": "12",
     "descripcionTema": "Carpinteria",
     "nombreExamen": "Test carpinteria 2021",
-    "numeroPreguntaExamen": "4",
+    "numeroPreguntaExamen": "21",
     "texto": "Cuando hablamos de formica nos referimos a:",
     "respuestas": [
       {
@@ -26407,7 +26324,7 @@
     ]
   },
   {
-    "id": "E_12_39_5",
+    "id": "E_12_39_22",
     "oposiciones": [
       "MG"
     ],
@@ -26415,7 +26332,7 @@
     "tema": "12",
     "descripcionTema": "Carpinteria",
     "nombreExamen": "Test carpinteria 2021",
-    "numeroPreguntaExamen": "5",
+    "numeroPreguntaExamen": "22",
     "texto": "Los montantes que sostienen el dintel y limitan la anchura del hueco de la puerta ¿Se llaman?",
     "respuestas": [
       {
@@ -26433,7 +26350,7 @@
     ]
   },
   {
-    "id": "E_12_39_6",
+    "id": "E_12_39_23",
     "oposiciones": [
       "MG"
     ],
@@ -26441,7 +26358,7 @@
     "tema": "12",
     "descripcionTema": "Carpinteria",
     "nombreExamen": "Test carpinteria 2021",
-    "numeroPreguntaExamen": "6",
+    "numeroPreguntaExamen": "23",
     "texto": "¿Qué herramienta de las siguientes se utiliza en carpintería para hundir las puntas y los clavos por debajo de la superficie de la madera",
     "respuestas": [
       {
@@ -26459,7 +26376,7 @@
     ]
   },
   {
-    "id": "E_12_39_9",
+    "id": "E_12_39_24",
     "oposiciones": [
       "MG"
     ],
@@ -26467,7 +26384,7 @@
     "tema": "12",
     "descripcionTema": "Carpinteria",
     "nombreExamen": "Test carpinteria 2021",
-    "numeroPreguntaExamen": "9",
+    "numeroPreguntaExamen": "24",
     "texto": "Se entiende por tablero contrachapado:",
     "respuestas": [
       {
@@ -26485,7 +26402,7 @@
     ]
   },
   {
-    "id": "E_12_39_1",
+    "id": "E_12_39_25",
     "oposiciones": [
       "MG"
     ],
@@ -26493,7 +26410,7 @@
     "tema": "12",
     "descripcionTema": "Carpinteria",
     "nombreExamen": "Test carpinteria 2021",
-    "numeroPreguntaExamen": "1",
+    "numeroPreguntaExamen": "25",
     "texto": "Los acristalamientos de ventanas de madera deben montarse de tal forma que puedan soportar esfuerzos debidos a:",
     "respuestas": [
       {
@@ -26511,7 +26428,7 @@
     ]
   },
   {
-    "id": "E_12_39_2",
+    "id": "E_12_39_26",
     "oposiciones": [
       "MG"
     ],
@@ -26519,7 +26436,7 @@
     "tema": "12",
     "descripcionTema": "Carpinteria",
     "nombreExamen": "Test carpinteria 2021",
-    "numeroPreguntaExamen": "2",
+    "numeroPreguntaExamen": "26",
     "texto": "El herraje que se utiliza para el cierre de ventanas y balcones ¿Se denomina?",
     "respuestas": [
       {
@@ -26537,7 +26454,7 @@
     ]
   },
   {
-    "id": "E_12_39_3",
+    "id": "E_12_39_27",
     "oposiciones": [
       "MG"
     ],
@@ -26545,7 +26462,7 @@
     "tema": "12",
     "descripcionTema": "Carpinteria",
     "nombreExamen": "Test carpinteria 2021",
-    "numeroPreguntaExamen": "3",
+    "numeroPreguntaExamen": "27",
     "texto": "Los suelos a base de losetas sobre elevadas con patas niveladoras se denominan:",
     "respuestas": [
       {
@@ -26563,7 +26480,7 @@
     ]
   },
   {
-    "id": "E_12_39_4",
+    "id": "E_12_39_28",
     "oposiciones": [
       "MG"
     ],
@@ -26571,7 +26488,7 @@
     "tema": "12",
     "descripcionTema": "Carpinteria",
     "nombreExamen": "Test carpinteria 2021",
-    "numeroPreguntaExamen": "4",
+    "numeroPreguntaExamen": "28",
     "texto": "Unir piezas de madera entre sí por sus caras o cantos de modo que ajustan exactamente se denomina:",
     "respuestas": [
       {
@@ -26589,7 +26506,7 @@
     ]
   },
   {
-    "id": "E_12_39_5",
+    "id": "E_12_39_29",
     "oposiciones": [
       "MG"
     ],
@@ -26597,7 +26514,7 @@
     "tema": "12",
     "descripcionTema": "Carpinteria",
     "nombreExamen": "Test carpinteria 2021",
-    "numeroPreguntaExamen": "5",
+    "numeroPreguntaExamen": "29",
     "texto": "En los casos normales, la posición correcta de las hojas de la sierra de arco para el corte de perfiles metálicos, deberá ser de tal manera que la penetración la efectúe en el movimiento de:",
     "respuestas": [
       {
@@ -26615,7 +26532,7 @@
     ]
   },
   {
-    "id": "E_12_39_6",
+    "id": "E_12_39_30",
     "oposiciones": [
       "MG"
     ],
@@ -26623,7 +26540,7 @@
     "tema": "12",
     "descripcionTema": "Carpinteria",
     "nombreExamen": "Test carpinteria 2021",
-    "numeroPreguntaExamen": "6",
+    "numeroPreguntaExamen": "30",
     "texto": "En una sierra cuanto mayor sea el número de dientes ¿Estos serán?",
     "respuestas": [
       {
@@ -26641,7 +26558,7 @@
     ]
   },
   {
-    "id": "E_12_39_8",
+    "id": "E_12_39_31",
     "oposiciones": [
       "MG"
     ],
@@ -26649,7 +26566,7 @@
     "tema": "12",
     "descripcionTema": "Carpinteria",
     "nombreExamen": "Test carpinteria 2021",
-    "numeroPreguntaExamen": "8",
+    "numeroPreguntaExamen": "31",
     "texto": "¿Dónde se introduce la espiga al unir 2 piezas de madera",
     "respuestas": [
       {
@@ -26667,7 +26584,7 @@
     ]
   },
   {
-    "id": "E_12_39_9",
+    "id": "E_12_39_32",
     "oposiciones": [
       "MG"
     ],
@@ -26675,7 +26592,7 @@
     "tema": "12",
     "descripcionTema": "Carpinteria",
     "nombreExamen": "Test carpinteria 2021",
-    "numeroPreguntaExamen": "9",
+    "numeroPreguntaExamen": "32",
     "texto": "Para los trabajos de calado se usan sierras muy finas y estrechas llamadas",
     "respuestas": [
       {
@@ -95377,14 +95294,14 @@
     ]
   },
   {
-    "id": "E_28_115_1",
+    "id": "E_28_116_1",
     "oposiciones": [
       "PISCINAS"
     ],
     "categoria": "específico",
     "tema": "28",
     "descripcionTema": "Organización del deporte",
-    "nombreExamen": "TEST ORGANIZACIÓN DEPORTE AYUNTAMIENTO ZARAGOZA 3 y 4 2023",
+    "nombreExamen": "TEST MUNICIPAL",
     "numeroPreguntaExamen": "1",
     "texto": "¿Qué ámbito territorial regula la Ley de Capitalidad de Zaragoza?",
     "respuestas": [
@@ -95403,14 +95320,14 @@
     ]
   },
   {
-    "id": "E_28_115_2",
+    "id": "E_28_116_2",
     "oposiciones": [
       "PISCINAS"
     ],
     "categoria": "específico",
     "tema": "28",
     "descripcionTema": "Organización del deporte",
-    "nombreExamen": "TEST ORGANIZACIÓN DEPORTE AYUNTAMIENTO ZARAGOZA 3 y 4 2023",
+    "nombreExamen": "TEST MUNICIPAL",
     "numeroPreguntaExamen": "2",
     "texto": "¿Cuál de estos NO es un objetivo del área de deportes del Ayuntamiento de Zaragoza?",
     "respuestas": [
@@ -95429,14 +95346,14 @@
     ]
   },
   {
-    "id": "E_28_115_3",
+    "id": "E_28_116_3",
     "oposiciones": [
       "PISCINAS"
     ],
     "categoria": "específico",
     "tema": "28",
     "descripcionTema": "Organización del deporte",
-    "nombreExamen": "TEST ORGANIZACIÓN DEPORTE AYUNTAMIENTO ZARAGOZA 3 y 4 2023",
+    "nombreExamen": "TEST MUNICIPAL",
     "numeroPreguntaExamen": "3",
     "texto": "¿Qué entidad NO forma parte del sector público municipal?",
     "respuestas": [
@@ -95455,14 +95372,14 @@
     ]
   },
   {
-    "id": "E_28_115_4",
+    "id": "E_28_116_4",
     "oposiciones": [
       "PISCINAS"
     ],
     "categoria": "específico",
     "tema": "28",
     "descripcionTema": "Organización del deporte",
-    "nombreExamen": "TEST ORGANIZACIÓN DEPORTE AYUNTAMIENTO ZARAGOZA 3 y 4 2023",
+    "nombreExamen": "TEST MUNICIPAL",
     "numeroPreguntaExamen": "4",
     "texto": "¿Cuál de estas competencias NO corresponde a Zaragoza Deporte Municipal?",
     "respuestas": [
@@ -95481,14 +95398,14 @@
     ]
   },
   {
-    "id": "E_29_115_5",
+    "id": "E_29_116_5",
     "oposiciones": [
       "PISCINAS"
     ],
     "categoria": "específico",
     "tema": "29",
     "descripcionTema": "Calidad en el servicio deportivo municipal",
-    "nombreExamen": "TEST ORGANIZACIÓN DEPORTE AYUNTAMIENTO ZARAGOZA 3 y 4 2023",
+    "nombreExamen": "TEST MUNICIPAL",
     "numeroPreguntaExamen": "5",
     "texto": "¿Qué requisito debe cumplir una APA para tener prioridad en la reserva de uso de un pabellón?",
     "respuestas": [
@@ -95507,14 +95424,14 @@
     ]
   },
   {
-    "id": "E_28_115_6",
+    "id": "E_28_116_6",
     "oposiciones": [
       "PISCINAS"
     ],
     "categoria": "específico",
     "tema": "28",
     "descripcionTema": "Organización del deporte",
-    "nombreExamen": "TEST ORGANIZACIÓN DEPORTE AYUNTAMIENTO ZARAGOZA 3 y 4 2023",
+    "nombreExamen": "TEST MUNICIPAL",
     "numeroPreguntaExamen": "6",
     "texto": "¿Cuál de estas sanciones es leve según el Reglamento?",
     "respuestas": [
@@ -95533,14 +95450,14 @@
     ]
   },
   {
-    "id": "E_28_115_7",
+    "id": "E_28_116_7",
     "oposiciones": [
       "PISCINAS"
     ],
     "categoria": "específico",
     "tema": "28",
     "descripcionTema": "Organización del deporte",
-    "nombreExamen": "TEST ORGANIZACIÓN DEPORTE AYUNTAMIENTO ZARAGOZA 3 y 4 2023",
+    "nombreExamen": "TEST MUNICIPAL",
     "numeroPreguntaExamen": "7",
     "texto": "¿Quién NO forma parte de la estructura política del área de deportes?",
     "respuestas": [
@@ -95559,14 +95476,14 @@
     ]
   },
   {
-    "id": "E_29_115_8",
+    "id": "E_29_116_8",
     "oposiciones": [
       "PISCINAS"
     ],
     "categoria": "específico",
     "tema": "29",
     "descripcionTema": "Calidad en el servicio deportivo municipal",
-    "nombreExamen": "TEST ORGANIZACIÓN DEPORTE AYUNTAMIENTO ZARAGOZA 3 y 4 2023",
+    "nombreExamen": "TEST MUNICIPAL",
     "numeroPreguntaExamen": "8",
     "texto": "¿Cuál de estos espacios deportivos permite acceso libre de espectadores en la mayor parte de las ocasiones?",
     "respuestas": [
@@ -95585,14 +95502,14 @@
     ]
   },
   {
-    "id": "E_29_115_9",
+    "id": "E_29_116_9",
     "oposiciones": [
       "PISCINAS"
     ],
     "categoria": "específico",
     "tema": "29",
     "descripcionTema": "Calidad en el servicio deportivo municipal",
-    "nombreExamen": "TEST ORGANIZACIÓN DEPORTE AYUNTAMIENTO ZARAGOZA 3 y 4 2023",
+    "nombreExamen": "TEST MUNICIPAL",
     "numeroPreguntaExamen": "9",
     "texto": "¿Qué acción sobre una pista reservada se considera una infracción grave?",
     "respuestas": [
@@ -95611,14 +95528,14 @@
     ]
   },
   {
-    "id": "E_28_115_10",
+    "id": "E_28_116_10",
     "oposiciones": [
       "PISCINAS"
     ],
     "categoria": "específico",
     "tema": "28",
     "descripcionTema": "Organización del deporte",
-    "nombreExamen": "TEST ORGANIZACIÓN DEPORTE AYUNTAMIENTO ZARAGOZA 3 y 4 2023",
+    "nombreExamen": "TEST MUNICIPAL",
     "numeroPreguntaExamen": "10",
     "texto": "¿Cuál de estas afirmaciones sobre las IDEs es FALSA?",
     "respuestas": [
@@ -95637,14 +95554,14 @@
     ]
   },
   {
-    "id": "E_28_115_11",
+    "id": "E_28_116_11",
     "oposiciones": [
       "PISCINAS"
     ],
     "categoria": "específico",
     "tema": "28",
     "descripcionTema": "Organización del deporte",
-    "nombreExamen": "TEST ORGANIZACIÓN DEPORTE AYUNTAMIENTO ZARAGOZA 3 y 4 2023",
+    "nombreExamen": "TEST MUNICIPAL",
     "numeroPreguntaExamen": "11",
     "texto": "¿Cuál de estos servicios deportivos es abonado directamente al ayuntamiento de Zaragoza?",
     "respuestas": [
@@ -95663,14 +95580,14 @@
     ]
   },
   {
-    "id": "E_29_115_12",
+    "id": "E_29_116_12",
     "oposiciones": [
       "PISCINAS"
     ],
     "categoria": "específico",
     "tema": "29",
     "descripcionTema": "Calidad en el servicio deportivo municipal",
-    "nombreExamen": "TEST ORGANIZACIÓN DEPORTE AYUNTAMIENTO ZARAGOZA 3 y 4 2023",
+    "nombreExamen": "TEST MUNICIPAL",
     "numeroPreguntaExamen": "12",
     "texto": "¿Qué requisito NO se exige a un monitor para dar clases en el rocódromo de un CDM?",
     "respuestas": [
@@ -95689,14 +95606,14 @@
     ]
   },
   {
-    "id": "E_29_115_13",
+    "id": "E_29_116_13",
     "oposiciones": [
       "PISCINAS"
     ],
     "categoria": "específico",
     "tema": "29",
     "descripcionTema": "Calidad en el servicio deportivo municipal",
-    "nombreExamen": "TEST ORGANIZACIÓN DEPORTE AYUNTAMIENTO ZARAGOZA 3 y 4 2023",
+    "nombreExamen": "TEST MUNICIPAL",
     "numeroPreguntaExamen": "13",
     "texto": "¿Cuál de estas acciones sobre el material de musculación está prohibida?",
     "respuestas": [
@@ -95715,14 +95632,14 @@
     ]
   },
   {
-    "id": "E_29_115_14",
+    "id": "E_29_116_14",
     "oposiciones": [
       "PISCINAS"
     ],
     "categoria": "específico",
     "tema": "29",
     "descripcionTema": "Calidad en el servicio deportivo municipal",
-    "nombreExamen": "TEST ORGANIZACIÓN DEPORTE AYUNTAMIENTO ZARAGOZA 3 y 4 2023",
+    "nombreExamen": "TEST MUNICIPAL",
     "numeroPreguntaExamen": "14",
     "texto": "¿Qué opción sobre el uso de balnearios urbanos es FALSA?",
     "respuestas": [
@@ -95741,14 +95658,14 @@
     ]
   },
   {
-    "id": "E_29_115_15",
+    "id": "E_29_116_15",
     "oposiciones": [
       "PISCINAS"
     ],
     "categoria": "específico",
     "tema": "29",
     "descripcionTema": "Calidad en el servicio deportivo municipal",
-    "nombreExamen": "TEST ORGANIZACIÓN DEPORTE AYUNTAMIENTO ZARAGOZA 3 y 4 2023",
+    "nombreExamen": "TEST MUNICIPAL",
     "numeroPreguntaExamen": "15",
     "texto": "¿Cuál de estas acciones en una zona de estancia de piscina está prohibida?",
     "respuestas": [
@@ -95767,14 +95684,14 @@
     ]
   },
   {
-    "id": "E_28_115_16",
+    "id": "E_28_116_16",
     "oposiciones": [
       "PISCINAS"
     ],
     "categoria": "específico",
     "tema": "28",
     "descripcionTema": "Organización del deporte",
-    "nombreExamen": "TEST ORGANIZACIÓN DEPORTE AYUNTAMIENTO ZARAGOZA 3 y 4 2023",
+    "nombreExamen": "TEST MUNICIPAL",
     "numeroPreguntaExamen": "16",
     "texto": "¿Cuál de estas opciones sobre la publicidad en CDMs es correcta?",
     "respuestas": [
@@ -95793,14 +95710,14 @@
     ]
   },
   {
-    "id": "E_28_115_17",
+    "id": "E_28_116_17",
     "oposiciones": [
       "PISCINAS"
     ],
     "categoria": "específico",
     "tema": "28",
     "descripcionTema": "Organización del deporte",
-    "nombreExamen": "TEST ORGANIZACIÓN DEPORTE AYUNTAMIENTO ZARAGOZA 3 y 4 2023",
+    "nombreExamen": "TEST MUNICIPAL",
     "numeroPreguntaExamen": "17",
     "texto": "¿Cuál de estas empresas gestiona servicios de control mantenimiento y socorrismo en alguna piscina municipal de Zaragoza?",
     "respuestas": [
@@ -95819,14 +95736,14 @@
     ]
   },
   {
-    "id": "E_29_115_18",
+    "id": "E_29_116_18",
     "oposiciones": [
       "PISCINAS"
     ],
     "categoria": "específico",
     "tema": "29",
     "descripcionTema": "Calidad en el servicio deportivo municipal",
-    "nombreExamen": "TEST ORGANIZACIÓN DEPORTE AYUNTAMIENTO ZARAGOZA 3 y 4 2023",
+    "nombreExamen": "TEST MUNICIPAL",
     "numeroPreguntaExamen": "18",
     "texto": "¿Qué opción sobre la reserva de uso para deporte federado es FALSA?",
     "respuestas": [
@@ -95845,14 +95762,14 @@
     ]
   },
   {
-    "id": "E_28_115_19",
+    "id": "E_28_116_19",
     "oposiciones": [
       "PISCINAS"
     ],
     "categoria": "específico",
     "tema": "28",
     "descripcionTema": "Organización del deporte",
-    "nombreExamen": "TEST ORGANIZACIÓN DEPORTE AYUNTAMIENTO ZARAGOZA 3 y 4 2023",
+    "nombreExamen": "TEST MUNICIPAL",
     "numeroPreguntaExamen": "19",
     "texto": "¿Cuál es el plazo máximo que tiene el Ayuntamiento para resolver un expediente sancionador?",
     "respuestas": [
@@ -95871,14 +95788,14 @@
     ]
   },
   {
-    "id": "E_28_115_20",
+    "id": "E_28_116_20",
     "oposiciones": [
       "PISCINAS"
     ],
     "categoria": "específico",
     "tema": "28",
     "descripcionTema": "Organización del deporte",
-    "nombreExamen": "TEST ORGANIZACIÓN DEPORTE AYUNTAMIENTO ZARAGOZA 3 y 4 2023",
+    "nombreExamen": "TEST MUNICIPAL",
     "numeroPreguntaExamen": "20",
     "texto": "¿Cuál de estas medidas ante una infracción NO está prevista en el Reglamento?",
     "respuestas": [
@@ -95897,14 +95814,14 @@
     ]
   },
   {
-    "id": "E_29_115_21",
+    "id": "E_29_116_21",
     "oposiciones": [
       "PISCINAS"
     ],
     "categoria": "específico",
     "tema": "29",
     "descripcionTema": "Calidad en el servicio deportivo municipal",
-    "nombreExamen": "TEST ORGANIZACIÓN DEPORTE AYUNTAMIENTO ZARAGOZA 3 y 4 2023",
+    "nombreExamen": "TEST MUNICIPAL",
     "numeroPreguntaExamen": "21",
     "texto": "¿Qué requisito deben cumplir los menores de 8 años para acceder al vestuario en una piscina de verano?",
     "respuestas": [
@@ -95923,14 +95840,14 @@
     ]
   },
   {
-    "id": "E_29_115_22",
+    "id": "E_29_116_22",
     "oposiciones": [
       "PISCINAS"
     ],
     "categoria": "específico",
     "tema": "29",
     "descripcionTema": "Calidad en el servicio deportivo municipal",
-    "nombreExamen": "TEST ORGANIZACIÓN DEPORTE AYUNTAMIENTO ZARAGOZA 3 y 4 2023",
+    "nombreExamen": "TEST MUNICIPAL",
     "numeroPreguntaExamen": "22",
     "texto": "¿Cuál es el tiempo máximo de permanencia en el recinto de una piscina cubierta para uso libre?",
     "respuestas": [
@@ -95949,14 +95866,14 @@
     ]
   },
   {
-    "id": "E_29_115_23",
+    "id": "E_29_116_23",
     "oposiciones": [
       "PISCINAS"
     ],
     "categoria": "específico",
     "tema": "29",
     "descripcionTema": "Calidad en el servicio deportivo municipal",
-    "nombreExamen": "TEST ORGANIZACIÓN DEPORTE AYUNTAMIENTO ZARAGOZA 3 y 4 2023",
+    "nombreExamen": "TEST MUNICIPAL",
     "numeroPreguntaExamen": "23",
     "texto": "¿Qué opción sobre el maltrato a otros usuarios es FALSA?",
     "respuestas": [
@@ -95975,14 +95892,14 @@
     ]
   },
   {
-    "id": "E_29_115_24",
+    "id": "E_29_116_24",
     "oposiciones": [
       "PISCINAS"
     ],
     "categoria": "específico",
     "tema": "29",
     "descripcionTema": "Calidad en el servicio deportivo municipal",
-    "nombreExamen": "TEST ORGANIZACIÓN DEPORTE AYUNTAMIENTO ZARAGOZA 3 y 4 2023",
+    "nombreExamen": "TEST MUNICIPAL",
     "numeroPreguntaExamen": "24",
     "texto": "Un equipo juvenil tiene prioridad para reservar pista si:",
     "respuestas": [
@@ -96001,14 +95918,14 @@
     ]
   },
   {
-    "id": "E_29_115_25",
+    "id": "E_29_116_25",
     "oposiciones": [
       "PISCINAS"
     ],
     "categoria": "específico",
     "tema": "29",
     "descripcionTema": "Calidad en el servicio deportivo municipal",
-    "nombreExamen": "TEST ORGANIZACIÓN DEPORTE AYUNTAMIENTO ZARAGOZA 3 y 4 2023",
+    "nombreExamen": "TEST MUNICIPAL",
     "numeroPreguntaExamen": "25",
     "texto": "¿Cuál de estas afirmaciones sobre las piscinas es FALSA?",
     "respuestas": [
@@ -96027,7 +95944,7 @@
     ]
   },
   {
-    "id": "E_30_116_1",
+    "id": "E_30_117_1",
     "oposiciones": [
       "PISCINAS"
     ],
@@ -96053,7 +95970,7 @@
     ]
   },
   {
-    "id": "E_30_116_2",
+    "id": "E_30_117_2",
     "oposiciones": [
       "PISCINAS"
     ],
@@ -96079,7 +95996,7 @@
     ]
   },
   {
-    "id": "E_30_116_3",
+    "id": "E_30_117_3",
     "oposiciones": [
       "PISCINAS"
     ],
@@ -96105,7 +96022,7 @@
     ]
   },
   {
-    "id": "E_30_116_4",
+    "id": "E_30_117_4",
     "oposiciones": [
       "PISCINAS"
     ],
@@ -96131,7 +96048,7 @@
     ]
   },
   {
-    "id": "E_30_116_5",
+    "id": "E_30_117_5",
     "oposiciones": [
       "PISCINAS"
     ],
@@ -96157,7 +96074,7 @@
     ]
   },
   {
-    "id": "E_30_116_6",
+    "id": "E_30_117_6",
     "oposiciones": [
       "PISCINAS"
     ],
@@ -96183,7 +96100,7 @@
     ]
   },
   {
-    "id": "E_30_116_7",
+    "id": "E_30_117_7",
     "oposiciones": [
       "PISCINAS"
     ],
@@ -96209,7 +96126,7 @@
     ]
   },
   {
-    "id": "E_30_116_8",
+    "id": "E_30_117_8",
     "oposiciones": [
       "PISCINAS"
     ],
@@ -96235,7 +96152,7 @@
     ]
   },
   {
-    "id": "E_30_116_9",
+    "id": "E_30_117_9",
     "oposiciones": [
       "PISCINAS"
     ],
@@ -96261,7 +96178,7 @@
     ]
   },
   {
-    "id": "E_30_116_10",
+    "id": "E_30_117_10",
     "oposiciones": [
       "PISCINAS"
     ],
@@ -96287,7 +96204,7 @@
     ]
   },
   {
-    "id": "E_30_116_11",
+    "id": "E_30_117_11",
     "oposiciones": [
       "PISCINAS"
     ],
@@ -96313,7 +96230,7 @@
     ]
   },
   {
-    "id": "E_30_116_12",
+    "id": "E_30_117_12",
     "oposiciones": [
       "PISCINAS"
     ],
@@ -96339,7 +96256,7 @@
     ]
   },
   {
-    "id": "E_30_116_13",
+    "id": "E_30_117_13",
     "oposiciones": [
       "PISCINAS"
     ],
@@ -96365,7 +96282,7 @@
     ]
   },
   {
-    "id": "E_30_116_14",
+    "id": "E_30_117_14",
     "oposiciones": [
       "PISCINAS"
     ],
@@ -96391,7 +96308,7 @@
     ]
   },
   {
-    "id": "E_30_116_15",
+    "id": "E_30_117_15",
     "oposiciones": [
       "PISCINAS"
     ],
@@ -96417,7 +96334,7 @@
     ]
   },
   {
-    "id": "E_30_116_16",
+    "id": "E_30_117_16",
     "oposiciones": [
       "PISCINAS"
     ],
@@ -96443,7 +96360,7 @@
     ]
   },
   {
-    "id": "E_30_116_17",
+    "id": "E_30_117_17",
     "oposiciones": [
       "PISCINAS"
     ],
@@ -96469,7 +96386,7 @@
     ]
   },
   {
-    "id": "E_30_116_18",
+    "id": "E_30_117_18",
     "oposiciones": [
       "PISCINAS"
     ],
@@ -96495,7 +96412,7 @@
     ]
   },
   {
-    "id": "E_30_116_19",
+    "id": "E_30_117_19",
     "oposiciones": [
       "PISCINAS"
     ],
@@ -96521,7 +96438,7 @@
     ]
   },
   {
-    "id": "E_30_116_20",
+    "id": "E_30_117_20",
     "oposiciones": [
       "PISCINAS"
     ],
@@ -96547,7 +96464,7 @@
     ]
   },
   {
-    "id": "E_30_116_21",
+    "id": "E_30_117_21",
     "oposiciones": [
       "PISCINAS"
     ],
@@ -96573,7 +96490,7 @@
     ]
   },
   {
-    "id": "E_30_116_22",
+    "id": "E_30_117_22",
     "oposiciones": [
       "PISCINAS"
     ],
@@ -96599,7 +96516,7 @@
     ]
   },
   {
-    "id": "E_30_116_23",
+    "id": "E_30_117_23",
     "oposiciones": [
       "PISCINAS"
     ],
@@ -96625,7 +96542,7 @@
     ]
   },
   {
-    "id": "E_30_116_24",
+    "id": "E_30_117_24",
     "oposiciones": [
       "PISCINAS"
     ],
@@ -96651,7 +96568,7 @@
     ]
   },
   {
-    "id": "E_30_116_25",
+    "id": "E_30_117_25",
     "oposiciones": [
       "PISCINAS"
     ],
@@ -96677,7 +96594,7 @@
     ]
   },
   {
-    "id": "E_30_116_26",
+    "id": "E_30_117_26",
     "oposiciones": [
       "PISCINAS"
     ],
@@ -96703,7 +96620,7 @@
     ]
   },
   {
-    "id": "E_30_116_27",
+    "id": "E_30_117_27",
     "oposiciones": [
       "PISCINAS"
     ],
@@ -96729,7 +96646,7 @@
     ]
   },
   {
-    "id": "E_30_116_28",
+    "id": "E_30_117_28",
     "oposiciones": [
       "PISCINAS"
     ],
@@ -96755,7 +96672,7 @@
     ]
   },
   {
-    "id": "E_30_116_29",
+    "id": "E_30_117_29",
     "oposiciones": [
       "PISCINAS"
     ],
@@ -96781,7 +96698,7 @@
     ]
   },
   {
-    "id": "E_30_116_30",
+    "id": "E_30_117_30",
     "oposiciones": [
       "PISCINAS"
     ],
@@ -96807,7 +96724,7 @@
     ]
   },
   {
-    "id": "E_30_116_31",
+    "id": "E_30_117_31",
     "oposiciones": [
       "PISCINAS"
     ],
@@ -96833,7 +96750,7 @@
     ]
   },
   {
-    "id": "E_30_116_32",
+    "id": "E_30_117_32",
     "oposiciones": [
       "PISCINAS"
     ],
@@ -96859,7 +96776,7 @@
     ]
   },
   {
-    "id": "E_30_116_33",
+    "id": "E_30_117_33",
     "oposiciones": [
       "PISCINAS"
     ],
@@ -96885,7 +96802,7 @@
     ]
   },
   {
-    "id": "E_30_116_34",
+    "id": "E_30_117_34",
     "oposiciones": [
       "PISCINAS"
     ],
@@ -96911,7 +96828,7 @@
     ]
   },
   {
-    "id": "E_30_116_35",
+    "id": "E_30_117_35",
     "oposiciones": [
       "PISCINAS"
     ],
@@ -96937,7 +96854,7 @@
     ]
   },
   {
-    "id": "E_30_116_36",
+    "id": "E_30_117_36",
     "oposiciones": [
       "PISCINAS"
     ],
@@ -96963,7 +96880,7 @@
     ]
   },
   {
-    "id": "E_30_116_37",
+    "id": "E_30_117_37",
     "oposiciones": [
       "PISCINAS"
     ],
@@ -96989,7 +96906,7 @@
     ]
   },
   {
-    "id": "E_30_116_38",
+    "id": "E_30_117_38",
     "oposiciones": [
       "PISCINAS"
     ],
@@ -97015,7 +96932,7 @@
     ]
   },
   {
-    "id": "E_30_116_39",
+    "id": "E_30_117_39",
     "oposiciones": [
       "PISCINAS"
     ],
@@ -97041,7 +96958,7 @@
     ]
   },
   {
-    "id": "E_30_116_40",
+    "id": "E_30_117_40",
     "oposiciones": [
       "PISCINAS"
     ],
@@ -97067,7 +96984,7 @@
     ]
   },
   {
-    "id": "E_30_116_41",
+    "id": "E_30_117_41",
     "oposiciones": [
       "PISCINAS"
     ],
@@ -97093,7 +97010,7 @@
     ]
   },
   {
-    "id": "E_30_116_42",
+    "id": "E_30_117_42",
     "oposiciones": [
       "PISCINAS"
     ],
@@ -97119,7 +97036,7 @@
     ]
   },
   {
-    "id": "E_30_116_43",
+    "id": "E_30_117_43",
     "oposiciones": [
       "PISCINAS"
     ],
@@ -97145,7 +97062,7 @@
     ]
   },
   {
-    "id": "E_30_116_44",
+    "id": "E_30_117_44",
     "oposiciones": [
       "PISCINAS"
     ],
@@ -97171,7 +97088,7 @@
     ]
   },
   {
-    "id": "E_30_116_45",
+    "id": "E_30_117_45",
     "oposiciones": [
       "PISCINAS"
     ],
@@ -97197,7 +97114,7 @@
     ]
   },
   {
-    "id": "E_30_116_46",
+    "id": "E_30_117_46",
     "oposiciones": [
       "PISCINAS"
     ],
@@ -97223,7 +97140,7 @@
     ]
   },
   {
-    "id": "E_30_116_47",
+    "id": "E_30_117_47",
     "oposiciones": [
       "PISCINAS"
     ],
@@ -97249,7 +97166,7 @@
     ]
   },
   {
-    "id": "E_30_116_48",
+    "id": "E_30_117_48",
     "oposiciones": [
       "PISCINAS"
     ],
@@ -97275,7 +97192,7 @@
     ]
   },
   {
-    "id": "E_30_116_49",
+    "id": "E_30_117_49",
     "oposiciones": [
       "PISCINAS"
     ],
@@ -97301,7 +97218,7 @@
     ]
   },
   {
-    "id": "E_30_116_50",
+    "id": "E_30_117_50",
     "oposiciones": [
       "PISCINAS"
     ],
@@ -97327,7 +97244,7 @@
     ]
   },
   {
-    "id": "E_30_117_1",
+    "id": "E_30_118_1",
     "oposiciones": [
       "PISCINAS"
     ],
@@ -97357,7 +97274,7 @@
     ]
   },
   {
-    "id": "E_30_117_2",
+    "id": "E_30_118_2",
     "oposiciones": [
       "PISCINAS"
     ],
@@ -97387,7 +97304,7 @@
     ]
   },
   {
-    "id": "E_30_117_3",
+    "id": "E_30_118_3",
     "oposiciones": [
       "PISCINAS"
     ],
@@ -97417,7 +97334,7 @@
     ]
   },
   {
-    "id": "E_30_117_4",
+    "id": "E_30_118_4",
     "oposiciones": [
       "PISCINAS"
     ],
@@ -97447,7 +97364,7 @@
     ]
   },
   {
-    "id": "E_30_117_5",
+    "id": "E_30_118_5",
     "oposiciones": [
       "PISCINAS"
     ],
@@ -97477,7 +97394,7 @@
     ]
   },
   {
-    "id": "E_30_117_6",
+    "id": "E_30_118_6",
     "oposiciones": [
       "PISCINAS"
     ],
@@ -97507,7 +97424,7 @@
     ]
   },
   {
-    "id": "E_30_117_7",
+    "id": "E_30_118_7",
     "oposiciones": [
       "PISCINAS"
     ],
@@ -97537,7 +97454,7 @@
     ]
   },
   {
-    "id": "E_30_117_8",
+    "id": "E_30_118_8",
     "oposiciones": [
       "PISCINAS"
     ],
@@ -97567,7 +97484,7 @@
     ]
   },
   {
-    "id": "E_30_117_9",
+    "id": "E_30_118_9",
     "oposiciones": [
       "PISCINAS"
     ],
@@ -97597,7 +97514,7 @@
     ]
   },
   {
-    "id": "E_30_117_10",
+    "id": "E_30_118_10",
     "oposiciones": [
       "PISCINAS"
     ],
@@ -97627,7 +97544,7 @@
     ]
   },
   {
-    "id": "E_30_117_11",
+    "id": "E_30_118_11",
     "oposiciones": [
       "PISCINAS"
     ],
@@ -97657,7 +97574,7 @@
     ]
   },
   {
-    "id": "E_30_117_12",
+    "id": "E_30_118_12",
     "oposiciones": [
       "PISCINAS"
     ],
@@ -97687,7 +97604,7 @@
     ]
   },
   {
-    "id": "E_30_117_13",
+    "id": "E_30_118_13",
     "oposiciones": [
       "PISCINAS"
     ],
@@ -97717,7 +97634,7 @@
     ]
   },
   {
-    "id": "E_30_117_14",
+    "id": "E_30_118_14",
     "oposiciones": [
       "PISCINAS"
     ],
@@ -97747,7 +97664,7 @@
     ]
   },
   {
-    "id": "E_30_117_15",
+    "id": "E_30_118_15",
     "oposiciones": [
       "PISCINAS"
     ],
@@ -97777,7 +97694,7 @@
     ]
   },
   {
-    "id": "E_30_117_16",
+    "id": "E_30_118_16",
     "oposiciones": [
       "PISCINAS"
     ],
@@ -97807,7 +97724,7 @@
     ]
   },
   {
-    "id": "E_30_117_17",
+    "id": "E_30_118_17",
     "oposiciones": [
       "PISCINAS"
     ],
@@ -97837,7 +97754,7 @@
     ]
   },
   {
-    "id": "E_30_117_18",
+    "id": "E_30_118_18",
     "oposiciones": [
       "PISCINAS"
     ],
@@ -97867,7 +97784,7 @@
     ]
   },
   {
-    "id": "E_30_117_19",
+    "id": "E_30_118_19",
     "oposiciones": [
       "PISCINAS"
     ],
@@ -97897,7 +97814,7 @@
     ]
   },
   {
-    "id": "E_30_117_20",
+    "id": "E_30_118_20",
     "oposiciones": [
       "PISCINAS"
     ],
@@ -97927,7 +97844,7 @@
     ]
   },
   {
-    "id": "E_30_117_21",
+    "id": "E_30_118_21",
     "oposiciones": [
       "PISCINAS"
     ],
@@ -97957,7 +97874,7 @@
     ]
   },
   {
-    "id": "E_30_117_22",
+    "id": "E_30_118_22",
     "oposiciones": [
       "PISCINAS"
     ],
@@ -97987,7 +97904,7 @@
     ]
   },
   {
-    "id": "E_30_117_23",
+    "id": "E_30_118_23",
     "oposiciones": [
       "PISCINAS"
     ],
@@ -98017,7 +97934,7 @@
     ]
   },
   {
-    "id": "E_30_117_24",
+    "id": "E_30_118_24",
     "oposiciones": [
       "PISCINAS"
     ],
@@ -98047,7 +97964,7 @@
     ]
   },
   {
-    "id": "E_30_117_25",
+    "id": "E_30_118_25",
     "oposiciones": [
       "PISCINAS"
     ],
@@ -98077,7 +97994,7 @@
     ]
   },
   {
-    "id": "E_30_117_26",
+    "id": "E_30_118_26",
     "oposiciones": [
       "PISCINAS"
     ],
@@ -98107,7 +98024,7 @@
     ]
   },
   {
-    "id": "E_30_117_27",
+    "id": "E_30_118_27",
     "oposiciones": [
       "PISCINAS"
     ],
@@ -98137,7 +98054,7 @@
     ]
   },
   {
-    "id": "E_30_117_28",
+    "id": "E_30_118_28",
     "oposiciones": [
       "PISCINAS"
     ],
@@ -98167,7 +98084,7 @@
     ]
   },
   {
-    "id": "E_30_117_29",
+    "id": "E_30_118_29",
     "oposiciones": [
       "PISCINAS"
     ],
@@ -98197,7 +98114,7 @@
     ]
   },
   {
-    "id": "E_30_117_30",
+    "id": "E_30_118_30",
     "oposiciones": [
       "PISCINAS"
     ],
@@ -98227,7 +98144,7 @@
     ]
   },
   {
-    "id": "E_30_117_31",
+    "id": "E_30_118_31",
     "oposiciones": [
       "PISCINAS"
     ],
@@ -98257,7 +98174,7 @@
     ]
   },
   {
-    "id": "E_30_117_32",
+    "id": "E_30_118_32",
     "oposiciones": [
       "PISCINAS"
     ],
@@ -98287,7 +98204,7 @@
     ]
   },
   {
-    "id": "E_30_117_33",
+    "id": "E_30_118_33",
     "oposiciones": [
       "PISCINAS"
     ],
@@ -98317,7 +98234,7 @@
     ]
   },
   {
-    "id": "E_30_117_34",
+    "id": "E_30_118_34",
     "oposiciones": [
       "PISCINAS"
     ],
@@ -98347,7 +98264,7 @@
     ]
   },
   {
-    "id": "E_30_117_35",
+    "id": "E_30_118_35",
     "oposiciones": [
       "PISCINAS"
     ],
@@ -98377,7 +98294,7 @@
     ]
   },
   {
-    "id": "E_30_117_36",
+    "id": "E_30_118_36",
     "oposiciones": [
       "PISCINAS"
     ],
@@ -98407,7 +98324,7 @@
     ]
   },
   {
-    "id": "E_30_117_37",
+    "id": "E_30_118_37",
     "oposiciones": [
       "PISCINAS"
     ],
@@ -98437,7 +98354,7 @@
     ]
   },
   {
-    "id": "E_30_117_38",
+    "id": "E_30_118_38",
     "oposiciones": [
       "PISCINAS"
     ],
@@ -98467,7 +98384,7 @@
     ]
   },
   {
-    "id": "E_30_117_39",
+    "id": "E_30_118_39",
     "oposiciones": [
       "PISCINAS"
     ],
@@ -98497,7 +98414,7 @@
     ]
   },
   {
-    "id": "E_30_117_40",
+    "id": "E_30_118_40",
     "oposiciones": [
       "PISCINAS"
     ],
@@ -98527,7 +98444,7 @@
     ]
   },
   {
-    "id": "E_30_117_41",
+    "id": "E_30_118_41",
     "oposiciones": [
       "PISCINAS"
     ],
@@ -98557,7 +98474,7 @@
     ]
   },
   {
-    "id": "E_30_117_42",
+    "id": "E_30_118_42",
     "oposiciones": [
       "PISCINAS"
     ],
@@ -98587,7 +98504,7 @@
     ]
   },
   {
-    "id": "E_30_117_43",
+    "id": "E_30_118_43",
     "oposiciones": [
       "PISCINAS"
     ],
@@ -98617,7 +98534,7 @@
     ]
   },
   {
-    "id": "E_30_117_44",
+    "id": "E_30_118_44",
     "oposiciones": [
       "PISCINAS"
     ],
@@ -98647,7 +98564,7 @@
     ]
   },
   {
-    "id": "E_30_117_45",
+    "id": "E_30_118_45",
     "oposiciones": [
       "PISCINAS"
     ],
@@ -98677,7 +98594,7 @@
     ]
   },
   {
-    "id": "E_30_117_46",
+    "id": "E_30_118_46",
     "oposiciones": [
       "PISCINAS"
     ],
@@ -98707,7 +98624,7 @@
     ]
   },
   {
-    "id": "E_30_117_47",
+    "id": "E_30_118_47",
     "oposiciones": [
       "PISCINAS"
     ],
@@ -98737,7 +98654,7 @@
     ]
   },
   {
-    "id": "E_30_117_48",
+    "id": "E_30_118_48",
     "oposiciones": [
       "PISCINAS"
     ],
@@ -98767,7 +98684,7 @@
     ]
   },
   {
-    "id": "E_30_117_49",
+    "id": "E_30_118_49",
     "oposiciones": [
       "PISCINAS"
     ],
@@ -98797,7 +98714,7 @@
     ]
   },
   {
-    "id": "E_30_117_50",
+    "id": "E_30_118_50",
     "oposiciones": [
       "PISCINAS"
     ],
@@ -98827,7 +98744,7 @@
     ]
   },
   {
-    "id": "E_30_118_1",
+    "id": "E_30_119_1",
     "oposiciones": [
       "PISCINAS"
     ],
@@ -98853,7 +98770,7 @@
     ]
   },
   {
-    "id": "E_30_118_2",
+    "id": "E_30_119_2",
     "oposiciones": [
       "PISCINAS"
     ],
@@ -98879,7 +98796,7 @@
     ]
   },
   {
-    "id": "E_30_118_3",
+    "id": "E_30_119_3",
     "oposiciones": [
       "PISCINAS"
     ],
@@ -98905,7 +98822,7 @@
     ]
   },
   {
-    "id": "E_30_118_4",
+    "id": "E_30_119_4",
     "oposiciones": [
       "PISCINAS"
     ],
@@ -98931,7 +98848,7 @@
     ]
   },
   {
-    "id": "E_30_118_5",
+    "id": "E_30_119_5",
     "oposiciones": [
       "PISCINAS"
     ],
@@ -98957,7 +98874,7 @@
     ]
   },
   {
-    "id": "E_30_118_6",
+    "id": "E_30_119_6",
     "oposiciones": [
       "PISCINAS"
     ],
@@ -98983,7 +98900,7 @@
     ]
   },
   {
-    "id": "E_30_118_7",
+    "id": "E_30_119_7",
     "oposiciones": [
       "PISCINAS"
     ],
@@ -99009,7 +98926,7 @@
     ]
   },
   {
-    "id": "E_30_118_8",
+    "id": "E_30_119_8",
     "oposiciones": [
       "PISCINAS"
     ],
@@ -99035,7 +98952,7 @@
     ]
   },
   {
-    "id": "E_30_118_9",
+    "id": "E_30_119_9",
     "oposiciones": [
       "PISCINAS"
     ],
@@ -99061,7 +98978,7 @@
     ]
   },
   {
-    "id": "E_30_118_10",
+    "id": "E_30_119_10",
     "oposiciones": [
       "PISCINAS"
     ],
@@ -99087,7 +99004,7 @@
     ]
   },
   {
-    "id": "E_30_118_11",
+    "id": "E_30_119_11",
     "oposiciones": [
       "PISCINAS"
     ],
@@ -99113,7 +99030,7 @@
     ]
   },
   {
-    "id": "E_30_118_12",
+    "id": "E_30_119_12",
     "oposiciones": [
       "PISCINAS"
     ],
@@ -99139,7 +99056,7 @@
     ]
   },
   {
-    "id": "E_30_118_13",
+    "id": "E_30_119_13",
     "oposiciones": [
       "PISCINAS"
     ],
@@ -99165,7 +99082,7 @@
     ]
   },
   {
-    "id": "E_30_118_14",
+    "id": "E_30_119_14",
     "oposiciones": [
       "PISCINAS"
     ],
@@ -99191,7 +99108,7 @@
     ]
   },
   {
-    "id": "E_30_118_15",
+    "id": "E_30_119_15",
     "oposiciones": [
       "PISCINAS"
     ],
@@ -99217,7 +99134,7 @@
     ]
   },
   {
-    "id": "E_30_118_16",
+    "id": "E_30_119_16",
     "oposiciones": [
       "PISCINAS"
     ],
@@ -99243,7 +99160,7 @@
     ]
   },
   {
-    "id": "E_30_118_17",
+    "id": "E_30_119_17",
     "oposiciones": [
       "PISCINAS"
     ],
@@ -99269,7 +99186,7 @@
     ]
   },
   {
-    "id": "E_30_118_18",
+    "id": "E_30_119_18",
     "oposiciones": [
       "PISCINAS"
     ],
@@ -99295,7 +99212,7 @@
     ]
   },
   {
-    "id": "E_30_118_19",
+    "id": "E_30_119_19",
     "oposiciones": [
       "PISCINAS"
     ],
@@ -99321,7 +99238,7 @@
     ]
   },
   {
-    "id": "E_30_118_20",
+    "id": "E_30_119_20",
     "oposiciones": [
       "PISCINAS"
     ],
@@ -99347,7 +99264,7 @@
     ]
   },
   {
-    "id": "E_30_118_21",
+    "id": "E_30_119_21",
     "oposiciones": [
       "PISCINAS"
     ],
@@ -99373,7 +99290,7 @@
     ]
   },
   {
-    "id": "E_30_118_22",
+    "id": "E_30_119_22",
     "oposiciones": [
       "PISCINAS"
     ],
@@ -99399,7 +99316,7 @@
     ]
   },
   {
-    "id": "E_30_118_23",
+    "id": "E_30_119_23",
     "oposiciones": [
       "PISCINAS"
     ],
@@ -99425,7 +99342,7 @@
     ]
   },
   {
-    "id": "E_30_118_24",
+    "id": "E_30_119_24",
     "oposiciones": [
       "PISCINAS"
     ],
@@ -99451,7 +99368,7 @@
     ]
   },
   {
-    "id": "E_30_118_25",
+    "id": "E_30_119_25",
     "oposiciones": [
       "PISCINAS"
     ],
@@ -99477,7 +99394,7 @@
     ]
   },
   {
-    "id": "E_30_118_26",
+    "id": "E_30_119_26",
     "oposiciones": [
       "PISCINAS"
     ],
@@ -99503,7 +99420,7 @@
     ]
   },
   {
-    "id": "E_30_118_27",
+    "id": "E_30_119_27",
     "oposiciones": [
       "PISCINAS"
     ],
@@ -99529,7 +99446,7 @@
     ]
   },
   {
-    "id": "E_30_118_28",
+    "id": "E_30_119_28",
     "oposiciones": [
       "PISCINAS"
     ],
@@ -99555,7 +99472,7 @@
     ]
   },
   {
-    "id": "E_30_118_29",
+    "id": "E_30_119_29",
     "oposiciones": [
       "PISCINAS"
     ],
@@ -99581,7 +99498,7 @@
     ]
   },
   {
-    "id": "E_30_118_30",
+    "id": "E_30_119_30",
     "oposiciones": [
       "PISCINAS"
     ],
@@ -99607,7 +99524,7 @@
     ]
   },
   {
-    "id": "E_30_118_31",
+    "id": "E_30_119_31",
     "oposiciones": [
       "PISCINAS"
     ],
@@ -99633,7 +99550,7 @@
     ]
   },
   {
-    "id": "E_30_118_32",
+    "id": "E_30_119_32",
     "oposiciones": [
       "PISCINAS"
     ],
@@ -99659,7 +99576,7 @@
     ]
   },
   {
-    "id": "E_30_118_33",
+    "id": "E_30_119_33",
     "oposiciones": [
       "PISCINAS"
     ],
@@ -99685,7 +99602,7 @@
     ]
   },
   {
-    "id": "E_30_118_34",
+    "id": "E_30_119_34",
     "oposiciones": [
       "PISCINAS"
     ],
@@ -99711,7 +99628,7 @@
     ]
   },
   {
-    "id": "E_30_118_35",
+    "id": "E_30_119_35",
     "oposiciones": [
       "PISCINAS"
     ],
@@ -99737,7 +99654,7 @@
     ]
   },
   {
-    "id": "E_30_118_36",
+    "id": "E_30_119_36",
     "oposiciones": [
       "PISCINAS"
     ],
@@ -99763,7 +99680,7 @@
     ]
   },
   {
-    "id": "E_30_119_1",
+    "id": "E_30_120_1",
     "oposiciones": [
       "PISCINAS"
     ],
@@ -99789,7 +99706,7 @@
     ]
   },
   {
-    "id": "E_30_119_3",
+    "id": "E_30_120_3",
     "oposiciones": [
       "PISCINAS"
     ],
@@ -99815,7 +99732,7 @@
     ]
   },
   {
-    "id": "E_30_119_4",
+    "id": "E_30_120_4",
     "oposiciones": [
       "PISCINAS"
     ],
@@ -99841,7 +99758,7 @@
     ]
   },
   {
-    "id": "E_30_119_5",
+    "id": "E_30_120_5",
     "oposiciones": [
       "PISCINAS"
     ],
@@ -99867,7 +99784,7 @@
     ]
   },
   {
-    "id": "E_30_119_6",
+    "id": "E_30_120_6",
     "oposiciones": [
       "PISCINAS"
     ],
@@ -99893,7 +99810,7 @@
     ]
   },
   {
-    "id": "E_30_119_8",
+    "id": "E_30_120_8",
     "oposiciones": [
       "PISCINAS"
     ],
@@ -99919,7 +99836,7 @@
     ]
   },
   {
-    "id": "E_30_119_9",
+    "id": "E_30_120_9",
     "oposiciones": [
       "PISCINAS"
     ],
@@ -99945,7 +99862,7 @@
     ]
   },
   {
-    "id": "E_30_119_11",
+    "id": "E_30_120_11",
     "oposiciones": [
       "PISCINAS"
     ],
@@ -99971,7 +99888,7 @@
     ]
   },
   {
-    "id": "E_30_119_13",
+    "id": "E_30_120_13",
     "oposiciones": [
       "PISCINAS"
     ],
@@ -99997,7 +99914,7 @@
     ]
   },
   {
-    "id": "E_30_119_14",
+    "id": "E_30_120_14",
     "oposiciones": [
       "PISCINAS"
     ],
@@ -100023,7 +99940,7 @@
     ]
   },
   {
-    "id": "E_30_119_15",
+    "id": "E_30_120_15",
     "oposiciones": [
       "PISCINAS"
     ],
@@ -100049,7 +99966,7 @@
     ]
   },
   {
-    "id": "E_30_119_16",
+    "id": "E_30_120_16",
     "oposiciones": [
       "PISCINAS"
     ],
@@ -100075,7 +99992,7 @@
     ]
   },
   {
-    "id": "E_30_119_18",
+    "id": "E_30_120_18",
     "oposiciones": [
       "PISCINAS"
     ],
@@ -100101,7 +100018,7 @@
     ]
   },
   {
-    "id": "E_30_119_19",
+    "id": "E_30_120_19",
     "oposiciones": [
       "PISCINAS"
     ],
@@ -100127,7 +100044,7 @@
     ]
   },
   {
-    "id": "E_30_119_21",
+    "id": "E_30_120_21",
     "oposiciones": [
       "PISCINAS"
     ],
@@ -100153,7 +100070,7 @@
     ]
   },
   {
-    "id": "E_30_119_22",
+    "id": "E_30_120_22",
     "oposiciones": [
       "PISCINAS"
     ],
@@ -100179,7 +100096,7 @@
     ]
   },
   {
-    "id": "E_30_119_23",
+    "id": "E_30_120_23",
     "oposiciones": [
       "PISCINAS"
     ],
@@ -100205,7 +100122,7 @@
     ]
   },
   {
-    "id": "E_30_119_24",
+    "id": "E_30_120_24",
     "oposiciones": [
       "PISCINAS"
     ],
@@ -100231,7 +100148,7 @@
     ]
   },
   {
-    "id": "E_30_119_25",
+    "id": "E_30_120_25",
     "oposiciones": [
       "PISCINAS"
     ],
@@ -100257,7 +100174,7 @@
     ]
   },
   {
-    "id": "E_30_119_26",
+    "id": "E_30_120_26",
     "oposiciones": [
       "PISCINAS"
     ],
@@ -100283,7 +100200,7 @@
     ]
   },
   {
-    "id": "E_30_119_27",
+    "id": "E_30_120_27",
     "oposiciones": [
       "PISCINAS"
     ],
@@ -100309,7 +100226,7 @@
     ]
   },
   {
-    "id": "E_30_119_28",
+    "id": "E_30_120_28",
     "oposiciones": [
       "PISCINAS"
     ],
@@ -100335,7 +100252,7 @@
     ]
   },
   {
-    "id": "E_30_119_29",
+    "id": "E_30_120_29",
     "oposiciones": [
       "PISCINAS"
     ],
@@ -100361,7 +100278,7 @@
     ]
   },
   {
-    "id": "E_30_119_31",
+    "id": "E_30_120_31",
     "oposiciones": [
       "PISCINAS"
     ],
@@ -100387,7 +100304,7 @@
     ]
   },
   {
-    "id": "E_30_119_33",
+    "id": "E_30_120_33",
     "oposiciones": [
       "PISCINAS"
     ],
@@ -100413,7 +100330,7 @@
     ]
   },
   {
-    "id": "E_30_119_34",
+    "id": "E_30_120_34",
     "oposiciones": [
       "PISCINAS"
     ],
@@ -100439,7 +100356,7 @@
     ]
   },
   {
-    "id": "E_30_119_35",
+    "id": "E_30_120_35",
     "oposiciones": [
       "PISCINAS"
     ],
@@ -100465,7 +100382,7 @@
     ]
   },
   {
-    "id": "E_30_119_36",
+    "id": "E_30_120_36",
     "oposiciones": [
       "PISCINAS"
     ],
@@ -100491,7 +100408,7 @@
     ]
   },
   {
-    "id": "E_30_119_37",
+    "id": "E_30_120_37",
     "oposiciones": [
       "PISCINAS"
     ],
@@ -100517,7 +100434,7 @@
     ]
   },
   {
-    "id": "E_30_119_38",
+    "id": "E_30_120_38",
     "oposiciones": [
       "PISCINAS"
     ],
@@ -100543,7 +100460,7 @@
     ]
   },
   {
-    "id": "E_30_119_39",
+    "id": "E_30_120_39",
     "oposiciones": [
       "PISCINAS"
     ],
@@ -100569,7 +100486,7 @@
     ]
   },
   {
-    "id": "E_30_119_41",
+    "id": "E_30_120_41",
     "oposiciones": [
       "PISCINAS"
     ],
@@ -100595,7 +100512,7 @@
     ]
   },
   {
-    "id": "E_30_119_43",
+    "id": "E_30_120_43",
     "oposiciones": [
       "PISCINAS"
     ],
@@ -100621,7 +100538,7 @@
     ]
   },
   {
-    "id": "E_30_119_44",
+    "id": "E_30_120_44",
     "oposiciones": [
       "PISCINAS"
     ],
@@ -100647,7 +100564,7 @@
     ]
   },
   {
-    "id": "E_30_119_45",
+    "id": "E_30_120_45",
     "oposiciones": [
       "PISCINAS"
     ],
@@ -100673,7 +100590,7 @@
     ]
   },
   {
-    "id": "E_30_119_46",
+    "id": "E_30_120_46",
     "oposiciones": [
       "PISCINAS"
     ],
@@ -100699,7 +100616,7 @@
     ]
   },
   {
-    "id": "E_30_119_47",
+    "id": "E_30_120_47",
     "oposiciones": [
       "PISCINAS"
     ],
@@ -100725,7 +100642,7 @@
     ]
   },
   {
-    "id": "E_30_119_48",
+    "id": "E_30_120_48",
     "oposiciones": [
       "PISCINAS"
     ],
@@ -100751,7 +100668,7 @@
     ]
   },
   {
-    "id": "E_30_119_49",
+    "id": "E_30_120_49",
     "oposiciones": [
       "PISCINAS"
     ],
@@ -100777,7 +100694,7 @@
     ]
   },
   {
-    "id": "E_11_120_1",
+    "id": "E_11_121_1",
     "oposiciones": [
       "MG",
       "PISCINAS"
@@ -100804,7 +100721,7 @@
     ]
   },
   {
-    "id": "E_11_120_2",
+    "id": "E_11_121_2",
     "oposiciones": [
       "MG",
       "PISCINAS"
@@ -100831,7 +100748,7 @@
     ]
   },
   {
-    "id": "E_11_120_3",
+    "id": "E_11_121_3",
     "oposiciones": [
       "MG",
       "PISCINAS"
@@ -100858,7 +100775,7 @@
     ]
   },
   {
-    "id": "E_11_120_4",
+    "id": "E_11_121_4",
     "oposiciones": [
       "MG",
       "PISCINAS"
@@ -100885,7 +100802,7 @@
     ]
   },
   {
-    "id": "E_11_120_5",
+    "id": "E_11_121_5",
     "oposiciones": [
       "MG",
       "PISCINAS"
@@ -100912,7 +100829,7 @@
     ]
   },
   {
-    "id": "E_11_120_6",
+    "id": "E_11_121_6",
     "oposiciones": [
       "MG",
       "PISCINAS"
@@ -100939,7 +100856,7 @@
     ]
   },
   {
-    "id": "E_11_120_7",
+    "id": "E_11_121_7",
     "oposiciones": [
       "MG",
       "PISCINAS"
@@ -100966,7 +100883,7 @@
     ]
   },
   {
-    "id": "E_11_120_8",
+    "id": "E_11_121_8",
     "oposiciones": [
       "MG",
       "PISCINAS"
@@ -100993,7 +100910,7 @@
     ]
   },
   {
-    "id": "E_11_120_9",
+    "id": "E_11_121_9",
     "oposiciones": [
       "MG",
       "PISCINAS"
@@ -101020,7 +100937,7 @@
     ]
   },
   {
-    "id": "E_11_120_10",
+    "id": "E_11_121_10",
     "oposiciones": [
       "MG",
       "PISCINAS"
@@ -101047,7 +100964,7 @@
     ]
   },
   {
-    "id": "E_11_120_11",
+    "id": "E_11_121_11",
     "oposiciones": [
       "MG",
       "PISCINAS"
@@ -101074,7 +100991,7 @@
     ]
   },
   {
-    "id": "E_11_120_12",
+    "id": "E_11_121_12",
     "oposiciones": [
       "MG",
       "PISCINAS"
@@ -101101,7 +101018,7 @@
     ]
   },
   {
-    "id": "E_11_120_13",
+    "id": "E_11_121_13",
     "oposiciones": [
       "MG",
       "PISCINAS"
@@ -101128,7 +101045,7 @@
     ]
   },
   {
-    "id": "E_11_120_14",
+    "id": "E_11_121_14",
     "oposiciones": [
       "MG",
       "PISCINAS"
@@ -101155,7 +101072,7 @@
     ]
   },
   {
-    "id": "E_11_120_15",
+    "id": "E_11_121_15",
     "oposiciones": [
       "MG",
       "PISCINAS"
@@ -101182,7 +101099,7 @@
     ]
   },
   {
-    "id": "E_11_120_16",
+    "id": "E_11_121_16",
     "oposiciones": [
       "MG",
       "PISCINAS"
@@ -101209,7 +101126,7 @@
     ]
   },
   {
-    "id": "E_11_120_17",
+    "id": "E_11_121_17",
     "oposiciones": [
       "MG",
       "PISCINAS"
@@ -101236,7 +101153,7 @@
     ]
   },
   {
-    "id": "E_11_120_18",
+    "id": "E_11_121_18",
     "oposiciones": [
       "MG",
       "PISCINAS"
@@ -101263,7 +101180,7 @@
     ]
   },
   {
-    "id": "E_11_120_20",
+    "id": "E_11_121_20",
     "oposiciones": [
       "MG",
       "PISCINAS"
@@ -101290,7 +101207,7 @@
     ]
   },
   {
-    "id": "E_11_120_21",
+    "id": "E_11_121_21",
     "oposiciones": [
       "MG",
       "PISCINAS"
@@ -101317,7 +101234,7 @@
     ]
   },
   {
-    "id": "E_11_120_22",
+    "id": "E_11_121_22",
     "oposiciones": [
       "MG",
       "PISCINAS"
@@ -101344,7 +101261,7 @@
     ]
   },
   {
-    "id": "E_11_120_23",
+    "id": "E_11_121_23",
     "oposiciones": [
       "MG",
       "PISCINAS"
@@ -101371,7 +101288,7 @@
     ]
   },
   {
-    "id": "E_11_120_24",
+    "id": "E_11_121_24",
     "oposiciones": [
       "MG",
       "PISCINAS"
@@ -101398,7 +101315,7 @@
     ]
   },
   {
-    "id": "E_11_120_25",
+    "id": "E_11_121_25",
     "oposiciones": [
       "MG",
       "PISCINAS"
@@ -101425,7 +101342,7 @@
     ]
   },
   {
-    "id": "E_31_121_1",
+    "id": "E_31_122_1",
     "oposiciones": [
       "PISCINAS"
     ],
@@ -101451,7 +101368,7 @@
     ]
   },
   {
-    "id": "E_31_121_2",
+    "id": "E_31_122_2",
     "oposiciones": [
       "PISCINAS"
     ],
@@ -101477,7 +101394,7 @@
     ]
   },
   {
-    "id": "E_31_121_3",
+    "id": "E_31_122_3",
     "oposiciones": [
       "PISCINAS"
     ],
@@ -101503,7 +101420,7 @@
     ]
   },
   {
-    "id": "E_31_121_4",
+    "id": "E_31_122_4",
     "oposiciones": [
       "PISCINAS"
     ],
@@ -101529,7 +101446,7 @@
     ]
   },
   {
-    "id": "E_31_121_5",
+    "id": "E_31_122_5",
     "oposiciones": [
       "PISCINAS"
     ],
@@ -101555,7 +101472,7 @@
     ]
   },
   {
-    "id": "E_31_121_6",
+    "id": "E_31_122_6",
     "oposiciones": [
       "PISCINAS"
     ],
@@ -101581,7 +101498,7 @@
     ]
   },
   {
-    "id": "E_31_121_7",
+    "id": "E_31_122_7",
     "oposiciones": [
       "PISCINAS"
     ],
@@ -101611,7 +101528,7 @@
     ]
   },
   {
-    "id": "E_31_121_8",
+    "id": "E_31_122_8",
     "oposiciones": [
       "PISCINAS"
     ],
@@ -101641,7 +101558,7 @@
     ]
   },
   {
-    "id": "E_31_121_9",
+    "id": "E_31_122_9",
     "oposiciones": [
       "PISCINAS"
     ],
@@ -101671,7 +101588,7 @@
     ]
   },
   {
-    "id": "E_31_121_10",
+    "id": "E_31_122_10",
     "oposiciones": [
       "PISCINAS"
     ],
@@ -101701,7 +101618,7 @@
     ]
   },
   {
-    "id": "E_31_121_11",
+    "id": "E_31_122_11",
     "oposiciones": [
       "PISCINAS"
     ],
@@ -101731,7 +101648,7 @@
     ]
   },
   {
-    "id": "E_31_121_12",
+    "id": "E_31_122_12",
     "oposiciones": [
       "PISCINAS"
     ],
@@ -101761,7 +101678,7 @@
     ]
   },
   {
-    "id": "E_31_121_13",
+    "id": "E_31_122_13",
     "oposiciones": [
       "PISCINAS"
     ],
@@ -101791,7 +101708,7 @@
     ]
   },
   {
-    "id": "E_31_121_14",
+    "id": "E_31_122_14",
     "oposiciones": [
       "PISCINAS"
     ],
@@ -101821,7 +101738,7 @@
     ]
   },
   {
-    "id": "E_31_121_15",
+    "id": "E_31_122_15",
     "oposiciones": [
       "PISCINAS"
     ],
@@ -101851,7 +101768,7 @@
     ]
   },
   {
-    "id": "E_31_121_16",
+    "id": "E_31_122_16",
     "oposiciones": [
       "PISCINAS"
     ],
@@ -101881,7 +101798,7 @@
     ]
   },
   {
-    "id": "E_31_121_17",
+    "id": "E_31_122_17",
     "oposiciones": [
       "PISCINAS"
     ],
@@ -101911,7 +101828,7 @@
     ]
   },
   {
-    "id": "E_31_121_18",
+    "id": "E_31_122_18",
     "oposiciones": [
       "PISCINAS"
     ],
@@ -101941,7 +101858,7 @@
     ]
   },
   {
-    "id": "E_31_121_19",
+    "id": "E_31_122_19",
     "oposiciones": [
       "PISCINAS"
     ],
@@ -101971,7 +101888,7 @@
     ]
   },
   {
-    "id": "E_31_121_20",
+    "id": "E_31_122_20",
     "oposiciones": [
       "PISCINAS"
     ],
@@ -102001,7 +101918,7 @@
     ]
   },
   {
-    "id": "E_31_121_21",
+    "id": "E_31_122_21",
     "oposiciones": [
       "PISCINAS"
     ],
@@ -102031,7 +101948,7 @@
     ]
   },
   {
-    "id": "E_31_121_22",
+    "id": "E_31_122_22",
     "oposiciones": [
       "PISCINAS"
     ],
@@ -102061,7 +101978,7 @@
     ]
   },
   {
-    "id": "E_31_121_23",
+    "id": "E_31_122_23",
     "oposiciones": [
       "PISCINAS"
     ],
@@ -102091,7 +102008,7 @@
     ]
   },
   {
-    "id": "E_31_121_24",
+    "id": "E_31_122_24",
     "oposiciones": [
       "PISCINAS"
     ],
@@ -102121,7 +102038,7 @@
     ]
   },
   {
-    "id": "E_11_121_25",
+    "id": "E_11_122_25",
     "oposiciones": [
       "MG",
       "PISCINAS"
@@ -102148,7 +102065,7 @@
     ]
   },
   {
-    "id": "E_11_122_1",
+    "id": "E_11_123_1",
     "oposiciones": [
       "MG",
       "PISCINAS"
@@ -102175,7 +102092,7 @@
     ]
   },
   {
-    "id": "E_11_122_2",
+    "id": "E_11_123_2",
     "oposiciones": [
       "MG",
       "PISCINAS"
@@ -102202,7 +102119,7 @@
     ]
   },
   {
-    "id": "E_11_122_3",
+    "id": "E_11_123_3",
     "oposiciones": [
       "MG",
       "PISCINAS"
@@ -102229,7 +102146,7 @@
     ]
   },
   {
-    "id": "E_11_122_4",
+    "id": "E_11_123_4",
     "oposiciones": [
       "MG",
       "PISCINAS"
@@ -102256,7 +102173,7 @@
     ]
   },
   {
-    "id": "E_31_122_5",
+    "id": "E_31_123_5",
     "oposiciones": [
       "PISCINAS"
     ],
@@ -102282,7 +102199,7 @@
     ]
   },
   {
-    "id": "E_31_122_6",
+    "id": "E_31_123_6",
     "oposiciones": [
       "PISCINAS"
     ],
@@ -102308,7 +102225,7 @@
     ]
   },
   {
-    "id": "E_11_122_7",
+    "id": "E_11_123_7",
     "oposiciones": [
       "MG",
       "PISCINAS"
@@ -102335,7 +102252,7 @@
     ]
   },
   {
-    "id": "E_11_122_8",
+    "id": "E_11_123_8",
     "oposiciones": [
       "MG",
       "PISCINAS"
@@ -102362,7 +102279,7 @@
     ]
   },
   {
-    "id": "E_31_122_9",
+    "id": "E_31_123_9",
     "oposiciones": [
       "PISCINAS"
     ],
@@ -102388,7 +102305,7 @@
     ]
   },
   {
-    "id": "E_31_122_10",
+    "id": "E_31_123_10",
     "oposiciones": [
       "PISCINAS"
     ],
@@ -102414,7 +102331,7 @@
     ]
   },
   {
-    "id": "E_31_122_11",
+    "id": "E_31_123_11",
     "oposiciones": [
       "PISCINAS"
     ],
@@ -102440,7 +102357,7 @@
     ]
   },
   {
-    "id": "E_31_122_12",
+    "id": "E_31_123_12",
     "oposiciones": [
       "PISCINAS"
     ],
@@ -102466,7 +102383,7 @@
     ]
   },
   {
-    "id": "E_31_122_13",
+    "id": "E_31_123_13",
     "oposiciones": [
       "PISCINAS"
     ],
@@ -102492,7 +102409,7 @@
     ]
   },
   {
-    "id": "E_31_122_14",
+    "id": "E_31_123_14",
     "oposiciones": [
       "PISCINAS"
     ],
@@ -102518,7 +102435,7 @@
     ]
   },
   {
-    "id": "E_31_122_15",
+    "id": "E_31_123_15",
     "oposiciones": [
       "PISCINAS"
     ],
@@ -102544,7 +102461,7 @@
     ]
   },
   {
-    "id": "E_11_122_16",
+    "id": "E_11_123_16",
     "oposiciones": [
       "MG",
       "PISCINAS"
@@ -102571,7 +102488,7 @@
     ]
   },
   {
-    "id": "E_31_122_17",
+    "id": "E_31_123_17",
     "oposiciones": [
       "PISCINAS"
     ],
@@ -102597,7 +102514,7 @@
     ]
   },
   {
-    "id": "E_31_122_18",
+    "id": "E_31_123_18",
     "oposiciones": [
       "PISCINAS"
     ],
@@ -102623,7 +102540,7 @@
     ]
   },
   {
-    "id": "E_31_122_19",
+    "id": "E_31_123_19",
     "oposiciones": [
       "PISCINAS"
     ],
@@ -102649,7 +102566,7 @@
     ]
   },
   {
-    "id": "E_11_122_20",
+    "id": "E_11_123_20",
     "oposiciones": [
       "MG",
       "PISCINAS"
@@ -102676,7 +102593,7 @@
     ]
   },
   {
-    "id": "E_11_122_21",
+    "id": "E_11_123_21",
     "oposiciones": [
       "MG",
       "PISCINAS"
@@ -102703,7 +102620,7 @@
     ]
   },
   {
-    "id": "E_31_122_22",
+    "id": "E_31_123_22",
     "oposiciones": [
       "PISCINAS"
     ],
@@ -102729,7 +102646,7 @@
     ]
   },
   {
-    "id": "E_31_122_23",
+    "id": "E_31_123_23",
     "oposiciones": [
       "PISCINAS"
     ],
@@ -102755,7 +102672,7 @@
     ]
   },
   {
-    "id": "E_31_122_24",
+    "id": "E_31_123_24",
     "oposiciones": [
       "PISCINAS"
     ],
@@ -102781,7 +102698,7 @@
     ]
   },
   {
-    "id": "E_11_122_25",
+    "id": "E_11_123_25",
     "oposiciones": [
       "MG",
       "PISCINAS"
@@ -102808,7 +102725,7 @@
     ]
   },
   {
-    "id": "E_11_123_2",
+    "id": "E_11_124_2",
     "oposiciones": [
       "MG",
       "PISCINAS"
@@ -102835,7 +102752,7 @@
     ]
   },
   {
-    "id": "E_11_123_14",
+    "id": "E_11_124_14",
     "oposiciones": [
       "MG",
       "PISCINAS"
@@ -102862,7 +102779,7 @@
     ]
   },
   {
-    "id": "E_11_123_15",
+    "id": "E_11_124_15",
     "oposiciones": [
       "MG",
       "PISCINAS"
@@ -102889,7 +102806,7 @@
     ]
   },
   {
-    "id": "E_11_123_16",
+    "id": "E_11_124_16",
     "oposiciones": [
       "MG",
       "PISCINAS"
@@ -102916,7 +102833,7 @@
     ]
   },
   {
-    "id": "E_11_123_18",
+    "id": "E_11_124_18",
     "oposiciones": [
       "MG",
       "PISCINAS"
@@ -102943,7 +102860,7 @@
     ]
   },
   {
-    "id": "E_11_123_20",
+    "id": "E_11_124_20",
     "oposiciones": [
       "MG",
       "PISCINAS"
@@ -102970,7 +102887,7 @@
     ]
   },
   {
-    "id": "E_11_123_23",
+    "id": "E_11_124_23",
     "oposiciones": [
       "MG",
       "PISCINAS"
@@ -102997,7 +102914,7 @@
     ]
   },
   {
-    "id": "E_11_123_25",
+    "id": "E_11_124_25",
     "oposiciones": [
       "MG",
       "PISCINAS"
@@ -103024,7 +102941,7 @@
     ]
   },
   {
-    "id": "E_11_123_29",
+    "id": "E_11_124_29",
     "oposiciones": [
       "MG",
       "PISCINAS"
@@ -103051,7 +102968,7 @@
     ]
   },
   {
-    "id": "E_11_123_34",
+    "id": "E_11_124_34",
     "oposiciones": [
       "MG",
       "PISCINAS"
@@ -103078,7 +102995,7 @@
     ]
   },
   {
-    "id": "E_31_124_1",
+    "id": "E_31_125_1",
     "oposiciones": [
       "PISCINAS"
     ],
@@ -103104,7 +103021,7 @@
     ]
   },
   {
-    "id": "E_31_124_2",
+    "id": "E_31_125_2",
     "oposiciones": [
       "PISCINAS"
     ],
@@ -103130,7 +103047,7 @@
     ]
   },
   {
-    "id": "E_31_124_3",
+    "id": "E_31_125_3",
     "oposiciones": [
       "PISCINAS"
     ],
@@ -103156,7 +103073,7 @@
     ]
   },
   {
-    "id": "E_31_124_4",
+    "id": "E_31_125_4",
     "oposiciones": [
       "PISCINAS"
     ],
@@ -103182,7 +103099,7 @@
     ]
   },
   {
-    "id": "E_31_124_5",
+    "id": "E_31_125_5",
     "oposiciones": [
       "PISCINAS"
     ],
@@ -103208,7 +103125,7 @@
     ]
   },
   {
-    "id": "E_31_124_6",
+    "id": "E_31_125_6",
     "oposiciones": [
       "PISCINAS"
     ],
@@ -103234,7 +103151,7 @@
     ]
   },
   {
-    "id": "E_31_124_7",
+    "id": "E_31_125_7",
     "oposiciones": [
       "PISCINAS"
     ],
@@ -103260,7 +103177,7 @@
     ]
   },
   {
-    "id": "E_31_124_8",
+    "id": "E_31_125_8",
     "oposiciones": [
       "PISCINAS"
     ],
@@ -103286,7 +103203,7 @@
     ]
   },
   {
-    "id": "E_31_124_9",
+    "id": "E_31_125_9",
     "oposiciones": [
       "PISCINAS"
     ],
@@ -103312,7 +103229,7 @@
     ]
   },
   {
-    "id": "E_31_124_10",
+    "id": "E_31_125_10",
     "oposiciones": [
       "PISCINAS"
     ],
@@ -103338,7 +103255,7 @@
     ]
   },
   {
-    "id": "E_31_124_11",
+    "id": "E_31_125_11",
     "oposiciones": [
       "PISCINAS"
     ],
@@ -103364,7 +103281,7 @@
     ]
   },
   {
-    "id": "E_31_124_12",
+    "id": "E_31_125_12",
     "oposiciones": [
       "PISCINAS"
     ],
@@ -103390,7 +103307,7 @@
     ]
   },
   {
-    "id": "E_31_124_13",
+    "id": "E_31_125_13",
     "oposiciones": [
       "PISCINAS"
     ],
@@ -103416,7 +103333,7 @@
     ]
   },
   {
-    "id": "E_31_124_14",
+    "id": "E_31_125_14",
     "oposiciones": [
       "PISCINAS"
     ],
@@ -103442,7 +103359,7 @@
     ]
   },
   {
-    "id": "E_31_124_15",
+    "id": "E_31_125_15",
     "oposiciones": [
       "PISCINAS"
     ],
@@ -103468,7 +103385,7 @@
     ]
   },
   {
-    "id": "E_31_124_16",
+    "id": "E_31_125_16",
     "oposiciones": [
       "PISCINAS"
     ],
@@ -103494,7 +103411,7 @@
     ]
   },
   {
-    "id": "E_31_124_17",
+    "id": "E_31_125_17",
     "oposiciones": [
       "PISCINAS"
     ],
@@ -103520,7 +103437,7 @@
     ]
   },
   {
-    "id": "E_31_124_18",
+    "id": "E_31_125_18",
     "oposiciones": [
       "PISCINAS"
     ],
@@ -103546,7 +103463,7 @@
     ]
   },
   {
-    "id": "E_31_124_19",
+    "id": "E_31_125_19",
     "oposiciones": [
       "PISCINAS"
     ],
@@ -103572,7 +103489,7 @@
     ]
   },
   {
-    "id": "E_31_124_20",
+    "id": "E_31_125_20",
     "oposiciones": [
       "PISCINAS"
     ],
@@ -103598,7 +103515,7 @@
     ]
   },
   {
-    "id": "E_31_124_21",
+    "id": "E_31_125_21",
     "oposiciones": [
       "PISCINAS"
     ],
@@ -103624,7 +103541,7 @@
     ]
   },
   {
-    "id": "E_31_124_22",
+    "id": "E_31_125_22",
     "oposiciones": [
       "PISCINAS"
     ],
@@ -103650,7 +103567,7 @@
     ]
   },
   {
-    "id": "E_31_124_23",
+    "id": "E_31_125_23",
     "oposiciones": [
       "PISCINAS"
     ],
@@ -103676,7 +103593,7 @@
     ]
   },
   {
-    "id": "E_31_124_24",
+    "id": "E_31_125_24",
     "oposiciones": [
       "PISCINAS"
     ],
@@ -103702,7 +103619,7 @@
     ]
   },
   {
-    "id": "E_31_124_25",
+    "id": "E_31_125_25",
     "oposiciones": [
       "PISCINAS"
     ],
@@ -103728,7 +103645,7 @@
     ]
   },
   {
-    "id": "E_31_125_1",
+    "id": "E_31_126_1",
     "oposiciones": [
       "PISCINAS"
     ],
@@ -103754,7 +103671,7 @@
     ]
   },
   {
-    "id": "E_31_125_2",
+    "id": "E_31_126_2",
     "oposiciones": [
       "PISCINAS"
     ],
@@ -103780,7 +103697,7 @@
     ]
   },
   {
-    "id": "E_31_125_3",
+    "id": "E_31_126_3",
     "oposiciones": [
       "PISCINAS"
     ],
@@ -103806,7 +103723,7 @@
     ]
   },
   {
-    "id": "E_31_125_4",
+    "id": "E_31_126_4",
     "oposiciones": [
       "PISCINAS"
     ],
@@ -103832,7 +103749,7 @@
     ]
   },
   {
-    "id": "E_31_125_5",
+    "id": "E_31_126_5",
     "oposiciones": [
       "PISCINAS"
     ],
@@ -103858,7 +103775,7 @@
     ]
   },
   {
-    "id": "E_31_125_6",
+    "id": "E_31_126_6",
     "oposiciones": [
       "PISCINAS"
     ],
@@ -103884,7 +103801,7 @@
     ]
   },
   {
-    "id": "E_31_125_7",
+    "id": "E_31_126_7",
     "oposiciones": [
       "PISCINAS"
     ],
@@ -103910,7 +103827,7 @@
     ]
   },
   {
-    "id": "E_31_125_8",
+    "id": "E_31_126_8",
     "oposiciones": [
       "PISCINAS"
     ],
@@ -103936,7 +103853,7 @@
     ]
   },
   {
-    "id": "E_31_125_9",
+    "id": "E_31_126_9",
     "oposiciones": [
       "PISCINAS"
     ],
@@ -103962,7 +103879,7 @@
     ]
   },
   {
-    "id": "E_31_125_10",
+    "id": "E_31_126_10",
     "oposiciones": [
       "PISCINAS"
     ],
@@ -103988,7 +103905,7 @@
     ]
   },
   {
-    "id": "E_31_125_11",
+    "id": "E_31_126_11",
     "oposiciones": [
       "PISCINAS"
     ],
@@ -104014,7 +103931,7 @@
     ]
   },
   {
-    "id": "E_31_125_12",
+    "id": "E_31_126_12",
     "oposiciones": [
       "PISCINAS"
     ],
@@ -104040,7 +103957,7 @@
     ]
   },
   {
-    "id": "E_31_125_13",
+    "id": "E_31_126_13",
     "oposiciones": [
       "PISCINAS"
     ],
@@ -104066,7 +103983,7 @@
     ]
   },
   {
-    "id": "E_31_125_14",
+    "id": "E_31_126_14",
     "oposiciones": [
       "PISCINAS"
     ],
@@ -104092,7 +104009,7 @@
     ]
   },
   {
-    "id": "E_31_125_15",
+    "id": "E_31_126_15",
     "oposiciones": [
       "PISCINAS"
     ],
@@ -104118,7 +104035,7 @@
     ]
   },
   {
-    "id": "E_31_125_16",
+    "id": "E_31_126_16",
     "oposiciones": [
       "PISCINAS"
     ],
@@ -104144,7 +104061,7 @@
     ]
   },
   {
-    "id": "E_31_125_17",
+    "id": "E_31_126_17",
     "oposiciones": [
       "PISCINAS"
     ],
@@ -104170,7 +104087,7 @@
     ]
   },
   {
-    "id": "E_31_125_18",
+    "id": "E_31_126_18",
     "oposiciones": [
       "PISCINAS"
     ],
@@ -104196,7 +104113,7 @@
     ]
   },
   {
-    "id": "E_31_125_19",
+    "id": "E_31_126_19",
     "oposiciones": [
       "PISCINAS"
     ],
@@ -104222,7 +104139,7 @@
     ]
   },
   {
-    "id": "E_31_125_20",
+    "id": "E_31_126_20",
     "oposiciones": [
       "PISCINAS"
     ],
@@ -104248,7 +104165,7 @@
     ]
   },
   {
-    "id": "E_31_125_21",
+    "id": "E_31_126_21",
     "oposiciones": [
       "PISCINAS"
     ],
@@ -104274,7 +104191,7 @@
     ]
   },
   {
-    "id": "E_31_125_22",
+    "id": "E_31_126_22",
     "oposiciones": [
       "PISCINAS"
     ],
@@ -104300,7 +104217,7 @@
     ]
   },
   {
-    "id": "E_31_125_23",
+    "id": "E_31_126_23",
     "oposiciones": [
       "PISCINAS"
     ],
@@ -104326,7 +104243,7 @@
     ]
   },
   {
-    "id": "E_31_125_24",
+    "id": "E_31_126_24",
     "oposiciones": [
       "PISCINAS"
     ],
@@ -104352,7 +104269,7 @@
     ]
   },
   {
-    "id": "E_31_125_25",
+    "id": "E_31_126_25",
     "oposiciones": [
       "PISCINAS"
     ],
@@ -104378,7 +104295,7 @@
     ]
   },
   {
-    "id": "E_31_125_26",
+    "id": "E_31_126_26",
     "oposiciones": [
       "PISCINAS"
     ],
@@ -104404,7 +104321,7 @@
     ]
   },
   {
-    "id": "E_31_125_27",
+    "id": "E_31_126_27",
     "oposiciones": [
       "PISCINAS"
     ],
@@ -104430,7 +104347,7 @@
     ]
   },
   {
-    "id": "E_31_125_28",
+    "id": "E_31_126_28",
     "oposiciones": [
       "PISCINAS"
     ],
@@ -104456,7 +104373,7 @@
     ]
   },
   {
-    "id": "E_31_125_29",
+    "id": "E_31_126_29",
     "oposiciones": [
       "PISCINAS"
     ],
@@ -104482,7 +104399,7 @@
     ]
   },
   {
-    "id": "E_31_125_30",
+    "id": "E_31_126_30",
     "oposiciones": [
       "PISCINAS"
     ],
@@ -104508,7 +104425,7 @@
     ]
   },
   {
-    "id": "E_31_125_31",
+    "id": "E_31_126_31",
     "oposiciones": [
       "PISCINAS"
     ],
@@ -104534,7 +104451,7 @@
     ]
   },
   {
-    "id": "E_31_125_32",
+    "id": "E_31_126_32",
     "oposiciones": [
       "PISCINAS"
     ],
@@ -104560,7 +104477,7 @@
     ]
   },
   {
-    "id": "E_31_125_33",
+    "id": "E_31_126_33",
     "oposiciones": [
       "PISCINAS"
     ],
@@ -104586,7 +104503,7 @@
     ]
   },
   {
-    "id": "E_31_125_34",
+    "id": "E_31_126_34",
     "oposiciones": [
       "PISCINAS"
     ],
@@ -104612,7 +104529,7 @@
     ]
   },
   {
-    "id": "E_31_125_35",
+    "id": "E_31_126_35",
     "oposiciones": [
       "PISCINAS"
     ],
@@ -104638,7 +104555,7 @@
     ]
   },
   {
-    "id": "E_31_125_36",
+    "id": "E_31_126_36",
     "oposiciones": [
       "PISCINAS"
     ],
@@ -104664,7 +104581,7 @@
     ]
   },
   {
-    "id": "E_31_125_37",
+    "id": "E_31_126_37",
     "oposiciones": [
       "PISCINAS"
     ],
@@ -104690,7 +104607,7 @@
     ]
   },
   {
-    "id": "E_31_125_38",
+    "id": "E_31_126_38",
     "oposiciones": [
       "PISCINAS"
     ],
@@ -104716,7 +104633,7 @@
     ]
   },
   {
-    "id": "E_31_125_39",
+    "id": "E_31_126_39",
     "oposiciones": [
       "PISCINAS"
     ],
@@ -104742,7 +104659,7 @@
     ]
   },
   {
-    "id": "E_31_125_40",
+    "id": "E_31_126_40",
     "oposiciones": [
       "PISCINAS"
     ],
@@ -104768,7 +104685,7 @@
     ]
   },
   {
-    "id": "E_31_125_41",
+    "id": "E_31_126_41",
     "oposiciones": [
       "PISCINAS"
     ],
@@ -104794,7 +104711,7 @@
     ]
   },
   {
-    "id": "E_31_125_42",
+    "id": "E_31_126_42",
     "oposiciones": [
       "PISCINAS"
     ],
@@ -104820,7 +104737,7 @@
     ]
   },
   {
-    "id": "E_31_125_43",
+    "id": "E_31_126_43",
     "oposiciones": [
       "PISCINAS"
     ],
@@ -104846,7 +104763,7 @@
     ]
   },
   {
-    "id": "E_31_125_44",
+    "id": "E_31_126_44",
     "oposiciones": [
       "PISCINAS"
     ],
@@ -104872,7 +104789,7 @@
     ]
   },
   {
-    "id": "E_31_125_45",
+    "id": "E_31_126_45",
     "oposiciones": [
       "PISCINAS"
     ],
@@ -104898,7 +104815,7 @@
     ]
   },
   {
-    "id": "E_31_125_46",
+    "id": "E_31_126_46",
     "oposiciones": [
       "PISCINAS"
     ],
@@ -104924,7 +104841,7 @@
     ]
   },
   {
-    "id": "E_31_125_47",
+    "id": "E_31_126_47",
     "oposiciones": [
       "PISCINAS"
     ],
@@ -104950,7 +104867,7 @@
     ]
   },
   {
-    "id": "E_31_125_48",
+    "id": "E_31_126_48",
     "oposiciones": [
       "PISCINAS"
     ],
@@ -104976,7 +104893,7 @@
     ]
   },
   {
-    "id": "E_31_125_49",
+    "id": "E_31_126_49",
     "oposiciones": [
       "PISCINAS"
     ],
@@ -105002,7 +104919,7 @@
     ]
   },
   {
-    "id": "E_31_125_50",
+    "id": "E_31_126_50",
     "oposiciones": [
       "PISCINAS"
     ],
@@ -105028,7 +104945,7 @@
     ]
   },
   {
-    "id": "E_32_126_1",
+    "id": "E_32_127_1",
     "oposiciones": [
       "PISCINAS"
     ],
@@ -105054,7 +104971,7 @@
     ]
   },
   {
-    "id": "E_32_126_2",
+    "id": "E_32_127_2",
     "oposiciones": [
       "PISCINAS"
     ],
@@ -105080,7 +104997,7 @@
     ]
   },
   {
-    "id": "E_32_126_3",
+    "id": "E_32_127_3",
     "oposiciones": [
       "PISCINAS"
     ],
@@ -105106,7 +105023,7 @@
     ]
   },
   {
-    "id": "E_32_126_4",
+    "id": "E_32_127_4",
     "oposiciones": [
       "PISCINAS"
     ],
@@ -105132,7 +105049,7 @@
     ]
   },
   {
-    "id": "E_32_126_5",
+    "id": "E_32_127_5",
     "oposiciones": [
       "PISCINAS"
     ],
@@ -105158,7 +105075,7 @@
     ]
   },
   {
-    "id": "E_32_126_6",
+    "id": "E_32_127_6",
     "oposiciones": [
       "PISCINAS"
     ],
@@ -105184,7 +105101,7 @@
     ]
   },
   {
-    "id": "E_32_126_7",
+    "id": "E_32_127_7",
     "oposiciones": [
       "PISCINAS"
     ],
@@ -105210,7 +105127,7 @@
     ]
   },
   {
-    "id": "E_32_126_8",
+    "id": "E_32_127_8",
     "oposiciones": [
       "PISCINAS"
     ],
@@ -105236,7 +105153,7 @@
     ]
   },
   {
-    "id": "E_32_126_9",
+    "id": "E_32_127_9",
     "oposiciones": [
       "PISCINAS"
     ],
@@ -105262,7 +105179,7 @@
     ]
   },
   {
-    "id": "E_32_126_10",
+    "id": "E_32_127_10",
     "oposiciones": [
       "PISCINAS"
     ],
@@ -105288,7 +105205,7 @@
     ]
   },
   {
-    "id": "E_32_126_11",
+    "id": "E_32_127_11",
     "oposiciones": [
       "PISCINAS"
     ],
@@ -105314,7 +105231,7 @@
     ]
   },
   {
-    "id": "E_32_126_12",
+    "id": "E_32_127_12",
     "oposiciones": [
       "PISCINAS"
     ],
@@ -105340,7 +105257,7 @@
     ]
   },
   {
-    "id": "E_32_126_13",
+    "id": "E_32_127_13",
     "oposiciones": [
       "PISCINAS"
     ],
@@ -105366,7 +105283,7 @@
     ]
   },
   {
-    "id": "E_32_126_14",
+    "id": "E_32_127_14",
     "oposiciones": [
       "PISCINAS"
     ],
@@ -105392,7 +105309,7 @@
     ]
   },
   {
-    "id": "E_32_126_15",
+    "id": "E_32_127_15",
     "oposiciones": [
       "PISCINAS"
     ],
@@ -105418,7 +105335,7 @@
     ]
   },
   {
-    "id": "E_32_126_16",
+    "id": "E_32_127_16",
     "oposiciones": [
       "PISCINAS"
     ],
@@ -105444,7 +105361,7 @@
     ]
   },
   {
-    "id": "E_32_126_17",
+    "id": "E_32_127_17",
     "oposiciones": [
       "PISCINAS"
     ],
@@ -105470,7 +105387,7 @@
     ]
   },
   {
-    "id": "E_32_126_18",
+    "id": "E_32_127_18",
     "oposiciones": [
       "PISCINAS"
     ],
@@ -105496,7 +105413,7 @@
     ]
   },
   {
-    "id": "E_32_126_19",
+    "id": "E_32_127_19",
     "oposiciones": [
       "PISCINAS"
     ],
@@ -105522,7 +105439,7 @@
     ]
   },
   {
-    "id": "E_32_126_20",
+    "id": "E_32_127_20",
     "oposiciones": [
       "PISCINAS"
     ],
@@ -105548,7 +105465,7 @@
     ]
   },
   {
-    "id": "E_32_126_21",
+    "id": "E_32_127_21",
     "oposiciones": [
       "PISCINAS"
     ],
@@ -105574,7 +105491,7 @@
     ]
   },
   {
-    "id": "E_32_126_22",
+    "id": "E_32_127_22",
     "oposiciones": [
       "PISCINAS"
     ],
@@ -105600,7 +105517,7 @@
     ]
   },
   {
-    "id": "E_32_126_23",
+    "id": "E_32_127_23",
     "oposiciones": [
       "PISCINAS"
     ],
@@ -105626,7 +105543,7 @@
     ]
   },
   {
-    "id": "E_32_126_24",
+    "id": "E_32_127_24",
     "oposiciones": [
       "PISCINAS"
     ],
@@ -105652,7 +105569,7 @@
     ]
   },
   {
-    "id": "E_32_126_25",
+    "id": "E_32_127_25",
     "oposiciones": [
       "PISCINAS"
     ],
@@ -105678,7 +105595,7 @@
     ]
   },
   {
-    "id": "E_32_126_26",
+    "id": "E_32_127_26",
     "oposiciones": [
       "PISCINAS"
     ],
@@ -105704,7 +105621,7 @@
     ]
   },
   {
-    "id": "E_32_126_27",
+    "id": "E_32_127_27",
     "oposiciones": [
       "PISCINAS"
     ],
@@ -105730,7 +105647,7 @@
     ]
   },
   {
-    "id": "E_32_126_28",
+    "id": "E_32_127_28",
     "oposiciones": [
       "PISCINAS"
     ],
@@ -105756,7 +105673,7 @@
     ]
   },
   {
-    "id": "E_32_126_29",
+    "id": "E_32_127_29",
     "oposiciones": [
       "PISCINAS"
     ],
@@ -105782,7 +105699,7 @@
     ]
   },
   {
-    "id": "E_32_126_30",
+    "id": "E_32_127_30",
     "oposiciones": [
       "PISCINAS"
     ],
@@ -105808,7 +105725,7 @@
     ]
   },
   {
-    "id": "E_32_126_31",
+    "id": "E_32_127_31",
     "oposiciones": [
       "PISCINAS"
     ],
@@ -105834,7 +105751,7 @@
     ]
   },
   {
-    "id": "E_32_126_32",
+    "id": "E_32_127_32",
     "oposiciones": [
       "PISCINAS"
     ],
@@ -105860,7 +105777,7 @@
     ]
   },
   {
-    "id": "E_32_126_33",
+    "id": "E_32_127_33",
     "oposiciones": [
       "PISCINAS"
     ],
@@ -105886,7 +105803,7 @@
     ]
   },
   {
-    "id": "E_32_126_34",
+    "id": "E_32_127_34",
     "oposiciones": [
       "PISCINAS"
     ],
@@ -105912,7 +105829,7 @@
     ]
   },
   {
-    "id": "E_32_126_35",
+    "id": "E_32_127_35",
     "oposiciones": [
       "PISCINAS"
     ],
@@ -105938,7 +105855,7 @@
     ]
   },
   {
-    "id": "E_32_126_36",
+    "id": "E_32_127_36",
     "oposiciones": [
       "PISCINAS"
     ],
@@ -105964,7 +105881,7 @@
     ]
   },
   {
-    "id": "E_32_126_37",
+    "id": "E_32_127_37",
     "oposiciones": [
       "PISCINAS"
     ],
@@ -105990,7 +105907,7 @@
     ]
   },
   {
-    "id": "E_32_126_38",
+    "id": "E_32_127_38",
     "oposiciones": [
       "PISCINAS"
     ],
@@ -106016,7 +105933,7 @@
     ]
   },
   {
-    "id": "E_32_126_39",
+    "id": "E_32_127_39",
     "oposiciones": [
       "PISCINAS"
     ],
@@ -106042,7 +105959,7 @@
     ]
   },
   {
-    "id": "E_32_126_40",
+    "id": "E_32_127_40",
     "oposiciones": [
       "PISCINAS"
     ],
@@ -106068,7 +105985,7 @@
     ]
   },
   {
-    "id": "E_32_126_41",
+    "id": "E_32_127_41",
     "oposiciones": [
       "PISCINAS"
     ],
@@ -106094,7 +106011,7 @@
     ]
   },
   {
-    "id": "E_32_126_42",
+    "id": "E_32_127_42",
     "oposiciones": [
       "PISCINAS"
     ],
@@ -106120,7 +106037,7 @@
     ]
   },
   {
-    "id": "E_32_126_43",
+    "id": "E_32_127_43",
     "oposiciones": [
       "PISCINAS"
     ],
@@ -106146,7 +106063,7 @@
     ]
   },
   {
-    "id": "E_32_126_44",
+    "id": "E_32_127_44",
     "oposiciones": [
       "PISCINAS"
     ],
@@ -106172,7 +106089,7 @@
     ]
   },
   {
-    "id": "E_32_126_45",
+    "id": "E_32_127_45",
     "oposiciones": [
       "PISCINAS"
     ],
@@ -106198,7 +106115,7 @@
     ]
   },
   {
-    "id": "E_32_126_46",
+    "id": "E_32_127_46",
     "oposiciones": [
       "PISCINAS"
     ],
@@ -106224,7 +106141,7 @@
     ]
   },
   {
-    "id": "E_32_126_47",
+    "id": "E_32_127_47",
     "oposiciones": [
       "PISCINAS"
     ],
@@ -106250,7 +106167,7 @@
     ]
   },
   {
-    "id": "E_32_126_48",
+    "id": "E_32_127_48",
     "oposiciones": [
       "PISCINAS"
     ],
@@ -106276,7 +106193,7 @@
     ]
   },
   {
-    "id": "E_32_126_49",
+    "id": "E_32_127_49",
     "oposiciones": [
       "PISCINAS"
     ],
@@ -106302,7 +106219,7 @@
     ]
   },
   {
-    "id": "E_32_126_50",
+    "id": "E_32_127_50",
     "oposiciones": [
       "PISCINAS"
     ],
@@ -106328,7 +106245,7 @@
     ]
   },
   {
-    "id": "E_32_127_2",
+    "id": "E_32_128_2",
     "oposiciones": [
       "PISCINAS"
     ],
@@ -106354,7 +106271,7 @@
     ]
   },
   {
-    "id": "E_32_127_3",
+    "id": "E_32_128_3",
     "oposiciones": [
       "PISCINAS"
     ],
@@ -106380,7 +106297,7 @@
     ]
   },
   {
-    "id": "E_32_127_4",
+    "id": "E_32_128_4",
     "oposiciones": [
       "PISCINAS"
     ],
@@ -106406,7 +106323,7 @@
     ]
   },
   {
-    "id": "E_32_127_5",
+    "id": "E_32_128_5",
     "oposiciones": [
       "PISCINAS"
     ],
@@ -106432,7 +106349,7 @@
     ]
   },
   {
-    "id": "E_32_127_6",
+    "id": "E_32_128_6",
     "oposiciones": [
       "PISCINAS"
     ],
@@ -106458,7 +106375,7 @@
     ]
   },
   {
-    "id": "E_32_127_7",
+    "id": "E_32_128_7",
     "oposiciones": [
       "PISCINAS"
     ],
@@ -106484,7 +106401,7 @@
     ]
   },
   {
-    "id": "E_32_127_8",
+    "id": "E_32_128_8",
     "oposiciones": [
       "PISCINAS"
     ],
@@ -106510,7 +106427,7 @@
     ]
   },
   {
-    "id": "E_32_127_9",
+    "id": "E_32_128_9",
     "oposiciones": [
       "PISCINAS"
     ],
@@ -106540,7 +106457,7 @@
     ]
   },
   {
-    "id": "E_32_127_10",
+    "id": "E_32_128_10",
     "oposiciones": [
       "PISCINAS"
     ],
@@ -106570,7 +106487,7 @@
     ]
   },
   {
-    "id": "E_32_127_11",
+    "id": "E_32_128_11",
     "oposiciones": [
       "PISCINAS"
     ],
@@ -106600,7 +106517,7 @@
     ]
   },
   {
-    "id": "E_32_127_12",
+    "id": "E_32_128_12",
     "oposiciones": [
       "PISCINAS"
     ],
@@ -106630,7 +106547,7 @@
     ]
   },
   {
-    "id": "E_32_127_13",
+    "id": "E_32_128_13",
     "oposiciones": [
       "PISCINAS"
     ],
@@ -106656,7 +106573,7 @@
     ]
   },
   {
-    "id": "E_32_127_14",
+    "id": "E_32_128_14",
     "oposiciones": [
       "PISCINAS"
     ],
@@ -106682,7 +106599,7 @@
     ]
   },
   {
-    "id": "E_32_127_15",
+    "id": "E_32_128_15",
     "oposiciones": [
       "PISCINAS"
     ],
@@ -106708,7 +106625,7 @@
     ]
   },
   {
-    "id": "E_32_127_16",
+    "id": "E_32_128_16",
     "oposiciones": [
       "PISCINAS"
     ],
@@ -106734,7 +106651,7 @@
     ]
   },
   {
-    "id": "E_32_127_17",
+    "id": "E_32_128_17",
     "oposiciones": [
       "PISCINAS"
     ],
@@ -106760,7 +106677,7 @@
     ]
   },
   {
-    "id": "E_32_127_18",
+    "id": "E_32_128_18",
     "oposiciones": [
       "PISCINAS"
     ],
@@ -106786,7 +106703,7 @@
     ]
   },
   {
-    "id": "E_32_127_19",
+    "id": "E_32_128_19",
     "oposiciones": [
       "PISCINAS"
     ],
@@ -106812,7 +106729,7 @@
     ]
   },
   {
-    "id": "E_32_127_20",
+    "id": "E_32_128_20",
     "oposiciones": [
       "PISCINAS"
     ],
@@ -106838,7 +106755,7 @@
     ]
   },
   {
-    "id": "E_32_127_21",
+    "id": "E_32_128_21",
     "oposiciones": [
       "PISCINAS"
     ],
@@ -106864,7 +106781,7 @@
     ]
   },
   {
-    "id": "E_32_127_22",
+    "id": "E_32_128_22",
     "oposiciones": [
       "PISCINAS"
     ],
@@ -106890,7 +106807,7 @@
     ]
   },
   {
-    "id": "E_32_127_23",
+    "id": "E_32_128_23",
     "oposiciones": [
       "PISCINAS"
     ],
@@ -106916,7 +106833,7 @@
     ]
   },
   {
-    "id": "E_32_127_24",
+    "id": "E_32_128_24",
     "oposiciones": [
       "PISCINAS"
     ],
@@ -106942,7 +106859,7 @@
     ]
   },
   {
-    "id": "E_32_127_25",
+    "id": "E_32_128_25",
     "oposiciones": [
       "PISCINAS"
     ],
@@ -106968,7 +106885,7 @@
     ]
   },
   {
-    "id": "E_32_127_26",
+    "id": "E_32_128_26",
     "oposiciones": [
       "PISCINAS"
     ],
@@ -106994,7 +106911,7 @@
     ]
   },
   {
-    "id": "E_32_127_27",
+    "id": "E_32_128_27",
     "oposiciones": [
       "PISCINAS"
     ],
@@ -107020,7 +106937,7 @@
     ]
   },
   {
-    "id": "E_32_127_28",
+    "id": "E_32_128_28",
     "oposiciones": [
       "PISCINAS"
     ],
@@ -107046,7 +106963,7 @@
     ]
   },
   {
-    "id": "E_32_127_29",
+    "id": "E_32_128_29",
     "oposiciones": [
       "PISCINAS"
     ],
@@ -107072,7 +106989,7 @@
     ]
   },
   {
-    "id": "E_32_127_30",
+    "id": "E_32_128_30",
     "oposiciones": [
       "PISCINAS"
     ],
@@ -107098,7 +107015,7 @@
     ]
   },
   {
-    "id": "E_32_127_31",
+    "id": "E_32_128_31",
     "oposiciones": [
       "PISCINAS"
     ],
@@ -107124,7 +107041,7 @@
     ]
   },
   {
-    "id": "E_32_127_32",
+    "id": "E_32_128_32",
     "oposiciones": [
       "PISCINAS"
     ],
@@ -107150,7 +107067,7 @@
     ]
   },
   {
-    "id": "E_32_127_33",
+    "id": "E_32_128_33",
     "oposiciones": [
       "PISCINAS"
     ],
@@ -107176,7 +107093,7 @@
     ]
   },
   {
-    "id": "E_32_127_34",
+    "id": "E_32_128_34",
     "oposiciones": [
       "PISCINAS"
     ],
@@ -107202,7 +107119,7 @@
     ]
   },
   {
-    "id": "E_32_127_35",
+    "id": "E_32_128_35",
     "oposiciones": [
       "PISCINAS"
     ],
@@ -107228,7 +107145,7 @@
     ]
   },
   {
-    "id": "E_32_127_36",
+    "id": "E_32_128_36",
     "oposiciones": [
       "PISCINAS"
     ],
@@ -107254,7 +107171,7 @@
     ]
   },
   {
-    "id": "E_32_127_37",
+    "id": "E_32_128_37",
     "oposiciones": [
       "PISCINAS"
     ],
@@ -107280,7 +107197,7 @@
     ]
   },
   {
-    "id": "E_32_127_38",
+    "id": "E_32_128_38",
     "oposiciones": [
       "PISCINAS"
     ],
@@ -107306,7 +107223,7 @@
     ]
   },
   {
-    "id": "E_32_127_39",
+    "id": "E_32_128_39",
     "oposiciones": [
       "PISCINAS"
     ],
@@ -107332,7 +107249,7 @@
     ]
   },
   {
-    "id": "E_32_127_40",
+    "id": "E_32_128_40",
     "oposiciones": [
       "PISCINAS"
     ],
@@ -107358,7 +107275,7 @@
     ]
   },
   {
-    "id": "E_32_127_41",
+    "id": "E_32_128_41",
     "oposiciones": [
       "PISCINAS"
     ],
@@ -107384,7 +107301,7 @@
     ]
   },
   {
-    "id": "E_32_127_42",
+    "id": "E_32_128_42",
     "oposiciones": [
       "PISCINAS"
     ],
@@ -107410,7 +107327,7 @@
     ]
   },
   {
-    "id": "E_32_127_43",
+    "id": "E_32_128_43",
     "oposiciones": [
       "PISCINAS"
     ],
@@ -107436,7 +107353,7 @@
     ]
   },
   {
-    "id": "E_32_127_44",
+    "id": "E_32_128_44",
     "oposiciones": [
       "PISCINAS"
     ],
@@ -107462,7 +107379,7 @@
     ]
   },
   {
-    "id": "E_32_127_45",
+    "id": "E_32_128_45",
     "oposiciones": [
       "PISCINAS"
     ],
@@ -107488,7 +107405,7 @@
     ]
   },
   {
-    "id": "E_32_127_46",
+    "id": "E_32_128_46",
     "oposiciones": [
       "PISCINAS"
     ],
@@ -107514,7 +107431,7 @@
     ]
   },
   {
-    "id": "E_32_127_47",
+    "id": "E_32_128_47",
     "oposiciones": [
       "PISCINAS"
     ],
@@ -107540,7 +107457,7 @@
     ]
   },
   {
-    "id": "E_32_127_48",
+    "id": "E_32_128_48",
     "oposiciones": [
       "PISCINAS"
     ],
@@ -107566,7 +107483,7 @@
     ]
   },
   {
-    "id": "E_32_127_49",
+    "id": "E_32_128_49",
     "oposiciones": [
       "PISCINAS"
     ],
@@ -107592,7 +107509,7 @@
     ]
   },
   {
-    "id": "E_32_127_50",
+    "id": "E_32_128_50",
     "oposiciones": [
       "PISCINAS"
     ],
@@ -107618,7 +107535,7 @@
     ]
   },
   {
-    "id": "E_33_128_36",
+    "id": "E_33_129_36",
     "oposiciones": [
       "PISCINAS"
     ],
@@ -107644,7 +107561,7 @@
     ]
   },
   {
-    "id": "E_33_128_37",
+    "id": "E_33_129_37",
     "oposiciones": [
       "PISCINAS"
     ],
@@ -107670,7 +107587,7 @@
     ]
   },
   {
-    "id": "E_33_128_38",
+    "id": "E_33_129_38",
     "oposiciones": [
       "PISCINAS"
     ],
@@ -107696,7 +107613,7 @@
     ]
   },
   {
-    "id": "E_33_128_39",
+    "id": "E_33_129_39",
     "oposiciones": [
       "PISCINAS"
     ],
@@ -107722,7 +107639,7 @@
     ]
   },
   {
-    "id": "E_33_128_40",
+    "id": "E_33_129_40",
     "oposiciones": [
       "PISCINAS"
     ],
@@ -107748,7 +107665,7 @@
     ]
   },
   {
-    "id": "E_33_128_41",
+    "id": "E_33_129_41",
     "oposiciones": [
       "PISCINAS"
     ],
@@ -107774,7 +107691,7 @@
     ]
   },
   {
-    "id": "E_33_128_42",
+    "id": "E_33_129_42",
     "oposiciones": [
       "PISCINAS"
     ],
@@ -107800,7 +107717,7 @@
     ]
   },
   {
-    "id": "E_33_128_43",
+    "id": "E_33_129_43",
     "oposiciones": [
       "PISCINAS"
     ],
@@ -107826,7 +107743,7 @@
     ]
   },
   {
-    "id": "E_33_128_44",
+    "id": "E_33_129_44",
     "oposiciones": [
       "PISCINAS"
     ],
@@ -107852,7 +107769,7 @@
     ]
   },
   {
-    "id": "E_33_128_45",
+    "id": "E_33_129_45",
     "oposiciones": [
       "PISCINAS"
     ],
@@ -107878,7 +107795,7 @@
     ]
   },
   {
-    "id": "E_33_128_46",
+    "id": "E_33_129_46",
     "oposiciones": [
       "PISCINAS"
     ],
@@ -107904,7 +107821,7 @@
     ]
   },
   {
-    "id": "E_33_128_47",
+    "id": "E_33_129_47",
     "oposiciones": [
       "PISCINAS"
     ],
@@ -107930,7 +107847,7 @@
     ]
   },
   {
-    "id": "E_33_128_48",
+    "id": "E_33_129_48",
     "oposiciones": [
       "PISCINAS"
     ],
@@ -107956,7 +107873,7 @@
     ]
   },
   {
-    "id": "E_33_128_49",
+    "id": "E_33_129_49",
     "oposiciones": [
       "PISCINAS"
     ],
@@ -107982,7 +107899,7 @@
     ]
   },
   {
-    "id": "E_33_128_50",
+    "id": "E_33_129_50",
     "oposiciones": [
       "PISCINAS"
     ],
@@ -108008,7 +107925,7 @@
     ]
   },
   {
-    "id": "E_33_128_51",
+    "id": "E_33_129_51",
     "oposiciones": [
       "PISCINAS"
     ],
@@ -108034,7 +107951,7 @@
     ]
   },
   {
-    "id": "E_33_128_52",
+    "id": "E_33_129_52",
     "oposiciones": [
       "PISCINAS"
     ],
@@ -108060,7 +107977,7 @@
     ]
   },
   {
-    "id": "E_33_128_53",
+    "id": "E_33_129_53",
     "oposiciones": [
       "PISCINAS"
     ],
@@ -108086,7 +108003,7 @@
     ]
   },
   {
-    "id": "E_33_128_54",
+    "id": "E_33_129_54",
     "oposiciones": [
       "PISCINAS"
     ],
@@ -108112,7 +108029,7 @@
     ]
   },
   {
-    "id": "E_33_128_55",
+    "id": "E_33_129_55",
     "oposiciones": [
       "PISCINAS"
     ],
@@ -108138,7 +108055,7 @@
     ]
   },
   {
-    "id": "E_33_128_56",
+    "id": "E_33_129_56",
     "oposiciones": [
       "PISCINAS"
     ],
@@ -108164,7 +108081,7 @@
     ]
   },
   {
-    "id": "E_33_128_57",
+    "id": "E_33_129_57",
     "oposiciones": [
       "PISCINAS"
     ],
@@ -108190,7 +108107,7 @@
     ]
   },
   {
-    "id": "E_33_128_58",
+    "id": "E_33_129_58",
     "oposiciones": [
       "PISCINAS"
     ],
@@ -108216,7 +108133,7 @@
     ]
   },
   {
-    "id": "E_33_128_59",
+    "id": "E_33_129_59",
     "oposiciones": [
       "PISCINAS"
     ],
@@ -108242,7 +108159,7 @@
     ]
   },
   {
-    "id": "E_33_128_60",
+    "id": "E_33_129_60",
     "oposiciones": [
       "PISCINAS"
     ],
@@ -108268,7 +108185,7 @@
     ]
   },
   {
-    "id": "E_33_128_61",
+    "id": "E_33_129_61",
     "oposiciones": [
       "PISCINAS"
     ],
@@ -108294,7 +108211,7 @@
     ]
   },
   {
-    "id": "E_33_128_62",
+    "id": "E_33_129_62",
     "oposiciones": [
       "PISCINAS"
     ],
@@ -108320,7 +108237,7 @@
     ]
   },
   {
-    "id": "E_33_128_63",
+    "id": "E_33_129_63",
     "oposiciones": [
       "PISCINAS"
     ],
@@ -108346,7 +108263,7 @@
     ]
   },
   {
-    "id": "E_33_128_64",
+    "id": "E_33_129_64",
     "oposiciones": [
       "PISCINAS"
     ],
@@ -108372,7 +108289,7 @@
     ]
   },
   {
-    "id": "E_33_128_65",
+    "id": "E_33_129_65",
     "oposiciones": [
       "PISCINAS"
     ],
@@ -108398,7 +108315,7 @@
     ]
   },
   {
-    "id": "E_33_128_66",
+    "id": "E_33_129_66",
     "oposiciones": [
       "PISCINAS"
     ],
@@ -108424,7 +108341,7 @@
     ]
   },
   {
-    "id": "E_33_128_67",
+    "id": "E_33_129_67",
     "oposiciones": [
       "PISCINAS"
     ],
@@ -108450,7 +108367,7 @@
     ]
   },
   {
-    "id": "E_33_128_68",
+    "id": "E_33_129_68",
     "oposiciones": [
       "PISCINAS"
     ],
@@ -108476,7 +108393,7 @@
     ]
   },
   {
-    "id": "E_33_128_69",
+    "id": "E_33_129_69",
     "oposiciones": [
       "PISCINAS"
     ],
@@ -108502,7 +108419,7 @@
     ]
   },
   {
-    "id": "E_33_128_70",
+    "id": "E_33_129_70",
     "oposiciones": [
       "PISCINAS"
     ],
@@ -108528,7 +108445,7 @@
     ]
   },
   {
-    "id": "E_33_129_1",
+    "id": "E_33_130_1",
     "oposiciones": [
       "PISCINAS"
     ],
@@ -108554,7 +108471,7 @@
     ]
   },
   {
-    "id": "E_33_129_2",
+    "id": "E_33_130_2",
     "oposiciones": [
       "PISCINAS"
     ],
@@ -108580,7 +108497,7 @@
     ]
   },
   {
-    "id": "E_33_129_3",
+    "id": "E_33_130_3",
     "oposiciones": [
       "PISCINAS"
     ],
@@ -108606,7 +108523,7 @@
     ]
   },
   {
-    "id": "E_33_129_4",
+    "id": "E_33_130_4",
     "oposiciones": [
       "PISCINAS"
     ],
@@ -108632,7 +108549,7 @@
     ]
   },
   {
-    "id": "E_33_129_5",
+    "id": "E_33_130_5",
     "oposiciones": [
       "PISCINAS"
     ],
@@ -108658,7 +108575,7 @@
     ]
   },
   {
-    "id": "E_33_129_6",
+    "id": "E_33_130_6",
     "oposiciones": [
       "PISCINAS"
     ],
@@ -108684,7 +108601,7 @@
     ]
   },
   {
-    "id": "E_33_129_7",
+    "id": "E_33_130_7",
     "oposiciones": [
       "PISCINAS"
     ],
@@ -108710,7 +108627,7 @@
     ]
   },
   {
-    "id": "E_33_129_8",
+    "id": "E_33_130_8",
     "oposiciones": [
       "PISCINAS"
     ],
@@ -108736,7 +108653,7 @@
     ]
   },
   {
-    "id": "E_33_129_9",
+    "id": "E_33_130_9",
     "oposiciones": [
       "PISCINAS"
     ],
@@ -108762,7 +108679,7 @@
     ]
   },
   {
-    "id": "E_33_129_10",
+    "id": "E_33_130_10",
     "oposiciones": [
       "PISCINAS"
     ],
@@ -108788,7 +108705,7 @@
     ]
   },
   {
-    "id": "E_33_129_11",
+    "id": "E_33_130_11",
     "oposiciones": [
       "PISCINAS"
     ],
@@ -108814,7 +108731,7 @@
     ]
   },
   {
-    "id": "E_33_129_12",
+    "id": "E_33_130_12",
     "oposiciones": [
       "PISCINAS"
     ],
@@ -108840,7 +108757,7 @@
     ]
   },
   {
-    "id": "E_33_129_13",
+    "id": "E_33_130_13",
     "oposiciones": [
       "PISCINAS"
     ],
@@ -108866,7 +108783,7 @@
     ]
   },
   {
-    "id": "E_33_129_14",
+    "id": "E_33_130_14",
     "oposiciones": [
       "PISCINAS"
     ],
@@ -108892,7 +108809,7 @@
     ]
   },
   {
-    "id": "E_33_129_15",
+    "id": "E_33_130_15",
     "oposiciones": [
       "PISCINAS"
     ],
@@ -108918,7 +108835,7 @@
     ]
   },
   {
-    "id": "E_33_129_16",
+    "id": "E_33_130_16",
     "oposiciones": [
       "PISCINAS"
     ],
@@ -108944,7 +108861,7 @@
     ]
   },
   {
-    "id": "E_33_129_17",
+    "id": "E_33_130_17",
     "oposiciones": [
       "PISCINAS"
     ],
@@ -108970,7 +108887,7 @@
     ]
   },
   {
-    "id": "E_33_129_18",
+    "id": "E_33_130_18",
     "oposiciones": [
       "PISCINAS"
     ],
@@ -108996,7 +108913,7 @@
     ]
   },
   {
-    "id": "E_33_129_19",
+    "id": "E_33_130_19",
     "oposiciones": [
       "PISCINAS"
     ],
@@ -109022,7 +108939,7 @@
     ]
   },
   {
-    "id": "E_33_129_20",
+    "id": "E_33_130_20",
     "oposiciones": [
       "PISCINAS"
     ],
@@ -109048,7 +108965,7 @@
     ]
   },
   {
-    "id": "E_33_129_21",
+    "id": "E_33_130_21",
     "oposiciones": [
       "PISCINAS"
     ],
@@ -109074,7 +108991,7 @@
     ]
   },
   {
-    "id": "E_33_129_22",
+    "id": "E_33_130_22",
     "oposiciones": [
       "PISCINAS"
     ],
@@ -109100,7 +109017,7 @@
     ]
   },
   {
-    "id": "E_33_129_23",
+    "id": "E_33_130_23",
     "oposiciones": [
       "PISCINAS"
     ],
@@ -109126,7 +109043,7 @@
     ]
   },
   {
-    "id": "E_33_129_24",
+    "id": "E_33_130_24",
     "oposiciones": [
       "PISCINAS"
     ],
@@ -109152,7 +109069,7 @@
     ]
   },
   {
-    "id": "E_33_129_25",
+    "id": "E_33_130_25",
     "oposiciones": [
       "PISCINAS"
     ],
@@ -109178,7 +109095,7 @@
     ]
   },
   {
-    "id": "E_33_130_1",
+    "id": "E_33_131_1",
     "oposiciones": [
       "PISCINAS"
     ],
@@ -109204,7 +109121,7 @@
     ]
   },
   {
-    "id": "E_33_130_2",
+    "id": "E_33_131_2",
     "oposiciones": [
       "PISCINAS"
     ],
@@ -109230,7 +109147,7 @@
     ]
   },
   {
-    "id": "E_33_130_3",
+    "id": "E_33_131_3",
     "oposiciones": [
       "PISCINAS"
     ],
@@ -109256,7 +109173,7 @@
     ]
   },
   {
-    "id": "E_33_130_4",
+    "id": "E_33_131_4",
     "oposiciones": [
       "PISCINAS"
     ],
@@ -109282,7 +109199,7 @@
     ]
   },
   {
-    "id": "E_33_130_5",
+    "id": "E_33_131_5",
     "oposiciones": [
       "PISCINAS"
     ],
@@ -109308,7 +109225,7 @@
     ]
   },
   {
-    "id": "E_33_130_6",
+    "id": "E_33_131_6",
     "oposiciones": [
       "PISCINAS"
     ],
@@ -109334,7 +109251,7 @@
     ]
   },
   {
-    "id": "E_33_130_7",
+    "id": "E_33_131_7",
     "oposiciones": [
       "PISCINAS"
     ],
@@ -109360,7 +109277,7 @@
     ]
   },
   {
-    "id": "E_33_130_8",
+    "id": "E_33_131_8",
     "oposiciones": [
       "PISCINAS"
     ],
@@ -109386,7 +109303,7 @@
     ]
   },
   {
-    "id": "E_33_130_9",
+    "id": "E_33_131_9",
     "oposiciones": [
       "PISCINAS"
     ],
@@ -109412,7 +109329,7 @@
     ]
   },
   {
-    "id": "E_33_130_10",
+    "id": "E_33_131_10",
     "oposiciones": [
       "PISCINAS"
     ],
@@ -109438,7 +109355,7 @@
     ]
   },
   {
-    "id": "E_33_130_11",
+    "id": "E_33_131_11",
     "oposiciones": [
       "PISCINAS"
     ],
@@ -109464,7 +109381,7 @@
     ]
   },
   {
-    "id": "E_33_130_12",
+    "id": "E_33_131_12",
     "oposiciones": [
       "PISCINAS"
     ],
@@ -109490,7 +109407,7 @@
     ]
   },
   {
-    "id": "E_33_130_13",
+    "id": "E_33_131_13",
     "oposiciones": [
       "PISCINAS"
     ],
@@ -109516,7 +109433,7 @@
     ]
   },
   {
-    "id": "E_33_130_14",
+    "id": "E_33_131_14",
     "oposiciones": [
       "PISCINAS"
     ],
@@ -109542,7 +109459,7 @@
     ]
   },
   {
-    "id": "E_33_130_15",
+    "id": "E_33_131_15",
     "oposiciones": [
       "PISCINAS"
     ],
@@ -109568,7 +109485,7 @@
     ]
   },
   {
-    "id": "E_33_130_16",
+    "id": "E_33_131_16",
     "oposiciones": [
       "PISCINAS"
     ],
@@ -109594,7 +109511,7 @@
     ]
   },
   {
-    "id": "E_33_130_17",
+    "id": "E_33_131_17",
     "oposiciones": [
       "PISCINAS"
     ],
@@ -109620,7 +109537,7 @@
     ]
   },
   {
-    "id": "E_33_130_18",
+    "id": "E_33_131_18",
     "oposiciones": [
       "PISCINAS"
     ],
@@ -109646,7 +109563,7 @@
     ]
   },
   {
-    "id": "E_33_130_19",
+    "id": "E_33_131_19",
     "oposiciones": [
       "PISCINAS"
     ],
@@ -109672,7 +109589,7 @@
     ]
   },
   {
-    "id": "E_33_130_20",
+    "id": "E_33_131_20",
     "oposiciones": [
       "PISCINAS"
     ],
@@ -109698,7 +109615,7 @@
     ]
   },
   {
-    "id": "E_33_130_21",
+    "id": "E_33_131_21",
     "oposiciones": [
       "PISCINAS"
     ],
@@ -109724,7 +109641,7 @@
     ]
   },
   {
-    "id": "E_33_130_22",
+    "id": "E_33_131_22",
     "oposiciones": [
       "PISCINAS"
     ],
@@ -109750,7 +109667,7 @@
     ]
   },
   {
-    "id": "E_33_130_23",
+    "id": "E_33_131_23",
     "oposiciones": [
       "PISCINAS"
     ],
@@ -109776,7 +109693,7 @@
     ]
   },
   {
-    "id": "E_33_130_24",
+    "id": "E_33_131_24",
     "oposiciones": [
       "PISCINAS"
     ],
@@ -109802,7 +109719,7 @@
     ]
   },
   {
-    "id": "E_33_130_25",
+    "id": "E_33_131_25",
     "oposiciones": [
       "PISCINAS"
     ],
@@ -109828,7 +109745,7 @@
     ]
   },
   {
-    "id": "E_33_130_26",
+    "id": "E_33_131_26",
     "oposiciones": [
       "PISCINAS"
     ],
@@ -109854,7 +109771,7 @@
     ]
   },
   {
-    "id": "E_33_130_27",
+    "id": "E_33_131_27",
     "oposiciones": [
       "PISCINAS"
     ],
@@ -109880,7 +109797,7 @@
     ]
   },
   {
-    "id": "E_33_130_28",
+    "id": "E_33_131_28",
     "oposiciones": [
       "PISCINAS"
     ],
@@ -109906,7 +109823,7 @@
     ]
   },
   {
-    "id": "E_33_130_29",
+    "id": "E_33_131_29",
     "oposiciones": [
       "PISCINAS"
     ],
@@ -109932,7 +109849,7 @@
     ]
   },
   {
-    "id": "E_33_130_30",
+    "id": "E_33_131_30",
     "oposiciones": [
       "PISCINAS"
     ],
@@ -109958,7 +109875,7 @@
     ]
   },
   {
-    "id": "E_33_130_31",
+    "id": "E_33_131_31",
     "oposiciones": [
       "PISCINAS"
     ],
@@ -109984,7 +109901,7 @@
     ]
   },
   {
-    "id": "E_33_130_32",
+    "id": "E_33_131_32",
     "oposiciones": [
       "PISCINAS"
     ],
@@ -110010,7 +109927,7 @@
     ]
   },
   {
-    "id": "E_33_130_33",
+    "id": "E_33_131_33",
     "oposiciones": [
       "PISCINAS"
     ],
@@ -110036,7 +109953,7 @@
     ]
   },
   {
-    "id": "E_33_130_34",
+    "id": "E_33_131_34",
     "oposiciones": [
       "PISCINAS"
     ],
@@ -110062,7 +109979,7 @@
     ]
   },
   {
-    "id": "E_33_130_35",
+    "id": "E_33_131_35",
     "oposiciones": [
       "PISCINAS"
     ],
@@ -110088,7 +110005,7 @@
     ]
   },
   {
-    "id": "E_33_130_36",
+    "id": "E_33_131_36",
     "oposiciones": [
       "PISCINAS"
     ],
@@ -110114,7 +110031,7 @@
     ]
   },
   {
-    "id": "E_33_130_37",
+    "id": "E_33_131_37",
     "oposiciones": [
       "PISCINAS"
     ],
@@ -110140,7 +110057,7 @@
     ]
   },
   {
-    "id": "E_33_130_38",
+    "id": "E_33_131_38",
     "oposiciones": [
       "PISCINAS"
     ],
@@ -110166,7 +110083,7 @@
     ]
   },
   {
-    "id": "E_33_130_39",
+    "id": "E_33_131_39",
     "oposiciones": [
       "PISCINAS"
     ],
@@ -110192,7 +110109,7 @@
     ]
   },
   {
-    "id": "E_33_130_40",
+    "id": "E_33_131_40",
     "oposiciones": [
       "PISCINAS"
     ],
@@ -110218,7 +110135,7 @@
     ]
   },
   {
-    "id": "E_33_130_41",
+    "id": "E_33_131_41",
     "oposiciones": [
       "PISCINAS"
     ],
@@ -110244,7 +110161,7 @@
     ]
   },
   {
-    "id": "E_33_130_42",
+    "id": "E_33_131_42",
     "oposiciones": [
       "PISCINAS"
     ],
@@ -110270,7 +110187,7 @@
     ]
   },
   {
-    "id": "E_33_130_43",
+    "id": "E_33_131_43",
     "oposiciones": [
       "PISCINAS"
     ],
@@ -110296,7 +110213,7 @@
     ]
   },
   {
-    "id": "E_33_130_44",
+    "id": "E_33_131_44",
     "oposiciones": [
       "PISCINAS"
     ],
@@ -110322,7 +110239,7 @@
     ]
   },
   {
-    "id": "E_33_130_45",
+    "id": "E_33_131_45",
     "oposiciones": [
       "PISCINAS"
     ],
@@ -110348,7 +110265,7 @@
     ]
   },
   {
-    "id": "E_33_130_46",
+    "id": "E_33_131_46",
     "oposiciones": [
       "PISCINAS"
     ],
@@ -110374,7 +110291,7 @@
     ]
   },
   {
-    "id": "E_33_130_47",
+    "id": "E_33_131_47",
     "oposiciones": [
       "PISCINAS"
     ],
@@ -110400,7 +110317,7 @@
     ]
   },
   {
-    "id": "E_33_130_48",
+    "id": "E_33_131_48",
     "oposiciones": [
       "PISCINAS"
     ],
@@ -110426,7 +110343,7 @@
     ]
   },
   {
-    "id": "E_33_130_49",
+    "id": "E_33_131_49",
     "oposiciones": [
       "PISCINAS"
     ],
@@ -110452,7 +110369,7 @@
     ]
   },
   {
-    "id": "E_33_130_50",
+    "id": "E_33_131_50",
     "oposiciones": [
       "PISCINAS"
     ],
@@ -110478,7 +110395,7 @@
     ]
   },
   {
-    "id": "E_33_131_1",
+    "id": "E_33_132_1",
     "oposiciones": [
       "PISCINAS"
     ],
@@ -110504,7 +110421,7 @@
     ]
   },
   {
-    "id": "E_33_131_2",
+    "id": "E_33_132_2",
     "oposiciones": [
       "PISCINAS"
     ],
@@ -110530,7 +110447,7 @@
     ]
   },
   {
-    "id": "E_33_131_3",
+    "id": "E_33_132_3",
     "oposiciones": [
       "PISCINAS"
     ],
@@ -110556,7 +110473,7 @@
     ]
   },
   {
-    "id": "E_33_131_4",
+    "id": "E_33_132_4",
     "oposiciones": [
       "PISCINAS"
     ],
@@ -110582,7 +110499,7 @@
     ]
   },
   {
-    "id": "E_33_131_5",
+    "id": "E_33_132_5",
     "oposiciones": [
       "PISCINAS"
     ],
@@ -110608,7 +110525,7 @@
     ]
   },
   {
-    "id": "E_33_131_6",
+    "id": "E_33_132_6",
     "oposiciones": [
       "PISCINAS"
     ],
@@ -110634,7 +110551,7 @@
     ]
   },
   {
-    "id": "E_33_131_7",
+    "id": "E_33_132_7",
     "oposiciones": [
       "PISCINAS"
     ],
@@ -110660,7 +110577,7 @@
     ]
   },
   {
-    "id": "E_33_131_8",
+    "id": "E_33_132_8",
     "oposiciones": [
       "PISCINAS"
     ],
@@ -110686,7 +110603,7 @@
     ]
   },
   {
-    "id": "E_33_131_9",
+    "id": "E_33_132_9",
     "oposiciones": [
       "PISCINAS"
     ],
@@ -110712,7 +110629,7 @@
     ]
   },
   {
-    "id": "E_33_131_10",
+    "id": "E_33_132_10",
     "oposiciones": [
       "PISCINAS"
     ],
@@ -110738,7 +110655,7 @@
     ]
   },
   {
-    "id": "E_33_131_11",
+    "id": "E_33_132_11",
     "oposiciones": [
       "PISCINAS"
     ],
@@ -110764,7 +110681,7 @@
     ]
   },
   {
-    "id": "E_33_131_12",
+    "id": "E_33_132_12",
     "oposiciones": [
       "PISCINAS"
     ],
@@ -110790,7 +110707,7 @@
     ]
   },
   {
-    "id": "E_33_131_13",
+    "id": "E_33_132_13",
     "oposiciones": [
       "PISCINAS"
     ],
@@ -110816,7 +110733,7 @@
     ]
   },
   {
-    "id": "E_33_131_14",
+    "id": "E_33_132_14",
     "oposiciones": [
       "PISCINAS"
     ],
@@ -110842,7 +110759,7 @@
     ]
   },
   {
-    "id": "E_33_131_15",
+    "id": "E_33_132_15",
     "oposiciones": [
       "PISCINAS"
     ],
@@ -110868,7 +110785,7 @@
     ]
   },
   {
-    "id": "E_33_131_16",
+    "id": "E_33_132_16",
     "oposiciones": [
       "PISCINAS"
     ],
@@ -110894,7 +110811,7 @@
     ]
   },
   {
-    "id": "E_33_131_17",
+    "id": "E_33_132_17",
     "oposiciones": [
       "PISCINAS"
     ],
@@ -110920,7 +110837,7 @@
     ]
   },
   {
-    "id": "E_33_131_18",
+    "id": "E_33_132_18",
     "oposiciones": [
       "PISCINAS"
     ],
@@ -110946,7 +110863,7 @@
     ]
   },
   {
-    "id": "E_33_131_19",
+    "id": "E_33_132_19",
     "oposiciones": [
       "PISCINAS"
     ],
@@ -110972,7 +110889,7 @@
     ]
   },
   {
-    "id": "E_33_131_20",
+    "id": "E_33_132_20",
     "oposiciones": [
       "PISCINAS"
     ],
@@ -110998,7 +110915,7 @@
     ]
   },
   {
-    "id": "E_33_131_21",
+    "id": "E_33_132_21",
     "oposiciones": [
       "PISCINAS"
     ],
@@ -111024,7 +110941,7 @@
     ]
   },
   {
-    "id": "E_33_131_22",
+    "id": "E_33_132_22",
     "oposiciones": [
       "PISCINAS"
     ],
@@ -111050,7 +110967,7 @@
     ]
   },
   {
-    "id": "E_33_131_23",
+    "id": "E_33_132_23",
     "oposiciones": [
       "PISCINAS"
     ],
@@ -111076,7 +110993,7 @@
     ]
   },
   {
-    "id": "E_33_131_24",
+    "id": "E_33_132_24",
     "oposiciones": [
       "PISCINAS"
     ],
@@ -111102,7 +111019,7 @@
     ]
   },
   {
-    "id": "E_33_131_25",
+    "id": "E_33_132_25",
     "oposiciones": [
       "PISCINAS"
     ],
@@ -111128,7 +111045,7 @@
     ]
   },
   {
-    "id": "E_33_131_26",
+    "id": "E_33_132_26",
     "oposiciones": [
       "PISCINAS"
     ],
@@ -111154,7 +111071,7 @@
     ]
   },
   {
-    "id": "E_33_131_27",
+    "id": "E_33_132_27",
     "oposiciones": [
       "PISCINAS"
     ],
@@ -111180,7 +111097,7 @@
     ]
   },
   {
-    "id": "E_33_131_28",
+    "id": "E_33_132_28",
     "oposiciones": [
       "PISCINAS"
     ],
@@ -111206,7 +111123,7 @@
     ]
   },
   {
-    "id": "E_33_131_29",
+    "id": "E_33_132_29",
     "oposiciones": [
       "PISCINAS"
     ],
@@ -111232,7 +111149,7 @@
     ]
   },
   {
-    "id": "E_33_131_30",
+    "id": "E_33_132_30",
     "oposiciones": [
       "PISCINAS"
     ],
@@ -111258,7 +111175,7 @@
     ]
   },
   {
-    "id": "E_33_131_31",
+    "id": "E_33_132_31",
     "oposiciones": [
       "PISCINAS"
     ],
@@ -111284,7 +111201,7 @@
     ]
   },
   {
-    "id": "E_33_131_32",
+    "id": "E_33_132_32",
     "oposiciones": [
       "PISCINAS"
     ],
@@ -111310,7 +111227,7 @@
     ]
   },
   {
-    "id": "E_33_131_33",
+    "id": "E_33_132_33",
     "oposiciones": [
       "PISCINAS"
     ],
@@ -111336,7 +111253,7 @@
     ]
   },
   {
-    "id": "E_33_131_34",
+    "id": "E_33_132_34",
     "oposiciones": [
       "PISCINAS"
     ],
@@ -111362,7 +111279,7 @@
     ]
   },
   {
-    "id": "E_33_131_35",
+    "id": "E_33_132_35",
     "oposiciones": [
       "PISCINAS"
     ],
@@ -111388,7 +111305,7 @@
     ]
   },
   {
-    "id": "E_33_131_36",
+    "id": "E_33_132_36",
     "oposiciones": [
       "PISCINAS"
     ],
@@ -111414,7 +111331,7 @@
     ]
   },
   {
-    "id": "E_33_131_37",
+    "id": "E_33_132_37",
     "oposiciones": [
       "PISCINAS"
     ],
@@ -111440,7 +111357,7 @@
     ]
   },
   {
-    "id": "E_33_131_38",
+    "id": "E_33_132_38",
     "oposiciones": [
       "PISCINAS"
     ],
@@ -111466,7 +111383,7 @@
     ]
   },
   {
-    "id": "E_33_131_39",
+    "id": "E_33_132_39",
     "oposiciones": [
       "PISCINAS"
     ],
@@ -111492,7 +111409,7 @@
     ]
   },
   {
-    "id": "E_33_131_40",
+    "id": "E_33_132_40",
     "oposiciones": [
       "PISCINAS"
     ],
@@ -111518,7 +111435,7 @@
     ]
   },
   {
-    "id": "E_33_132_1",
+    "id": "E_33_133_1",
     "oposiciones": [
       "PISCINAS"
     ],
@@ -111544,7 +111461,7 @@
     ]
   },
   {
-    "id": "E_33_132_2",
+    "id": "E_33_133_2",
     "oposiciones": [
       "PISCINAS"
     ],
@@ -111570,7 +111487,7 @@
     ]
   },
   {
-    "id": "E_33_132_3",
+    "id": "E_33_133_3",
     "oposiciones": [
       "PISCINAS"
     ],
@@ -111596,7 +111513,7 @@
     ]
   },
   {
-    "id": "E_33_132_4",
+    "id": "E_33_133_4",
     "oposiciones": [
       "PISCINAS"
     ],
@@ -111622,7 +111539,7 @@
     ]
   },
   {
-    "id": "E_33_132_5",
+    "id": "E_33_133_5",
     "oposiciones": [
       "PISCINAS"
     ],
@@ -111648,7 +111565,7 @@
     ]
   },
   {
-    "id": "E_33_132_6",
+    "id": "E_33_133_6",
     "oposiciones": [
       "PISCINAS"
     ],
@@ -111674,7 +111591,7 @@
     ]
   },
   {
-    "id": "E_33_132_7",
+    "id": "E_33_133_7",
     "oposiciones": [
       "PISCINAS"
     ],
@@ -111700,7 +111617,7 @@
     ]
   },
   {
-    "id": "E_33_132_8",
+    "id": "E_33_133_8",
     "oposiciones": [
       "PISCINAS"
     ],
@@ -111726,7 +111643,7 @@
     ]
   },
   {
-    "id": "E_33_132_9",
+    "id": "E_33_133_9",
     "oposiciones": [
       "PISCINAS"
     ],
@@ -111752,7 +111669,7 @@
     ]
   },
   {
-    "id": "E_33_132_10",
+    "id": "E_33_133_10",
     "oposiciones": [
       "PISCINAS"
     ],
@@ -111778,7 +111695,7 @@
     ]
   },
   {
-    "id": "E_33_132_11",
+    "id": "E_33_133_11",
     "oposiciones": [
       "PISCINAS"
     ],
@@ -111804,7 +111721,7 @@
     ]
   },
   {
-    "id": "E_33_132_12",
+    "id": "E_33_133_12",
     "oposiciones": [
       "PISCINAS"
     ],
@@ -111830,7 +111747,7 @@
     ]
   },
   {
-    "id": "E_33_132_13",
+    "id": "E_33_133_13",
     "oposiciones": [
       "PISCINAS"
     ],
@@ -111856,7 +111773,7 @@
     ]
   },
   {
-    "id": "E_33_132_14",
+    "id": "E_33_133_14",
     "oposiciones": [
       "PISCINAS"
     ],
@@ -111882,7 +111799,7 @@
     ]
   },
   {
-    "id": "E_33_132_15",
+    "id": "E_33_133_15",
     "oposiciones": [
       "PISCINAS"
     ],
@@ -111908,7 +111825,7 @@
     ]
   },
   {
-    "id": "E_33_132_16",
+    "id": "E_33_133_16",
     "oposiciones": [
       "PISCINAS"
     ],
@@ -111934,7 +111851,7 @@
     ]
   },
   {
-    "id": "E_33_132_17",
+    "id": "E_33_133_17",
     "oposiciones": [
       "PISCINAS"
     ],
@@ -111960,7 +111877,7 @@
     ]
   },
   {
-    "id": "E_33_132_18",
+    "id": "E_33_133_18",
     "oposiciones": [
       "PISCINAS"
     ],
@@ -111986,7 +111903,7 @@
     ]
   },
   {
-    "id": "E_33_132_19",
+    "id": "E_33_133_19",
     "oposiciones": [
       "PISCINAS"
     ],
@@ -112012,7 +111929,7 @@
     ]
   },
   {
-    "id": "E_33_132_20",
+    "id": "E_33_133_20",
     "oposiciones": [
       "PISCINAS"
     ],
@@ -112038,7 +111955,7 @@
     ]
   },
   {
-    "id": "E_33_132_21",
+    "id": "E_33_133_21",
     "oposiciones": [
       "PISCINAS"
     ],
@@ -112064,7 +111981,7 @@
     ]
   },
   {
-    "id": "E_33_132_22",
+    "id": "E_33_133_22",
     "oposiciones": [
       "PISCINAS"
     ],
@@ -112090,7 +112007,7 @@
     ]
   },
   {
-    "id": "E_33_132_23",
+    "id": "E_33_133_23",
     "oposiciones": [
       "PISCINAS"
     ],
@@ -112116,7 +112033,7 @@
     ]
   },
   {
-    "id": "E_33_132_24",
+    "id": "E_33_133_24",
     "oposiciones": [
       "PISCINAS"
     ],
@@ -112142,7 +112059,7 @@
     ]
   },
   {
-    "id": "E_33_132_25",
+    "id": "E_33_133_25",
     "oposiciones": [
       "PISCINAS"
     ],
@@ -112168,7 +112085,7 @@
     ]
   },
   {
-    "id": "E_33_132_26",
+    "id": "E_33_133_26",
     "oposiciones": [
       "PISCINAS"
     ],
@@ -112194,7 +112111,7 @@
     ]
   },
   {
-    "id": "E_33_132_27",
+    "id": "E_33_133_27",
     "oposiciones": [
       "PISCINAS"
     ],
@@ -112220,7 +112137,7 @@
     ]
   },
   {
-    "id": "E_33_132_28",
+    "id": "E_33_133_28",
     "oposiciones": [
       "PISCINAS"
     ],
@@ -112246,7 +112163,7 @@
     ]
   },
   {
-    "id": "E_33_132_29",
+    "id": "E_33_133_29",
     "oposiciones": [
       "PISCINAS"
     ],
@@ -112272,7 +112189,7 @@
     ]
   },
   {
-    "id": "E_33_132_30",
+    "id": "E_33_133_30",
     "oposiciones": [
       "PISCINAS"
     ],
@@ -112298,7 +112215,7 @@
     ]
   },
   {
-    "id": "E_33_132_31",
+    "id": "E_33_133_31",
     "oposiciones": [
       "PISCINAS"
     ],
@@ -112324,7 +112241,7 @@
     ]
   },
   {
-    "id": "E_33_132_32",
+    "id": "E_33_133_32",
     "oposiciones": [
       "PISCINAS"
     ],
@@ -112350,7 +112267,7 @@
     ]
   },
   {
-    "id": "E_33_132_33",
+    "id": "E_33_133_33",
     "oposiciones": [
       "PISCINAS"
     ],
@@ -112376,7 +112293,7 @@
     ]
   },
   {
-    "id": "E_33_132_34",
+    "id": "E_33_133_34",
     "oposiciones": [
       "PISCINAS"
     ],
@@ -112402,7 +112319,7 @@
     ]
   },
   {
-    "id": "E_33_132_35",
+    "id": "E_33_133_35",
     "oposiciones": [
       "PISCINAS"
     ],
@@ -112428,7 +112345,7 @@
     ]
   },
   {
-    "id": "E_34_133_1",
+    "id": "E_34_134_1",
     "oposiciones": [
       "PISCINAS"
     ],
@@ -112454,7 +112371,7 @@
     ]
   },
   {
-    "id": "E_34_133_2",
+    "id": "E_34_134_2",
     "oposiciones": [
       "PISCINAS"
     ],
@@ -112480,7 +112397,7 @@
     ]
   },
   {
-    "id": "E_34_133_3",
+    "id": "E_34_134_3",
     "oposiciones": [
       "PISCINAS"
     ],
@@ -112506,7 +112423,7 @@
     ]
   },
   {
-    "id": "E_34_133_4",
+    "id": "E_34_134_4",
     "oposiciones": [
       "PISCINAS"
     ],
@@ -112532,7 +112449,7 @@
     ]
   },
   {
-    "id": "E_34_133_5",
+    "id": "E_34_134_5",
     "oposiciones": [
       "PISCINAS"
     ],
@@ -112558,7 +112475,7 @@
     ]
   },
   {
-    "id": "E_34_133_6",
+    "id": "E_34_134_6",
     "oposiciones": [
       "PISCINAS"
     ],
@@ -112584,7 +112501,7 @@
     ]
   },
   {
-    "id": "E_34_133_7",
+    "id": "E_34_134_7",
     "oposiciones": [
       "PISCINAS"
     ],
@@ -112610,7 +112527,7 @@
     ]
   },
   {
-    "id": "E_34_133_8",
+    "id": "E_34_134_8",
     "oposiciones": [
       "PISCINAS"
     ],
@@ -112636,7 +112553,7 @@
     ]
   },
   {
-    "id": "E_34_133_9",
+    "id": "E_34_134_9",
     "oposiciones": [
       "PISCINAS"
     ],
@@ -112662,7 +112579,7 @@
     ]
   },
   {
-    "id": "E_34_133_10",
+    "id": "E_34_134_10",
     "oposiciones": [
       "PISCINAS"
     ],
@@ -112688,7 +112605,7 @@
     ]
   },
   {
-    "id": "E_34_133_11",
+    "id": "E_34_134_11",
     "oposiciones": [
       "PISCINAS"
     ],
@@ -112714,7 +112631,7 @@
     ]
   },
   {
-    "id": "E_34_133_12",
+    "id": "E_34_134_12",
     "oposiciones": [
       "PISCINAS"
     ],
@@ -112740,7 +112657,7 @@
     ]
   },
   {
-    "id": "E_35_133_13",
+    "id": "E_35_134_13",
     "oposiciones": [
       "PISCINAS"
     ],
@@ -112766,7 +112683,7 @@
     ]
   },
   {
-    "id": "E_35_133_14",
+    "id": "E_35_134_14",
     "oposiciones": [
       "PISCINAS"
     ],
@@ -112792,7 +112709,7 @@
     ]
   },
   {
-    "id": "E_34_133_15",
+    "id": "E_34_134_15",
     "oposiciones": [
       "PISCINAS"
     ],
@@ -112818,7 +112735,7 @@
     ]
   },
   {
-    "id": "E_34_133_16",
+    "id": "E_34_134_16",
     "oposiciones": [
       "PISCINAS"
     ],
@@ -112844,7 +112761,7 @@
     ]
   },
   {
-    "id": "E_34_133_17",
+    "id": "E_34_134_17",
     "oposiciones": [
       "PISCINAS"
     ],
@@ -112870,7 +112787,7 @@
     ]
   },
   {
-    "id": "E_35_133_18",
+    "id": "E_35_134_18",
     "oposiciones": [
       "PISCINAS"
     ],
@@ -112896,7 +112813,7 @@
     ]
   },
   {
-    "id": "E_35_133_19",
+    "id": "E_35_134_19",
     "oposiciones": [
       "PISCINAS"
     ],
@@ -112922,7 +112839,7 @@
     ]
   },
   {
-    "id": "E_34_133_20",
+    "id": "E_34_134_20",
     "oposiciones": [
       "PISCINAS"
     ],
@@ -112948,7 +112865,7 @@
     ]
   },
   {
-    "id": "E_34_134_1",
+    "id": "E_34_135_1",
     "oposiciones": [
       "PISCINAS"
     ],
@@ -112974,7 +112891,7 @@
     ]
   },
   {
-    "id": "E_34_134_2",
+    "id": "E_34_135_2",
     "oposiciones": [
       "PISCINAS"
     ],
@@ -113000,7 +112917,7 @@
     ]
   },
   {
-    "id": "E_34_134_3",
+    "id": "E_34_135_3",
     "oposiciones": [
       "PISCINAS"
     ],
@@ -113026,7 +112943,7 @@
     ]
   },
   {
-    "id": "E_34_134_4",
+    "id": "E_34_135_4",
     "oposiciones": [
       "PISCINAS"
     ],
@@ -113052,7 +112969,7 @@
     ]
   },
   {
-    "id": "E_34_134_5",
+    "id": "E_34_135_5",
     "oposiciones": [
       "PISCINAS"
     ],
@@ -113078,7 +112995,7 @@
     ]
   },
   {
-    "id": "E_34_134_6",
+    "id": "E_34_135_6",
     "oposiciones": [
       "PISCINAS"
     ],
@@ -113104,7 +113021,7 @@
     ]
   },
   {
-    "id": "E_34_134_7",
+    "id": "E_34_135_7",
     "oposiciones": [
       "PISCINAS"
     ],
@@ -113130,7 +113047,7 @@
     ]
   },
   {
-    "id": "E_34_134_8",
+    "id": "E_34_135_8",
     "oposiciones": [
       "PISCINAS"
     ],
@@ -113156,7 +113073,7 @@
     ]
   },
   {
-    "id": "E_34_134_9",
+    "id": "E_34_135_9",
     "oposiciones": [
       "PISCINAS"
     ],
@@ -113182,7 +113099,7 @@
     ]
   },
   {
-    "id": "E_34_134_10",
+    "id": "E_34_135_10",
     "oposiciones": [
       "PISCINAS"
     ],
@@ -113208,7 +113125,7 @@
     ]
   },
   {
-    "id": "E_34_134_11",
+    "id": "E_34_135_11",
     "oposiciones": [
       "PISCINAS"
     ],
@@ -113234,7 +113151,7 @@
     ]
   },
   {
-    "id": "E_34_134_12",
+    "id": "E_34_135_12",
     "oposiciones": [
       "PISCINAS"
     ],
@@ -113260,7 +113177,7 @@
     ]
   },
   {
-    "id": "E_34_134_13",
+    "id": "E_34_135_13",
     "oposiciones": [
       "PISCINAS"
     ],
@@ -113286,7 +113203,7 @@
     ]
   },
   {
-    "id": "E_34_134_14",
+    "id": "E_34_135_14",
     "oposiciones": [
       "PISCINAS"
     ],
@@ -113312,7 +113229,7 @@
     ]
   },
   {
-    "id": "E_34_134_15",
+    "id": "E_34_135_15",
     "oposiciones": [
       "PISCINAS"
     ],
@@ -113338,7 +113255,7 @@
     ]
   },
   {
-    "id": "E_34_134_16",
+    "id": "E_34_135_16",
     "oposiciones": [
       "PISCINAS"
     ],
@@ -113364,7 +113281,7 @@
     ]
   },
   {
-    "id": "E_34_134_17",
+    "id": "E_34_135_17",
     "oposiciones": [
       "PISCINAS"
     ],
@@ -113390,7 +113307,7 @@
     ]
   },
   {
-    "id": "E_34_134_18",
+    "id": "E_34_135_18",
     "oposiciones": [
       "PISCINAS"
     ],
@@ -113416,7 +113333,7 @@
     ]
   },
   {
-    "id": "E_34_134_19",
+    "id": "E_34_135_19",
     "oposiciones": [
       "PISCINAS"
     ],
@@ -113442,7 +113359,7 @@
     ]
   },
   {
-    "id": "E_34_134_20",
+    "id": "E_34_135_20",
     "oposiciones": [
       "PISCINAS"
     ],
@@ -113468,7 +113385,7 @@
     ]
   },
   {
-    "id": "E_34_134_21",
+    "id": "E_34_135_21",
     "oposiciones": [
       "PISCINAS"
     ],
@@ -113494,7 +113411,7 @@
     ]
   },
   {
-    "id": "E_34_134_22",
+    "id": "E_34_135_22",
     "oposiciones": [
       "PISCINAS"
     ],
@@ -113520,7 +113437,7 @@
     ]
   },
   {
-    "id": "E_34_134_23",
+    "id": "E_34_135_23",
     "oposiciones": [
       "PISCINAS"
     ],
@@ -113546,7 +113463,7 @@
     ]
   },
   {
-    "id": "E_34_134_24",
+    "id": "E_34_135_24",
     "oposiciones": [
       "PISCINAS"
     ],
@@ -113572,7 +113489,7 @@
     ]
   },
   {
-    "id": "E_34_134_25",
+    "id": "E_34_135_25",
     "oposiciones": [
       "PISCINAS"
     ],
@@ -113598,7 +113515,7 @@
     ]
   },
   {
-    "id": "E_34_134_26",
+    "id": "E_34_135_26",
     "oposiciones": [
       "PISCINAS"
     ],
@@ -113624,7 +113541,7 @@
     ]
   },
   {
-    "id": "E_34_134_27",
+    "id": "E_34_135_27",
     "oposiciones": [
       "PISCINAS"
     ],
@@ -113650,7 +113567,7 @@
     ]
   },
   {
-    "id": "E_34_134_28",
+    "id": "E_34_135_28",
     "oposiciones": [
       "PISCINAS"
     ],
@@ -113676,7 +113593,7 @@
     ]
   },
   {
-    "id": "E_34_134_29",
+    "id": "E_34_135_29",
     "oposiciones": [
       "PISCINAS"
     ],
@@ -113702,7 +113619,7 @@
     ]
   },
   {
-    "id": "E_34_134_30",
+    "id": "E_34_135_30",
     "oposiciones": [
       "PISCINAS"
     ],
@@ -113728,7 +113645,7 @@
     ]
   },
   {
-    "id": "E_34_134_31",
+    "id": "E_34_135_31",
     "oposiciones": [
       "PISCINAS"
     ],
@@ -113754,7 +113671,7 @@
     ]
   },
   {
-    "id": "E_34_134_32",
+    "id": "E_34_135_32",
     "oposiciones": [
       "PISCINAS"
     ],
@@ -113780,7 +113697,7 @@
     ]
   },
   {
-    "id": "E_34_134_33",
+    "id": "E_34_135_33",
     "oposiciones": [
       "PISCINAS"
     ],
@@ -113806,7 +113723,7 @@
     ]
   },
   {
-    "id": "E_34_134_34",
+    "id": "E_34_135_34",
     "oposiciones": [
       "PISCINAS"
     ],
@@ -113832,7 +113749,7 @@
     ]
   },
   {
-    "id": "E_34_135_1",
+    "id": "E_34_136_1",
     "oposiciones": [
       "PISCINAS"
     ],
@@ -113858,7 +113775,7 @@
     ]
   },
   {
-    "id": "E_34_135_2",
+    "id": "E_34_136_2",
     "oposiciones": [
       "PISCINAS"
     ],
@@ -113884,7 +113801,7 @@
     ]
   },
   {
-    "id": "E_34_135_3",
+    "id": "E_34_136_3",
     "oposiciones": [
       "PISCINAS"
     ],
@@ -113910,7 +113827,7 @@
     ]
   },
   {
-    "id": "E_34_135_4",
+    "id": "E_34_136_4",
     "oposiciones": [
       "PISCINAS"
     ],
@@ -113936,7 +113853,7 @@
     ]
   },
   {
-    "id": "E_34_135_5",
+    "id": "E_34_136_5",
     "oposiciones": [
       "PISCINAS"
     ],
@@ -113962,7 +113879,7 @@
     ]
   },
   {
-    "id": "E_34_135_6",
+    "id": "E_34_136_6",
     "oposiciones": [
       "PISCINAS"
     ],
@@ -113988,7 +113905,7 @@
     ]
   },
   {
-    "id": "E_34_135_7",
+    "id": "E_34_136_7",
     "oposiciones": [
       "PISCINAS"
     ],
@@ -114014,7 +113931,7 @@
     ]
   },
   {
-    "id": "E_34_135_8",
+    "id": "E_34_136_8",
     "oposiciones": [
       "PISCINAS"
     ],
@@ -114040,7 +113957,7 @@
     ]
   },
   {
-    "id": "E_34_135_9",
+    "id": "E_34_136_9",
     "oposiciones": [
       "PISCINAS"
     ],
@@ -114066,7 +113983,7 @@
     ]
   },
   {
-    "id": "E_34_135_10",
+    "id": "E_34_136_10",
     "oposiciones": [
       "PISCINAS"
     ],
@@ -114092,7 +114009,7 @@
     ]
   },
   {
-    "id": "E_34_135_11",
+    "id": "E_34_136_11",
     "oposiciones": [
       "PISCINAS"
     ],
@@ -114118,7 +114035,7 @@
     ]
   },
   {
-    "id": "E_34_135_12",
+    "id": "E_34_136_12",
     "oposiciones": [
       "PISCINAS"
     ],
@@ -114144,7 +114061,7 @@
     ]
   },
   {
-    "id": "E_34_135_13",
+    "id": "E_34_136_13",
     "oposiciones": [
       "PISCINAS"
     ],
@@ -114170,7 +114087,7 @@
     ]
   },
   {
-    "id": "E_34_135_14",
+    "id": "E_34_136_14",
     "oposiciones": [
       "PISCINAS"
     ],
@@ -114196,7 +114113,7 @@
     ]
   },
   {
-    "id": "E_35_135_15",
+    "id": "E_35_136_15",
     "oposiciones": [
       "PISCINAS"
     ],
@@ -114222,7 +114139,7 @@
     ]
   },
   {
-    "id": "E_35_135_16",
+    "id": "E_35_136_16",
     "oposiciones": [
       "PISCINAS"
     ],
@@ -114248,7 +114165,7 @@
     ]
   },
   {
-    "id": "E_35_135_17",
+    "id": "E_35_136_17",
     "oposiciones": [
       "PISCINAS"
     ],
@@ -114274,7 +114191,7 @@
     ]
   },
   {
-    "id": "E_34_135_18",
+    "id": "E_34_136_18",
     "oposiciones": [
       "PISCINAS"
     ],
@@ -114300,7 +114217,7 @@
     ]
   },
   {
-    "id": "E_34_135_19",
+    "id": "E_34_136_19",
     "oposiciones": [
       "PISCINAS"
     ],
@@ -114326,7 +114243,7 @@
     ]
   },
   {
-    "id": "E_34_135_20",
+    "id": "E_34_136_20",
     "oposiciones": [
       "PISCINAS"
     ],
@@ -114352,7 +114269,7 @@
     ]
   },
   {
-    "id": "E_34_135_21",
+    "id": "E_34_136_21",
     "oposiciones": [
       "PISCINAS"
     ],
@@ -114378,7 +114295,7 @@
     ]
   },
   {
-    "id": "E_34_135_22",
+    "id": "E_34_136_22",
     "oposiciones": [
       "PISCINAS"
     ],
@@ -114404,7 +114321,7 @@
     ]
   },
   {
-    "id": "E_34_135_23",
+    "id": "E_34_136_23",
     "oposiciones": [
       "PISCINAS"
     ],
@@ -114430,7 +114347,7 @@
     ]
   },
   {
-    "id": "E_34_135_24",
+    "id": "E_34_136_24",
     "oposiciones": [
       "PISCINAS"
     ],
@@ -114456,7 +114373,7 @@
     ]
   },
   {
-    "id": "E_34_135_25",
+    "id": "E_34_136_25",
     "oposiciones": [
       "PISCINAS"
     ],
@@ -114482,7 +114399,7 @@
     ]
   },
   {
-    "id": "E_35_135_26",
+    "id": "E_35_136_26",
     "oposiciones": [
       "PISCINAS"
     ],
@@ -114508,7 +114425,7 @@
     ]
   },
   {
-    "id": "E_34_136_1",
+    "id": "E_34_137_1",
     "oposiciones": [
       "PISCINAS"
     ],
@@ -114534,7 +114451,7 @@
     ]
   },
   {
-    "id": "E_34_136_2",
+    "id": "E_34_137_2",
     "oposiciones": [
       "PISCINAS"
     ],
@@ -114560,7 +114477,7 @@
     ]
   },
   {
-    "id": "E_34_136_3",
+    "id": "E_34_137_3",
     "oposiciones": [
       "PISCINAS"
     ],
@@ -114586,7 +114503,7 @@
     ]
   },
   {
-    "id": "E_34_136_4",
+    "id": "E_34_137_4",
     "oposiciones": [
       "PISCINAS"
     ],
@@ -114612,7 +114529,7 @@
     ]
   },
   {
-    "id": "E_34_136_5",
+    "id": "E_34_137_5",
     "oposiciones": [
       "PISCINAS"
     ],
@@ -114638,7 +114555,7 @@
     ]
   },
   {
-    "id": "E_34_136_6",
+    "id": "E_34_137_6",
     "oposiciones": [
       "PISCINAS"
     ],
@@ -114664,7 +114581,7 @@
     ]
   },
   {
-    "id": "E_34_136_7",
+    "id": "E_34_137_7",
     "oposiciones": [
       "PISCINAS"
     ],
@@ -114690,7 +114607,7 @@
     ]
   },
   {
-    "id": "E_34_136_8",
+    "id": "E_34_137_8",
     "oposiciones": [
       "PISCINAS"
     ],
@@ -114716,7 +114633,7 @@
     ]
   },
   {
-    "id": "E_34_136_9",
+    "id": "E_34_137_9",
     "oposiciones": [
       "PISCINAS"
     ],
@@ -114742,7 +114659,7 @@
     ]
   },
   {
-    "id": "E_34_136_10",
+    "id": "E_34_137_10",
     "oposiciones": [
       "PISCINAS"
     ],
@@ -114768,7 +114685,7 @@
     ]
   },
   {
-    "id": "E_34_136_11",
+    "id": "E_34_137_11",
     "oposiciones": [
       "PISCINAS"
     ],
@@ -114794,7 +114711,7 @@
     ]
   },
   {
-    "id": "E_34_136_12",
+    "id": "E_34_137_12",
     "oposiciones": [
       "PISCINAS"
     ],
@@ -114820,7 +114737,7 @@
     ]
   },
   {
-    "id": "E_34_136_13",
+    "id": "E_34_137_13",
     "oposiciones": [
       "PISCINAS"
     ],
@@ -114846,7 +114763,7 @@
     ]
   },
   {
-    "id": "E_34_136_14",
+    "id": "E_34_137_14",
     "oposiciones": [
       "PISCINAS"
     ],
@@ -114872,7 +114789,7 @@
     ]
   },
   {
-    "id": "E_34_136_15",
+    "id": "E_34_137_15",
     "oposiciones": [
       "PISCINAS"
     ],
@@ -114898,7 +114815,7 @@
     ]
   },
   {
-    "id": "E_34_136_16",
+    "id": "E_34_137_16",
     "oposiciones": [
       "PISCINAS"
     ],
@@ -114924,7 +114841,7 @@
     ]
   },
   {
-    "id": "E_34_136_17",
+    "id": "E_34_137_17",
     "oposiciones": [
       "PISCINAS"
     ],
@@ -114950,7 +114867,7 @@
     ]
   },
   {
-    "id": "E_34_136_18",
+    "id": "E_34_137_18",
     "oposiciones": [
       "PISCINAS"
     ],
@@ -114976,7 +114893,7 @@
     ]
   },
   {
-    "id": "E_34_136_19",
+    "id": "E_34_137_19",
     "oposiciones": [
       "PISCINAS"
     ],
@@ -115002,7 +114919,7 @@
     ]
   },
   {
-    "id": "E_34_136_20",
+    "id": "E_34_137_20",
     "oposiciones": [
       "PISCINAS"
     ],
@@ -115028,7 +114945,7 @@
     ]
   },
   {
-    "id": "E_34_136_21",
+    "id": "E_34_137_21",
     "oposiciones": [
       "PISCINAS"
     ],
@@ -115054,7 +114971,7 @@
     ]
   },
   {
-    "id": "E_34_136_22",
+    "id": "E_34_137_22",
     "oposiciones": [
       "PISCINAS"
     ],
@@ -115080,7 +114997,7 @@
     ]
   },
   {
-    "id": "E_34_136_23",
+    "id": "E_34_137_23",
     "oposiciones": [
       "PISCINAS"
     ],
@@ -115106,7 +115023,7 @@
     ]
   },
   {
-    "id": "E_34_136_24",
+    "id": "E_34_137_24",
     "oposiciones": [
       "PISCINAS"
     ],
@@ -115132,7 +115049,7 @@
     ]
   },
   {
-    "id": "E_34_136_25",
+    "id": "E_34_137_25",
     "oposiciones": [
       "PISCINAS"
     ],
@@ -115158,7 +115075,7 @@
     ]
   },
   {
-    "id": "E_34_136_26",
+    "id": "E_34_137_26",
     "oposiciones": [
       "PISCINAS"
     ],
@@ -115184,7 +115101,7 @@
     ]
   },
   {
-    "id": "E_34_136_27",
+    "id": "E_34_137_27",
     "oposiciones": [
       "PISCINAS"
     ],
@@ -115210,7 +115127,7 @@
     ]
   },
   {
-    "id": "E_34_136_28",
+    "id": "E_34_137_28",
     "oposiciones": [
       "PISCINAS"
     ],
@@ -115236,7 +115153,7 @@
     ]
   },
   {
-    "id": "E_34_137_1",
+    "id": "E_34_138_1",
     "oposiciones": [
       "PISCINAS"
     ],
@@ -115262,7 +115179,7 @@
     ]
   },
   {
-    "id": "E_35_137_2",
+    "id": "E_35_138_2",
     "oposiciones": [
       "PISCINAS"
     ],
@@ -115288,7 +115205,7 @@
     ]
   },
   {
-    "id": "E_35_137_3",
+    "id": "E_35_138_3",
     "oposiciones": [
       "PISCINAS"
     ],
@@ -115314,7 +115231,7 @@
     ]
   },
   {
-    "id": "E_35_137_4",
+    "id": "E_35_138_4",
     "oposiciones": [
       "PISCINAS"
     ],
@@ -115340,7 +115257,7 @@
     ]
   },
   {
-    "id": "E_35_137_5",
+    "id": "E_35_138_5",
     "oposiciones": [
       "PISCINAS"
     ],
@@ -115366,7 +115283,7 @@
     ]
   },
   {
-    "id": "E_35_137_6",
+    "id": "E_35_138_6",
     "oposiciones": [
       "PISCINAS"
     ],
@@ -115392,7 +115309,7 @@
     ]
   },
   {
-    "id": "E_35_137_7",
+    "id": "E_35_138_7",
     "oposiciones": [
       "PISCINAS"
     ],
@@ -115418,7 +115335,7 @@
     ]
   },
   {
-    "id": "E_33_137_8",
+    "id": "E_33_138_8",
     "oposiciones": [
       "PISCINAS"
     ],
@@ -115444,7 +115361,7 @@
     ]
   },
   {
-    "id": "E_35_137_9",
+    "id": "E_35_138_9",
     "oposiciones": [
       "PISCINAS"
     ],
@@ -115470,7 +115387,7 @@
     ]
   },
   {
-    "id": "E_34_137_10",
+    "id": "E_34_138_10",
     "oposiciones": [
       "PISCINAS"
     ],
@@ -115496,7 +115413,7 @@
     ]
   },
   {
-    "id": "E_35_137_11",
+    "id": "E_35_138_11",
     "oposiciones": [
       "PISCINAS"
     ],
@@ -115522,7 +115439,7 @@
     ]
   },
   {
-    "id": "E_35_137_12",
+    "id": "E_35_138_12",
     "oposiciones": [
       "PISCINAS"
     ],
@@ -115548,7 +115465,7 @@
     ]
   },
   {
-    "id": "E_35_137_13",
+    "id": "E_35_138_13",
     "oposiciones": [
       "PISCINAS"
     ],
@@ -115574,7 +115491,7 @@
     ]
   },
   {
-    "id": "E_35_137_14",
+    "id": "E_35_138_14",
     "oposiciones": [
       "PISCINAS"
     ],
@@ -115600,7 +115517,7 @@
     ]
   },
   {
-    "id": "E_35_137_15",
+    "id": "E_35_138_15",
     "oposiciones": [
       "PISCINAS"
     ],
@@ -115626,7 +115543,7 @@
     ]
   },
   {
-    "id": "E_35_137_16",
+    "id": "E_35_138_16",
     "oposiciones": [
       "PISCINAS"
     ],
@@ -115652,7 +115569,7 @@
     ]
   },
   {
-    "id": "E_35_137_17",
+    "id": "E_35_138_17",
     "oposiciones": [
       "PISCINAS"
     ],
@@ -115678,7 +115595,7 @@
     ]
   },
   {
-    "id": "E_35_137_18",
+    "id": "E_35_138_18",
     "oposiciones": [
       "PISCINAS"
     ],
@@ -115704,7 +115621,7 @@
     ]
   },
   {
-    "id": "E_35_137_19",
+    "id": "E_35_138_19",
     "oposiciones": [
       "PISCINAS"
     ],
@@ -115730,7 +115647,7 @@
     ]
   },
   {
-    "id": "E_35_137_20",
+    "id": "E_35_138_20",
     "oposiciones": [
       "PISCINAS"
     ],
@@ -115756,7 +115673,7 @@
     ]
   },
   {
-    "id": "E_35_137_21",
+    "id": "E_35_138_21",
     "oposiciones": [
       "PISCINAS"
     ],
@@ -115782,7 +115699,7 @@
     ]
   },
   {
-    "id": "E_34_137_22",
+    "id": "E_34_138_22",
     "oposiciones": [
       "PISCINAS"
     ],
@@ -115808,7 +115725,7 @@
     ]
   },
   {
-    "id": "E_35_137_23",
+    "id": "E_35_138_23",
     "oposiciones": [
       "PISCINAS"
     ],
@@ -115834,7 +115751,7 @@
     ]
   },
   {
-    "id": "E_34_137_24",
+    "id": "E_34_138_24",
     "oposiciones": [
       "PISCINAS"
     ],
@@ -115860,7 +115777,7 @@
     ]
   },
   {
-    "id": "E_35_137_25",
+    "id": "E_35_138_25",
     "oposiciones": [
       "PISCINAS"
     ],
@@ -115886,7 +115803,7 @@
     ]
   },
   {
-    "id": "E_35_137_26",
+    "id": "E_35_138_26",
     "oposiciones": [
       "PISCINAS"
     ],
@@ -115912,7 +115829,7 @@
     ]
   },
   {
-    "id": "E_34_137_27",
+    "id": "E_34_138_27",
     "oposiciones": [
       "PISCINAS"
     ],
@@ -115938,7 +115855,7 @@
     ]
   },
   {
-    "id": "E_34_137_28",
+    "id": "E_34_138_28",
     "oposiciones": [
       "PISCINAS"
     ],
@@ -115964,7 +115881,7 @@
     ]
   },
   {
-    "id": "E_35_137_29",
+    "id": "E_35_138_29",
     "oposiciones": [
       "PISCINAS"
     ],
@@ -115990,7 +115907,7 @@
     ]
   },
   {
-    "id": "E_35_137_30",
+    "id": "E_35_138_30",
     "oposiciones": [
       "PISCINAS"
     ],
@@ -116016,7 +115933,7 @@
     ]
   },
   {
-    "id": "E_35_138_1",
+    "id": "E_35_139_1",
     "oposiciones": [
       "PISCINAS"
     ],
@@ -116042,7 +115959,7 @@
     ]
   },
   {
-    "id": "E_34_138_2",
+    "id": "E_34_139_2",
     "oposiciones": [
       "PISCINAS"
     ],
@@ -116068,7 +115985,7 @@
     ]
   },
   {
-    "id": "E_34_138_3",
+    "id": "E_34_139_3",
     "oposiciones": [
       "PISCINAS"
     ],
@@ -116094,7 +116011,7 @@
     ]
   },
   {
-    "id": "E_34_138_4",
+    "id": "E_34_139_4",
     "oposiciones": [
       "PISCINAS"
     ],
@@ -116120,7 +116037,7 @@
     ]
   },
   {
-    "id": "E_35_138_5",
+    "id": "E_35_139_5",
     "oposiciones": [
       "PISCINAS"
     ],
@@ -116146,7 +116063,7 @@
     ]
   },
   {
-    "id": "E_35_138_6",
+    "id": "E_35_139_6",
     "oposiciones": [
       "PISCINAS"
     ],
@@ -116172,7 +116089,7 @@
     ]
   },
   {
-    "id": "E_35_138_7",
+    "id": "E_35_139_7",
     "oposiciones": [
       "PISCINAS"
     ],
@@ -116198,7 +116115,7 @@
     ]
   },
   {
-    "id": "E_35_138_8",
+    "id": "E_35_139_8",
     "oposiciones": [
       "PISCINAS"
     ],
@@ -116224,7 +116141,7 @@
     ]
   },
   {
-    "id": "E_35_138_9",
+    "id": "E_35_139_9",
     "oposiciones": [
       "PISCINAS"
     ],
@@ -116250,7 +116167,7 @@
     ]
   },
   {
-    "id": "E_35_138_10",
+    "id": "E_35_139_10",
     "oposiciones": [
       "PISCINAS"
     ],
@@ -116276,7 +116193,7 @@
     ]
   },
   {
-    "id": "E_35_138_11",
+    "id": "E_35_139_11",
     "oposiciones": [
       "PISCINAS"
     ],
@@ -116302,7 +116219,7 @@
     ]
   },
   {
-    "id": "E_35_138_12",
+    "id": "E_35_139_12",
     "oposiciones": [
       "PISCINAS"
     ],
@@ -116328,7 +116245,7 @@
     ]
   },
   {
-    "id": "E_35_138_13",
+    "id": "E_35_139_13",
     "oposiciones": [
       "PISCINAS"
     ],
@@ -116354,7 +116271,7 @@
     ]
   },
   {
-    "id": "E_35_138_14",
+    "id": "E_35_139_14",
     "oposiciones": [
       "PISCINAS"
     ],
@@ -116380,7 +116297,7 @@
     ]
   },
   {
-    "id": "E_34_138_15",
+    "id": "E_34_139_15",
     "oposiciones": [
       "PISCINAS"
     ],
@@ -116406,7 +116323,7 @@
     ]
   },
   {
-    "id": "E_34_138_16",
+    "id": "E_34_139_16",
     "oposiciones": [
       "PISCINAS"
     ],
@@ -116432,7 +116349,7 @@
     ]
   },
   {
-    "id": "E_35_138_17",
+    "id": "E_35_139_17",
     "oposiciones": [
       "PISCINAS"
     ],
@@ -116458,7 +116375,7 @@
     ]
   },
   {
-    "id": "E_35_138_18",
+    "id": "E_35_139_18",
     "oposiciones": [
       "PISCINAS"
     ],
@@ -116484,7 +116401,7 @@
     ]
   },
   {
-    "id": "E_35_138_19",
+    "id": "E_35_139_19",
     "oposiciones": [
       "PISCINAS"
     ],
@@ -116510,7 +116427,7 @@
     ]
   },
   {
-    "id": "E_34_138_20",
+    "id": "E_34_139_20",
     "oposiciones": [
       "PISCINAS"
     ],
@@ -116536,7 +116453,7 @@
     ]
   },
   {
-    "id": "E_34_138_21",
+    "id": "E_34_139_21",
     "oposiciones": [
       "PISCINAS"
     ],
@@ -116562,7 +116479,7 @@
     ]
   },
   {
-    "id": "E_35_138_22",
+    "id": "E_35_139_22",
     "oposiciones": [
       "PISCINAS"
     ],
@@ -116588,7 +116505,7 @@
     ]
   },
   {
-    "id": "E_35_138_23",
+    "id": "E_35_139_23",
     "oposiciones": [
       "PISCINAS"
     ],
@@ -116614,7 +116531,7 @@
     ]
   },
   {
-    "id": "E_35_138_24",
+    "id": "E_35_139_24",
     "oposiciones": [
       "PISCINAS"
     ],
@@ -116640,7 +116557,7 @@
     ]
   },
   {
-    "id": "E_35_138_25",
+    "id": "E_35_139_25",
     "oposiciones": [
       "PISCINAS"
     ],
@@ -116666,7 +116583,7 @@
     ]
   },
   {
-    "id": "E_35_138_26",
+    "id": "E_35_139_26",
     "oposiciones": [
       "PISCINAS"
     ],
@@ -116692,7 +116609,7 @@
     ]
   },
   {
-    "id": "E_34_138_27",
+    "id": "E_34_139_27",
     "oposiciones": [
       "PISCINAS"
     ],
@@ -116718,7 +116635,7 @@
     ]
   },
   {
-    "id": "E_35_138_28",
+    "id": "E_35_139_28",
     "oposiciones": [
       "PISCINAS"
     ],
@@ -116744,7 +116661,7 @@
     ]
   },
   {
-    "id": "E_35_138_29",
+    "id": "E_35_139_29",
     "oposiciones": [
       "PISCINAS"
     ],
@@ -116770,7 +116687,7 @@
     ]
   },
   {
-    "id": "E_32_138_30",
+    "id": "E_32_139_30",
     "oposiciones": [
       "PISCINAS"
     ],
@@ -116796,7 +116713,7 @@
     ]
   },
   {
-    "id": "E_32_138_31",
+    "id": "E_32_139_31",
     "oposiciones": [
       "PISCINAS"
     ],
@@ -116822,7 +116739,7 @@
     ]
   },
   {
-    "id": "E_32_138_32",
+    "id": "E_32_139_32",
     "oposiciones": [
       "PISCINAS"
     ],
@@ -116848,7 +116765,7 @@
     ]
   },
   {
-    "id": "E_32_138_33",
+    "id": "E_32_139_33",
     "oposiciones": [
       "PISCINAS"
     ],
@@ -116874,7 +116791,7 @@
     ]
   },
   {
-    "id": "E_32_138_34",
+    "id": "E_32_139_34",
     "oposiciones": [
       "PISCINAS"
     ],
@@ -116900,7 +116817,7 @@
     ]
   },
   {
-    "id": "E_32_138_35",
+    "id": "E_32_139_35",
     "oposiciones": [
       "PISCINAS"
     ],
@@ -116926,7 +116843,7 @@
     ]
   },
   {
-    "id": "E_32_138_36",
+    "id": "E_32_139_36",
     "oposiciones": [
       "PISCINAS"
     ],
@@ -116952,7 +116869,7 @@
     ]
   },
   {
-    "id": "E_32_138_37",
+    "id": "E_32_139_37",
     "oposiciones": [
       "PISCINAS"
     ],
@@ -116978,7 +116895,7 @@
     ]
   },
   {
-    "id": "E_32_138_38",
+    "id": "E_32_139_38",
     "oposiciones": [
       "PISCINAS"
     ],
@@ -117004,7 +116921,7 @@
     ]
   },
   {
-    "id": "E_32_138_39",
+    "id": "E_32_139_39",
     "oposiciones": [
       "PISCINAS"
     ],
@@ -117030,7 +116947,7 @@
     ]
   },
   {
-    "id": "E_32_138_40",
+    "id": "E_32_139_40",
     "oposiciones": [
       "PISCINAS"
     ],
@@ -117056,7 +116973,7 @@
     ]
   },
   {
-    "id": "E_32_138_41",
+    "id": "E_32_139_41",
     "oposiciones": [
       "PISCINAS"
     ],
@@ -117082,7 +116999,7 @@
     ]
   },
   {
-    "id": "E_32_138_42",
+    "id": "E_32_139_42",
     "oposiciones": [
       "PISCINAS"
     ],
@@ -117108,7 +117025,7 @@
     ]
   },
   {
-    "id": "E_32_138_43",
+    "id": "E_32_139_43",
     "oposiciones": [
       "PISCINAS"
     ],
@@ -117134,7 +117051,7 @@
     ]
   },
   {
-    "id": "E_32_138_44",
+    "id": "E_32_139_44",
     "oposiciones": [
       "PISCINAS"
     ],
@@ -117160,7 +117077,7 @@
     ]
   },
   {
-    "id": "E_32_138_45",
+    "id": "E_32_139_45",
     "oposiciones": [
       "PISCINAS"
     ],
@@ -117186,7 +117103,7 @@
     ]
   },
   {
-    "id": "E_34_139_1",
+    "id": "E_34_140_1",
     "oposiciones": [
       "PISCINAS"
     ],
@@ -117212,7 +117129,7 @@
     ]
   },
   {
-    "id": "E_35_139_2",
+    "id": "E_35_140_2",
     "oposiciones": [
       "PISCINAS"
     ],
@@ -117238,7 +117155,7 @@
     ]
   },
   {
-    "id": "E_34_139_3",
+    "id": "E_34_140_3",
     "oposiciones": [
       "PISCINAS"
     ],
@@ -117264,7 +117181,7 @@
     ]
   },
   {
-    "id": "E_35_139_4",
+    "id": "E_35_140_4",
     "oposiciones": [
       "PISCINAS"
     ],
@@ -117290,7 +117207,7 @@
     ]
   },
   {
-    "id": "E_35_139_5",
+    "id": "E_35_140_5",
     "oposiciones": [
       "PISCINAS"
     ],
@@ -117316,7 +117233,7 @@
     ]
   },
   {
-    "id": "E_34_139_6",
+    "id": "E_34_140_6",
     "oposiciones": [
       "PISCINAS"
     ],
@@ -117342,7 +117259,7 @@
     ]
   },
   {
-    "id": "E_35_139_7",
+    "id": "E_35_140_7",
     "oposiciones": [
       "PISCINAS"
     ],
@@ -117368,7 +117285,7 @@
     ]
   },
   {
-    "id": "E_35_139_8",
+    "id": "E_35_140_8",
     "oposiciones": [
       "PISCINAS"
     ],
@@ -117394,7 +117311,7 @@
     ]
   },
   {
-    "id": "E_34_139_9",
+    "id": "E_34_140_9",
     "oposiciones": [
       "PISCINAS"
     ],
@@ -117420,7 +117337,7 @@
     ]
   },
   {
-    "id": "E_34_139_10",
+    "id": "E_34_140_10",
     "oposiciones": [
       "PISCINAS"
     ],
@@ -117446,7 +117363,7 @@
     ]
   },
   {
-    "id": "E_34_139_11",
+    "id": "E_34_140_11",
     "oposiciones": [
       "PISCINAS"
     ],
@@ -117472,7 +117389,7 @@
     ]
   },
   {
-    "id": "E_34_139_12",
+    "id": "E_34_140_12",
     "oposiciones": [
       "PISCINAS"
     ],
@@ -117498,7 +117415,7 @@
     ]
   },
   {
-    "id": "E_34_139_13",
+    "id": "E_34_140_13",
     "oposiciones": [
       "PISCINAS"
     ],
@@ -117524,7 +117441,7 @@
     ]
   },
   {
-    "id": "E_34_139_14",
+    "id": "E_34_140_14",
     "oposiciones": [
       "PISCINAS"
     ],
@@ -117550,7 +117467,7 @@
     ]
   },
   {
-    "id": "E_34_139_15",
+    "id": "E_34_140_15",
     "oposiciones": [
       "PISCINAS"
     ],
@@ -117576,7 +117493,7 @@
     ]
   },
   {
-    "id": "E_35_139_16",
+    "id": "E_35_140_16",
     "oposiciones": [
       "PISCINAS"
     ],
@@ -117602,7 +117519,7 @@
     ]
   },
   {
-    "id": "E_35_139_17",
+    "id": "E_35_140_17",
     "oposiciones": [
       "PISCINAS"
     ],
@@ -117628,7 +117545,7 @@
     ]
   },
   {
-    "id": "E_35_139_18",
+    "id": "E_35_140_18",
     "oposiciones": [
       "PISCINAS"
     ],
@@ -117654,7 +117571,7 @@
     ]
   },
   {
-    "id": "E_34_139_19",
+    "id": "E_34_140_19",
     "oposiciones": [
       "PISCINAS"
     ],
@@ -117680,7 +117597,7 @@
     ]
   },
   {
-    "id": "E_35_139_20",
+    "id": "E_35_140_20",
     "oposiciones": [
       "PISCINAS"
     ],
@@ -117706,7 +117623,7 @@
     ]
   },
   {
-    "id": "E_35_139_21",
+    "id": "E_35_140_21",
     "oposiciones": [
       "PISCINAS"
     ],
@@ -117732,7 +117649,7 @@
     ]
   },
   {
-    "id": "E_34_139_22",
+    "id": "E_34_140_22",
     "oposiciones": [
       "PISCINAS"
     ],
@@ -117758,7 +117675,7 @@
     ]
   },
   {
-    "id": "E_35_139_23",
+    "id": "E_35_140_23",
     "oposiciones": [
       "PISCINAS"
     ],
@@ -117784,7 +117701,7 @@
     ]
   },
   {
-    "id": "E_35_139_24",
+    "id": "E_35_140_24",
     "oposiciones": [
       "PISCINAS"
     ],
@@ -117810,7 +117727,7 @@
     ]
   },
   {
-    "id": "E_35_139_25",
+    "id": "E_35_140_25",
     "oposiciones": [
       "PISCINAS"
     ],
@@ -117836,7 +117753,7 @@
     ]
   },
   {
-    "id": "E_35_139_26",
+    "id": "E_35_140_26",
     "oposiciones": [
       "PISCINAS"
     ],
@@ -117862,7 +117779,7 @@
     ]
   },
   {
-    "id": "E_35_139_27",
+    "id": "E_35_140_27",
     "oposiciones": [
       "PISCINAS"
     ],
@@ -117888,7 +117805,7 @@
     ]
   },
   {
-    "id": "E_34_139_28",
+    "id": "E_34_140_28",
     "oposiciones": [
       "PISCINAS"
     ],
@@ -117914,7 +117831,7 @@
     ]
   },
   {
-    "id": "E_33_140_1",
+    "id": "E_33_141_1",
     "oposiciones": [
       "PISCINAS"
     ],
@@ -117940,7 +117857,7 @@
     ]
   },
   {
-    "id": "E_35_140_2",
+    "id": "E_35_141_2",
     "oposiciones": [
       "PISCINAS"
     ],
@@ -117966,7 +117883,7 @@
     ]
   },
   {
-    "id": "E_35_140_3",
+    "id": "E_35_141_3",
     "oposiciones": [
       "PISCINAS"
     ],
@@ -117992,7 +117909,7 @@
     ]
   },
   {
-    "id": "E_35_140_4",
+    "id": "E_35_141_4",
     "oposiciones": [
       "PISCINAS"
     ],
@@ -118018,7 +117935,7 @@
     ]
   },
   {
-    "id": "E_35_140_5",
+    "id": "E_35_141_5",
     "oposiciones": [
       "PISCINAS"
     ],
@@ -118044,7 +117961,7 @@
     ]
   },
   {
-    "id": "E_35_140_6",
+    "id": "E_35_141_6",
     "oposiciones": [
       "PISCINAS"
     ],
@@ -118070,7 +117987,7 @@
     ]
   },
   {
-    "id": "E_35_140_7",
+    "id": "E_35_141_7",
     "oposiciones": [
       "PISCINAS"
     ],
@@ -118096,7 +118013,7 @@
     ]
   },
   {
-    "id": "E_35_140_8",
+    "id": "E_35_141_8",
     "oposiciones": [
       "PISCINAS"
     ],
@@ -118122,7 +118039,7 @@
     ]
   },
   {
-    "id": "E_35_140_9",
+    "id": "E_35_141_9",
     "oposiciones": [
       "PISCINAS"
     ],
@@ -118148,7 +118065,7 @@
     ]
   },
   {
-    "id": "E_34_140_10",
+    "id": "E_34_141_10",
     "oposiciones": [
       "PISCINAS"
     ],
@@ -118174,7 +118091,7 @@
     ]
   },
   {
-    "id": "E_35_140_11",
+    "id": "E_35_141_11",
     "oposiciones": [
       "PISCINAS"
     ],
@@ -118200,7 +118117,7 @@
     ]
   },
   {
-    "id": "E_35_140_12",
+    "id": "E_35_141_12",
     "oposiciones": [
       "PISCINAS"
     ],
@@ -118226,7 +118143,7 @@
     ]
   },
   {
-    "id": "E_35_140_13",
+    "id": "E_35_141_13",
     "oposiciones": [
       "PISCINAS"
     ],
@@ -118252,7 +118169,7 @@
     ]
   },
   {
-    "id": "E_33_140_14",
+    "id": "E_33_141_14",
     "oposiciones": [
       "PISCINAS"
     ],
@@ -118278,7 +118195,7 @@
     ]
   },
   {
-    "id": "E_34_140_15",
+    "id": "E_34_141_15",
     "oposiciones": [
       "PISCINAS"
     ],
@@ -118304,7 +118221,7 @@
     ]
   },
   {
-    "id": "E_35_140_16",
+    "id": "E_35_141_16",
     "oposiciones": [
       "PISCINAS"
     ],
@@ -118330,7 +118247,7 @@
     ]
   },
   {
-    "id": "E_35_140_17",
+    "id": "E_35_141_17",
     "oposiciones": [
       "PISCINAS"
     ],
@@ -118356,7 +118273,7 @@
     ]
   },
   {
-    "id": "E_35_140_19",
+    "id": "E_35_141_19",
     "oposiciones": [
       "PISCINAS"
     ],
@@ -118382,7 +118299,7 @@
     ]
   },
   {
-    "id": "E_34_140_20",
+    "id": "E_34_141_20",
     "oposiciones": [
       "PISCINAS"
     ],
@@ -118408,7 +118325,7 @@
     ]
   },
   {
-    "id": "E_34_140_21",
+    "id": "E_34_141_21",
     "oposiciones": [
       "PISCINAS"
     ],
@@ -118434,7 +118351,7 @@
     ]
   },
   {
-    "id": "E_36_141_1",
+    "id": "E_36_142_1",
     "oposiciones": [
       "PISCINAS"
     ],
@@ -118460,7 +118377,7 @@
     ]
   },
   {
-    "id": "E_36_141_2",
+    "id": "E_36_142_2",
     "oposiciones": [
       "PISCINAS"
     ],
@@ -118486,7 +118403,7 @@
     ]
   },
   {
-    "id": "E_36_141_3",
+    "id": "E_36_142_3",
     "oposiciones": [
       "PISCINAS"
     ],
@@ -118512,7 +118429,7 @@
     ]
   },
   {
-    "id": "E_36_141_4",
+    "id": "E_36_142_4",
     "oposiciones": [
       "PISCINAS"
     ],
@@ -118538,7 +118455,7 @@
     ]
   },
   {
-    "id": "E_36_141_5",
+    "id": "E_36_142_5",
     "oposiciones": [
       "PISCINAS"
     ],
@@ -118564,7 +118481,7 @@
     ]
   },
   {
-    "id": "E_36_141_6",
+    "id": "E_36_142_6",
     "oposiciones": [
       "PISCINAS"
     ],
@@ -118590,7 +118507,7 @@
     ]
   },
   {
-    "id": "E_36_141_7",
+    "id": "E_36_142_7",
     "oposiciones": [
       "PISCINAS"
     ],
@@ -118616,7 +118533,7 @@
     ]
   },
   {
-    "id": "E_36_141_8",
+    "id": "E_36_142_8",
     "oposiciones": [
       "PISCINAS"
     ],
@@ -118642,7 +118559,7 @@
     ]
   },
   {
-    "id": "E_36_141_9",
+    "id": "E_36_142_9",
     "oposiciones": [
       "PISCINAS"
     ],
@@ -118668,7 +118585,7 @@
     ]
   },
   {
-    "id": "E_36_141_10",
+    "id": "E_36_142_10",
     "oposiciones": [
       "PISCINAS"
     ],
@@ -118694,7 +118611,7 @@
     ]
   },
   {
-    "id": "E_36_141_11",
+    "id": "E_36_142_11",
     "oposiciones": [
       "PISCINAS"
     ],
@@ -118720,7 +118637,7 @@
     ]
   },
   {
-    "id": "E_36_141_12",
+    "id": "E_36_142_12",
     "oposiciones": [
       "PISCINAS"
     ],
@@ -118746,7 +118663,7 @@
     ]
   },
   {
-    "id": "E_36_141_13",
+    "id": "E_36_142_13",
     "oposiciones": [
       "PISCINAS"
     ],
@@ -118772,7 +118689,7 @@
     ]
   },
   {
-    "id": "E_36_141_14",
+    "id": "E_36_142_14",
     "oposiciones": [
       "PISCINAS"
     ],
@@ -118798,7 +118715,7 @@
     ]
   },
   {
-    "id": "E_36_141_15",
+    "id": "E_36_142_15",
     "oposiciones": [
       "PISCINAS"
     ],
@@ -118824,7 +118741,7 @@
     ]
   },
   {
-    "id": "E_36_141_16",
+    "id": "E_36_142_16",
     "oposiciones": [
       "PISCINAS"
     ],
@@ -118850,7 +118767,7 @@
     ]
   },
   {
-    "id": "E_36_141_17",
+    "id": "E_36_142_17",
     "oposiciones": [
       "PISCINAS"
     ],
@@ -118876,7 +118793,7 @@
     ]
   },
   {
-    "id": "E_36_141_18",
+    "id": "E_36_142_18",
     "oposiciones": [
       "PISCINAS"
     ],
@@ -118902,7 +118819,7 @@
     ]
   },
   {
-    "id": "E_36_141_19",
+    "id": "E_36_142_19",
     "oposiciones": [
       "PISCINAS"
     ],
@@ -118928,7 +118845,7 @@
     ]
   },
   {
-    "id": "E_36_141_20",
+    "id": "E_36_142_20",
     "oposiciones": [
       "PISCINAS"
     ],
@@ -118954,7 +118871,7 @@
     ]
   },
   {
-    "id": "E_36_141_21",
+    "id": "E_36_142_21",
     "oposiciones": [
       "PISCINAS"
     ],
@@ -118980,7 +118897,7 @@
     ]
   },
   {
-    "id": "E_36_141_22",
+    "id": "E_36_142_22",
     "oposiciones": [
       "PISCINAS"
     ],
@@ -119006,7 +118923,7 @@
     ]
   },
   {
-    "id": "E_36_141_23",
+    "id": "E_36_142_23",
     "oposiciones": [
       "PISCINAS"
     ],
@@ -119032,7 +118949,7 @@
     ]
   },
   {
-    "id": "E_36_141_24",
+    "id": "E_36_142_24",
     "oposiciones": [
       "PISCINAS"
     ],
@@ -119058,7 +118975,7 @@
     ]
   },
   {
-    "id": "E_36_141_25",
+    "id": "E_36_142_25",
     "oposiciones": [
       "PISCINAS"
     ],
@@ -119084,7 +119001,7 @@
     ]
   },
   {
-    "id": "E_36_141_26",
+    "id": "E_36_142_26",
     "oposiciones": [
       "PISCINAS"
     ],
@@ -119110,7 +119027,7 @@
     ]
   },
   {
-    "id": "E_36_141_27",
+    "id": "E_36_142_27",
     "oposiciones": [
       "PISCINAS"
     ],
@@ -119136,7 +119053,7 @@
     ]
   },
   {
-    "id": "E_36_141_28",
+    "id": "E_36_142_28",
     "oposiciones": [
       "PISCINAS"
     ],
@@ -119162,7 +119079,7 @@
     ]
   },
   {
-    "id": "E_37_142_1",
+    "id": "E_37_143_1",
     "oposiciones": [
       "PISCINAS"
     ],
@@ -119188,7 +119105,7 @@
     ]
   },
   {
-    "id": "E_37_142_2",
+    "id": "E_37_143_2",
     "oposiciones": [
       "PISCINAS"
     ],
@@ -119214,7 +119131,7 @@
     ]
   },
   {
-    "id": "E_37_142_3",
+    "id": "E_37_143_3",
     "oposiciones": [
       "PISCINAS"
     ],
@@ -119240,7 +119157,7 @@
     ]
   },
   {
-    "id": "E_37_142_4",
+    "id": "E_37_143_4",
     "oposiciones": [
       "PISCINAS"
     ],
@@ -119266,7 +119183,7 @@
     ]
   },
   {
-    "id": "E_37_142_5",
+    "id": "E_37_143_5",
     "oposiciones": [
       "PISCINAS"
     ],
@@ -119292,7 +119209,7 @@
     ]
   },
   {
-    "id": "E_37_142_6",
+    "id": "E_37_143_6",
     "oposiciones": [
       "PISCINAS"
     ],
@@ -119318,7 +119235,7 @@
     ]
   },
   {
-    "id": "E_37_142_7",
+    "id": "E_37_143_7",
     "oposiciones": [
       "PISCINAS"
     ],
@@ -119344,7 +119261,7 @@
     ]
   },
   {
-    "id": "E_37_142_8",
+    "id": "E_37_143_8",
     "oposiciones": [
       "PISCINAS"
     ],
@@ -119370,7 +119287,7 @@
     ]
   },
   {
-    "id": "E_37_142_9",
+    "id": "E_37_143_9",
     "oposiciones": [
       "PISCINAS"
     ],
@@ -119400,7 +119317,7 @@
     ]
   },
   {
-    "id": "E_37_142_10",
+    "id": "E_37_143_10",
     "oposiciones": [
       "PISCINAS"
     ],
@@ -119426,7 +119343,7 @@
     ]
   },
   {
-    "id": "E_37_142_11",
+    "id": "E_37_143_11",
     "oposiciones": [
       "PISCINAS"
     ],
@@ -119452,7 +119369,7 @@
     ]
   },
   {
-    "id": "E_37_142_12",
+    "id": "E_37_143_12",
     "oposiciones": [
       "PISCINAS"
     ],
@@ -119478,7 +119395,7 @@
     ]
   },
   {
-    "id": "E_37_142_13",
+    "id": "E_37_143_13",
     "oposiciones": [
       "PISCINAS"
     ],
@@ -119504,7 +119421,7 @@
     ]
   },
   {
-    "id": "E_37_142_14",
+    "id": "E_37_143_14",
     "oposiciones": [
       "PISCINAS"
     ],
@@ -119530,7 +119447,7 @@
     ]
   },
   {
-    "id": "E_37_142_15",
+    "id": "E_37_143_15",
     "oposiciones": [
       "PISCINAS"
     ],
@@ -119556,7 +119473,7 @@
     ]
   },
   {
-    "id": "E_37_142_16",
+    "id": "E_37_143_16",
     "oposiciones": [
       "PISCINAS"
     ],
@@ -119582,7 +119499,7 @@
     ]
   },
   {
-    "id": "E_37_142_17",
+    "id": "E_37_143_17",
     "oposiciones": [
       "PISCINAS"
     ],
@@ -119608,7 +119525,7 @@
     ]
   },
   {
-    "id": "E_37_142_18",
+    "id": "E_37_143_18",
     "oposiciones": [
       "PISCINAS"
     ],
@@ -119634,7 +119551,7 @@
     ]
   },
   {
-    "id": "E_37_142_19",
+    "id": "E_37_143_19",
     "oposiciones": [
       "PISCINAS"
     ],
@@ -119660,7 +119577,7 @@
     ]
   },
   {
-    "id": "E_37_142_20",
+    "id": "E_37_143_20",
     "oposiciones": [
       "PISCINAS"
     ],
@@ -119686,7 +119603,7 @@
     ]
   },
   {
-    "id": "E_37_142_21",
+    "id": "E_37_143_21",
     "oposiciones": [
       "PISCINAS"
     ],
@@ -119712,7 +119629,7 @@
     ]
   },
   {
-    "id": "E_37_142_22",
+    "id": "E_37_143_22",
     "oposiciones": [
       "PISCINAS"
     ],
@@ -119738,7 +119655,7 @@
     ]
   },
   {
-    "id": "E_37_142_23",
+    "id": "E_37_143_23",
     "oposiciones": [
       "PISCINAS"
     ],
@@ -119764,7 +119681,7 @@
     ]
   },
   {
-    "id": "E_37_142_24",
+    "id": "E_37_143_24",
     "oposiciones": [
       "PISCINAS"
     ],
@@ -119790,7 +119707,7 @@
     ]
   },
   {
-    "id": "E_37_142_25",
+    "id": "E_37_143_25",
     "oposiciones": [
       "PISCINAS"
     ],
@@ -119816,7 +119733,7 @@
     ]
   },
   {
-    "id": "E_37_142_26",
+    "id": "E_37_143_26",
     "oposiciones": [
       "PISCINAS"
     ],
@@ -119842,7 +119759,7 @@
     ]
   },
   {
-    "id": "E_37_142_27",
+    "id": "E_37_143_27",
     "oposiciones": [
       "PISCINAS"
     ],
@@ -119868,7 +119785,7 @@
     ]
   },
   {
-    "id": "E_37_142_28",
+    "id": "E_37_143_28",
     "oposiciones": [
       "PISCINAS"
     ],
@@ -119894,7 +119811,7 @@
     ]
   },
   {
-    "id": "E_37_142_29",
+    "id": "E_37_143_29",
     "oposiciones": [
       "PISCINAS"
     ],
@@ -119920,7 +119837,7 @@
     ]
   },
   {
-    "id": "E_37_142_30",
+    "id": "E_37_143_30",
     "oposiciones": [
       "PISCINAS"
     ],
@@ -119946,7 +119863,7 @@
     ]
   },
   {
-    "id": "E_37_143_1",
+    "id": "E_37_144_1",
     "oposiciones": [
       "PISCINAS"
     ],
@@ -119972,7 +119889,7 @@
     ]
   },
   {
-    "id": "E_37_143_2",
+    "id": "E_37_144_2",
     "oposiciones": [
       "PISCINAS"
     ],
@@ -119998,7 +119915,7 @@
     ]
   },
   {
-    "id": "E_37_143_3",
+    "id": "E_37_144_3",
     "oposiciones": [
       "PISCINAS"
     ],
@@ -120024,33 +119941,7 @@
     ]
   },
   {
-    "id": "E_37_143_4",
-    "oposiciones": [
-      "PISCINAS"
-    ],
-    "categoria": "específico",
-    "tema": "37",
-    "descripcionTema": "Cesped",
-    "nombreExamen": "Test tema cesped 1",
-    "numeroPreguntaExamen": "4",
-    "texto": "¿Qué se entiende por abonado de fondo del césped?:",
-    "respuestas": [
-      {
-        "texto": "El que se realiza por medios mecánicos antes de la siembra.",
-        "correcta": true
-      },
-      {
-        "texto": "El que se realiza cuando el césped ya se ha desarrollado.",
-        "correcta": false
-      },
-      {
-        "texto": "El que se realiza en cualquier momento mediante sistemas mecánicos de inyección con abonos líquidos.",
-        "correcta": false
-      }
-    ]
-  },
-  {
-    "id": "E_37_143_5",
+    "id": "E_37_144_5",
     "oposiciones": [
       "PISCINAS"
     ],
@@ -120076,7 +119967,7 @@
     ]
   },
   {
-    "id": "E_37_143_6",
+    "id": "E_37_144_6",
     "oposiciones": [
       "PISCINAS"
     ],
@@ -120102,7 +119993,7 @@
     ]
   },
   {
-    "id": "E_37_143_7",
+    "id": "E_37_144_7",
     "oposiciones": [
       "PISCINAS"
     ],
@@ -120128,33 +120019,7 @@
     ]
   },
   {
-    "id": "E_37_143_8",
-    "oposiciones": [
-      "PISCINAS"
-    ],
-    "categoria": "específico",
-    "tema": "37",
-    "descripcionTema": "Cesped",
-    "nombreExamen": "Test tema cesped 1",
-    "numeroPreguntaExamen": "8",
-    "texto": "¿Cuál de las siguientes opciones incluye dos variedades o tipos de césped?:",
-    "respuestas": [
-      {
-        "texto": "Buxus, prunus.",
-        "correcta": false
-      },
-      {
-        "texto": "Populus, cineraria.",
-        "correcta": false
-      },
-      {
-        "texto": "Agrostis, poa.",
-        "correcta": true
-      }
-    ]
-  },
-  {
-    "id": "E_37_143_9",
+    "id": "E_37_144_9",
     "oposiciones": [
       "PISCINAS"
     ],
@@ -120180,7 +120045,7 @@
     ]
   },
   {
-    "id": "E_37_143_10",
+    "id": "E_37_144_10",
     "oposiciones": [
       "PISCINAS"
     ],
@@ -120206,7 +120071,7 @@
     ]
   },
   {
-    "id": "E_37_143_11",
+    "id": "E_37_144_11",
     "oposiciones": [
       "PISCINAS"
     ],
@@ -120232,7 +120097,7 @@
     ]
   },
   {
-    "id": "E_37_143_12",
+    "id": "E_37_144_12",
     "oposiciones": [
       "PISCINAS"
     ],
@@ -120258,7 +120123,7 @@
     ]
   },
   {
-    "id": "E_37_143_13",
+    "id": "E_37_144_13",
     "oposiciones": [
       "PISCINAS"
     ],
@@ -120284,7 +120149,7 @@
     ]
   },
   {
-    "id": "E_37_143_14",
+    "id": "E_37_144_14",
     "oposiciones": [
       "PISCINAS"
     ],
@@ -120310,7 +120175,7 @@
     ]
   },
   {
-    "id": "E_37_143_15",
+    "id": "E_37_144_15",
     "oposiciones": [
       "PISCINAS"
     ],
@@ -120336,7 +120201,7 @@
     ]
   },
   {
-    "id": "E_37_143_16",
+    "id": "E_37_144_16",
     "oposiciones": [
       "PISCINAS"
     ],
@@ -120362,7 +120227,7 @@
     ]
   },
   {
-    "id": "E_37_143_17",
+    "id": "E_37_144_17",
     "oposiciones": [
       "PISCINAS"
     ],
@@ -120388,7 +120253,7 @@
     ]
   },
   {
-    "id": "E_37_143_18",
+    "id": "E_37_144_18",
     "oposiciones": [
       "PISCINAS"
     ],
@@ -120414,7 +120279,7 @@
     ]
   },
   {
-    "id": "E_37_143_19",
+    "id": "E_37_144_19",
     "oposiciones": [
       "PISCINAS"
     ],
@@ -120440,7 +120305,7 @@
     ]
   },
   {
-    "id": "E_37_143_20",
+    "id": "E_37_144_20",
     "oposiciones": [
       "PISCINAS"
     ],
@@ -120466,7 +120331,7 @@
     ]
   },
   {
-    "id": "E_37_143_21",
+    "id": "E_37_144_21",
     "oposiciones": [
       "PISCINAS"
     ],
@@ -120492,7 +120357,7 @@
     ]
   },
   {
-    "id": "E_37_143_22",
+    "id": "E_37_144_22",
     "oposiciones": [
       "PISCINAS"
     ],
@@ -120518,7 +120383,7 @@
     ]
   },
   {
-    "id": "E_37_143_23",
+    "id": "E_37_144_23",
     "oposiciones": [
       "PISCINAS"
     ],
@@ -120544,7 +120409,7 @@
     ]
   },
   {
-    "id": "E_37_143_24",
+    "id": "E_37_144_24",
     "oposiciones": [
       "PISCINAS"
     ],
@@ -120570,7 +120435,7 @@
     ]
   },
   {
-    "id": "E_37_143_25",
+    "id": "E_37_144_25",
     "oposiciones": [
       "PISCINAS"
     ],
@@ -120596,7 +120461,7 @@
     ]
   },
   {
-    "id": "E_37_143_26",
+    "id": "E_37_144_26",
     "oposiciones": [
       "PISCINAS"
     ],
@@ -120622,7 +120487,7 @@
     ]
   },
   {
-    "id": "E_37_143_27",
+    "id": "E_37_144_27",
     "oposiciones": [
       "PISCINAS"
     ],
@@ -120648,7 +120513,7 @@
     ]
   },
   {
-    "id": "E_37_143_28",
+    "id": "E_37_144_28",
     "oposiciones": [
       "PISCINAS"
     ],
@@ -120674,7 +120539,7 @@
     ]
   },
   {
-    "id": "E_37_143_29",
+    "id": "E_37_144_29",
     "oposiciones": [
       "PISCINAS"
     ],
@@ -120700,7 +120565,7 @@
     ]
   },
   {
-    "id": "E_37_143_30",
+    "id": "E_37_144_30",
     "oposiciones": [
       "PISCINAS"
     ],
@@ -120726,7 +120591,7 @@
     ]
   },
   {
-    "id": "E_37_143_31",
+    "id": "E_37_144_31",
     "oposiciones": [
       "PISCINAS"
     ],
@@ -120752,7 +120617,7 @@
     ]
   },
   {
-    "id": "E_37_144_1",
+    "id": "E_37_145_1",
     "oposiciones": [
       "PISCINAS"
     ],
@@ -120778,7 +120643,7 @@
     ]
   },
   {
-    "id": "E_37_144_2",
+    "id": "E_37_145_2",
     "oposiciones": [
       "PISCINAS"
     ],
@@ -120804,7 +120669,7 @@
     ]
   },
   {
-    "id": "E_37_144_3",
+    "id": "E_37_145_3",
     "oposiciones": [
       "PISCINAS"
     ],
@@ -120830,7 +120695,7 @@
     ]
   },
   {
-    "id": "E_37_144_4",
+    "id": "E_37_145_4",
     "oposiciones": [
       "PISCINAS"
     ],
@@ -120856,7 +120721,7 @@
     ]
   },
   {
-    "id": "E_37_144_5",
+    "id": "E_37_145_5",
     "oposiciones": [
       "PISCINAS"
     ],
@@ -120882,7 +120747,7 @@
     ]
   },
   {
-    "id": "E_37_144_6",
+    "id": "E_37_145_6",
     "oposiciones": [
       "PISCINAS"
     ],
@@ -120908,7 +120773,7 @@
     ]
   },
   {
-    "id": "E_37_144_7",
+    "id": "E_37_145_7",
     "oposiciones": [
       "PISCINAS"
     ],
@@ -120934,7 +120799,7 @@
     ]
   },
   {
-    "id": "E_37_144_8",
+    "id": "E_37_145_8",
     "oposiciones": [
       "PISCINAS"
     ],
@@ -120960,7 +120825,7 @@
     ]
   },
   {
-    "id": "E_37_144_9",
+    "id": "E_37_145_9",
     "oposiciones": [
       "PISCINAS"
     ],
@@ -120986,7 +120851,7 @@
     ]
   },
   {
-    "id": "E_37_144_10",
+    "id": "E_37_145_10",
     "oposiciones": [
       "PISCINAS"
     ],
@@ -121012,7 +120877,7 @@
     ]
   },
   {
-    "id": "E_37_144_11",
+    "id": "E_37_145_11",
     "oposiciones": [
       "PISCINAS"
     ],
@@ -121038,7 +120903,7 @@
     ]
   },
   {
-    "id": "E_37_144_12",
+    "id": "E_37_145_12",
     "oposiciones": [
       "PISCINAS"
     ],
@@ -121064,7 +120929,7 @@
     ]
   },
   {
-    "id": "E_37_144_13",
+    "id": "E_37_145_13",
     "oposiciones": [
       "PISCINAS"
     ],
@@ -121090,7 +120955,7 @@
     ]
   },
   {
-    "id": "E_37_144_14",
+    "id": "E_37_145_14",
     "oposiciones": [
       "PISCINAS"
     ],
@@ -121116,7 +120981,7 @@
     ]
   },
   {
-    "id": "E_37_144_15",
+    "id": "E_37_145_15",
     "oposiciones": [
       "PISCINAS"
     ],
@@ -121142,7 +121007,7 @@
     ]
   },
   {
-    "id": "E_37_144_16",
+    "id": "E_37_145_16",
     "oposiciones": [
       "PISCINAS"
     ],
@@ -121168,7 +121033,7 @@
     ]
   },
   {
-    "id": "E_37_144_17",
+    "id": "E_37_145_17",
     "oposiciones": [
       "PISCINAS"
     ],
@@ -121194,7 +121059,7 @@
     ]
   },
   {
-    "id": "E_37_144_18",
+    "id": "E_37_145_18",
     "oposiciones": [
       "PISCINAS"
     ],
@@ -121220,7 +121085,7 @@
     ]
   },
   {
-    "id": "E_37_144_19",
+    "id": "E_37_145_19",
     "oposiciones": [
       "PISCINAS"
     ],
@@ -121246,7 +121111,7 @@
     ]
   },
   {
-    "id": "E_37_144_20",
+    "id": "E_37_145_20",
     "oposiciones": [
       "PISCINAS"
     ],
@@ -121272,7 +121137,7 @@
     ]
   },
   {
-    "id": "E_37_144_21",
+    "id": "E_37_145_21",
     "oposiciones": [
       "PISCINAS"
     ],
@@ -121298,7 +121163,7 @@
     ]
   },
   {
-    "id": "E_37_144_22",
+    "id": "E_37_145_22",
     "oposiciones": [
       "PISCINAS"
     ],
@@ -121324,7 +121189,7 @@
     ]
   },
   {
-    "id": "E_37_144_23",
+    "id": "E_37_145_23",
     "oposiciones": [
       "PISCINAS"
     ],
@@ -121350,7 +121215,7 @@
     ]
   },
   {
-    "id": "E_37_144_24",
+    "id": "E_37_145_24",
     "oposiciones": [
       "PISCINAS"
     ],
@@ -121376,7 +121241,7 @@
     ]
   },
   {
-    "id": "E_37_144_25",
+    "id": "E_37_145_25",
     "oposiciones": [
       "PISCINAS"
     ],
@@ -121402,7 +121267,7 @@
     ]
   },
   {
-    "id": "E_37_144_26",
+    "id": "E_37_145_26",
     "oposiciones": [
       "PISCINAS"
     ],
@@ -121428,7 +121293,7 @@
     ]
   },
   {
-    "id": "E_37_144_27",
+    "id": "E_37_145_27",
     "oposiciones": [
       "PISCINAS"
     ],
@@ -121454,7 +121319,7 @@
     ]
   },
   {
-    "id": "E_37_144_28",
+    "id": "E_37_145_28",
     "oposiciones": [
       "PISCINAS"
     ],
@@ -121480,7 +121345,7 @@
     ]
   },
   {
-    "id": "E_37_144_29",
+    "id": "E_37_145_29",
     "oposiciones": [
       "PISCINAS"
     ],
@@ -121506,7 +121371,7 @@
     ]
   },
   {
-    "id": "E_37_144_30",
+    "id": "E_37_145_30",
     "oposiciones": [
       "PISCINAS"
     ],
@@ -121532,7 +121397,7 @@
     ]
   },
   {
-    "id": "E_37_144_31",
+    "id": "E_37_145_31",
     "oposiciones": [
       "PISCINAS"
     ],
@@ -121558,7 +121423,7 @@
     ]
   },
   {
-    "id": "E_37_144_32",
+    "id": "E_37_145_32",
     "oposiciones": [
       "PISCINAS"
     ],
@@ -121584,7 +121449,7 @@
     ]
   },
   {
-    "id": "E_37_144_33",
+    "id": "E_37_145_33",
     "oposiciones": [
       "PISCINAS"
     ],
@@ -121610,7 +121475,7 @@
     ]
   },
   {
-    "id": "E_37_144_34",
+    "id": "E_37_145_34",
     "oposiciones": [
       "PISCINAS"
     ],
@@ -121636,7 +121501,7 @@
     ]
   },
   {
-    "id": "E_37_144_35",
+    "id": "E_37_145_35",
     "oposiciones": [
       "PISCINAS"
     ],
@@ -121662,7 +121527,7 @@
     ]
   },
   {
-    "id": "E_37_144_36",
+    "id": "E_37_145_36",
     "oposiciones": [
       "PISCINAS"
     ],
@@ -121688,7 +121553,7 @@
     ]
   },
   {
-    "id": "E_37_144_37",
+    "id": "E_37_145_37",
     "oposiciones": [
       "PISCINAS"
     ],
@@ -121714,7 +121579,7 @@
     ]
   },
   {
-    "id": "E_37_144_38",
+    "id": "E_37_145_38",
     "oposiciones": [
       "PISCINAS"
     ],
@@ -121740,7 +121605,7 @@
     ]
   },
   {
-    "id": "E_37_144_39",
+    "id": "E_37_145_39",
     "oposiciones": [
       "PISCINAS"
     ],
@@ -121766,7 +121631,7 @@
     ]
   },
   {
-    "id": "E_37_144_40",
+    "id": "E_37_145_40",
     "oposiciones": [
       "PISCINAS"
     ],
@@ -121792,7 +121657,7 @@
     ]
   },
   {
-    "id": "E_37_144_41",
+    "id": "E_37_145_41",
     "oposiciones": [
       "PISCINAS"
     ],
@@ -121818,7 +121683,7 @@
     ]
   },
   {
-    "id": "E_37_144_42",
+    "id": "E_37_145_42",
     "oposiciones": [
       "PISCINAS"
     ],
@@ -121844,7 +121709,7 @@
     ]
   },
   {
-    "id": "E_37_145_1",
+    "id": "E_37_146_1",
     "oposiciones": [
       "PISCINAS"
     ],
@@ -121870,7 +121735,7 @@
     ]
   },
   {
-    "id": "E_37_145_2",
+    "id": "E_37_146_2",
     "oposiciones": [
       "PISCINAS"
     ],
@@ -121896,7 +121761,7 @@
     ]
   },
   {
-    "id": "E_37_145_3",
+    "id": "E_37_146_3",
     "oposiciones": [
       "PISCINAS"
     ],
@@ -121922,7 +121787,7 @@
     ]
   },
   {
-    "id": "E_37_145_4",
+    "id": "E_37_146_4",
     "oposiciones": [
       "PISCINAS"
     ],
@@ -121948,7 +121813,7 @@
     ]
   },
   {
-    "id": "E_37_145_5",
+    "id": "E_37_146_5",
     "oposiciones": [
       "PISCINAS"
     ],
@@ -121974,7 +121839,7 @@
     ]
   },
   {
-    "id": "E_37_145_6",
+    "id": "E_37_146_6",
     "oposiciones": [
       "PISCINAS"
     ],
@@ -122000,7 +121865,7 @@
     ]
   },
   {
-    "id": "E_37_145_7",
+    "id": "E_37_146_7",
     "oposiciones": [
       "PISCINAS"
     ],
@@ -122026,7 +121891,7 @@
     ]
   },
   {
-    "id": "E_37_145_8",
+    "id": "E_37_146_8",
     "oposiciones": [
       "PISCINAS"
     ],
@@ -122052,7 +121917,7 @@
     ]
   },
   {
-    "id": "E_37_145_9",
+    "id": "E_37_146_9",
     "oposiciones": [
       "PISCINAS"
     ],
@@ -122078,7 +121943,7 @@
     ]
   },
   {
-    "id": "E_37_145_10",
+    "id": "E_37_146_10",
     "oposiciones": [
       "PISCINAS"
     ],
@@ -122104,7 +121969,7 @@
     ]
   },
   {
-    "id": "E_37_145_11",
+    "id": "E_37_146_11",
     "oposiciones": [
       "PISCINAS"
     ],
@@ -122130,7 +121995,7 @@
     ]
   },
   {
-    "id": "E_37_145_12",
+    "id": "E_37_146_12",
     "oposiciones": [
       "PISCINAS"
     ],
@@ -122156,7 +122021,7 @@
     ]
   },
   {
-    "id": "E_37_145_13",
+    "id": "E_37_146_13",
     "oposiciones": [
       "PISCINAS"
     ],
@@ -122182,7 +122047,7 @@
     ]
   },
   {
-    "id": "E_37_145_14",
+    "id": "E_37_146_14",
     "oposiciones": [
       "PISCINAS"
     ],
@@ -122208,7 +122073,7 @@
     ]
   },
   {
-    "id": "E_37_145_15",
+    "id": "E_37_146_15",
     "oposiciones": [
       "PISCINAS"
     ],
@@ -122234,7 +122099,7 @@
     ]
   },
   {
-    "id": "E_37_145_16",
+    "id": "E_37_146_16",
     "oposiciones": [
       "PISCINAS"
     ],
@@ -122260,7 +122125,7 @@
     ]
   },
   {
-    "id": "E_37_145_17",
+    "id": "E_37_146_17",
     "oposiciones": [
       "PISCINAS"
     ],
@@ -122286,7 +122151,7 @@
     ]
   },
   {
-    "id": "E_37_145_18",
+    "id": "E_37_146_18",
     "oposiciones": [
       "PISCINAS"
     ],
@@ -122312,7 +122177,7 @@
     ]
   },
   {
-    "id": "E_37_145_19",
+    "id": "E_37_146_19",
     "oposiciones": [
       "PISCINAS"
     ],
@@ -122338,7 +122203,7 @@
     ]
   },
   {
-    "id": "E_37_145_20",
+    "id": "E_37_146_20",
     "oposiciones": [
       "PISCINAS"
     ],
@@ -122364,7 +122229,7 @@
     ]
   },
   {
-    "id": "E_37_145_21",
+    "id": "E_37_146_21",
     "oposiciones": [
       "PISCINAS"
     ],
@@ -122390,7 +122255,7 @@
     ]
   },
   {
-    "id": "E_37_145_22",
+    "id": "E_37_146_22",
     "oposiciones": [
       "PISCINAS"
     ],
@@ -122416,7 +122281,7 @@
     ]
   },
   {
-    "id": "E_37_145_23",
+    "id": "E_37_146_23",
     "oposiciones": [
       "PISCINAS"
     ],
@@ -122442,7 +122307,7 @@
     ]
   },
   {
-    "id": "E_37_145_24",
+    "id": "E_37_146_24",
     "oposiciones": [
       "PISCINAS"
     ],
@@ -122468,7 +122333,7 @@
     ]
   },
   {
-    "id": "E_37_145_25",
+    "id": "E_37_146_25",
     "oposiciones": [
       "PISCINAS"
     ],
@@ -122494,7 +122359,7 @@
     ]
   },
   {
-    "id": "E_37_145_26",
+    "id": "E_37_146_26",
     "oposiciones": [
       "PISCINAS"
     ],
@@ -122520,7 +122385,7 @@
     ]
   },
   {
-    "id": "E_37_145_27",
+    "id": "E_37_146_27",
     "oposiciones": [
       "PISCINAS"
     ],
@@ -122546,7 +122411,7 @@
     ]
   },
   {
-    "id": "E_37_145_28",
+    "id": "E_37_146_28",
     "oposiciones": [
       "PISCINAS"
     ],
@@ -122572,7 +122437,7 @@
     ]
   },
   {
-    "id": "E_37_145_29",
+    "id": "E_37_146_29",
     "oposiciones": [
       "PISCINAS"
     ],
@@ -122598,7 +122463,7 @@
     ]
   },
   {
-    "id": "E_37_145_30",
+    "id": "E_37_146_30",
     "oposiciones": [
       "PISCINAS"
     ],
@@ -122624,7 +122489,7 @@
     ]
   },
   {
-    "id": "E_37_145_31",
+    "id": "E_37_146_31",
     "oposiciones": [
       "PISCINAS"
     ],
@@ -122650,7 +122515,7 @@
     ]
   },
   {
-    "id": "E_37_145_32",
+    "id": "E_37_146_32",
     "oposiciones": [
       "PISCINAS"
     ],
@@ -122676,7 +122541,7 @@
     ]
   },
   {
-    "id": "E_37_145_33",
+    "id": "E_37_146_33",
     "oposiciones": [
       "PISCINAS"
     ],
@@ -122702,7 +122567,7 @@
     ]
   },
   {
-    "id": "E_37_145_34",
+    "id": "E_37_146_34",
     "oposiciones": [
       "PISCINAS"
     ],
@@ -122728,7 +122593,7 @@
     ]
   },
   {
-    "id": "E_37_145_35",
+    "id": "E_37_146_35",
     "oposiciones": [
       "PISCINAS"
     ],
@@ -122754,7 +122619,7 @@
     ]
   },
   {
-    "id": "E_37_145_36",
+    "id": "E_37_146_36",
     "oposiciones": [
       "PISCINAS"
     ],
@@ -122780,7 +122645,7 @@
     ]
   },
   {
-    "id": "E_37_145_37",
+    "id": "E_37_146_37",
     "oposiciones": [
       "PISCINAS"
     ],
@@ -122806,7 +122671,7 @@
     ]
   },
   {
-    "id": "E_38_146_1",
+    "id": "E_38_147_1",
     "oposiciones": [
       "PISCINAS"
     ],
@@ -122832,7 +122697,7 @@
     ]
   },
   {
-    "id": "E_38_146_2",
+    "id": "E_38_147_2",
     "oposiciones": [
       "PISCINAS"
     ],
@@ -122858,7 +122723,7 @@
     ]
   },
   {
-    "id": "E_38_146_3",
+    "id": "E_38_147_3",
     "oposiciones": [
       "PISCINAS"
     ],
@@ -122884,7 +122749,7 @@
     ]
   },
   {
-    "id": "E_38_146_4",
+    "id": "E_38_147_4",
     "oposiciones": [
       "PISCINAS"
     ],
@@ -122910,7 +122775,7 @@
     ]
   },
   {
-    "id": "E_38_146_5",
+    "id": "E_38_147_5",
     "oposiciones": [
       "PISCINAS"
     ],
@@ -122936,7 +122801,7 @@
     ]
   },
   {
-    "id": "E_38_146_6",
+    "id": "E_38_147_6",
     "oposiciones": [
       "PISCINAS"
     ],
@@ -122962,7 +122827,7 @@
     ]
   },
   {
-    "id": "E_38_146_7",
+    "id": "E_38_147_7",
     "oposiciones": [
       "PISCINAS"
     ],
@@ -122988,7 +122853,7 @@
     ]
   },
   {
-    "id": "E_38_146_8",
+    "id": "E_38_147_8",
     "oposiciones": [
       "PISCINAS"
     ],
@@ -123014,7 +122879,7 @@
     ]
   },
   {
-    "id": "E_38_146_9",
+    "id": "E_38_147_9",
     "oposiciones": [
       "PISCINAS"
     ],
@@ -123040,7 +122905,7 @@
     ]
   },
   {
-    "id": "E_38_146_10",
+    "id": "E_38_147_10",
     "oposiciones": [
       "PISCINAS"
     ],
@@ -123066,7 +122931,7 @@
     ]
   },
   {
-    "id": "E_38_146_11",
+    "id": "E_38_147_11",
     "oposiciones": [
       "PISCINAS"
     ],
@@ -123092,7 +122957,7 @@
     ]
   },
   {
-    "id": "E_38_146_12",
+    "id": "E_38_147_12",
     "oposiciones": [
       "PISCINAS"
     ],
@@ -123118,7 +122983,7 @@
     ]
   },
   {
-    "id": "E_38_146_13",
+    "id": "E_38_147_13",
     "oposiciones": [
       "PISCINAS"
     ],
@@ -123144,7 +123009,7 @@
     ]
   },
   {
-    "id": "E_38_146_14",
+    "id": "E_38_147_14",
     "oposiciones": [
       "PISCINAS"
     ],
@@ -123170,7 +123035,7 @@
     ]
   },
   {
-    "id": "E_38_146_15",
+    "id": "E_38_147_15",
     "oposiciones": [
       "PISCINAS"
     ],
@@ -123196,7 +123061,7 @@
     ]
   },
   {
-    "id": "E_38_146_16",
+    "id": "E_38_147_16",
     "oposiciones": [
       "PISCINAS"
     ],
@@ -123222,7 +123087,7 @@
     ]
   },
   {
-    "id": "E_38_146_17",
+    "id": "E_38_147_17",
     "oposiciones": [
       "PISCINAS"
     ],
@@ -123248,7 +123113,7 @@
     ]
   },
   {
-    "id": "E_38_146_18",
+    "id": "E_38_147_18",
     "oposiciones": [
       "PISCINAS"
     ],
@@ -123274,7 +123139,7 @@
     ]
   },
   {
-    "id": "E_38_146_19",
+    "id": "E_38_147_19",
     "oposiciones": [
       "PISCINAS"
     ],
@@ -123300,7 +123165,7 @@
     ]
   },
   {
-    "id": "E_38_146_20",
+    "id": "E_38_147_20",
     "oposiciones": [
       "PISCINAS"
     ],
@@ -123326,7 +123191,7 @@
     ]
   },
   {
-    "id": "E_38_146_21",
+    "id": "E_38_147_21",
     "oposiciones": [
       "PISCINAS"
     ],
@@ -123352,7 +123217,7 @@
     ]
   },
   {
-    "id": "E_38_146_22",
+    "id": "E_38_147_22",
     "oposiciones": [
       "PISCINAS"
     ],
@@ -123378,7 +123243,7 @@
     ]
   },
   {
-    "id": "E_38_146_23",
+    "id": "E_38_147_23",
     "oposiciones": [
       "PISCINAS"
     ],
@@ -123404,7 +123269,7 @@
     ]
   },
   {
-    "id": "E_38_146_24",
+    "id": "E_38_147_24",
     "oposiciones": [
       "PISCINAS"
     ],
@@ -123430,7 +123295,7 @@
     ]
   },
   {
-    "id": "E_38_146_25",
+    "id": "E_38_147_25",
     "oposiciones": [
       "PISCINAS"
     ],
@@ -123456,7 +123321,7 @@
     ]
   },
   {
-    "id": "E_38_147_1",
+    "id": "E_38_148_1",
     "oposiciones": [
       "PISCINAS"
     ],
@@ -123482,7 +123347,7 @@
     ]
   },
   {
-    "id": "E_38_147_2",
+    "id": "E_38_148_2",
     "oposiciones": [
       "PISCINAS"
     ],
@@ -123508,7 +123373,7 @@
     ]
   },
   {
-    "id": "E_38_147_3",
+    "id": "E_38_148_3",
     "oposiciones": [
       "PISCINAS"
     ],
@@ -123534,7 +123399,7 @@
     ]
   },
   {
-    "id": "E_38_147_4",
+    "id": "E_38_148_4",
     "oposiciones": [
       "PISCINAS"
     ],
@@ -123560,7 +123425,7 @@
     ]
   },
   {
-    "id": "E_38_147_5",
+    "id": "E_38_148_5",
     "oposiciones": [
       "PISCINAS"
     ],
@@ -123586,7 +123451,7 @@
     ]
   },
   {
-    "id": "E_38_147_6",
+    "id": "E_38_148_6",
     "oposiciones": [
       "PISCINAS"
     ],
@@ -123612,7 +123477,7 @@
     ]
   },
   {
-    "id": "E_38_147_7",
+    "id": "E_38_148_7",
     "oposiciones": [
       "PISCINAS"
     ],
@@ -123638,7 +123503,7 @@
     ]
   },
   {
-    "id": "E_38_147_8",
+    "id": "E_38_148_8",
     "oposiciones": [
       "PISCINAS"
     ],
@@ -123664,7 +123529,7 @@
     ]
   },
   {
-    "id": "E_38_147_9",
+    "id": "E_38_148_9",
     "oposiciones": [
       "PISCINAS"
     ],
@@ -123690,7 +123555,7 @@
     ]
   },
   {
-    "id": "E_38_147_10",
+    "id": "E_38_148_10",
     "oposiciones": [
       "PISCINAS"
     ],
@@ -123716,7 +123581,7 @@
     ]
   },
   {
-    "id": "E_38_147_11",
+    "id": "E_38_148_11",
     "oposiciones": [
       "PISCINAS"
     ],
@@ -123742,7 +123607,7 @@
     ]
   },
   {
-    "id": "E_38_147_12",
+    "id": "E_38_148_12",
     "oposiciones": [
       "PISCINAS"
     ],
@@ -123768,7 +123633,7 @@
     ]
   },
   {
-    "id": "E_38_147_13",
+    "id": "E_38_148_13",
     "oposiciones": [
       "PISCINAS"
     ],
@@ -123794,7 +123659,7 @@
     ]
   },
   {
-    "id": "E_38_147_14",
+    "id": "E_38_148_14",
     "oposiciones": [
       "PISCINAS"
     ],
@@ -123820,7 +123685,7 @@
     ]
   },
   {
-    "id": "E_38_147_15",
+    "id": "E_38_148_15",
     "oposiciones": [
       "PISCINAS"
     ],
@@ -123846,7 +123711,7 @@
     ]
   },
   {
-    "id": "E_38_147_16",
+    "id": "E_38_148_16",
     "oposiciones": [
       "PISCINAS"
     ],
@@ -123872,7 +123737,7 @@
     ]
   },
   {
-    "id": "E_38_147_17",
+    "id": "E_38_148_17",
     "oposiciones": [
       "PISCINAS"
     ],
@@ -123898,7 +123763,7 @@
     ]
   },
   {
-    "id": "E_38_147_18",
+    "id": "E_38_148_18",
     "oposiciones": [
       "PISCINAS"
     ],
@@ -123924,7 +123789,7 @@
     ]
   },
   {
-    "id": "E_38_147_19",
+    "id": "E_38_148_19",
     "oposiciones": [
       "PISCINAS"
     ],
@@ -123950,7 +123815,7 @@
     ]
   },
   {
-    "id": "E_38_148_1",
+    "id": "E_38_149_1",
     "oposiciones": [
       "PISCINAS"
     ],
@@ -123976,7 +123841,7 @@
     ]
   },
   {
-    "id": "E_38_148_2",
+    "id": "E_38_149_2",
     "oposiciones": [
       "PISCINAS"
     ],
@@ -124002,7 +123867,7 @@
     ]
   },
   {
-    "id": "E_38_148_3",
+    "id": "E_38_149_3",
     "oposiciones": [
       "PISCINAS"
     ],
@@ -124028,7 +123893,7 @@
     ]
   },
   {
-    "id": "E_38_148_4",
+    "id": "E_38_149_4",
     "oposiciones": [
       "PISCINAS"
     ],
@@ -124054,7 +123919,7 @@
     ]
   },
   {
-    "id": "E_38_148_5",
+    "id": "E_38_149_5",
     "oposiciones": [
       "PISCINAS"
     ],
@@ -124080,7 +123945,7 @@
     ]
   },
   {
-    "id": "E_38_148_6",
+    "id": "E_38_149_6",
     "oposiciones": [
       "PISCINAS"
     ],
@@ -124106,7 +123971,7 @@
     ]
   },
   {
-    "id": "E_38_148_7",
+    "id": "E_38_149_7",
     "oposiciones": [
       "PISCINAS"
     ],
@@ -124132,7 +123997,7 @@
     ]
   },
   {
-    "id": "E_38_148_8",
+    "id": "E_38_149_8",
     "oposiciones": [
       "PISCINAS"
     ],
@@ -124158,7 +124023,7 @@
     ]
   },
   {
-    "id": "E_38_148_9",
+    "id": "E_38_149_9",
     "oposiciones": [
       "PISCINAS"
     ],
@@ -124184,7 +124049,7 @@
     ]
   },
   {
-    "id": "E_38_148_10",
+    "id": "E_38_149_10",
     "oposiciones": [
       "PISCINAS"
     ],
@@ -124210,7 +124075,7 @@
     ]
   },
   {
-    "id": "E_38_148_11",
+    "id": "E_38_149_11",
     "oposiciones": [
       "PISCINAS"
     ],
@@ -124236,7 +124101,7 @@
     ]
   },
   {
-    "id": "E_38_148_12",
+    "id": "E_38_149_12",
     "oposiciones": [
       "PISCINAS"
     ],
@@ -124262,7 +124127,7 @@
     ]
   },
   {
-    "id": "E_38_148_13",
+    "id": "E_38_149_13",
     "oposiciones": [
       "PISCINAS"
     ],
@@ -124288,7 +124153,7 @@
     ]
   },
   {
-    "id": "E_38_148_14",
+    "id": "E_38_149_14",
     "oposiciones": [
       "PISCINAS"
     ],
@@ -124314,7 +124179,7 @@
     ]
   },
   {
-    "id": "E_38_148_15",
+    "id": "E_38_149_15",
     "oposiciones": [
       "PISCINAS"
     ],
@@ -124340,7 +124205,7 @@
     ]
   },
   {
-    "id": "E_38_148_16",
+    "id": "E_38_149_16",
     "oposiciones": [
       "PISCINAS"
     ],
@@ -124366,7 +124231,7 @@
     ]
   },
   {
-    "id": "E_38_148_17",
+    "id": "E_38_149_17",
     "oposiciones": [
       "PISCINAS"
     ],
@@ -124392,7 +124257,7 @@
     ]
   },
   {
-    "id": "E_38_148_18",
+    "id": "E_38_149_18",
     "oposiciones": [
       "PISCINAS"
     ],
@@ -124418,7 +124283,7 @@
     ]
   },
   {
-    "id": "E_38_148_19",
+    "id": "E_38_149_19",
     "oposiciones": [
       "PISCINAS"
     ],
@@ -124444,7 +124309,7 @@
     ]
   },
   {
-    "id": "E_38_148_20",
+    "id": "E_38_149_20",
     "oposiciones": [
       "PISCINAS"
     ],
@@ -124470,7 +124335,7 @@
     ]
   },
   {
-    "id": "E_38_148_21",
+    "id": "E_38_149_21",
     "oposiciones": [
       "PISCINAS"
     ],
@@ -124496,7 +124361,7 @@
     ]
   },
   {
-    "id": "E_38_148_22",
+    "id": "E_38_149_22",
     "oposiciones": [
       "PISCINAS"
     ],
@@ -124522,7 +124387,7 @@
     ]
   },
   {
-    "id": "E_38_148_23",
+    "id": "E_38_149_23",
     "oposiciones": [
       "PISCINAS"
     ],
@@ -124548,7 +124413,7 @@
     ]
   },
   {
-    "id": "E_38_148_24",
+    "id": "E_38_149_24",
     "oposiciones": [
       "PISCINAS"
     ],
@@ -124574,7 +124439,7 @@
     ]
   },
   {
-    "id": "E_38_149_1",
+    "id": "E_38_150_1",
     "oposiciones": [
       "PISCINAS"
     ],
@@ -124600,7 +124465,7 @@
     ]
   },
   {
-    "id": "E_38_149_2",
+    "id": "E_38_150_2",
     "oposiciones": [
       "PISCINAS"
     ],
@@ -124626,7 +124491,7 @@
     ]
   },
   {
-    "id": "E_38_149_3",
+    "id": "E_38_150_3",
     "oposiciones": [
       "PISCINAS"
     ],
@@ -124652,33 +124517,7 @@
     ]
   },
   {
-    "id": "E_38_149_4",
-    "oposiciones": [
-      "PISCINAS"
-    ],
-    "categoria": "específico",
-    "tema": "38",
-    "descripcionTema": "Productos fitosanitarios",
-    "nombreExamen": "TEST I TEMA 18 FITOSANITARIOS 2024 (1)",
-    "numeroPreguntaExamen": "4",
-    "texto": "Entre los ingredientes de la composición de un producto fitosanitario, se denominan coadyuvantes:",
-    "respuestas": [
-      {
-        "texto": "Sustancias que son útiles por aportar al ingrediente activo del preparado alguna característica que mejore su actividad.",
-        "correcta": true
-      },
-      {
-        "texto": "Aquellas sustancias o materiales que permiten modificar las características de dosificación o de aplicación del preparado.",
-        "correcta": false
-      },
-      {
-        "texto": "Sustancias tales como colorantes, repulsivos, eméticos, etc., que son utilizados con objeto de cumplir prescripciones reglamentarias u otras finalidades.",
-        "correcta": false
-      }
-    ]
-  },
-  {
-    "id": "E_38_149_5",
+    "id": "E_38_150_5",
     "oposiciones": [
       "PISCINAS"
     ],
@@ -124704,7 +124543,7 @@
     ]
   },
   {
-    "id": "E_38_149_6",
+    "id": "E_38_150_6",
     "oposiciones": [
       "PISCINAS"
     ],
@@ -124730,33 +124569,7 @@
     ]
   },
   {
-    "id": "E_38_149_7",
-    "oposiciones": [
-      "PISCINAS"
-    ],
-    "categoria": "específico",
-    "tema": "38",
-    "descripcionTema": "Productos fitosanitarios",
-    "nombreExamen": "TEST I TEMA 18 FITOSANITARIOS 2024 (1)",
-    "numeroPreguntaExamen": "7",
-    "texto": "Cuál es la afirmación correcta:",
-    "respuestas": [
-      {
-        "texto": "Los herbicidas selectivos líquidos no deben aplicarse asociados a fertilizantes",
-        "correcta": false
-      },
-      {
-        "texto": "Los herbicidas selectivos líquidos pueden aplicarse asociados a fertilizantes",
-        "correcta": true
-      },
-      {
-        "texto": "Los herbicidas selectivos líquidos deben siempre aplicarse asociados a fertilizantes en forma amoniacal.",
-        "correcta": false
-      }
-    ]
-  },
-  {
-    "id": "E_38_149_8",
+    "id": "E_38_150_8",
     "oposiciones": [
       "PISCINAS"
     ],
@@ -124782,7 +124595,7 @@
     ]
   },
   {
-    "id": "E_38_149_10",
+    "id": "E_38_150_10",
     "oposiciones": [
       "PISCINAS"
     ],
@@ -124808,7 +124621,7 @@
     ]
   },
   {
-    "id": "E_38_149_11",
+    "id": "E_38_150_11",
     "oposiciones": [
       "PISCINAS"
     ],
@@ -124834,7 +124647,7 @@
     ]
   },
   {
-    "id": "E_38_149_12",
+    "id": "E_38_150_12",
     "oposiciones": [
       "PISCINAS"
     ],
@@ -124860,7 +124673,7 @@
     ]
   },
   {
-    "id": "E_38_149_13",
+    "id": "E_38_150_13",
     "oposiciones": [
       "PISCINAS"
     ],
@@ -124886,7 +124699,7 @@
     ]
   },
   {
-    "id": "E_38_149_14",
+    "id": "E_38_150_14",
     "oposiciones": [
       "PISCINAS"
     ],
@@ -124912,7 +124725,7 @@
     ]
   },
   {
-    "id": "E_38_149_16",
+    "id": "E_38_150_16",
     "oposiciones": [
       "PISCINAS"
     ],
@@ -124938,7 +124751,7 @@
     ]
   },
   {
-    "id": "E_38_149_18",
+    "id": "E_38_150_18",
     "oposiciones": [
       "PISCINAS"
     ],
@@ -124968,7 +124781,7 @@
     ]
   },
   {
-    "id": "E_38_149_19",
+    "id": "E_38_150_19",
     "oposiciones": [
       "PISCINAS"
     ],
@@ -124998,7 +124811,7 @@
     ]
   },
   {
-    "id": "E_38_149_20",
+    "id": "E_38_150_20",
     "oposiciones": [
       "PISCINAS"
     ],
@@ -125028,7 +124841,7 @@
     ]
   },
   {
-    "id": "E_38_149_21",
+    "id": "E_38_150_21",
     "oposiciones": [
       "PISCINAS"
     ],
@@ -125058,7 +124871,7 @@
     ]
   },
   {
-    "id": "E_38_150_1",
+    "id": "E_38_151_1",
     "oposiciones": [
       "PISCINAS"
     ],
@@ -125084,7 +124897,7 @@
     ]
   },
   {
-    "id": "E_38_150_2",
+    "id": "E_38_151_2",
     "oposiciones": [
       "PISCINAS"
     ],
@@ -125110,7 +124923,7 @@
     ]
   },
   {
-    "id": "E_38_150_3",
+    "id": "E_38_151_3",
     "oposiciones": [
       "PISCINAS"
     ],
@@ -125136,7 +124949,7 @@
     ]
   },
   {
-    "id": "E_38_150_4",
+    "id": "E_38_151_4",
     "oposiciones": [
       "PISCINAS"
     ],
@@ -125162,7 +124975,7 @@
     ]
   },
   {
-    "id": "E_38_150_5",
+    "id": "E_38_151_5",
     "oposiciones": [
       "PISCINAS"
     ],
@@ -125188,7 +125001,7 @@
     ]
   },
   {
-    "id": "E_38_150_6",
+    "id": "E_38_151_6",
     "oposiciones": [
       "PISCINAS"
     ],
@@ -125214,7 +125027,7 @@
     ]
   },
   {
-    "id": "E_38_150_7",
+    "id": "E_38_151_7",
     "oposiciones": [
       "PISCINAS"
     ],
@@ -125240,7 +125053,7 @@
     ]
   },
   {
-    "id": "E_38_150_8",
+    "id": "E_38_151_8",
     "oposiciones": [
       "PISCINAS"
     ],
@@ -125266,7 +125079,7 @@
     ]
   },
   {
-    "id": "E_38_150_9",
+    "id": "E_38_151_9",
     "oposiciones": [
       "PISCINAS"
     ],
@@ -125292,7 +125105,7 @@
     ]
   },
   {
-    "id": "E_38_150_10",
+    "id": "E_38_151_10",
     "oposiciones": [
       "PISCINAS"
     ],
@@ -125318,7 +125131,7 @@
     ]
   },
   {
-    "id": "E_38_150_11",
+    "id": "E_38_151_11",
     "oposiciones": [
       "PISCINAS"
     ],
@@ -125344,7 +125157,7 @@
     ]
   },
   {
-    "id": "E_38_150_12",
+    "id": "E_38_151_12",
     "oposiciones": [
       "PISCINAS"
     ],
@@ -125370,7 +125183,7 @@
     ]
   },
   {
-    "id": "E_38_150_13",
+    "id": "E_38_151_13",
     "oposiciones": [
       "PISCINAS"
     ],
@@ -125396,7 +125209,7 @@
     ]
   },
   {
-    "id": "E_38_150_14",
+    "id": "E_38_151_14",
     "oposiciones": [
       "PISCINAS"
     ],
@@ -125422,7 +125235,7 @@
     ]
   },
   {
-    "id": "E_38_150_15",
+    "id": "E_38_151_15",
     "oposiciones": [
       "PISCINAS"
     ],
@@ -125448,7 +125261,7 @@
     ]
   },
   {
-    "id": "E_38_150_16",
+    "id": "E_38_151_16",
     "oposiciones": [
       "PISCINAS"
     ],
@@ -125474,7 +125287,7 @@
     ]
   },
   {
-    "id": "E_38_150_17",
+    "id": "E_38_151_17",
     "oposiciones": [
       "PISCINAS"
     ],
@@ -125500,7 +125313,7 @@
     ]
   },
   {
-    "id": "E_38_150_18",
+    "id": "E_38_151_18",
     "oposiciones": [
       "PISCINAS"
     ],
@@ -125526,7 +125339,7 @@
     ]
   },
   {
-    "id": "E_38_150_19",
+    "id": "E_38_151_19",
     "oposiciones": [
       "PISCINAS"
     ],
@@ -125552,7 +125365,7 @@
     ]
   },
   {
-    "id": "E_38_150_20",
+    "id": "E_38_151_20",
     "oposiciones": [
       "PISCINAS"
     ],
@@ -125578,7 +125391,7 @@
     ]
   },
   {
-    "id": "E_38_150_21",
+    "id": "E_38_151_21",
     "oposiciones": [
       "PISCINAS"
     ],
@@ -125604,7 +125417,7 @@
     ]
   },
   {
-    "id": "E_38_150_22",
+    "id": "E_38_151_22",
     "oposiciones": [
       "PISCINAS"
     ],
@@ -125630,7 +125443,7 @@
     ]
   },
   {
-    "id": "E_38_150_23",
+    "id": "E_38_151_23",
     "oposiciones": [
       "PISCINAS"
     ],
@@ -125656,7 +125469,7 @@
     ]
   },
   {
-    "id": "E_38_150_24",
+    "id": "E_38_151_24",
     "oposiciones": [
       "PISCINAS"
     ],
@@ -125682,7 +125495,7 @@
     ]
   },
   {
-    "id": "E_38_150_25",
+    "id": "E_38_151_25",
     "oposiciones": [
       "PISCINAS"
     ],
@@ -125708,7 +125521,7 @@
     ]
   },
   {
-    "id": "E_38_150_26",
+    "id": "E_38_151_26",
     "oposiciones": [
       "PISCINAS"
     ],
